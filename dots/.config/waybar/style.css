@@ -1,0 +1,300 @@
+* {
+    border: none;
+    border-radius: 0px;
+    /*font-family: VictorMono, Iosevka Nerd Font, Noto Sans CJK;*/
+    font-family: Iosevka, FontAwesome, Noto Sans CJK;
+    font-size: 14px;
+    font-style: normal;
+    min-height: 0;
+}
+
+window#waybar {
+    background: rgba(0, 0, 0, 0);
+    border-bottom: 0px solid #000000;
+    color: #EBDBB2
+}
+
+#workspaces {
+	background: transparent;
+	margin: 5px 5px 5px 5px;
+  padding: 0px 5px 0px 5px;
+	border-radius: 16px;
+  border: solid 0px #EBDBB2;
+  font-weight: normal;
+  font-style: normal;
+}
+#workspaces button {
+    padding: 0px 5px;
+    border-radius: 16px;
+    color: #928374;
+    /* color: black; */
+    background-color: transparent;
+    text-shadow: 1px 1px 1px black;
+}
+
+#workspaces button.active {
+    color: #EBDBB2;
+    border-radius: 16px;
+    text-shadow: 1px 1px 1px black;
+}
+
+#workspaces button:hover {
+	background-color: #B8BB26;
+	color: black;
+	border-radius: 16px;
+}
+
+#custom-date, #clock, #battery, #pulseaudio, #network, #custom-randwall, #custom-launcher {
+	background: transparent;
+	padding: 5px 5px 5px 5px;
+	margin: 5px 5px 5px 5px;
+  border-radius: 8px;
+  border: solid 0px #EBDBB2;
+}
+
+#custom-date {
+	color: #D3869B;
+}
+
+#custom-power {
+	color: #24283b;
+	background-color: #db4b4b;
+	border-radius: 5px;
+	margin-right: 10px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: 0px;
+	padding: 5px 10px;
+}
+
+#tray {
+    background: #000000;
+    margin: 5px 5px 5px 5px;
+    border-radius: 16px;
+    padding: 0px 5px;
+    /*border-right: solid 1px #1D1D1D;*/
+    border: solid 1px #282828;
+    box-shadow: 0px 2px 1px black;
+}
+
+#clock {
+    color: #B8BB26;
+    background-color: #000000;
+    border-radius: 0px 0px 0px 20px;
+    padding-left: 13px;
+    padding-right: 15px;
+    margin-right: 0px;
+    margin-left: 10px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    /*border-left: solid 1px #1D1D1D;*/
+    border-left: solid 1px #282828;
+    border-bottom: solid 1px #282828;
+    box-shadow: 0px 2px 1px black;
+}
+
+
+#battery {
+    color: #9ece6a;
+}
+
+#battery.charging {
+    color: #9ece6a;
+}
+
+#battery.warning:not(.charging) {
+    background-color: #f7768e;
+    color: #24283b;
+    border-radius: 5px 5px 5px 5px;
+}
+
+#backlight {
+    background-color: #24283b;
+    color: #db4b4b;
+    border-radius: 0px 0px 0px 0px;
+    margin: 5px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 0px 0px;
+}
+
+#network {
+    color: #EBDBB2;
+    border-radius: 8px;
+    margin-right: 5px;
+    text-shadow: 1px 1px 1px black;
+}
+
+#bluetooth {
+    color: #EBDBB2;
+    border-radius: 8px;
+    margin-left: 10px;
+    margin-right: -5px;
+    text-shadow: 1px 1px 1px black;
+}
+
+#bluetooth.connected {
+    color: #B8BB26;
+    border-radius: 8px;
+}
+
+#bluetooth.off {
+    color: #928374;
+    border-radius: 8px;
+}
+
+#pulseaudio {
+    color: #EBDBB2;
+    border-radius: 8px;
+    margin-left: 0px;
+    text-shadow: 1px 1px 1px black;
+}
+
+#pulseaudio.muted {
+    background: transparent;
+    color: #928374;
+    border-radius: 8px;
+    margin-left: 0px;
+}
+
+#custom-randwall {
+    color: #EBDBB2;
+    border-radius: 8px;
+    margin-right: 0px;
+}
+
+#custom-launcher {
+    color: #CC241D;
+    background-color: #000000;
+    border-radius: 0px 0px 20px 0px;
+    margin: 0px 0px 5px 0px;
+    padding: 0 20px 0 13px;
+    /*border-right: solid 1px #1D1D1D;*/
+    font-size: 18px;
+    border-right: solid 1px #282828;
+    border-bottom: solid 1px #282828;
+    box-shadow: 0px 2px 1px black;
+}
+
+#custom-launcher button:hover {
+    background-color: #FB4934;
+    color: transparent;
+    border-radius: 8px;
+    margin-right: -5px;
+    margin-left: 10px;
+}
+
+#custom-playerctl {
+	background: #000000;
+	padding-left: 15px;
+  padding-right: 14px;
+	border-radius: 16px;
+  /*border-left: solid 1px #1D1D1D;*/
+  /*border-right: solid 1px #1D1D1D;*/
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 0px;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 16px;
+  /* Add a shadow to the bakground */
+  /* box-shadow: 0px 1px 1px #EBDBB2; */
+  border: 1px solid #282828;
+  box-shadow: 0px 2px 1px black;
+}
+
+#custom-playerlabel {
+    background: transparent;
+    padding-left: 10px;
+    padding-right: 15px;
+    border-radius: 16px;
+    /*border-left: solid 1px #1D1D1D;*/
+    /*border-right: solid 1px #1D1D1D;*/
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-style: normal;
+    text-shadow: 1px 1px 1px black;
+}
+
+#window {
+    background: #000000;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 16px;
+    /*border-left: solid 1px #1D1D1D;*/
+    /*border-right: solid 1px #1D1D1D;*/
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-weight: normal;
+    font-style: normal;
+}
+
+#custom-wf-recorder {
+    padding: 0 20px;
+    color: #CC241D;
+    background-color: #000000;
+}
+
+#cpu {
+    background-color: #000000;
+    /*color: #FABD2D;*/
+    border-radius: 16px;
+    margin: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 0px 10px 0px 10px;
+    font-weight: bold;
+    border: 1px solid #282828;
+    box-shadow: 0px 2px 1px black;
+}
+
+#memory {
+    background-color: #000000;
+    /*color: #83A598;*/
+    border-radius: 16px;
+    margin: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 0px 10px 0px 10px;
+    font-weight: bold;
+    border: 1px solid #282828;
+    box-shadow: 0px 2px 1px black;
+}
+
+#disk {
+    background-color: #000000;
+    /*color: #8EC07C;*/
+    border-radius: 16px;
+    margin: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 0px 10px 0px 10px;
+    font-weight: bold;
+    border: 1px solid #282828;
+    box-shadow: 0px 2px 1px black;
+}
+
+#custom-hyprpicker {
+    background-color: transparent;
+    /*color: #8EC07C;*/
+    border-radius: 16px;
+    margin: 5px;
+    margin-left: 10px;
+    margin-right: 5px;
+    /*padding: 0px 11px 0px 9px;*/
+    font-weight: bold;
+    text-shadow: 1px 1px 1px black;
+}
+
+#custom-notifications {
+    background-color: transparent;
+    /*color: #8EC07C;*/
+    border-radius: 16px;
+    margin: 5px;
+    margin-left: 5px;
+    margin-right: 10px;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px black;
+}

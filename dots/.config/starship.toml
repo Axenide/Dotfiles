@@ -1,0 +1,55 @@
+add_newline = false
+
+[character]
+error_symbol = "[  ✗](bold red)"
+success_symbol = "[  λ](bold red)"
+
+[package]
+disabled = false
+
+[cmd_duration]
+min_time = 5000
+show_milliseconds = false
+disabled = false
+format="[$duration]($style)"
+style="italic blue"
+
+[directory]
+truncation_length = 5
+format = "[$path]($style)[$lock_symbol]($lock_style) "
+style = "bold yellow"
+read_only = "🔒"
+read_only_style= "bold white"
+
+[hostname]
+ssh_only = false
+trim_at = ".companyname.com"
+disabled = false
+style = "bold italic green"
+
+[git_commit]
+commit_hash_length = 8
+style = "bold white"
+
+[memory_usage]
+format = "[${ram}( | ${swap})]($style) "
+threshold = 50
+style = "bold dimmed white"
+disabled = true
+
+[status]
+style = "bg:transparent"
+symbol = "💥 "
+format = '[\[$symbol$status\]]($style) '
+disabled = false
+
+[php]
+format = "via [🐘 $version](147 bold) "
+
+[docker_context]
+format = "via [🐋 $context](blue bold)"
+
+[dotnet]
+symbol = "🥅 "
+style = "green"
+heuristic = false

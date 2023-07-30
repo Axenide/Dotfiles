@@ -1,0 +1,6 @@
+
+2022/09/12 (16:43:03) | ===> btop++ v.1.2.9
+2022/09/12 (16:43:03) | ERROR: Invalid RGB decimal value: "ba1a84"
+
+2023/06/06 (21:11:37) | ===> btop++ v.1.2.13
+2023/06/06 (21:11:37) | WARNING: No good candidate for cpu sensor found, using random from all found sensors.

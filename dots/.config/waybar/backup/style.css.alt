@@ -1,0 +1,143 @@
+* {
+    border: none;
+    border-radius: 5;
+    font-family: VictorMono Nerd Font, Noto Sans CJK;
+    font-size: 14px;
+    font-style: normal;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+    color: #EBDBB2;
+}
+
+#workspaces {
+	background: linear-gradient(0deg, #505050 0%, black 50%);
+	margin: 10px 10px 0px 10px;
+	border-radius: 16px;
+  border: solid 1px #EBDBB2;
+  font-weight: bold;
+}
+#workspaces button {
+    padding: 0px 5px;
+    color: #EBDBB2;
+}
+
+#workspaces button.active {
+    color: black;
+    background: linear-gradient(0deg, #B8BB26 0%, #FB4934 100%);
+    border-radius: 16px;
+}
+
+#workspaces button:hover {
+	background: linear-gradient(0deg, #FABD2D 0%, #EBDBB2 100%);
+	color: black;
+	border-radius: 16px;
+}
+
+#custom-date, #clock, #battery, #pulseaudio, #network, #custom-randwall {
+	background-color: black;
+	padding: 5px 7px;
+	margin: 10px 5px 0px 5px;
+  border-radius: 16px;
+  border: solid 1px #EBDBB2;
+}
+
+#custom-date {
+	color: #D3869B;
+}
+
+#custom-power {
+	color: #24283b;
+	background-color: #db4b4b;
+	border-radius: 5px;
+	margin-right: 10px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: 0px;
+	padding: 5px 10px;
+}
+
+#tray {
+    background: linear-gradient(0deg, #928374 0%, black 50%);
+    margin: 10px 10px 0px 0px;
+    border-radius: 16px;
+    padding: 0px 7px;
+    border: solid 1px #EBDBB2;
+}
+
+#clock {
+    color: #B8BB26;
+    border-radius: 16px;
+    margin-right: 5px;
+    margin-left: 0px;
+    font-weight: bold;
+    background: linear-gradient(0deg, #98971A 0%, black 50%);
+}
+
+
+#battery {
+    color: #9ece6a;
+}
+
+#battery.charging {
+    color: #9ece6a;
+}
+
+#battery.warning:not(.charging) {
+    background-color: #f7768e;
+    color: #24283b;
+    border-radius: 5px 5px 5px 5px;
+}
+
+#backlight {
+    background-color: #24283b;
+    color: #db4b4b;
+    border-radius: 0px 0px 0px 0px;
+    margin: 5px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 0px 0px;
+}
+
+#network {
+    color: #FB4934;
+    border-radius: 16px;
+    margin-right: 5px;
+    background: linear-gradient(0deg, #CC241D 0%, black 50%);
+}
+
+#pulseaudio {
+    color: #FABD2D;
+    border-radius: 16px;
+    margin-left: 0px; 
+    background: linear-gradient(0deg, #D79921 0%, black 50%);
+}
+
+#pulseaudio.muted { 
+    background: linear-gradient(0deg, #A89984 0%, black 50%);
+    color: #928374;
+    border-radius: 16px;
+    margin-left: 0px;
+}
+
+#custom-randwall {
+    color: #D3869B;
+    border-radius: 16px;
+    margin-right: 0px;
+    background: linear-gradient(0deg, #B16286 0%, black 50%);
+}
+
+#custom-playerctl {
+  background: linear-gradient(0deg, #505050 0%, black 50%);
+	padding-left: 10px;
+  padding-right: 10px;
+	border-radius: 16px;
+  border: solid 1px #EBDBB2;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  font-weight: bold;
+  font-style: italic;
+}
+
