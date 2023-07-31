@@ -6,7 +6,7 @@
 ; mode = normal
  
 # Accepts only non-negative values.
-; framerate = 120
+; framerate = 60
 
 # 'autosens' will attempt to decrease sensitivity if the bars peak. 1 = on, 0 = off
 # new as of 0.6.0 autosens of low values (dynamic range)
@@ -21,8 +21,8 @@
 # The number of bars (0-200). 0 sets it to auto (fill up console).
 # Bars' width and space between bars in number of characters.
 ; bars = 0
-; bar_width = 2
-; bar_spacing = 1
+bar_width = 1
+bar_spacing = 1
 
 # Lower and higher cutoff frequencies for lowest and highest bars
 # the bandwidth of the visualizer.

@@ -39,9 +39,7 @@ window#waybar {
 }
 
 #workspaces button:hover {
-	background-color: #B8BB26;
-	color: black;
-	border-radius: 16px;
+	color: #B8BB26;
 }
 
 #custom-date, #clock, #battery, #pulseaudio, #network, #custom-randwall, #custom-launcher {
