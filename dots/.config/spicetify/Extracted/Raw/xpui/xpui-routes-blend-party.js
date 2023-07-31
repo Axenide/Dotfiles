@@ -1,0 +1,2 @@
+"use strict";(("undefined"!=typeof self?self:global).webpackChunkopen=("undefined"!=typeof self?self:global).webpackChunkopen||[]).push([[4570],{71390:(e,l,n)=>{n.r(l),n.d(l,{default:()=>u});var t=n(82504),s=n(17249),f=n(77999),i=n(4637);const u=function(){return(0,i.jsx)(f.u,{title:s.ag.get("blend.only-on-mobile.title"),message:"",children:(0,i.jsx)(t.l,{})})}}}]);
+//# sourceMappingURL=xpui-routes-blend-party.js.map

@@ -1,0 +1,2 @@
+"use strict";(("undefined"!=typeof self?self:global).webpackChunkopen=("undefined"!=typeof self?self:global).webpackChunkopen||[]).push([[5194],{44873:(e,n,l)=>{l.r(n),l.d(n,{default:()=>t});var f=l(4637);const t=function(){return(0,f.jsx)("div",{})}}}]);
+//# sourceMappingURL=dev-playground.js.map
