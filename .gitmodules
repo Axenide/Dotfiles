@@ -1,6 +1,6 @@
 [submodule "dots/.config/nvim"]
 	path = dots/.config/nvim
-	url = https://github.com/NvChad/NvChad/
+	url = https://github.com/Axenide/NvChad/
 [submodule "dots/.tmux/plugins/tpm"]
 	path = dots/.tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm/
