@@ -82,8 +82,8 @@ configuration {
 	display-filebrowser: "Files";
 
 	/*---------- Misc setting ----------*/
-	terminal: "rofi-sensible-terminal";
-	font: "Mono 12";
+	terminal: "kitty";
+	/*font: "Mono 12";*/
 	sort: false;
 	threads: 0;
 	click-to-exit: true;
@@ -92,7 +92,7 @@ configuration {
 
 	/*---------- File browser settings ----------*/
     filebrowser {
-/*	  directory: "/home";*/
+	  directory: "~";
       directories-first: true;
       sorting-method:    "name";
     }
