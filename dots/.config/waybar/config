@@ -166,10 +166,10 @@
   "custom/launcher": {
 //    "format": "󰣇 󰈸 󰹻 󰢚 󰚌 ",
     "format": "󰹻",
-    "on-click": "$(tofi-drun --prompt-text 'Run: ')",
-//    "on-click": "bash $HOME/.config/rofi/launcher.sh",
+//    "on-click": "$(tofi-drun --prompt-text 'Run: ')",
+    "on-click": "bash $HOME/.config/rofi/launchers/type-1/launcher.sh",
 //    "on-click": "wofi --show drun -I -a -n -W 500 -H 376 -s ~/.config/wofi/themes/gruvbox.css",
-    "on-click-right": "$(tofi-run --prompt-text 'Execute: ')"  
+//    "on-click-right": "$(tofi-run --prompt-text 'Execute: ')"  
 //    "on-click-right": "bash $HOME/.config/rofi/run.sh"  
 //    "on-click-right": "wofi --show run -I -a -n -W 500 -H 376 -s ~/.config/wofi/themes/gruvbox.css"  
   },
