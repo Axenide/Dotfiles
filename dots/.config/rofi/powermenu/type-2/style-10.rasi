@@ -94,12 +94,12 @@ prompt {
 /*****----- Message -----*****/
 message {
     enabled:                     true;
-    margin:                      0px 50px;
+    margin:                      0px 25px;
     padding:                     15px;
     border:                      0px solid;
     border-radius:               100%;
     border-color:                @selected;
-    background-color:            @background-alt;
+    background-color:            @background;
     text-color:                  @foreground;
 }
 textbox {
