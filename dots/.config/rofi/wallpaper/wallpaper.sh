@@ -13,9 +13,9 @@ build_theme() {
     echo "element{orientation:vertical;}element-text{horizontal-align:0.5;}element-icon{size:$icon_size.0000em;}listview{lines:$rows;columns:$cols;}"
 }
 
-theme = "$HOME/.config/rofi/wallpaper/style-1.rasi"
+theme="$HOME/.config/rofi/wallpaper/style-1.rasi"
 
-ROFI_CMD="rofi -dmenu -i -show-icons -theme-str $(build_theme 3 5 6) -theme style-1.rasi"
+ROFI_CMD="rofi -dmenu -i -show-icons -theme-str $(build_theme 3 5 6) -theme ${theme}"
 
 choice=$(\
     ls --escape "$WALLPAPERS_DIR" | \
@@ -42,7 +42,7 @@ elif [ "$XDG_CURRENT_DESKTOP" = "sway" ]; then
 
     exit 0
 else
-    swww img -t any --transition-bezier 0.0,0.0,1.0,1.0 --transition-duration .75 --transition-step 255 --transition-fps 60 "$wallpaper" && \
+    swww img -t any --transition-bezier 0.0,0.0,1.0,1.0 --transition-duration 1 --transition-step 255 --transition-fps 60 "$wallpaper" && \
     ln -sf "$wallpaper" "$WALLPAPERS_DIR"/current.wall
 fi
 
