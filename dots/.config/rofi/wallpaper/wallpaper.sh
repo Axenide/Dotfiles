@@ -1,6 +1,6 @@
 #!/bin/bash
 
-WALLPAPERS_DIR="$HOME/Imágenes/Wallpapers/"
+WALLPAPERS_DIR="$XDG_PICTURES_DIR/Wallpapers/"
 
 # find image size to display (very slow)
 #echo $(identify -format '%[fx:w]x%[fx:h]\' ~/Pictures/$A 2>/dev/null)
