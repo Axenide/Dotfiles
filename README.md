@@ -24,7 +24,7 @@ Note: Don't forget to use `stow dots` or it won't work.
             <b>
               ¡Hola mundo!
               <br>
-              Soy un futuro ingeniero informático, tecnólogo, apasionado por la ciencia y cómo funciona el universo. Hago videos, música, dibujo, animación y diseño. También desarrollo videojuegos.
+              Futuro ingeniero informático, tecnólogo, apasionado por la ciencia y cómo funciona el universo. Hago videos, música, dibujo, animación y diseño. También desarrollo videojuegos.
             </b>
             <br>
             <br>
