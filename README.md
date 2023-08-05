@@ -1,11 +1,69 @@
 # Dotfiles
-.'s
 
-I'm gonna add more things here later. :)
+<table>
+  <tr>
+    <td colspan="2">
+      <div align="justify">
+        <p align="center">
+          <samp>
+            <b>
+              <img src="https://github.com/Axenide/Dotfiles/assets/66109459/065b8c44-973f-4c43-be58-6b389d0a05c0">
+            </b>
+          </samp>
+        </p>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="1">
+      <div align="justify">
+        <p align="center">
+          <samp>
+            <b>
+              <img src="https://github.com/Axenide/Dotfiles/assets/66109459/7b0a447f-14aa-4dce-a2db-34b0feb6a760">
+            </b>
+          </samp>
+        </p>
+      </div>
+    </td>
+    <td colspan="1">
+      <div align="justify">
+        <p align="center">
+          <samp>
+            <b>
+              <img src="https://github.com/Axenide/Dotfiles/assets/66109459/8cee6183-7484-4e8f-a79a-768967ae26f0">
+            </b>
+          </samp>
+        </p>
+      </div>
+    </td>
+</table>
 
-Note: Don't forget to use `stow dots` or it won't work.
+# Rofi
 
-![arrozzz](https://github.com/Axenide/Dotfiles/assets/66109459/5541122e-faf3-41f3-8be9-523d569c9e30)
+<table>
+  <tr>
+    <td><h3>App Launcher</h3></td>
+    <td><img src="https://github.com/Axenide/Dotfiles/assets/66109459/4384e90c-621d-4705-b68a-ba2970a86325"></td>
+  </tr>
+  <tr>
+    <td><h3>Power Menu</h3></td>
+    <td><img src="https://github.com/Axenide/Dotfiles/assets/66109459/aa7b0f3e-4715-4c15-9cd2-3521d89a5b96"></td>
+  </tr>
+  <tr>
+    <td><h3>Emojis</h3></td>
+    <td><img src="https://github.com/Axenide/Dotfiles/assets/66109459/557de0d2-4e94-4e61-a3f9-49e9c069c0fa"></td>
+  </tr>
+  <tr>
+    <td><h3>Wallpaper Changer</h3></td>
+    <td><img src="https://github.com/Axenide/Dotfiles/assets/66109459/d4ba1aa2-6665-48c4-89bb-ed8d4aa0372f"></td>
+  </tr>
+  <tr>
+    <td><h3>Tmux Session Manager</h3></td>
+    <td><img src="https://github.com/Axenide/Dotfiles/assets/66109459/21233a27-a145-4692-b732-2ded7588a618"></td>
+  </tr>
+</table>
+
 
 # Keybindings
 |                    Keybinding                   |             Action            |                  Keybinding                  |              Action             |
@@ -21,7 +79,7 @@ Note: Don't forget to use `stow dots` or it won't work.
 |               `SUPER + SHIFT + W`               |        Private Firefox        |               `SUPER + Arrows`               |        Move window focus        |
 |                   `SUPER + L`                   |              Lock             |           `SUPER + SHIFT + Arrows`           |        Move tiled window        |
 |                   `SUPER + R`                   |          App Launcher         |          `SUPER + CONTROL + Arrows`          |          Resize window          |
-|                 `SUPER + Escape`                |           Powermenu           |            `SUPER + ALT + Arrows`            |       Move floating window      |
+|                 `SUPER + Escape`                |           Power Menu          |            `SUPER + ALT + Arrows`            |       Move floating window      |
 |                   `SUPER + .`                   |             Emojis            |              `SUPER + [1-9][0]`              |     Change workspace [1-10]     |
 |                   `SUPER + ,`                   |       Wallpaper Selector      |          `SUPER + SHIFT + [1-9][0]`          | Move window to workspace [1-10] |
 |                     `Print`                     |    Save and copy screenshot   |                  `SUPER + Z`                 |     Go to previous workspace    |
