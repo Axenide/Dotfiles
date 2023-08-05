@@ -12,7 +12,7 @@
 ## style-11    style-12    style-13    style-14    style-15
 
 dir="$HOME/.config/rofi/emoji/type-1"
-theme='style-11'
+theme='style-1'
 
 ## Run
 rofi \

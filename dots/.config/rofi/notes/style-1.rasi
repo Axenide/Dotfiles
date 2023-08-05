@@ -15,7 +15,6 @@ configuration {
     display-run:                "  Run";
     display-filebrowser:        "  Files";
     display-window:             "  Windows";
-    display-emoji:             "󰢚  Emojis";
 	drun-display-format:        "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";
 	window-format:              "{w} · {c} · {t}";
 }
@@ -57,7 +56,7 @@ window {
     location:                    center;
     anchor:                      center;
     fullscreen:                  false;
-    width:                       600px;
+    width:                       400px;
     x-offset:                    0px;
     y-offset:                    0px;
 
@@ -249,7 +248,7 @@ element-text {
 
 /*****----- Mode Switcher -----*****/
 mode-switcher{
-    enabled:                     false;
+    enabled:                     true;
     spacing:                     10px;
     margin:                      0px;
     padding:                     0px;
