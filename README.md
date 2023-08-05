@@ -52,7 +52,7 @@
   </tr>
   <tr>
     <td><h3>Emojis</h3></td>
-    <td><img src="https://github.com/Axenide/Dotfiles/assets/66109459/557de0d2-4e94-4e61-a3f9-49e9c069c0fa"></td>
+    <td><img src="https://github.com/Axenide/Dotfiles/assets/66109459/6199c94b-8e49-4e1c-bb0b-21d93c865cd0"></td>
   </tr>
   <tr>
     <td><h3>Wallpaper Changer</h3></td>
