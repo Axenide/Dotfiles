@@ -13,29 +13,30 @@
   <tr>
     <td align="center">
       <h4>App Launcher</h4>
-      <img src="https://github.com/Axenide/Dotfiles/assets/66109459/4384e90c-621d-4705-b68a-ba2970a86325">
+      <img src="https://github.com/Axenide/Dotfiles/assets/66109459/21526780-7475-4602-879c-a41068a9ba97">
     </td>
     <td align="center">
       <h4>Power Menu</h4>
-      <img src="https://github.com/Axenide/Dotfiles/assets/66109459/aa7b0f3e-4715-4c15-9cd2-3521d89a5b96">
+      <img src="https://github.com/Axenide/Dotfiles/assets/66109459/686ca869-9db2-46ce-88de-a241fd084ac9">
+      <img src="https://github.com/Axenide/Dotfiles/assets/66109459/9e7cc55c-e928-4445-96f7-215178a19061">
     </td>
     <td align="center">
       <h4>Emojis</h4>
-      <img src="https://github.com/Axenide/Dotfiles/assets/66109459/6199c94b-8e49-4e1c-bb0b-21d93c865cd0">
+      <img src="https://github.com/Axenide/Dotfiles/assets/66109459/829217a1-451d-4c33-b051-f7714b100245">
     </td>
   </tr>
   <tr>
     <td align="center">
       <h4>Wallpaper Changer</h4>
-      <img src="https://github.com/Axenide/Dotfiles/assets/66109459/d4ba1aa2-6665-48c4-89bb-ed8d4aa0372f">
+      <img src="https://github.com/Axenide/Dotfiles/assets/66109459/85ac16a4-8ec8-4f59-a197-49e2c3ea91d8">
     </td>
     <td align="center">
       <h4>Tmux Session Manager</h4>
-      <img src="https://github.com/Axenide/Dotfiles/assets/66109459/21233a27-a145-4692-b732-2ded7588a618">
+      <img src="https://github.com/Axenide/Dotfiles/assets/66109459/df531fce-184a-4b80-82d0-2e7da3e7f0dc">
     </td>
     <td align="center">
-      <h4>Placeholder</h4>
-      <img src="URL_del_placeholder">
+      <h4>Sound Manager</h4>
+      <img src="https://github.com/Axenide/Dotfiles/assets/66109459/3cbbdba4-8036-463c-8553-dfc3b1ffab69">
     </td>
   </tr>
   <tr>
