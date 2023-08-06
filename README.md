@@ -41,8 +41,8 @@
   </tr>
   <tr>
     <td align="center">
-      <h4>Placeholder</h4>
-      <img src="URL_del_placeholder">
+      <h4>Notes</h4>
+      <img src="https://github.com/Axenide/Dotfiles/assets/66109459/3d0b78aa-9f5a-416e-b3fe-f65ca28c9dca">
     </td>
     <td align="center">
       <h4>Placeholder</h4>
