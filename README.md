@@ -1,43 +1,11 @@
 # Dotfiles
 
-<table>
-  <tr>
-    <td colspan="2">
-      <div align="justify">
-        <p align="center">
-          <samp>
-            <b>
-              <img src="https://github.com/Axenide/Dotfiles/assets/66109459/065b8c44-973f-4c43-be58-6b389d0a05c0">
-            </b>
-          </samp>
-        </p>
-      </div>
-    </td>
-  </tr>
-  <tr>
-    <td colspan="1">
-      <div align="justify">
-        <p align="center">
-          <samp>
-            <b>
-              <img src="https://github.com/Axenide/Dotfiles/assets/66109459/7b0a447f-14aa-4dce-a2db-34b0feb6a760">
-            </b>
-          </samp>
-        </p>
-      </div>
-    </td>
-    <td colspan="1">
-      <div align="justify">
-        <p align="center">
-          <samp>
-            <b>
-              <img src="https://github.com/Axenide/Dotfiles/assets/66109459/8cee6183-7484-4e8f-a79a-768967ae26f0">
-            </b>
-          </samp>
-        </p>
-      </div>
-    </td>
-</table>
+<img src="https://github.com/Axenide/Dotfiles/assets/66109459/065b8c44-973f-4c43-be58-6b389d0a05c0">
+<p float="left">
+  <img src="https://github.com/Axenide/Dotfiles/assets/66109459/7b0a447f-14aa-4dce-a2db-34b0feb6a760" width="49%" />
+  <img src="https://github.com/Axenide/Dotfiles/assets/66109459/8cee6183-7484-4e8f-a79a-768967ae26f0" width="49%" /> 
+</p>
+
 
 # Rofi
 
