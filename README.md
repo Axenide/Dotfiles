@@ -93,8 +93,6 @@
         <p align="center">
           <samp>
             <b>
-              ¡Hola mundo!
-              <br>
               Futuro ingeniero informático, tecnólogo, apasionado por la ciencia y cómo funciona el universo. Hago videos, música, dibujo, animación y diseño. También desarrollo videojuegos.
             </b>
             <br>
