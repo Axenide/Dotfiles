@@ -90,7 +90,7 @@ main()
         first_menu="New\n${all_notes}"
     fi
 
-    local note=$(echo -e "$first_menu"  | rofi -theme $theme -dmenu -p "Note: ")
+    local note=$(echo -e "$first_menu"  | rofi -theme $theme -dmenu -p "󰚸  Notes")
 
     case $note in
         "New")
