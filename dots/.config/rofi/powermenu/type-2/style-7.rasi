@@ -98,7 +98,7 @@ message {
     border:                      0px solid;
     border-radius:               15px;
     border-color:                @selected;
-    background-color:            @background-alt;
+    background-color:            @background;
     text-color:                  @foreground;
 }
 textbox {
@@ -152,7 +152,7 @@ element {
     border:                      0px solid;
     border-radius:               20px;
     border-color:                @selected;
-    background-color:            @background-alt;
+    background-color:            @background;
     text-color:                  @foreground;
     cursor:                      pointer;
 }

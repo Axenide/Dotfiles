@@ -31,8 +31,8 @@ window {
     y-offset:                    0px;
     margin:                      0px;
     padding:                     0px;
-    border:                      0px solid;
-    border-radius:               12px;
+    border:                      3px solid;
+    border-radius:               10px;
     border-color:                @selected;
     cursor:                      "default";
     background-color:            @background;
@@ -54,7 +54,7 @@ inputbar {
     spacing:                     10px;
     padding:                     0px;
     border:                      0px;
-    border-radius:               12px;
+    border-radius:               10px;
     border-color:                @selected;
     background-color:            transparent;
     text-color:                  @foreground;
@@ -66,14 +66,14 @@ textbox-prompt-colon {
     expand:                      false;
     str:                         "";
     padding:                     10px 13px;
-    border-radius:               12px;
+    border-radius:               10px;
     background-color:            @urgent;
     text-color:                  @background;
 }
 prompt {
     enabled:                     true;
     padding:                     10px;
-    border-radius:               12px;
+    border-radius:               10px;
     background-color:            @active;
     text-color:                  @background;
 }
@@ -84,7 +84,7 @@ message {
     margin:                      0px;
     padding:                     10px;
     border:                      0px solid;
-    border-radius:               12px;
+    border-radius:               10px;
     border-color:                @selected;
     background-color:            @background-alt;
     text-color:                  @foreground;
@@ -113,16 +113,16 @@ listview {
 /*****----- Elements -----*****/
 element {
     enabled:                     true;
-    padding:                     30px 10px;
+    padding:                     10px 10px;
     border:                      0px solid;
-    border-radius:               12px;
+    border-radius:               10px;
     border-color:                @selected;
     background-color:            transparent;
     text-color:                  @foreground;
     cursor:                      pointer;
 }
 element-text {
-    font:                        "feather 28";
+    font:                        "feather 24";
     background-color:            transparent;
     text-color:                  inherit;
     cursor:                      inherit;

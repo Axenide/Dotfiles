@@ -1,5 +1,43 @@
 #!/usr/bin/env bash
 
+# Definir una variable por defecto para la opción "--row"
+row_value="0"
+
+# Uso del script
+usage() {
+  echo "Uso: $0 [--row <valor>]"
+  exit 1
+}
+
+# Procesar los argumentos y opciones utilizando getopt
+OPTS=$(getopt -o r: --long row: -n "$0" -- "$@")
+eval set -- "$OPTS"
+
+# Manejar las opciones y argumentos
+while true; do
+  case "$1" in
+    -r | --row)
+      row_value="$2"
+      shift 2 ;;
+    --)
+      shift
+      break ;;
+    *)
+      echo "Opción inválida: $1"
+      usage ;;
+  esac
+done
+
+# Verificar si se proporcionó el valor de "--row"
+if [ -z "$row_value" ]; then
+  echo "Debe proporcionar un valor para la opción --row."
+  usage
+fi
+
+# Aquí puedes usar la variable $row_value como desees en tu script
+echo "El valor de --row es: $row_value"
+
+
 ## Author  : Aditya Shakya (adi1090x)
 ## Github  : @adi1090x
 #
@@ -21,12 +59,12 @@ urgent=""
 amixer get Master | grep '\[on\]' &>/dev/null
 if [[ "$?" == 0 ]]; then
 	active="-a 1"
-	stext='Unmute'
-	sicon=''
+	stext='Unmuted'
+	sicon='󰕾 '
 else
 	urgent="-u 1"
-	stext='Mute'
-	sicon=''
+	stext='Muted'
+	sicon='󰖁 '
 fi
 
 # Microphone Info
@@ -42,7 +80,7 @@ else
 fi
 
 # Theme Elements
-prompt="S:$stext, M:$mtext"
+prompt="󰋋 $stext, 󰍬 $mtext"
 mesg="$mixer - Speaker: $speaker, Mic: $mic"
 
 if [[ "$theme" == *'type-1'* ]]; then
@@ -60,7 +98,7 @@ elif [[ "$theme" == *'type-5'* ]]; then
 elif [[ ( "$theme" == *'type-2'* ) || ( "$theme" == *'type-4'* ) ]]; then
 	list_col='5'
 	list_row='1'
-	win_width='670px'
+	win_width='450px'
 fi
 
 # Options
@@ -72,9 +110,9 @@ if [[ "$layout" == 'NO' ]]; then
 	option_4="$micon $mtext"
 	option_5=" Settings"
 else
-	option_1=""
+	option_1="󰝝 "
 	option_2="$sicon"
-	option_3=""
+	option_3="󰝞 "
 	option_4="$micon"
 	option_5=""
 fi
@@ -83,13 +121,14 @@ fi
 rofi_cmd() {
 	rofi -theme-str "window {width: $win_width;}" \
 		-theme-str "listview {columns: $list_col; lines: $list_row;}" \
-		-theme-str 'textbox-prompt-colon {str: "";}' \
+		-theme-str 'textbox-prompt-colon {str: " ";}' \
 		-dmenu \
 		-p "$prompt" \
 		-mesg "$mesg" \
 		${active} ${urgent} \
 		-markup-rows \
-		-theme ${theme}
+		-theme ${theme} \
+    -selected-row $row_value
 }
 
 # Pass variables to rofi dmenu
@@ -101,14 +140,16 @@ run_rofi() {
 run_cmd() {
 	if [[ "$1" == '--opt1' ]]; then
 		amixer -Mq set Master,0 5%+ unmute
-    ./volume.sh
+    ~/.config/rofi/applets/bin/volume.sh --row 0
 	elif [[ "$1" == '--opt2' ]]; then
 		amixer set Master toggle
+    ~/.config/rofi/applets/bin/volume.sh --row 1
 	elif [[ "$1" == '--opt3' ]]; then
 		amixer -Mq set Master,0 5%- unmute
-    ./volume.sh
+    ~/.config/rofi/applets/bin/volume.sh --row 2
 	elif [[ "$1" == '--opt4' ]]; then
 		amixer set Capture toggle
+    ~/.config/rofi/applets/bin/volume.sh --row 3
 	elif [[ "$1" == '--opt5' ]]; then
 		pavucontrol
 	fi
