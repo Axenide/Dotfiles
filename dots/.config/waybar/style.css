@@ -28,13 +28,13 @@ window#waybar {
     color: #928374;
     /* color: black; */
     background-color: transparent;
-    text-shadow: 1px 1px 1px black;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.75);
 }
 
 #workspaces button.active {
     color: #EBDBB2;
     border-radius: 16px;
-    text-shadow: 1px 1px 1px black;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.75);
 }
 
 #workspaces button:hover {
@@ -71,7 +71,7 @@ window#waybar {
     padding: 0px 5px;
     /*border-right: solid 1px #1D1D1D;*/
     border: solid 1px #282828;
-    box-shadow: 0px 2px 1px black;
+    box-shadow: 0px 1px 3px rgba(0,0,0,0.75);
 }
 
 #clock {
@@ -88,7 +88,7 @@ window#waybar {
     /*border-left: solid 1px #1D1D1D;*/
     border-left: solid 1px #282828;
     border-bottom: solid 1px #282828;
-    box-shadow: 0px 2px 1px black;
+    box-shadow: 0px 1px 3px rgba(0,0,0,0.75);
 }
 
 
@@ -120,7 +120,7 @@ window#waybar {
     color: #EBDBB2;
     border-radius: 8px;
     margin-right: 5px;
-    text-shadow: 1px 1px 1px black;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.75);
 }
 
 #bluetooth {
@@ -128,7 +128,7 @@ window#waybar {
     border-radius: 8px;
     margin-left: 10px;
     margin-right: -5px;
-    text-shadow: 1px 1px 1px black;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.75);
 }
 
 #bluetooth.connected {
@@ -145,7 +145,7 @@ window#waybar {
     color: #EBDBB2;
     border-radius: 8px;
     margin-left: 0px;
-    text-shadow: 1px 1px 1px black;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.75);
 }
 
 #pulseaudio.muted {
@@ -171,7 +171,7 @@ window#waybar {
     font-size: 18px;
     border-right: solid 1px #282828;
     border-bottom: solid 1px #282828;
-    box-shadow: 0px 2px 1px black;
+    box-shadow: 0px 1px 3px rgba(0,0,0,0.75);
 }
 
 #custom-launcher button:hover {
@@ -198,7 +198,7 @@ window#waybar {
   /* Add a shadow to the bakground */
   /* box-shadow: 0px 1px 1px #EBDBB2; */
   border: 1px solid #282828;
-  box-shadow: 0px 2px 1px black;
+  box-shadow: 0px 1px 3px rgba(0,0,0,0.75);
 }
 
 #custom-playerlabel {
@@ -212,7 +212,7 @@ window#waybar {
     margin-bottom: 5px;
     font-weight: bold;
     font-style: normal;
-    text-shadow: 1px 1px 1px black;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.75);
 }
 
 #window {
@@ -244,7 +244,7 @@ window#waybar {
     padding: 0px 10px 0px 10px;
     font-weight: bold;
     border: 1px solid #282828;
-    box-shadow: 0px 2px 1px black;
+    box-shadow: 0px 1px 3px rgba(0,0,0,0.75);
 }
 
 #memory {
@@ -257,7 +257,7 @@ window#waybar {
     padding: 0px 10px 0px 10px;
     font-weight: bold;
     border: 1px solid #282828;
-    box-shadow: 0px 2px 1px black;
+    box-shadow: 0px 1px 3px rgba(0,0,0,0.75);
 }
 
 #disk {
@@ -270,7 +270,7 @@ window#waybar {
     padding: 0px 10px 0px 10px;
     font-weight: bold;
     border: 1px solid #282828;
-    box-shadow: 0px 2px 1px black;
+    box-shadow: 0px 1px 3px rgba(0,0,0,0.75);
 }
 
 #custom-hyprpicker {
@@ -282,7 +282,7 @@ window#waybar {
     margin-right: 5px;
     /*padding: 0px 11px 0px 9px;*/
     font-weight: bold;
-    text-shadow: 1px 1px 1px black;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.75);
 }
 
 #custom-notifications {
@@ -293,5 +293,5 @@ window#waybar {
     margin-left: 5px;
     margin-right: 10px;
     font-weight: bold;
-    text-shadow: 1px 1px 1px black;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.75);
 }
