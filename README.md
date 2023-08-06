@@ -43,27 +43,48 @@
 
 <table>
   <tr>
-    <td><h4>App Launcher</h4></td>
-    <td><img src="https://github.com/Axenide/Dotfiles/assets/66109459/4384e90c-621d-4705-b68a-ba2970a86325"></td>
+    <td align="center">
+      <h4>App Launcher</h4>
+      <img src="https://github.com/Axenide/Dotfiles/assets/66109459/4384e90c-621d-4705-b68a-ba2970a86325">
+    </td>
+    <td align="center">
+      <h4>Power Menu</h4>
+      <img src="https://github.com/Axenide/Dotfiles/assets/66109459/aa7b0f3e-4715-4c15-9cd2-3521d89a5b96">
+    </td>
+    <td align="center">
+      <h4>Emojis</h4>
+      <img src="https://github.com/Axenide/Dotfiles/assets/66109459/6199c94b-8e49-4e1c-bb0b-21d93c865cd0">
+    </td>
   </tr>
   <tr>
-    <td><h4>Power Menu</h4></td>
-    <td><img src="https://github.com/Axenide/Dotfiles/assets/66109459/aa7b0f3e-4715-4c15-9cd2-3521d89a5b96"></td>
+    <td align="center">
+      <h4>Wallpaper Changer</h4>
+      <img src="https://github.com/Axenide/Dotfiles/assets/66109459/d4ba1aa2-6665-48c4-89bb-ed8d4aa0372f">
+    </td>
+    <td align="center">
+      <h4>Tmux Session Manager</h4>
+      <img src="https://github.com/Axenide/Dotfiles/assets/66109459/21233a27-a145-4692-b732-2ded7588a618">
+    </td>
+    <td align="center">
+      <h4>Placeholder</h4>
+      <img src="URL_del_placeholder">
+    </td>
   </tr>
   <tr>
-    <td><h4>Emojis</h4></td>
-    <td><img src="https://github.com/Axenide/Dotfiles/assets/66109459/6199c94b-8e49-4e1c-bb0b-21d93c865cd0"></td>
-  </tr>
-  <tr>
-    <td><h4>Wallpaper Changer</h4></td>
-    <td><img src="https://github.com/Axenide/Dotfiles/assets/66109459/d4ba1aa2-6665-48c4-89bb-ed8d4aa0372f"></td>
-  </tr>
-  <tr>
-    <td><h4>Tmux Session Manager</h4></td>
-    <td><img src="https://github.com/Axenide/Dotfiles/assets/66109459/21233a27-a145-4692-b732-2ded7588a618"></td>
+    <td align="center">
+      <h4>Placeholder</h4>
+      <img src="URL_del_placeholder">
+    </td>
+    <td align="center">
+      <h4>Placeholder</h4>
+      <img src="URL_del_placeholder">
+    </td>
+    <td align="center">
+      <h4>Placeholder</h4>
+      <img src="URL_del_placeholder">
+    </td>
   </tr>
 </table>
-
 
 # Keybindings
 |                    Keybinding                   |             Action            |                  Keybinding                  |              Action             |
