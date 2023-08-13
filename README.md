@@ -42,7 +42,7 @@ Some Rofi applets that make my life easier.
 # Keybindings
 
 | Keys                                         | Action                          |
-|----------------------------------------------|---------------------------------|
+|---------------------------------------------:|:--------------------------------|
 | `SUPER + RETURN`                             | Open Kitty terminal             |
 | `SUPER + SHIFT + RETURN`                     | Open floating Kitty terminal    |
 | `SUPER + ALT + RETURN`                       | Open Kitty with slurp           |
@@ -92,7 +92,7 @@ Some Rofi applets that make my life easier.
 ### PREFIX is set to `CTRL + Space`.
 
 | Keys              | Action             |
-|:-----------------:|:------------------:|
+|------------------:|:-------------------|
 | `PREFIX + /`      | Vertical split     |
 | `PREFIX + -`      | Horizontal split   |
 
