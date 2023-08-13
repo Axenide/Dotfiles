@@ -5,7 +5,7 @@
 # default values
 AUTHOR=$(whoami)
 NOTES_FOLDER="$HOME/.notes"
-NOTES_EDITOR=xdg-open
+NOTES_EDITOR='kitty -e nvim '
 
 theme=~/.config/rofi/notes/style-1.rasi
 
