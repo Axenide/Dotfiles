@@ -9,52 +9,38 @@
 
 # Rofi
 
-<table>
-  <tr>
-    <td align="center">
-      <h4>App Launcher</h4>
-      <img src="https://github.com/Axenide/Dotfiles/assets/66109459/21526780-7475-4602-879c-a41068a9ba97">
-    </td>
-    <td align="center">
-      <h4>Power Menu</h4>
-      <img src="https://github.com/Axenide/Dotfiles/assets/66109459/686ca869-9db2-46ce-88de-a241fd084ac9">
-    </td>
-    <td align="center">
-      <h4>Emojis</h4>
-      <img src="https://github.com/Axenide/Dotfiles/assets/66109459/829217a1-451d-4c33-b051-f7714b100245">
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      <h4>Wallpaper Changer</h4>
-      <img src="https://github.com/Axenide/Dotfiles/assets/66109459/85ac16a4-8ec8-4f59-a197-49e2c3ea91d8">
-    </td>
-    <td align="center">
-      <h4>Tmux Session Manager</h4>
-      <img src="https://github.com/Axenide/Dotfiles/assets/66109459/df531fce-184a-4b80-82d0-2e7da3e7f0dc">
-    </td>
-    <td align="center">
-      <h4>Sound Manager</h4>
-      <img src="https://github.com/Axenide/Dotfiles/assets/66109459/3cbbdba4-8036-463c-8553-dfc3b1ffab69">
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      <h4>Notes</h4>
-      <img src="https://github.com/Axenide/Dotfiles/assets/66109459/3d0b78aa-9f5a-416e-b3fe-f65ca28c9dca">
-    </td>
-    <td align="center">
-      <h4>Placeholder</h4>
-      <img src="URL_del_placeholder">
-    </td>
-    <td align="center">
-      <h4>Placeholder</h4>
-      <img src="URL_del_placeholder">
-    </td>
-  </tr>
-</table>
+Some Rofi applets that make my life easier.
+
+- App Launcher
+
+![](https://github.com/Axenide/Dotfiles/assets/66109459/21526780-7475-4602-879c-a41068a9ba97)
+
+- Power Menu
+
+![](https://github.com/Axenide/Dotfiles/assets/66109459/686ca869-9db2-46ce-88de-a241fd084ac9)
+
+- Emojis
+
+![](https://github.com/Axenide/Dotfiles/assets/66109459/829217a1-451d-4c33-b051-f7714b100245)
+
+- Wallpaper Changer
+
+![](https://github.com/Axenide/Dotfiles/assets/66109459/85ac16a4-8ec8-4f59-a197-49e2c3ea91d8)
+
+- Tmux Session Manager
+
+![](https://github.com/Axenide/Dotfiles/assets/66109459/df531fce-184a-4b80-82d0-2e7da3e7f0dc)
+
+- Sound Manager
+
+![](https://github.com/Axenide/Dotfiles/assets/66109459/3cbbdba4-8036-463c-8553-dfc3b1ffab69)
+
+- Notes
+
+![](https://github.com/Axenide/Dotfiles/assets/66109459/3d0b78aa-9f5a-416e-b3fe-f65ca28c9dca)
 
 # Keybindings
+
 | Keys                                         | Action                          |
 |----------------------------------------------|---------------------------------|
 | `SUPER + RETURN`                             | Open Kitty terminal             |
@@ -102,7 +88,8 @@
 | `SUPER + Right Click`                        | Drag resize window              |
 
 # Tmux Keybindings
-Tmux's PREFIX with this config is `CTRL + Space`.
+
+### PREFIX is set to `CTRL + Space`.
 
 | Keys              | Action             |
 |:-----------------:|:------------------:|
