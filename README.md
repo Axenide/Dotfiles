@@ -18,7 +18,6 @@
     <td align="center">
       <h4>Power Menu</h4>
       <img src="https://github.com/Axenide/Dotfiles/assets/66109459/686ca869-9db2-46ce-88de-a241fd084ac9">
-      <img src="https://github.com/Axenide/Dotfiles/assets/66109459/9e7cc55c-e928-4445-96f7-215178a19061">
     </td>
     <td align="center">
       <h4>Emojis</h4>
@@ -56,28 +55,51 @@
 </table>
 
 # Keybindings
-|                    Keybinding                   |             Action            |                  Keybinding                  |              Action             |
-|:-----------------------------------------------:|:-----------------------------:|:--------------------------------------------:|:-------------------------------:|
-|         `SUPER + RETURN`<br>`SUPER + T`         |      Open Kitty terminal      |                `SUPER + Space`               |      Toggle tiled/floating      |
-| `SUPER + SHIFT + RETURN`<br>`SUPER + SHIFT + T` |  Open floating Kitty terminal |                  `SUPER + P`                 |       Toggle pseudo-tiling      |
-|              `SUPER + ALT + RETURN`             |     Open Kitty with slurp     |                  `SUPER + D`                 |           Toggle split          |
-|                   `SUPER + C`                   |          Close window         |                  `SUPER + F`                 |            Fullscreen           |
-|             `SUPER + SHIFT + Escape`            |         Exit Hyprland         |              `SUPER + SHIFT + F`             |         Fake Fullscreen         |
-|                   `SUPER + E`                   |         File explorer         |               `SUPER + ALT + F`              |             Maximize            |
-|               `SUPER + SHIFT + E`               |     Floating file explorer    |                  `SUPER + Y`                 |            Pin window           |
-|                   `SUPER + W`                   |            Firefox            |                  `SUPER + H`                 |          Center window          |
-|               `SUPER + SHIFT + W`               |        Private Firefox        |               `SUPER + Arrows`               |        Move window focus        |
-|                   `SUPER + L`                   |              Lock             |           `SUPER + SHIFT + Arrows`           |        Move tiled window        |
-|                   `SUPER + R`                   |          App Launcher         |          `SUPER + CONTROL + Arrows`          |          Resize window          |
-|                 `SUPER + Escape`                |           Power Menu          |            `SUPER + ALT + Arrows`            |       Move floating window      |
-|                   `SUPER + .`                   |             Emojis            |              `SUPER + [1-9][0]`              |     Change workspace [1-10]     |
-|                   `SUPER + ,`                   |       Wallpaper Selector      |          `SUPER + SHIFT + [1-9][0]`          | Move window to workspace [1-10] |
-|                     `Print`                     |    Save and copy screenshot   |                  `SUPER + Z`                 |     Go to previous workspace    |
-|                 `SHIFT + Print`                 |        Copy screenshot        | `SUPER + SHIFT + Z`<br>`SUPER + Scroll Down` | Go to previous active workspace |
-|                   `SUPER + S`                   | Save and copy area screenshot |                  `SUPER + X`                 |       Go to next workspace      |
-|               `SUPER + SHIFT + S`               |      Copy area screenshot     |  `SUPER + SHIFT + X`<br>`SUPER + Scroll Up`  |   Go to next active workspace   |
-|                   `SUPER + B`                   |          Hide Waybar          |             `SUPER + Left Click`             |           Drag window           |
-|                `SUPER + ALT + B`                |         Restart Waybar        |             `SUPER + Right Click`            |        Drag resize window       |
+| Keybinding                                   | Action                          |
+|----------------------------------------------|---------------------------------|
+| `SUPER + RETURN`                             | Open Kitty terminal             |
+| `SUPER + SHIFT + RETURN`                     | Open floating Kitty terminal    |
+| `SUPER + ALT + RETURN`                       | Open Kitty with slurp           |
+| `SUPER + T`                                  | Tmux Session Manager            |
+| `SUPER + C`                                  | Close window                    |
+| `SUPER + SHIFT + Escape`                     | Exit Hyprland                   |
+| `SUPER + E`                                  | File explorer                   |
+| `SUPER + SHIFT + E`                          | Floating file explorer          |
+| `SUPER + W`                                  | Firefox                         |
+| `SUPER + SHIFT + W`                          | Private Firefox                 |
+| `SUPER + L`                                  | Lock                            |
+| `SUPER + R`                                  | App Launcher                    |
+| `SUPER + Escape`                             | Powermenu                       |
+| `SUPER + .`                                  | Emojis                          |
+| `SUPER + ,`                                  | Wallpaper Selector              |
+| `SUPER + V`                                  | Sound Manager                   |
+| `SUPER + N`                                  | Notes                           |
+| `Print`                                      | Save and copy screenshot        |
+| `SHIFT + Print`                              | Copy screenshot                 |
+| `SUPER + S`                                  | Save and copy area screenshot   |
+| `SUPER + SHIFT + S`                          | Copy area screenshot            |
+| `SUPER + B`                                  | Hide Waybar                     |
+| `SUPER + ALT + B`                            | Restart Waybar                  |
+| `SUPER + Space`                              | Toggle tiled/floating           |
+| `SUPER + P`                                  | Toggle pseudo-tiling            |
+| `SUPER + D`                                  | Toggle split                    |
+| `SUPER + F`                                  | Fullscreen                      |
+| `SUPER + SHIFT + F`                          | Fake Fullscreen                 |
+| `SUPER + ALT + F`                            | Maximize                        |
+| `SUPER + Y`                                  | Pin window                      |
+| `SUPER + H`                                  | Center window                   |
+| `SUPER + Arrows`                             | Move window focus               |
+| `SUPER + SHIFT + Arrows`                     | Move tiled window               |
+| `SUPER + CONTROL + Arrows`                   | Resize window                   |
+| `SUPER + ALT + Arrows`                       | Move floating window            |
+| `SUPER + [1-9][0]`                           | Change workspace [1-10]         |
+| `SUPER + SHIFT + [1-9][0]`                   | Move window to workspace [1-10] |
+| `SUPER + Z`                                  | Go to previous workspace        |
+| `SUPER + SHIFT + Z`<br>`SUPER + Scroll Down` | Go to previous active workspace |
+| `SUPER + X`                                  | Go to next workspace            |
+| `SUPER + SHIFT + X`<br>`SUPER + Scroll Up`   | Go to next active workspace     |
+| `SUPER + Left Click`                         | Drag window                     |
+| `SUPER + Right Click`                        | Drag resize window              |
 
 <!-- Axenide GitHub Profile -->
 <table>
