@@ -55,7 +55,7 @@
 </table>
 
 # Keybindings
-| Keybinding                                   | Action                          |
+| Keys                                         | Action                          |
 |----------------------------------------------|---------------------------------|
 | `SUPER + RETURN`                             | Open Kitty terminal             |
 | `SUPER + SHIFT + RETURN`                     | Open floating Kitty terminal    |
@@ -100,6 +100,16 @@
 | `SUPER + SHIFT + X`<br>`SUPER + Scroll Up`   | Go to next active workspace     |
 | `SUPER + Left Click`                         | Drag window                     |
 | `SUPER + Right Click`                        | Drag resize window              |
+
+# Tmux Keybindings
+Tmux's PREFIX with this config is `CTRL + Space`.
+
+| Keys              | Action             |
+|:-----------------:|:------------------:|
+| `PREFIX + /`      | Vertical split     |
+| `PREFIX + -`      | Horizontal split   |
+
+###### I'm going to sleep. I'll upload all the keybindings later.
 
 <!-- Axenide GitHub Profile -->
 <table>
