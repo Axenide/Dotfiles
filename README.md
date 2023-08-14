@@ -9,8 +9,6 @@
 
 # Rofi
 
-Some Rofi applets that make my life easier.
-
 - App Launcher
 
 ![](https://github.com/Axenide/Dotfiles/assets/66109459/21526780-7475-4602-879c-a41068a9ba97)
