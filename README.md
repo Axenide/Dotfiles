@@ -95,5 +95,3 @@
 |------------------:|:-------------------|
 | `PREFIX + /`      | Vertical split     |
 | `PREFIX + -`      | Horizontal split   |
-
-###### I'm going to sleep. I'll upload all the keybindings later.
