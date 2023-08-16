@@ -89,9 +89,23 @@
 
 ## Tmux
 
-#### PREFIX is set to `CTRL + Space`.
+*PREFIX is set to `CTRL + Space`.*
 
-| Keys              | Action             |
-|------------------:|:-------------------|
-| `PREFIX + /`      | Vertical split     |
-| `PREFIX + -`      | Horizontal split   |
+| Keys                | Action                          |
+|--------------------:|:--------------------------------|
+| `PREFIX + c`        | Create window                   |
+| `SHIFT + ALT + H,L` | Navigate windows                |
+| `PREFIX + [1-9]`    | Change to window from 1 to 9    |
+| `PREFIX + &`        | Kill window                     |
+| `PREFIX + /`        | Vertical split                  |
+| `PREFIX + -`        | Horizontal split                |
+| `CTRL + H,J,K,L`    | Navigate panes                  |
+| `PREFIX + { or }`   | Swap pane position              |
+| `PREFIX + q`        | Go to pane pressing a number    |
+| `PREFIX + x`        | Kill pane                       |
+| `PREFIX + s`        | List sessions                   |
+| `PREFIX + w`        | List windows                    |
+| `PREFIX + ]`        | Yank mode (copy)                |
+| `v`                 | Start selection                 |
+| `CTRL + v`          | Toggle rectangle/line selection |
+| `y`                 | Yank selection                  |
