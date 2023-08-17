@@ -3,7 +3,7 @@
     "layer": "top",
     "height": 16,
     "margin-top": 0,
-    "margin-bottom": -30,
+    "margin-bottom": -6,
     "margin-left": 0,
     "margin-right": 0,
     "modules-left": ["custom/launcher", "wlr/workspaces", "custom/playerctl", "custom/playerlabel"],

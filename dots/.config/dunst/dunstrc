@@ -13,7 +13,7 @@
 	follow = keyboard
 	# these should be in sync with dwm gaps
 	origin = top-right
-	offset = 10x30
+	offset = 10x10
 	width = 300
 	height = 64
 	indicate_hidden = yes
@@ -67,7 +67,7 @@
 	title = Dunst
 	class = Dunst
 	corner_radius = 10
-	icon_corner_radius = 10
+	icon_corner_radius = 5
 	#corner_radius = 0
 	force_xinerama = false
 [urgency_low]
@@ -79,7 +79,7 @@
 	#background = "#000000BF"
 	background = "#000000"
 	foreground = "#ebdbb2"
-	frame_color = "#000000"
+	frame_color = "#282828"
 	timeout = 5
 [urgency_critical]
 	#background = "#CC241D80"
