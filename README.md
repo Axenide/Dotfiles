@@ -105,7 +105,7 @@
 | `PREFIX + x`        | Kill pane                       |
 | `PREFIX + s`        | List sessions                   |
 | `PREFIX + w`        | List windows                    |
-| `PREFIX + ]`        | Yank mode (copy)                |
+| `PREFIX + [`        | Yank mode (copy)                |
 | `v`                 | Start selection                 |
 | `CTRL + v`          | Toggle rectangle/line selection |
 | `y`                 | Yank selection                  |
