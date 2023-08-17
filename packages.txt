@@ -128,6 +128,8 @@ transmission-gtk
 ttf-all-the-icons
 ttf-font-awesome
 ttf-jetbrains-mono-nerd
+ttf-iosevka
+ttf-iosevka-nerd
 ttf-terminus-nerd
 ufw
 unimatrix-git
