@@ -74,10 +74,10 @@
 | `SUPER + ALT + F`                            | Maximize                        |
 | `SUPER + Y`                                  | Pin window                      |
 | `SUPER + H`                                  | Center window                   |
-| `SUPER + Arrows`                             | Move window focus               |
-| `SUPER + SHIFT + Arrows`                     | Move tiled window               |
-| `SUPER + CONTROL + Arrows`                   | Resize window                   |
-| `SUPER + ALT + Arrows`                       | Move floating window            |
+| `SUPER + H,J,K,L`                            | Move window focus               |
+| `SUPER + SHIFT + H,J,K,L`                    | Move tiled window               |
+| `SUPER + CONTROL + H,J,K,L`                  | Resize window                   |
+| `SUPER + ALT + H,J,K,L`                      | Move floating window            |
 | `SUPER + [1-9][0]`                           | Change workspace [1-10]         |
 | `SUPER + SHIFT + [1-9][0]`                   | Move window to workspace [1-10] |
 | `SUPER + Z`                                  | Go to previous workspace        |
