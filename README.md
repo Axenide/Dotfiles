@@ -1,7 +1,8 @@
-# ✨ Dotfiles
-![](https://github.com/Axenide/Dotfiles/assets/66109459/bee2f254-2ed9-4d78-9c33-85a34fbce07e)
-## 💥 Rofi
+<h1 align="center">✨ Dotfiles</h1>
 
+![](https://github.com/Axenide/Dotfiles/assets/66109459/bee2f254-2ed9-4d78-9c33-85a34fbce07e)
+
+## 💥 Rofi
 <b>
 <details>
   <summary>🚀 App Launcher</summary>
@@ -102,7 +103,7 @@
 <details>
 <summary><b>Tmux</b></summary>
 
-*PREFIX is set to `CTRL + Space`.*
+***PREFIX** is set to `CTRL + Space`.*
 | Keys                | Action                          |
 |--------------------:|:--------------------------------|
 | `PREFIX + c`        | Create window                   |
