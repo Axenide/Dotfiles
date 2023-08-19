@@ -29,7 +29,6 @@
 | `SUPER + SHIFT + E`                          | Floating file explorer          |
 | `SUPER + W`                                  | Firefox                         |
 | `SUPER + SHIFT + W`                          | Private Firefox                 |
-| `SUPER + L`                                  | Lock                            |
 | `SUPER + R`                                  | App Launcher                    |
 | `SUPER + Escape`                             | Powermenu                       |
 | `SUPER + .`                                  | Emojis                          |
