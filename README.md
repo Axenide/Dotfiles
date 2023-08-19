@@ -1,8 +1,7 @@
 <center>
 
 # ✨ Dotfiles
-
-![](https://github.com/Axenide/Dotfiles/assets/66109459/065b8c44-973f-4c43-be58-6b389d0a05c0)
+![](https://github.com/Axenide/Dotfiles/assets/66109459/bee2f254-2ed9-4d78-9c33-85a34fbce07e)
 
 ## 🔥 Rofi
 
