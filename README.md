@@ -2,7 +2,7 @@
 ![](https://github.com/Axenide/Dotfiles/assets/66109459/bee2f254-2ed9-4d78-9c33-85a34fbce07e)
 ## 🔥 Rofi
 
-<h5>
+<b>
 <details>
   <summary>🚀 App Launcher</summary>
   <img src="https://github.com/Axenide/Dotfiles/assets/66109459/21526780-7475-4602-879c-a41068a9ba97">
@@ -37,12 +37,12 @@
   <summary>📝 Notes</summary>
   <img src="https://github.com/Axenide/Dotfiles/assets/66109459/3d0b78aa-9f5a-416e-b3fe-f65ca28c9dca">
 </details>
-</h5>
+</b>
 
 ## ⌨️ Keybindings
 
 <details>
-<summary><h4>Hyprland</h4></summary>
+<summary><b>Hyprland</b></summary>
 
 | Keys                                         | Action                          |
 |---------------------------------------------:|:--------------------------------|
@@ -74,7 +74,7 @@
 </details>
 
 <details>
-<summary><h4>Programs</h4></summary>
+<summary><b>Programs</b></summary>
 
 | Keys                                         | Action                          |
 |---------------------------------------------:|:--------------------------------|
@@ -100,7 +100,7 @@
 </details>
 
 <details>
-<summary><h4>Tmux</h4></summary>
+<summary><b>Tmux</b></summary>
 
 *PREFIX is set to `CTRL + Space`.*
 | Keys                | Action                          |
