@@ -1,6 +1,6 @@
 # ✨ Dotfiles
 ![](https://github.com/Axenide/Dotfiles/assets/66109459/bee2f254-2ed9-4d78-9c33-85a34fbce07e)
-## 🔥 Rofi
+## 💥 Rofi
 
 <b>
 <details>
