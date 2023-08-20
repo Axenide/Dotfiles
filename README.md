@@ -1,7 +1,6 @@
 <h1 align="center">✨ Dotfiles</h1>
 
-![](https://github.com/Axenide/Dotfiles/assets/66109459/6ada06b9-2b2c-4b49-8ea8-8b3ab582c2fc)
-
+![](https://github.com/Axenide/Dotfiles/assets/66109459/aa4ad1d5-5b29-4ef6-8ca8-4dbb2c58cef8)
 <details>
 <summary>
   
