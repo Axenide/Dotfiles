@@ -1,6 +1,19 @@
 <h1 align="center">✨ Dotfiles</h1>
 
+![](https://github.com/Axenide/Dotfiles/assets/66109459/6ada06b9-2b2c-4b49-8ea8-8b3ab582c2fc)
+
+<details>
+<summary>
+  
+## 📸 Screenshots
+</summary>
+
+![](https://github.com/Axenide/Dotfiles/assets/66109459/c73f469e-ab9f-4a58-a47e-b0e5b1531770)
 ![](https://github.com/Axenide/Dotfiles/assets/66109459/bee2f254-2ed9-4d78-9c33-85a34fbce07e)
+![](https://github.com/Axenide/Dotfiles/assets/66109459/da49aa49-cc11-4e9e-8a16-e8f28f6c43f5)
+![](https://github.com/Axenide/Dotfiles/assets/66109459/d19cc059-0d2e-4b7a-baef-07a6a418aa7d)
+![](https://github.com/Axenide/Dotfiles/assets/66109459/d70dd5d4-d1a5-473e-a2b2-189635418b7d)
+</details>
 
 ## 💥 Rofi
 <b>
