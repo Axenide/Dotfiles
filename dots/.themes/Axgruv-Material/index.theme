@@ -1,0 +1,6 @@
+[X-GNOME-Metatheme]
+Name=Axgruv-Material
+Type=X-GNOME-Metatheme
+Comment=Axenide's Adwaita Amoled Gruvbox Material Remix
+Encoding=UTF-8
+GtkTheme=Axgruv-Material

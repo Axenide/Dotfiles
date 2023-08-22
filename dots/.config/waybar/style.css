@@ -6,7 +6,7 @@
 /*                                                               /____/                     */
 /* https://github.com/Axenide/Dotfiles */
 
-@import "gruvbox.css";
+@import "gruvbox-material.css";
 
 * {
     border: none;
