@@ -72,20 +72,20 @@
 	force_xinerama = false
 [urgency_low]
 	background = "#00000080"
-	foreground = "#ebdbb2"
+	foreground = "#E0CDA5"
 	frame_color= "#00000080"
 	timeout = 5
 [urgency_normal]
 	#background = "#000000BF"
 	background = "#000000"
-	foreground = "#ebdbb2"
-	frame_color = "#282828"
+	foreground = "#E0CDA5"
+	frame_color = "#47423E"
 	timeout = 5
 [urgency_critical]
 	#background = "#CC241D80"
 	background = "#000000"
-	foreground = "#ebdbb2"
-	frame_color= "#CC241D"
+	foreground = "#E0CDA5"
+	frame_color= "#F3594B"
 	timeout = 0
 
 # Scripting
