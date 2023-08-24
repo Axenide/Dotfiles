@@ -206,7 +206,7 @@ window#waybar {
   font-size: 16px;
   /* Add a shadow to the bakground */
   /* box-shadow: 0px 1px 1px @white; */
-  border: 1px solid @black;
+  border: solid 1px @black;
   box-shadow: 0px 0px 3px rgba(0,0,0,1);
 }
 
@@ -252,7 +252,7 @@ window#waybar {
     margin-right: 5px;
     padding: 0px 10px 0px 10px;
     font-weight: bold;
-    border: 1px solid @black;
+    border: solid 1px @black;
     box-shadow: 0px 0px 3px rgba(0,0,0,1);
 }
 

@@ -19,7 +19,7 @@
     "modules-right": ["tray", "custom/hyprpicker", "bluetooth", "network", "pulseaudio", "custom/notifications", "backlight", "battery", "clock"],
     // Modules configuration
 	"clock": {
-		"format": "󱑂 {:%H:%M:%S}",
+		"format": "󱑂 {:%H:%M:%OS}",
     "interval": 1,
 		"tooltip": "false",
 //        	"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
