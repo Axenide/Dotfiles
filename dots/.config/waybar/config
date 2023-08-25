@@ -137,7 +137,7 @@
 
   "custom/notifications": {
     "format": "󰂚",
-    "format-alt": "󰂛",
+//    "format-alt": "󰂛",
     "on-click-right": "swaync-client -d",
     "on-click": "swaync-client -t",
     "on-click-middle": "swaync-client -C",
