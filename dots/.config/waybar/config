@@ -138,9 +138,9 @@
   "custom/notifications": {
     "format": "󰂚",
     "format-alt": "󰂛",
-    "on-click": "dunstctl set-paused toggle",
-    "on-click-right": "dunstctl history-pop",
-    "on-click-middle": "dunstctl close-all"
+    "on-click-right": "swaync-client -d",
+    "on-click": "swaync-client -t",
+    "on-click-middle": "swaync-client -C",
   },
 
 	"tray": {

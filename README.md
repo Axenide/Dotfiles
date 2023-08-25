@@ -1,19 +1,27 @@
 <h1 align="center">✨ Dotfiles</h1>
 
-![](https://github.com/Axenide/Dotfiles/assets/66109459/aa4ad1d5-5b29-4ef6-8ca8-4dbb2c58cef8)
-<details>
-<summary>
-  
-## 📸 Screenshots
-</summary>
+<p align="center">
+    <i>These are my configuration files also known as <b>dotfiles</b>.
+<img src="https://github.com/Axenide/Dotfiles/assets/66109459/9d30d4da-9e68-4b48-905b-0c43fa3f49a4">
+        <sup>
+            This setup is specific for <a href="https://github.com/hyprwm/Hyprland">Hyprland</a>. Dont install it if you don't know what you're doing.
+        </sup></i>
+</p>
 
-![](https://github.com/Axenide/Dotfiles/assets/66109459/c73f469e-ab9f-4a58-a47e-b0e5b1531770)
-![](https://github.com/Axenide/Dotfiles/assets/66109459/bee2f254-2ed9-4d78-9c33-85a34fbce07e)
-![](https://github.com/Axenide/Dotfiles/assets/66109459/da49aa49-cc11-4e9e-8a16-e8f28f6c43f5)
-![](https://github.com/Axenide/Dotfiles/assets/66109459/d19cc059-0d2e-4b7a-baef-07a6a418aa7d)
-![](https://github.com/Axenide/Dotfiles/assets/66109459/d70dd5d4-d1a5-473e-a2b2-189635418b7d)
+<details>
+<summary><i>
+📸 Screenshots
+</i></summary>
+<sup>Tomorrow. I need to sleep. uwu</sup>
 </details>
 
+## Installation
+```bash
+git clone --recurse-submodules https://github.com/Axenide/Dotfiles
+cd Dotfiles
+stow dots
+```
+**Note:** *This won't install the needed packages. That's a WIP.*
 ## 💥 Rofi
 <b>
 <details>
