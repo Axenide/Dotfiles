@@ -50,6 +50,7 @@
     margin: 10px;
     padding: 0;
     border: 2px solid @noti-border-color;
+    background: @noti-bg-darker
 }
 
 .notification-content {
