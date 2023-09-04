@@ -2,7 +2,7 @@
 
 <p align="center">
     <i>These are my configuration files also known as <b>dotfiles</b>.
-<img src="https://github.com/Axenide/Dotfiles/assets/66109459/9d30d4da-9e68-4b48-905b-0c43fa3f49a4">
+<img src="https://github.com/Axenide/Dotfiles/assets/66109459/5b58549b-96b2-4fe1-9b6e-f81124f2c071">
         <sup>
             This setup is specific for <a href="https://github.com/hyprwm/Hyprland">Hyprland</a>. Dont install it if you don't know what you're doing.
         </sup></i>
@@ -12,7 +12,9 @@
 <summary><i>
 📸 Screenshots
 </i></summary>
-<sup>Tomorrow. I need to sleep. uwu</sup>
+<img src="https://github.com/Axenide/Dotfiles/assets/66109459/fd905fd4-a7ad-4901-974d-06c75f08fbc1">
+<img src="https://github.com/Axenide/Dotfiles/assets/66109459/2fca8641-9627-44e9-ad28-a9f40c8f29bb">
+<img src="https://github.com/Axenide/Dotfiles/assets/66109459/939b8c8f-3290-4a9f-b44b-fb928cec6851">
 </details>
 
 ## Installation
@@ -23,47 +25,58 @@ stow dots
 ```
 **Note:** *This won't install the needed packages. That's a WIP.*
 ## 💥 Rofi
-<b>
 <details>
   <summary>🚀 App Launcher</summary>
-  <img src="https://github.com/Axenide/Dotfiles/assets/66109459/21526780-7475-4602-879c-a41068a9ba97">
+    <br>
+  <img src="https://github.com/Axenide/Dotfiles/assets/66109459/e2168058-8aa7-4e4c-a074-ce03e3a90855">
 </details>
 
 <details>
   <summary>⚡ Power Menu</summary>
-  <img src="https://github.com/Axenide/Dotfiles/assets/66109459/686ca869-9db2-46ce-88de-a241fd084ac9">
+    <br>
+  <img src="https://github.com/Axenide/Dotfiles/assets/66109459/8c1348c7-b152-47b4-b6ce-f38652119071">
 </details>
 
 <details>
   <summary>😎 Emojis</summary>
-  <img src="https://github.com/Axenide/Dotfiles/assets/66109459/829217a1-451d-4c33-b051-f7714b100245">
+    <br>
+  <img src="https://github.com/Axenide/Dotfiles/assets/66109459/ef2928ca-266e-4520-a844-f058a3c2bbdd">
 </details>
 
 <details>
   <summary>🎨 Wallpaper Changer</summary>
-  <img src="https://github.com/Axenide/Dotfiles/assets/66109459/85ac16a4-8ec8-4f59-a197-49e2c3ea91d8">
+    <br>
+  <img src="https://github.com/Axenide/Dotfiles/assets/66109459/86cfa6c3-a904-4617-9462-d2360fffcda6">
 </details>
 
 <details>
   <summary>💻 Tmux Session Manager</summary>
-  <img src="https://github.com/Axenide/Dotfiles/assets/66109459/df531fce-184a-4b80-82d0-2e7da3e7f0dc">
+    <br>
+  <img src="https://github.com/Axenide/Dotfiles/assets/66109459/af46b79f-f9ee-42c7-990f-d616f8999b49">
 </details>
 
 <details>
   <summary>🔊 Sound Manager</summary>
-  <img src="https://github.com/Axenide/Dotfiles/assets/66109459/3cbbdba4-8036-463c-8553-dfc3b1ffab69">
+    <br>
+  <img src="https://github.com/Axenide/Dotfiles/assets/66109459/09dcebb7-9629-4547-9248-ae1b2bc618e3">
 </details>
 
 <details>
   <summary>📝 Notes</summary>
-  <img src="https://github.com/Axenide/Dotfiles/assets/66109459/3d0b78aa-9f5a-416e-b3fe-f65ca28c9dca">
+    <br>
+  <img src="https://github.com/Axenide/Dotfiles/assets/66109459/4ae56d8c-d3ed-4ec1-a7ee-cbe7367cf084">
 </details>
-</b>
+
+<details>
+  <summary>🗒️ To-Do</summary>
+    <br>
+  <img src="https://github.com/Axenide/Dotfiles/assets/66109459/50e68004-7844-4c43-a799-a7d051daee82">
+</details>
 
 ## ⌨️ Keybindings
 
 <details>
-<summary><b>Hyprland</b></summary>
+<summary>Hyprland</summary>
 
 | Keys                                         | Action                          |
 |---------------------------------------------:|:--------------------------------|
@@ -95,7 +108,7 @@ stow dots
 </details>
 
 <details>
-<summary><b>Programs</b></summary>
+<summary>Programs</summary>
 
 | Keys                                         | Action                          |
 |---------------------------------------------:|:--------------------------------|
@@ -123,9 +136,10 @@ stow dots
 </details>
 
 <details>
-<summary><b>Tmux</b></summary>
+<summary>Tmux</summary>
 
-***PREFIX** is set to `CTRL + Space`.*
+<sub><b>PREFIX</b> is set to <code>CTRL + Space</code></sub>
+
 | Keys                | Action                          |
 |--------------------:|:--------------------------------|
 | `PREFIX + c`        | Create window                   |
