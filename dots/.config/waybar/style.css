@@ -1,9 +1,14 @@
-/*     ___                    _     __    _          _       __            __               */
-/*    /   |  _  _____  ____  (_)___/ /__ ( )_____   | |     / /___ ___  __/ /_  ____ ______ */
-/*   / /| | | |/_/ _ \/ __ \/ / __  / _ \|// ___/   | | /| / / __ `/ / / / __ \/ __ `/ ___/ */
-/*  / ___ |_>  </  __/ / / / / /_/ /  __/ (__  )    | |/ |/ / /_/ / /_/ / /_/ / /_/ / /     */
-/* /_/  |_/_/|_|\___/_/ /_/_/\__,_/\___/ /____/     |__/|__/\__,_/\__, /_.___/\__,_/_/      */
-/*                                                               /____/                     */
+/*     ___                    _     __    _       */
+/*    /   |  _  _____  ____  (_)___/ /__ ( )_____ */
+/*   / /| | | |/_/ _ \/ __ \/ / __  / _ \|// ___/ */
+/*  / ___ |_>  </  __/ / / / / /_/ /  __/ (__  )  */
+/* /_/  |_/_/|_|\___/_/ /_/_/\__,_/\___/ /____/   */
+/* | |     / /___ ___  __/ /_  ____ ______        */
+/* | | /| / / __ `/ / / / __ \/ __ `/ ___/        */
+/* | |/ |/ / /_/ / /_/ / /_/ / /_/ / /            */
+/* |__/|__/\__,_/\__, /_.___/\__,_/_/             */
+/*              /____/                            */
+
 /* https://github.com/Axenide/Dotfiles */
 
 @import "gruvbox-quantum.css";
@@ -11,21 +16,21 @@
 * {
     border: none;
     border-radius: 0px;
-    font-family: Iosevka, Noto Sans Mono;
+    font-family: Iosevka;
     font-size: 14px;
     font-style: normal;
     min-height: 0;
 }
 
 window#waybar {
-    background: rgba(0, 0, 0, 0);
+    background: transparent;
     border-bottom: 0px solid #000000;
     color: @white
 }
 
 #workspaces {
 	background: transparent;
-	margin: 5px 5px 5px 5px;
+	margin: 5px -5px 5px 5px;
   padding: 0px 5px 0px 5px;
 	border-radius: 16px;
   border: solid 0px @white;
@@ -36,9 +41,8 @@ window#waybar {
     padding: 0px 5px;
     border-radius: 16px;
     color: #928374;
-    /* color: black; */
     background-color: transparent;
-    text-shadow: 0px 0px 3px rgba(0,0,0,1);
+    text-shadow: 0px 0px 3px black;
 }
 
 #workspaces button.active {
@@ -50,12 +54,13 @@ window#waybar {
 	color: @brgreen;
 }
 
-#custom-date, #clock, #battery, #pulseaudio, #network, #custom-randwall, #custom-launcher {
+#battery, #pulseaudio, #network, #custom-launcher {
 	background: transparent;
-	padding: 5px 5px 5px 5px;
-	margin: 5px 5px 5px 5px;
+	padding: 5px;
+	margin: 5px;
   border-radius: 8px;
   border: solid 0px @white;
+  text-shadow: 0px 0px 3px rgba(0,0,0,1);
 }
 
 #custom-date {
@@ -78,7 +83,6 @@ window#waybar {
     margin: 5px 5px 5px 5px;
     border-radius: 16px;
     padding: 0px 5px;
-    /*border-right: solid 2px #1D1D1D;*/
     border: solid 2px @black;
     box-shadow: 0px 0px 3px rgba(0,0,0,1);
 }
@@ -94,7 +98,6 @@ window#waybar {
     margin-top: 0px;
     margin-bottom: 5px;
     font-weight: bold;
-    /*border-left: solid 2px #1D1D1D;*/
     border-left: solid 2px @black;
     border-bottom: solid 2px @black;
     box-shadow: 0px 0px 3px rgba(0,0,0,1);
@@ -110,26 +113,19 @@ window#waybar {
 }
 
 #battery.warning:not(.charging) {
-    background-color: #f7768e;
+    background-color: transparent;
     color: #24283b;
     border-radius: 5px 5px 5px 5px;
 }
 
 #backlight {
-    background-color: #24283b;
+    background-color: transparent;
     color: #db4b4b;
     border-radius: 0px 0px 0px 0px;
     margin: 5px;
     margin-left: 0px;
     margin-right: 0px;
     padding: 0px 0px;
-}
-
-#network {
-    color: @white;
-    border-radius: 8px;
-    margin-right: 5px;
-    text-shadow: 0px 0px 3px rgba(0,0,0,1);
 }
 
 #bluetooth {
@@ -164,31 +160,16 @@ window#waybar {
     margin-left: 0px;
 }
 
-#custom-randwall {
-    color: @white;
-    border-radius: 8px;
-    margin-right: 0px;
-}
-
 #custom-launcher {
     color: @red;
     background-color: #000000;
     border-radius: 0px 0px 20px 0px;
     margin: 0px 0px 5px 0px;
-    padding: 0 20px 0 13px;
-    /*border-right: solid 2px #1D1D1D;*/
+    padding: 0 17px 0 10px;
     font-size: 18px;
     border-right: solid 2px @black;
     border-bottom: solid 2px @black;
     box-shadow: 0px 0px 3px rgba(0,0,0,1);
-}
-
-#custom-launcher button:hover {
-    background-color: #FB4934;
-    color: transparent;
-    border-radius: 8px;
-    margin-right: -5px;
-    margin-left: 10px;
 }
 
 #custom-playerctl {
@@ -196,16 +177,10 @@ window#waybar {
 	padding-left: 15px;
   padding-right: 14px;
 	border-radius: 16px;
-  /*border-left: solid 2px #1D1D1D;*/
-  /*border-right: solid 2px #1D1D1D;*/
-  margin-top: 5px;
-  margin-bottom: 5px;
-  margin-left: 0px;
+  margin: 5px;
   font-weight: normal;
   font-style: normal;
   font-size: 16px;
-  /* Add a shadow to the bakground */
-  /* box-shadow: 0px 1px 1px @white; */
   border: solid 2px @black;
   box-shadow: 0px 0px 3px rgba(0,0,0,1);
 }
@@ -215,41 +190,16 @@ window#waybar {
     padding-left: 10px;
     padding-right: 15px;
     border-radius: 16px;
-    /*border-left: solid 2px #1D1D1D;*/
-    /*border-right: solid 2px #1D1D1D;*/
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin: 5px 5px 5px -5px;
     font-weight: bold;
     font-style: normal;
     text-shadow: 0px 0px 3px rgba(0,0,0,1);
 }
 
-#window {
-    background: #000000;
-    padding-left: 15px;
-    padding-right: 15px;
-    border-radius: 16px;
-    /*border-left: solid 2px #1D1D1D;*/
-    /*border-right: solid 2px #1D1D1D;*/
-    margin-top: 5px;
-    margin-bottom: 5px;
-    font-weight: normal;
-    font-style: normal;
-}
-
-#custom-wf-recorder {
-    padding: 0 20px;
-    color: @red;
-    background-color: #000000;
-}
-
 #cpu, #memory, #disk {
     background-color: #000000;
-    /*color: #8EC07C;*/
     border-radius: 16px;
     margin: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
     padding: 0px 10px 0px 10px;
     font-weight: bold;
     border: solid 2px @black;
@@ -258,12 +208,10 @@ window#waybar {
 
 #custom-hyprpicker {
     background-color: transparent;
-    /*color: #8EC07C;*/
     border-radius: 16px;
     margin: 5px;
     margin-left: 10px;
     margin-right: 5px;
-    /*padding: 0px 11px 0px 9px;*/
     font-weight: bold;
     text-shadow: 0px 0px 3px rgba(0,0,0,1);
 }

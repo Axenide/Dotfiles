@@ -1,0 +1,1 @@
+complete --command pls --no-files --arguments "(env _PLS_COMPLETE=complete_fish _TYPER_COMPLETE_FISH_ACTION=get-args _TYPER_COMPLETE_ARGS=(commandline -cp) pls)" --condition "env _PLS_COMPLETE=complete_fish _TYPER_COMPLETE_FISH_ACTION=is-args _TYPER_COMPLETE_ARGS=(commandline -cp) pls"

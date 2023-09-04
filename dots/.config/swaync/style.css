@@ -1,3 +1,17 @@
+/*     ___                    _     __    _       */
+/*    /   |  _  _____  ____  (_)___/ /__ ( )_____ */
+/*   / /| | | |/_/ _ \/ __ \/ / __  / _ \|// ___/ */
+/*  / ___ |_>  </  __/ / / / / /_/ /  __/ (__  )  */
+/* /_/  |_/_/|_|\___/_/ /_/_/\__,_/\___/ /____/   */
+/*    _____                     _   ________      */
+/*   / ___/      ______ ___  __/ | / / ____/      */
+/*   \__ \ | /| / / __ `/ / / /  |/ / /           */
+/*  ___/ / |/ |/ / /_/ / /_/ / /|  / /___         */
+/* /____/|__/|__/\__,_/\__, /_/ |_/\____/         */
+/*                    /____/                      */
+
+/* https://github.com/Axenide/Dotfiles */
+
 @define-color cc-bg #000000;
 @define-color noti-border-color #47423E;
 @define-color noti-bg #000000;
@@ -38,7 +52,9 @@
 .control-center .notification-row:focus,
 .control-center .notification-row:hover {
     opacity: 1;
-    background: @noti-bg-darker
+    background: alpha(@brred, 0.25);
+    border-radius: 10px;
+    margin: 5px 20px 5px 20px;
 }
 
 .notification-row {
@@ -185,9 +201,11 @@
 }
 
 .control-center {
-    background: @cc-bg;
+    background: alpha(@cc-bg, 0.9);
     border: 2px solid @noti-border-color;
     border-radius: 10px;
+    margin: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 1);
 }
 
 .control-center-list {
@@ -208,8 +226,10 @@
 
 .widget-title {
     color: @text-color;
-    margin: 10px;
-    font-size: 16px
+    margin: 20px 20px 5px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    font-style: italic;
 }
 
 .widget-title>button {
@@ -228,16 +248,17 @@
 
 .widget-dnd {
     color: @text-color;
-    margin: 10px;
+    margin: 5px 20px 5px 20px;
     font-size: 1.0rem
 }
 
 .widget-dnd>switch {
     font-size: initial;
-    border-radius: 10px;
+    border-radius: 999px;
     background: @black;
     /* border: 2px solid @bgblack; */
-    box-shadow: none
+    box-shadow: none;
+    padding: 1px;
 }
 
 .widget-dnd>switch:checked {
@@ -246,7 +267,7 @@
 
 .widget-dnd>switch slider {
     background: @noti-bg-hover;
-    border-radius: 5px
+    border-radius: 999px
 }
 
 .widget-label {

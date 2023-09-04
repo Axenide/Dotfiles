@@ -136,11 +136,24 @@
 },
 
   "custom/notifications": {
-    "format": "󰂚",
-//    "format-alt": "󰂛",
-    "on-click-right": "swaync-client -d",
-    "on-click": "swaync-client -t",
-    "on-click-middle": "swaync-client -C",
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "󰂚<span foreground='#DB4740'><sup></sup></span>",
+      "none": "󰂚",
+      "dnd-notification": "󰂛<span foreground='#DB4740'><sup></sup></span>",
+      "dnd-none": "󰂛",
+      "inhibited-notification": "󰂚<span foreground='#DB4740'><sup></sup></span>",
+      "inhibited-none": "󰂚",
+      "dnd-inhibited-notification": "󰂛<span foreground='#DB4740'><sup></sup></span>",
+      "dnd-inhibited-none": "󰂛"
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
   },
 
 	"tray": {
@@ -172,7 +185,7 @@
     "on-click-right": "nemo ~/Wallpapers"
   },
   "custom/launcher": {
-//    "format": "󰣇 󰈸 󰹻 󰢚 󰚌 ",
+//    "format": "󰣇",
     "format": "󰹻",
 //    "on-click": "$(tofi-drun --prompt-text 'Run: ')",
     "on-click": "bash $HOME/.config/rofi/launchers/type-1/launcher.sh",

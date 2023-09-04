@@ -28,9 +28,9 @@
     ],
     "widget-config": {
         "title": {
-            "text": "Notifications",
+            "text": "󰂚  Notifications",
             "clear-all-button": true,
-            "button-text": "Clear All"
+            "button-text": "󰎟 "
         },
         "dnd": {
             "text": "Do Not Disturb"

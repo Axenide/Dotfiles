@@ -113,10 +113,12 @@ stow dots
 | `SUPER + ,`                                  | Wallpaper Selector              |
 | `SUPER + V`                                  | Sound Manager                   |
 | `SUPER + N`                                  | Notes                           |
+| `SUPER + Q`                                  | To-Do                           |
 | `Print`                                      | Save and copy screenshot        |
 | `SHIFT + Print`                              | Copy screenshot                 |
 | `SUPER + S`                                  | Save and copy area screenshot   |
 | `SUPER + SHIFT + S`                          | Copy area screenshot            |
+| `SUPER + A`                                  | Toggle notification center      |
 
 </details>
 
