@@ -80,30 +80,30 @@ stow dots
 
 | Keys                                         | Action                          |
 |---------------------------------------------:|:--------------------------------|
-| `SUPER + C`                                  | Close window                    |
-| `SUPER + SHIFT + Escape`                     | Exit Hyprland                   |
-| `SUPER + B`                                  | Hide Waybar                     |
-| `SUPER + ALT + B`                            | Restart Waybar                  |
-| `SUPER + Space`                              | Toggle tiled/floating           |
-| `SUPER + P`                                  | Toggle pseudo-tiling            |
-| `SUPER + D`                                  | Toggle split                    |
-| `SUPER + F`                                  | Fullscreen                      |
-| `SUPER + SHIFT + F`                          | Fake Fullscreen                 |
-| `SUPER + ALT + F`                            | Maximize                        |
-| `SUPER + Y`                                  | Pin window                      |
-| `SUPER + G`                                  | Center window                   |
-| `SUPER + Arrows or H,J,K,L`                  | Move window focus               |
-| `SUPER + SHIFT + Arrows or H,J,K,L`          | Move tiled window               |
-| `SUPER + CONTROL + Arrows or H,J,K,L`        | Resize window                   |
-| `SUPER + ALT + Arrows or H,J,K,L`            | Move floating window            |
-| `SUPER + [1-9][0]`                           | Change workspace [1-10]         |
-| `SUPER + SHIFT + [1-9][0]`                   | Move window to workspace [1-10] |
-| `SUPER + Z`                                  | Go to previous workspace        |
-| `SUPER + SHIFT + Z`<br>`SUPER + Scroll Down` | Go to previous active workspace |
-| `SUPER + X`                                  | Go to next workspace            |
-| `SUPER + SHIFT + X`<br>`SUPER + Scroll Up`   | Go to next active workspace     |
-| `SUPER + Left Click`                         | Drag window                     |
-| `SUPER + Right Click`                        | Drag resize window              |
+| <kbd>SUPER + C</kbd>                                  | Close window                    |
+| <kbd>SUPER + SHIFT + Escape</kbd>                     | Exit Hyprland                   |
+| <kbd>SUPER + B</kbd>                                  | Hide Waybar                     |
+| <kbd>SUPER + ALT + B</kbd>                            | Restart Waybar                  |
+| <kbd>SUPER + Space</kbd>                              | Toggle tiled/floating           |
+| <kbd>SUPER + P</kbd>                                  | Toggle pseudo-tiling            |
+| <kbd>SUPER + D</kbd>                                  | Toggle split                    |
+| <kbd>SUPER + F</kbd>                                  | Fullscreen                      |
+| <kbd>SUPER + SHIFT + F</kbd>                          | Fake Fullscreen                 |
+| <kbd>SUPER + ALT + F</kbd>                            | Maximize                        |
+| <kbd>SUPER + Y</kbd>                                  | Pin window                      |
+| <kbd>SUPER + G</kbd>                                  | Center window                   |
+| <kbd>SUPER + Arrows or H,J,K,L</kbd>                  | Move window focus               |
+| <kbd>SUPER + SHIFT + Arrows or H,J,K,L</kbd>          | Move tiled window               |
+| <kbd>SUPER + CONTROL + Arrows or H,J,K,L</kbd>        | Resize window                   |
+| <kbd>SUPER + ALT + Arrows or H,J,K,L</kbd>            | Move floating window            |
+| <kbd>SUPER + [1-9][0]</kbd>                           | Change workspace [1-10]         |
+| <kbd>SUPER + SHIFT + [1-9][0]</kbd>                   | Move window to workspace [1-10] |
+| <kbd>SUPER + Z</kbd>                                  | Go to previous workspace        |
+| <kbd>SUPER + SHIFT + Z</kbd><br><kbd>SUPER + Scroll Down</kbd> | Go to previous active workspace |
+| <kbd>SUPER + X</kbd>                                  | Go to next workspace            |
+| <kbd>SUPER + SHIFT + X</kbd><br><kbd>SUPER + Scroll Up</kbd>   | Go to next active workspace     |
+| <kbd>SUPER + Left Click</kbd>                         | Drag window                     |
+| <kbd>SUPER + Right Click</kbd>                        | Drag resize window              |
 
 </details>
 
@@ -112,52 +112,52 @@ stow dots
 
 | Keys                                         | Action                          |
 |---------------------------------------------:|:--------------------------------|
-| `SUPER + RETURN`                             | Open Kitty terminal             |
-| `SUPER + SHIFT + RETURN`                     | Open floating Kitty terminal    |
-| `SUPER + ALT + RETURN`                       | Open Kitty with slurp           |
-| `SUPER + T`                                  | Tmux Session Manager            |
-| `SUPER + E`                                  | File explorer                   |
-| `SUPER + SHIFT + E`                          | Floating file explorer          |
-| `SUPER + W`                                  | Firefox                         |
-| `SUPER + SHIFT + W`                          | Private Firefox                 |
-| `SUPER + R`                                  | App Launcher                    |
-| `SUPER + Escape`                             | Powermenu                       |
-| `SUPER + .`                                  | Emojis                          |
-| `SUPER + ,`                                  | Wallpaper Selector              |
-| `SUPER + V`                                  | Sound Manager                   |
-| `SUPER + N`                                  | Notes                           |
-| `SUPER + Q`                                  | To-Do                           |
-| `Print`                                      | Save and copy screenshot        |
-| `SHIFT + Print`                              | Copy screenshot                 |
-| `SUPER + S`                                  | Save and copy area screenshot   |
-| `SUPER + SHIFT + S`                          | Copy area screenshot            |
-| `SUPER + A`                                  | Toggle notification center      |
+| <kbd>SUPER + RETURN</kbd>                             | Open Kitty terminal             |
+| <kbd>SUPER + SHIFT + RETURN</kbd>                     | Open floating Kitty terminal    |
+| <kbd>SUPER + ALT + RETURN</kbd>                       | Open Kitty with slurp           |
+| <kbd>SUPER + T</kbd>                                  | Tmux Session Manager            |
+| <kbd>SUPER + E</kbd>                                  | File explorer                   |
+| <kbd>SUPER + SHIFT + E</kbd>                          | Floating file explorer          |
+| <kbd>SUPER + W</kbd>                                  | Firefox                         |
+| <kbd>SUPER + SHIFT + W</kbd>                          | Private Firefox                 |
+| <kbd>SUPER + R</kbd>                                  | App Launcher                    |
+| <kbd>SUPER + Escape</kbd>                             | Powermenu                       |
+| <kbd>SUPER + .</kbd>                                  | Emojis                          |
+| <kbd>SUPER + ,</kbd>                                  | Wallpaper Selector              |
+| <kbd>SUPER + V</kbd>                                  | Sound Manager                   |
+| <kbd>SUPER + N</kbd>                                  | Notes                           |
+| <kbd>SUPER + Q</kbd>                                  | To-Do                           |
+| <kbd>Print</kbd>                                      | Save and copy screenshot        |
+| <kbd>SHIFT + Print</kbd>                              | Copy screenshot                 |
+| <kbd>SUPER + S</kbd>                                  | Save and copy area screenshot   |
+| <kbd>SUPER + SHIFT + S</kbd>                          | Copy area screenshot            |
+| <kbd>SUPER + A</kbd>                                  | Toggle notification center      |
 
 </details>
 
 <details>
 <summary>Tmux</summary>
 
-<sub><b>PREFIX</b> is set to <code>CTRL + Space</code></sub>
+<sub><b>PREFIX</b> is set to <kbd>CTRL + Space</kbd></sub>
 
 | Keys                | Action                          |
 |--------------------:|:--------------------------------|
-| `PREFIX + c`        | Create window                   |
-| `SHIFT + ALT + H,L` | Navigate windows                |
-| `PREFIX + [1-9]`    | Change to window from 1 to 9    |
-| `PREFIX + &`        | Kill window                     |
-| `PREFIX + /`        | Vertical split                  |
-| `PREFIX + -`        | Horizontal split                |
-| `CTRL + H,J,K,L`    | Navigate panes                  |
-| `PREFIX + { or }`   | Swap pane position              |
-| `PREFIX + q`        | Go to pane pressing a number    |
-| `PREFIX + x`        | Kill pane                       |
-| `PREFIX + s`        | List sessions                   |
-| `PREFIX + w`        | List windows                    |
-| `PREFIX + [`        | Yank mode (copy)                |
-| `v`                 | Start selection                 |
-| `CTRL + v`          | Toggle rectangle/line selection |
-| `y`                 | Yank selection                  |
+| <kbd>PREFIX + c</kbd>        | Create window                   |
+| <kbd>SHIFT + ALT + H,L</kbd> | Navigate windows                |
+| <kbd>PREFIX + [1-9]</kbd>    | Change to window from 1 to 9    |
+| <kbd>PREFIX + &</kbd>        | Kill window                     |
+| <kbd>PREFIX + /</kbd>        | Vertical split                  |
+| <kbd>PREFIX + -</kbd>        | Horizontal split                |
+| <kbd>CTRL + H,J,K,L</kbd>    | Navigate panes                  |
+| <kbd>PREFIX + { or }</kbd>   | Swap pane position              |
+| <kbd>PREFIX + q</kbd>        | Go to pane pressing a number    |
+| <kbd>PREFIX + x</kbd>        | Kill pane                       |
+| <kbd>PREFIX + s</kbd>        | List sessions                   |
+| <kbd>PREFIX + w</kbd>        | List windows                    |
+| <kbd>PREFIX + [</kbd>        | Yank mode (copy)                |
+| <kbd>v</kbd>                 | Start selection                 |
+| <kbd>CTRL + v</kbd>          | Toggle rectangle/line selection |
+| <kbd>y</kbd>                 | Yank selection                  |
 
 </details>
 

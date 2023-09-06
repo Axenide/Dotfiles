@@ -1,10 +1,16 @@
-//       ___                    _     __    _          _       __            __              
-//      /   |  _  _____  ____  (_)___/ /__ ( )_____   | |     / /___ ___  __/ /_  ____ ______
-//     / /| | | |/_/ _ \/ __ \/ / __  / _ \|// ___/   | | /| / / __ `/ / / / __ \/ __ `/ ___/
-//    / ___ |_>  </  __/ / / / / /_/ /  __/ (__  )    | |/ |/ / /_/ / /_/ / /_/ / /_/ / /    
-//   /_/  |_/_/|_|\___/_/ /_/_/\__,_/\___/ /____/     |__/|__/\__,_/\__, /_.___/\__,_/_/     
-//                                                                 /____/                    
-//   https://github.com/Axenide/Dotfiles
+//     ___                    _     __    _     
+//    /   |  _  _____  ____  (_)___/ /__ ( )_____
+//   / /| | | |/_/ _ \/ __ \/ / __  / _ \|// ___/
+//  / ___ |_>  </  __/ / / / / /_/ /  __/ (__  )
+// /_/  |_/_/|_|\___/_/ /_/_/\__,_/\___/ /____/ 
+// | |     / /___ ___  __/ /_  ____ ______      
+// | | /| / / __ `/ / / / __ \/ __ `/ ___/      
+// | |/ |/ / /_/ / /_/ / /_/ / /_/ / /          
+// |__/|__/\__,_/\__, /_.___/\__,_/_/           
+//              /____/                          
+
+// https://github.com/Axenide/Dotfiles
+
 
 {
     "position": "top",
@@ -14,12 +20,12 @@
     "margin-bottom": -6,
     "margin-left": 0,
     "margin-right": 0,
-    "modules-left": ["custom/launcher", "wlr/workspaces", "custom/playerctl", "custom/playerlabel"],
+    "modules-left": ["custom/launcher", "hyprland/workspaces", "custom/playerctl", "custom/playerlabel"],
     "modules-center": ["cpu", "memory", "disk"],
     "modules-right": ["tray", "custom/hyprpicker", "bluetooth", "network", "pulseaudio", "custom/notifications", "backlight", "battery", "clock"],
     // Modules configuration
 	"clock": {
-		"format": "󱑂 {:%H:%M:%OS}",
+		"format": "󰅐 {:%H:%M:%OS}",
     "interval": 1,
 		"tooltip": "false",
 //        	"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
@@ -48,6 +54,30 @@
     "sort-by-number": true
     },
     },
+
+"hyprland/workspaces": {
+  "disable-scroll": false,
+  "on-scroll-up": "hyprctl dispatch workspace -1",
+  "on-scroll-down": "hyprctl dispatch workspace +1",
+	"format": "{icon}",
+	"format-icons": {
+//		"1": "一",
+//		"2": "二",
+//		"3": "三",
+//		"4": "四",
+//		"5": "五",
+//		"6": "六",
+//		"7": "七",
+//		"8": "八",
+//		"9": "九",
+//	"10": "〇",
+		"active": "",
+		"default": "󰧞"
+	},
+       "persistent_workspaces": {
+             "*": 0
+       }
+},
 
     "custom/playerctl": {
       "format": "{icon}",
