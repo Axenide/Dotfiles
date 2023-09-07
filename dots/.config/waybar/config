@@ -21,7 +21,7 @@
     "margin-left": 0,
     "margin-right": 0,
     "modules-left": ["custom/launcher", "hyprland/workspaces", "custom/playerctl", "custom/playerlabel"],
-    "modules-center": ["cpu", "memory", "disk"],
+    "modules-center": ["cpu", "memory", "custom/gpu-usage", "disk", "disk#2"],
     "modules-right": ["tray", "custom/hyprpicker", "bluetooth", "network", "pulseaudio", "custom/notifications", "backlight", "battery", "clock"],
     // Modules configuration
 	"clock": {
@@ -89,7 +89,7 @@
       "on-click-right": "playerctl next",
       "format-icons": {
         "Playing": "<span foreground='#B1B946'>󰒮 󰐌  󰒭</span>",
-        "Paused": "<span foreground='#504945'>󰒮 󰏥  󰒭</span>"
+        "Paused": "<span foreground='#47423E'>󰒮 󰏥  󰒭</span>"
       },
     },
 
@@ -125,22 +125,36 @@
   "memory": {
     "format": "󰍛 {}%",
     "format-alt": "󰍛 {used}/{total} GiB",
-    "interval": 5
+    "interval": 1
   },
 
   "cpu": {
     "format": "󰻠 {usage}%",
     "format-alt": "󰻠 {avg_frequency} GHz",
-    "interval": 5
+    "interval": 1
   },
 
   "disk": {
-    "format": "󰋊 {}%",
-    "format-alt": "󰋊 {used}/{total} GiB",
-    "interval": 5,
-    "path": "/mnt/Datos"
+    "format": "󰆼 {percentage_used}%",
+    "format-alt": "󰆼 {used}/{total} GiB",
+    "interval": 1,
+    "path": "/"
   },
-	
+
+  "disk#2": {
+    "format": "󰋊 {percentage_used}%",
+    "format-alt": "󰋊 {used}/{total} GiB",
+    "interval": 1,
+    "path": "/home/adriano"
+  },
+
+  "custom/gpu-usage": {
+    "exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits",
+    "format": "󰢮 {}%",
+    "return-type": "",
+    "interval": 1
+  },
+
 	"network": {
         	"format-wifi": "󰤨",
         	"format-ethernet": " {ifname}",
