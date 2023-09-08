@@ -39,19 +39,27 @@ window#waybar {
   font-weight: normal;
   font-style: normal;
 }
+
 #workspaces button {
     padding: 0px 5px;
     border-radius: 16px;
-    color: @brgray;
+    color: @white;
     background-color: transparent;
+    text-shadow: 0px 0px 3px @white;
+}
+
+#workspaces button.persistent {
+    color: @black;
+    border-radius: 16px;
+    font-weight: bold;
     text-shadow: 0px 0px 3px black;
 }
 
 #workspaces button.active {
-    color: @white;
+    color: @brgreen;
     border-radius: 16px;
     font-weight: bold;
-    text-shadow: 0px 0px 3px @white;
+    text-shadow: 0px 0px 3px @brgreen;
 }
 
 #workspaces button:hover {
