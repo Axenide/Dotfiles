@@ -24,7 +24,8 @@
     "widgets": [
         "title",
         "dnd",
-        "notifications"
+        "notifications",
+        "buttons-grid"
     ],
     "widget-config": {
         "title": {
@@ -52,40 +53,20 @@
         "buttons-grid": {
             "actions": [
                 {
-                    "label": "󰐥",
-                    "command": "systemctl poweroff"
+                    "label": "󰔏",
+                    "command": "hyprshade toggle redshift"
                 },
                 {
-                    "label": "󰜉",
-                    "command": "systemctl reboot"
+                    "label": "󰌵",
+                    "command": "hyprshade toggle dim"
                 },
                 {
-                    "label": "󰌾",
-                    "command": "swaylock"
+                    "label": "󰊠",
+                    "command": "hyprshade toggle grayscale"
                 },
                 {
-                    "label": "󰍃",
-                    "command": "swaymsg exit"
-                },
-                {
-                    "label": "󰏥",
-                    "command": "systemctl suspend"
-                },
-                {
-                    "label": "󰕾",
-                    "command": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
-                },
-                {
-                    "label": "󰍬",
-                    "command": "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
-                },
-                {
-                    "label": "󰖩",
-                    "command": "iwgtk"
-                },
-                {
-                    "label": "󰂯",
-                    "command": "blueman-manager"
+                    "label": "󰏘",
+                    "command": "hyprshade toggle vibrance"
                 },
                 {
                     "label": "",

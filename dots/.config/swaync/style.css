@@ -52,9 +52,9 @@
 .control-center .notification-row:focus,
 .control-center .notification-row:hover {
     opacity: 1;
-    background: alpha(@brred, 0.25);
-    border-radius: 10px;
-    margin: 5px 20px 5px 20px;
+    background: alpha(@red, 0.25);
+    border-radius: 0px;
+    margin: 0px;
 }
 
 .notification-row {
@@ -66,7 +66,7 @@
     margin: 10px;
     padding: 0;
     border: 2px solid @noti-border-color;
-    background: @noti-bg-darker
+    background: @noti-bg-darker;
 }
 
 .notification-content {
@@ -77,7 +77,7 @@
 
 .close-button {
     background: @noti-close-bg;
-    color: @brred;
+    color: @red;
     text-shadow: none;
     padding: 0;
     border-radius: 100%;
@@ -110,7 +110,8 @@
 .notification-default-action:hover,
 .notification-action:hover {
     -gtk-icon-effect: none;
-    background: @noti-bg-hover
+    background: @noti-bg-hover;
+    text-shadow: 0 0 3px @text-color;
 }
 
 .notification-default-action {
@@ -165,7 +166,7 @@
 }
 
 .inline-reply-button:hover {
-    background: @noti-bg-hover
+    background: @noti-bg-hover;
 }
 
 .body-image {
@@ -179,8 +180,8 @@
     font-weight: bold;
     font-style: italic;
     background: transparent;
-    color: @brred;
-    text-shadow: none
+    color: @red;
+    text-shadow: 0 0 3px @red;
 }
 
 .time {
@@ -225,25 +226,27 @@
 }
 
 .widget-title {
-    color: @text-color;
+    color: @red;
     margin: 20px 20px 5px 20px;
     font-size: 1rem;
     font-weight: bold;
     font-style: italic;
+    text-shadow: 0 0 3px @red;
 }
 
 .widget-title>button {
     font-size: initial;
-    color: @text-color;
+    color: @brgreen;
     text-shadow: none;
     background: @noti-bg;
     border: 2px solid @noti-border-color;
     box-shadow: none;
-    border-radius: 10px
+    border-radius: 10px;
 }
 
 .widget-title>button:hover {
-    background: @noti-bg-hover
+    background: @noti-bg-hover;
+    text-shadow: 0 0 3px @brgreen;
 }
 
 .widget-dnd {
@@ -318,7 +321,8 @@
 
 .widget-buttons-grid>flowbox>flowboxchild>button:hover {
     /* background: @noti-bg-hover; */
-    color: @noti-bg-hover
+    color: @white;
+    text-shadow: 0 0 3px @white;
 }
 
 .widget-menubar>box>.menu-button-bar>button {

@@ -20,8 +20,8 @@
     "margin-bottom": -6,
     "margin-left": 0,
     "margin-right": 0,
-    "modules-left": ["custom/launcher", "hyprland/workspaces", "custom/playerctl", "custom/playerlabel"],
-    "modules-center": ["cpu", "memory", "custom/gpu-usage", "disk", "disk#2"],
+    "modules-left": ["custom/launcher", "hyprland/workspaces"],
+    "modules-center": ["custom/playerctl", "custom/playerlabel"],
     "modules-right": ["tray", "custom/hyprpicker", "bluetooth", "network", "pulseaudio", "custom/notifications", "backlight", "battery", "clock"],
     // Modules configuration
 	"clock": {
