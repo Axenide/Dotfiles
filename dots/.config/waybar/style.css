@@ -13,72 +13,76 @@
  https://github.com/Axenide/Dotfiles
 */
 
-@import "gruvbox-quantum.css";
+@import "axgruv.css";
 
 * {
     border: none;
     border-radius: 0px;
-    font-family: Iosevka;
-    font-size: 14px;
+    font-family: 'Iosevka';
+    font-size: 11pt;
     font-style: normal;
     min-height: 0;
 }
 
 window#waybar {
-    background: transparent;
-    border-bottom: 0px solid #000000;
+    background: black;
+    border: 2px solid @brblack;
+    border-radius: 10px;
     color: @white
 }
 
 #workspaces {
 	background: transparent;
-	margin: 5px -5px 5px 5px;
-  padding: 0px 5px 0px 5px;
+	/* margin: 5px -5px 5px 5px; */
+  /* padding: 0px 5px 0px 5px; */
 	border-radius: 16px;
-  border: solid 0px @white;
+  border: solid 0px @red;
   font-weight: normal;
   font-style: normal;
 }
 
 #workspaces button {
-    padding: 0px 5px;
+    /* padding: 0px 5px; */
     border-radius: 0px;
     color: @white;
     background-color: transparent;
-    text-shadow: 0px 0px 3px @white;
-    transition: all 0.25s ease-in-out;
+    border: solid 0px @red;
+    /* text-shadow: 0px 0px 3px @white; */
+    transition: all 0.1s ease-in-out;
 }
 
 #workspaces button.persistent {
-    color: @black;
-    border-radius: 16px;
+    color: @brblack;
+    /* border-radius: 16px; */
     font-weight: bold;
+    border: solid 0px @red;
     text-shadow: 0px 0px 3px black;
 }
 
 #workspaces button.active {
-    color: @brgreen;
-    border-radius: 16px;
+    color: @white;
+    /* border-radius: 16px; */
     font-weight: bold;
-    /* transform: rotate(90deg); */
-    text-shadow: 0px 0px 3px @brgreen;
-    box-shadow: inset 0 8px 4px -8px @brgreen;
-    border-top: solid 3px @brgreen;
-    /* border-bottom: solid 3px @brgreen; */
+    padding-bottom: 0px;
+    /* transform:rotate(90deg); */
+    /* text-shadow: 0px 0px 3px @brgreen; */
+    /* box-shadow: inset 0 8px 4px -8px @brgreen; */
+    /* border-top: solid 3px @brgreen; */
+    border-bottom: solid 3px @red;
     /* border-left: solid 3px @brgreen; */
     /* border-right: solid 3px @brgreen; */
 }
 
 #workspaces button:hover {
 	color: @brgreen;
-  text-shadow: 0px 0px 3px @brgreen;
+  /* text-shadow: 0px 0px 3px @brgreen; */
 }
 
 #battery, #pulseaudio, #network, #custom-launcher {
 	background: transparent;
 	padding: 5px;
 	margin: 5px;
-  border-radius: 8px;
+  /* border-radius: 8px; */
   border: solid 0px @white;
   text-shadow: 0px 0px 3px rgba(0,0,0,1);
 }
@@ -99,29 +103,30 @@ window#waybar {
 }
 
 #tray {
-    background: #000000;
-    margin: 5px 5px 5px 5px;
-    border-radius: 16px;
-    padding: 0px 5px;
-    border: solid 2px @black;
-    box-shadow: 0px 0px 3px rgba(0,0,0,1);
+    /* background: #000000; */
+    /* margin: 5px 5px 5px 5px; */
+    /* border-radius: 16px; */
+    padding: 0px 10px;
+    margin-right: 5px;
+    border-right: solid 1px @black;
+    /* box-shadow: 0px 0px 3px rgba(0,0,0,1); */
 }
 
 #clock {
     color: @brgreen;
-    background-color: #000000;
-    border-radius: 0px 0px 0px 20px;
-    padding-left: 13px;
-    padding-right: 15px;
+    /* background-color: #000000; */
+    /* border-radius: 0px 0px 0px 20px; */
+    padding-left: 14px;
+    padding-right: 16px;
     margin-right: 0px;
     margin-left: 10px;
     margin-top: 0px;
-    margin-bottom: 5px;
+    /* margin-bottom: 5px; */
     font-weight: bold;
-    border-left: solid 2px @black;
-    border-bottom: solid 2px @black;
-    box-shadow: 0px 0px 3px rgba(0,0,0,1);
-    text-shadow: 0px 0px 3px @brgreen;
+    border-left: solid 1px @black;
+    /* border-bottom: solid 2px @black; */
+    /* box-shadow: 0px 0px 3px rgba(0,0,0,1); */
+    /* text-shadow: 0px 0px 3px @brgreen; */
 }
 
 
@@ -183,28 +188,29 @@ window#waybar {
 
 #custom-launcher {
     color: @red;
-    background-color: #000000;
-    border-radius: 0px 0px 20px 0px;
-    margin: 0px 0px 5px 0px;
-    padding: 0 17px 0 10px;
-    font-size: 18px;
-    border-right: solid 2px @black;
-    border-bottom: solid 2px @black;
-    box-shadow: 0px 0px 3px rgba(0,0,0,1);
-    text-shadow: 0px 0px 3px @red;
+    background-color: transparent;
+    /* border-radius: 0px 0px 20px 0px; */
+    /* margin: 0px 0px 5px 0px; */
+    padding: 0 16px 0 8px;
+    margin: 0;
+    margin-left: 5px;
+    font-size: 20px;
+    border-right: solid 1px @black;
+    /* border-bottom: solid 2px @black; */
+    /* box-shadow: 0px 0px 3px rgba(0,0,0,1); */
+    /* text-shadow: 0px 0px 3px @red; */
 }
 
 #custom-playerctl {
-	background: #000000;
-	padding-left: 15px;
-  padding-right: 14px;
-	border-radius: 16px;
-  margin: 5px;
-  font-weight: normal;
-  font-style: normal;
-  font-size: 16px;
-  border: solid 2px @black;
-  box-shadow: 0px 0px 3px rgba(0,0,0,1);
+	/* background: #000000; */
+	/* padding-left: 15px; */
+  /* padding-right: 14px; */
+	/* border-radius: 16px; */
+  /* margin: 5px; */
+  font-weight: bold;
+  /* font-style: italic; */
+  /* border: solid 2px @black; */
+  /* box-shadow: 0px 0px 3px rgba(0,0,0,1); */
 }
 
 #custom-playerlabel {

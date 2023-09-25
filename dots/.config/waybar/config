@@ -16,21 +16,21 @@
     "position": "top",
     "layer": "top",
     "height": 16,
-    "margin-top": 0,
-    "margin-bottom": -6,
-    "margin-left": 0,
-    "margin-right": 0,
+    "margin-top": 10,
+    "margin-bottom": 0,
+    "margin-left": 10,
+    "margin-right": 10,
     "modules-left": ["custom/launcher", "hyprland/workspaces"],
-    "modules-center": ["custom/playerctl", "custom/playerlabel"],
+    "modules-center": ["custom/playerctl"],
     "modules-right": ["tray", "custom/hyprpicker", "bluetooth", "network", "pulseaudio", "custom/notifications", "backlight", "battery", "clock"],
     // Modules configuration
 	"clock": {
-		"format": "󰅐 {:%H:%M:%OS}",
+		"format": "{:%H:%M:%OS}",
     "interval": 1,
 		"tooltip": "false",
 //        	"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        	"format-alt": " {:%d/%m/%Y}",
-    "on-click-right": "gsimplecal"
+        	"format-alt": "{:%d/%m/%Y}",
+    "on-click-right": "bash ~/.config/waybar/scripts/toggle.sh gnome-calendar",
 	},
 	
 
@@ -80,7 +80,7 @@
 },
 
     "custom/playerctl": {
-      "format": "{icon}",
+      "format": "{icon}   ::  <span>{}</span>",
       "return-type": "json",
       "max-length": 64,
       "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
@@ -88,8 +88,8 @@
       "on-click": "playerctl previous",
       "on-click-right": "playerctl next",
       "format-icons": {
-        "Playing": "<span foreground='#B1B946'>󰒮 󰐌  󰒭</span>",
-        "Paused": "<span foreground='#47423E'>󰒮 󰏥  󰒭</span>"
+        "Playing": "<span foreground='#B1B946'>󰝚</span>",
+        "Paused": "<span foreground='#47423E'>󰝛</span>"
       },
     },
 
@@ -230,7 +230,7 @@
   },
   "custom/launcher": {
 //    "format": "󰣇",
-    "format": "󰹻",
+    "format": "󱙝",
 //    "on-click": "$(tofi-drun --prompt-text 'Run: ')",
     "on-click": "bash $HOME/.config/rofi/launchers/type-1/launcher.sh",
 //    "on-click": "wofi --show drun -I -a -n -W 500 -H 376 -s ~/.config/wofi/themes/gruvbox.css",

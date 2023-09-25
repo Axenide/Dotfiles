@@ -2,7 +2,7 @@
 
 <p align="center">
     <i>These are my configuration files also known as <b>dotfiles</b>.
-<img src="https://github.com/Axenide/Dotfiles/assets/66109459/5b58549b-96b2-4fe1-9b6e-f81124f2c071">
+<img src="screenshots/cover.png">
         <sup>
             This setup is specific for <a href="https://github.com/hyprwm/Hyprland">Hyprland</a>. Dont install it if you don't know what you're doing.
         </sup></i>
@@ -12,9 +12,9 @@
 <summary><i>
 📸 Screenshots
 </i></summary>
-<img src="https://github.com/Axenide/Dotfiles/assets/66109459/fd905fd4-a7ad-4901-974d-06c75f08fbc1">
-<img src="https://github.com/Axenide/Dotfiles/assets/66109459/2fca8641-9627-44e9-ad28-a9f40c8f29bb">
-<img src="https://github.com/Axenide/Dotfiles/assets/66109459/939b8c8f-3290-4a9f-b44b-fb928cec6851">
+<img src="screenshots/0.png">
+<img src="screenshots/1.png">
+<img src="screenshots/2.png">
 </details>
 
 ## Installation
@@ -28,49 +28,49 @@ stow dots
 <details>
   <summary>🚀 App Launcher</summary>
     <br>
-  <img src="https://github.com/Axenide/Dotfiles/assets/66109459/e2168058-8aa7-4e4c-a074-ce03e3a90855">
+  <img src="screenshots/rofi/launcher.png">
 </details>
 
 <details>
   <summary>⚡ Power Menu</summary>
     <br>
-  <img src="https://github.com/Axenide/Dotfiles/assets/66109459/8c1348c7-b152-47b4-b6ce-f38652119071">
+  <img src="screenshots/rofi/powermenu.png">
 </details>
 
 <details>
   <summary>😎 Emojis</summary>
     <br>
-  <img src="https://github.com/Axenide/Dotfiles/assets/66109459/ef2928ca-266e-4520-a844-f058a3c2bbdd">
+  <img src="screenshots/rofi/emoji.png">
 </details>
 
 <details>
   <summary>🎨 Wallpaper Changer</summary>
     <br>
-  <img src="https://github.com/Axenide/Dotfiles/assets/66109459/86cfa6c3-a904-4617-9462-d2360fffcda6">
+  <img src="screenshots/rofi/wallpaper.png">
 </details>
 
 <details>
   <summary>💻 Tmux Session Manager</summary>
     <br>
-  <img src="https://github.com/Axenide/Dotfiles/assets/66109459/af46b79f-f9ee-42c7-990f-d616f8999b49">
+  <img src="screenshots/rofi/tmux.png">
 </details>
 
 <details>
   <summary>🔊 Sound Manager</summary>
     <br>
-  <img src="https://github.com/Axenide/Dotfiles/assets/66109459/09dcebb7-9629-4547-9248-ae1b2bc618e3">
+  <img src="screenshots/rofi/volume.png">
 </details>
 
 <details>
   <summary>📝 Notes</summary>
     <br>
-  <img src="https://github.com/Axenide/Dotfiles/assets/66109459/4ae56d8c-d3ed-4ec1-a7ee-cbe7367cf084">
+  <img src="screenshots/rofi/notes.png">
 </details>
 
 <details>
   <summary>🗒️ To-Do</summary>
     <br>
-  <img src="https://github.com/Axenide/Dotfiles/assets/66109459/50e68004-7844-4c43-a799-a7d051daee82">
+  <img src="screenshots/rofi/todo.png">
 </details>
 
 ## ⌨️ Keybindings
@@ -89,12 +89,12 @@ stow dots
 | <kbd>SUPER + D</kbd>                                  | Toggle split                    |
 | <kbd>SUPER + F</kbd>                                  | Fullscreen                      |
 | <kbd>SUPER + SHIFT + F</kbd>                          | Fake Fullscreen                 |
-| <kbd>SUPER + ALT + F</kbd>                            | Maximize                        |
+| <kbd>SUPER + CTRL + F</kbd>                            | Maximize                        |
 | <kbd>SUPER + Y</kbd>                                  | Pin window                      |
 | <kbd>SUPER + G</kbd>                                  | Center window                   |
 | <kbd>SUPER + Arrows or H,J,K,L</kbd>                  | Move window focus               |
 | <kbd>SUPER + SHIFT + Arrows or H,J,K,L</kbd>          | Move tiled window               |
-| <kbd>SUPER + CONTROL + Arrows or H,J,K,L</kbd>        | Resize window                   |
+| <kbd>SUPER + CTRL + Arrows or H,J,K,L</kbd>        | Resize window                   |
 | <kbd>SUPER + ALT + Arrows or H,J,K,L</kbd>            | Move floating window            |
 | <kbd>SUPER + [1-9][0]</kbd>                           | Change workspace [1-10]         |
 | <kbd>SUPER + SHIFT + [1-9][0]</kbd>                   | Move window to workspace [1-10] |

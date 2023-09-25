@@ -1,0 +1,258 @@
+//     ___                    _     __    _     
+//    /   |  _  _____  ____  (_)___/ /__ ( )_____
+//   / /| | | |/_/ _ \/ __ \/ / __  / _ \|// ___/
+//  / ___ |_>  </  __/ / / / / /_/ /  __/ (__  )
+// /_/  |_/_/|_|\___/_/ /_/_/\__,_/\___/ /____/ 
+// | |     / /___ ___  __/ /_  ____ ______      
+// | | /| / / __ `/ / / / __ \/ __ `/ ___/      
+// | |/ |/ / /_/ / /_/ / /_/ / /_/ / /          
+// |__/|__/\__,_/\__, /_.___/\__,_/_/           
+//              /____/                          
+
+// https://github.com/Axenide/Dotfiles
+
+
+{
+    "position": "top",
+    "layer": "top",
+    "height": 16,
+    "margin-top": 0,
+    "margin-bottom": -6,
+    "margin-left": 0,
+    "margin-right": 0,
+    "modules-left": ["custom/launcher", "hyprland/workspaces"],
+    "modules-center": ["custom/playerctl", "custom/playerlabel"],
+    "modules-right": ["tray", "custom/hyprpicker", "bluetooth", "network", "pulseaudio", "custom/notifications", "backlight", "battery", "clock"],
+    // Modules configuration
+	"clock": {
+		"format": "󰅐 {:%H:%M:%OS}",
+    "interval": 1,
+		"tooltip": "false",
+//        	"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        	"format-alt": " {:%d/%m/%Y}",
+    "on-click-right": "gsimplecal"
+	},
+	
+
+	"wlr/workspaces": {
+        "active-only": false,
+        "all-outputs": true,
+        "disable-scroll": false,
+        "on-scroll-up": "hyprctl dispatch workspace -1",
+        "on-scroll-down": "hyprctl dispatch workspace +1",
+		"format": "{icon}",
+		"on-click": "activate",
+		"format-icons": {
+//			"1": "一",
+//			"2": "二",
+//			"3": "三",
+//			"4": "四",
+//			"5": "五",
+			"urgent": "",
+			"active": "",
+			"default": "󰧞",
+    "sort-by-number": true
+    },
+    },
+
+"hyprland/workspaces": {
+  "disable-scroll": false,
+  "on-scroll-up": "hyprctl dispatch workspace -1",
+  "on-scroll-down": "hyprctl dispatch workspace +1",
+	"format": "{icon}",
+	"format-icons": {
+		"1": "一",
+		"2": "二",
+		"3": "三",
+		"4": "四",
+		"5": "五",
+		"6": "六",
+		"7": "七",
+		"8": "八",
+		"9": "九",
+	  "10": "〇",
+//		"active": "",
+//		"default": "󰧞"
+	},
+       "persistent_workspaces": {
+             "*": 10
+       }
+},
+
+    "custom/playerctl": {
+      "format": "{icon}",
+      "return-type": "json",
+      "max-length": 64,
+      "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+      "on-click-middle": "playerctl play-pause",
+      "on-click": "playerctl previous",
+      "on-click-right": "playerctl next",
+      "format-icons": {
+        "Playing": "<span foreground='#B1B946'>󰒮 󰐌  󰒭</span>",
+        "Paused": "<span foreground='#47423E'>󰒮 󰏥  󰒭</span>"
+      },
+    },
+
+    "custom/playerlabel": {
+      "format": "<span>{}</span>",
+      "return-type": "json",
+      "max-length": 48,
+      "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+      "on-click-middle": "playerctl play-pause",
+      "on-click": "playerctl previous",
+      "on-click-right": "playerctl next",
+      "format-icons": {
+        "Playing": "<span foreground='#B1B946'>󰒮 󰐌  󰒭</span>",
+        "Paused": "<span foreground='#47423E'>󰒮 󰏥  󰒭</span>"
+      },
+    },
+
+	"battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format":"{icon}  {capacity}%",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{icon} {time}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["", "", "", "", ""]
+	},
+
+  "memory": {
+    "format": "󰍛 {}%",
+    "format-alt": "󰍛 {used}/{total} GiB",
+    "interval": 1
+  },
+
+  "cpu": {
+    "format": "󰻠 {usage}%",
+    "format-alt": "󰻠 {avg_frequency} GHz",
+    "interval": 1
+  },
+
+  "disk": {
+    "format": "󰆼 {percentage_used}%",
+    "format-alt": "󰆼 {used}/{total} GiB",
+    "interval": 1,
+    "path": "/"
+  },
+
+  "disk#2": {
+    "format": "󰋊 {percentage_used}%",
+    "format-alt": "󰋊 {used}/{total} GiB",
+    "interval": 1,
+    "path": "/home/adriano"
+  },
+
+  "custom/gpu-usage": {
+    "exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits",
+    "format": "󰢮 {}%",
+    "return-type": "",
+    "interval": 1
+  },
+
+	"network": {
+        	"format-wifi": "󰤨",
+        	"format-ethernet": " {ifname}",
+        	"format-linked": " {ifname} (No IP)",
+        	"format-disconnected": "󰤭",
+        	"format-alt": " {ifname}: {ipaddr}/{cidr}",
+          "tooltip-format": "{essid}",
+          "on-click-right": "kitty -o initial_window_width=500 -o initial_window_height=500 nmtui",
+	},
+
+  "bluetooth": {
+	"format-on": "󰂯 ",
+  "format-off": "󰂲 ",
+  "format-connected": "󰂱 ",
+  "format-disabled": "",
+  "on-click": "bash ~/.config/waybar/scripts/bluetoggle.sh",
+  "on-click-right": "kitty -o initial_window_width=500 -o initial_window_height=500 bluetuith",
+	// "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
+	"tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+	"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+	"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+	"tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+},
+
+  "custom/notifications": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "󰂚<span foreground='#DB4740'><sup></sup></span>",
+      "none": "󰂚",
+      "dnd-notification": "󰂛<span foreground='#DB4740'><sup></sup></span>",
+      "dnd-none": "󰂛",
+      "inhibited-notification": "󰂚<span foreground='#DB4740'><sup></sup></span>",
+      "inhibited-none": "󰂚",
+      "dnd-inhibited-notification": "󰂛<span foreground='#DB4740'><sup></sup></span>",
+      "dnd-inhibited-none": "󰂛"
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  },
+
+	"tray": {
+		"icon-size": 16,
+		"spacing": 5
+	},
+
+	"backlight": {
+        // "device": "acpi_video1",
+	"format": "{icon} {percent}%",
+        "format-icons": ["", "", "", "", "", "", "", "", ""],
+//	"on-scroll-up":,
+//	"on-scroll-down":,
+	},
+
+	"pulseaudio": {
+		"format": "{icon}",
+        	"format-muted": "󰝟",
+		"format-icons": {
+			"default": ["󰕿", "󰖀", "󰕾"]
+		},
+		"on-click": "pamixer -t",
+		"on-click-right": "kitty -o initial_window_width=500 -o initial_window_height=500 pulsemixer",
+    "tooltip-format": "{volume}%"
+  },
+  "custom/randwall": {
+    "format": "󰏘",
+    "on-click": "nemo ~/Wallpapers/Selected",
+    "on-click-right": "nemo ~/Wallpapers"
+  },
+  "custom/launcher": {
+//    "format": "󰣇",
+    "format": "󰹻",
+//    "on-click": "$(tofi-drun --prompt-text 'Run: ')",
+    "on-click": "bash $HOME/.config/rofi/launchers/type-1/launcher.sh",
+//    "on-click": "wofi --show drun -I -a -n -W 500 -H 376 -s ~/.config/wofi/themes/gruvbox.css",
+//    "on-click-right": "$(tofi-run --prompt-text 'Execute: ')"  
+//    "on-click-right": "bash $HOME/.config/rofi/run.sh"  
+//    "on-click-right": "wofi --show run -I -a -n -W 500 -H 376 -s ~/.config/wofi/themes/gruvbox.css"  
+  },
+
+  "custom/wf-recorder": {
+		"format": "{}",
+		"interval": "once",
+		"exec": "echo ''",
+		"tooltip": "false",
+		"exec-if": "pgrep 'wf-recorder'",
+		"on-click": "exec ./scripts/wlrecord.sh",
+		"signal": 8
+	},
+
+  "custom/hyprpicker": {
+    "format": "󰈋",
+    "on-click": "bash ~/.config/waybar/scripts/hyprpicker-hex.sh",
+    "on-click-right": "bash ~/.config/waybar/scripts/hyprpicker-rgb.sh"
+  },
+  }
+}

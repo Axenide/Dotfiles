@@ -111,7 +111,7 @@
 .notification-action:hover {
     -gtk-icon-effect: none;
     background: @noti-bg-hover;
-    text-shadow: 0 0 3px @text-color;
+    /* text-shadow: 0 0 3px @text-color; */
 }
 
 .notification-default-action {
@@ -181,7 +181,7 @@
     font-style: italic;
     background: transparent;
     color: @red;
-    text-shadow: 0 0 3px @red;
+    /* text-shadow: 0 0 3px @red; */
 }
 
 .time {
@@ -231,7 +231,7 @@
     font-size: 1rem;
     font-weight: bold;
     font-style: italic;
-    text-shadow: 0 0 3px @red;
+    /* text-shadow: 0 0 3px @red; */
 }
 
 .widget-title>button {
@@ -246,7 +246,7 @@
 
 .widget-title>button:hover {
     background: @noti-bg-hover;
-    text-shadow: 0 0 3px @brgreen;
+    /* text-shadow: 0 0 3px @brgreen; */
 }
 
 .widget-dnd {
@@ -321,8 +321,8 @@
 
 .widget-buttons-grid>flowbox>flowboxchild>button:hover {
     /* background: @noti-bg-hover; */
-    color: @white;
-    text-shadow: 0 0 3px @white;
+    color: @brgreen;
+    /* text-shadow: 0 0 3px @white; */
 }
 
 .widget-menubar>box>.menu-button-bar>button {
