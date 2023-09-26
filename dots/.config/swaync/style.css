@@ -104,7 +104,8 @@
     background: @noti-bg;
     border: none;
     color: @text-color;
-    transition: all .15s ease-in-out
+    transition: all .15s ease-in-out;
+    font-size: 11pt;
 }
 
 .notification-default-action:hover,
@@ -176,7 +177,7 @@
 }
 
 .summary {
-    font-size: 14px;
+    font-size: 11pt;
     font-weight: bold;
     font-style: italic;
     background: transparent;
@@ -194,7 +195,7 @@
 }
 
 .body {
-    font-size: 14px;
+    font-size: 11pt;
     font-weight: normal;
     background: transparent;
     color: @text-color;
@@ -228,7 +229,7 @@
 .widget-title {
     color: @red;
     margin: 20px 20px 5px 20px;
-    font-size: 1rem;
+    font-size: 12pt;
     font-weight: bold;
     font-style: italic;
     /* text-shadow: 0 0 3px @red; */
@@ -236,6 +237,7 @@
 
 .widget-title>button {
     font-size: initial;
+    font-family: 'Symbols Nerd Font';
     color: @brgreen;
     text-shadow: none;
     background: @noti-bg;
@@ -252,7 +254,8 @@
 .widget-dnd {
     color: @text-color;
     margin: 5px 20px 5px 20px;
-    font-size: 1.0rem
+    font-size: 11pt;
+    font-weight: bold;
 }
 
 .widget-dnd>switch {
@@ -262,6 +265,7 @@
     /* border: 2px solid @bgblack; */
     box-shadow: none;
     padding: 1px;
+    transition: all .1s ease-in-out;
 }
 
 .widget-dnd>switch:checked {

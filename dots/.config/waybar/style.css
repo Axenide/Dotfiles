@@ -116,10 +116,10 @@ window#waybar {
     color: @brgreen;
     /* background-color: #000000; */
     /* border-radius: 0px 0px 0px 20px; */
-    padding-left: 14px;
-    padding-right: 16px;
+    padding-left: 10px;
+    padding-right: 12px;
     margin-right: 0px;
-    margin-left: 10px;
+    margin-left: 5px;
     margin-top: 0px;
     /* margin-bottom: 5px; */
     font-weight: bold;
@@ -191,9 +191,10 @@ window#waybar {
     background-color: transparent;
     /* border-radius: 0px 0px 20px 0px; */
     /* margin: 0px 0px 5px 0px; */
-    padding: 0 16px 0 8px;
-    margin: 0;
-    margin-left: 5px;
+    padding: 10px 12px 10px 8px;
+    margin: 0 0 0 5px;
+    /* margin-left: 5px; */
+    font-family: 'Symbols Nerd Font';
     font-size: 20px;
     border-right: solid 1px @black;
     /* border-bottom: solid 2px @black; */
@@ -279,4 +280,11 @@ window#waybar {
     margin-right: 10px;
     font-weight: bold;
     text-shadow: 0px 0px 3px rgba(0,0,0,1);
+}
+
+#custom-hyprpicker, #bluetooth, #network, #pulseaudio, #custom-notifications {
+  font-family: 'Symbols Nerd Font';
+  font-size: 10pt;
+  margin: 0;
+  padding: 5px;
 }
