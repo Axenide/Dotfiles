@@ -166,10 +166,10 @@
 	},
 
   "bluetooth": {
-	"format-on": "󰂯 ",
-  "format-off": "󰂲 ",
-  "format-connected": "󰂱 ",
-  "format-disabled": "",
+	"format-on": "󰂯",
+  "format-off": "󰂲",
+  "format-connected": "󰂱",
+  "format-disabled": "󰂲",
   "on-click": "bash ~/.config/waybar/scripts/bluetoggle.sh",
   "on-click-right": "kitty -o initial_window_width=500 -o initial_window_height=500 bluetuith",
 	// "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
