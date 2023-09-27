@@ -22,7 +22,7 @@
     "margin-right": 10,
     "modules-left": ["custom/launcher", "hyprland/workspaces"],
     "modules-center": ["custom/playerctl"],
-    "modules-right": ["tray", "custom/hyprpicker", "bluetooth", "network", "pulseaudio", "custom/notifications", "backlight", "battery", "clock"],
+    "modules-right": ["tray", "custom/hyprpicker", "bluetooth", "network", "pulseaudio", "backlight", "battery", "custom/notifications", "clock"],
     // Modules configuration
 	"clock": {
 		"format": "{:%H:%M:%OS}",
@@ -113,13 +113,15 @@
             "warning": 30,
             "critical": 15
         },
-        "format":"{icon}  {capacity}%",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "{icon} {time}",
+        "format":"{icon}",
+        "format-charging": "󰂄",
+        "format-plugged": "󱐋",
+        "format-alt": "{icon} <span font='Iosevka'>{capacity}% | {time}</span>",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
+        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "interval": 1,
+        "tooltip-format": "{capacity}% - {time}",
 	},
 
   "memory": {
@@ -207,10 +209,11 @@
 
 	"backlight": {
         // "device": "acpi_video1",
-	"format": "{icon} {percent}%",
-        "format-icons": ["", "", "", "", "", "", "", "", ""],
+	"format": "{icon}",
+        "format-icons": ["󰃚", "󰃛", "󰃜", "󰃝", "󰃞", "󰃟", "󰃠"],
 //	"on-scroll-up":,
 //	"on-scroll-down":,
+  "tooltip-format": "{percent}%"
 	},
 
 	"pulseaudio": {

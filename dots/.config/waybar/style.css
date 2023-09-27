@@ -282,9 +282,9 @@ window#waybar {
     text-shadow: 0px 0px 3px rgba(0,0,0,1);
 }
 
-#custom-hyprpicker, #bluetooth, #network, #pulseaudio, #custom-notifications {
+#custom-hyprpicker, #bluetooth, #network, #pulseaudio, #backlight, #battery, #custom-notifications {
   font-family: 'Symbols Nerd Font';
   font-size: 10pt;
   margin: 0;
-  padding: 8px;
+  padding: 0 8px 0 8px;
 }
