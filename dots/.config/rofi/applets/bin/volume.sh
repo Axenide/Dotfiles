@@ -60,11 +60,11 @@ amixer get Master | grep '\[on\]' &>/dev/null
 if [[ "$?" == 0 ]]; then
 	active="-a 1"
 	stext='Unmuted'
-	sicon='󰕾 '
+	sicon='󰕾'
 else
 	urgent="-u 1"
 	stext='Muted'
-	sicon='󰖁 '
+	sicon='󰖁'
 fi
 
 # Microphone Info
@@ -72,11 +72,11 @@ amixer get Capture | grep '\[on\]' &>/dev/null
 if [[ "$?" == 0 ]]; then
     [ -n "$active" ] && active+=",3" || active="-a 3"
 	mtext='Unmute'
-	micon=''
+	micon='󰍬'
 else
     [ -n "$urgent" ] && urgent+=",3" || urgent="-u 3"
 	mtext='Mute'
-	micon=''
+	micon='󰍭'
 fi
 
 # Theme Elements
@@ -110,11 +110,11 @@ if [[ "$layout" == 'NO' ]]; then
 	option_4="$micon $mtext"
 	option_5=" Settings"
 else
-	option_1="󰝝 "
+	option_1="󰝝"
 	option_2="$sicon"
-	option_3="󰝞 "
+	option_3="󰝞"
 	option_4="$micon"
-	option_5=""
+	option_5="󰒓"
 fi
 
 # Rofi CMD

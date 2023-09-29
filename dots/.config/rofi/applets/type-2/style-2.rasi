@@ -65,17 +65,25 @@ textbox-prompt-colon {
     enabled:                     true;
     expand:                      false;
     str:                         "";
-    padding:                     10px 13px;
+    padding:                     10px 12px;
     border-radius:               10px;
-    background-color:            @urgent;
-    text-color:                  @background;
+    border-color:                @urgent;
+    border:                      2px solid;
+    background-color:            @background;
+    text-color:                  @foreground;
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
 }
 prompt {
     enabled:                     true;
     padding:                     10px;
     border-radius:               10px;
-    background-color:            @active;
-    text-color:                  @background;
+    border-color:                @active;
+    border:                      2px solid;
+    background-color:            @background;
+    text-color:                  @foreground;
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
 }
 
 /*****----- Message -----*****/
@@ -113,7 +121,7 @@ listview {
 /*****----- Elements -----*****/
 element {
     enabled:                     true;
-    padding:                     10px 10px;
+    padding:                     14px;
     border:                      0px solid;
     border-radius:               10px;
     border-color:                @selected;
@@ -122,7 +130,7 @@ element {
     cursor:                      pointer;
 }
 element-text {
-    font:                        "feather 24";
+    font:                        "Symbols Nerd Font 20";
     background-color:            transparent;
     text-color:                  inherit;
     cursor:                      inherit;
@@ -138,16 +146,22 @@ element alternate.normal {
 element normal.urgent,
 element alternate.urgent,
 element selected.active {
-    background-color:            var(urgent);
-    text-color:                  var(background);
+    background-color:            var(background);
+    text-color:                  var(urgent);
+    border-color: var(urgent);
+    border: 2px solid;
 }
 element normal.active,
 element alternate.active,
 element selected.urgent {
-    background-color:            var(active);
-    text-color:                  var(background);
+    background-color:            var(background);
+    text-color:                  var(active);
+    border-color: var(active);
+    border: 2px solid;
 }
 element selected.normal {
-    background-color:            var(selected);
-    text-color:                  var(background);
+    background-color:            var(background);
+    text-color:                  var(selected);
+    border-color: var(selected);
+    border: 2px solid;
 }

@@ -237,6 +237,7 @@
 
 .widget-title>button {
     font-size: initial;
+    font-weight: bold;
     font-family: 'Symbols Nerd Font';
     color: @brgreen;
     text-shadow: none;

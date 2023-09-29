@@ -33,12 +33,12 @@ if [[ "$layout" == 'NO' ]]; then
 	yes=' Yes'
 	no=' No'
 else
-	option_1=""
+	option_1=""
 	option_2=""
-	option_3=""
-	option_4=""
-	option_5=""
-	option_6=""
+	option_3=""
+	option_4=""
+	option_5=""
+	option_6=""
 	yes=''
 	no=''
 fi
