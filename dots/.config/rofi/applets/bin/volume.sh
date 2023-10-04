@@ -70,12 +70,12 @@ fi
 # Microphone Info
 amixer get Capture | grep '\[on\]' &>/dev/null
 if [[ "$?" == 0 ]]; then
-    [ -n "$active" ] && active+=",3" || active="-a 3"
-	mtext='Unmute'
+    [ -n "$active" ] && active+=",5" || active="-a 5"
+	mtext='Unmuted'
 	micon='󰍬'
 else
-    [ -n "$urgent" ] && urgent+=",3" || urgent="-u 3"
-	mtext='Mute'
+    [ -n "$urgent" ] && urgent+=",5" || urgent="-u 5"
+	mtext='Muted'
 	micon='󰍭'
 fi
 
@@ -96,9 +96,9 @@ elif [[ "$theme" == *'type-5'* ]]; then
 	list_row='5'
 	win_width='520px'
 elif [[ ( "$theme" == *'type-2'* ) || ( "$theme" == *'type-4'* ) ]]; then
-	list_col='5'
+	list_col='8'
 	list_row='1'
-	win_width='450px'
+	win_width='600px'
 fi
 
 # Options
@@ -113,8 +113,10 @@ else
 	option_1="󰝝"
 	option_2="$sicon"
 	option_3="󰝞"
-	option_4="$micon"
-	option_5="󰒓"
+  option_7="󰒓"
+  option_4="󰢳"
+	option_5="$micon"
+  option_6="󰢴"
 fi
 
 # Rofi CMD
@@ -133,7 +135,7 @@ rofi_cmd() {
 
 # Pass variables to rofi dmenu
 run_rofi() {
-	echo -e "$option_1\n$option_2\n$option_3\n$option_4\n$option_5" | rofi_cmd
+	echo -e "$option_1\n$option_2\n$option_3\n$option_7\n$option_4\n$option_5\n$option_6" | rofi_cmd
 }
 
 # Execute Command
@@ -148,9 +150,15 @@ run_cmd() {
 		amixer -Mq set Master,0 5%- unmute
     ~/.config/rofi/applets/bin/volume.sh --row 2
 	elif [[ "$1" == '--opt4' ]]; then
-		amixer set Capture toggle
-    ~/.config/rofi/applets/bin/volume.sh --row 3
+		amixer set Capture 5%-
+    ~/.config/rofi/applets/bin/volume.sh --row 4
 	elif [[ "$1" == '--opt5' ]]; then
+		amixer set Capture toggle
+    ~/.config/rofi/applets/bin/volume.sh --row 5
+	elif [[ "$1" == '--opt6' ]]; then
+		amixer set Capture 5%+
+    ~/.config/rofi/applets/bin/volume.sh --row 6
+	elif [[ "$1" == '--opt7' ]]; then
 		pavucontrol
 	fi
 }
@@ -173,5 +181,11 @@ case ${chosen} in
     $option_5)
 		run_cmd --opt5
         ;;
+    $option_6)
+    run_cmd --opt6
+    ;;
+    $option_7)
+    run_cmd --opt7
+    ;;
 esac
 
