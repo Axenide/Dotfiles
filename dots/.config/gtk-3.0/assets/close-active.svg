@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg viewBox="0 0 50 50"
+ xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  version="1.2" baseProfile="tiny">
+<title>Qt SVG Document</title>
+<desc>Generated with Qt</desc>
+<defs>
+<radialGradient gradientUnits="userSpaceOnUse" cx="53.8948" cy="-6.4706" r="2.32019" fx="53.8948" fy="-6.4706" id="gradient1">
+    <stop offset="0" stop-color="#ffffff" stop-opacity="0.503319" />
+    <stop offset="1" stop-color="#ffffff" stop-opacity="0" />
+</radialGradient>
+<radialGradient gradientUnits="userSpaceOnUse" cx="53.8948" cy="-6.4706" r="2.32019" fx="53.8948" fy="-6.4706" id="gradient2">
+    <stop offset="0" stop-color="#ffffff" stop-opacity="0.503319" />
+    <stop offset="1" stop-color="#ffffff" stop-opacity="0" />
+</radialGradient>
+<radialGradient gradientUnits="userSpaceOnUse" cx="53.8948" cy="-6.4706" r="2.32019" fx="53.8948" fy="-6.4706" id="gradient3">
+    <stop offset="0" stop-color="#ffffff" stop-opacity="0.503319" />
+    <stop offset="1" stop-color="#ffffff" stop-opacity="0" />
+</radialGradient>
+<radialGradient gradientUnits="userSpaceOnUse" cx="53.8948" cy="-6.4706" r="2.32019" fx="53.8948" fy="-6.4706" id="gradient4">
+    <stop offset="0" stop-color="#ffffff" stop-opacity="0.503319" />
+    <stop offset="1" stop-color="#ffffff" stop-opacity="0" />
+</radialGradient>
+</defs>
+<g fill="none" stroke="black" stroke-width="1" fill-rule="evenodd" stroke-linecap="square" stroke-linejoin="bevel" >
+
+<g fill="url(#gradient1)" stroke="none" transform="matrix(3.12813,0,0,3.12813,-149.961,53.3578)"
+font-family="Terminus" font-size="9" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="nonzero" d="M56.215,-6.4706 C56.215,-5.34784 55.1762,-4.43767 53.8948,-4.43767 C52.6134,-4.43767 51.5746,-5.34784 51.5746,-6.4706 C51.5746,-7.59336 52.6134,-8.50353 53.8948,-8.50353 C55.1762,-8.50353 56.215,-7.59336 56.215,-6.4706 "/>
+</g>
+
+<g fill="url(#gradient2)" stroke="none" transform="matrix(3.12813,0,0,3.12813,-135.702,52.587)"
+font-family="Terminus" font-size="9" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="nonzero" d="M56.215,-6.4706 C56.215,-5.34784 55.1762,-4.43767 53.8948,-4.43767 C52.6134,-4.43767 51.5746,-5.34784 51.5746,-6.4706 C51.5746,-7.59336 52.6134,-8.50353 53.8948,-8.50353 C55.1762,-8.50353 56.215,-7.59336 56.215,-6.4706 "/>
+</g>
+
+<g fill="url(#gradient3)" stroke="none" transform="matrix(3.12813,0,0,3.12813,-136.087,38.3282)"
+font-family="Terminus" font-size="9" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="nonzero" d="M56.215,-6.4706 C56.215,-5.34784 55.1762,-4.43767 53.8948,-4.43767 C52.6134,-4.43767 51.5746,-5.34784 51.5746,-6.4706 C51.5746,-7.59336 52.6134,-8.50353 53.8948,-8.50353 C55.1762,-8.50353 56.215,-7.59336 56.215,-6.4706 "/>
+</g>
+
+<g fill="url(#gradient4)" stroke="none" transform="matrix(3.12813,0,0,3.12813,-150.218,39.2274)"
+font-family="Terminus" font-size="9" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="nonzero" d="M56.215,-6.4706 C56.215,-5.34784 55.1762,-4.43767 53.8948,-4.43767 C52.6134,-4.43767 51.5746,-5.34784 51.5746,-6.4706 C51.5746,-7.59336 52.6134,-8.50353 53.8948,-8.50353 C55.1762,-8.50353 56.215,-7.59336 56.215,-6.4706 "/>
+</g>
+
+<g fill="none" stroke="none" transform="matrix(2.71728,0,0,2.71728,-18.8321,47.1458)"
+font-family="Terminus" font-size="9" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="nonzero" d="M24.2184,-8.14998 C24.2184,-3.68336 20.5975,-0.0624456 16.1309,-0.0624456 C11.6643,-0.0624456 8.04334,-3.68336 8.04334,-8.14998 C8.04334,-12.6166 11.6643,-16.2375 16.1309,-16.2375 C20.5975,-16.2375 24.2184,-12.6166 24.2184,-8.14998 "/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="2.22568" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" transform="matrix(2.71728,0,0,2.71728,-18.8321,47.1458)"
+font-family="Terminus" font-size="9" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="nonzero" d="M24.2184,-8.14998 C24.2184,-3.68336 20.5975,-0.0624456 16.1309,-0.0624456 C11.6643,-0.0624456 8.04334,-3.68336 8.04334,-8.14998 C8.04334,-12.6166 11.6643,-16.2375 16.1309,-16.2375 C20.5975,-16.2375 24.2184,-12.6166 24.2184,-8.14998 "/>
+</g>
+
+<g fill="#ffffff" fill-opacity="1" stroke="none" transform="matrix(3.35988,0,0,3.35988,-144.666,13.8579)"
+font-family="Terminus" font-size="9" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="nonzero" d="M48.9558,0.570221 L47.6219,1.90415 L49.337,3.61921 L47.6219,5.33427 L48.9558,6.64438 L50.6709,4.92932 L52.386,6.64438 L53.6961,5.33427 L51.981,3.61921 L53.6961,1.90415 L52.386,0.570221 L50.6709,2.28528 L48.9558,0.570221"/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Terminus" font-size="9" font-weight="400" font-style="normal" 
+>
+</g>
+</g>
+</svg>

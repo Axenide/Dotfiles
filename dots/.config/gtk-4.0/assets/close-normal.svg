@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg viewBox="0 0 50 50"
+ xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  version="1.2" baseProfile="tiny">
+<title>Qt SVG Document</title>
+<desc>Generated with Qt</desc>
+<defs>
+</defs>
+<g fill="none" stroke="black" stroke-width="1" fill-rule="evenodd" stroke-linecap="square" stroke-linejoin="bevel" >
+
+<g fill="#ffffff" fill-opacity="1" stroke="none" transform="matrix(3.35988,0,0,3.35988,45.9412,23.3822)"
+font-family="Terminus" font-size="9" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="nonzero" d="M-8.20142,-3.02912 L-9.74334,-1.4872 L-7.76087,0.495276 L-9.74334,2.47775 L-8.20142,3.99214 L-6.21895,2.00967 L-4.23647,3.99214 L-2.72208,2.47775 L-4.70456,0.495276 L-2.72208,-1.4872 L-4.23647,-3.02912 L-6.21895,-1.04665 L-8.20142,-3.02912"/>
+</g>
+
+<g fill="none" stroke="none" transform="matrix(2.71728,0,0,2.71728,-18.8321,47.1458)"
+font-family="Terminus" font-size="9" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="nonzero" d="M24.2184,-8.14998 C24.2184,-3.68336 20.5975,-0.0624456 16.1309,-0.0624456 C11.6643,-0.0624456 8.04334,-3.68336 8.04334,-8.14998 C8.04334,-12.6166 11.6643,-16.2375 16.1309,-16.2375 C20.5975,-16.2375 24.2184,-12.6166 24.2184,-8.14998 "/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="2.22568" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" transform="matrix(2.71728,0,0,2.71728,-18.8321,47.1458)"
+font-family="Terminus" font-size="9" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="nonzero" d="M24.2184,-8.14998 C24.2184,-3.68336 20.5975,-0.0624456 16.1309,-0.0624456 C11.6643,-0.0624456 8.04334,-3.68336 8.04334,-8.14998 C8.04334,-12.6166 11.6643,-16.2375 16.1309,-16.2375 C20.5975,-16.2375 24.2184,-12.6166 24.2184,-8.14998 "/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Terminus" font-size="9" font-weight="400" font-style="normal" 
+>
+</g>
+</g>
+</svg>
