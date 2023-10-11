@@ -21,8 +21,10 @@
 ```bash
 git clone --recurse-submodules https://github.com/Axenide/Dotfiles
 cd Dotfiles
-stow dots
+./dots.sh
 ```
+This will install the config for the system. For example, selecting NVIDIA will add the correct environment variables to the Hyprland config.
+
 **Note:** *This won't install the needed packages. That's a WIP.*
 ## 💥 Rofi
 <details>
