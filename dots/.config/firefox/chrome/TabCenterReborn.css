@@ -71,21 +71,17 @@
     background:0 0
 }
 .tab .tab-drag-overlay{
-    border-radius:0px;
+    border-radius: 3px 10px 10px 3px;
     z-index:-1;
-    height: 0%;
 }
 .tab:not(.active):hover .tab-drag-overlay{
     background-color:var(--tab-active-background);
-    height: 0%;
-    border-left: solid 3px #db4740;
 }
 .tab.active .tab-drag-overlay{
-    background-color:var(--background);
-    border-left: solid 3px #db4740;
-    height: 75%;
-    margin-left: -2px;
-    transition: all 0.25s ease-in-out;
+    background-color:var(--tab-active-background);
+    margin-left: -3px;
+    border-left: 3px solid #db4740;
+    transition: all 0.1s ease-in-out;
 }
 #pinnedtablist:not(.compact) .tab.drag-highlight-next,#tablist .tab.drag-highlight-next{
     border-bottom-width:var(--tab-height-compact);
