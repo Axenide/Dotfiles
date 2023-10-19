@@ -1,5 +1,6 @@
 # Custom neofetch
 alias axfetch 'clear && neofetch --config ~/.config/neofetch/ax.conf --source ~/.config/neofetch/arch.txt'
+alias kittyfetch 'clear && neofetch --config ~/.config/neofetch/kitty.conf'
 alias sansfetch 'clear && neofetch --config ~/.config/neofetch/adrien.conf --backend kitty --source '~/.config/neofetch/sans.png' --size 270px --colors 1 7 7 1 7 7'
 alias adrienfetch 'clear && neofetch --config ~/.config/neofetch/adrien.conf --backend kitty --source '~/.config/neofetch/adrien.png' --size 270px --colors 1 7 7 1 7 7'
 # alias AlphaUpdate 'sudo pacman -Sy && sudo powerpill -Su && yay -Su'
