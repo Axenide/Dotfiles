@@ -37,3 +37,4 @@ text-caps-lock-color=E0CDA5
 text-ver-color=E0CDA5
 text-wrong-color=E0CDA5
 effect-vignette=0.5:0.5
+effect-blur=10x5
