@@ -32,24 +32,25 @@ window#waybar {
 }
 
 #workspaces {
-	border: solid 0px @red;
+	border: solid 0px transparent;
 }
 
 #workspaces button {
 	border-radius: 0px;
 	color: @white;
-	border: solid 0px @red;
+	border: solid 0px transparent;
 	transition: all 0.1s ease-in-out;
 }
 
 #workspaces button.persistent {
 	color: @brblack;
-	border: solid 0px @red;
+	border: solid 0px transparent;
 }
 
 #workspaces button.active {
 	color: @white;
 	border-bottom: solid 3px @red;
+	border-top: solid 3px transparent;
 }
 
 #workspaces button:hover {
