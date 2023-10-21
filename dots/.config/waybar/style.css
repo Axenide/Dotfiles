@@ -39,7 +39,7 @@ window#waybar {
 	border-radius: 0px;
 	color: @white;
 	border: solid 0px transparent;
-	transition: all 0.1s ease-in-out;
+	/* transition: all 0.25s ease-in-out; */
 }
 
 #workspaces button.persistent {
