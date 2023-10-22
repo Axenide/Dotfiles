@@ -1,18 +1,27 @@
 #!/bin/bash
 
+clear
+
 # Función para mostrar el menú y obtener la respuesta del usuario
 show_menu() {
-  echo "Axenide's dotfiles installer"
-  echo "----------------------------"
-  echo "Graphics?"
+  echo -e "\e[91m   ___                _    __   _    "
+  echo -e "  / _ |__ _____ ___  (_)__/ /__( )___"
+  echo -e " / __ |\ \ / -_) _ \/ / _  / -_)/(_-<"
+  echo -e "/_/_|_/_\_\\__/_//_/_/\_,_/\__/ /___/"
+  echo -e "  / _ \___  / /_/ _(_) /__ ___       "
+  echo -e " / // / _ \/ __/ _/ / / -_|_-<       "
+  echo -e "/____/\___/\__/_//_/_/\__/___/  \e[0m" 
+  echo "≣≣≣≣≣≣≣≣≣≣≣≣≣≣≣≣≣≣≣≣≣≣≣≣≣≣≣≣≣≣≣≣≣≣≣≣≣"
+  echo -e "\e[1;3;32mGraphics?\e[0m"
   echo "1. NVIDIA"
   echo "2. Open Source (AMD/Intel/Nouveau)"
   read -p "> " graphics_option
-
-  echo "Keyboard layout?"
+  echo ""
+  echo -e "\e[1;3;32mKeyboard layout?\e[0m"
   echo "1. US"
   echo "2. LATAM"
   read -p "> " keyboard_option
+  echo ""
 
   # Validar las opciones ingresadas
   if [[ "$graphics_option" != "1" && "$graphics_option" != "2" ]]; then
@@ -31,6 +40,7 @@ show_menu
 
 # Ejecutar los comandos de stow según las respuestas del usuario
 echo "Stowing dotfiles..."
+echo ""
 
 # Si la opción de gráficos es NVIDIA
 if [[ "$graphics_option" == "1" ]]; then
@@ -58,7 +68,7 @@ if [[ "$answer" == "y" ]]; then
 else
   echo "Skipping TPM plugins installation."
 fi
-
+echo ""
 # Instalar NvChad
 read -p "Install NvChad? (y/n) " answer
 if [[ "$answer" == "y" ]]; then
@@ -72,7 +82,10 @@ else
   echo "Skipping NvChad installation."
 fi
 clear
-echo -e "\033[32;3mDone!\033[0m"
+echo -e "\e[32m   ___                __"
+echo "  / _ \___  ___  ___ / /"
+echo " / // / _ \/ _ \/ -_)_/"
+echo "/____/\___/_//_/\__(_)"
 echo ""
 echo -e "\033[31;3m\nStay Determined! <3\033[0m"
 echo -e "\033[31;3m           -Axenide\033[0m"
