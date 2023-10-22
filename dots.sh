@@ -52,6 +52,7 @@ stow dots
 # Instalar plugins TPM de Tmux
 read -p "Install TPM plugins? (y/n) " answer
 if [[ "$answer" == "y" ]]; then
+  rm -rf ~/.tmux &&
   mkdir -p ~/.tmux/plugins &&
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && ~/.tmux/plugins/tpm/scripts/install_plugins.sh
 else
