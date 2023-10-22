@@ -7,12 +7,12 @@ show_menu() {
   echo "Graphics?"
   echo "1. NVIDIA"
   echo "2. Open Source (AMD/Intel/Nouveau)"
-  read -p "Elije una opción: " graphics_option
+  read -p "> " graphics_option
 
   echo "Keyboard layout?"
   echo "1. US"
   echo "2. LATAM"
-  read -p "Elije una opción: " keyboard_option
+  read -p "> " keyboard_option
 
   # Validar las opciones ingresadas
   if [[ "$graphics_option" != "1" && "$graphics_option" != "2" ]]; then
