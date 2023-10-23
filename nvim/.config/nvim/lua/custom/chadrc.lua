@@ -2,7 +2,9 @@
  local M = {}
  M.ui = {
   theme = 'axgruv',
-  hl_override = require 'custom.highlights',
+  hl_override = {
+         [ "@variable" ] = { italic = true }
+     }
 }
  M.plugins = 'custom.plugins'
  M.mappings = require "custom.mappings"
