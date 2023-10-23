@@ -18,8 +18,8 @@
 * {
 	border: none;
 	border-radius: 0px;
-	font-family: 'Iosevka';
-	font-size: 11pt;
+	font-family: 'Victor Mono';
+	font-size: 10pt;
 	font-style: normal;
 	min-height: 0;
 }
@@ -84,6 +84,7 @@ window#waybar {
 
 #custom-playerctl {
 	font-weight: bold;
+  font-style: italic;
 }
 
 #cpu, #memory, #disk, #custom-gpu-usage {
