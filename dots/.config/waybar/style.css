@@ -88,12 +88,17 @@ window#waybar {
 	font-family: 'Symbols Nerd Font';
 	font-size: 20px;
 	border-right: solid 1px @black;
-	padding: 10px 12px 10px 14px;
+	padding: 5px 10px 5px 12px;
 }
 
 #custom-playerctl {
 	font-weight: bold;
   font-style: italic;
+  background: linear-gradient(90deg, @black, transparent, transparent, transparent, @black);
+  padding: 0px 15px;
+  border-radius: 100px;
+  border-top: solid 3px transparent;
+  border-bottom: solid 3px transparent;
 }
 
 #cpu, #memory, #disk, #custom-gpu-usage {
