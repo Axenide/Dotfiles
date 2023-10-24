@@ -639,3 +639,19 @@ menuitem[_moz-menuactive='true'] {
   border-radius: 10px !important;
   border: 2px solid #47423e !important;
 }
+
+#urlbar {
+    background: #0a0b0c !important;
+}
+
+#urlbar-background {
+    background-color: #0a0b0c !important;
+}
+
+#nav-bar {
+    background-color: black !important;
+}
+
+#urlbar-container {
+    background-color: black !important;
+}
