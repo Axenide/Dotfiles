@@ -52,7 +52,6 @@ window#waybar {
 	background: linear-gradient(to right, black, @black);
 	border-bottom: solid 3px transparent;
 	border-top: solid 3px transparent;
-  transition: background 0.25s ease-in-out;
 }
 
 #workspaces button:hover {
@@ -63,11 +62,18 @@ window#waybar {
 #tray {
 	padding: 0px 10px;
 	margin-right: 5px;
-	border-right: solid 1px @black;
+  background: linear-gradient(to left, transparent, @black);
+  border-radius: 100px 0 0 100px;
+  border-top: solid 3px transparent;
+  border-bottom: solid 3px transparent;
 }
 
 #clock {
 	color: @brgreen;
+  background: linear-gradient(to left, transparent, @black);
+  border-radius: 100px 0 0 100px;
+  border-top: solid 3px transparent;
+  border-bottom: solid 3px transparent;
 	padding-left: 10px;
 	padding-right: 12px;
 	margin-left: 5px;
@@ -77,7 +83,10 @@ window#waybar {
 
 #custom-launcher {
 	color: @red;
-	background-color: transparent;
+	background: linear-gradient(to right, transparent, @black);
+  border-radius: 0 100px 100px 0;
+  border-top: solid 3px transparent;
+  border-bottom: solid 3px transparent;
 	font-family: 'Symbols Nerd Font';
 	font-size: 20px;
 	border-right: solid 1px @black;
@@ -106,6 +115,14 @@ window#waybar {
 	font-size: 10pt;
 	margin: 0;
 	padding: 0 10px;
+}
+
+#custom-hyprpicker {
+  background: linear-gradient(to left, transparent, @black);
+  border-radius: 100px 0 0 100px;
+  border-top: solid 3px transparent;
+  border-bottom: solid 3px transparent;
+  padding-left: 15px;
 }
 
 #bluetooth.connected {
