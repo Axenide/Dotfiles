@@ -48,9 +48,11 @@ window#waybar {
 }
 
 #workspaces button.active {
-	color: @white;
-	border-bottom: solid 3px @red;
+  border-radius: 0 100px 100px 0;
+	background: linear-gradient(to right, black, @brblack);
+	border-bottom: solid 3px transparent;
 	border-top: solid 3px transparent;
+  transition: background 0.25s ease-in-out;
 }
 
 #workspaces button:hover {
