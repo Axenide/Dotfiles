@@ -2,8 +2,8 @@
 
 clear
 
-# Función para mostrar el menú y obtener la respuesta del usuario
-show_menu() {
+title() {
+  clear
   echo -e "\e[91m   ___                _    __   _    "
   echo -e "  / _ |__ _____ ___  (_)__/ /__( )___"
   echo -e " / __ |\ \ / -_) _ \/ / _  / -_)/(_-<"
@@ -12,11 +12,17 @@ show_menu() {
   echo -e " / // / _ \/ __/ _/ / / -_|_-<       "
   echo -e "/____/\___/\__/_//_/_/\__/___/  \e[0m" 
   echo "≣≣≣≣≣≣≣≣≣≣≣≣≣≣≣≣≣≣≣≣≣≣≣≣≣≣≣≣≣≣≣≣≣≣≣≣≣"
+}
+
+# Función para mostrar el menú y obtener la respuesta del usuario
+show_menu() {
+  title
   echo -e "\e[1;3;32mGraphics?\e[0m"
   echo "1. NVIDIA"
   echo "2. Open Source (AMD/Intel/Nouveau)"
   read -p "> " graphics_option
   echo ""
+  title
   echo -e "\e[1;3;32mKeyboard layout?\e[0m"
   echo "1. US"
   echo "2. LATAM"
@@ -39,6 +45,7 @@ show_menu() {
 show_menu
 
 # Ejecutar los comandos de stow según las respuestas del usuario
+title
 echo "Stowing dotfiles..."
 echo ""
 
@@ -59,6 +66,7 @@ fi
 # Siempre ejecutar 'stow dots'
 stow dots
 
+title
 # Instalar plugins TPM de Tmux
 read -p "Install TPM plugins? (y/n) " answer
 if [[ "$answer" == "y" ]]; then
@@ -70,6 +78,7 @@ else
 fi
 echo ""
 # Instalar NvChad
+title
 read -p "Install NvChad? (y/n) " answer
 if [[ "$answer" == "y" ]]; then
   rm -rf ~/.config/nvim &&
@@ -81,6 +90,16 @@ if [[ "$answer" == "y" ]]; then
 else
   echo "Skipping NvChad installation."
 fi
+
+# Instalar Firefox userChrome.css
+title
+read -p "Install Firefox custom CSS and user.js? (y/n) " answer
+if [[ "$answer" == "y" ]]; then
+  bash firefox.sh
+else
+  echo "Skipping Firefox config."
+fi
+
 clear
 echo -e "\e[32m   ___                __"
 echo "  / _ \___  ___  ___ / /"
