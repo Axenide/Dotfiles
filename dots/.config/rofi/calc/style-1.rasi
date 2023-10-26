@@ -16,7 +16,7 @@ configuration {
     display-filebrowser:        "  Files";
     display-window:             "  Windows";
     display-TODO:                "  To-Do";
-    display-calc:                "  Calculate";
+    display-calc:                "  Calculator";
 	drun-display-format:        "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";
 	window-format:              "{w} · {c} · {t}";
 }
