@@ -415,7 +415,7 @@ menu:not(.subviewbutton) > .menu-right image {
   display: none !important;
 }
 
-.tab-background[selected='true'] {
+.tab-background[selected] {
   background: linear-gradient(to right, #000000, #1b1d1d) !important;
 }
 
