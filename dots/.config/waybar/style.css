@@ -70,7 +70,7 @@ window#waybar {
 	color: @brgreen;
   background: black;
   border-radius: 10px;
-	padding: 5px 8px;
+	padding: 5px 14px;
 	margin: 10px 10px 10px 5px;
 	font-weight: bold;
   box-shadow: 0px 0px 3px rgba(0,0,0,1);
