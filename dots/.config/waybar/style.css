@@ -59,7 +59,7 @@ window#waybar {
 }
 
 #tray {
-	padding: 5px 8px;
+	padding: 5px 10px;
 	margin: 10px 5px;
   background: black;
   border-radius: 10px;
