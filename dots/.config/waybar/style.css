@@ -25,21 +25,23 @@
 }
 
 window#waybar {
-	background: black;
-	border: 2px solid @brblack;
-	border-radius: 10px;
-	color: @white;
+	background: transparent;
+	/* border: 2px solid @brblack; */
+	/* border-radius: 10px; */
+	/* color: @white; */
 }
 
 #workspaces {
-	border: solid 0px transparent;
+  background: black;
+  border-radius: 10px;
+  padding: 5px 8px;
+  margin: 10px;
+  box-shadow: 0px 0px 3px rgba(0,0,0,1);
 }
 
 #workspaces button {
 	border-radius: 0px;
 	color: @white;
-	border-top: solid 3px transparent;
-  border-bottom: solid 3px transparent;
 	/* transition: all 0.25s ease-in-out; */
 }
 
@@ -48,8 +50,7 @@ window#waybar {
 }
 
 #workspaces button.active {
-  border-radius: 0 100px 100px 0;
-	background: linear-gradient(to right, black, @black);
+  color: @brgreen;
 }
 
 #workspaces button:hover {
@@ -58,47 +59,42 @@ window#waybar {
 }
 
 #tray {
-	padding: 0px 15px;
-	margin-right: 5px;
-  background: linear-gradient(to left, transparent, @black);
-  border-radius: 100px 0 0 100px;
-  border-top: solid 3px transparent;
-  border-bottom: solid 3px transparent;
+	padding: 5px 8px;
+	margin: 10px 5px;
+  background: black;
+  border-radius: 10px;
+  box-shadow: 0px 0px 3px rgba(0,0,0,1);
 }
 
 #clock {
 	color: @brgreen;
-  background: linear-gradient(to left, transparent, @black);
-  border-radius: 100px 0 0 100px;
-  border-top: solid 3px transparent;
-  border-bottom: solid 3px transparent;
-	padding-left: 10px;
-	padding-right: 12px;
-	margin-left: 5px;
+  background: black;
+  border-radius: 10px;
+	padding: 5px 8px;
+	margin: 10px 10px 10px 5px;
 	font-weight: bold;
-	border-left: solid 1px @black;
+  box-shadow: 0px 0px 3px rgba(0,0,0,1);
 }
 
 #custom-launcher {
 	color: @red;
-	background: linear-gradient(to right, transparent, @black);
-  border-radius: 0 100px 100px 0;
-  border-top: solid 3px transparent;
-  border-bottom: solid 3px transparent;
+	background: black;
+  border-radius: 10px;
 	font-family: 'Symbols Nerd Font';
 	font-size: 20px;
-	border-right: solid 1px @black;
-	padding: 5px 10px 5px 12px;
+	padding: 8px 11px 8px 10px;
+  margin: 10px 5px 10px 10px;
+  box-shadow: 0px 0px 3px rgba(0,0,0,1);
 }
 
 #custom-playerctl {
 	font-weight: bold;
   font-style: italic;
-  background: linear-gradient(90deg, @black, transparent, transparent, transparent, @black);
-  padding: 0px 15px;
-  border-radius: 100px;
-  border-top: solid 3px transparent;
-  border-bottom: solid 3px transparent;
+  background: black;
+  padding: 5px 14px;
+  margin: 10px 5px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 3px rgba(0,0,0,1);
 }
 
 #cpu, #memory, #disk, #custom-gpu-usage {
@@ -120,13 +116,13 @@ window#waybar {
 	padding: 0 10px;
 }
 
-#custom-hyprpicker {
-  background: linear-gradient(to left, transparent, @black);
-  border-radius: 100px 0 0 100px;
-  border-top: solid 3px transparent;
-  border-bottom: solid 3px transparent;
-  padding-left: 15px;
-}
+/* #custom-hyprpicker { */
+/*   background: linear-gradient(to left, transparent, @black); */
+/*   border-radius: 100px 0 0 100px; */
+/*   border-top: solid 3px transparent; */
+/*   border-bottom: solid 3px transparent; */
+/*   padding-left: 15px; */
+/* } */
 
 #bluetooth.connected {
 	color: @brgreen;
@@ -146,4 +142,12 @@ window#waybar {
 
 #battery.warning:not(.charging) {
 	color: @red;
+}
+
+#group-applets {
+  background: black;
+  border-radius: 10px;
+  padding: 5px 8px;
+  margin: 10px;
+  box-shadow: 0px 0px 3px rgba(0,0,0,1);
 }

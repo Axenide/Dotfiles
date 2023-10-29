@@ -16,13 +16,13 @@
     "position": "top",
     "layer": "top",
     "height": 16,
-    "margin-top": 10,
-    "margin-bottom": 0,
-    "margin-left": 10,
-    "margin-right": 10,
+    "margin-top": 0,
+    "margin-bottom": -10,
+    "margin-left": 0,
+    "margin-right": 0,
     "modules-left": ["custom/launcher", "hyprland/workspaces"],
     "modules-center": ["custom/playerctl"],
-    "modules-right": ["tray", "custom/hyprpicker", "bluetooth", "network", "pulseaudio", "backlight", "battery", "custom/notifications", "clock"],
+    "modules-right": ["tray", "group/group-applets", "clock"],
     // Modules configuration
 	"clock": {
 		"format": "{:%H:%M:%OS}",
@@ -257,5 +257,18 @@
     "on-click": "bash ~/.config/waybar/scripts/hyprpicker-hex.sh",
     "on-click-right": "bash ~/.config/waybar/scripts/hyprpicker-rgb.sh"
   },
+
+  "group/group-applets": {
+    "orientation": "inherit",
+    "modules": [
+        "custom/hyprpicker",
+        "bluetooth",
+        "network",
+        "pulseaudio",
+        "backlight",
+        "battery",
+        "custom/notifications",
+    ]
+},
   }
 }
