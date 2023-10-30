@@ -1,7 +1,8 @@
 window {
     padding: 10px 10px;
     border-radius: 20px;
-    border: solid 2px #47423E;
+    border: solid 1px #47423E;
+    background: alpha(black, 0.75);
 }
 
 #container {

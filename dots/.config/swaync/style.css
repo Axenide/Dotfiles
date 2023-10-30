@@ -65,7 +65,7 @@
     border-radius: 10px;
     margin: 10px;
     padding: 0;
-    border: 2px solid @noti-border-color;
+    border: 1px solid @noti-border-color;
     background: @noti-bg-darker;
 }
 
@@ -148,14 +148,14 @@
     background: @noti-bg-darker;
     color: @text-color;
     caret-color: @text-color;
-    border: 2px solid @noti-border-color;
+    border: 1px solid @noti-border-color;
     border-radius: 10px
 }
 
 .inline-reply-button {
     margin-left: 4px;
     background: @noti-bg;
-    border: 2px solid @noti-border-color;
+    border: 1px solid @noti-border-color;
     border-radius: 10px;
     color: @text-color
 }
@@ -163,7 +163,7 @@
 .inline-reply-button:disabled {
     background: initial;
     color: @text-color-disabled;
-    border: 2px solid transparent
+    border: 1px solid transparent
 }
 
 .inline-reply-button:hover {
@@ -206,7 +206,7 @@
 
 .control-center {
     background: alpha(@cc-bg, 0.9);
-    border: 2px solid @noti-border-color;
+    border: 1px solid @noti-border-color;
     border-radius: 10px;
     margin: 10px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 1);
@@ -244,7 +244,7 @@
     color: @brgreen;
     text-shadow: none;
     background: @noti-bg;
-    border: 2px solid @noti-border-color;
+    border: 1px solid @noti-border-color;
     box-shadow: none;
     border-radius: 10px;
 }
@@ -265,7 +265,7 @@
     font-size: initial;
     border-radius: 999px;
     background: @black;
-    /* border: 2px solid @bgblack; */
+    /* border: 1px solid @bgblack; */
     box-shadow: none;
     padding: 1px;
     transition: all .1s ease-in-out;
@@ -382,7 +382,7 @@
     color: @text-color;
     text-shadow: none;
     background: @noti-bg;
-    border: 2px solid @noti-border-color;
+    border: 1px solid @noti-border-color;
     box-shadow: none;
     border-radius: 10px
 }
