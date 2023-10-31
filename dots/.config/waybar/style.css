@@ -51,6 +51,11 @@ window#waybar {
 
 #workspaces button.active {
   color: @brgreen;
+  text-shadow:
+    0.25px 0.25px 0 @brgreen,
+    -0.25px 0.25px 0 @brgreen,
+    -0.25px -0.25px 0 @brgreen,
+    0.25px -0.25px 0 @brgreen;
 }
 
 #workspaces button:hover {
