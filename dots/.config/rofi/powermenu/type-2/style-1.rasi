@@ -57,7 +57,7 @@ mainbox {
 
 /*****----- Inputbar -----*****/
 inputbar {
-    enabled:                     true;
+    enabled:                     false;
     spacing:                     15px;
     margin:                      0px;
     padding:                     0px;
@@ -75,7 +75,7 @@ dummy {
 
 textbox-prompt-colon {
     font:                        "Symbols Nerd Font 12";
-    enabled:                     true;
+    enabled:                     false;
     expand:                      false;
     str:                         "";
     padding:                     0 14px;
@@ -88,7 +88,7 @@ textbox-prompt-colon {
     horizontal-align:            0.5;
 }
 prompt {
-    enabled:                     true;
+    enabled:                     false;
     padding:                     12px;
     border-radius:               10px;
     border-color:                @active;
@@ -99,7 +99,7 @@ prompt {
 
 /*****----- Message -----*****/
 message {
-    enabled:                     true;
+    enabled:                     false;
     margin:                      0px;
     padding:                     12px;
     border:                      0px solid;
