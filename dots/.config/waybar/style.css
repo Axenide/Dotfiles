@@ -46,7 +46,11 @@ window#waybar {
 }
 
 #workspaces button.persistent {
-	color: @brblack;
+	color: @white;
+}
+
+#workspaces button.empty {
+    color: @brblack;
 }
 
 #workspaces button.active {
