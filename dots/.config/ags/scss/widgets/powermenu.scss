@@ -1,0 +1,75 @@
+window#powermenu, window#verification {
+    .shader {
+        background-color: rgba(0, 0, 0, 0.05);
+    }
+}
+
+window#verification .verification {
+    @include floating_widget;
+    padding: $popover_padding*1.2;
+    min-width: 300px;
+    min-height: 100px;
+
+    .title {
+        font-size: 1.7em;
+    }
+
+    .desc {
+        color: transparentize($fg_color, 0.1);
+        font-size: 1.2em;
+    }
+
+    .buttons {
+        margin-top: $spacing*2;
+
+        button {
+            @include button;
+            font-size: 1.6em;
+            padding: $spacing;
+            margin: 0 $popover_padding*1.2/2;
+
+            &:first-child {
+                margin-left: 0;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+window#powermenu .powermenu {
+    @include floating_widget;
+    padding: $popover_padding;
+    border-radius: $radii*3;
+
+    button {
+        @include common;
+
+        image {
+            @include button;
+            margin: $popover_padding;
+            margin-bottom: $popover_padding/2;
+            border-radius: $radii*2;
+            min-width: 120px;
+            min-height: 120px;
+            font-size: 68px;
+        }
+
+        label, image {
+            color: transparentize($fg_color, 0.1);
+        }
+
+        &:hover {
+            image{ @include button_hover; }
+            label{ color: $fg_color; }
+        }
+        &:focus image { @include button_focus; }
+        &:active image { @include button_active; }
+
+        &:focus, &:active {
+            label{ color: $accent; }
+        }
+    }
+}

@@ -1,0 +1,98 @@
+window.corner .corner {
+    background-color: if($screen_corners, $bg_color, transparent);
+    border-radius: if($screen_corners, $radii*2, 0);
+}
+
+window.desktop {
+    @if $bar_style == 'normal' {
+        border-radius: if($screen_corners, $popover_radius, 0);
+        box-shadow: inset 0 0 $spacing 0 $shadow;
+    }
+
+    .clock-box-shadow {
+        border: 5px solid $wallpaper_fg;
+        border-radius: $radii;
+
+        .clock-box {
+            border-radius: max($radii - 5px, 0);
+            padding: 0 14px;
+
+            .clock {
+                color: $wallpaper_fg;
+                font-size: 140px;
+                font-family: $mono_font;
+            }
+
+            .separator-box {
+                padding: 24px 12px;
+
+                separator {
+                    border-radius: $radii;
+                    min-width: 16px;
+                    min-height: 16px;
+                    background-color: $wallpaper_fg;
+                }
+            }
+        }
+    }
+
+    .date {
+        color: $wallpaper_fg;
+        font-size: 48px;
+    }
+
+    @if $drop_shadow {
+        .clock-box-shadow, separator {
+            box-shadow: 2px 2px 2px 0 $shadow;
+        }
+
+        .clock-box {
+            box-shadow: inset 2px 2px 2px 0 $shadow;
+        }
+
+        label {
+            text-shadow: $text_shadow;
+        }
+    } @else {
+        .clock-box-shadow{
+            box-shadow: 0 0 0 $border_width $border_color,
+                        inset 0 0 0 $border_width $border_color;
+        }
+
+        separator {
+            border: $border;
+        }
+
+        label {
+            @include text_border;
+        }
+    }
+}
+
+.desktop-menu {
+    image {
+        margin-left: -14px;
+        margin-right: 6px;
+    }
+}
+
+window.indicator .progress {
+    @include floating_widget;
+    border-radius: $radii;
+    padding: $spacing/2;
+
+    .fill {
+        border-radius: $radii/2;
+        background-color: $accent;
+        color: $accent_fg;
+
+        image {
+            padding-top: $spacing/4;
+            -gtk-icon-transform: scale(0.7);
+        }
+
+        .font-icon {
+            font-size: 34px;
+        }
+    }
+}

@@ -1,0 +1,58 @@
+@mixin dock($spacing: $spacing * 0.7) {
+    separator {
+        border-radius: $radii;
+        background-color: transparentize($fg_color, 0.8);
+        margin: 0 $spacing;
+    }
+
+    &.horizontal {
+        separator {
+            min-width: 2px;
+            min-height: 2em;
+        }
+
+        button.focused .indicator {
+            min-width: 18px;
+        }
+    }
+
+    button {
+        @include accs_button($flat: true);
+
+        image, .box {
+            margin: $spacing;
+
+            @if $theme == 'light' {
+                -gtk-icon-shadow: $text_shadow;
+            }
+        }
+
+        .indicator {
+            min-width: 6px;
+            min-height: 6px;
+            background-color: $fg_color;
+            border-radius: $radii;
+            margin-bottom: 2px;
+        }
+
+        &.single .indicator, &.nonrunning .indicator {
+            background-color: transparent;
+        }
+
+        &.focused {
+            .indicator {
+                background-image: $active_gradient;
+            }
+        }
+    }
+}
+
+window.floating-dock .dock {
+    @include dock;
+    @include floating_widget;
+    padding: $spacing / 2;
+
+    button image {
+        font-size: 48px;
+    }
+}
