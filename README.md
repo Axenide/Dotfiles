@@ -3,10 +3,10 @@
 <p align="center">
     <i>These are my configuration files also known as <b>dotfiles</b>.
 <img src="screenshots/cover.png">
-        <sup>
-            This setup is specific for <a href="https://github.com/hyprwm/Hyprland">Hyprland</a>. Dont install it if you don't know what you're doing.
-        </sup></i>
 </p>
+
+> [!WARNING]
+> This setup is specific for [Hyprland](https://github.com/hyprwm/Hyprland). Dont install it if you don't know what you're doing.
 
 <details>
 <summary><i>
@@ -25,7 +25,9 @@ cd Dotfiles
 ```
 This will install the config for the system. For example, selecting NVIDIA will add the correct environment variables to the Hyprland config.
 
-**Note:** *This won't install the needed packages. That's a WIP.*
+> [!NOTE]
+> This won't install the needed packages. That's a WIP.
+
 ## 💥 Rofi
 <details>
   <summary>🚀 App Launcher</summary>
@@ -77,8 +79,7 @@ This will install the config for the system. For example, selecting NVIDIA will 
 
 ## ⌨️ Keybindings
 
-<details>
-<summary>Hyprland</summary>
+### Hyprland
 
 | Keys                                         | Action                          |
 |---------------------------------------------:|:--------------------------------|
@@ -107,10 +108,7 @@ This will install the config for the system. For example, selecting NVIDIA will 
 | <kbd>SUPER + Left Click</kbd>                         | Drag window                     |
 | <kbd>SUPER + Right Click</kbd>                        | Drag resize window              |
 
-</details>
-
-<details>
-<summary>Programs</summary>
+### Programs
 
 | Keys                                         | Action                          |
 |---------------------------------------------:|:--------------------------------|
@@ -136,12 +134,10 @@ This will install the config for the system. For example, selecting NVIDIA will 
 | <kbd>SUPER + SHIFT + S</kbd>                          | Copy area screenshot            |
 | <kbd>SUPER + A</kbd>                                  | Toggle notification center      |
 
-</details>
+### Tmux
 
-<details>
-<summary>Tmux</summary>
-
-<sub><b>PREFIX</b> is set to <kbd>CTRL + Space</kbd></sub>
+> [!IMPORTANT]
+> **PREFIX** is set to <kbd>CTRL + Space</kbd>
 
 | Keys                | Action                          |
 |--------------------:|:--------------------------------|
@@ -161,8 +157,6 @@ This will install the config for the system. For example, selecting NVIDIA will 
 | <kbd>v</kbd>                 | Start selection                 |
 | <kbd>CTRL + v</kbd>          | Toggle rectangle/line selection |
 | <kbd>y</kbd>                 | Yank selection                  |
-
-</details>
 
 <p align="center">
 <samp>
