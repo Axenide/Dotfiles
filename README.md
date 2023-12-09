@@ -1,7 +1,7 @@
 <h1 align="center">✨ Dotfiles</h1>
 
 <p align="center">
-    <i>These are my configuration files also known as <b>dotfiles</b>.
+    <i>These are my configuration files also known as <b>dotfiles</b>.</i>
 <img src="screenshots/cover.png">
 </p>
 
