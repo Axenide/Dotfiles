@@ -118,8 +118,8 @@ This will install the config for the system. For example, selecting NVIDIA will 
 | <kbd>SUPER + T</kbd>                                  | Tmux Session Manager            |
 | <kbd>SUPER + E</kbd>                                  | File explorer                   |
 | <kbd>SUPER + SHIFT + E</kbd>                          | Floating file explorer          |
-| <kbd>SUPER + W</kbd>                                  | Firefox                         |
-| <kbd>SUPER + SHIFT + W</kbd>                          | Private Firefox                 |
+| <kbd>SUPER + W</kbd>                                  | Brave Nightly                   |
+| <kbd>SUPER + SHIFT + W</kbd>                          | Incognito Brave Nightly         |
 | <kbd>SUPER + R</kbd>                                  | App Launcher                    |
 | <kbd>SUPER + Escape</kbd>                             | Powermenu                       |
 | <kbd>SUPER + .</kbd>                                  | Emojis                          |
