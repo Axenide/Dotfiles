@@ -30,51 +30,57 @@ This will install the config for the system. For example, selecting NVIDIA will 
 
 ## 💥 Rofi
 <details>
-  <summary>🚀 App Launcher</summary>
+  <summary>App Launcher</summary>
     <br>
   <img src="screenshots/rofi/launcher.png">
 </details>
 
 <details>
-  <summary>⚡ Power Menu</summary>
+  <summary>Power Menu</summary>
     <br>
   <img src="screenshots/rofi/powermenu.png">
 </details>
 
 <details>
-  <summary>😎 Emojis</summary>
+  <summary>Emojis</summary>
     <br>
   <img src="screenshots/rofi/emoji.png">
 </details>
 
 <details>
-  <summary>🎨 Wallpaper Changer</summary>
+  <summary>Wallpaper Changer</summary>
     <br>
   <img src="screenshots/rofi/wallpaper.png">
 </details>
 
 <details>
-  <summary>💻 Tmux Session Manager</summary>
+  <summary>Tmux Session Manager</summary>
     <br>
   <img src="screenshots/rofi/tmux.png">
 </details>
 
 <details>
-  <summary>🔊 Sound Manager</summary>
+  <summary>Sound Manager</summary>
     <br>
   <img src="screenshots/rofi/volume.png">
 </details>
 
 <details>
-  <summary>📝 Notes</summary>
+  <summary>Notes</summary>
     <br>
   <img src="screenshots/rofi/notes.png">
 </details>
 
 <details>
-  <summary>🗒️ To-Do</summary>
+  <summary>To-Do</summary>
     <br>
   <img src="screenshots/rofi/todo.png">
+</details>
+
+<details>
+  <summary>Bluetooth</summary>
+    <br>
+  <img src="screenshots/rofi/bluetooth.png">
 </details>
 
 ## ⌨️ Keybindings
@@ -85,7 +91,7 @@ This will install the config for the system. For example, selecting NVIDIA will 
 |---------------------------------------------:|:--------------------------------|
 | <kbd>SUPER + C</kbd>                                  | Close window                    |
 | <kbd>SUPER + SHIFT + Escape</kbd>                     | Exit Hyprland                   |
-| <kbd>SUPER + SHIFT + B</kbd>                                  | Hide Waybar                     |
+| <kbd>SUPER + SHIFT + B</kbd>                                  | Toggle Waybar                     |
 | <kbd>SUPER + ALT + B</kbd>                            | Restart Waybar                  |
 | <kbd>SUPER + Space</kbd>                              | Toggle tiled/floating           |
 | <kbd>SUPER + P</kbd>                                  | Toggle pseudo-tiling            |
