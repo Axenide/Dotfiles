@@ -85,7 +85,7 @@ This will install the config for the system. For example, selecting NVIDIA will 
 |---------------------------------------------:|:--------------------------------|
 | <kbd>SUPER + C</kbd>                                  | Close window                    |
 | <kbd>SUPER + SHIFT + Escape</kbd>                     | Exit Hyprland                   |
-| <kbd>SUPER + B</kbd>                                  | Hide Waybar                     |
+| <kbd>SUPER + SHIFT + B</kbd>                                  | Hide Waybar                     |
 | <kbd>SUPER + ALT + B</kbd>                            | Restart Waybar                  |
 | <kbd>SUPER + Space</kbd>                              | Toggle tiled/floating           |
 | <kbd>SUPER + P</kbd>                                  | Toggle pseudo-tiling            |
@@ -128,6 +128,7 @@ This will install the config for the system. For example, selecting NVIDIA will 
 | <kbd>SUPER + N</kbd>                                  | Notes                           |
 | <kbd>SUPER + Q</kbd>                                  | To-Do                           |
 | <kbd>SUPER + M</kbd>                                  | Calculator                      |
+| <kbd>SUPER + B</kbd>                                  | Bluetooth                       |
 | <kbd>Print</kbd>                                      | Save and copy screenshot        |
 | <kbd>SHIFT + Print</kbd>                              | Copy screenshot                 |
 | <kbd>SUPER + S</kbd>                                  | Save and copy area screenshot   |
