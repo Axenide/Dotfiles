@@ -83,6 +83,12 @@ This will install the config for the system. For example, selecting NVIDIA will 
   <img src="screenshots/rofi/bluetooth.png">
 </details>
 
+<details>
+  <summary>Network</summary>
+    <br>
+  <img src="screenshots/rofi/network.png">
+</details>
+
 ## ⌨️ Keybindings
 
 ### Hyprland
@@ -135,6 +141,7 @@ This will install the config for the system. For example, selecting NVIDIA will 
 | <kbd>SUPER + Q</kbd>                                  | To-Do                           |
 | <kbd>SUPER + M</kbd>                                  | Calculator                      |
 | <kbd>SUPER + B</kbd>                                  | Bluetooth                       |
+| <kbd>SUPER + D</kbd>                                  | Networks                        |
 | <kbd>Print</kbd>                                      | Save and copy screenshot        |
 | <kbd>SHIFT + Print</kbd>                              | Copy screenshot                 |
 | <kbd>SUPER + S</kbd>                                  | Save and copy area screenshot   |
