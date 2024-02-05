@@ -10,11 +10,12 @@ firefox_folder="$HOME/.mozilla/firefox"
 default_release_dir=$(find "$firefox_folder" -type d -name "*.default-release")
 
 if [ -n "$default_release_dir" ]; then
-    # Crea symlinks de todos los archivos y directorios en la carpeta original
-    for item in "$original_folder"/*; do
-        item_name=$(basename "$item")
-        ln -sf "$item" "$default_release_dir/$item_name"
-    done
+    # Crea symlink a la carpeta "chrome"
+    ln -sf "$original_folder/chrome" "$default_release_dir/chrome"
+
+    # Crea symlink al archivo "user.js"
+    ln -sf "$original_folder/user.js" "$default_release_dir/user.js"
+
     echo "Symlinks created in $default_release_dir."
 else
     echo "No se encontró el directorio default-release de Firefox."
