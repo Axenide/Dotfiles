@@ -176,7 +176,7 @@ This will install the config for the system. For example, selecting NVIDIA will 
 ### Floorp
 I'm currently using Floorp, a Firefox ESR fork with a sidebar and a lot of customization options.
 
-For Floorp I only removed the window buttons via CSS. You can do the same while installing or running `floorp.sh`. I only tweaked the config and used [Firefox Color](https://addons.mozilla.org/es/firefox/addon/firefox-color/) to recolor it.
+I only tweaked the config and used [Firefox Color](https://addons.mozilla.org/es/firefox/addon/firefox-color/) to recolor it. There was no need to use a custom CSS.
 
 [Click here to get my theme](https://color.firefox.com/?theme=XQAAAAKcAQAAAAAAAABBqYhm849SCia73laEGccwS-xMDPrv2Sw6Caq-qy5QgqeHG4K15QdnKP13g2bqt8iOj4e4VN6fpUJ5Y-FzVYxdRh4Jahskc87JAlD7QBtVsQPah07ceRE71vdnCbF_-HDpdDsCCgxf762zTxvWjJDI_cSS1JYv7e-yR-YLNlxGjaKfyUVHw9nHlNl5tu0qly99l70ODSB6rI0cc56xlRfomQJbRV-lNKpjgxEvYnXITcE-LiFtvVyliTFWexkCg2ripcVdrjbZdzsVNm4BOXyEIx_gLC3M0vJY_1D8JAA) or make your own!
 
