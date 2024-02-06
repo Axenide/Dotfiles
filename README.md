@@ -130,8 +130,8 @@ This will install the config for the system. For example, selecting NVIDIA will 
 | <kbd>SUPER + T</kbd>                                  | Tmux Session Manager            |
 | <kbd>SUPER + E</kbd>                                  | File explorer                   |
 | <kbd>SUPER + SHIFT + E</kbd>                          | Floating file explorer          |
-| <kbd>SUPER + W</kbd>                                  | Brave Nightly                   |
-| <kbd>SUPER + SHIFT + W</kbd>                          | Incognito Brave Nightly         |
+| <kbd>SUPER + W</kbd>                                  | Floorp                          |
+| <kbd>SUPER + SHIFT + W</kbd>                          | Private Floorp                  |
 | <kbd>SUPER + R</kbd>                                  | App Launcher                    |
 | <kbd>SUPER + Escape</kbd>                             | Powermenu                       |
 | <kbd>SUPER + .</kbd>                                  | Emojis                          |
@@ -171,6 +171,20 @@ This will install the config for the system. For example, selecting NVIDIA will 
 | <kbd>v</kbd>                 | Start selection                 |
 | <kbd>CTRL + v</kbd>          | Toggle rectangle/line selection |
 | <kbd>y</kbd>                 | Yank selection                  |
+
+## 🌐 Browser Theme
+### Floorp
+I'm currently using Floorp, a Firefox ESR fork with a sidebar and a lot of customization options.
+
+For Floorp I only removed the window buttons via CSS. You can do the same while installing or running `floorp.sh`. I only tweaked the config and used [Firefox Color](https://addons.mozilla.org/es/firefox/addon/firefox-color/) to recolor it.
+
+[Click here to get my theme](https://color.firefox.com/?theme=XQAAAAKcAQAAAAAAAABBqYhm849SCia73laEGccwS-xMDPrv2Sw6Caq-qy5QgqeHG4K15QdnKP13g2bqt8iOj4e4VN6fpUJ5Y-FzVYxdRh4Jahskc87JAlD7QBtVsQPah07ceRE71vdnCbF_-HDpdDsCCgxf762zTxvWjJDI_cSS1JYv7e-yR-YLNlxGjaKfyUVHw9nHlNl5tu0qly99l70ODSB6rI0cc56xlRfomQJbRV-lNKpjgxEvYnXITcE-LiFtvVyliTFWexkCg2ripcVdrjbZdzsVNm4BOXyEIx_gLC3M0vJY_1D8JAA) or make your own!
+
+### Firefox
+If you want, you can use my custom CSS. An automated script for this is included in the root folder of this repository as `firefox.sh`. You will also be asked if you want to use my config when running `dots.sh`.
+
+### Chromium
+I made a custom theme that you can use on any Chromium based browser. You have to add it via developer mode on your extensions settings. I really like Brave, but you can use it on every Chromium browser (except Opera for some reason).
 
 <p align="center">
 <samp>

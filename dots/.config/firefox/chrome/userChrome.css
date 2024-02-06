@@ -628,16 +628,10 @@ menuitem[_moz-menuactive='true'] {
   color: inherit !important;
 }
 
-/* Make context menu navigation buttons smaller */
-#context-navigation .menu-iconic-icon {
-  width: 16px !important;
-  height: 16px !important;
-}
-
 /*Context menu border-radius*/
 #contentAreaContextMenu {
   border-radius: 10px !important;
-  border: 2px solid #47423e !important;
+  border: 1px solid #47423e !important;
 }
 
 #urlbar {
@@ -645,7 +639,7 @@ menuitem[_moz-menuactive='true'] {
 }
 
 #urlbar-background {
-    background-color: #0a0b0c !important;
+    background-color: #1b1d1d !important;
 }
 
 #nav-bar {
