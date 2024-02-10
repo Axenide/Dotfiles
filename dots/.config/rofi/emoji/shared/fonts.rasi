@@ -8,5 +8,5 @@
  **/
 
 * {
-    font: "VictorMono Nerd Font 10";
+    font: "VictorMono Nerd Font Bold 10";
 }
