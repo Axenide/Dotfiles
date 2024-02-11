@@ -35,13 +35,6 @@
 	font-size: 13px;
 }
 
-.tabbrowser-tab .tab-close-button {
-	display: none !important;
-	border-radius: 8px !important;
-	margin-left: -4.5px !important;
-	margin-right: 2px !important;
-}
-
 .tabbrowser-tab[selected="true"] .tab-content {
     background-color: #000 !important; /* Fondo negro para la pestaña seleccionada */
     border-top: 1px solid #DB4740 !important; /* Borde de 1px de color #DB4740 */
@@ -51,20 +44,13 @@
     opacity: 0.5 !important; /* Oscurecer las pestañas no seleccionadas al 50% */
 }
 
-.tabbrowser-tab[selected="true"]:not([pinned]):hover .tab-icon-stack {
-	display: none !important;
-	order: 3;
-}
-
 /* Buttons color */
 .toolbarbutton-icon {
     fill: #DB4740 !important;
 }
 
-.tabbrowser-tab[selected="true"]:not([pinned]):hover .tab-close-button {
-	display: block !important;
-	position: relative;
-	order: 0;
+.tab-close-button {
+	display: none !important;
 }
 
 /* Remove silly space */
@@ -145,3 +131,17 @@
 #bookmarks-menu-button {
 	margin-right: 16px !important;
 }
+
+.tabbrowser-tab[fadein]:not([pinned]) {
+  max-width: none !important;
+}
+
+.tab-icon-stack {
+  margin-inline-start: auto !important;
+}
+
+.tab-label-container {
+  max-width: min-content !important;
+  margin-inline-end: auto !important;
+}
+
