@@ -176,7 +176,7 @@ This will install the config for the system. For example, selecting NVIDIA will 
 ### Floorp
 I'm currently using Floorp, a Firefox ESR fork with a sidebar and a lot of customization options.
 
-I only tweaked the config and used [Firefox Color](https://addons.mozilla.org/es/firefox/addon/firefox-color/) to recolor it. There was no need to use a custom CSS.
+I tweaked some details with CSS and used [Firefox Color](https://addons.mozilla.org/es/firefox/addon/firefox-color/) to recolor it.
 
 [Click here to get my theme](https://color.firefox.com/?theme=XQAAAAKcAQAAAAAAAABBqYhm849SCia73laEGccwS-xMDPrv2Sw6Caq-qy5QgqeHG4K15QdnKP13g2bqt8iOj4e4VN6fpUJ5Y-FzVYxdRh4Jahskc87JAlD7QBtVsQPah1lEVOrnQjk3fT6hspa42dQuogENOnAprj5_ike7fU8X50TCyvscVMl171BNW9KlAwx9YXTNFIe88acOqVJdFP3Rgb9_CnTwjW2-GeFFkTLK0hpCCr6Z5VkAVOYMYI1QVhmLphuFFpW4cZBTYk7ZRTWurWg3WiN63UnrB9pQvA_QCVz_Cl-mAA) or make your own!
 
