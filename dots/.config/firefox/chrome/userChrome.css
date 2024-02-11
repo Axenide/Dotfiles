@@ -42,11 +42,24 @@
 	margin-right: 2px !important;
 }
 
+.tabbrowser-tab[selected="true"] .tab-content {
+    background-color: #000 !important; /* Fondo negro para la pestaña seleccionada */
+    border-top: 1px solid #DB4740 !important; /* Borde de 1px de color #DB4740 */
+}
+
+.tabbrowser-tab:not([selected]) .tab-content {
+    opacity: 0.5 !important; /* Oscurecer las pestañas no seleccionadas al 50% */
+}
+
 .tabbrowser-tab[selected="true"]:not([pinned]):hover .tab-icon-stack {
 	display: none !important;
 	order: 3;
 }
 
+/* Buttons color */
+.toolbarbutton-icon {
+    fill: #DB4740 !important;
+}
 
 .tabbrowser-tab[selected="true"]:not([pinned]):hover .tab-close-button {
 	display: block !important;
@@ -63,13 +76,14 @@
 .urlbar-input-box {
 	font-size: 13px !important;
 	font-weight: light !important;
+  text-align: center !important;
 }
 
 #nav-bar {
 	position: absolute !important;
 	top: 40px !important;
-	left: 8px !important;
-	right: 8px !important;
+	left: 100px !important;
+	right: 100px !important;
 	height: 0px !important;
 	border-radius: 8px !important;
 
@@ -120,6 +134,12 @@
 
 #urlbar {
 	padding-left: 8px !important;
+  border: 1px solid #47423e !important;
+  border-radius: 5px !important;
+}
+
+#urlbar:hover {
+  border: 1px solid #db4740 !important;
 }
 
 #bookmarks-menu-button {
