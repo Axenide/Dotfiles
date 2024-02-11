@@ -100,6 +100,15 @@ else
   echo "Skipping Firefox config."
 fi
 
+# Instalar Floorp userChrome.css
+title
+read -p "Install Floorp custom CSS? (y/n) " answer
+if [[ "$answer" == "y" ]]; then
+  bash floorp.sh
+else
+  echo "Skipping Floorp config."
+fi
+
 clear
 echo -e "\e[32m   ___                __"
 echo "  / _ \___  ___  ___ / /"

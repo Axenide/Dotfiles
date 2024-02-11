@@ -1,0 +1,6 @@
+.tabbrowser-tab[selected="true"] .tab-content {
+    background-color: #000 !important; /* Fondo negro para la pestaña seleccionada */
+    border-left: 2px solid #DB4740 !important; /* Borde de 1px de color #DB4740 */
+    border-radius: 2px;
+    margin-left: -2px !important;
+}
