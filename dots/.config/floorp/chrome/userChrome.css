@@ -1,6 +1,8 @@
-.tabbrowser-tab[selected="true"] .tab-content {
-    background-color: #000 !important; /* Fondo negro para la pestaña seleccionada */
-    border-left: 2px solid #DB4740 !important; /* Borde de 1px de color #DB4740 */
-    border-radius: 2px;
-    margin-left: -2px !important;
+#sidebar-splitter2 {
+  appearance: none !important;
+  width: 0px !important;;  /* Set initial width */
+}
+
+.tabbrowser-tab:not([selected]) .tab-content {
+    opacity: 0.5 !important; /* Oscurecer las pestañas no seleccionadas al 50% */
 }
