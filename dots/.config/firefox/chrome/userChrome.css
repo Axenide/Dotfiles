@@ -35,9 +35,12 @@
 	font-size: 13px;
 }
 
+.tabbrowser-tab .tab-content {
+  background-color: #000 !important;
+}
+
 .tabbrowser-tab[selected="true"] .tab-content {
-    background-color: #000 !important; /* Fondo negro para la pestaña seleccionada */
-    border-top: 1px solid #DB4740 !important; /* Borde de 1px de color #DB4740 */
+    font-style: italic !important;
 }
 
 .tabbrowser-tab:not([selected]) .tab-content {
@@ -60,16 +63,15 @@
 
 /***** URL BAR *****/
 .urlbar-input-box {
-	font-size: 13px !important;
-	font-weight: light !important;
+ 	font-weight: light !important;
   text-align: center !important;
 }
 
 #nav-bar {
 	position: absolute !important;
-	top: 40px !important;
-	left: 100px !important;
-	right: 100px !important;
+	top: 42px !important;
+	left: 10px !important;
+	right: 10px !important;
 	height: 0px !important;
 	border-radius: 8px !important;
 

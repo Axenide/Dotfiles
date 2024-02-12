@@ -3,6 +3,17 @@
   width: 0px !important;;  /* Set initial width */
 }
 
+.tabbrowser-tab[selected] .tab-content {
+  font-style: italic !important;
+}
+
 .tabbrowser-tab:not([selected]) .tab-content {
     opacity: 0.5 !important; /* Oscurecer las pestañas no seleccionadas al 50% */
 }
+
+.urlbar-input-box {
+	/* font-weight: bold !important; */
+  font-style: italic !important;
+  text-align: center !important;
+}
+
