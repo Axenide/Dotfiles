@@ -63,7 +63,7 @@
 
 /***** URL BAR *****/
 .urlbar-input-box {
- 	font-weight: light !important;
+ 	font-style: italic !important;
   text-align: center !important;
 }
 
