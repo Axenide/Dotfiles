@@ -100,6 +100,7 @@ window#waybar {
 	font-weight: bold;
   font-style: italic;
   background: black;
+  color: @white;
   padding: 5px 14px;
   margin: 10px 5px;
   border-radius: 10px;
