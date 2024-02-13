@@ -17,3 +17,17 @@
   text-align: center !important;
 }
 
+#identity-box,
+#tracking-protection-icon-container,
+#page-action-buttons {
+  transition: opacity 0.3s ease;
+  opacity: 0;
+  width: 0;
+}
+
+#urlbar:hover #identity-box,
+#urlbar:hover #tracking-protection-icon-container,
+#urlbar:hover #page-action-buttons {
+  opacity: 1;
+  width: auto;
+}
