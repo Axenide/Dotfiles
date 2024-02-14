@@ -63,10 +63,11 @@
 
 .notification {
     border-radius: 10px;
-    margin: 10px;
+    margin: 15px 10px 0 0;
     padding: 0;
     border: 1px solid @noti-close-bg;
     background: @noti-bg-darker;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
 }
 
 .notification-content {
@@ -192,7 +193,7 @@
     background: transparent;
     color: @brgreen;
     text-shadow: none;
-    margin-right: 0px
+    margin-right: 10px
 }
 
 .body {
@@ -213,7 +214,7 @@
 }
 
 .control-center-list {
-    background: transparent
+    background: transparent;
 }
 
 .control-center-list-placeholder {

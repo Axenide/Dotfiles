@@ -11,6 +11,11 @@
     opacity: 0.5 !important; /* Oscurecer las pestañas no seleccionadas al 50% */
 }
 
+/* Rotación de 30 grados para los favicons de las pestañas fijadas */
+.tabbrowser-tab[pinned] .tab-icon-image {
+    transform: rotate(-15deg);
+}
+
 .urlbar-input-box {
 	/* font-weight: bold !important; */
   font-style: italic !important;
