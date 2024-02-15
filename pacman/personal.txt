@@ -39,6 +39,7 @@ libreoffice-fresh-es
 librewolf
 lobster-git
 lolcat
+lsd
 man-db
 mousepad
 mpc

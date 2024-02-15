@@ -146,6 +146,7 @@ Also it will install `yay`, but you can skip the installation and use any AUR he
 | <kbd>SUPER + M</kbd>                                  | Calculator                      |
 | <kbd>SUPER + B</kbd>                                  | Bluetooth                       |
 | <kbd>SUPER + D</kbd>                                  | Networks                        |
+| <kbd>SUPER + U</kbd>                                  | Keepmenu                        |
 | <kbd>Print</kbd>                                      | Save and copy screenshot        |
 | <kbd>SHIFT + Print</kbd>                              | Copy screenshot                 |
 | <kbd>SUPER + S</kbd>                                  | Save and copy area screenshot   |

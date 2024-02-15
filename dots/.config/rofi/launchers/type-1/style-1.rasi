@@ -35,8 +35,8 @@ configuration {
     urgent-foreground:           var(background);
     active-background:           var(active);
     active-foreground:           var(background);
-    selected-normal-background:  var(selected);
-    selected-normal-foreground:  var(background);
+    selected-normal-background:  var(background);
+    selected-normal-foreground:  var(selected);
     selected-urgent-background:  var(active);
     selected-urgent-foreground:  var(background);
     selected-active-background:  var(urgent);
@@ -268,8 +268,8 @@ button {
     cursor:                      pointer;
 }
 button selected {
-    background-color:            var(active);
-    text-color:                  var(selected-normal-foreground);
+    background-color:            var(background-alt);
+    text-color:                  var(active);
 }
 
 /*****----- Message -----*****/

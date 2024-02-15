@@ -13,6 +13,7 @@ hyprland
 hyprpicker-git
 hyprshade
 imv
+keepmenu
 kitty
 kooha
 ly
@@ -50,6 +51,7 @@ xdg-desktop-portal-hyprland
 xdg-user-dirs-gtk
 xdg-utils
 xfce-polkit
+ydotool
 zathura
 zathura-cb
 zathura-djvu

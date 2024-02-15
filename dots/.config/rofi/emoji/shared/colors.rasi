@@ -15,4 +15,4 @@
 
 /* Import color-scheme from `colors` directory */
 
-@import "~/.config/rofi/colors/axgruv-quantum.rasi"
+@import "~/.config/rofi/colors/axgruv.rasi"

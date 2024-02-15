@@ -45,7 +45,7 @@ mainbox {
     margin:                      0px;
     padding:                     30px;
     background-color:            transparent;
-    children:                    [ "inputbar", "message", "listview" ];
+    children:                    [ "message", "listview" ];
 }
 
 /*****----- Inputbar -----*****/
@@ -101,7 +101,7 @@ textbox {
     background-color:            inherit;
     text-color:                  inherit;
     vertical-align:              0.5;
-    horizontal-align:            0.0;
+    horizontal-align:            0.5;
 }
 
 /*****----- Listview -----*****/
@@ -121,7 +121,7 @@ listview {
 /*****----- Elements -----*****/
 element {
     enabled:                     true;
-    padding:                     14px;
+    padding:                     8px;
     border:                      0px solid;
     border-radius:               10px;
     border-color:                @selected;
@@ -130,7 +130,7 @@ element {
     cursor:                      pointer;
 }
 element-text {
-    font:                        "Symbols Nerd Font 20";
+    font:                        "Symbols Nerd Font 18";
     background-color:            transparent;
     text-color:                  inherit;
     cursor:                      inherit;
@@ -149,7 +149,7 @@ element selected.active {
     background-color:            var(background);
     text-color:                  var(urgent);
     border-color: var(urgent);
-    border: 2px solid;
+    border: 0px solid;
 }
 element normal.active,
 element alternate.active,
@@ -157,11 +157,11 @@ element selected.urgent {
     background-color:            var(background);
     text-color:                  var(active);
     border-color: var(active);
-    border: 2px solid;
+    border: 0px solid;
 }
 element selected.normal {
-    background-color:            var(background);
-    text-color:                  var(selected);
+    background-color:            var(selected);
+    text-color:                  var(background);
     border-color: var(selected);
-    border: 2px solid;
+    border: 0px solid;
 }

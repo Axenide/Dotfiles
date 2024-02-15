@@ -98,7 +98,7 @@ elif [[ "$theme" == *'type-5'* ]]; then
 elif [[ ( "$theme" == *'type-2'* ) || ( "$theme" == *'type-4'* ) ]]; then
 	list_col='8'
 	list_row='1'
-	win_width='600px'
+	win_width='500px'
 fi
 
 # Options
