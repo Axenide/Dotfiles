@@ -64,3 +64,6 @@ else
   title
   echo "Packages not installed."
 fi
+
+sudo usermod -aG input $USER
+sudo usermod -aG seat $USER
