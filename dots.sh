@@ -66,6 +66,15 @@ fi
 # Siempre ejecutar 'stow dots'
 stow dots
 
+# Instalar paquetes
+title
+read -p "Install needed packages? (y/n) " answer
+if [[ "$answer" == "y" ]]; then
+  bash pacman.sh
+else
+  echo "Skipping package installation."
+fi
+
 title
 # Instalar plugins TPM de Tmux
 read -p "Install TPM plugins? (y/n) " answer

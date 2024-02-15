@@ -30,7 +30,6 @@
 		"tooltip": "false",
 //        	"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         	"format-alt": "{:%d/%m/%Y}",
-    "on-click-right": "bash ~/.config/waybar/scripts/toggle.sh gnome-calendar",
 	},
 	
 
@@ -164,7 +163,7 @@
         	"format-disconnected": "󰤭",
         	"format-alt": " {ifname}: {ipaddr}/{cidr}",
           "tooltip-format": "{essid}",
-          "on-click-right": "kitty -o initial_window_width=500 -o initial_window_height=500 nmtui",
+          "on-click-right": "python ~/.config/rofi/network/network.py",
 	},
 
   "bluetooth": {
@@ -173,7 +172,7 @@
   "format-connected": "󰂱",
   "format-disabled": "󰂲",
   "on-click": "bash ~/.config/waybar/scripts/bluetoggle.sh",
-  "on-click-right": "kitty -o initial_window_width=500 -o initial_window_height=500 bluetuith",
+  "on-click-right": "bash ~/.config/rofi/bluetooth/bluetooth.sh",
 	// "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
 	"tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
 	"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
@@ -223,7 +222,7 @@
 			"default": ["󰕿", "󰖀", "󰕾"]
 		},
 		"on-click": "pamixer -t",
-		"on-click-right": "kitty -o initial_window_width=500 -o initial_window_height=500 pulsemixer",
+		"on-click-right": "bash ~/.config/rofi/applets/bin/volume.sh --row 3",
     "tooltip-format": "{volume}%"
   },
   "custom/randwall": {
@@ -232,15 +231,9 @@
     "on-click-right": "nemo ~/Wallpapers"
   },
   "custom/launcher": {
-   // "format": "󰣇",
-    // "format": "󰊠",
     "format": "󰢚",
-//    "on-click": "$(tofi-drun --prompt-text 'Run: ')",
-    "on-click": "bash $HOME/.config/rofi/launchers/type-1/launcher.sh",
-//    "on-click": "wofi --show drun -I -a -n -W 500 -H 376 -s ~/.config/wofi/themes/gruvbox.css",
-//    "on-click-right": "$(tofi-run --prompt-text 'Execute: ')"  
-//    "on-click-right": "bash $HOME/.config/rofi/run.sh"  
-//    "on-click-right": "wofi --show run -I -a -n -W 500 -H 376 -s ~/.config/wofi/themes/gruvbox.css"  
+    "on-click": "bash ~/.config/rofi/launchers/type-1/launcher.sh",
+    "on-click-right": "bash ~/.config/rofi/powermenu/type-2/powermenu.sh"
   },
 
   "custom/wf-recorder": {

@@ -26,7 +26,11 @@ cd Dotfiles
 This will install the config for the system. For example, selecting NVIDIA will add the correct environment variables to the Hyprland config.
 
 > [!NOTE]
-> This won't install the needed packages. That's a WIP.
+> This packages are needed to fully use the config and will be installed if you choose the option in script:
+```
+adw-gtk3 alsa-utils awesome-terminal-fonts brightnessctl btop cava firefox fish floorp-bin grim grimblast-git hyprland hyprpicker-git hyprshade imv kitty kooha ly nemo nemo-audio-tab nemo-emblems nemo-fileroller nemo-image-converter nemo-pastebin nemo-share neofetch neovim otf-font-awesome pamixer pavucontrol ranger rofi-calc rofi-lbonn-wayland rofimoji slurp starship stow swaylock-effects-git swaync swayosd-git thefuck tmux ttf-all-the-icons ttf-font-awesome waybar wl-clip-persist-git wl-clipboard wtype xdg-desktop-portal-hyprland xdg-user-dirs-gtk xdg-utils xfce-polkit zathura zathura-cb zathura-djvu zathura-pdf-mupdf zathura-ps
+```
+Also it will install `yay`, but you can skip the installation and use any AUR helper you want and install them manually. 
 
 ## 💥 Rofi
 <details>
