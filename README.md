@@ -183,7 +183,7 @@ I'm currently using Floorp, a Firefox ESR fork with a sidebar and a lot of custo
 
 I tweaked some details with CSS and used [Firefox Color](https://addons.mozilla.org/es/firefox/addon/firefox-color/) to recolor it.
 
-[Click here to get my theme](https://color.firefox.com/?theme=XQAAAAKcAQAAAAAAAABBqYhm849SCia73laEGccwS-xMDPrv2Sw6Caq-qy5QgqeHG4K15QdnKP13g2bqt8iOj4e4VN6fpUJ5Y-FzVYxdRh4Jahskc87JAlD7QBtVsQPah1lEVOrnQjk3fT6hspa42dQuogENOnAprj5_ike7fU8X50TCyvscVMl171BNW9KlAwx9YXTNFIe88acOqVJdFP3Rgb9_CnTwjW2-GeFFkTLK0hpCCr6Z5VkAVOYMYI1QVhmLphuFFpW4cZBTYk7ZRTWurWg3WiN63UnrB9pQvA_QCVz_Cl-mAA) or make your own!
+[Click here to get my theme](https://color.firefox.com/?theme=XQAAAAKcAQAAAAAAAABBqYhm849SCia73laEGccwS-xMDPrv2Sw6Caq-qy5QgqeHG4K15QdnKP13g2bqt8iOj4e4VN6fpUJ5Y-FzVYxdRh4Jahskc87JAlD7QBtVsQPah1lEVOrnQjk3fT6hspa42dQuogENOnAprj5_ike7fU8X50TCyvscVMl171BNW9KlAwx9YXTNFIe88acOqVJdFP3RkU0w-83gHO2TCPgp6u3Rj6XNlZo5kGZp5XVxUhBxMUeEyKqrvWVVCE6HxKDOaQmyU6HCP6gxuQcEMxGY0p-irKqZzYgd_-6pswA) or make your own!
 
 ### Firefox
 If you want, you can use my custom CSS. An automated script for this is included in the root folder of this repository as `firefox.sh`. You will also be asked if you want to use my config when running `dots.sh`.
