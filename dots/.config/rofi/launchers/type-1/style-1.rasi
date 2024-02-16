@@ -260,15 +260,15 @@ mode-switcher{
 }
 button {
     padding:                     5px 10px;
-    border:                      0px solid;
+    border:                      2px solid;
     border-radius:               5px;
-    border-color:                @border-colour;
-    background-color:            @alternate-background;
+    border-color:                @alternate-background;
+    background-color:            @background;
     text-color:                  inherit;
     cursor:                      pointer;
 }
 button selected {
-    background-color:            var(background-alt);
+    background-color:            var(alternate-background);
     text-color:                  var(active);
 }
 
