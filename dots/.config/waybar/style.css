@@ -37,6 +37,7 @@ window#waybar {
   padding: 5px 8px;
   margin: 10px;
   box-shadow: 0px 0px 3px rgba(0,0,0,1);
+  border: 1px solid @black;
 }
 
 #workspaces button {
@@ -73,6 +74,7 @@ window#waybar {
   background: black;
   border-radius: 10px;
   box-shadow: 0px 0px 3px rgba(0,0,0,1);
+  border: 1px solid @black;
 }
 
 #clock {
@@ -83,6 +85,7 @@ window#waybar {
 	margin: 10px 10px 10px 0px;
 	font-weight: bold;
   box-shadow: 0px 0px 3px rgba(0,0,0,1);
+  border: 1px solid @black;
 }
 
 #custom-launcher {
@@ -94,6 +97,7 @@ window#waybar {
 	padding: 8px 11px 8px 11px;
   margin: 10px 0px 10px 10px;
   box-shadow: 0px 0px 3px rgba(0,0,0,1);
+  border: 1px solid @black;
 }
 
 #custom-playerctl {
@@ -105,6 +109,7 @@ window#waybar {
   margin: 10px 5px;
   border-radius: 10px;
   box-shadow: 0px 0px 3px rgba(0,0,0,1);
+  border: 1px solid @black;
 }
 
 #cpu, #memory, #disk, #custom-gpu-usage {
@@ -116,6 +121,7 @@ window#waybar {
 	border: solid 2px @black;
 	box-shadow: 0px 0px 3px rgba(0,0,0,1);
 	text-shadow: 0px 0px 3px @white;
+  border: 1px solid @black;
 }
 
 #custom-hyprpicker, #bluetooth, #network, #pulseaudio, #backlight, #battery, #custom-notifications {
@@ -160,4 +166,5 @@ window#waybar {
   padding: 5px 8px;
   margin: 10px 10px 10px 5px;
   box-shadow: 0px 0px 3px rgba(0,0,0,1);
+  border: 1px solid @black;
 }
