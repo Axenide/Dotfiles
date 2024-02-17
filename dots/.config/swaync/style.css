@@ -43,7 +43,7 @@
 @define-color bg2       #504945;
 
 * {
-    font-family: VictorMono Nerd Font;
+    font-family: Iosevka Nerd Font;
     /* font-weight: bolder; */
 }
 
@@ -106,7 +106,7 @@
     border: none;
     color: @text-color;
     transition: all .15s ease-in-out;
-    font-size: 10pt;
+    font-size: 11pt;
 }
 
 .notification-default-action:hover,
@@ -178,7 +178,7 @@
 }
 
 .summary {
-    font-size: 10pt;
+    font-size: 11pt;
     font-weight: bold;
     font-style: italic;
     background: transparent;
@@ -187,7 +187,7 @@
 }
 
 .time {
-    font-size: 10pt;
+    font-size: 11pt;
     font-weight: bold;
     font-style: italic;
     background: transparent;
@@ -197,7 +197,7 @@
 }
 
 .body {
-    font-size: 10pt;
+    font-size: 11pt;
     font-weight: normal;
     background: transparent;
     color: @text-color;
@@ -232,7 +232,7 @@
 .widget-title {
     color: @red;
     margin: 20px 20px 5px 20px;
-    font-size: 10pt;
+    font-size: 11pt;
     font-weight: bold;
     font-style: italic;
     /* text-shadow: 0 0 3px @red; */
@@ -258,7 +258,7 @@
 .widget-dnd {
     color: @text-color;
     margin: 5px 20px 5px 20px;
-    font-size: 10pt;
+    font-size: 11pt;
     font-weight: bold;
 }
 

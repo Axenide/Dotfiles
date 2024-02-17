@@ -11,7 +11,7 @@ indicator-caps-lock
 bs-hl-color=DB4740CC
 caps-lock-bs-hl-color=DB4740CC
 caps-lock-key-hl-color=D3869BCC
-font=Victor Mono
+font=Iosevka Nerd Font
 font-size=35
 indicator-idle-visible
 indicator-radius=100

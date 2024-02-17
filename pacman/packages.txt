@@ -43,6 +43,7 @@ thefuck
 tmux
 ttf-all-the-icons
 ttf-font-awesome
+ttf-iosevka-nerd
 waybar
 wl-clip-persist-git
 wl-clipboard
