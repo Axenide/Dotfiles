@@ -2,28 +2,27 @@
 
 <p align="center">
     <i>These are my configuration files also known as <b>dotfiles</b>.</i>
-<img src="screenshots/cover.png">
+<table align="center">
+  <tr>
+    <td colspan="2" align="center"><img src="screenshots/0.png"></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="screenshots/1.png"></td>
+    <td align="center"><img src="screenshots/2.png"></td>
+  </tr>
+</table>
 </p>
 
 > [!CAUTION]
 > This setup is specific for [Hyprland](https://github.com/hyprwm/Hyprland). Dont install it if you don't know what you're doing.
 
-<details>
-<summary><i>
-📸 Screenshots (outdated)
-</i></summary>
-<img src="screenshots/0.png">
-<img src="screenshots/1.png">
-<img src="screenshots/2.png">
-</details>
-
 ## Installation
 ```bash
-git clone --recurse-submodules https://github.com/Axenide/Dotfiles
+git clone https://github.com/Axenide/Dotfiles
 cd Dotfiles
 ./dots.sh
 ```
-This will install the config for the system. For example, selecting NVIDIA will add the correct environment variables to the Hyprland config.
+This will execute the installation wizard.
 
 > [!NOTE]
 > This packages are needed to fully use the config and will be installed if you choose the option in script:
@@ -33,77 +32,82 @@ adw-gtk3 alsa-utils awesome-terminal-fonts brightnessctl btop cava firefox fish 
 Also it will install `yay`, but you can skip the installation and use any AUR helper you want and install them manually. 
 
 ## 💥 Rofi
-<details>
-  <summary>App Launcher</summary>
-    <br>
-  <img src="screenshots/rofi/launcher.png">
-</details>
-
-<details>
-  <summary>Power Menu</summary>
-    <br>
-  <img src="screenshots/rofi/powermenu.png">
-</details>
-
-<details>
-  <summary>Emojis</summary>
-    <br>
-  <img src="screenshots/rofi/emoji.png">
-</details>
-
-<details>
-  <summary>Wallpaper Changer</summary>
-    <br>
-  <img src="screenshots/rofi/wallpaper.png">
-</details>
-
-<details>
-  <summary>Tmux Session Manager</summary>
-    <br>
-  <img src="screenshots/rofi/tmux.png">
-</details>
-
-<details>
-  <summary>Sound Manager</summary>
-    <br>
-  <img src="screenshots/rofi/volume.png">
-</details>
-
-<details>
-  <summary>Notes</summary>
-    <br>
-  <img src="screenshots/rofi/notes.png">
-</details>
-
-<details>
-  <summary>To-Do</summary>
-    <br>
-  <img src="screenshots/rofi/todo.png">
-</details>
-
-<details>
-  <summary>Bluetooth</summary>
-    <br>
-  <img src="screenshots/rofi/bluetooth.png">
-</details>
-
-<details>
-  <summary>Network</summary>
-    <br>
-  <img src="screenshots/rofi/network.png">
-</details>
-
-<details>
-  <summary>Keepmenu</summary>
-    <br>
-  <img src="screenshots/rofi/network.png">
-</details>
-
-<details>
-  <summary>Calendar</summary>
-    <br>
-  <img src="screenshots/rofi/network.png">
-</details>
+<b>
+<table align="center">
+  <tr>
+    <td align="center">App Launcher</td>
+  </tr>
+  <tr>
+    <td align="center"><img src="screenshots/rofi/launcher.png"><br><kbd>SUPER + R</kbd></td>
+  </tr>
+  <tr>
+    <td align="center">Power Menu</td>
+  </tr>
+  <tr>
+    <td align="center"><img src="screenshots/rofi/powermenu.png"><br><kbd>SUPER + Escape</kbd></td>
+  </tr>
+  <tr>
+    <td align="center">Emojis</td>
+  </tr>
+  <tr>
+    <td align="center"><img src="screenshots/rofi/emoji.png"><br><kbd>SUPER + .</kbd></td>
+  </tr>
+  <tr>
+    <td align="center">Wallpaper Changer</td>
+  </tr>
+  <tr>
+    <td align="center"><img src="screenshots/rofi/wallpaper.png"><br><kbd>SUPER + ,</kbd></td>
+  </tr>
+  <tr>
+    <td align="center">Tmux Session Manager</td>
+  </tr>
+  <tr>
+    <td align="center"><img src="screenshots/rofi/tmux.png"><br><kbd>SUPER + T</kbd></td>
+  </tr>
+  <tr>
+    <td align="center">Sound Manager</td>
+  </tr>
+  <tr>
+    <td align="center"><img src="screenshots/rofi/sound.png"><br><kbd>SUPER + V</kbd></td>
+  </tr>
+  <tr>
+    <td align="center">Notes</td>
+  </tr>
+  <tr>
+    <td align="center"><img src="screenshots/rofi/notes.png"><br><kbd>SUPER + N</kbd></td>
+  </tr>
+  <tr>
+    <td align="center">To-Do</td>
+  </tr>
+  <tr>
+    <td align="center"><img src="screenshots/rofi/todo.png"><br><kbd>SUPER + Q</kbd></td>
+  </tr>
+  <tr>
+    <td align="center">Bluetooth</td>
+  </tr>
+  <tr>
+    <td align="center"><img src="screenshots/rofi/bluetooth.png"><br><kbd>SUPER + B</kbd></td>
+  </tr>
+  <tr>
+    <td align="center">Networks</td>
+  </tr>
+  <tr>
+    <td align="center"><img src="screenshots/rofi/networks.png"><br><kbd>SUPER + D</kbd></td>
+  </tr>
+  <tr>
+    <td align="center">Keepmenu</td>
+  </tr>
+  <tr>
+    <td align="center"><img src="screenshots/rofi/keepmenu.png"><br><kbd>SUPER + U</kbd></td>
+  </tr>
+  <tr>
+    <td align="center">Calendar</td>
+  </tr>
+  <tr>
+    <td align="center"><img src="screenshots/rofi/calendar.png"><br><kbd>SUPER + C</kbd></td>
+  </tr>
+</table>
+</b>
 
 ## ⌨️ Keybindings
 
