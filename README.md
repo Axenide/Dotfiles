@@ -147,23 +147,10 @@ Also it will install `yay`, but you can skip the installation and use any AUR he
 | <kbd>SUPER + RETURN</kbd>                             | Open Kitty terminal             |
 | <kbd>SUPER + SHIFT + RETURN</kbd>                     | Open floating Kitty terminal    |
 | <kbd>SUPER + ALT + RETURN</kbd>                       | Open Kitty with slurp           |
-| <kbd>SUPER + T</kbd>                                  | Tmux Session Manager            |
 | <kbd>SUPER + E</kbd>                                  | File explorer                   |
 | <kbd>SUPER + SHIFT + E</kbd>                          | Floating file explorer          |
 | <kbd>SUPER + W</kbd>                                  | Floorp                          |
 | <kbd>SUPER + SHIFT + W</kbd>                          | Private Floorp                  |
-| <kbd>SUPER + R</kbd>                                  | App Launcher                    |
-| <kbd>SUPER + Escape</kbd>                             | Powermenu                       |
-| <kbd>SUPER + .</kbd>                                  | Emojis                          |
-| <kbd>SUPER + ,</kbd>                                  | Wallpaper Selector              |
-| <kbd>SUPER + V</kbd>                                  | Sound Manager                   |
-| <kbd>SUPER + N</kbd>                                  | Notes                           |
-| <kbd>SUPER + Q</kbd>                                  | To-Do                           |
-| <kbd>SUPER + M</kbd>                                  | Calculator                      |
-| <kbd>SUPER + B</kbd>                                  | Bluetooth                       |
-| <kbd>SUPER + D</kbd>                                  | Networks                        |
-| <kbd>SUPER + U</kbd>                                  | Keepmenu                        |
-| <kbd>SUPER + I</kbd>                                  | Calendar                        |
 | <kbd>Print</kbd>                                      | Save and copy screenshot        |
 | <kbd>SHIFT + Print</kbd>                              | Copy screenshot                 |
 | <kbd>SUPER + S</kbd>                                  | Save and copy area screenshot   |
