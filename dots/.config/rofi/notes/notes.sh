@@ -7,7 +7,7 @@ AUTHOR=$(whoami)
 NOTES_FOLDER="$HOME/.notes"
 NOTES_EDITOR='kitty --class kitty-floating -e nvim '
 
-theme=~/.config/rofi/notes/style-1.rasi
+theme=~/.config/rofi/notes/style.rasi
 
 if [[ ! -d "${NOTES_FOLDER}" ]]; then
     mkdir -p "$NOTES_FOLDER"

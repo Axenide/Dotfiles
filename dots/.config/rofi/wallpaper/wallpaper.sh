@@ -13,7 +13,7 @@ build_theme() {
     echo "element{orientation:vertical;}element-text{horizontal-align:0.5;}element-icon{size:$icon_size.0000em;}listview{lines:$rows;columns:$cols;}"
 }
 
-theme="$HOME/.config/rofi/wallpaper/style-1.rasi"
+theme="$HOME/.config/rofi/wallpaper/style.rasi"
 
 ROFI_CMD="rofi -dmenu -i -show-icons -theme-str $(build_theme 3 5 6) -theme ${theme}"
 

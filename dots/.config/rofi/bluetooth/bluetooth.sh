@@ -17,9 +17,9 @@
 #   Arch repositories: rofi, bluez-utils (contains bluetoothctl)
 
 # Constants
-divider="—————————————————————————————————————————————————————————"
+divider="+-------------------------------------------------------+"
 goback=" Back"
-theme=~/.config/rofi/bluetooth/style-1.rasi
+theme=~/.config/rofi/bluetooth/style.rasi
 
 # Checks if bluetooth controller is powered on
 power_on() {

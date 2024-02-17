@@ -10,7 +10,7 @@
 
 <details>
 <summary><i>
-📸 Screenshots
+📸 Screenshots (outdated)
 </i></summary>
 <img src="screenshots/0.png">
 <img src="screenshots/1.png">
@@ -89,6 +89,18 @@ Also it will install `yay`, but you can skip the installation and use any AUR he
 
 <details>
   <summary>Network</summary>
+    <br>
+  <img src="screenshots/rofi/network.png">
+</details>
+
+<details>
+  <summary>Keepmenu</summary>
+    <br>
+  <img src="screenshots/rofi/network.png">
+</details>
+
+<details>
+  <summary>Calendar</summary>
     <br>
   <img src="screenshots/rofi/network.png">
 </details>

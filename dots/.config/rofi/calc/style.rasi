@@ -15,7 +15,8 @@ configuration {
     display-run:                "  Run";
     display-filebrowser:        "  Files";
     display-window:             "  Windows";
-    display-emoji:             "󰢚  Emojis";
+    display-TODO:                "  To-Do";
+    display-calc:                "  Calculator";
 	drun-display-format:        "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";
 	window-format:              "{w} · {c} · {t}";
 }
@@ -57,7 +58,7 @@ window {
     location:                    center;
     anchor:                      center;
     fullscreen:                  false;
-    width:                       600px;
+    width:                       500px;
     x-offset:                    0px;
     y-offset:                    0px;
 
@@ -91,7 +92,7 @@ mainbox {
     border-radius:               0px 0px 0px 0px;
     border-color:                @border-colour;
     background-color:            transparent;
-    children:                    [ "inputbar", "listview", "mode-switcher" ];
+    children:                    [ "inputbar", "listview" ];
 }
 
 /*****----- Inputbar -----*****/
@@ -125,7 +126,7 @@ entry {
     background-color:            inherit;
     text-color:                  inherit;
     cursor:                      text;
-    placeholder:                 "Search...";
+    placeholder:                 "...";
     placeholder-color:           inherit;
 }
 num-filtered-rows {
@@ -249,7 +250,7 @@ element-text {
 
 /*****----- Mode Switcher -----*****/
 mode-switcher{
-    enabled:                     false;
+    enabled:                     true;
     spacing:                     10px;
     margin:                      0px;
     padding:                     0px;

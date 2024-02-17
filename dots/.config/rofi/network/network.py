@@ -38,7 +38,7 @@ CONF = configparser.ConfigParser()
 CONF.read(expanduser("~/.config/networkmanager-dmenu/config.ini"))
 
 # Theme location
-theme = "~/.config/rofi/network/style-1.rasi"
+theme = "~/.config/rofi/network/style.rasi"
 
 def cli_args():
     """ Don't override dmenu_cmd function arguments with CLI args. Removes -l

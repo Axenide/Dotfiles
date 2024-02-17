@@ -12,7 +12,7 @@ configuration {
 	sidebar-mode: 					false;
 }
 
-@import "colors.rasi"
+@import "../shared/colors.rasi"
 
 window {
     transparency:                   "real";
@@ -127,8 +127,8 @@ element selected {
 element.active,
 element.selected.urgent {
   background-color: @background;
-  text-color: @on;
-  border-color: @on;
+  text-color: @active;
+  border-color: @active;
 }
 
 element.selected.urgent {
@@ -143,7 +143,7 @@ element.selected.active {
 }
 
 element.selected.active {
-  border-color: @on;
+  border-color: @active;
 }
 
 element-text, element-icon {

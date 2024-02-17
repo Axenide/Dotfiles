@@ -11,11 +11,10 @@
 configuration {
 	modi:                       "drun,run,filebrowser";
     show-icons:                 false;
-    display-drun:               "  Apps";
+    display-drun:               "󱓞  Apps";
     display-run:                "  Run";
     display-filebrowser:        "  Files";
     display-window:             "  Windows";
-    display-emoji:             "󰢚  Emojis";
 	drun-display-format:        "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";
 	window-format:              "{w} · {c} · {t}";
 }
@@ -36,8 +35,8 @@ configuration {
     urgent-foreground:           var(background);
     active-background:           var(active);
     active-foreground:           var(background);
-    selected-normal-background:  var(selected);
-    selected-normal-foreground:  var(background);
+    selected-normal-background:  var(background);
+    selected-normal-foreground:  var(selected);
     selected-urgent-background:  var(active);
     selected-urgent-foreground:  var(background);
     selected-active-background:  var(urgent);
@@ -57,7 +56,7 @@ window {
     location:                    center;
     anchor:                      center;
     fullscreen:                  false;
-    width:                       600px;
+    width:                       1000px;
     x-offset:                    0px;
     y-offset:                    0px;
 
@@ -156,7 +155,7 @@ case-indicator {
 /*****----- Listview -----*****/
 listview {
     enabled:                     true;
-    columns:                     1;
+    columns:                     3;
     lines:                       10;
     cycle:                       true;
     dynamic:                     true;
@@ -209,8 +208,8 @@ element normal.active {
     text-color:                  var(active-foreground);
 }
 element selected.normal {
-    background-color:            var(background);
-    text-color:                  var(selected);
+    background-color:            var(selected-normal-background);
+    text-color:                  var(selected-normal-foreground);
 }
 element selected.urgent {
     background-color:            var(selected-urgent-background);
@@ -249,7 +248,7 @@ element-text {
 
 /*****----- Mode Switcher -----*****/
 mode-switcher{
-    enabled:                     false;
+    enabled:                     true;
     spacing:                     10px;
     margin:                      0px;
     padding:                     0px;
@@ -261,16 +260,16 @@ mode-switcher{
 }
 button {
     padding:                     5px 10px;
-    border:                      0px solid;
+    border:                      2px solid;
     border-radius:               5px;
-    border-color:                @border-colour;
-    background-color:            @alternate-background;
+    border-color:                @alternate-background;
+    background-color:            @background;
     text-color:                  inherit;
     cursor:                      pointer;
 }
 button selected {
-    background-color:            var(active);
-    text-color:                  var(selected-normal-foreground);
+    background-color:            var(alternate-background);
+    text-color:                  var(active);
 }
 
 /*****----- Message -----*****/

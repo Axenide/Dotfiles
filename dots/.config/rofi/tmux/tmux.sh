@@ -6,7 +6,7 @@ function tmux_sessions() {
     tmux list-session -F '#S'
 }
 
-theme=~/.config/rofi/tmux/style-1.rasi
+theme=~/.config/rofi/tmux/style.rasi
 
 TMUX_SESSION=$( (echo new; tmux_sessions) | rofi -dmenu -p "󰆍  Tmux" -theme $theme)
 
