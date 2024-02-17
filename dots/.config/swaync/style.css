@@ -57,23 +57,17 @@
     margin: 0px;
 }
 
-.notification-row {
-    outline: none;
-}
-
 .notification {
     border-radius: 10px;
-    margin: 15px 10px 0 0;
     padding: 0;
     border: 1px solid @noti-close-bg;
     background: @noti-bg-darker;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.75);
 }
 
 .notification-content {
     background: transparent;
     padding: 10px;
-    border-radius: 10px
 }
 
 .close-button {
@@ -82,8 +76,8 @@
     text-shadow: none;
     padding: 0;
     border-radius: 100%;
-    margin-top: 15px;
-    margin-right: 15px;
+    margin-top: 20px;
+    margin-right: 13px;
     box-shadow: none;
     border: none;
     min-width: 24px;
@@ -141,6 +135,41 @@
     background: @bgblack
 }
 
+.notification-group-headers {
+  font-weight: bold;
+  font-size: 11pt;
+  color: @white;
+}
+
+.notification-group-icon {
+  color: @red;
+  margin-right: 8px;
+}
+
+.notification-group-collapse-button {
+  background: @noti-close-bg;
+  border: none;
+  min-width: 24px;
+  min-height: 24px;
+}
+
+.notification-group-collapse-button:hover {
+  background: @noti-close-bg-hover;
+  color: @red;
+}
+
+.notification-group-close-all-button {
+  background: @noti-close-bg;
+  border: none;
+  min-width: 24px;
+  min-height: 24px;
+}
+
+.notification-group-close-all-button:hover {
+  background: @noti-close-bg-hover;
+  color: @red
+}
+
 .inline-reply {
     margin-top: 8px
 }
@@ -172,8 +201,8 @@
 }
 
 .body-image {
-    margin-top: 6px;
-    background-color: #fff;
+    margin-top: 0px;
+    background-color: transparent;
     border-radius: 10px
 }
 
@@ -183,6 +212,7 @@
     font-style: italic;
     background: transparent;
     color: @red;
+    margin-left: 10px;
     /* text-shadow: 0 0 3px @red; */
 }
 
@@ -203,6 +233,12 @@
     color: @text-color;
     text-shadow: none;
     font-weight: bold;
+    margin-left: 10px;
+}
+
+.image {
+    background: transparent;
+    border-radius: 8px;
 }
 
 .control-center {
@@ -221,8 +257,9 @@
     opacity: .5
 }
 
-.floating-notifications {
-    background: transparent
+.floating-notifications .notification-row {
+    background: transparent;
+    margin: 15px 10px 0 0;
 }
 
 .blank-window {

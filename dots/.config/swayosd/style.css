@@ -1,12 +1,12 @@
 window {
-    padding: 10px 10px;
-    border-radius: 20px;
-    border: solid 1px #47423E;
+    padding: 0;
+    border-radius: 10px;
+    border: solid 1px #1b1d1d;
     background: alpha(black, 0.75);
 }
 
 #container {
-    margin: 16px;
+    margin: 10px;
 }
 
 image, label {
