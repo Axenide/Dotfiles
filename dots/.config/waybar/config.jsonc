@@ -233,8 +233,8 @@
   },
   "custom/launcher": {
     "format": "󰢚",
-    "on-click": "bash ~/.config/rofi/launchers/type-1/launcher.sh",
-    "on-click-right": "bash ~/.config/rofi/powermenu/type-2/powermenu.sh"
+    "on-click": "bash ~/.config/rofi/launcher/launcher.sh",
+    "on-click-right": "bash ~/.config/rofi/powermenu/powermenu.sh"
   },
 
   "custom/wf-recorder": {
