@@ -17,7 +17,8 @@
 #   Arch repositories: rofi, bluez-utils (contains bluetoothctl)
 
 # Constants
-divider="+-------------------------------------------------------+"
+# divider="+-------------------------------------------------------+"
+divider="─────────────────────────────────────────────────────────"
 goback=" Back"
 theme=~/.config/rofi/bluetooth/style.rasi
 
