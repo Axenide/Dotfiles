@@ -58,6 +58,7 @@ nwg-look-bin
 obs-face-tracker
 obs-move-transition
 obs-pipewire-audio-capture-bin
+obs-plugin-waveform-git
 obs-scale-to-sound-bin
 obs-shaderfilter-git
 obs-source-clone
