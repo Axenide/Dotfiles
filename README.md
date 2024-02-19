@@ -44,7 +44,9 @@ Also it will install `yay`, but you can skip the installation and use any AUR he
     <td align="center">Power Menu</td>
   </tr>
   <tr>
-    <td align="center"><img src="screenshots/rofi/powermenu.png"><br><kbd>SUPER + Escape</kbd></td>
+    <td align="center"><img src="screenshots/rofi/powermenu.png"><br>
+    <img src="screenshots/rofi/confirm.png"><br>
+    <kbd>SUPER + Escape</kbd></td>
   </tr>
   <tr>
     <td align="center">Emojis</td>
@@ -98,7 +100,10 @@ Also it will install `yay`, but you can skip the installation and use any AUR he
     <td align="center">Keepmenu</td>
   </tr>
   <tr>
-    <td align="center"><img src="screenshots/rofi/keepmenu.png"><br><kbd>SUPER + U</kbd></td>
+    <td align="center">
+    <img src="screenshots/rofi/pass.png"><br>
+    <img src="screenshots/rofi/keepmenu.png"><br>
+    <kbd>SUPER + U</kbd></td>
   </tr>
   <tr>
     <td align="center">Calendar</td>

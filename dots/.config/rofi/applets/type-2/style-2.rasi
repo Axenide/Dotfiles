@@ -130,7 +130,7 @@ element {
     cursor:                      pointer;
 }
 element-text {
-    font:                        "Symbols Nerd Font 18";
+    font:                        "Symbols Nerd Font 24";
     background-color:            transparent;
     text-color:                  inherit;
     cursor:                      inherit;
