@@ -876,7 +876,7 @@ def notify(message, details=None, urgency="low"):
 
     """
     delay = CONF.getint('nmdm', 'rescan_delay', fallback=5)
-    args = ["-u", urgency, "-a", "networkmanager-dmenu",
+    args = ["-e", "-u", urgency, "-a", "networkmanager-dmenu",
             "-t", str(delay * 1000), message]
     if details is not None:
         args.append(details)
