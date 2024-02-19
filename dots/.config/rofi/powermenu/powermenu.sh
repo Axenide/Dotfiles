@@ -19,8 +19,8 @@ host=`hostnamectl hostname`
 # Options
 shutdown='󰤁'
 reboot='󰜉'
-lock='󰍁'
-suspend=''
+lock=''
+suspend='󰤄'
 logout='󰍃'
 yes='󰸞'
 no='󱎘'

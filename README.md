@@ -27,7 +27,7 @@ This will execute the installation wizard.
 > [!NOTE]
 > This packages are needed to fully use the config and will be installed if you choose the option in script:
 ```
-adw-gtk3 alsa-utils awesome-terminal-fonts brightnessctl btop cava firefox fish floorp-bin grim grimblast-git hyprland hyprpicker-git hyprshade imv kitty kooha ly nemo nemo-audio-tab nemo-emblems nemo-fileroller nemo-image-converter nemo-pastebin nemo-share neofetch neovim otf-font-awesome pamixer pavucontrol ranger rofi-calc rofi-lbonn-wayland rofimoji slurp starship stow swaylock-effects-git swaync swayosd-git thefuck tmux ttf-all-the-icons ttf-font-awesome waybar wl-clip-persist-git wl-clipboard wtype xdg-desktop-portal-hyprland xdg-user-dirs-gtk xdg-utils xfce-polkit zathura zathura-cb zathura-djvu zathura-pdf-mupdf zathura-ps
+adw-gtk3 alsa-utils awesome-terminal-fonts brightnessctl btop cava firefox fish floorp-bin grim grimblast-git hyprland hyprpicker-git hyprshade imv keepmenu kitty kooha ly nemo nemo-audio-tab nemo-emblems nemo-fileroller nemo-image-converter nemo-pastebin nemo-share neofetch neovim otf-font-awesome pamixer pavucontrol ranger rofi-calc rofi-lbonn-wayland rofimoji slurp starship stow swaylock-effects-git swaync swayosd-git tesseract tesseract-data-eng tesseract-data-spa thefuck tmux ttf-all-the-icons ttf-font-awesome ttf-iosevka-nerd waybar wf-recorder wl-clip-persist-git wl-clipboard wtype xdg-desktop-portal-hyprland xdg-user-dirs-gtk xdg-utils xfce-polkit ydotool zathura zathura-cb zathura-djvu zathura-pdf-mupdf zathura-ps
 ```
 Also it will install `yay`, but you can skip the installation and use any AUR helper you want and install them manually. 
 
@@ -106,6 +106,15 @@ Also it will install `yay`, but you can skip the installation and use any AUR he
   <tr>
     <td align="center"><img src="screenshots/rofi/calendar.png"><br><kbd>SUPER + C</kbd></td>
   </tr>
+  <tr>
+    <td align="center">Screenshot & Recording</td>
+  </tr>
+  <tr>
+    <td align="center">
+    <img src="screenshots/rofi/screenshot.png"><br>
+    <img src="screenshots/rofi/recording.png"><br><kbd>SUPER + S</kbd>
+    </td>
+  </tr>
 </table>
 </b>
 
@@ -153,7 +162,6 @@ Also it will install `yay`, but you can skip the installation and use any AUR he
 | <kbd>SUPER + SHIFT + W</kbd>                          | Private Floorp                  |
 | <kbd>Print</kbd>                                      | Save and copy screenshot        |
 | <kbd>SHIFT + Print</kbd>                              | Copy screenshot                 |
-| <kbd>SUPER + S</kbd>                                  | Save and copy area screenshot   |
 | <kbd>SUPER + SHIFT + S</kbd>                          | Copy area screenshot            |
 | <kbd>SUPER + A</kbd>                                  | Toggle notification center      |
 

@@ -39,12 +39,16 @@ stow
 swaylock-effects-git
 swaync
 swayosd-git
+tesseract
+tesseract-data-eng
+tesseract-data-spa
 thefuck
 tmux
 ttf-all-the-icons
 ttf-font-awesome
 ttf-iosevka-nerd
 waybar
+wf-recorder
 wl-clip-persist-git
 wl-clipboard
 wtype

@@ -52,7 +52,7 @@ mainbox {
     border-radius:               5px;
     border-color:                @selected;
     background-color:            transparent;
-    children:                    [ "inputbar", "listview" ];
+    children:                    [ "message", "listview" ];
 }
 
 /*****----- Inputbar -----*****/
@@ -159,7 +159,7 @@ element {
     border:                      0px solid;
     border-radius:               10px;
     border-color:                @selected;
-    background-color:            @background-alt;
+    background-color:            @background;
     text-color:                  @foreground;
     cursor:                      pointer;
 }
@@ -174,6 +174,6 @@ element-text {
 element selected.normal {
     background-color:            var(background);
     border-color:                var(selected);
-    border:                      2px solid;
+    border:                      0px solid;
     text-color:                  var(selected);
 }

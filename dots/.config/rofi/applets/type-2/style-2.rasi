@@ -140,7 +140,7 @@ element-text {
 
 element normal.normal,
 element alternate.normal {
-    background-color:            var(background-alt);
+    background-color:            var(background);
     text-color:                  var(foreground);
 }
 element normal.urgent,
@@ -160,8 +160,8 @@ element selected.urgent {
     border: 0px solid;
 }
 element selected.normal {
-    background-color:            var(selected);
-    text-color:                  var(background);
+    background-color:            var(background);
+    text-color:                  var(selected);
     border-color: var(selected);
     border: 0px solid;
 }
