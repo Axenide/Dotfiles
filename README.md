@@ -32,94 +32,118 @@ adw-gtk3 alsa-utils awesome-terminal-fonts brightnessctl btop cava firefox fish 
 Also it will install `yay`, but you can skip the installation and use any AUR helper you want and install them manually. 
 
 ## 💥 Rofi
+
 <b>
-<table align="center">
-  <tr>
-    <td align="center">App Launcher</td>
-  </tr>
-  <tr>
-    <td align="center"><img src="screenshots/rofi/launcher.png"><br><kbd>SUPER + R</kbd></td>
-  </tr>
-  <tr>
-    <td align="center">Power Menu</td>
-  </tr>
-  <tr>
-    <td align="center"><img src="screenshots/rofi/powermenu.png"><br>
-    <img src="screenshots/rofi/confirm.png"><br>
-    <kbd>SUPER + Escape</kbd></td>
-  </tr>
-  <tr>
-    <td align="center">Emojis</td>
-  </tr>
-  <tr>
-    <td align="center"><img src="screenshots/rofi/emoji.png"><br><kbd>SUPER + .</kbd></td>
-  </tr>
-  <tr>
-    <td align="center">Wallpaper Changer</td>
-  </tr>
-  <tr>
-    <td align="center"><img src="screenshots/rofi/wallpaper.png"><br><kbd>SUPER + ,</kbd></td>
-  </tr>
-  <tr>
-    <td align="center">Tmux Session Manager</td>
-  </tr>
-  <tr>
-    <td align="center"><img src="screenshots/rofi/tmux.png"><br><kbd>SUPER + T</kbd></td>
-  </tr>
-  <tr>
-    <td align="center">Sound Manager</td>
-  </tr>
-  <tr>
-    <td align="center"><img src="screenshots/rofi/sound.png"><br><kbd>SUPER + V</kbd></td>
-  </tr>
-  <tr>
-    <td align="center">Notes</td>
-  </tr>
-  <tr>
-    <td align="center"><img src="screenshots/rofi/notes.png"><br><kbd>SUPER + N</kbd></td>
-  </tr>
-  <tr>
-    <td align="center">To-Do</td>
-  </tr>
-  <tr>
-    <td align="center"><img src="screenshots/rofi/todo.png"><br><kbd>SUPER + Q</kbd></td>
-  </tr>
-  <tr>
-    <td align="center">Bluetooth</td>
-  </tr>
-  <tr>
-    <td align="center"><img src="screenshots/rofi/bluetooth.png"><br><kbd>SUPER + B</kbd></td>
-  </tr>
-  <tr>
-    <td align="center">Networks</td>
-  </tr>
-  <tr>
-    <td align="center"><img src="screenshots/rofi/networks.png"><br><kbd>SUPER + D</kbd></td>
-  </tr>
-  <tr>
-    <td align="center">Keepmenu</td>
-  </tr>
-  <tr>
-    <td align="center">
-    <img src="screenshots/rofi/pass.png"><br>
-    <img src="screenshots/rofi/keepmenu.png"><br>
-    <kbd>SUPER + U</kbd></td>
-  </tr>
-  <tr>
-    <td align="center">Calendar</td>
-  </tr>
-  <tr>
-    <td align="center"><img src="screenshots/rofi/calendar.png"><br><kbd>SUPER + C</kbd></td>
-  </tr>
-  <tr>
-    <td align="center">Screenshot & Recording</td>
-  </tr>
-  <tr>
-    <td align="center">
-    <img src="screenshots/rofi/screenshot.png"><br>
-    <img src="screenshots/rofi/recording.png"><br><kbd>SUPER + S</kbd>
+<table>
+    <tr>
+        <td colspan="2" align="center" valign="middle">
+            App Launcher <kbd>SUPER + R</kbd>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" align="center" valign="middle">
+            <img src="screenshots/rofi/launcher.png">
+        </td>
+    </tr>
+    <tr>
+    <td align="center" valign="middle">
+        Power Menu <kbd>SUPER + Esc</kbd>
     </td>
-  </tr>
+    <td align="center" valign="middle">
+        Emoji <kbd>SUPER + .</kbd>
+    </td>
+    </tr>
+    <tr>
+    <td align="center" valign="middle">
+        <img src="screenshots/rofi/powermenu.png"><br>
+        <img src="screenshots/rofi/confirm.png">
+    </td>
+    <td align="center" valign="middle">
+        <img src="screenshots/rofi/emoji.png">
+    </td>
+    </tr>
+    <tr>
+    <td align="center" valign="middle">
+        Wallpaper Changer <kbd>SUPER + ,</kbd>
+    </td>
+    <td align="center" valign="middle">
+        Tmux Session Manager <kbd>SUPER + T</kbd>
+    </td>
+    </tr>
+    <tr>
+    <td align="center" valign="middle">
+        <img src="screenshots/rofi/wallpaper.png">
+    </td>
+    <td align="center" valign="middle">
+        <img src="screenshots/rofi/tmux.png">
+    </td>
+    </tr>
+    <tr>
+    <td align="center" valign="middle">
+        Sound Manager <kbd>SUPER + V</kbd>
+    </td>
+    <td align="center" valign="middle">
+        Notes <kbd>SUPER + N</kbd>
+    </td>
+    </tr>
+    <tr>
+    <td align="center" valign="middle">
+        <img src="screenshots/rofi/sound.png">
+    </td>
+    <td align="center" valign="middle">
+        <img src="screenshots/rofi/notes.png">
+    </td>
+    </tr>
+    <tr>
+    <td align="center" valign="middle">
+        To-Do <kbd>SUPER + Q</kbd>
+    </td>
+    <td align="center" valign="middle">
+        Bluetooth <kbd>SUPER + B</kbd>
+    </td>
+    </tr>
+    <tr>
+    <td align="center" valign="middle">
+        <img src="screenshots/rofi/todo.png">
+    </td>
+    <td align="center" valign="middle">
+        <img src="screenshots/rofi/bluetooth.png">
+    </td>
+    </tr>
+    <tr>
+    <td align="center" valign="middle">
+        Networks <kbd>SUPER + D</kbd>
+    </td>
+    <td align="center" valign="middle">
+        Keepmenu <kbd>SUPER + U</kbd>
+    </td>
+    </tr>
+    <tr>
+    <td align="center" valign="middle">
+        <img src="screenshots/rofi/networks.png">
+    </td>
+    <td align="center" valign="middle">
+        <img src="screenshots/rofi/pass.png"><br>
+        <img src="screenshots/rofi/keepmenu.png">
+    </td>
+    </tr>
+    <tr>
+    <td align="center" valign="middle">
+        Calendar <kbd>SUPER + I</kbd>
+    </td>
+    <td align="center" valign="middle">
+        Screenshot & Recording <kbd>SUPER + S</kbd>
+    </td>
+    </tr>
+    <tr>
+    <td align="center" valign="middle">
+        <img src="screenshots/rofi/calendar.png">
+    </td>
+    <td align="center" valign="middle">
+        <img src="screenshots/rofi/screenshot.png"><br>
+        <img src="screenshots/rofi/recording.png">
+    </td>
+    </tr>
 </table>
 </b>
 
@@ -130,7 +154,7 @@ Also it will install `yay`, but you can skip the installation and use any AUR he
 | Keys                                         | Action                          |
 |---------------------------------------------:|:--------------------------------|
 | <kbd>SUPER + C</kbd>                                  | Close window                    |
-| <kbd>SUPER + SHIFT + Escape</kbd>                     | Exit Hyprland                   |
+| <kbd>SUPER + SHIFT + Esc</kbd>                     | Exit Hyprland                   |
 | <kbd>SUPER + SHIFT + B</kbd>                                  | Toggle Waybar                     |
 | <kbd>SUPER + ALT + B</kbd>                            | Restart Waybar                  |
 | <kbd>SUPER + Space</kbd>                              | Toggle tiled/floating           |
