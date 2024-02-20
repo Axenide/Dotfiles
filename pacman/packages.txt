@@ -26,6 +26,7 @@ nemo-pastebin
 nemo-share
 neofetch
 neovim
+noto-fonts-emoji
 otf-font-awesome
 pamixer
 pavucontrol
