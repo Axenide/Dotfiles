@@ -2,16 +2,15 @@
 
 <p align="center">
     <i>These are my configuration files also known as <b>dotfiles</b>.</i>
-<table align="center">
-  <tr>
-    <td colspan="2" align="center"><img src="screenshots/0.png"></td>
-  </tr>
-  <tr>
-    <td align="center"><img src="screenshots/1.png"></td>
-    <td align="center"><img src="screenshots/2.png"></td>
-  </tr>
-</table>
+    <img src="screenshots/cover.png">
 </p>
+
+<details>
+<summary>📸 Screenshots</summary>
+    <img src="screenshots/0.png">
+    <img src="screenshots/1.png">
+    <img src="screenshots/2.png">
+</details>
 
 > [!CAUTION]
 > This setup is specific for [Hyprland](https://github.com/hyprwm/Hyprland). Dont install it if you don't know what you're doing.
