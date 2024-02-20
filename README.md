@@ -5,15 +5,15 @@
     <img src="screenshots/cover.png">
 </p>
 
+> [!CAUTION]
+> This setup is specific for [Hyprland](https://github.com/hyprwm/Hyprland). Dont install it if you don't know what you're doing.
+
 <details>
 <summary>📸 Screenshots</summary>
     <img src="screenshots/0.png">
     <img src="screenshots/1.png">
     <img src="screenshots/2.png">
 </details>
-
-> [!CAUTION]
-> This setup is specific for [Hyprland](https://github.com/hyprwm/Hyprland). Dont install it if you don't know what you're doing.
 
 ## Installation
 ```bash
