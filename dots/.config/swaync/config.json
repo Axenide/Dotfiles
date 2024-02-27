@@ -69,8 +69,8 @@
                     "command": "hyprshade toggle vibrance"
                 },
                 {
-                    "label": "",
-                    "command": "kooha"
+                    "label": "󰌁",
+                    "command": "hyprshade toggle invert"
                 }
             ]
         }
