@@ -67,3 +67,6 @@ fi
 
 sudo usermod -aG input $USER
 sudo usermod -aG seat $USER
+
+# Change shell to fish
+chsh -s /bin/fish
