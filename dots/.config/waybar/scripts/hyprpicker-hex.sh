@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Execute hyprpicker and save the output to a variable
-hyprpicker -a -n -f hex
+hyprpicker -a -n -f hex && sleep 0.1
 
 # Create a temporal 64x64 PNG file with the color in /tmp using convert
 convert -size 64x64 xc:"$(wl-paste)" /tmp/color.png

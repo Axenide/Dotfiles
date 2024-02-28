@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Execute hyprpicker and save the output to a variable
-hyprpicker -a -n -f rgb
+hyprpicker -a -n -f rgb && sleep 0.1
 
 # Split the output into three variables
 IFS=',' read -r r g b <<< "$(wl-paste)"
