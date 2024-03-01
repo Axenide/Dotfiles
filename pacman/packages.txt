@@ -29,6 +29,7 @@ noto-fonts-emoji
 otf-font-awesome
 pamixer
 pavucontrol
+polkit-gnome
 ranger
 rofi-calc
 rofi-lbonn-wayland
@@ -55,7 +56,6 @@ wtype
 xdg-desktop-portal-hyprland
 xdg-user-dirs-gtk
 xdg-utils
-xfce-polkit
 ydotool
 zathura
 zathura-cb
