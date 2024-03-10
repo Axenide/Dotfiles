@@ -9,7 +9,7 @@ fish
 floorp-bin
 grim
 grimblast-git
-hyprland
+hyprland-git
 hyprpicker-git
 hyprshade
 imv

@@ -86,19 +86,6 @@ else
   echo "Skipping TPM plugins installation."
 fi
 echo ""
-# Instalar NvChad
-title
-read -p "Install NvChad? (y/n) " answer
-if [[ "$answer" == "y" ]]; then
-  rm -rf ~/.config/nvim &&
-  git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
-  read -p "Install Axenide's custom NvChad config? (y/n) " custom_config
-  if [[ "$custom_config" == "y" ]]; then
-    rm -rf ~/.config/nvim/lua/custom && stow nvim && nvim
-  fi
-else
-  echo "Skipping NvChad installation."
-fi
 
 # Instalar Firefox userChrome.css
 title

@@ -1,6 +1,21 @@
-local overrides = require("custom.configs.overrides")
+return {
+  {
+    "stevearc/conform.nvim",
+    config = function()
+      require "configs.conform"
+    end,
+  },
 
-local plugins = {
+  {
+    "nvim-tree/nvim-tree.lua",
+    opts = {
+      git = { enable = true },
+    },
+  },
+  {
+    'Exafunction/codeium.vim',
+    event = "BufEnter",
+  },
   {
     "TobinPalmer/pastify.nvim",
     cmd = { 'Pastify' },
@@ -34,13 +49,6 @@ local plugins = {
     lazy = false,
   },
   {
-    "zbirenbaum/copilot.lua",
-    -- event = "InsertEnter",
-    lazy = false,
-    opts = overrides.copilot,
-  },
-
-  {
     "tpope/vim-fugitive",
     lazy = false,
   },
@@ -58,15 +66,14 @@ local plugins = {
   {
     "neovim/nvim-lspconfig",
     config = function()
-      require "plugins.configs.lspconfig"
-      require "custom.configs.lspconfig"
+      require "configs.lspconfig"
+      require "configs.lspconfig"
     end,
   },
 
   {
     "mfussenegger/nvim-dap",
     config = function(_, opts)
-      require("core.utils").load_mappings("dap")
     end
   },
   {
@@ -79,7 +86,6 @@ local plugins = {
     config = function(_, opts)
       local path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
       require("dap-python").setup(path)
-      require("core.utils").load_mappings("dap_python")
     end,
   },
 
@@ -101,7 +107,4 @@ local plugins = {
       end
     end,
   },
-
 }
-
-return plugins
