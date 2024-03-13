@@ -31,8 +31,6 @@ map("n", "<C-k>", function()
   vim.cmd("TmuxNavigateUp")
 end, { desc = "window up" })
 
-map("n", "<C-z>", ":u <CR>", { desc = "Undo" })
-map("n", "<C-y>", ":redo <CR>", { desc = "Redo" })
 map("n", "<C-Left>", "b", { desc = "Move to the beginning of the previous word" })
 map("n", "<C-Right>", "w", { desc = "Move to the beginning of the next word" })
 map("n", "<C-d>", "yyp", { desc = "Duplicate line" })
