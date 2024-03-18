@@ -73,7 +73,7 @@ class Default(ColorScheme):
 				attr |= bold
 				fg = context.bad and black or black
 			elif context.directory:
-				fg = magenta
+				fg = red
 			elif context.tab:
 				if context.good:
 					bg = green
@@ -83,7 +83,7 @@ class Default(ColorScheme):
 		elif context.in_statusbar:
 			if context.permissions:
 				if context.good:
-					fg = magenta
+					fg = red
 				elif context.bad:
 					fg = cyan
 			if context.marked:
