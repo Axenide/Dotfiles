@@ -1,0 +1,13 @@
+[manager]
+ratio = [1, 2, 3]
+sort_by = "natural"
+sort_dir_first = true
+
+[preview]
+max_width = 960
+image_filter = "nearest"
+
+[opener]
+text = [
+	{ run = 'nvim "$@"', block = true },
+]

@@ -28,8 +28,6 @@ return {
     end,
   },
 
-  { "luckasRanarison/tree-sitter-hypr" },
-
   {"ellisonleao/glow.nvim", config = true, cmd = "Glow"},
 
   {

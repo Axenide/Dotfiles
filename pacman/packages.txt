@@ -4,15 +4,20 @@ awesome-terminal-fonts
 brightnessctl
 btop
 cava
+fd
+ffmpeg
+ffmpegthumbnailer
 firefox
 fish
 floorp-bin
+fzf
 grim
 grimblast-git
 hyprland-git
 hyprpicker-git
 hyprshade
 imv
+jq
 keepmenu
 kitty
 ly
@@ -30,7 +35,9 @@ otf-font-awesome
 pamixer
 pavucontrol
 polkit-gnome
+poppler
 ranger
+ripgrep
 rofi-calc
 rofi-lbonn-wayland
 rofimoji
@@ -48,6 +55,7 @@ tmux
 ttf-all-the-icons
 ttf-font-awesome
 ttf-iosevka-nerd
+unarchiver
 waybar
 wf-recorder
 wl-clip-persist-git
@@ -56,6 +64,7 @@ wtype
 xdg-desktop-portal-hyprland
 xdg-user-dirs-gtk
 xdg-utils
+yazi
 ydotool
 zathura
 zathura-cb
