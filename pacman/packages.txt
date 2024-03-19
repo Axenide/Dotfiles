@@ -1,6 +1,7 @@
 adw-gtk3
 alsa-utils
 awesome-terminal-fonts
+aylurs-gtk-shell-git
 brightnessctl
 btop
 cava
@@ -11,6 +12,7 @@ firefox
 fish
 floorp-bin
 fzf
+gnome-bluetooth-3.0
 gnome-calculator
 grim
 grimblast-git

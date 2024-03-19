@@ -108,8 +108,15 @@ function CenterSection() {
         hpack: 'center',
         cursor: 'pointer',
         onPrimaryClick: () => HyprlandService.message(`dispatch workspace ${i + 1}`)
-      }).hook(HyprlandService.active.workspace, (self) =>
-        self.toggleClassName('active', HyprlandService.active.workspace.id === i + 1)
+      }).hook(HyprlandService.active.workspace, (self) => {
+        const isActive = HyprlandService.active.workspace.id === i + 1;
+        const isOccupied = (HyprlandService.getWorkspace(i + 1)?.windows || 0) > 0;
+        const isEmpty = (HyprlandService.getWorkspace(i)?.windows || 0) === 0;
+
+        self.toggleClassName('active', isActive);
+        self.toggleClassName('occupied', isOccupied);
+        self.toggleClassName('empty', isEmpty);
+      }
       )
     )
   })
