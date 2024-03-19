@@ -17,6 +17,7 @@
 
 > [!WARNING]
 > The main branch is experimental, as I'm always making changes.
+>
 > Please refer to the [stable branch](https://github.com/Axenide/Dotfiles/tree/stable) if you want to use it.
 
 ## Installation
