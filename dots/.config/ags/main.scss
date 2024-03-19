@@ -1,0 +1,27 @@
+$bgh:       #1d2021;
+$bg:        #000;
+$bg1:       #1b1d1d;
+$bg2:       #0a0b0c;
+
+$fgh:       #fbf1c7;
+$fg:        #ebdbb2;
+$fg1:       #d5c4a1;
+$fg2:       #bdae93;
+
+$red:       #cc241d;
+$green:     #98971a;
+$yellow:    #d79921;
+$orange:    #d65d0e;
+$blue:      #458588;
+$purple:    #b16286;
+$aqua:      #689d6a;
+$gray:      #928374;
+
+* {
+  all: unset;
+  font-family: "Iosevka Nerd Font";
+  color: $fg;
+}
+
+@import "./windows/bar/style.scss";
+@import "./windows/notifications/style.scss";

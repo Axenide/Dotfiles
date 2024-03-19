@@ -1,0 +1,503 @@
+* {
+  all: unset;
+  font-family: "Iosevka Nerd Font";
+  color: #e0cda5;
+}
+
+.bar {
+  background-color: #000;
+  padding: 8px 4px;
+  margin-right: 10px;
+  border-right: solid #1b1d1d 1px;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 1);
+}
+.bar .divider {
+  background-color: #0a0b0c;
+  min-height: 2px;
+  margin: 2px 0;
+}
+.bar .sections .start .sidebar_button box {
+  background-size: cover;
+  border-radius: 999px;
+  min-width: 32px;
+  min-height: 32px;
+}
+.bar .sections .start .search_button {
+  background-color: #0a0b0c;
+  border-radius: 8px;
+  padding: 4px 8px;
+}
+.bar .sections .start .search_button:hover {
+  background-color: #1b1d1d;
+}
+.bar .sections .start .search_button label {
+  font-size: 18px;
+  padding-right: 4px;
+  color: #db4740;
+}
+.bar .sections .start .wallpaper_button {
+  background-color: #0a0b0c;
+  border-radius: 8px;
+  padding: 4px 8px;
+}
+.bar .sections .start .wallpaper_button:hover {
+  background-color: #0a0b0c;
+}
+.bar .sections .start .wallpaper_button label {
+  font-size: 20px;
+  padding-right: 6px;
+}
+.bar .sections .start .systray .apps {
+  margin-top: 8px;
+}
+.bar .sections .start .systray .systray_button {
+  font-size: 21px;
+}
+.bar .sections .center .workspace_indicator {
+  background-color: #0a0b0c;
+  border-radius: 8px;
+  padding: 1rem;
+}
+.bar .sections .center .workspace_indicator .workspace {
+  background-color: #47423e;
+  border-radius: 8px;
+  min-width: 8px;
+  min-height: 8px;
+  transition: min-height 500ms cubic-bezier(0, 1, 0, 1);
+}
+.bar .sections .center .workspace_indicator .workspace.occupied {
+  background-color: #e0cda5;
+}
+.bar .sections .center .workspace_indicator .workspace.active {
+  background-color: #db4740;
+  min-height: 48px;
+}
+.bar .sections .center .workspace_indicator .workspace:hover {
+  background-color: #b1b946;
+}
+.bar .sections .end .controls {
+  background-color: #0a0b0c;
+  border-radius: 8px;
+  padding: 4px 8px;
+}
+.bar .sections .end .controls .audio_control_button {
+  font-size: 20px;
+  padding-right: 2px;
+}
+.bar .sections .end .controls .audio_control_button:hover label {
+  color: #e0cda5;
+}
+.bar .sections .end .controls .system_control_button {
+  font-size: 20px;
+  padding-right: 4px;
+}
+.bar .sections .end .controls .system_control_button:hover label {
+  color: #e0cda5;
+}
+.bar .sections .end .controls .screenshot_button {
+  font-size: 20px;
+  padding-right: 6px;
+}
+.bar .sections .end .controls .screenshot_button:hover label {
+  color: #e0cda5;
+}
+.bar .sections .end .time_indicator {
+  background-color: #0a0b0c;
+  border-radius: 8px;
+  padding: 4px 8px;
+  font-size: 14px;
+  font-weight: bold;
+}
+.bar .sections .end .time_indicator:hover {
+  background-color: #1b1d1d;
+}
+
+.systray_menu {
+  background-color: #0a0b0c;
+  border-radius: 8px;
+  padding: 1rem;
+}
+.systray_menu menuitem {
+  border-radius: 4px;
+  padding: 4px 8px;
+}
+.systray_menu menuitem:hover {
+  background-color: #1b1d1d;
+}
+
+.menu {
+  background-color: #000;
+  border-radius: 8px;
+  border: solid #1b1d1d 1px;
+  margin-top: 9px;
+  margin-right: 9px;
+  margin-left: 9px;
+  margin-bottom: 19px;
+  padding: 8px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.75);
+}
+.menu.audio_controls {
+  min-height: 200px;
+  padding: 1rem;
+}
+.menu.audio_controls .slider_container .slider trough {
+  background-color: #0a0b0c;
+  border-radius: 8px;
+}
+.menu.audio_controls .slider_container .slider highlight {
+  border-radius: 8px;
+  min-width: 10px;
+}
+.menu.audio_controls .slider_container.global_volume {
+  padding-right: 2px;
+}
+.menu.audio_controls .slider_container.global_volume .slider highlight {
+  background-color: #80aa9e;
+}
+.menu.audio_controls .slider_container.global_volume .icon {
+  font-size: 15px;
+  padding-right: 4px;
+}
+.menu.audio_controls .slider_container.music_volume {
+  padding-right: 4px;
+}
+.menu.audio_controls .slider_container.music_volume .slider highlight {
+  background-color: #8cba7f;
+}
+.menu.audio_controls .slider_container.music_volume .icon {
+  font-size: 16px;
+}
+.menu.audio_controls .slider_container.input_volume {
+  padding-right: 4px;
+}
+.menu.audio_controls .slider_container.input_volume .slider highlight {
+  background-color: #b1b946;
+}
+.menu.audio_controls .slider_container.input_volume .icon {
+  font-size: 16px;
+}
+.menu.system_controls {
+  min-height: 200px;
+  padding: 1rem;
+}
+.menu.system_controls .slider_container .slider trough {
+  background-color: #0a0b0c;
+  border-radius: 8px;
+}
+.menu.system_controls .slider_container .slider highlight {
+  border-radius: 8px;
+  min-width: 10px;
+}
+.menu.system_controls .slider_container.brightness .slider highlight {
+  background-color: #e0cda5;
+}
+.menu.system_controls .slider_container.brightness .icon {
+  font-size: 15px;
+  padding-right: 4px;
+}
+.menu.calendar .widget {
+  padding: 0.3rem 0.5rem;
+}
+.menu.calendar .widget button {
+  color: #d65d0e;
+}
+
+.home {
+  background-color: #000;
+  border-right: solid #0a0b0c 1px;
+  padding: 8px;
+  min-width: 300px;
+}
+.home .user_box {
+  background-color: #0a0b0c;
+  border-radius: 8px;
+  padding: 8px;
+}
+.home .user_box .face {
+  background-size: cover;
+  /* border: solid #db4740 1px; */
+  border-radius: 999px;
+  min-width: 54px;
+  min-height: 54px;
+}
+.home .user_box .details .username {
+  font-weight: 900;
+  font-size: 16px;
+  color: #fbf1c7;
+}
+.home .user_box .details .wm {
+  font-weight: 900;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #e9b243;
+}
+.home .user_box .shutdown_button {
+  background-color: #1d2021;
+  border-radius: 999px;
+  font-size: 24px;
+  padding: 4px 13px;
+}
+.home .user_box .shutdown_button label {
+  color: #db4740;
+  padding-right: 4px;
+}
+.home .desktop_controls {
+  border-radius: 8px;
+  margin-top: 10px;
+  padding: 8px;
+}
+.home .desktop_controls .buttons .icon {
+  background-color: #000;
+  border: solid #1b1d1d 1px;
+  border-radius: 10px;
+  padding: 14px 22px;
+  color: #000;
+}
+.home .desktop_controls .buttons .icon.inactive {
+  background-color: #0a0b0c;
+}
+.home .desktop_controls .buttons .name {
+  color: #928374;
+  font-weight: 700;
+  font-size: 11px;
+}
+.home .desktop_controls .sliders .icon {
+  font-size: 20px;
+}
+.home .desktop_controls .sliders scale trough {
+  background-color: #0a0b0c;
+  border-radius: 8px;
+}
+.home .desktop_controls .sliders scale highlight {
+  background-color: #80aa9e;
+  border-radius: 8px;
+  min-height: 10px;
+}
+.icon {
+  padding: 8px;
+}
+.home .music_player {
+  background-color: #000;
+  border: solid #1b1d1d 1px;
+  border-radius: 8px;
+  padding: 8px;
+}
+.home .music_player .thumbnail {
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  min-width: 115px;
+  min-height: 115px;
+}
+.home .music_player .right {
+  padding: 0.8rem 0;
+}
+.home .music_player .right .meta .title {
+  font-size: 11px;
+  font-weight: bold;
+  font-style: italic;
+  color: #e9b243;
+}
+.home .music_player .right .meta .artist {
+  color: #db4740;
+  font-weight: bold;
+}
+.home .music_player .right .controls .control {
+  border-radius: 8px;
+  font-size: 28px;
+  padding: 0 8px;
+}
+.home .music_player .right .position {
+  margin-top: 4px;
+}
+.home .music_player .right .position .progress {
+  min-width: 16px;
+}
+.home .music_player .right .position .progress trough {
+  background-color: #0a0b0c;
+  border-radius: 8px;
+}
+.home .music_player .right .position .progress trough progress {
+  background-color: #e0cda5;
+  border-radius: 8px;
+}
+.home .music_player .right .position .meta {
+  font-size: 10px;
+}
+.home .music_player .right .position .meta .current_progress, .home .music_player .right .position .meta .length {
+  color: #928374;
+}
+.home .notification_center {
+  background-color: #000;
+  border: solid #1b1d1d 1px;
+  border-radius: 8px;
+  margin-top: 1rem;
+  padding: 8px;
+}
+.home .notification_center .header .title {
+  font-size: 16px;
+  font-weight: 900;
+  color: #928374;
+  margin-left: 8px;
+}
+.home .notification_center .header .clear_notif_button {
+  border-radius: 999px;
+  font-size: 24px;
+  font-weight: 900;
+  padding: 3px 11px 3px 9px;
+  margin-right: 8px;
+}
+.home .notification_center .header .clear_notif_button:hover label {
+  color: #db4740;
+}
+.home .notification_center .notifications .no_notification {
+  margin-top: 3rem;
+}
+.home .notification_center .notifications .no_notification .icon {
+  font-size: 48px;
+  color: #47423e;
+}
+.home .notification_center .notifications .no_notification .text {
+  font-size: 20px;
+  margin-top: 1rem;
+  color: #47423e;
+  font-weight: bold;
+  font-style: italic;
+}
+.home .notification_center .notifications .notification {
+  background-color: #000;
+  border: solid #1b1d1d 1px;
+  border-radius: 8px;
+  padding: 8px;
+}
+.home .notification_center .notifications .notification .image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 8px;
+  min-width: 64px;
+  min-height: 64px;
+}
+.home .notification_center .notifications .notification .meta {
+  padding: 5px;
+}
+.home .notification_center .notifications .notification .meta .appname {
+  letter-spacing: 2px;
+  font-weight: 900;
+  font-size: 9px;
+  color: #e9b243;
+}
+.home .notification_center .notifications .notification .meta .summary {
+  color: #db4740;
+  font-weight: bold;
+  font-style: italic;
+}
+.home .notification_center .remove_notif_button {
+  padding-right: 4px;
+}
+.home .notification_center .remove_notif_button label {
+  font-size: 16px;
+}
+
+.power_menu {
+  background-color: #0a0b0c;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.app_launcher {
+  background-color: #000;
+  border-right: solid #0a0b0c 1px;
+  padding: 8px;
+  min-width: 300px;
+}
+.app_launcher .header {
+  background-color: #000;
+  border: 1px solid #1b1d1d;
+  border-radius: 8px;
+  padding: 8px;
+}
+.app_launcher .header .icon {
+  font-size: 16px;
+  font-weight: 200;
+  color: #db4740;
+}
+.app_launcher .header .input_container .input {
+  border: solid #1b1d1d 1px;
+  border-radius: 8px;
+  font-size: 11pt;
+  padding: 8px;
+}
+.app_launcher .header .input_container .placeholder {
+  font-weight: normal;
+  font-size: 11pt;
+  color: #47423e;
+  padding-left: 8px;
+  font-style: italic;
+}
+.app_launcher .apps .app {
+  background-color: #000;
+  border-radius: 8px;
+  padding: 8px;
+  color: #e0cda5;
+}
+.app_launcher .apps .app:hover {
+  background-color: #0a0b0c;
+}
+.app_launcher .apps .app.selected {
+  background-color: #0a0b0c;
+  /* color: #db4740; */
+}
+.app_launcher .apps .app:focus {
+  background-color: #0a0b0c;
+  /* color: #db4740; */
+}
+
+.wallpapers {
+  background-color: #000;
+  border-right: solid #0a0b0c 1px;
+  padding: 8px;
+  min-width: 300px;
+}
+.wallpapers .list .wallpaper .img {
+  border-radius: 8px;
+  min-height: 120px;
+  background-size: cover;
+  background-position: center;
+}
+
+.notification_popups .notification {
+  background-color: #000;
+  border: solid #1b1d1d 1px;
+  border-radius: 8px;
+  min-width: 300px;
+  /* padding: 5px; */
+  margin: 20px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.75);
+}
+.notification_popups .notification .icon {
+  min-width: 48px;
+  min-height: 48px;
+}
+.notification_popups .notification .icon .image {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 8px;
+  min-width: 64px;
+  min-height: 64px;
+}
+.notification_popups .meta {
+  padding: 5px;
+}
+.notification_popups .meta .appname {
+  letter-spacing: 2px;
+  font-weight: bold;
+  font-size: 9px;
+  color: #e9b243;
+  margin-top: 8px;
+}
+.notification_popups .meta .summary {
+  color: #db4740;
+  font-weight: bold;
+  font-style: italic;
+}

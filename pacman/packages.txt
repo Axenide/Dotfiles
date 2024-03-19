@@ -11,6 +11,7 @@ firefox
 fish
 floorp-bin
 fzf
+gnome-calculator
 grim
 grimblast-git
 hyprland-git
