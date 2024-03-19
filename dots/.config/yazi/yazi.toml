@@ -11,3 +11,19 @@ image_filter = "nearest"
 text = [
 	{ run = 'nvim "$@"', block = true },
 ]
+pdf = [
+  { run = 'zathura "$@"', block = false },
+]
+
+[open]
+rules = [
+	{ mime = "text/*", use = "text" },
+	{ mime = "image/*", use = "image" },
+
+	# { mime = "application/json", use = "text" },
+	{ name = "*.json", use = "text" },
+	{ name = "*.pdf", use = "pdf" },
+
+	# Multiple openers for a single rule
+	{ name = "*.html", use = [ "browser", "text" ] },
+]

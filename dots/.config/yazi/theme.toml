@@ -6,7 +6,7 @@
 cwd = { fg = "#db4740" }
 
 # Hovered
-hovered         = { fg = "#db4740", bg = "#000000", bold = true, underline = false }
+hovered         = { fg = "#db4740", bg = "#000000", bold = true, underline = true }
 preview_hovered = { underline = true }
 
 # Find
@@ -46,7 +46,7 @@ mode_select = { fg = "#000000", bg = "#b1b946", bold = true }
 mode_unset  = { fg = "#000000", bg = "#d3869b", bold = true }
 
 # Progress
-progress_label  = { fg = "#ebdbb2", bold = true }
+progress_label  = { fg = "#e0cda5", bold = true }
 progress_normal = { fg = "#504945", bg = "#1b1d1d" }
 progress_error  = { fg = "#db4740", bg = "#1b1d1d" }
 
