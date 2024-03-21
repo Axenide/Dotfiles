@@ -26,6 +26,7 @@
     // Modules configuration
 	"clock": {
 		"format": "{:%H:%M:%OS}",
+    "timezone": "America/Argentina/Mendoza",
     "interval": 1,
 		"tooltip": "false",
 //        	"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
