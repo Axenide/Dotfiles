@@ -36,9 +36,3 @@
   opacity: 1;
   width: auto;
 }
-
-/* Temporary fix to disable padding after 11.10.5 update. */
-
-#titlebar {
-  padding-top: 0px !important;
-}
