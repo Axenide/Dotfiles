@@ -58,6 +58,8 @@ tmux
 ttf-all-the-icons
 ttf-font-awesome
 ttf-iosevka-nerd
+ttf-nerd-fonts-symbols-common
+ttf-nerd-fonts-symbols-mono
 unarchiver
 waybar
 wf-recorder
