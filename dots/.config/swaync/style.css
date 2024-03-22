@@ -246,7 +246,7 @@
     border: 1px solid @noti-close-bg;
     border-radius: 10px;
     margin: 10px;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 1);
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 1);
 }
 
 .control-center-list {
@@ -329,19 +329,21 @@
 
 .widget-mpris {
     color: @text-color;
-    background: @noti-bg-darker;
+    background: @noti-bg;
     padding: 10px;
     margin: 10px;
+    border: 1px solid @noti-close-bg;
     border-radius: 10px;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 1);
 }
 
 .widget-mpris-player {
-    padding: 8px;
-    margin: 8px
+    padding: 0px;
+    margin: 0px
 }
 
 .widget-mpris-title {
-    font-weight: 700;
+    font-weight: bold;
     font-size: 1.25rem
 }
 
@@ -353,13 +355,15 @@
     font-size: x-large;
     padding: 8px;
     margin: 20px 10px 10px;
+    border: 1px solid @noti-close-bg;
     border-radius: 10px;
-    background: @noti-bg-darker;
+    background: @noti-bg;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 1);
 }
 
 .widget-buttons-grid>flowbox>flowboxchild>button {
     margin: 3px;
-    background: @noti-bg-hover;
+    background: transparent;
     border-radius: 10px;
     color: @text-color
 }
