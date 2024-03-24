@@ -54,3 +54,7 @@ map("n", "<leader>db", "<cmd> DapToggleBreakpoint <CR>", { desc = "" })
 map("n", "<leader>dpr", function ()
   require("dap-python").test_method()
 end, { desc = "" })
+
+map("n", "<leader>im", function()
+  require'telescope'.extensions.goimpl.goimpl{}
+end, { desc = "Telescope Go Implementation", expr = true, silent = true })

@@ -1,5 +1,18 @@
 return {
   {
+	'edolphin-ydf/goimpl.nvim',
+	requires = {
+		{'nvim-lua/plenary.nvim'},
+		{'nvim-lua/popup.nvim'},
+		{'nvim-telescope/telescope.nvim'},
+		{'nvim-treesitter/nvim-treesitter'},
+	},
+	config = function()
+		require'telescope'.load_extension'goimpl'
+	end,
+	lazy = true,
+  },
+  {
     "stevearc/conform.nvim",
     config = function()
       require "configs.conform"
@@ -78,6 +91,7 @@ return {
     "mfussenegger/nvim-dap-python",
     ft = {"python"},
     dependencies = {
+      "nvim-neotest/nvim-nio",
       "mfussenegger/nvim-dap",
       "rcarriga/nvim-dap-ui",
     },
