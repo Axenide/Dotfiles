@@ -128,7 +128,7 @@ class VerticalBar(Window):
             "label",
             self.time_sep_var,
             "value-str",
-            1,
+            # 1,
         )
         self.center_box = CenterBox(name="main-window", orientation="v")
         self.run_button = Button(
@@ -222,7 +222,7 @@ class VerticalBar(Window):
                     int(
                         psutil.sensors_battery().percent
                         if psutil.sensors_battery() is not None
-                        else 0
+                        else 100
                     )
                 ),
             },
@@ -241,6 +241,8 @@ class VerticalBar(Window):
                 orientation="v",
                 style="min-width: calc(40px - 4px); margin: 4px;",
                 children=[
+                    self.battery_label,
+                    Box(name="module-separator"),
                     # self.system_tray,
                     self.colorpicker,
                     Box(name="module-separator"),

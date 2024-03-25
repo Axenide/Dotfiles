@@ -40,6 +40,8 @@ pavucontrol
 polkit-gnome
 poppler
 python-fabric-git
+python-gobject-docs
+python-pygobject-stubs
 python-setproctitle
 ranger
 ripgrep
