@@ -40,6 +40,7 @@ pavucontrol
 polkit-gnome
 poppler
 python-fabric-git
+python-setproctitle
 ranger
 ripgrep
 rofi-calc

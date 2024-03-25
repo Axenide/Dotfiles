@@ -2,6 +2,7 @@ import os
 import fabric
 import time
 import psutil
+import setproctitle
 from fabric.widgets.box import Box
 from fabric.widgets.image import Image
 from fabric.widgets.label import Label
@@ -296,6 +297,7 @@ class VerticalBar(Window):
 
 if __name__ == "__main__":
     bar = VerticalBar()  # entery point
+    setproctitle.setproctitle("axbar")
 
     set_stylesheet_from_file(get_relative_path("vertical_bar.css"))
     fabric.start()
