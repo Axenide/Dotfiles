@@ -30,7 +30,7 @@
 }
 
 #workspaces > button > label {
-	font-size: 0px;
+	font-size: 0pt;
 }
 
 #workspaces > button.active {

@@ -13,7 +13,7 @@ from fabric.widgets.centerbox import CenterBox
 from fabric.system_tray import SystemTray
 from fabric.utils.fabricator import Fabricate
 from fabric.utils.string_formatter import FormattedString
-from fabric.hyprland.widgets import Language, WorkspaceButton, Workspaces
+from fabric.hyprland.widgets import WorkspaceButton, Workspaces
 from fabric.utils import (
     set_stylesheet_from_file,
     bulk_replace,
