@@ -241,9 +241,6 @@ class VerticalBar(Window):
                 orientation="v",
                 style="min-width: calc(40px - 4px); margin: 4px;",
                 children=[
-                    self.battery_label,
-                    Box(name="module-separator"),
-                    # self.system_tray,
                     self.colorpicker,
                     Box(name="module-separator"),
                     Box(
