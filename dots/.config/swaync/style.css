@@ -242,10 +242,10 @@
 }
 
 .control-center {
-    background: alpha(@cc-bg, 0.9);
-    border: 1px solid @noti-close-bg;
-    border-radius: 10px;
-    margin: 10px;
+    background: alpha(@cc-bg, 1);
+    border-left: 1px solid @noti-close-bg;
+    border-radius: 0px;
+    margin-left: 10px;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 1);
 }
 
@@ -385,17 +385,19 @@
 }
 
 .widget-volume {
-    background: @noti-bg-darker;
+    background: @noti-bg;
     padding: 8px;
+    padding-left: 16px;
     margin: 10px;
-    border-radius: 10px;
+    border: 1px solid @noti-close-bg;
+    border-radius: 8px;
     font-size: x-large;
-    color: @text-color
+    color: @red;
 }
 
 .widget-volume>box>button {
-    background: transparent;
-    border: none
+    background: @red;
+    border: 1px solid @noti-close-bg;
 }
 
 .per-app-volume {
@@ -406,12 +408,14 @@
 }
 
 .widget-backlight {
-    background: @noti-bg-darker;
+    background: @noti-bg;
     padding: 8px;
+    padding-left: 16px;
     margin: 10px;
-    border-radius: 10px;
+    border: 1px solid @noti-close-bg;
+    border-radius: 8px;
     font-size: x-large;
-    color: @text-color
+    color: @red;
 }
 
 .widget-inhibitors {

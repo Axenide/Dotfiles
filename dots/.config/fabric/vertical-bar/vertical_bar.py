@@ -153,6 +153,7 @@ class VerticalBar(Window):
         )
         self.media_button = Button(
             name="media-button",
+            tooltip_text=str(exec_shell_command('playerctl metadata artist -f "{{ artist }} - {{ title }}"')).rstrip(),
             child=Image(
                 image_file=get_relative_path("assets/media.svg")
             )
@@ -286,6 +287,7 @@ class VerticalBar(Window):
                 return exec_shell_command('playerctl next')
 
     def on_button_hover(self, button: Button, event):
+        self.media_button.set_tooltip_text(str(exec_shell_command('playerctl metadata artist -f "{{ artist }} - {{ title }}"')).rstrip())
         return self.change_cursor("pointer")
 
     def on_button_unhover(self, button: Button, event):
