@@ -156,7 +156,7 @@ class VerticalBar(Window):
             name="media-button",
             tooltip_text=str(exec_shell_command('playerctl metadata artist -f "{{ artist }} - {{ title }}"')).rstrip(),
             child=Image(
-                image_file=get_relative_path("assets/media.svg")
+                image_file=get_relative_path("assets/stop.svg")
             )
         )
         for btn in [self.run_button, self.power_button, self.colorpicker, self.media_button]:
