@@ -276,9 +276,9 @@ class VerticalBar(Window):
                 return exec_shell_command('notify-send "La verdad es que no sé qué poner acá." "xDDDDD"')
         elif button == self.colorpicker:
             if event.button == 1:
-                return exec_shell_command('bash ./scripts/hyprpicker-hex.sh')
+                return exec_shell_command('bash ' + get_relative_path('scripts/hyprpicker-hex.sh'))
             elif event.button == 3:
-                return exec_shell_command('bash ./scripts/hyprpicker-rgb.sh')
+                return exec_shell_command('bash ' + get_relative_path('scripts/hyprpicker-rgb.sh'))
         elif button == self.media_button:
             if event.button == 1:
                 return exec_shell_command('playerctl previous')
