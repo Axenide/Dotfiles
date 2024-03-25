@@ -50,7 +50,9 @@
             "label": "󰕾 "
         },
         "backlight": {
-            "label": "󰃟 "
+            "label": "󰃟 ",
+            "subsystem": "backlight",
+            "device": "amdgpu_bl1"
         },
         "buttons-grid": {
             "actions": [
