@@ -6,7 +6,7 @@ brightnessctl
 btop
 cava
 fd
-ffmpeg
+ffmpeg-obs
 ffmpegthumbnailer
 firefox
 fish
