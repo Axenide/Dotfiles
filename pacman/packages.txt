@@ -39,6 +39,7 @@ pamixer
 pavucontrol
 polkit-gnome
 poppler
+python-fabric-git
 ranger
 ripgrep
 rofi-calc
