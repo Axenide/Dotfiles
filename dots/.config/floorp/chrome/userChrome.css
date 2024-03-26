@@ -7,6 +7,18 @@
 /*   font-style: italic !important; */
 /* } */
 
+.tabbrowser-tab[selected] .tab-content {
+    border: 1px solid #1b1d1d;
+    border-radius: 8px;
+    position: relative;
+    left: 2px;
+}
+
+.tabbrowser-tab[selected] .tab-icon-image {
+    position: relative;
+    right: 2px;
+}
+
 .tabbrowser-tab:not([selected]) .tab-content {
     opacity: 0.5 !important; /* Oscurecer las pestañas no seleccionadas al 50% */
 }
