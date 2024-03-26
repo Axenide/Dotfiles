@@ -77,13 +77,13 @@
 	color: #d6f5f0;
 }
 
-#time-container {
+#time-button {
 	background-color: #000000;
 	border: 1px solid #1b1d1d;
 	border-radius: 8px;
 	padding: 11px;
 }
-#time-container:hover {
+#time-button:hover {
   background-color: #1b1d1d;
 }
 #time-separator {

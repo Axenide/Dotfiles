@@ -159,7 +159,11 @@ class VerticalBar(Window):
                 image_file=get_relative_path("assets/stop.svg")
             )
         )
-        for btn in [self.run_button, self.power_button, self.colorpicker, self.media_button]:
+        self.time_button = Button(
+            name="time-button",
+            child=DateTime(['%H\n%M']),
+        )
+        for btn in [self.run_button, self.power_button, self.colorpicker, self.media_button, self.time_button]:
             bulk_connect(
                 btn,
                 {
@@ -243,15 +247,7 @@ class VerticalBar(Window):
                 children=[
                     self.colorpicker,
                     Box(name="module-separator"),
-                    Box(
-                        orientation="v",
-                        name="time-container",
-                        children=[
-                            DateTime(format_list=["%H"]),
-                            # self.time_sep,
-                            DateTime(format_list=["%M"]),
-                        ],
-                    ),
+                    self.time_button,
                     Box(name="module-separator"),
                     self.power_button,
                 ],
@@ -262,29 +258,44 @@ class VerticalBar(Window):
 
     def on_button_press(self, button: Button, event):
         home_dir = os.getenv('HOME')
+
         if button == self.run_button:
-            if event.button == 1:
-                return exec_shell_command(f'{home_dir}/.config/rofi/launcher/launcher.sh')
-            elif event.button == 3:
-                return exec_shell_command('notify-send "Showing overview"')
+            commands = {
+                1: f'{home_dir}/.config/rofi/launcher/launcher.sh',
+                2: 'swaync-client -t -sw',
+                3: 'notify-send "Showing overview"'
+            }
+            command = commands.get(event.button)
+            if command:
+                return exec_shell_command(command)
+        
         elif button == self.power_button:
-            if event.button == 1:
-                return exec_shell_command(f'{home_dir}/.config/rofi/powermenu/powermenu.sh')
-                # return self.power_menu.toggle_window()
-            elif event.button == 3:
-                return exec_shell_command('notify-send "La verdad es que no sé qué poner acá." "xDDDDD"')
+            commands = {
+                1: f'{home_dir}/.config/rofi/powermenu/powermenu.sh',
+                3: 'notify-send "Placeholder" "xDDDDD"'
+            }
+            command = commands.get(event.button)
+            if command:
+                return exec_shell_command(command)
+        
         elif button == self.colorpicker:
-            if event.button == 1:
-                return exec_shell_command('bash ' + get_relative_path('scripts/hyprpicker-hex.sh'))
-            elif event.button == 3:
-                return exec_shell_command('bash ' + get_relative_path('scripts/hyprpicker-rgb.sh'))
+            commands = {
+                1: 'bash ' + get_relative_path('scripts/hyprpicker-hex.sh'),
+                3: 'bash ' + get_relative_path('scripts/hyprpicker-rgb.sh'),
+            }
+            command = commands.get(event.button)
+            if command:
+                return exec_shell_command(command)
+        
         elif button == self.media_button:
-            if event.button == 1:
-                return exec_shell_command('playerctl previous')
-            elif event.button == 2:
-                return exec_shell_command('playerctl play-pause')
-            elif event.button == 3:
-                return exec_shell_command('playerctl next')
+            commands = {
+                1: 'playerctl previous',
+                2: 'playerctl play-pause',
+                3: 'playerctl next',
+            }
+            command = commands.get(event.button)
+            if command:
+                return exec_shell_command(command)
 
     def on_button_hover(self, button: Button, event):
         self.media_button.set_tooltip_text(str(exec_shell_command('playerctl metadata artist -f "{{ artist }} - {{ title }}"')).rstrip())
