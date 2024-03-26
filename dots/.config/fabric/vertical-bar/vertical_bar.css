@@ -84,7 +84,7 @@
 	padding: 11px;
 }
 #time-button:hover {
-  background-color: #1b1d1d;
+  background: linear-gradient(to bottom, #000000 0%, #1b1d1d 100%);
 }
 #time-separator {
 	font-size: 14px;
@@ -116,7 +116,7 @@
 }
 
 #run-button:hover {
-	background-color: #1b1d1d;
+  background: linear-gradient(to bottom, #000000 0%, #1b1d1d 100%);
 }
 
 #power-button {
@@ -128,7 +128,7 @@
 }
 
 #power-button:hover {
-	background-color: #1b1d1d;
+  background: linear-gradient(to bottom, #000000 0%, #1b1d1d 100%);
 }
 
 #colorpicker {
@@ -140,7 +140,7 @@
 }
 
 #colorpicker:hover {
-	background-color: #1b1d1d;
+  background: linear-gradient(to bottom, #000000 0%, #1b1d1d 100%);
 }
 
 #media-button {
@@ -152,7 +152,7 @@
 }
 
 #media-button:hover {
-	background-color: #1b1d1d;
+  background: linear-gradient(to bottom, #000000 0%, #1b1d1d 100%);
 }
 
 #system-tray {
