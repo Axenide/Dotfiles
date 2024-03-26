@@ -156,7 +156,7 @@ class VerticalBar(Window):
             name="media-button",
             tooltip_text=str(exec_shell_command('playerctl metadata artist -f "{{ artist }} - {{ title }}"')).rstrip(),
             child=Image(
-                image_file=get_relative_path("assets/stop.svg")
+                image_file=get_relative_path("assets/media.svg")
             )
         )
         self.time_button = Button(
@@ -292,6 +292,14 @@ class VerticalBar(Window):
                 1: 'playerctl previous',
                 2: 'playerctl play-pause',
                 3: 'playerctl next',
+            }
+            command = commands.get(event.button)
+            if command:
+                return exec_shell_command(command)
+
+        elif button == self.time_button:
+            commands = {
+                1: f'{home_dir}/.config/rofi/calendar/calendar.sh',
             }
             command = commands.get(event.button)
             if command:
