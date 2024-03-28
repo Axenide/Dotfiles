@@ -32,6 +32,39 @@
   text-align: center !important;
 }
 
+.browserContainer {
+  background-color: var(--lwt-accent-color);
+}
+
+#appcontent
+  > #tabbrowser-tabbox
+  > #tabbrowser-tabpanels
+  > .deck-selected
+  > .browserContainer
+  > .browserStack
+  > browser {
+  border-radius: 7px !important;
+  margin-top: 0px !important;
+  margin-bottom: 5px !important;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+ }
+
+.browserStack>browser{
+    outline: 5px solid var(--lwt-accent-color) !important;
+}
+
+.browser-sidebar2 browser {
+  margin-left: 2px;
+  margin-right: -3px;
+  margin-bottom: -5px;
+  margin-top: -2px;
+}
+
+#sidebar2-header {
+  display: none;
+}
+
 #identity-box,
 #tracking-protection-icon-container,
 #page-action-buttons {
