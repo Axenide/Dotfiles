@@ -8,8 +8,8 @@
 /* } */
 
 .tabbrowser-tab[selected] .tab-content {
-    border: 0px solid #1b1d1d;
-    border-radius: 5px;
+    border-left: 3px solid #db4740;
+    border-radius: 2px 5px 5px 2px;
     position: relative;
     left: 2px;
     background-color: #db474030;
@@ -17,18 +17,27 @@
 
 .tabbrowser-tab[selected] .tab-icon-image {
     position: relative;
-    right: 2px;
+    right: 5px;
 }
 
 .tabbrowser-tab:not([selected]) .tab-content {
-    opacity: 0.5 !important; /* Oscurecer las pestañas no seleccionadas al 50% */
+    opacity: 0.5 !important;
 }
 
-/* Rotación de 30 grados para los favicons de las pestañas fijadas */
+.tabbrowser-tab[selected][pinned] {
+    border-left: 3px solid #db4740;
+}
+
 .tabbrowser-tab[pinned] .tab-icon-image {
     transform: rotate(-90deg);
     position: relative;
     right: 5px;
+}
+
+.tabbrowser-tab[selected][pinned] .tab-icon-image {
+    transform: rotate(-90deg);
+    position: relative;
+    right: 8px;
 }
 
 .urlbar-input-box {

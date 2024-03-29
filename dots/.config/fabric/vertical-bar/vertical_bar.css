@@ -184,3 +184,9 @@ menuitem {
 menuitem:hover {
   background-color: #1b1d1d;
 }
+
+#full-box {
+  background-color: #000;
+  padding: 8px;
+  min-width: 300px;
+}

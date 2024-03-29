@@ -130,6 +130,7 @@ class VerticalBar(Window):
             "value-str",
             # 1,
         )
+        self.full_box = Box(name="full-box", orientation="h")
         self.center_box = CenterBox(name="main-window", orientation="v")
         self.run_button = Button(
             name="run-button",
@@ -178,13 +179,9 @@ class VerticalBar(Window):
                 style="min-width: calc(40px - 4px); margin: 4px;",
                 children=[
                     self.run_button,
-                    Box(
-                        name="module-separator",
-                    ),
+                    Box(name="module-separator"),
                     self.system_tray,
-                    Box(
-                        name="module-separator",
-                    ),
+                    Box(name="module-separator"),
                     self.media_button,
                 ],
             )
