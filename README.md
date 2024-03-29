@@ -222,7 +222,7 @@ Also it will install `yay`, but you can skip the installation and use any AUR he
 
 ## 🌐 Browser Theme
 ### Floorp
-I'm currently using Floorp, a Firefox ESR fork with a sidebar and a lot of customization options.
+I'm currently using [Floorp](https://github.com/Floorp-Projects/Floorp/), a Firefox ESR fork with a sidebar and a lot of customization options.
 
 I tweaked some details with CSS and used [Firefox Color](https://addons.mozilla.org/es/firefox/addon/firefox-color/) to recolor it.
 

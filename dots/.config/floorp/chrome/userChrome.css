@@ -39,7 +39,7 @@
   background-color: var(--lwt-accent-color);
 }
 
-#appcontent
+:root:not([sizemode="fullscreen"]) #appcontent
   > #tabbrowser-tabbox
   > #tabbrowser-tabpanels
   > .deck-selected
