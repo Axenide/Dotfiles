@@ -8,10 +8,11 @@
 /* } */
 
 .tabbrowser-tab[selected] .tab-content {
-    border: 1px solid #1b1d1d;
-    border-radius: 8px;
+    border: 0px solid #1b1d1d;
+    border-radius: 5px;
     position: relative;
     left: 2px;
+    background-color: #db474030;
 }
 
 .tabbrowser-tab[selected] .tab-icon-image {
@@ -25,7 +26,7 @@
 
 /* Rotación de 30 grados para los favicons de las pestañas fijadas */
 .tabbrowser-tab[pinned] .tab-icon-image {
-    transform: rotate(-15deg);
+    transform: rotate(-90deg);
 }
 
 .urlbar-input-box {
