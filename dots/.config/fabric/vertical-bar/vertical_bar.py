@@ -167,9 +167,9 @@ class VerticalBar(Window):
             bulk_connect(
                 btn,
                 {
-                    "button-press-event": self.on_button_press,  # run_button -> open wofi, power_button -> toggle the power menu
-                    "enter-notify-event": self.on_button_hover,  # to change the cursor to a pointer
-                    "leave-notify-event": self.on_button_unhover,  # resets the cursor
+                    "button-press-event": self.on_button_press,
+                    "enter-notify-event": self.on_button_hover,
+                    "leave-notify-event": self.on_button_unhover,
                 },
             )
         self.center_box.add_start(
