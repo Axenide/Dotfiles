@@ -27,6 +27,8 @@
 /* Rotación de 30 grados para los favicons de las pestañas fijadas */
 .tabbrowser-tab[pinned] .tab-icon-image {
     transform: rotate(-90deg);
+    position: relative;
+    right: 5px;
 }
 
 .urlbar-input-box {
