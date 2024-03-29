@@ -47,7 +47,7 @@
   > .browserStack
   > browser {
   border-radius: 7px !important;
-  margin-top: 2px !important;
+  margin-top: 0px !important;
   margin-bottom: 5px !important;
   margin-left: 0px !important;
   margin-right: 0px !important;
@@ -74,6 +74,11 @@
   transition: opacity 0.3s ease;
   opacity: 0;
   width: 0;
+}
+
+.browser-toolbar {
+  margin-top: 0px;
+  margin-bottom: 2px;
 }
 
 #urlbar:hover #identity-box,
