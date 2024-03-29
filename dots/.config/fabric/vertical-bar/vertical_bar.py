@@ -172,7 +172,7 @@ class VerticalBar(Window):
                     "leave-notify-event": self.on_button_unhover,  # resets the cursor
                 },
             )
-        self.center_box.add_left(
+        self.center_box.add_end(
             Box(
                 orientation="v",
                 style="min-width: calc(40px - 4px); margin: 4px;",
@@ -240,7 +240,7 @@ class VerticalBar(Window):
                 self.battery_label.set_label(value["battery"]),
             ),
         )
-        self.center_box.add_right(
+        self.center_box.add_start(
             Box(
                 orientation="v",
                 style="min-width: calc(40px - 4px); margin: 4px;",
