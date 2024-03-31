@@ -1,43 +1,34 @@
 #sidebar-splitter2 {
   appearance: none !important;
-  width: 0px !important;;  /* Set initial width */
+  width: 0px !important;
 }
 
-/* .tabbrowser-tab[selected] .tab-content { */
-/*   font-style: italic !important; */
-/* } */
-
-.tabbrowser-tab[selected] .tab-content {
-    border-left: 3px solid #db4740;
-    border-radius: 2px 5px 5px 2px;
+.tabbrowser-tab .tab-content {
+    border-radius: 5px;
     position: relative;
     left: 2px;
-    background-color: #db474030;
 }
 
-.tabbrowser-tab[selected] .tab-icon-image {
+.tabbrowser-tab .tab-icon-image {
     position: relative;
-    right: 5px;
+    right: 2px;
+}
+
+.tabbrowser-tab[selected] .tab-content {
+    background-color: #db474030;
 }
 
 .tabbrowser-tab:not([selected]) .tab-content {
     opacity: 0.5 !important;
 }
 
-.tabbrowser-tab[selected][pinned] {
-    border-left: 3px solid #db4740;
+.tabbrowser-tab[pinned] .tab-content {
+    background-color: #db474030;
 }
 
 .tabbrowser-tab[pinned] .tab-icon-image {
-    transform: rotate(-90deg);
     position: relative;
     right: 5px;
-}
-
-.tabbrowser-tab[selected][pinned] .tab-icon-image {
-    transform: rotate(-90deg);
-    position: relative;
-    right: 8px;
 }
 
 .urlbar-input-box {
@@ -55,7 +46,7 @@
   > .browserContainer
   > .browserStack
   > browser {
-  border-radius: 7px !important;
+  border-radius: 8px !important;
   margin-top: 0px !important;
   margin-bottom: 5px !important;
   margin-left: 0px !important;

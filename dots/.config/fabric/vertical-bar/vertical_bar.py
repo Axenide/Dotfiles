@@ -21,7 +21,45 @@ from fabric.utils import (
     exec_shell_command,
     get_relative_path,
 )
+import gi
+import json
+from loguru import logger
+from fabric.widgets.box import Box
+from fabric.widgets.button import Button
+from fabric.widgets.eventbox import EventBox
+from fabric.hyprland.service import Connection, SignalEvent
+from fabric.utils.string_formatter import FormattedString
+from fabric.utils import bulk_connect
 
+gi.require_version("Gtk", "3.0")
+from gi.repository import (
+    Gtk,
+    Gdk,
+    GLib,
+)
+
+connection = Connection()
+
+# Overrides
+def scroll_handler(self, widget, event: Gdk.EventScroll):
+        match event.direction:
+            case Gdk.ScrollDirection.UP:
+                connection.send_command(
+                    "batch/dispatch workspace -1",
+                )
+                logger.info("[Workspaces] Moved to the next workspace")
+            case Gdk.ScrollDirection.DOWN:
+                connection.send_command(
+                    "batch/dispatch workspace +1",
+                )
+                logger.info("[Workspaces] Moved to the previous workspace")
+            case _:
+                logger.info(
+                    f"[Workspaces] Unknown scroll direction ({event.direction})"
+                )
+        return
+
+Workspaces.scroll_handler = scroll_handler
 
 class PowerMenu(Window):
     def __init__(self):
@@ -94,7 +132,6 @@ class PowerMenu(Window):
             self.hide()
         return self
 
-
 class VerticalBar(Window):
     def __init__(self):
         super().__init__(
@@ -130,7 +167,11 @@ class VerticalBar(Window):
             "value-str",
             # 1,
         )
-        self.full_box = Box(name="full-box", orientation="h")
+        self.content_box = Gtk.Revealer(
+            name="content-box",
+            transition_duration=500,
+            transition_type="slide-right",
+        )
         self.center_box = CenterBox(name="main-window", orientation="v")
         self.run_button = Button(
             name="run-button",
@@ -164,7 +205,47 @@ class VerticalBar(Window):
             name="time-button",
             child=DateTime(['%H\n%M']),
         )
-        for btn in [self.run_button, self.power_button, self.colorpicker, self.media_button, self.time_button]:
+        self.wifi_icon = Image(
+            name="wifi-icon",
+            image_file=get_relative_path("assets/wifi.svg"),
+        )
+
+        self.bluetooth_icon = Image(
+            name="bluetooth-icon",
+            image_file=get_relative_path("assets/bluetooth.svg"),
+        )
+
+        self.night_icon = Image(
+            name="night-icon",
+            image_file=get_relative_path("assets/night.svg"),
+        )
+
+        self.dnd_icon = Image(
+            name="dnd-icon",
+            image_file=get_relative_path("assets/bell.svg"),
+        )
+
+        self.wifi_button = Button(
+            name="wifi-button",
+            h_expand=True,
+            child=self.wifi_icon,
+        )
+        self.bluetooth_button = Button(
+            name="bluetooth-button",
+            h_expand=True,
+            child=self.bluetooth_icon,
+        )
+        self.night_button = Button(
+            name="night-button",
+            h_expand=True,
+            child=self.night_icon,
+        )
+        self.dnd_button = Button(
+            name="dnd-button",
+            h_expand=True,
+            child=self.dnd_icon,
+        )
+        for btn in [self.run_button, self.power_button, self.colorpicker, self.media_button, self.time_button, self.wifi_button, self.bluetooth_button, self.night_button, self.dnd_button]:
             bulk_connect(
                 btn,
                 {
@@ -250,7 +331,47 @@ class VerticalBar(Window):
                 ],
             )
         )
-        self.add(self.center_box)
+
+        self.test_object = Label(label="Placeholder")
+
+        self.applets = Box(
+            name="applets",
+            orientation="h",
+            spacing=4,
+            children=[
+                self.wifi_button,
+                self.bluetooth_button,
+                self.night_button,
+                self.dnd_button,
+            ]
+        )
+
+        self.content_box.add(
+            Box(
+                name="content-box",
+                orientation="v",
+                children=[
+                    self.applets,
+                    # self.wifi_button,
+                    # self.bluetooth_button,
+                    # self.night_button,
+                    # self.dnd_button,
+                    # self.test_object,
+                    # self.cpu_label,
+                    # self.memory_label,
+                    # self.battery_label,
+                ]
+            )
+        )
+
+        self.full_box = Box(
+            name="full-box",
+            orientation="h",
+            children=[self.content_box, self.center_box],
+        )
+
+        # self.add(self.center_box)
+        self.add(self.full_box)
         self.show_all()
 
     def on_button_press(self, button: Button, event):
@@ -260,11 +381,13 @@ class VerticalBar(Window):
             commands = {
                 1: f'{home_dir}/.config/rofi/launcher/launcher.sh',
                 2: 'swaync-client -t -sw',
-                3: 'notify-send "Showing overview"'
+                3: 'toggle'
             }
             command = commands.get(event.button)
-            if command:
+            if command != 'toggle':
                 return exec_shell_command(command)
+            else:
+                self.content_box.set_reveal_child(not self.content_box.get_reveal_child())
         
         elif button == self.power_button:
             commands = {
@@ -301,6 +424,38 @@ class VerticalBar(Window):
             command = commands.get(event.button)
             if command:
                 return exec_shell_command(command)
+        
+        elif button == self.wifi_button:
+            commands = {
+                1: 'toggle',
+            }
+            command = commands.get(event.button)
+            if command == 'toggle':
+                self.wifi_icon.set_from_file(get_relative_path('assets/wifi-off.svg'))
+
+        elif button == self.bluetooth_button:
+            commands = {
+                1: 'toggle',
+            }
+            command = commands.get(event.button)
+            if command == 'toggle':
+                self.bluetooth_icon.set_from_file(get_relative_path('assets/bluetooth-off.svg'))
+
+        elif button == self.night_button:
+            commands = {
+                1: 'toggle',
+            }
+            command = commands.get(event.button)
+            if command == 'toggle':
+                self.night_icon.set_from_file(get_relative_path('assets/night-off.svg'))
+
+        elif button == self.dnd_button:
+            commands = {
+                1: 'toggle',
+            }
+            command = commands.get(event.button)
+            if command == 'toggle':
+                self.dnd_icon.set_from_file(get_relative_path('assets/bell-off.svg'))
 
     def on_button_hover(self, button: Button, event):
         self.media_button.set_tooltip_text(str(exec_shell_command('playerctl metadata artist -f "{{ artist }} - {{ title }}"')).rstrip())
