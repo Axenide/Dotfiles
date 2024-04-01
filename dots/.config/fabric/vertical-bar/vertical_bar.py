@@ -154,7 +154,7 @@ class Circles(Box):
         )
         self.battery_circular_progress_bar = CircularProgressBar(
             size=(90, 90),
-            percentage=68,
+            percentage=100,
             name="battery_circular-progress-bar",
         )
         self.update_status()
@@ -220,7 +220,7 @@ class Circles(Box):
         self.battery_circular_progress_bar.percentage = (
             psutil.sensors_battery().percent
             if psutil.sensors_battery() is not None
-            else 10
+            else 100
         )
         return True
 
