@@ -14,6 +14,8 @@ from fabric.system_tray import SystemTray
 from fabric.utils.fabricator import Fabricate
 from fabric.utils.string_formatter import FormattedString
 from fabric.hyprland.widgets import WorkspaceButton, Workspaces
+from fabric.widgets.circular_progress_bar import CircularProgressBar
+from fabric.widgets.overlay import Overlay
 from fabric.utils import (
     set_stylesheet_from_file,
     bulk_replace,
@@ -131,6 +133,96 @@ class PowerMenu(Window):
         else:
             self.hide()
         return self
+
+PROFILE_PICTURE = os.path.expanduser("~/.face.icon")
+
+class Circles(Box):
+    def __init__(self):
+        super().__init__(
+            visible=False,
+            all_visible=False,
+        )
+        self.cpu_circular_progress_bar = CircularProgressBar(
+            size=(90, 90),
+            percentage=0,
+            name="cpu_circular-progress-bar",
+        )
+        self.memory_circular_progress_bar = CircularProgressBar(
+            size=(90, 90),
+            percentage=0,
+            name="memory_circular-progress-bar",
+        )
+        self.battery_circular_progress_bar = CircularProgressBar(
+            size=(90, 90),
+            percentage=68,
+            name="battery_circular-progress-bar",
+        )
+        self.update_status()
+        GLib.timeout_add_seconds(1, self.update_status)
+        self.add(
+            Box(
+                spacing=24,
+                name="circles-container",
+                h_expand=True,
+                orientation="v",
+                children=[
+                    Box(
+                        name="circular-progress-bar-container",
+                        h_expand=True,
+                        spacing=4,
+                        children=[
+                            Box(
+                                children=[
+                                    Overlay(
+                                        children=self.cpu_circular_progress_bar,
+                                        overlays=[
+                                            Image(
+                                                image_file=get_relative_path("assets/cpu.svg"),
+                                            ),
+                                        ],
+                                    )
+                                ],
+                            ),
+                            Box(
+                                children=[
+                                    Overlay(
+                                        children=self.memory_circular_progress_bar,
+                                        overlays=[
+                                            Image(
+                                                image_file=get_relative_path("assets/ram.svg"),
+                                            ),
+                                        ],
+                                    )
+                                ]
+                            ),
+                            Box(
+                                children=[
+                                    Overlay(
+                                        children=self.battery_circular_progress_bar,
+                                        overlays=[
+                                            Image(
+                                                image_file=get_relative_path("assets/bolt.svg"),
+                                            ),
+                                        ],
+                                    ),
+                                ]
+                            ),
+                        ],
+                    ),
+                ],
+            ),
+        )
+        self.show_all()
+
+    def update_status(self):
+        self.cpu_circular_progress_bar.percentage = psutil.cpu_percent()
+        self.memory_circular_progress_bar.percentage = psutil.virtual_memory().percent
+        self.battery_circular_progress_bar.percentage = (
+            psutil.sensors_battery().percent
+            if psutil.sensors_battery() is not None
+            else 10
+        )
+        return True
 
 class VerticalBar(Window):
     def __init__(self):
@@ -346,20 +438,18 @@ class VerticalBar(Window):
             ]
         )
 
+        self.ext = Box(v_expand=True, h_expand=True, name="ext")
+
+        self.circles = Circles()
+
         self.content_box.add(
             Box(
                 name="content-box",
                 orientation="v",
                 children=[
                     self.applets,
-                    # self.wifi_button,
-                    # self.bluetooth_button,
-                    # self.night_button,
-                    # self.dnd_button,
-                    # self.test_object,
-                    # self.cpu_label,
-                    # self.memory_label,
-                    # self.battery_label,
+                    self.ext,
+                    self.circles,
                 ]
             )
         )
