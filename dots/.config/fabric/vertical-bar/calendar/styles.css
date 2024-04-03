@@ -1,0 +1,42 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#calendar {
+  max-width: 90vw;
+  max-height: 90vh;
+  margin: 5vh auto;
+  overflow: auto;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.calendar-header h2 {
+  margin: 0;
+}
+
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  border-top: 1px solid #ccc;
+}
+
+.day {
+  border: 1px solid #ccc;
+  padding: 5px;
+}
+
+.today {
+  background-color: lightblue;
+}
+
+.selected {
+  background-color: lightgreen;
+}

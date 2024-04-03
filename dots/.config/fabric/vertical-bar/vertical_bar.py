@@ -10,6 +10,8 @@ from fabric.widgets.button import Button
 from fabric.widgets.wayland import Window
 from fabric.widgets.date_time import DateTime
 from fabric.widgets.centerbox import CenterBox
+from fabric.widgets.webview import WebView
+from fabric.utils.applications import Application
 from fabric.system_tray import SystemTray
 from fabric.utils.fabricator import Fabricate
 from fabric.utils.string_formatter import FormattedString
@@ -33,12 +35,16 @@ from fabric.hyprland.service import Connection, SignalEvent
 from fabric.utils.string_formatter import FormattedString
 from fabric.utils import bulk_connect
 
+from services.mpris import MprisPlayerManager
+
 gi.require_version("Gtk", "3.0")
 from gi.repository import (
     Gtk,
     Gdk,
     GLib,
 )
+
+mprisplayer = MprisPlayerManager()
 
 connection = Connection()
 
@@ -144,16 +150,19 @@ class Circles(Box):
         )
         self.cpu_circular_progress_bar = CircularProgressBar(
             size=(90, 90),
+            line_style="none",
             percentage=0,
             name="cpu_circular-progress-bar",
         )
         self.memory_circular_progress_bar = CircularProgressBar(
             size=(90, 90),
+            line_style="none",
             percentage=0,
             name="memory_circular-progress-bar",
         )
         self.battery_circular_progress_bar = CircularProgressBar(
             size=(90, 90),
+            line_style="none",
             percentage=100,
             name="battery_circular-progress-bar",
         )
@@ -224,6 +233,67 @@ class Circles(Box):
         )
         return True
 
+class WebApp(Box):
+    def __init__(self):
+        super().__init__(
+            name="webapp",
+            visible=False,
+            all_visible=False,
+            h_expand=True,
+            v_expand=True,
+        )
+        self.webview = WebView(
+            name="calendar-webview",
+            h_expand=True,
+            v_expand=True,
+            # url="file://" + str(get_relative_path("calendar/index.html")),
+            url="https://www.google.com/",
+        )
+        self.add(self.webview)
+
+class User(Box):
+    def __init__(self):
+        super().__init__(
+            name="user",
+            visible=False,
+            all_visible=False,
+            h_expand=True,
+        )
+        self.user_label = Label(
+            name="user-label",
+            h_align="left",
+            label=str(exec_shell_command('whoami')).rstrip().capitalize(),
+        )
+        self.host_label = Label(
+            name="host-label",
+            h_align="left",
+            label=str(exec_shell_command('hostname')).rstrip().capitalize(),
+        )
+        self.user_box = Box(
+            name="user-box",
+            orientation="v",
+            v_align="center",
+            children=[
+                self.user_label,
+                self.host_label,
+            ]
+        )
+        self.user_image = Box(
+            name="user-image",
+            style="background-image: url(\"" + PROFILE_PICTURE + "\");",
+        )
+        self.add(
+            Box(
+                name="user-container",
+                h_expand=True,
+                orientation="h",
+                children=[
+                    self.user_image,
+                    self.user_box,
+                ]
+            )
+        )
+
 class VerticalBar(Window):
     def __init__(self):
         super().__init__(
@@ -233,6 +303,7 @@ class VerticalBar(Window):
             visible=False,
             all_visible=False,
             exclusive=True,
+            keyboard_mode="on-demand",
         )
         self.power_menu = PowerMenu()
         self.system_tray = SystemTray(name="system-tray", orientation="v", spacing=8)
@@ -260,7 +331,7 @@ class VerticalBar(Window):
             # 1,
         )
         self.content_box = Gtk.Revealer(
-            name="content-box",
+            # name="content-box",
             transition_duration=500,
             transition_type="slide-right",
         )
@@ -440,15 +511,23 @@ class VerticalBar(Window):
 
         self.ext = Box(v_expand=True, h_expand=True, name="ext")
 
+        self.user = User()
+
         self.circles = Circles()
+
+        self.calendar = Gtk.Calendar(name="calendar")
 
         self.content_box.add(
             Box(
                 name="content-box",
+                spacing=4,
                 orientation="v",
                 children=[
+                    self.user,
                     self.applets,
                     self.ext,
+                    # WebApp(),
+                    self.calendar,
                     self.circles,
                 ]
             )
