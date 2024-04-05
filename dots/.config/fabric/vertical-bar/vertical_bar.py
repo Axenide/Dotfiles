@@ -455,7 +455,7 @@ class VerticalBar(Window):
         self.center_box.add_start(
             Box(
                 orientation="v",
-                style="min-width: calc(40px - 4px); margin: 4px;",
+                spacing=4,
                 children=[
                     self.run_button,
                     Box(name="module-separator"),
@@ -468,7 +468,6 @@ class VerticalBar(Window):
         self.center_box.add_center(
             Box(
                 orientation="v",
-                style="min-width: calc(40px - 4px); margin: 4px;",
                 children=[
                     Workspaces(
                         spacing=8,
@@ -519,7 +518,7 @@ class VerticalBar(Window):
         self.center_box.add_end(
             Box(
                 orientation="v",
-                style="min-width: calc(40px - 4px); margin: 4px;",
+                spacing=4,
                 children=[
                     self.colorpicker,
                     Box(name="module-separator"),
@@ -656,7 +655,13 @@ class VerticalBar(Window):
             }
             command = commands.get(event.button)
             if command == 'toggle':
-                self.bluetooth_icon.set_from_file(get_relative_path('assets/bluetooth-off.svg'))
+                self.bluetooth_off = not self.bluetooth_off
+                if self.bluetooth_off == True:
+                    self.bluetooth_icon.set_from_file(get_relative_path('assets/bluetooth-off.svg'))
+                    self.bluetooth_button.set_name('bluetooth-button-off')
+                else:
+                    self.bluetooth_icon.set_from_file(get_relative_path('assets/bluetooth.svg'))
+                    self.bluetooth_button.set_name('bluetooth-button')
             elif command == 'reveal':
                 self.bluetooth_revealer.set_reveal_child(not self.bluetooth_revealer.get_reveal_child())
                 self.wifi_revealer.set_reveal_child(False)
