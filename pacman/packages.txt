@@ -20,6 +20,7 @@ hyprland-git
 hyprpicker-git
 hyprshade
 imv
+inetutils
 jq
 keepmenu
 kitty

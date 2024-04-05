@@ -3,6 +3,7 @@ import fabric
 import time
 import psutil
 import setproctitle
+import signal
 from fabric.widgets.box import Box
 from fabric.widgets.image import Image
 from fabric.widgets.label import Label
@@ -303,8 +304,12 @@ class VerticalBar(Window):
             visible=False,
             all_visible=False,
             exclusive=True,
-            keyboard_mode="on-demand",
+            # keyboard_mode="on-demand",
         )
+        self.wifi_off = False
+        self.bluetooth_off = False
+        self.night_off = True
+        self.dnd_off = True
         self.power_menu = PowerMenu()
         self.system_tray = SystemTray(name="system-tray", orientation="v", spacing=8)
         self.time_sep = Label(
@@ -373,14 +378,44 @@ class VerticalBar(Window):
             image_file=get_relative_path("assets/wifi.svg"),
         )
 
+        self.wifi_revealer = Gtk.Revealer(
+            name="wifi-revealer",
+            transition_duration=500,
+            transition_type="slide-down",
+        )
+
+        self.wifi_revealer.add(
+            Box(
+                name="wifi-box",
+                orientation="v",
+                children=[
+                ]
+            )
+        )
+
         self.bluetooth_icon = Image(
             name="bluetooth-icon",
             image_file=get_relative_path("assets/bluetooth.svg"),
         )
 
+        self.bluetooth_revealer = Gtk.Revealer(
+            name="bluetooth-revealer",
+            transition_duration=500,
+            transition_type="slide-down",
+        )
+
+        self.bluetooth_revealer.add(
+            Box(
+                name="bluetooth-box",
+                orientation="v",
+                children=[
+                ]
+            )
+        )
+
         self.night_icon = Image(
             name="night-icon",
-            image_file=get_relative_path("assets/night.svg"),
+            image_file=get_relative_path("assets/night-off.svg"),
         )
 
         self.dnd_icon = Image(
@@ -399,7 +434,7 @@ class VerticalBar(Window):
             child=self.bluetooth_icon,
         )
         self.night_button = Button(
-            name="night-button",
+            name="night-button-off",
             h_expand=True,
             child=self.night_icon,
         )
@@ -525,6 +560,8 @@ class VerticalBar(Window):
                 children=[
                     self.user,
                     self.applets,
+                    self.wifi_revealer,
+                    self.bluetooth_revealer,
                     self.ext,
                     # WebApp(),
                     self.calendar,
@@ -597,18 +634,32 @@ class VerticalBar(Window):
         elif button == self.wifi_button:
             commands = {
                 1: 'toggle',
+                3: 'reveal'
             }
             command = commands.get(event.button)
             if command == 'toggle':
-                self.wifi_icon.set_from_file(get_relative_path('assets/wifi-off.svg'))
+                self.wifi_off = not self.wifi_off
+                if self.wifi_off == True:
+                    self.wifi_icon.set_from_file(get_relative_path('assets/wifi-off.svg'))
+                    self.wifi_button.set_name('wifi-button-off')
+                else:
+                    self.wifi_icon.set_from_file(get_relative_path('assets/wifi.svg'))
+                    self.wifi_button.set_name('wifi-button')
+            elif command == 'reveal':
+                self.wifi_revealer.set_reveal_child(not self.wifi_revealer.get_reveal_child())
+                self.bluetooth_revealer.set_reveal_child(False)
 
         elif button == self.bluetooth_button:
             commands = {
                 1: 'toggle',
+                3: 'reveal'
             }
             command = commands.get(event.button)
             if command == 'toggle':
                 self.bluetooth_icon.set_from_file(get_relative_path('assets/bluetooth-off.svg'))
+            elif command == 'reveal':
+                self.bluetooth_revealer.set_reveal_child(not self.bluetooth_revealer.get_reveal_child())
+                self.wifi_revealer.set_reveal_child(False)
 
         elif button == self.night_button:
             commands = {
@@ -616,7 +667,15 @@ class VerticalBar(Window):
             }
             command = commands.get(event.button)
             if command == 'toggle':
-                self.night_icon.set_from_file(get_relative_path('assets/night-off.svg'))
+                self.night_off = not self.night_off
+                if self.night_off == True:
+                    self.night_icon.set_from_file(get_relative_path('assets/night-off.svg'))
+                    self.night_button.set_name('night-button-off')
+                    exec_shell_command('hyprshade off')
+                else:
+                    self.night_icon.set_from_file(get_relative_path('assets/night.svg'))
+                    self.night_button.set_name('night-button')
+                    exec_shell_command('hyprshade on redshift')
 
         elif button == self.dnd_button:
             commands = {
@@ -624,7 +683,13 @@ class VerticalBar(Window):
             }
             command = commands.get(event.button)
             if command == 'toggle':
-                self.dnd_icon.set_from_file(get_relative_path('assets/bell-off.svg'))
+                self.dnd_off = not self.dnd_off
+                if self.dnd_off == True:
+                    self.dnd_icon.set_from_file(get_relative_path('assets/bell.svg'))
+                    self.dnd_button.set_name('dnd-button')
+                else:
+                    self.dnd_icon.set_from_file(get_relative_path('assets/bell-off.svg'))
+                    self.dnd_button.set_name('dnd-button-off')
 
     def on_button_hover(self, button: Button, event):
         self.media_button.set_tooltip_text(str(exec_shell_command('playerctl metadata artist -f "{{ artist }} - {{ title }}"')).rstrip())
@@ -632,10 +697,15 @@ class VerticalBar(Window):
 
     def on_button_unhover(self, button: Button, event):
         return self.change_cursor("default")
+    
+    def signals(self, sig, frame):
+        if sig == signal.SIGUSR1:
+            self.content_box.set_reveal_child(not self.content_box.get_reveal_child())
 
+signal.signal(signal.SIGUSR1, VerticalBar().signals)
 
 if __name__ == "__main__":
-    bar = VerticalBar()  # entery point
+    # bar = VerticalBar()  # entery point
     setproctitle.setproctitle("axbar")
 
     set_stylesheet_from_file(get_relative_path("vertical_bar.css"))

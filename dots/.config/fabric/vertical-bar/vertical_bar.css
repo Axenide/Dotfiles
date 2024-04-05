@@ -207,11 +207,18 @@ menuitem:hover {
 #bluetooth-button,
 #night-button,
 #dnd-button {
-	/* background-color: #000; */
   background: linear-gradient(to bottom, #000000 0%, #000000 95%, #b1b946 95%, #b1b946 100%);
 	border: 1px solid #1b1d1d;
-	/* border-bottom: 3px solid #b1b946; */
 	border-radius: 8px;
+}
+
+#wifi-button-off,
+#bluetooth-button-off,
+#night-button-off,
+#dnd-button-off {
+  background: linear-gradient(to bottom, #000000 0%, #000000 95%, #928374 95%, #928374 100%);
+  border: 1px solid #1b1d1d;
+  border-radius: 8px;
 }
 
 #wifi-button:hover,
@@ -219,6 +226,36 @@ menuitem:hover {
 #night-button:hover,
 #dnd-button:hover {
   background: linear-gradient(to bottom, #000000 0%, #1b1d1d 95%, #b1b946 95%, #b1b946 100%);
+}
+
+#wifi-button-off:hover,
+#bluetooth-button-off:hover,
+#night-button-off:hover,
+#dnd-button-off:hover {
+  background: linear-gradient(to bottom, #000000 0%, #1b1d1d 95%, #928374 95%, #928374 100%);
+}
+
+/* #wifi-box, #bluetooth-box { */
+/*   border: 1px solid #1b1d1d; */
+/*   border-radius: 8px; */
+/*   padding: 8px; */
+/*   min-height: 256px; */
+/* } */
+
+#wifi-box {
+  border: 1px solid #1b1d1d;
+  border-radius: 8px;
+  padding: 8px;
+  min-height: 256px;
+  background-color: #f00;
+}
+
+#bluetooth-box {
+  border: 1px solid #1b1d1d;
+  border-radius: 8px;
+  padding: 8px;
+  min-height: 256px;
+  background-color: #00f;
 }
 
 #cpu_circular-progress-bar {
@@ -291,11 +328,16 @@ menuitem:hover {
   color: #928374;
   margin-left: 8px;
   font-weight: bold;
+  font-style: italic;
   font-size: 11pt;
 }
 
 #ext {
   border: 1px solid #1b1d1d;
   border-radius: 8px;
-  padding: 8px;
+  /* padding: 8px; */
+}
+
+#webapp {
+  border-radius: 8px;
 }

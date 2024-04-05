@@ -1,4 +1,4 @@
 set recolor true
-set recolor-darkcolor "#C8B695"
-set recolor-lightcolor "#0A0B0C"
+set recolor-darkcolor "#928374"
+set recolor-lightcolor "#000000"
 set first-page-column 1:2
