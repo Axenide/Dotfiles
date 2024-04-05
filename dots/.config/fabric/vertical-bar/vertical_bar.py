@@ -560,8 +560,8 @@ class VerticalBar(Window):
                 children=[
                     self.user,
                     self.applets,
-                    self.wifi_revealer,
-                    self.bluetooth_revealer,
+                    # self.wifi_revealer,
+                    # self.bluetooth_revealer,
                     self.ext,
                     # WebApp(),
                     self.calendar,
