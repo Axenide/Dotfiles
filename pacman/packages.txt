@@ -5,6 +5,7 @@ aylurs-gtk-shell-git
 brightnessctl
 btop
 cava
+cmake
 fd
 ffmpeg-obs
 ffmpegthumbnailer
