@@ -70,77 +70,6 @@ def scroll_handler(self, widget, event: Gdk.EventScroll):
 
 Workspaces.scroll_handler = scroll_handler
 
-class PowerMenu(Window):
-    def __init__(self):
-        super().__init__(
-            layer="overlay",
-            anchor="left bottom",
-            margin="10px 10px 10px 10px",
-            exclusive=False,
-        )
-        self.lock_button = Button(
-            label="",
-            name="lock-button",
-        )
-        self.suspend_button = Button(
-            label="󰤄",
-            name="suspend-button",
-        )
-        self.logout_button = Button(
-            label="",
-            name="logout-button",
-        )
-        self.reboot_button = Button(
-            label="",
-            name="reboot-button",
-        )
-        self.shut_down_button = Button(
-            label="󰤁",
-            name="shut-down-button",
-        )
-        self.add(
-            Box(
-                spacing=8,
-                orientation="v",
-                name="power-window",
-                children=[
-                    self.lock_button,
-                    self.suspend_button,
-                    self.logout_button,
-                    self.reboot_button,
-                    self.shut_down_button,
-                ],
-            )
-        )
-        for btn in [self.shut_down_button, self.reboot_button, self.logout_button]:
-            bulk_connect(
-                btn,
-                {
-                    "enter-notify-event": lambda *args: self.change_cursor("pointer"),
-                    "leave-notify-event": lambda *args: self.change_cursor("default"),
-                    "button-press-event": self.on_button_press,
-                },
-            )
-        self.hide()
-
-    def on_button_press(self, button: Button, event):
-        if event.button == 1 and event.type == 5:
-            # this block will be executed on double click
-            if button.get_name() == "shut-down-button":
-                exec_shell_command("notify-send Shutting down")
-            elif button.get_name() == "reboot-button":
-                exec_shell_command("notify-send Rebooting")
-            elif button.get_name() == "logout-button":
-                exec_shell_command("notify-send Logging out")
-            self.toggle_window()
-
-    def toggle_window(self):
-        if not self.is_visible():
-            self.show_all()
-        else:
-            self.hide()
-        return self
-
 PROFILE_PICTURE = os.path.expanduser("~/.face.icon")
 
 class Circles(Box):
@@ -310,7 +239,6 @@ class VerticalBar(Window):
         self.bluetooth_off = False
         self.night_off = True
         self.dnd_off = True
-        self.power_menu = PowerMenu()
         self.system_tray = SystemTray(name="system-tray", orientation="v", spacing=8)
         self.time_sep = Label(
             label="",
