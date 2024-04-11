@@ -338,3 +338,7 @@ menuitem:hover {
 #webapp {
   border-radius: 8px;
 }
+
+#apps {
+  min-height: 512px;
+}

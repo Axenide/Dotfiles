@@ -11,9 +11,9 @@ from fabric.widgets.button import Button
 from fabric.widgets.wayland import Window
 from fabric.widgets.date_time import DateTime
 from fabric.widgets.centerbox import CenterBox
-from fabric.widgets.webview import WebView
-from fabric.utils.applications import Application
-from fabric.system_tray import SystemTray
+# from fabric.widgets.webview import WebView
+# from fabric.utils.applications import Application
+from fabric.system_tray.widgets import SystemTray
 from fabric.utils.fabricator import Fabricate
 from fabric.utils.string_formatter import FormattedString
 from fabric.hyprland.widgets import WorkspaceButton, Workspaces
@@ -21,22 +21,20 @@ from fabric.widgets.circular_progress_bar import CircularProgressBar
 from fabric.widgets.overlay import Overlay
 from fabric.utils import (
     set_stylesheet_from_file,
-    bulk_replace,
+    # bulk_replace,
     bulk_connect,
     exec_shell_command,
     get_relative_path,
 )
 import gi
-import json
+# import json
 from loguru import logger
 from fabric.widgets.box import Box
 from fabric.widgets.button import Button
-from fabric.widgets.eventbox import EventBox
-from fabric.hyprland.service import Connection, SignalEvent
+# from fabric.widgets.eventbox import EventBox
+from fabric.hyprland.service import Connection#, SignalEvent
 from fabric.utils.string_formatter import FormattedString
 from fabric.utils import bulk_connect
-
-from services.mpris import MprisPlayerManager
 
 gi.require_version("Gtk", "3.0")
 from gi.repository import (
@@ -45,7 +43,8 @@ from gi.repository import (
     GLib,
 )
 
-mprisplayer = MprisPlayerManager()
+from services.notifications import NotificationServer
+from services.notifications import Notification
 
 connection = Connection()
 
@@ -163,23 +162,23 @@ class Circles(Box):
         )
         return True
 
-class WebApp(Box):
-    def __init__(self):
-        super().__init__(
-            name="webapp",
-            visible=False,
-            all_visible=False,
-            h_expand=True,
-            v_expand=True,
-        )
-        self.webview = WebView(
-            name="calendar-webview",
-            h_expand=True,
-            v_expand=True,
-            # url="file://" + str(get_relative_path("calendar/index.html")),
-            url="https://www.google.com/",
-        )
-        self.add(self.webview)
+# class WebApp(Box):
+#     def __init__(self):
+#         super().__init__(
+#             name="webapp",
+#             visible=False,
+#             all_visible=False,
+#             h_expand=True,
+#             v_expand=True,
+#         )
+#         self.webview = WebView(
+#             name="calendar-webview",
+#             h_expand=True,
+#             v_expand=True,
+#             # url="file://" + str(get_relative_path("calendar/index.html")),
+#             url="https://www.google.com/",
+#         )
+#         self.add(self.webview)
 
 class User(Box):
     def __init__(self):
@@ -239,7 +238,7 @@ class VerticalBar(Window):
         self.bluetooth_off = False
         self.night_off = True
         self.dnd_off = True
-        self.system_tray = SystemTray(name="system-tray", orientation="v", spacing=8)
+        self.system_tray = SystemTray(name="system-tray", orientation="v", spacing=8, icon_size=18)
         self.time_sep = Label(
             label="",
             name="time-separator",
@@ -276,11 +275,18 @@ class VerticalBar(Window):
                 image_file=get_relative_path("assets/applications.svg"),
             ),
         )
+        self.power_image = Image(
+            name="power-image",
+            image_file=get_relative_path("assets/power.svg"),
+        )
         self.power_button = Button(
             name="power-button",
             tooltip_text="Show Power Menu",
-            child=Image(
-                image_file=get_relative_path("assets/power.svg")
+            child=Box(
+                orientation="v",
+                children=[
+                    self.power_image,
+                ]
             ),
         )
         self.colorpicker = Button(
@@ -640,6 +646,7 @@ signal.signal(signal.SIGUSR1, VerticalBar().signals)
 if __name__ == "__main__":
     # bar = VerticalBar()  # entery point
     setproctitle.setproctitle("axbar")
+    NotificationServer()
 
     set_stylesheet_from_file(get_relative_path("vertical_bar.css"))
     fabric.start()

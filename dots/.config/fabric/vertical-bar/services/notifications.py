@@ -1,6 +1,9 @@
 import dbus
 import dbus.service
 from dbus.mainloop.glib import DBusGMainLoop
+from fabric.widgets.box import Box
+from fabric.widgets.button import Button
+from fabric.widgets.label import Label
 from gi.repository import GLib
 import threading
 import time
@@ -29,22 +32,39 @@ def print_state():
     string = ""
     for item in notifications:
         string = string + f"""
-                  (button :class 'notif'
-                   (box :orientation 'horizontal' :space-evenly false
-                      (image :image-width 80 :image-height 80 :path '{item.icon or ''}')
-                      (box :orientation 'vertical'
-                        (label :width 100 :wrap true :text '{item.summary or ''}')
-                        (label :width 100 :wrap true :text '{item.body or ''}')
-                  )))
+                            Button(
+                                name="notification",
+                                child=[
+                                    Box(
+                                        orientation="h",
+                                        children=[
+                                            Box(
+                                                orientation="v",
+                                                children=[
+                                                    Label(
+                                                        name="summary",
+                                                        label=f'{item.summary or ""}',
+                                                    ),
+                                                    Label(
+                                                        name="body",
+                                                        label=f'{item.body or ""}',
+                                                    )
+                                                ]
+                                            )
+                                        ]
+                                    )
+                                ]
+                            )
                   """
     string = string.replace('\n', ' ')
-    print(fr"""(box :orientation 'vertical' {string or ''})""", flush=True)
+    print(fr"""Box(orientation="v", children=[ {string or ''})""", flush=True)
 
 # def print_state():
 #     string = ""
 #     for item in notifications:
 #         string = string + f"{item}"
 #     print(string, flush=True)
+
 
 class NotificationServer(dbus.service.Object):
     def __init__(self):
