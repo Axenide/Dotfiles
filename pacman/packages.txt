@@ -6,6 +6,7 @@ brightnessctl
 btop
 cava
 cmake
+dbus-python
 fd
 ffmpeg-obs
 ffmpegthumbnailer
@@ -42,6 +43,7 @@ pavucontrol
 polkit-gnome
 poppler
 python-fabric-git
+python-fuzzywuzzy
 python-gobject-docs
 python-pygobject-stubs
 python-setproctitle
