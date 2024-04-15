@@ -359,7 +359,7 @@ menuitem:hover {
   /* margin-bottom: 5px; */
   margin-right: 5px;
   padding: 8px;
-  min-height: 128px;
+  min-height: 100px;
 }
 
 #play-button, #skip-back-button, #skip-forward-button, #prev-button, #next-button {
