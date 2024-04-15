@@ -348,7 +348,7 @@ menuitem:hover {
   /* background-color: #db4740; */
   border: 1px solid #1b1d1d;
   border-radius: 8px;
-  padding: 5px;
+  padding: 8px;
 }
 
 #cover {
@@ -356,13 +356,29 @@ menuitem:hover {
   background-position: center;
   border-radius: 8px;
   border: 1px solid #1b1d1d;
+  /* margin-bottom: 5px; */
   margin-right: 5px;
+  padding: 8px;
   min-height: 128px;
 }
 
-#play-button, #prev-button, #next-button {
+#play-button, #skip-back-button, #skip-forward-button, #prev-button, #next-button {
   padding: 8px;
   /* background-color: #000; */
   /* border-radius: 8px; */
   /* border: 1px solid #1b1d1d; */
+}
+
+#title {
+  font-size: 14pt;
+}
+
+#artist {
+  font-size: 11pt;
+  font-style: italic;
+  color: #928374;
+}
+
+#title, #artist {
+  text-shadow: 0px 0px 5px #000000;
 }

@@ -238,7 +238,19 @@ class Player(Box):
         self.play_button = Button(
             name="play-button",
             icon_image=Image(
-                image_file=get_relative_path("assets/play.svg"),
+                image_file=get_relative_path("assets/stop.svg"),
+            )
+        )
+        self.skip_back_button = Button(
+            name="skip-back-button",
+            icon_image=Image(
+                image_file=get_relative_path("assets/skip-back.svg"),
+            )
+        )
+        self.skip_forward_button = Button(
+            name="skip-forward-button",
+            icon_image=Image(
+                image_file=get_relative_path("assets/skip-forward.svg"),
             )
         )
         self.prev_button = Button(
@@ -253,29 +265,46 @@ class Player(Box):
                 image_file=get_relative_path("assets/next.svg"),
             )
         )
+        self.shuffle_button = Button(
+            name="shuffle-button",
+            icon_image=Image(
+                image_file=get_relative_path("assets/shuffle-off.svg"),
+            )
+        )
+        self.repeat_button = Button(
+            name="repeat-button",
+            icon_image=Image(
+                image_file=get_relative_path("assets/repeat-off.svg"),
+            )
+        )
 
         self.cover_file = "file:///home/adriano/Imágenes/Wallpapers/current.wall"
 
         self.title = Label(
             name="title",
             # label=str(exec_shell_command('playerctl metadata title')).rstrip(),
-            label="",
+            label="Title",
         )
         self.artist = Label(
             name="artist",
             # label=str(exec_shell_command('playerctl metadata artist')).rstrip(),
-            label="",
+            label="Artist",
         )
         self.cover = Box(
             name="cover",
             style="background-image: url(\"" + self.cover_file + "\");",
             h_expand=True,
-            v_align="fill",
+            v_align="end",
             orientation="v",
             children=[
-                self.title,
-                self.artist,
+                # self.title,
+                # self.artist,
             ]
+        )
+
+        self.status = Label(
+            name="status",
+            label="",
         )
         
         # self.player_fabricator = Fabricate(stream=True, poll_from=r"""playerctl --follow metadata --format '{{status}}\n{{position}}\n{{mpris:length}}\n{{artist}}\n{{album}}\n{{title}}'""")
@@ -291,18 +320,33 @@ class Player(Box):
             title: str = data[3]
             # print(playback, position, length, artist, album, title)
             print(playback, artist, album, title)
-            self.artist.label = artist
-            self.title.label = title
-            self.cover_file = album
+            self.status.label = playback
+            self.artist.set_label(artist)
+            self.title.set_label(title)
+            if album == "":
+                self.cover.set_style("background-image: url(\"" + self.cover_file + "\");")
+            else:
+                self.cover.set_style("background-image: url(\"" + album + "\");")
+
             if playback == "Playing":
-                self.play_button.icon_image = Image(
-                    image_file=get_relative_path("assets/pause.svg"),
+                self.play_button.set_image(
+                    Image(
+                        image_file=get_relative_path("assets/pause.svg"),
+                    )
+                )
+            elif playback == "Paused":
+                self.play_button.set_image(
+                    Image(
+                        image_file=get_relative_path("assets/play.svg"),
+                    )
                 )
             else:
-                self.play_button.icon_image = Image(
-                    image_file=get_relative_path("assets/play.svg"),
+                self.play_button.set_image(
+                    Image(
+                        image_file=get_relative_path("assets/stop.svg"),
+                    )
                 )
-            self.cover.style = "background-image: url(\"" + self.cover_file + "\");"
+            # self.cover.style = "background-image: url(\"" + self.cover_file + "\");"
 
         self.player_fabricator.connect("changed", decode_player_data)
 
@@ -310,15 +354,18 @@ class Player(Box):
             name="player-box",
             orientation="v",
             v_align="center",
+            h_align="center",
             # spacing=8,
             children=[
                 self.prev_button,
+                # self.skip_back_button,
                 self.play_button,
+                # self.skip_forward_button,
                 self.next_button,
             ]
         )
 
-        for btn in [self.play_button, self.prev_button, self.next_button]:
+        for btn in [self.play_button, self.skip_back_button, self.skip_forward_button, self.prev_button, self.next_button, self.shuffle_button, self.repeat_button]:
             bulk_connect(
                 btn,
                 {
@@ -359,18 +406,96 @@ class Player(Box):
     #     return True
     
     def on_button_hover(self, button: Button, event):
+        if button == self.play_button:
+            if self.status.label == "Playing":
+                self.play_button.set_image(
+                    Image(
+                        image_file=get_relative_path("assets/pause-hover.svg"),
+                    )
+                )
+            elif self.status.label == "Paused":
+                self.play_button.set_image(
+                    Image(
+                        image_file=get_relative_path("assets/play-hover.svg"),
+                    )
+                )
+            else:
+                self.play_button.set_image(
+                    Image(
+                        image_file=get_relative_path("assets/stop-hover.svg"),
+                    )
+                )
+        # elif button == self.skip_back_button:
+        #     exec_shell_command("playerctl position 10-")
+        # elif button == self.skip_forward_button:
+        #     exec_shell_command("playerctl position 10+")
+        elif button == self.prev_button:
+            self.prev_button.set_image(
+                Image(
+                    image_file=get_relative_path("assets/prev-hover.svg"),
+                )
+            )
+        elif button == self.next_button:
+            self.next_button.set_image(
+                Image(
+                    image_file=get_relative_path("assets/next-hover.svg"),
+                )
+            )
+        # elif button == self.shuffle_button:
+        #     exec_shell_command("playerctl shuffle")
+        # elif button == self.repeat_button:
+        #     exec_shell_command("playerctl repeat")
         return self.change_cursor("pointer")
 
     def on_button_unhover(self, button: Button, event):
+        if button == self.play_button:
+            if self.status.label == "Playing":
+                self.play_button.set_image(
+                    Image(
+                        image_file=get_relative_path("assets/pause.svg"),
+                    )
+                )
+            elif self.status.label == "Paused":
+                self.play_button.set_image(
+                    Image(
+                        image_file=get_relative_path("assets/play.svg"),
+                    )
+                )
+            else:
+                self.play_button.set_image(
+                    Image(
+                        image_file=get_relative_path("assets/stop.svg"),
+                    )
+                )
+        elif button == self.prev_button:
+            self.prev_button.set_image(
+                Image(
+                    image_file=get_relative_path("assets/prev.svg"),
+                )
+            )
+        elif button == self.next_button:
+            self.next_button.set_image(
+                Image(
+                    image_file=get_relative_path("assets/next.svg"),
+                )
+            )
         return self.change_cursor("default")
 
     def on_button_press(self, button: Button, event):
         if button == self.play_button:
             exec_shell_command('playerctl play-pause')
+        elif button == self.skip_back_button:
+            exec_shell_command("playerctl position 10-")
+        elif button == self.skip_forward_button:
+            exec_shell_command("playerctl position 10+")
         elif button == self.prev_button:
             exec_shell_command("playerctl previous")
         elif button == self.next_button:
             exec_shell_command("playerctl next")
+        elif button == self.shuffle_button:
+            exec_shell_command("playerctl shuffle")
+        elif button == self.repeat_button:
+            exec_shell_command("playerctl repeat")
         return True
 
 class VerticalBar(Window):
