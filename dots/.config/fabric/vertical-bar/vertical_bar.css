@@ -191,7 +191,7 @@ menuitem:hover {
 	background-color: #000;
 	padding: 4px;
 	padding-right: 0px;
-	/* min-width: 300px; */
+	min-width: 300px;
 }
 
 #applets {
@@ -257,17 +257,17 @@ menuitem:hover {
 
 #cpu_circular-progress-bar {
 	color: #0a0b0c;
-	border: solid 10px #db4740;
+	border: solid 5px #db4740;
 }
 
 #memory_circular-progress-bar {
 	color: #0a0b0c;
-	border: solid 10px #80aa9e;
+	border: solid 5px #80aa9e;
 }
 
 #battery_circular-progress-bar {
 	color: #0a0b0c;
-	border: solid 10px #b1b946;
+	border: solid 5px #b1b946;
 }
 
 #circular-progress-bar-container {
@@ -308,6 +308,7 @@ menuitem:hover {
 
 #user-image {
   background-size: cover;
+  background-position: center;
   border-radius: 8px;
   border: 1px solid #1b1d1d;
   min-width: 48px;
@@ -341,4 +342,27 @@ menuitem:hover {
 
 #apps {
   min-height: 512px;
+}
+
+#full-player {
+  /* background-color: #db4740; */
+  border: 1px solid #1b1d1d;
+  border-radius: 8px;
+  padding: 5px;
+}
+
+#cover {
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  border: 1px solid #1b1d1d;
+  margin-right: 5px;
+  min-height: 128px;
+}
+
+#play-button, #prev-button, #next-button {
+  padding: 8px;
+  /* background-color: #000; */
+  /* border-radius: 8px; */
+  /* border: 1px solid #1b1d1d; */
 }

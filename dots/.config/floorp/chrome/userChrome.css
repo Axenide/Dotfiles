@@ -15,7 +15,7 @@
 }
 
 .tabbrowser-tab[selected] .tab-content {
-    background-color: #db474030;
+    background-color: #db474050;
 }
 
 .tabbrowser-tab:not([selected]) .tab-content {
@@ -23,7 +23,7 @@
 }
 
 .tabbrowser-tab[pinned] .tab-content {
-    background-color: #db474030;
+    background-color: #db474050;
 }
 
 .tabbrowser-tab[pinned] .tab-icon-image {

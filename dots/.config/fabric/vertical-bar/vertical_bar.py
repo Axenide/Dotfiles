@@ -4,6 +4,8 @@ import time
 import psutil
 import setproctitle
 import signal
+import psutil
+import dbus
 from fabric.widgets.box import Box
 from fabric.widgets.image import Image
 from fabric.widgets.label import Label
@@ -11,10 +13,11 @@ from fabric.widgets.button import Button
 from fabric.widgets.wayland import Window
 from fabric.widgets.date_time import DateTime
 from fabric.widgets.centerbox import CenterBox
+from fabric.widgets.revealer import Revealer
 # from fabric.widgets.webview import WebView
 # from fabric.utils.applications import Application
 from fabric.system_tray.widgets import SystemTray
-from fabric.utils.fabricator import Fabricate
+from fabric.utils.fabricator import Fabricate, invoke_repeater
 from fabric.utils.string_formatter import FormattedString
 from fabric.hyprland.widgets import WorkspaceButton, Workspaces
 from fabric.widgets.circular_progress_bar import CircularProgressBar
@@ -42,9 +45,6 @@ from gi.repository import (
     Gdk,
     GLib,
 )
-
-from services.notifications import NotificationServer
-from services.notifications import Notification
 
 connection = Connection()
 
@@ -78,36 +78,38 @@ class Circles(Box):
             all_visible=False,
         )
         self.cpu_circular_progress_bar = CircularProgressBar(
-            size=(90, 90),
+            size=(50, 50),
             line_style="none",
             percentage=0,
             name="cpu_circular-progress-bar",
         )
         self.memory_circular_progress_bar = CircularProgressBar(
-            size=(90, 90),
+            size=(50, 50),
             line_style="none",
             percentage=0,
             name="memory_circular-progress-bar",
         )
         self.battery_circular_progress_bar = CircularProgressBar(
-            size=(90, 90),
+            size=(50, 50),
             line_style="none",
             percentage=100,
             name="battery_circular-progress-bar",
         )
         self.update_status()
-        GLib.timeout_add_seconds(1, self.update_status)
+        invoke_repeater(1000, self.update_status)
         self.add(
             Box(
                 spacing=24,
                 name="circles-container",
-                h_expand=True,
+                v_expand=True,
                 orientation="v",
                 children=[
                     Box(
                         name="circular-progress-bar-container",
-                        h_expand=True,
+                        v_expand=True,
+                        v_align="fill",
                         spacing=4,
+                        orientation="v",
                         children=[
                             Box(
                                 children=[
@@ -223,6 +225,154 @@ class User(Box):
             )
         )
 
+class Player(Box):
+    def __init__(self):
+        super().__init__(
+            name="player",
+            visible=False,
+            all_visible=False,
+            h_expand=True,
+            orientation="h",
+        )
+
+        self.play_button = Button(
+            name="play-button",
+            icon_image=Image(
+                image_file=get_relative_path("assets/play.svg"),
+            )
+        )
+        self.prev_button = Button(
+            name="prev-button",
+            icon_image=Image(
+                image_file=get_relative_path("assets/prev.svg"),
+            )
+        )
+        self.next_button = Button(
+            name="next-button",
+            icon_image=Image(
+                image_file=get_relative_path("assets/next.svg"),
+            )
+        )
+
+        self.cover_file = "file:///home/adriano/Imágenes/Wallpapers/current.wall"
+
+        self.title = Label(
+            name="title",
+            # label=str(exec_shell_command('playerctl metadata title')).rstrip(),
+            label="",
+        )
+        self.artist = Label(
+            name="artist",
+            # label=str(exec_shell_command('playerctl metadata artist')).rstrip(),
+            label="",
+        )
+        self.cover = Box(
+            name="cover",
+            style="background-image: url(\"" + self.cover_file + "\");",
+            h_expand=True,
+            v_align="fill",
+            orientation="v",
+            children=[
+                self.title,
+                self.artist,
+            ]
+        )
+        
+        # self.player_fabricator = Fabricate(stream=True, poll_from=r"""playerctl --follow metadata --format '{{status}}\n{{position}}\n{{mpris:length}}\n{{artist}}\n{{album}}\n{{title}}'""")
+        self.player_fabricator = Fabricate(stream=True, poll_from=r"""playerctl --follow metadata --format '{{status}}\n{{artist}}\n{{mpris:artUrl}}\n{{title}}'""")
+
+        def decode_player_data(_, data: str):
+            data = data.split("\\n")
+            playback: str = data[0] # "Playing" | "Paused"
+            # position: str = data[1] # can be casted to a int if it's not empty
+            # length: str = data[2] # can be casted to a int if it's not empty
+            artist: str = data[1]
+            album: str = data[2]
+            title: str = data[3]
+            # print(playback, position, length, artist, album, title)
+            print(playback, artist, album, title)
+            self.artist.label = artist
+            self.title.label = title
+            self.cover_file = album
+            if playback == "Playing":
+                self.play_button.icon_image = Image(
+                    image_file=get_relative_path("assets/pause.svg"),
+                )
+            else:
+                self.play_button.icon_image = Image(
+                    image_file=get_relative_path("assets/play.svg"),
+                )
+            self.cover.style = "background-image: url(\"" + self.cover_file + "\");"
+
+        self.player_fabricator.connect("changed", decode_player_data)
+
+        self.player_box = Box(
+            name="player-box",
+            orientation="v",
+            v_align="center",
+            # spacing=8,
+            children=[
+                self.prev_button,
+                self.play_button,
+                self.next_button,
+            ]
+        )
+
+        for btn in [self.play_button, self.prev_button, self.next_button]:
+            bulk_connect(
+                btn,
+                {
+                    "button-press-event": self.on_button_press,
+                    "enter-notify-event": self.on_button_hover,
+                    "leave-notify-event": self.on_button_unhover,
+                },
+            )
+
+        self.full_player = Box(
+            name="full-player",
+            orientation="h",
+            h_expand=True,
+            children=[
+                self.cover,
+                self.player_box,
+                # self.title,
+                # self.artist,
+            ]
+        )
+
+        self.add(
+            self.full_player,
+        )
+        
+    # def update_status(self):
+    #     def get_cover():
+    #         if str(exec_shell_command('playerctl metadata mpris:artUrl')).rstrip() != "":
+    #             return "file:///home/adriano/Imágenes/Wallpapers/current.wall"
+    #         else:
+    #             return str(exec_shell_command('playerctl metadata mpris:artUrl')).rstrip()
+    #
+    #     self.cover_file = get_cover()
+    #     self.cover.style = "background-image: url(\"" + self.cover_file + "\");"
+    #     self.title.label = str(exec_shell_command('playerctl metadata title')).rstrip()
+    #     self.artist.label = str(exec_shell_command('playerctl metadata artist')).rstrip()
+    #     print(self.cover_file)
+    #     return True
+    
+    def on_button_hover(self, button: Button, event):
+        return self.change_cursor("pointer")
+
+    def on_button_unhover(self, button: Button, event):
+        return self.change_cursor("default")
+
+    def on_button_press(self, button: Button, event):
+        if button == self.play_button:
+            exec_shell_command('playerctl play-pause')
+        elif button == self.prev_button:
+            exec_shell_command("playerctl previous")
+        elif button == self.next_button:
+            exec_shell_command("playerctl next")
+        return True
+
 class VerticalBar(Window):
     def __init__(self):
         super().__init__(
@@ -262,7 +412,7 @@ class VerticalBar(Window):
             "value-str",
             # 1,
         )
-        self.content_box = Gtk.Revealer(
+        self.content_box = Revealer(
             # name="content-box",
             transition_duration=500,
             transition_type="slide-right",
@@ -292,7 +442,7 @@ class VerticalBar(Window):
         self.colorpicker = Button(
             name="colorpicker",
             tooltip_text="Color Picker",
-            child=Image(
+            icon_image=Image(
                 image_file=get_relative_path("assets/colorpicker.svg")
             ),
         )
@@ -312,7 +462,7 @@ class VerticalBar(Window):
             image_file=get_relative_path("assets/wifi.svg"),
         )
 
-        self.wifi_revealer = Gtk.Revealer(
+        self.wifi_revealer = Revealer(
             name="wifi-revealer",
             transition_duration=500,
             transition_type="slide-down",
@@ -332,7 +482,7 @@ class VerticalBar(Window):
             image_file=get_relative_path("assets/bluetooth.svg"),
         )
 
-        self.bluetooth_revealer = Gtk.Revealer(
+        self.bluetooth_revealer = Revealer(
             name="bluetooth-revealer",
             transition_duration=500,
             transition_type="slide-down",
@@ -483,7 +633,9 @@ class VerticalBar(Window):
 
         self.circles = Circles()
 
-        self.calendar = Gtk.Calendar(name="calendar")
+        self.player = Player()
+
+        self.calendar = Gtk.Calendar(name="calendar", hexpand=True)
 
         self.content_box.add(
             Box(
@@ -493,12 +645,15 @@ class VerticalBar(Window):
                 children=[
                     self.user,
                     self.applets,
+                    self.player,
                     # self.wifi_revealer,
                     # self.bluetooth_revealer,
                     self.ext,
                     # WebApp(),
-                    self.calendar,
-                    self.circles,
+                    # self.calendar,
+                    # self.circles,
+                    # self.bottom_box,
+                    Box(name="bottom-box", orientation="h", h_expand=True, spacing=4, children=[self.calendar, self.circles]),
                 ]
             )
         )
@@ -581,6 +736,7 @@ class VerticalBar(Window):
             elif command == 'reveal':
                 self.wifi_revealer.set_reveal_child(not self.wifi_revealer.get_reveal_child())
                 self.bluetooth_revealer.set_reveal_child(False)
+                exec_shell_command('kitty --class kitty-floating -e nmtui')
 
         elif button == self.bluetooth_button:
             commands = {
@@ -599,6 +755,7 @@ class VerticalBar(Window):
             elif command == 'reveal':
                 self.bluetooth_revealer.set_reveal_child(not self.bluetooth_revealer.get_reveal_child())
                 self.wifi_revealer.set_reveal_child(False)
+                exec_shell_command('kitty --class kitty-floating -e bluetuith')
 
         elif button == self.night_button:
             commands = {
@@ -619,6 +776,7 @@ class VerticalBar(Window):
         elif button == self.dnd_button:
             commands = {
                 1: 'toggle',
+                3: 'open'
             }
             command = commands.get(event.button)
             if command == 'toggle':
@@ -626,9 +784,13 @@ class VerticalBar(Window):
                 if self.dnd_off == True:
                     self.dnd_icon.set_from_file(get_relative_path('assets/bell.svg'))
                     self.dnd_button.set_name('dnd-button')
+                    exec_shell_command('swaync-client -df')
                 else:
                     self.dnd_icon.set_from_file(get_relative_path('assets/bell-off.svg'))
                     self.dnd_button.set_name('dnd-button-off')
+                    exec_shell_command('swaync-client -dn')
+            if command == 'open':
+                exec_shell_command('swaync-client -t')
 
     def on_button_hover(self, button: Button, event):
         self.media_button.set_tooltip_text(str(exec_shell_command('playerctl metadata artist -f "{{ artist }} - {{ title }}"')).rstrip())
@@ -646,7 +808,5 @@ signal.signal(signal.SIGUSR1, VerticalBar().signals)
 if __name__ == "__main__":
     # bar = VerticalBar()  # entery point
     setproctitle.setproctitle("axbar")
-    NotificationServer()
-
     set_stylesheet_from_file(get_relative_path("vertical_bar.css"))
     fabric.start()
