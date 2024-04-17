@@ -87,3 +87,16 @@
   opacity: 1;
   width: auto;
 }
+
+#TabsToolbar:hover {
+  transition: all 500ms !important;
+  transition-delay: 0.0s !important;
+}
+
+#TabsToolbar {
+  margin-right: 0px !important;
+}
+
+#appcontent {
+  margin-left: 0px !important;
+}

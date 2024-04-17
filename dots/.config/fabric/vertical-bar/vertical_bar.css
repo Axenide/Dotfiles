@@ -12,7 +12,7 @@
 	border-radius: 0px;
 	margin-right: 10px;
   padding: 4px;
-	box-shadow: 0px 0px 5px #000000;
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
 }
 
 #workspaces {
@@ -381,4 +381,11 @@ menuitem:hover {
 
 #title, #artist {
   text-shadow: 0px 0px 5px #000000;
+}
+
+#ext-label {
+  color: #47423e;
+  font-size: 20pt;
+  font-weight: bold;
+  font-style: italic;
 }

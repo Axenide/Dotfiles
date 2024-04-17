@@ -752,7 +752,26 @@ class VerticalBar(Window):
             ]
         )
 
-        self.ext = Box(v_expand=True, h_expand=True, name="ext")
+        self.ext = Box(
+            name="ext",
+            v_expand=True,
+            h_expand=True,
+            orientation="v",
+            spacing=8,
+            children=[
+                Box(
+                    name="ext-box",
+                    orientation="v",
+                    v_expand=True, 
+                    v_align="center",
+                    spacing=8,
+                    children=[
+                        Label(name="ext-label", label="Work In Progress"),
+                        Image(image_file=get_relative_path("assets/tool.svg")),
+                    ]
+                )
+            ]
+        )
 
         self.user = User()
 
