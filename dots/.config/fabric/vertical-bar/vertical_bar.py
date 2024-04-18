@@ -17,7 +17,7 @@ from fabric.widgets.revealer import Revealer
 # from fabric.widgets.webview import WebView
 # from fabric.utils.applications import Application
 from fabric.system_tray.widgets import SystemTray
-from fabric.utils.fabricator import Fabricate, invoke_repeater
+from fabric.utils.fabricator import Fabricator, invoke_repeater
 from fabric.utils.string_formatter import FormattedString
 from fabric.hyprland.widgets import WorkspaceButton, Workspaces
 from fabric.widgets.circular_progress_bar import CircularProgressBar
@@ -35,7 +35,7 @@ from loguru import logger
 from fabric.widgets.box import Box
 from fabric.widgets.button import Button
 # from fabric.widgets.eventbox import EventBox
-from fabric.hyprland.service import Connection#, SignalEvent
+from fabric.hyprland.service import Hyprland #, SignalEvent
 from fabric.utils.string_formatter import FormattedString
 from fabric.utils import bulk_connect
 
@@ -46,7 +46,7 @@ from gi.repository import (
     GLib,
 )
 
-connection = Connection()
+connection = Hyprland()
 
 # Overrides
 def scroll_handler(self, widget, event: Gdk.EventScroll):
@@ -307,8 +307,8 @@ class Player(Box):
             label="",
         )
         
-        # self.player_fabricator = Fabricate(stream=True, poll_from=r"""playerctl --follow metadata --format '{{status}}\n{{position}}\n{{mpris:length}}\n{{artist}}\n{{album}}\n{{title}}'""")
-        self.player_fabricator = Fabricate(stream=True, poll_from=r"""playerctl --follow metadata --format '{{status}}\n{{artist}}\n{{mpris:artUrl}}\n{{title}}'""")
+        # self.player_fabricator = Fabricator(stream=True, poll_from=r"""playerctl --follow metadata --format '{{status}}\n{{position}}\n{{mpris:length}}\n{{artist}}\n{{album}}\n{{title}}'""")
+        self.player_fabricator = Fabricator(stream=True, poll_from=r"""playerctl --follow metadata --format '{{status}}\n{{artist}}\n{{mpris:artUrl}}\n{{title}}'""")
 
         def decode_player_data(_, data: str):
             data = data.split("\\n")
@@ -518,7 +518,7 @@ class VerticalBar(Window):
             label="",
             name="time-separator",
         )
-        self.time_sep_var = Fabricate(
+        self.time_sep_var = Fabricator(
             value="",
             poll_from=lambda _: [
                 "",
@@ -701,7 +701,7 @@ class VerticalBar(Window):
         self.cpu_label = Label(label="0")
         self.memory_label = Label(label="0")
         self.battery_label = Label(label="0")
-        self.system_info_var = Fabricate(
+        self.system_info_var = Fabricator(
             value={"ram": 0, "cpu": 0},
             poll_from=lambda _: {
                 "ram": str(int(psutil.virtual_memory().percent)),
