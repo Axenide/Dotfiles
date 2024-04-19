@@ -40,7 +40,8 @@ disabled = true
 [status]
 style = "bg:transparent"
 symbol = "💥 "
-format = '[\[$symbol$status\]]($style) '
+# format = '[\[$symbol$status\]]($style) '
+format = '($style)'
 disabled = false
 
 [php]

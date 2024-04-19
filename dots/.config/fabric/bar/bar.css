@@ -1,176 +1,395 @@
-/* uncomment if you do have pywal configured */
-/* @import url("/home/USER/.cache/wal/colors-widgets.css"); */
-
-:vars {
-    --background: #150d16;
-    --foreground: #f5dbc4;
-    --color0: #150d16;
-    --color1: #72448D;
-    --color2: #9C5995;
-    --color3: #D5719F;
-    --color4: #9A62F3;
-    --color5: #E075DF;
-    --color6: #F98F9F;
-    --color7: #f5dbc4;
-    --color8: #ab9989;
-    --color9: #72448D;
-    --color10: #9C5995;
-    --color11: #D5719F;
-    --color12: #9A62F3;
-    --color13: #E075DF;
-    --color14: #F98F9F;
-    --color15: #f5dbc4;
-    --window-bg: alpha(var(--background), 0.6);
-    --module-bg: alpha(var(--background), 0.4);
-    --border-color: var(--color11);
-    --ws-active: var(--color9);
-    --ws-inactive: var(--color3);
-    --ws-empty: var(--color8);
-    --ws-hover: var(--color1);
-    --ws-urgent: var(--color11);
-}
-
 * {
-    /* unsets everything so we can style everything from scratch. */
-    all: unset;
-    font-family: "Iosevka Nerd Font";
-    font-weight: 500;
-    font-size: 14px;
-    color: var(--foreground);
-    /* we can use webcss variables, fabric compiles that to gtk css. */
+	all: unset;
+	font-family: "Iosevka Nerd Font";
+	font-weight: bold;
+	font-size: 11pt;
+	color: #e0cda5;
 }
 
 #main-window {
-    border: solid 2px;
-    border-color: var(--border-color);
-    background-color: var(--window-bg);
-    border-radius: 100px;
-}
-
-button {
-    border-radius: 100px;
-    background-size: 400% 400%;
+	border-right: solid 1px #1b1d1d;
+	background-color: #000;
+	border-radius: 0px;
+	margin-right: 10px;
+  padding: 4px;
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
 }
 
 #workspaces {
-    margin: 3px;
-    padding: 6px;
-    background-color: var(--module-bg);
-    border-radius: 100px;
+	border-radius: 8px;
+	padding: 14px;
+	border: 1px solid #1b1d1d;
+	background-color: #000;
 }
 
-#workspaces > button {
-    padding: 0px 0px;
-    margin: 4px 4px;
-    /* transition: min-width 0.15s cubic-bezier(0.2, 0.0, 0, 1.0); */
-    transition: min-width 0.5s cubic-bezier(0, 1, 0, 1);
-    background-color: var(--ws-inactive);
-    min-width: 8px;
-    min-height: 8px;
+#workspaces>button {
+	background-color: #e0cda5;
+	border-radius: 999px;
+	min-width: 8px;
+	min-height: 8px;
+	transition: all 0.5s cubic-bezier(0, 1, 0, 1);
 }
 
-#workspaces > button > label {
-    color: #30303e;
-    font-size: 0px;
+#workspaces>button>label {
+	font-size: 0pt;
 }
 
-#workspaces > button.active {
-    min-width: 48px;
-    background-color: var(--ws-active);
+#workspaces>button.active {
+	background-color: #db4740;
+	min-height: 48px;
 }
 
-#workspaces > button.active > label {
-    font-weight: 900;
-    color: #bec0f8;
+#workspaces>button.empty {
+	background-color: #47423e;
 }
 
-#workspaces > button.empty {
-    background-color: var(--ws-empty);
+#workspaces>button:hover {
+	background-color: #db4740;
 }
 
-#workspaces > button.urgent {
-    background-color: var(--ws-urgent);
+#power-window {
+	border: solid 1px;
+	background-color: rgba(0, 0, 0, 0.24);
+	border-radius: 5px;
+	padding: 8px;
 }
 
-#workspaces > button:hover {
-    background-color: var(--ws-hover);
+#shut-down-button,
+#reboot-button,
+#logout-button {
+	border-radius: 2px;
+	padding: 7px 12px;
+	background-color: #32de8a;
+	border-radius: 2px;
 }
 
-#date-time,
-#hyprland-language,
-#hyprland-window {
-    background-color: var(--module-bg);
-    padding: 0px 8px;
-    margin: 3px;
+#shut-down-button {
+	background-color: #de6e32;
 }
 
-#Mode > label,
-#date-time > label,
-menu > menuitem > label,
-#hyprland-language > label,
-#hyprland-window > label {
-    font-weight: 900;
+#shut-down-button>label,
+#reboot-button>label,
+#logout-button>label {
+	color: #233c2a;
+	font-weight: 900;
+	margin-right: 4px;
 }
 
-#center-box {
-    margin: 1px;
+#shut-down-button>label {
+	color: #d6f5f0;
 }
 
-/* system tray */
+#time-button {
+	background-color: #000000;
+	border: 1px solid #1b1d1d;
+	border-radius: 8px;
+	padding: 11px;
+}
+
+#time-button:hover {
+	background: linear-gradient(to bottom, #000000 0%, #1b1d1d 100%);
+}
+
+#time-separator {
+	font-size: 14px;
+}
+
+#time-separator.day {
+	margin: 0px 0px 0px -5px;
+}
+
+#time-separator.night {
+	margin: 0px 0px 0px -2px;
+}
+
+#module-separator {
+	margin: 0px 10px;
+	padding: 1px;
+	background-color: #1b1d1d;
+	border-radius: 999px;
+}
+
+#run-button {
+	transition: all 0.25s ease;
+	padding: 9px 8px;
+	background-color: #000;
+	border-radius: 8px;
+	border: 1px solid #1b1d1d;
+}
+
+#run-button:hover {
+	background: linear-gradient(to bottom, #000000 0%, #1b1d1d 100%);
+}
+
+#power-button {
+	transition: all 0.25s ease;
+	padding: 9px 8px;
+	background-color: #000;
+	border-radius: 8px;
+	border: 1px solid #1b1d1d;
+}
+
+#power-button:hover {
+	background: linear-gradient(to bottom, #000000 0%, #1b1d1d 100%);
+}
+
+#colorpicker {
+	transition: all 0.25s ease;
+	padding: 9px 8px;
+	background-color: #000;
+	border-radius: 8px;
+	border: 1px solid #1b1d1d;
+}
+
+#colorpicker:hover {
+	background: linear-gradient(to bottom, #000000 0%, #1b1d1d 100%);
+}
+
+#media-button {
+	transition: all 0.25s ease;
+	padding: 9px 8px;
+	background-color: #000;
+	border-radius: 8px;
+	border: 1px solid #1b1d1d;
+}
+
+#media-button:hover {
+	background: linear-gradient(to bottom, #000000 0%, #1b1d1d 100%);
+}
 
 #system-tray {
-    margin: 3px;
-    padding: 0px 2px;
-    background-color: var(--module-bg);
-    border-radius: 100px;
+  background-color: #000;
+	border: 1px solid #1b1d1d;
+	border-radius: 8px;
+	padding: 10px 0;
 }
 
-#system-tray > button {
-    padding: 0px 2px;
-    margin: 3px;
+tooltip {
+	background-color: #000;
+	border: 1px solid #1b1d1d;
+	border-radius: 8px;
+	padding: 10px;
 }
-
-/* menu and menu items (written for the system tray) */
 
 menu {
-    border: solid 2px;
-    border-color: var(--border-color);
-    border-radius: 10px;
+	background-color: #000;
+	border: 1px solid #1b1d1d;
+	border-radius: 8px;
+	padding: 10px;
 }
 
-menu > menuitem {
-    background-color: var(--module-bg);
-    padding: 6px;
-    margin-left: 2px;
-    margin-right: 2px;
+menuitem {
+	background-color: #000;
+	border-radius: 4px;
+	padding: 5px;
 }
 
-menu > menuitem:first-child {
-    margin-top: 1.5px;
-    border-radius: 8px 8px 0px 0px;
+menuitem:hover {
+	background-color: #1b1d1d;
 }
 
-menu > menuitem:last-child {
-    margin-bottom: 1.5px;
-    border-radius: 0px 0px 8px 8px;
+#content-box {
+	background-color: #000;
+	padding: 4px;
+	padding-right: 0px;
+	min-width: 300px;
 }
 
-menu > menuitem:hover {
-    background-color: var(--border-color);
+#applets {
+	border-radius: 8px;
+	margin-right: 0px;
+	min-height: 52px;
 }
 
-#volume-circular-progress-bar,
-#ram-circular-progress-bar {
-    border: solid 10px var(--border-color);
+#wifi-button,
+#bluetooth-button,
+#night-button,
+#dnd-button {
+  background: linear-gradient(to bottom, #000000 0%, #000000 95%, #b1b946 95%, #b1b946 100%);
+	border: 1px solid #1b1d1d;
+	border-radius: 8px;
 }
 
-#cpu-circular-progress-bar {
-    border: solid 0px alpha(var(--color9), 0.8);
+#wifi-button-off,
+#bluetooth-button-off,
+#night-button-off,
+#dnd-button-off {
+  background: linear-gradient(to bottom, #000000 0%, #000000 95%, #928374 95%, #928374 100%);
+  border: 1px solid #1b1d1d;
+  border-radius: 8px;
 }
 
-#widgets-container {
-    border-radius: 100px;
-    background-color: var(--module-bg);
-    padding: 3px;
-    margin: 3px;
+#wifi-button:hover,
+#bluetooth-button:hover,
+#night-button:hover,
+#dnd-button:hover {
+  background: linear-gradient(to bottom, #000000 0%, #1b1d1d 95%, #b1b946 95%, #b1b946 100%);
+}
+
+#wifi-button-off:hover,
+#bluetooth-button-off:hover,
+#night-button-off:hover,
+#dnd-button-off:hover {
+  background: linear-gradient(to bottom, #000000 0%, #1b1d1d 95%, #928374 95%, #928374 100%);
+}
+
+/* #wifi-box, #bluetooth-box { */
+/*   border: 1px solid #1b1d1d; */
+/*   border-radius: 8px; */
+/*   padding: 8px; */
+/*   min-height: 256px; */
+/* } */
+
+#wifi-box {
+  border: 1px solid #1b1d1d;
+  border-radius: 8px;
+  padding: 8px;
+  min-height: 256px;
+  background-color: #f00;
+}
+
+#bluetooth-box {
+  border: 1px solid #1b1d1d;
+  border-radius: 8px;
+  padding: 8px;
+  min-height: 256px;
+  background-color: #00f;
+}
+
+#cpu_circular-progress-bar {
+	color: #0a0b0c;
+	border: solid 5px #db4740;
+}
+
+#memory_circular-progress-bar {
+	color: #0a0b0c;
+	border: solid 5px #80aa9e;
+}
+
+#battery_circular-progress-bar {
+	color: #0a0b0c;
+	border: solid 5px #b1b946;
+}
+
+#circular-progress-bar-container {
+	background-color: #000;
+	border: 1px solid #1b1d1d;
+	border-radius: 8px;
+	margin-right: 0px;
+	margin-top: 0px;
+	padding: 8px;
+}
+
+#calendar.view {
+  background-color: #000;
+  border: 1px solid #1b1d1d;
+  border-radius: 8px;
+}
+
+#calendar.header {
+  background-color: #0a0b0c;
+  border: 1px solid #1b1d1d;
+  border-radius: 8px 8px 0 0;
+}
+
+#calendar:selected {
+  background-color: #db4740;
+  border-radius: 4px;
+  color: #000;
+}
+
+#webapp {
+  min-height: 512px;
+}
+
+#user {
+  background-color: #000;
+  border: 1px solid #1b1d1d;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+#user-image {
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  border: 1px solid #1b1d1d;
+  min-width: 48px;
+  min-height: 48px;
+}
+
+#user-label {
+  color: #e0cda5;
+  margin-left: 8px;
+  font-weight: bold;
+  font-size: 14pt;
+}
+
+#host-label {
+  color: #928374;
+  margin-left: 8px;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 11pt;
+}
+
+#ext {
+  background-color: #000;
+  border: 1px solid #1b1d1d;
+  border-radius: 8px;
+  /* padding: 8px; */
+}
+
+#webapp {
+  border-radius: 8px;
+}
+
+#apps {
+  min-height: 512px;
+}
+
+#full-player {
+  background-color: #000;
+  border: 1px solid #1b1d1d;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+#cover {
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  border: 1px solid #1b1d1d;
+  /* margin-bottom: 5px; */
+  margin-right: 5px;
+  padding: 8px;
+  min-height: 100px;
+}
+
+#play-button, #skip-back-button, #skip-forward-button, #prev-button, #next-button {
+  padding: 8px;
+  /* background-color: #000; */
+  /* border-radius: 8px; */
+  /* border: 1px solid #1b1d1d; */
+}
+
+#title {
+  font-size: 14pt;
+}
+
+#artist {
+  font-size: 11pt;
+  font-style: italic;
+  color: #928374;
+}
+
+#title, #artist {
+  text-shadow: 0px 0px 5px #000000;
+}
+
+#ext-label {
+  color: #47423e;
+  font-size: 20pt;
+  font-weight: bold;
+  font-style: italic;
 }

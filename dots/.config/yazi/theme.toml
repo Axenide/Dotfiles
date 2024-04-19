@@ -36,8 +36,8 @@ border_style  = { fg = "#1b1d1d" }
 # : Status {{{
 
 [status]
-separator_open  = ""
-separator_close = ""
+separator_open  = ""
+separator_close = ""
 separator_style = { fg = "#1b1d1d", bg = "#1b1d1d" }
 
 # Mode
