@@ -84,6 +84,7 @@
 }
 
 #time-button {
+  transition: all 0.25s ease;
 	background-color: #000000;
 	border: 1px solid #1b1d1d;
 	border-radius: 8px;
@@ -91,7 +92,7 @@
 }
 
 #time-button:hover {
-  background: radial-gradient(alpha(#db4740, 0.75), transparent 90%);
+  background: linear-gradient(#000000, #1b1d1d);
 }
 
 #time-separator {
@@ -113,21 +114,34 @@
 	border-radius: 999px;
 }
 
-#run-button {
+#run-button, #media-button, #colorpicker {
 	transition: all 0.25s ease;
-	padding: 9px 8px;
+	/* padding: 9px 8px; */
 	background-color: #000;
 	border-radius: 8px;
 	border: 1px solid #1b1d1d;
 }
 
-#run-button:hover {
+#run-button:hover, #media-button:hover, #colorpicker:hover {
+  background: linear-gradient(#000000, #1b1d1d);
+  /* background: radial-gradient(alpha(#db4740, 0.75), transparent 90%); */
+}
+
+#run-button-image, #media-button-image, #colorpicker-image {
+  transition: all 0.25s ease;
+  /* background: radial-gradient(alpha(#db4740, 0.75), transparent 90%); */
+  padding: 9px 8px;
+}
+
+#run-button-image-hover, #media-button-image-hover, #colorpicker-image-hover {
+  transition: all 0.25s ease;
   background: radial-gradient(alpha(#db4740, 0.75), transparent 90%);
+  padding: 9px 8px;
 }
 
 #shutdown, #reboot, #logout, #suspend, #lock {
   transition: all 0.25s ease;
-  padding: 9px 8px;
+  padding: 10px 8px;
   /* background-color: #000; */
   border-radius: 8px;
   /* border: 1px solid #1b1d1d; */
@@ -137,7 +151,7 @@
   background: radial-gradient(alpha(#db4740, 0.75), transparent 90%);
 }
 
-#power {
+#power-event {
 	transition: all 0.25s ease;
 	/* padding: 9px 8px; */
 	background-color: #000;
@@ -145,33 +159,39 @@
 	border: 1px solid #1b1d1d;
 }
 
-#power:hover {
-  background: radial-gradient(alpha(#db4740, 0.75), transparent 90%);
-}
-
-#colorpicker {
+#power-event-hover {
 	transition: all 0.25s ease;
-	padding: 9px 8px;
+	/* padding: 9px 8px; */
 	background-color: #000;
 	border-radius: 8px;
 	border: 1px solid #1b1d1d;
+  background: linear-gradient(#000000, #1b1d1d);
 }
 
-#colorpicker:hover {
-  background: radial-gradient(alpha(#db4740, 0.75), transparent 90%);
-}
 
-#media-button {
-	transition: all 0.25s ease;
-	padding: 9px 8px;
-	background-color: #000;
-	border-radius: 8px;
-	border: 1px solid #1b1d1d;
-}
-
-#media-button:hover {
-  background: radial-gradient(alpha(#db4740, 0.75), transparent 90%);
-}
+/* #colorpicker { */
+/* 	transition: all 0.25s ease; */
+/* 	padding: 9px 8px; */
+/* 	background-color: #000; */
+/* 	border-radius: 8px; */
+/* 	border: 1px solid #1b1d1d; */
+/* } */
+/**/
+/* #colorpicker:hover { */
+/*   background: radial-gradient(alpha(#db4740, 0.75), transparent 90%); */
+/* } */
+/**/
+/* #media-button { */
+/* 	transition: all 0.25s ease; */
+/* 	padding: 9px 8px; */
+/* 	background-color: #000; */
+/* 	border-radius: 8px; */
+/* 	border: 1px solid #1b1d1d; */
+/* } */
+/**/
+/* #media-button:hover { */
+/*   background: radial-gradient(alpha(#db4740, 0.75), transparent 90%); */
+/* } */
 
 #system-tray {
   background-color: #000;
@@ -309,9 +329,10 @@ menuitem:hover {
 }
 
 #calendar:selected {
-  background-color: #db4740;
+  /* background-color: #db4740; */
   border-radius: 4px;
-  color: #000;
+  /* color: #000; */
+  color: #db4740;
 }
 
 #webapp {

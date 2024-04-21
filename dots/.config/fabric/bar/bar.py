@@ -155,7 +155,7 @@ class Circles(Box):
         self.show_all()
 
     def update_status(self):
-        self.cpu_circular_progress_bar.percentage = psutil.cpu_percent()
+        self.cpu_circular_progress_bar.percentage = psutil.cpu_percent(interval=0.1)
         self.memory_circular_progress_bar.percentage = psutil.virtual_memory().percent
         self.battery_circular_progress_bar.percentage = (
             psutil.sensors_battery().percent
@@ -501,7 +501,7 @@ class Player(Box):
 class Power(EventBox):
     def __init__(self):
         super().__init__(
-            name="power",
+            name="power-event",
             # orientation="v",
         )
         self.lock = Button(
@@ -573,17 +573,23 @@ class Power(EventBox):
     def on_button_hover(self, button: Button, event):
         if button == self:
             self.revealer.set_reveal_child(True)
+            self.set_name("power-event-hover")
+            print("hovering")
+            print(self.name)
         return self.change_cursor("pointer")
 
     def on_button_unhover(self, button: Button, event):
         if button == self:
             self.revealer.set_reveal_child(False)
+            self.set_name("power-event")
+            print("unhovering")
+            print(self.name)
         return self.change_cursor("default")
 
     def on_button_press(self, button: Button, event):
         if button == self.lock:
-            # exec_shell_command("swaylock")
-            exec_shell_command("notify-send 'Locking screen'")
+            exec_shell_command("swaylock")
+            # exec_shell_command("notify-send 'Locking screen'")
         elif button == self.suspend:
             # exec_shell_command("systemctl suspend")
             exec_shell_command("notify-send 'Suspending system'")
@@ -643,23 +649,23 @@ class VerticalBar(Window):
             transition_type="slide-right",
         )
         self.center_box = CenterBox(name="main-window", orientation="v")
+
         self.run_button = Button(
             name="run-button",
             tooltip_text="Show Applications Menu",
             child=Image(
+                name="run-button-image",
                 image_file=get_relative_path("assets/applications.svg"),
             ),
         )
-        self.power_image = Image(
-            name="power-image",
-            image_file=get_relative_path("assets/power.svg"),
-        )
+
         self.power = Power()
 
         self.colorpicker = Button(
             name="colorpicker",
             tooltip_text="Color Picker",
-            icon_image=Image(
+            child=Image(
+                name="colorpicker-image",
                 image_file=get_relative_path("assets/colorpicker.svg")
             ),
         )
@@ -667,6 +673,7 @@ class VerticalBar(Window):
             name="media-button",
             tooltip_text=str(exec_shell_command('playerctl metadata artist -f "{{ artist }} - {{ title }}"')).rstrip(),
             child=Image(
+                name="media-button-image",
                 image_file=get_relative_path("assets/media.svg")
             )
         )
@@ -957,14 +964,14 @@ class VerticalBar(Window):
             if command:
                 return exec_shell_command(command)
 
-        elif button == self.shutdown:
-            commands = {
-                # 1: 'systemctl poweroff',
-                1: 'notify-send "Shutting Down"',
-            }
-            command = commands.get(event.button)
-            if command:
-                return exec_shell_command(command)
+        # elif button == self.shutdown:
+        #     commands = {
+        #         # 1: 'systemctl poweroff',
+        #         1: 'notify-send "Shutting Down"',
+        #     }
+        #     command = commands.get(event.button)
+        #     if command:
+        #         return exec_shell_command(command)
         
         elif button == self.wifi_button:
             commands = {
@@ -1041,13 +1048,15 @@ class VerticalBar(Window):
 
     def on_button_hover(self, button: Button, event):
         self.media_button.set_tooltip_text(str(exec_shell_command('playerctl metadata artist -f "{{ artist }} - {{ title }}"')).rstrip())
-        # if button == self.power:
-            # self.power.set_reveal_child(True)
+        buttons = [self.run_button, self.media_button, self.colorpicker]
+        if button in buttons:
+            button.get_children()[0].set_name(button.get_name() + "-image-hover")
         return self.change_cursor("pointer")
 
     def on_button_unhover(self, button: Button, event):
-        # if button == self.power_button:
-            # self.power.set_reveal_child(False)
+        buttons = [self.run_button, self.media_button, self.colorpicker]
+        if button in buttons:
+            button.get_children()[0].set_name(button.get_name() + "-image")
         return self.change_cursor("default")
     
     def signals(self, sig, frame):
