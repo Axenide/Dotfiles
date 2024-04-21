@@ -34,7 +34,7 @@ import gi
 from loguru import logger
 from fabric.widgets.box import Box
 from fabric.widgets.button import Button
-# from fabric.widgets.eventbox import EventBox
+from fabric.widgets.eventbox import EventBox
 from fabric.hyprland.service import Hyprland #, SignalEvent
 from fabric.utils.string_formatter import FormattedString
 from fabric.utils import bulk_connect
@@ -498,6 +498,106 @@ class Player(Box):
             exec_shell_command("playerctl repeat")
         return True
 
+class Power(EventBox):
+    def __init__(self):
+        super().__init__(
+            name="power",
+            # orientation="v",
+        )
+        self.lock = Button(
+            name="lock",
+            icon_image=Image(image_file=get_relative_path("assets/lock.svg"))
+        )
+
+        self.suspend = Button(
+            name="suspend",
+            icon_image=Image(image_file=get_relative_path("assets/suspend.svg"))
+        )
+
+        self.logout = Button(
+            name="logout",
+            icon_image=Image(image_file=get_relative_path("assets/logout.svg"))
+        )
+
+        self.reboot = Button(
+            name="reboot",
+            icon_image=Image(image_file=get_relative_path("assets/reboot.svg"))
+        )
+
+        self.shutdown = Button(
+            name="shutdown",
+            icon_image=Image(image_file=get_relative_path("assets/shutdown.svg"))
+        )
+
+        self.power_box = Box(
+            name="power-box",
+            orientation="v",
+            # spacing=16,
+            children=[
+                self.lock,
+                self.suspend,
+                self.logout,
+                self.reboot,
+                # self.shutdown,
+            ]
+        )
+
+        self.revealer = Revealer(
+            name="power-revealer",
+            transition_type="slide-up",
+            transition_duration=500,
+            child=self.power_box
+        )
+
+        self.full_power = Box(
+            name="full-power",
+            orientation="v",
+            children=[
+                self.revealer,
+                self.shutdown,
+            ]
+        )
+
+        self.add(self.full_power)
+
+        for btn in [self.lock, self.suspend, self.logout, self.reboot, self.shutdown, self]:
+            bulk_connect(
+                btn,
+                {
+                    "button-press-event": self.on_button_press,
+                    "enter-notify-event": self.on_button_hover,
+                    "leave-notify-event": self.on_button_unhover,
+                },
+            )
+
+    def on_button_hover(self, button: Button, event):
+        if button == self:
+            self.revealer.set_reveal_child(True)
+        return self.change_cursor("pointer")
+
+    def on_button_unhover(self, button: Button, event):
+        if button == self:
+            self.revealer.set_reveal_child(False)
+        return self.change_cursor("default")
+
+    def on_button_press(self, button: Button, event):
+        if button == self.lock:
+            # exec_shell_command("swaylock")
+            exec_shell_command("notify-send 'Locking screen'")
+        elif button == self.suspend:
+            # exec_shell_command("systemctl suspend")
+            exec_shell_command("notify-send 'Suspending system'")
+        elif button == self.logout:
+            # exec_shell_command("hyprctl dispatch exit")
+            exec_shell_command("notify-send 'Logging out'")
+        elif button == self.reboot:
+            # exec_shell_command("systemctl reboot")
+            exec_shell_command("notify-send 'Rebooting system'")
+        elif button == self.shutdown:
+            # exec_shell_command("systemctl poweroff")
+            exec_shell_command("notify-send 'Shutting down system'")
+        return True
+
 class VerticalBar(Window):
     def __init__(self):
         super().__init__(
@@ -554,16 +654,8 @@ class VerticalBar(Window):
             name="power-image",
             image_file=get_relative_path("assets/power.svg"),
         )
-        self.power_button = Button(
-            name="power-button",
-            tooltip_text="Show Power Menu",
-            child=Box(
-                orientation="v",
-                children=[
-                    self.power_image,
-                ]
-            ),
-        )
+        self.power = Power()
+
         self.colorpicker = Button(
             name="colorpicker",
             tooltip_text="Color Picker",
@@ -652,7 +744,7 @@ class VerticalBar(Window):
             h_expand=True,
             child=self.dnd_icon,
         )
-        for btn in [self.run_button, self.power_button, self.colorpicker, self.media_button, self.time_button, self.wifi_button, self.bluetooth_button, self.night_button, self.dnd_button]:
+        for btn in [self.run_button, self.colorpicker, self.media_button, self.time_button, self.wifi_button, self.bluetooth_button, self.night_button, self.dnd_button]:
             bulk_connect(
                 btn,
                 {
@@ -724,6 +816,7 @@ class VerticalBar(Window):
                 self.battery_label.set_label(value["battery"]),
             ),
         )
+
         self.center_box.add_end(
             Box(
                 orientation="v",
@@ -733,7 +826,8 @@ class VerticalBar(Window):
                     Box(name="module-separator"),
                     self.time_button,
                     Box(name="module-separator"),
-                    self.power_button,
+                    # self.power_button,
+                    self.power,
                 ],
             )
         )
@@ -827,14 +921,14 @@ class VerticalBar(Window):
             else:
                 self.content_box.set_reveal_child(not self.content_box.get_reveal_child())
         
-        elif button == self.power_button:
-            commands = {
-                1: f'{home_dir}/.config/rofi/powermenu/powermenu.sh',
-                3: 'notify-send "Placeholder" "xDDDDD"'
-            }
-            command = commands.get(event.button)
-            if command:
-                return exec_shell_command(command)
+        # elif button == self.power_button:
+        #     commands = {
+        #         1: f'{home_dir}/.config/rofi/powermenu/powermenu.sh',
+        #         3: 'notify-send "Placeholder" "xDDDDD"'
+        #     }
+        #     command = commands.get(event.button)
+        #     if command:
+        #         return exec_shell_command(command)
         
         elif button == self.colorpicker:
             commands = {
@@ -858,6 +952,15 @@ class VerticalBar(Window):
         elif button == self.time_button:
             commands = {
                 1: f'{home_dir}/.config/rofi/calendar/calendar.sh',
+            }
+            command = commands.get(event.button)
+            if command:
+                return exec_shell_command(command)
+
+        elif button == self.shutdown:
+            commands = {
+                # 1: 'systemctl poweroff',
+                1: 'notify-send "Shutting Down"',
             }
             command = commands.get(event.button)
             if command:
@@ -938,9 +1041,13 @@ class VerticalBar(Window):
 
     def on_button_hover(self, button: Button, event):
         self.media_button.set_tooltip_text(str(exec_shell_command('playerctl metadata artist -f "{{ artist }} - {{ title }}"')).rstrip())
+        # if button == self.power:
+            # self.power.set_reveal_child(True)
         return self.change_cursor("pointer")
 
     def on_button_unhover(self, button: Button, event):
+        # if button == self.power_button:
+            # self.power.set_reveal_child(False)
         return self.change_cursor("default")
     
     def signals(self, sig, frame):

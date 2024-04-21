@@ -17,16 +17,17 @@
 
 #workspaces {
 	border-radius: 8px;
-	padding: 14px;
+	padding: 13px;
 	border: 1px solid #1b1d1d;
 	background-color: #000;
 }
 
 #workspaces>button {
-	background-color: #e0cda5;
+	/* background-color: #e0cda5; */
+  border: 2px solid #e0cda5;
 	border-radius: 999px;
-	min-width: 8px;
-	min-height: 8px;
+	min-width: 6px;
+	min-height: 6px;
 	transition: all 0.5s cubic-bezier(0, 1, 0, 1);
 }
 
@@ -35,16 +36,19 @@
 }
 
 #workspaces>button.active {
-	background-color: #db4740;
+	/* background-color: #db4740; */
+  border: 2px solid #db4740;
 	min-height: 48px;
 }
 
 #workspaces>button.empty {
-	background-color: #47423e;
+	/* background-color: #47423e; */
+  border: 2px solid #47423e;
 }
 
 #workspaces>button:hover {
-	background-color: #db4740;
+	/* background-color: #db4740; */
+  border: 2px solid #db4740;
 }
 
 #power-window {
@@ -87,7 +91,7 @@
 }
 
 #time-button:hover {
-	background: linear-gradient(to bottom, #000000 0%, #1b1d1d 100%);
+  background: radial-gradient(alpha(#db4740, 0.75), transparent 90%);
 }
 
 #time-separator {
@@ -118,19 +122,31 @@
 }
 
 #run-button:hover {
-	background: linear-gradient(to bottom, #000000 0%, #1b1d1d 100%);
+  background: radial-gradient(alpha(#db4740, 0.75), transparent 90%);
 }
 
-#power-button {
+#shutdown, #reboot, #logout, #suspend, #lock {
+  transition: all 0.25s ease;
+  padding: 9px 8px;
+  /* background-color: #000; */
+  border-radius: 8px;
+  /* border: 1px solid #1b1d1d; */
+}
+
+#shutdown:hover, #reboot:hover, #logout:hover, #suspend:hover, #lock:hover {
+  background: radial-gradient(alpha(#db4740, 0.75), transparent 90%);
+}
+
+#power {
 	transition: all 0.25s ease;
-	padding: 9px 8px;
+	/* padding: 9px 8px; */
 	background-color: #000;
 	border-radius: 8px;
 	border: 1px solid #1b1d1d;
 }
 
-#power-button:hover {
-	background: linear-gradient(to bottom, #000000 0%, #1b1d1d 100%);
+#power:hover {
+  background: radial-gradient(alpha(#db4740, 0.75), transparent 90%);
 }
 
 #colorpicker {
@@ -142,7 +158,7 @@
 }
 
 #colorpicker:hover {
-	background: linear-gradient(to bottom, #000000 0%, #1b1d1d 100%);
+  background: radial-gradient(alpha(#db4740, 0.75), transparent 90%);
 }
 
 #media-button {
@@ -154,7 +170,7 @@
 }
 
 #media-button:hover {
-	background: linear-gradient(to bottom, #000000 0%, #1b1d1d 100%);
+  background: radial-gradient(alpha(#db4740, 0.75), transparent 90%);
 }
 
 #system-tray {
