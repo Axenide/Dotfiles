@@ -9630,7 +9630,7 @@ tooltip.background.chromium {
  * Firefox *
  ***********/
 #MozillaGtkWidget > widget text {
-  background-color: #3f4142;
+  background-color: #000000;
 }
 
 #MozillaGtkWidget > widget text:selected {
@@ -9647,7 +9647,7 @@ tooltip.background.chromium {
 }
 
 #MozillaGtkWidget > widget > frame > border {
-  border-color: #3f4142;
+  border-color: #000000;
 }
 
 #MozillaGtkWidget > widget > entry,
