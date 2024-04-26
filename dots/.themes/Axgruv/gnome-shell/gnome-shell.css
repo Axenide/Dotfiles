@@ -140,8 +140,8 @@
 .app-folder-dialog {
   border-radius: 36px;
   padding: 12px;
-  background-color: rgba(29, 32, 33, 0.85);
-  border: 1px solid #141617;
+  background-color: rgba(0, 0, 0, 0.85);
+  border: 1px solid #1b1d1d;
   box-shadow: inset 0 0 0 1px rgba(221, 199, 161, 0.1);
 }
 
@@ -278,7 +278,7 @@ StWidget.focused .app-well-app-running-dot {
 .background-app-item .close-button,
 .button {
   color: #ddc7a1;
-  background-color: #282828;
+  background-color: #1b1d1d;
   box-shadow: none !important;
 }
 
@@ -332,7 +332,7 @@ StWidget.focused .app-well-app-running-dot {
 .background-app-item .close-button:insensitive,
 .button:insensitive {
   color: rgba(221, 199, 161, 0.35);
-  background-color: #282828;
+  background-color: #1b1d1d;
   box-shadow: none !important;
 }
 
@@ -1339,7 +1339,7 @@ StEntry StLabel.hint-text,
 
 /* On-screen Keyboard */
 #keyboard {
-  background-color: #282828;
+  background-color: #1b1d1d;
   box-shadow: none;
 }
 
@@ -1383,12 +1383,12 @@ StEntry StLabel.hint-text,
 }
 
 .keyboard-key:grayed {
-  background-color: #282828;
+  background-color: #1b1d1d;
   color: rgba(221, 199, 161, 0.7);
 }
 
 .keyboard-key.default-key {
-  background-color: #282828;
+  background-color: #1b1d1d;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
 }
 
@@ -1437,7 +1437,7 @@ StEntry StLabel.hint-text,
 .keyboard-subkeys {
   color: inherit;
   -arrow-border-radius: 12px;
-  -arrow-background-color: #282828;
+  -arrow-background-color: #1b1d1d;
   -arrow-border-width: 0;
   -arrow-border-color: transparent;
   -arrow-base: 20px;
@@ -1465,7 +1465,7 @@ StEntry StLabel.hint-text,
 
 /* Login Dialog */
 #lockDialogGroup {
-  background-color: #282828;
+  background-color: #1b1d1d;
   background-image: url('background.png');
   background-size: cover;
 }
@@ -1541,7 +1541,7 @@ StEntry StLabel.hint-text,
 }
 
 .login-dialog .user-icon StIcon {
-  background-color: #282828;
+  background-color: #1b1d1d;
   color: #ddc7a1;
 }
 
@@ -1730,7 +1730,7 @@ StEntry StLabel.hint-text,
 
 /* Looking Glass */
 #LookingGlassDialog {
-  background-color: #282828 !important;
+  background-color: #1b1d1d !important;
   spacing: 6px;
   padding: 0;
   margin: 6px;
@@ -1875,7 +1875,7 @@ StEntry StLabel.hint-text,
 
 #LookingGlassPropertyInspector {
   color: rgba(221, 199, 161, 0.7) !important;
-  background: #282828 !important;
+  background: #1b1d1d !important;
   border: none;
   border-radius: 6px;
   padding: 6px;
@@ -2116,7 +2116,7 @@ StEntry StLabel.hint-text,
 }
 
 .user-icon StIcon {
-  background-color: #282828;
+  background-color: #1b1d1d;
   color: #ddc7a1;
   border-radius: 9999px;
   padding: 12px;
@@ -2517,7 +2517,7 @@ StEntry StLabel.hint-text,
 #panel .panel-button:hover {
   color: #e9b143;
   background-color: transparent;
-  box-shadow: inset 0 0 0 1000px #282828;
+  box-shadow: inset 0 0 0 1000px #1b1d1d;
 }
 
 #panel .panel-button.clock-display:hover {
@@ -2527,7 +2527,7 @@ StEntry StLabel.hint-text,
 
 #panel .panel-button.clock-display:hover .clock {
   color: #e9b143;
-  box-shadow: inset 0 0 0 1000px #282828;
+  box-shadow: inset 0 0 0 1000px #1b1d1d;
 }
 
 #panel .panel-button:active,
@@ -2548,7 +2548,7 @@ StEntry StLabel.hint-text,
 #panel .panel-button.clock-display:checked,
 #panel .panel-button.clock-display:checked:hover {
   color: #e9b143;
-  box-shadow: inset 0 0 0 1000px #282828;
+  box-shadow: inset 0 0 0 1000px #1b1d1d;
 }
 
 #panel .panel-button.clock-display:active .clock,
@@ -2739,7 +2739,7 @@ StEntry StLabel.hint-text,
 #panel.unlock-screen #panelActivities.panel-button:hover,
 #panel.lock-screen #panelActivities.panel-button:hover {
   color: #e9b143;
-  box-shadow: inset 0 0 0 1000px #282828;
+  box-shadow: inset 0 0 0 1000px #1b1d1d;
 }
 
 #panel:overview .panel-corner,
@@ -3563,7 +3563,7 @@ StScrollBar StButton#hhandle:active {
 }
 
 #overviewGroup {
-  background-color: #141617;
+  background-color: #000000;
 }
 
 .osd-window {
@@ -3944,12 +3944,12 @@ StScrollBar StButton#hhandle:active {
   icon-size: 24px;
   border-radius: 6px;
   padding: 9px;
-  background-color: #282828 !important;
+  background-color: #1b1d1d !important;
   color: #e9b143 !important;
 }
 
 .quick-toggle-menu .header .icon.active {
-  background-color: #282828 !important;
+  background-color: #1b1d1d !important;
   color: #e9b143 !important;
 }
 
@@ -4102,7 +4102,7 @@ StScrollBar StButton#hhandle:active {
 }
 
 .screenshot-ui-shot-cast-container {
-  background-color: #282828;
+  background-color: #1b1d1d;
   border-radius: 12px;
   padding: 3px;
   spacing: 3px;
@@ -4174,7 +4174,7 @@ StScrollBar StButton#hhandle:active {
 }
 
 .screenshot-ui-window-selector {
-  background-color: #282828;
+  background-color: #1b1d1d;
 }
 
 .screenshot-ui-window-selector .screenshot-ui-window-selector-window-container {
@@ -4278,7 +4278,7 @@ StScrollBar StButton#hhandle:active {
 .window-close:active,
 .screenshot-ui-close-button:active {
   color: #ddc7a1;
-  background-color: #141617;
+  background-color: #000000;
 }
 
 .window-close StIcon,

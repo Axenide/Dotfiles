@@ -19,7 +19,7 @@
 /* text foreground color of insensitive widgets */
 @define-color insensitive_fg_color rgba(221, 199, 161, 0.5);
 /* insensitive text widgets and the like base background color */
-@define-color insensitive_base_color #282828;
+@define-color insensitive_base_color #1b1d1d;
 /* widget text/foreground color on backdrop windows */
 @define-color theme_unfocused_fg_color #ddc7a1;
 /* text color for entries, views and content in general on backdrop windows */
@@ -194,7 +194,7 @@ textview text {
 }
 
 textview border {
-  background-color: #282828;
+  background-color: #1b1d1d;
   color: rgba(221, 199, 161, 0.7);
 }
 
@@ -2914,7 +2914,7 @@ popover.background > arrow,
 popover.background > contents {
   transition: box-shadow 75ms cubic-bezier(0, 0, 0.2, 1);
   padding: 6px;
-  background-color: #141617;
+  background-color: #000000;
   border-radius: 12px;
   color: #e0cda5;
   border: 1px solid rgba(221, 199, 161, 0.2);
@@ -2946,7 +2946,7 @@ popover.background modelbutton {
 
 popover.background modelbutton:hover {
   transition: none;
-  background-color: #282828;
+  background-color: #1b1d1d;
   color: #a9b665;
 }
 
@@ -3074,7 +3074,7 @@ notebook > header > tabs > tab:checked,
 tabbar scrolledwindow:not(.pinned) > tabbox tab:selected,
 notebook > header > tabs > tab:selected {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1);
-  background-color: #282828;
+  background-color: #1b1d1d;
   color: #a9b665;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
 }
@@ -3913,7 +3913,7 @@ themeswitcher checkbutton.system radio,
 themeswitcher checkbutton.system radio:hover,
 themeswitcher checkbutton.system radio:checked,
 themeswitcher checkbutton.system radio:checked:hover {
-  background-image: linear-gradient(-45deg, #282828 49.99%, #ddc7a1 50.01%);
+  background-image: linear-gradient(-45deg, #1b1d1d 49.99%, #ddc7a1 50.01%);
   background-color: transparent;
 }
 
@@ -3930,7 +3930,7 @@ themeswitcher checkbutton.dark radio:hover,
 themeswitcher checkbutton.dark radio:checked,
 themeswitcher checkbutton.dark radio:checked:hover {
   color: #ddc7a1;
-  background-image: image(#282828);
+  background-image: image(#1b1d1d);
   background-color: transparent;
 }
 
@@ -5155,7 +5155,7 @@ separator.sidebar.selection-mode,
 }
 
 .navigation-sidebar > row:selected {
-  background-color: #282828;
+  background-color: #1b1d1d;
 }
 
 .navigation-sidebar > row:selected label,
@@ -5368,7 +5368,7 @@ infobar.action > revealer > box,
 infobar.action:backdrop > revealer > box,
 infobar.question > revealer > box,
 infobar.question:backdrop > revealer > box {
-  background-color: #282828;
+  background-color: #1b1d1d;
   color: #e0cda5;
   border-radius: 6px;
 }
@@ -5409,7 +5409,7 @@ infobar.question:backdrop > revealer > box *:link {
 
 infobar.action:hover > revealer > box,
 infobar.question:hover > revealer > box {
-  background-color: #282828;
+  background-color: #1b1d1d;
   color: #e0cda5;
   border-radius: 6px;
 }
@@ -6086,7 +6086,7 @@ popover.entry-completion > contents {
   > viewport
   > list.navigation-sidebar
   > row.activatable:selected {
-  background-color: #282828;
+  background-color: #1b1d1d;
   font-weight: 700;
   border-left: 3px solid #ea6962;
 }
@@ -6178,7 +6178,7 @@ popover.entry-completion > contents {
 
 .nautilus-window .nautilus-grid-view.view,
 .nautilus-window .nautilus-grid-view.view gridview.view {
-  background-color: #282828;
+  background-color: #1b1d1d;
   border-radius: 12px;
 }
 
@@ -6236,7 +6236,7 @@ popover.entry-completion > contents {
 }
 
 #NautilusPathBar {
-  background-color: #282828;
+  background-color: #1b1d1d;
   border-radius: 9px;
   margin: 6px 0;
 }
@@ -6950,7 +6950,7 @@ viewswitcher.wide {
 
 viewswitcher.wide button.toggle:checked,
 viewswitcher.wide button.toggle.flat:checked {
-  background-color: #282828;
+  background-color: #1b1d1d;
   color: #a9b665;
   font-weight: 500;
 }

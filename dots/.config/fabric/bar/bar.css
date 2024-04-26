@@ -221,6 +221,7 @@ menuitem {
 }
 
 menuitem:hover {
+  color: #db4740;
 	background-color: #1b1d1d;
 }
 

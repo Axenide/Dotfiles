@@ -575,7 +575,7 @@ StScrollBar StButton#hhandle:active {
 .panel-left .panel-status-button:hover,
 .panel-right .panel-button:hover,
 .panel-right .panel-status-button:hover {
-  color: #89b482;
+  color: #db4740;
   background-color: rgba(221, 199, 161, 0.12);
 }
 
@@ -1999,7 +1999,7 @@ StScrollBar StButton#hhandle:active {
   border: 0px solid rgba(5, 5, 5, 0.9);
   border-bottom: 1px;
   -slider-height: 0.5em;
-  -slider-background-color: #141617;
+  -slider-background-color: #000000;
   -slider-border-color: rgba(0, 0, 0, 0);
   -slider-active-background-color: #e0cda5;
   -slider-active-border-color: rgba(0, 0, 0, 0);
