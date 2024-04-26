@@ -221,8 +221,11 @@ menuitem {
 }
 
 menuitem:hover {
+  background-color: #0a0b0c;
+}
+
+menuitem:hover label {
   color: #db4740;
-	background-color: #1b1d1d;
 }
 
 #content-box {
