@@ -1,6 +1,12 @@
-[X-GNOME-Metatheme]
-Name=Axgruv
+[Desktop Entry]
 Type=X-GNOME-Metatheme
-Comment=Axenide's Adwaita Amoled Gruvbox Remix
+Name=Axgruv
+Comment=An Flat Gtk+ theme based on Elegant Design
 Encoding=UTF-8
+
+[X-GNOME-Metatheme]
 GtkTheme=Axgruv
+MetacityTheme=Axgruv
+IconTheme=Axgruv
+CursorTheme=Simp1e-Gruvbox-Dark
+ButtonLayout=close,minimize,maximize:menu

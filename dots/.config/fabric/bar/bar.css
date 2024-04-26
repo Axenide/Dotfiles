@@ -404,10 +404,15 @@ menuitem:hover {
 }
 
 #play-button, #skip-back-button, #skip-forward-button, #prev-button, #next-button {
+  transition: all 0.25s ease;
   padding: 8px;
   /* background-color: #000; */
   /* border-radius: 8px; */
   /* border: 1px solid #1b1d1d; */
+}
+
+#play-button:hover, #skip-back-button:hover, #skip-forward-button:hover, #prev-button:hover, #next-button:hover {
+  background: radial-gradient(alpha(#e0cda5, 0.75), transparent 90%);
 }
 
 #title {

@@ -14,7 +14,7 @@ from fabric.widgets.wayland import Window
 from fabric.widgets.date_time import DateTime
 from fabric.widgets.centerbox import CenterBox
 from fabric.widgets.revealer import Revealer
-# from fabric.widgets.webview import WebView
+from fabric.widgets.webview import WebView
 # from fabric.utils.applications import Application
 from fabric.system_tray.widgets import SystemTray
 from fabric.utils.fabricator import Fabricator, invoke_repeater
@@ -27,6 +27,7 @@ from fabric.utils import (
     # bulk_replace,
     bulk_connect,
     exec_shell_command,
+    exec_shell_command_async,
     get_relative_path,
 )
 import gi
@@ -95,8 +96,9 @@ class Circles(Box):
             percentage=100,
             name="battery_circular-progress-bar",
         )
-        self.update_status()
-        invoke_repeater(1000, self.update_status)
+        # self.update_status()
+        # invoke_repeater(1000, self.update_status)
+        GLib.Thread.new(None, self.update_status)
         self.add(
             Box(
                 spacing=24,
@@ -155,32 +157,33 @@ class Circles(Box):
         self.show_all()
 
     def update_status(self):
-        self.cpu_circular_progress_bar.percentage = psutil.cpu_percent(interval=0.1)
-        self.memory_circular_progress_bar.percentage = psutil.virtual_memory().percent
-        self.battery_circular_progress_bar.percentage = (
-            psutil.sensors_battery().percent
-            if psutil.sensors_battery() is not None
-            else 100
-        )
-        return True
+        while True:
+            self.cpu_circular_progress_bar.percentage = psutil.cpu_percent(interval=1)
+            self.memory_circular_progress_bar.percentage = psutil.virtual_memory().percent
+            self.battery_circular_progress_bar.percentage = (
+                psutil.sensors_battery().percent
+                if psutil.sensors_battery() is not None
+                else 100
+            )
 
-# class WebApp(Box):
-#     def __init__(self):
-#         super().__init__(
-#             name="webapp",
-#             visible=False,
-#             all_visible=False,
-#             h_expand=True,
-#             v_expand=True,
-#         )
-#         self.webview = WebView(
-#             name="calendar-webview",
-#             h_expand=True,
-#             v_expand=True,
-#             # url="file://" + str(get_relative_path("calendar/index.html")),
-#             url="https://www.google.com/",
-#         )
-#         self.add(self.webview)
+class WebApp(Box):
+    def __init__(self):
+        super().__init__(
+            name="webapp",
+            visible=False,
+            all_visible=False,
+            h_expand=True,
+            v_expand=True,
+        )
+        self.webview = WebView(
+            name="calendar-webview",
+            h_expand=True,
+            v_expand=True,
+            # url="file://" + str(get_relative_path("calendar/index.html")),
+            # url="https://www.google.com/",
+            url="https://niek.github.io/chatgpt-web/",
+        )
+        self.add(self.webview)
 
 class User(Box):
     def __init__(self):
@@ -624,25 +627,6 @@ class VerticalBar(Window):
             label="",
             name="time-separator",
         )
-        self.time_sep_var = Fabricator(
-            value="",
-            poll_from=lambda _: [
-                "",
-                self.time_sep.set_style_classes(["day"]),
-            ][0]
-            if time.strftime("%p").lower() == "am"
-            else [
-                "",
-                self.time_sep.set_style_classes(["night"]),
-            ][0],
-            interval=1000,
-        )
-        self.time_sep.bind_property(
-            "label",
-            self.time_sep_var,
-            "value-str",
-            # 1,
-        )
         self.content_box = Revealer(
             # name="content-box",
             transition_duration=500,
@@ -797,32 +781,6 @@ class VerticalBar(Window):
                 ],
             )
         )
-        self.cpu_label = Label(label="0")
-        self.memory_label = Label(label="0")
-        self.battery_label = Label(label="0")
-        self.system_info_var = Fabricator(
-            value={"ram": 0, "cpu": 0},
-            poll_from=lambda _: {
-                "ram": str(int(psutil.virtual_memory().percent)),
-                "cpu": str(int(psutil.cpu_percent())),
-                "battery": str(
-                    int(
-                        psutil.sensors_battery().percent
-                        if psutil.sensors_battery() is not None
-                        else 100
-                    )
-                ),
-            },
-            interval=1000,
-        )
-        self.system_info_var.connect(
-            "changed",
-            lambda _, value: (
-                self.cpu_label.set_label(value["cpu"]),
-                self.memory_label.set_label(value["ram"]),
-                self.battery_label.set_label(value["battery"]),
-            ),
-        )
 
         self.center_box.add_end(
             Box(
@@ -939,12 +897,12 @@ class VerticalBar(Window):
         
         elif button == self.colorpicker:
             commands = {
-                1: 'bash ' + get_relative_path('scripts/hyprpicker-hex.sh'),
-                3: 'bash ' + get_relative_path('scripts/hyprpicker-rgb.sh'),
+                1: get_relative_path('scripts/hyprpicker-hex.sh'),
+                3: get_relative_path('scripts/hyprpicker-rgb.sh'),
             }
             command = commands.get(event.button)
             if command:
-                return exec_shell_command(command)
+                return exec_shell_command_async(command, lambda *args: None)
         
         elif button == self.media_button:
             commands = {

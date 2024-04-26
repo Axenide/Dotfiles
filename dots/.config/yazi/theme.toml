@@ -1,6 +1,6 @@
 # vim:fileencoding=utf-8:foldmethod=marker
 
-# : Manager {{{
+# : Manager 
 
 [manager]
 cwd = { fg = "#db4740" }
@@ -30,7 +30,7 @@ border_style  = { fg = "#1b1d1d" }
 # Highlighting
 # syntect_theme = "~/.config/yazi/Gruvbox-Dark.tmTheme"
 
-# : }}}
+# : 
 
 
 # : Status {{{

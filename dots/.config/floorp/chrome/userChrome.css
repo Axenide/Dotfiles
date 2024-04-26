@@ -4,18 +4,19 @@
 }
 
 .tabbrowser-tab .tab-content {
-    border-radius: 5px;
+    border-radius: 8px;
+    border: 1px solid black;
     position: relative;
     left: 2px;
 }
 
 .tabbrowser-tab .tab-icon-image {
-    position: relative;
-    right: 2px;
+    position: relative !important;
+    right: 2px !important;
 }
 
 .tabbrowser-tab[selected] .tab-content {
-    background-color: #db474050;
+    border: 1px solid #db4740;
 }
 
 .tabbrowser-tab:not([selected]) .tab-content {
@@ -27,8 +28,8 @@
 }
 
 .tabbrowser-tab[pinned] .tab-icon-image {
-    position: relative;
-    right: 5px;
+    position: relative !important;
+    right: 5px !important;
 }
 
 .urlbar-input-box {
