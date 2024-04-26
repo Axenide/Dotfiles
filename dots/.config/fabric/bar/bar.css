@@ -235,6 +235,13 @@ menuitem:hover label {
 	min-width: 300px;
 }
 
+#content-box-2 {
+	background-color: #000;
+	padding: 4px;
+	padding-right: 0px;
+	min-width: 400px;
+}
+
 #applets {
 	border-radius: 8px;
 	margin-right: 0px;
@@ -340,7 +347,9 @@ menuitem:hover label {
 }
 
 #webapp {
-  min-height: 512px;
+  border-radius: 8px;
+  border: 1px solid #1b1d1d;
+  padding: 8px;
 }
 
 #user {

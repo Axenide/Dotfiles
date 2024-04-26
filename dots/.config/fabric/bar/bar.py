@@ -181,7 +181,8 @@ class WebApp(Box):
             v_expand=True,
             # url="file://" + str(get_relative_path("calendar/index.html")),
             # url="https://www.google.com/",
-            url="https://niek.github.io/chatgpt-web/",
+            # url="https://niek.github.io/chatgpt-web/",
+            url="http://localhost:8501/",
         )
         self.add(self.webview)
 
@@ -616,7 +617,7 @@ class VerticalBar(Window):
             visible=False,
             all_visible=False,
             exclusive=True,
-            # keyboard_mode="on-demand",
+            keyboard_mode="none",
         )
         self.wifi_off = False
         self.bluetooth_off = False
@@ -632,6 +633,14 @@ class VerticalBar(Window):
             transition_duration=500,
             transition_type="slide-right",
         )
+
+        self.content_box_2 = Revealer(
+            # name="content-box-2",
+            transition_duration=500,
+            transition_type="slide-right",
+            reveal_child=False,
+        )
+
         self.center_box = CenterBox(name="main-window", orientation="v")
 
         self.run_button = Button(
@@ -860,11 +869,32 @@ class VerticalBar(Window):
                 ]
             )
         )
+        
+        self.content_box_2.add(
+            Box(
+                name="content-box-2",
+                spacing=4,
+                orientation="v",
+                children=[
+                    # self.user,
+                    # self.applets,
+                    # self.player,
+                    # self.wifi_revealer,
+                    # self.bluetooth_revealer,
+                    # self.ext,
+                    WebApp(),
+                    # self.calendar,
+                    # self.circles,
+                    # self.bottom_box,
+                    # Box(name="bottom-box", orientation="h", h_expand=True, spacing=4, children=[self.calendar, self.circles]),
+                ]
+            )
+        )
 
         self.full_box = Box(
             name="full-box",
             orientation="h",
-            children=[self.content_box, self.center_box],
+            children=[self.content_box, self.content_box_2, self.center_box],
         )
 
         # self.add(self.center_box)
@@ -1020,11 +1050,22 @@ class VerticalBar(Window):
     def signals(self, sig, frame):
         if sig == signal.SIGUSR1:
             self.content_box.set_reveal_child(not self.content_box.get_reveal_child())
+            self.content_box_2.set_reveal_child(False)
 
-signal.signal(signal.SIGUSR1, VerticalBar().signals)
+        if sig == signal.SIGUSR2:
+            self.content_box_2.set_reveal_child(not self.content_box_2.get_reveal_child())
+            self.content_box.set_reveal_child(False)
+
+        if self.content_box_2.get_reveal_child() == True:
+            self.set_keyboard_mode("on-demand")
+        else:
+            self.set_keyboard_mode("none")
+
 
 if __name__ == "__main__":
-    # bar = VerticalBar()  # entery point
+    bar = VerticalBar()  # entery point
+    signal.signal(signal.SIGUSR1, bar.signals)
+    signal.signal(signal.SIGUSR2, bar.signals)
     setproctitle.setproctitle("axbar")
     set_stylesheet_from_file(get_relative_path("bar.css"))
     fabric.start()
