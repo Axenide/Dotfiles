@@ -45,6 +45,8 @@ poppler
 python-fabric-git
 python-fuzzywuzzy
 python-gobject-docs
+python-pip
+python-pipx
 python-pygobject-stubs
 python-setproctitle
 ranger
