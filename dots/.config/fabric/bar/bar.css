@@ -228,18 +228,48 @@ menuitem:hover label {
   color: #db4740;
 }
 
+#default-box {
+	background-color: #000;
+	/* padding: 0 0 4px 4px; */
+	min-width: 300px;
+}
+
+#chat-box {
+  transition: all 0.5s ease;
+	background-color: #000;
+  /* border-radius: 8px; */
+  /* border: 1px solid #1b1d1d; */
+	/* padding: 0 0 4px 4px; */
+	min-width: 300px;
+}
+
+#chat-expand {
+  transition: all 0.25s ease;
+  background-color: #000;
+  border: 1px solid #1b1d1d;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+#chat-expand-label {
+  transition: all 0.25s ease;
+  color: #e0cda5;
+  text-shadow: 0px 0px 5px alpha(#db4740, 0.75);
+}
+
+#chat-expand:hover #chat-expand-label {
+  color: #db4740;
+}
+
+#chat-expand:hover {
+  background: linear-gradient(#000000, #1b1d1d);
+}
+
 #content-box {
 	background-color: #000;
 	padding: 4px;
 	padding-right: 0px;
 	min-width: 300px;
-}
-
-#content-box-2 {
-	background-color: #000;
-	padding: 4px;
-	padding-right: 0px;
-	min-width: 400px;
 }
 
 #applets {
@@ -349,7 +379,8 @@ menuitem:hover label {
 #webapp {
   border-radius: 8px;
   border: 1px solid #1b1d1d;
-  padding: 8px;
+  /* padding: 4px; */
+  padding: 0 4px;
 }
 
 #user {

@@ -1314,7 +1314,7 @@ entry progress {
     box-shadow 300ms cubic-bezier(0, 0, 0.2, 1);
   border-image: none;
   box-shadow: inset 0 0 0 2px transparent;
-  background-color: #3c3836;
+  background-color: #000000;
   color: #ddc7a1;
 }
 
@@ -2735,7 +2735,7 @@ toolbar.osd {
   box-shadow: 0 2px 2.4px -1px rgba(0, 0, 0, 0.2),
     0 4px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12),
     inset 0 1px rgba(221, 199, 161, 0.1);
-  background-color: #3c3836;
+  background-color: #000000;
 }
 
 frame.documents-dropdown:backdrop,
@@ -3654,7 +3654,7 @@ menu > arrow,
   min-height: 16px;
   min-width: 16px;
   padding: 4px;
-  background-color: #3c3836;
+  background-color: #000000;
   color: rgba(221, 199, 161, 0.7);
 }
 
@@ -3741,7 +3741,7 @@ popover.background > toolbar {
 popover.background list,
 popover.background .view:not(:selected),
 popover.background toolbar {
-  background-color: #3c3836;
+  background-color: #000000;
 }
 
 popover.background.combo viewport.frame > list {
@@ -5380,19 +5380,19 @@ calendar:indeterminate {
  * Dialogs *
  ***********/
 messagedialog.background {
-  background-color: #3c3836;
+  background-color: #000000;
 }
 
 messagedialog .titlebar {
   min-height: 24px;
   border-style: none;
   box-shadow: inset 0 1px rgba(221, 199, 161, 0.1);
-  background-color: #3c3836;
+  background-color: #000000;
   color: #ddc7a1;
 }
 
 messagedialog .titlebar:backdrop {
-  background-color: #3c3836;
+  background-color: #000000;
   color: rgba(221, 199, 161, 0.7);
 }
 
@@ -5986,7 +5986,7 @@ colorchooser .popover.osd {
   box-shadow: 0 2px 2.4px -1px rgba(0, 0, 0, 0.2),
     0 4px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12),
     inset 0 1px rgba(221, 199, 161, 0.1);
-  background-color: #3c3836;
+  background-color: #000000;
 }
 
 colorchooser .popover.osd:backdrop {
@@ -6217,7 +6217,7 @@ cursor-handle.insertion-cursor:dir(rtl) {
   border: solid 1px rgba(221, 199, 161, 0.12);
   border-radius: 7px;
   box-shadow: inset 0 -2px rgba(221, 199, 161, 0.12);
-  background-color: #3c3836;
+  background-color: #000000;
   color: #ddc7a1;
   font-size: smaller;
 }
@@ -6968,7 +6968,7 @@ window.org-gnome-gedit
 }
 
 .gedit-search-slider .linked:not(.vertical) > entry:not(.error) {
-  background-color: #3c3836;
+  background-color: #000000;
 }
 
 .gedit-search-slider .linked:not(.vertical) > entry.error ~ button {
@@ -9507,7 +9507,7 @@ overlay > revealer.right > scrolledwindow.frame {
 
 .terminix-session-sidebar,
 .tilix-session-sidebar {
-  background-image: image(#3c3836);
+  background-image: image(#000000);
 }
 
 .terminal-titlebar button {
@@ -10148,7 +10148,7 @@ PanelApplet.wnck-applet .wnck-pager:selected {
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 7px;
   box-shadow: inset 0 1px rgba(221, 199, 161, 0.1);
-  background-color: #3c3836;
+  background-color: #000000;
 }
 
 #MatePanelPopupWindow frame > border {
@@ -10194,7 +10194,7 @@ na-tray-applet {
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 7px;
   box-shadow: inset 0 1px rgba(221, 199, 161, 0.1);
-  background-color: #3c3836;
+  background-color: #000000;
 }
 
 .mate-panel-applet-slider frame > border {
@@ -10212,7 +10212,7 @@ na-tray-applet {
 
 #mate-menu {
   border: 1px solid rgba(0, 0, 0, 0.2);
-  background-color: #3c3836;
+  background-color: #000000;
 }
 
 #mate-menu button {
@@ -10247,7 +10247,7 @@ na-tray-applet {
 
 .brisk-menu {
   box-shadow: inset 0 1px rgba(221, 199, 161, 0.1);
-  background-color: #3c3836;
+  background-color: #000000;
 }
 
 .brisk-menu entry {
@@ -10456,7 +10456,7 @@ na-tray-applet {
   box-shadow: 0 2px 2.4px -1px rgba(0, 0, 0, 0.2),
     0 4px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12),
     inset 0 1px rgba(221, 199, 161, 0.1);
-  background-color: #3c3836;
+  background-color: #000000;
 }
 
 .lock-dialog frame > border {
@@ -10510,7 +10510,7 @@ MsdOsdWindow.background.osd .progressbar {
   border-radius: 6px;
   box-shadow: 0 2px 2.4px -1px rgba(0, 0, 0, 0.2),
     0 4px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
-  background-color: #3c3836;
+  background-color: #000000;
 }
 
 .budgie-popover .container {
@@ -11067,7 +11067,7 @@ frame.raven-frame > border {
 }
 
 .raven {
-  background-color: #3c3836;
+  background-color: #000000;
   box-shadow: 0 8px 6px -5px rgba(0, 0, 0, 0.2),
     0 16px 14.4px 2px rgba(0, 0, 0, 0.14), 0 6px 18px 5px rgba(0, 0, 0, 0.12);
 }
@@ -11228,7 +11228,7 @@ calendar.raven-calendar:selected {
   box-shadow: 0 2px 2.4px -1px rgba(0, 0, 0, 0.2),
     0 4px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12),
     inset 0 1px rgba(221, 199, 161, 0.1);
-  background-color: #3c3836;
+  background-color: #000000;
 }
 
 .drop-shadow .linked > button {
@@ -11239,7 +11239,7 @@ calendar.raven-calendar:selected {
 .budgie-polkit-dialog,
 .budgie-run-dialog {
   box-shadow: inset 0 1px rgba(221, 199, 161, 0.1);
-  background-color: #3c3836;
+  background-color: #000000;
 }
 
 .budgie-session-dialog.background.csd,
@@ -11466,7 +11466,7 @@ window.background.csd.thunar
   box-shadow: 0 2px 2.4px -1px rgba(0, 0, 0, 0.2),
     0 4px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12),
     inset 0 1px rgba(221, 199, 161, 0.1);
-  background-color: #3c3836;
+  background-color: #000000;
 }
 
 #content_frame {

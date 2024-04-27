@@ -184,7 +184,14 @@ class WebApp(Box):
             # url="https://niek.github.io/chatgpt-web/",
             url="http://localhost:8501/",
         )
+        self.bg()
         self.add(self.webview)
+
+    def bg(self):
+        self.webview.set_app_paintable(True)
+        self.webview.set_background_color(Gdk.RGBA(0, 0, 0, 0))
+        return True
+
 
 class User(Box):
     def __init__(self):
@@ -628,17 +635,37 @@ class VerticalBar(Window):
             label="",
             name="time-separator",
         )
+
         self.content_box = Revealer(
             # name="content-box",
             transition_duration=500,
             transition_type="slide-right",
         )
 
-        self.content_box_2 = Revealer(
-            # name="content-box-2",
+        self.default_box = Revealer(
+            # name="content-box",
             transition_duration=500,
             transition_type="slide-right",
+            # reveal_child=True,
+            h_expand=True,
+            v_expand=True,
+        )
+
+        self.chat_box = Revealer(
+            # name="chat-box",
+            transition_duration=500,
+            transition_type="slide-left",
             reveal_child=False,
+        )
+
+        self.chat_expand = False
+
+        self.chat_expand_button = Button(
+            name="chat-expand",
+            child=Label(
+                name="chat-expand-label",
+                label="Toggle Expand",
+            )
         )
 
         self.center_box = CenterBox(name="main-window", orientation="v")
@@ -744,7 +771,7 @@ class VerticalBar(Window):
             h_expand=True,
             child=self.dnd_icon,
         )
-        for btn in [self.run_button, self.colorpicker, self.media_button, self.time_button, self.wifi_button, self.bluetooth_button, self.night_button, self.dnd_button]:
+        for btn in [self.run_button, self.colorpicker, self.media_button, self.time_button, self.wifi_button, self.bluetooth_button, self.night_button, self.dnd_button, self.chat_expand_button]:
             bulk_connect(
                 btn,
                 {
@@ -849,13 +876,15 @@ class VerticalBar(Window):
 
         self.calendar = Gtk.Calendar(name="calendar", hexpand=True)
 
-        self.content_box.add(
+        self.default_box.add(
             Box(
-                name="content-box",
+                name="default-box",
                 spacing=4,
                 orientation="v",
+                h_expand=True,
+                v_expand=True,
                 children=[
-                    self.user,
+                    # self.user,
                     self.applets,
                     self.player,
                     # self.wifi_revealer,
@@ -869,24 +898,52 @@ class VerticalBar(Window):
                 ]
             )
         )
+
+        self.chat_box_content = Box(
+            name="chat-box",
+            spacing=4,
+            orientation="v",
+            children=[
+                self.chat_expand_button,
+                WebApp(),
+            ]
+        )
         
-        self.content_box_2.add(
+        self.chat_box.add(
+            self.chat_box_content,
+        )
+
+        self.revealers_box = Box(
+            name="revealers-box",
+            orientation="h",
+            h_expand=True,
+            v_expand=True,
+            children=[
+                self.default_box,
+                self.chat_box,
+            ]
+        )
+        
+        self.content_box.add(
             Box(
-                name="content-box-2",
+                name="content-box",
                 spacing=4,
                 orientation="v",
+                h_expand=True,
+                v_expand=True,
                 children=[
-                    # self.user,
+                    self.user,
                     # self.applets,
                     # self.player,
                     # self.wifi_revealer,
                     # self.bluetooth_revealer,
                     # self.ext,
-                    WebApp(),
+                    # WebApp(),
                     # self.calendar,
                     # self.circles,
                     # self.bottom_box,
                     # Box(name="bottom-box", orientation="h", h_expand=True, spacing=4, children=[self.calendar, self.circles]),
+                    self.revealers_box,
                 ]
             )
         )
@@ -894,7 +951,11 @@ class VerticalBar(Window):
         self.full_box = Box(
             name="full-box",
             orientation="h",
-            children=[self.content_box, self.content_box_2, self.center_box],
+            children=[
+                self.content_box,
+                self.chat_box,
+                self.center_box,
+            ],
         )
 
         # self.add(self.center_box)
@@ -915,6 +976,12 @@ class VerticalBar(Window):
                 return exec_shell_command(command)
             else:
                 self.content_box.set_reveal_child(not self.content_box.get_reveal_child())
+                self.default_box.set_reveal_child(not self.default_box.get_reveal_child())
+
+                if self.content_box.get_reveal_child() == False:
+                    self.default_box.set_reveal_child(False)
+                    self.chat_box.set_reveal_child(False)
+                    self.set_keyboard_mode("none")
         
         # elif button == self.power_button:
         #     commands = {
@@ -1034,6 +1101,13 @@ class VerticalBar(Window):
             if command == 'open':
                 exec_shell_command('swaync-client -t')
 
+        elif button == self.chat_expand_button:
+            self.chat_expand = not self.chat_expand
+            if self.chat_expand:
+                self.chat_box_content.set_style('min-width: 550px;')
+            else:
+                self.chat_box_content.set_style('min-width: 300px;')
+
     def on_button_hover(self, button: Button, event):
         self.media_button.set_tooltip_text(str(exec_shell_command('playerctl metadata artist -f "{{ artist }} - {{ title }}"')).rstrip())
         buttons = [self.run_button, self.media_button, self.colorpicker]
@@ -1049,18 +1123,22 @@ class VerticalBar(Window):
     
     def signals(self, sig, frame):
         if sig == signal.SIGUSR1:
-            self.content_box.set_reveal_child(not self.content_box.get_reveal_child())
-            self.content_box_2.set_reveal_child(False)
+            self.default_box.set_reveal_child(not self.default_box.get_reveal_child())
+            self.chat_box.set_reveal_child(False)
 
         if sig == signal.SIGUSR2:
-            self.content_box_2.set_reveal_child(not self.content_box_2.get_reveal_child())
-            self.content_box.set_reveal_child(False)
+            self.chat_box.set_reveal_child(not self.chat_box.get_reveal_child())
+            self.default_box.set_reveal_child(False)
 
-        if self.content_box_2.get_reveal_child() == True:
+        if self.chat_box.get_reveal_child() == True:
             self.set_keyboard_mode("on-demand")
         else:
             self.set_keyboard_mode("none")
 
+        if self.default_box.get_reveal_child() == False and self.chat_box.get_reveal_child() == False:
+            self.content_box.set_reveal_child(False)
+        else:
+            self.content_box.set_reveal_child(True)
 
 if __name__ == "__main__":
     bar = VerticalBar()  # entery point

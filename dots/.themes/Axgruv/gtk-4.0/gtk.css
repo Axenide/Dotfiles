@@ -2157,7 +2157,7 @@ toolbar.osd {
   box-shadow: 0 2px 2.4px -1px rgba(0, 0, 0, 0.2),
     0 4px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12),
     inset 0 1px rgba(221, 199, 161, 0.1);
-  background-color: #3c3836;
+  background-color: #000000;
 }
 
 .app-notification:backdrop,
@@ -4969,7 +4969,7 @@ calendar > grid > label.day-number.other-month {
  * Dialogs *
  ***********/
 window.dialog.message.background {
-  background-color: #3c3836;
+  background-color: #000000;
 }
 
 window.dialog.message box.dialog-vbox.vertical {
@@ -4980,12 +4980,12 @@ window.dialog.message .titlebar {
   min-height: 24px;
   border-style: none;
   box-shadow: inset 0 1px rgba(221, 199, 161, 0.1);
-  background-color: #3c3836;
+  background-color: #000000;
   color: #ddc7a1;
 }
 
 window.dialog.message .titlebar:backdrop {
-  background-color: #3c3836;
+  background-color: #000000;
   color: rgba(221, 199, 161, 0.7);
 }
 
@@ -5165,7 +5165,7 @@ separator.sidebar.selection-mode,
 }
 
 .navigation-sidebar > row:selected:hover {
-  background-color: #3c3836;
+  background-color: #000000;
 }
 
 .navigation-sidebar > row:selected:focus-visible:focus-within {
@@ -5562,7 +5562,7 @@ colorswatch#add-color-button:only-child {
 }
 
 colorswatch#add-color-button overlay {
-  background-color: #3c3836;
+  background-color: #000000;
 }
 
 colorswatch:disabled {
@@ -5587,7 +5587,7 @@ colorchooser .popover.osd {
   box-shadow: 0 2px 2.4px -1px rgba(0, 0, 0, 0.2),
     0 4px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12),
     inset 0 1px rgba(221, 199, 161, 0.1);
-  background-color: #3c3836;
+  background-color: #000000;
 }
 
 colorchooser .popover.osd:backdrop {
@@ -5793,7 +5793,7 @@ label > selection,
 calendar > grid > label.today:selected,
 stacksidebar row:selected {
   color: #7daea3;
-  background-color: #3c3836;
+  background-color: #000000;
 }
 
 .monospace {
@@ -5838,7 +5838,7 @@ shortcut > .keycap {
   border: solid 1px rgba(221, 199, 161, 0.12);
   border-radius: 7px;
   box-shadow: inset 0 -2px rgba(221, 199, 161, 0.12);
-  background-color: #3c3836;
+  background-color: #000000;
   color: #ddc7a1;
   font-size: smaller;
 }
