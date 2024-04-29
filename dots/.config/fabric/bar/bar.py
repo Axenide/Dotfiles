@@ -663,9 +663,10 @@ class VerticalBar(Window):
 
         self.chat_expand_button = Button(
             name="chat-expand",
-            child=Label(
-                name="chat-expand-label",
-                label="Toggle Expand",
+            h_expand=False,
+            child=Image(
+                name="chat-expand-image",
+                image_file=get_relative_path("assets/maximize.svg")
             )
         )
 
@@ -900,13 +901,25 @@ class VerticalBar(Window):
             )
         )
 
+        self.chat = AIchat()
+
+        self.chat_buttons = Box(
+            name="chat-buttons",
+            orientation="h",
+            h_expand=True,
+            spacing=4,
+            children=[
+                self.chat_expand_button,
+            ]
+        )
+
         self.chat_box_content = Box(
             name="chat-box",
             spacing=4,
             orientation="v",
             children=[
-                self.chat_expand_button,
-                AIchat(),
+                self.chat_buttons,
+                self.chat,
             ]
         )
         
@@ -1106,18 +1119,20 @@ class VerticalBar(Window):
             self.chat_expand = not self.chat_expand
             if self.chat_expand:
                 self.chat_box_content.set_style('min-width: 550px;')
+                self.chat_expand_button.get_children()[0].set_from_file(get_relative_path('assets/minimize.svg'))
             else:
                 self.chat_box_content.set_style('min-width: 300px;')
+                self.chat_expand_button.get_children()[0].set_from_file(get_relative_path('assets/maximize.svg'))
 
     def on_button_hover(self, button: Button, event):
         self.media_button.set_tooltip_text(str(exec_shell_command('playerctl metadata artist -f "{{ artist }} - {{ title }}"')).rstrip())
-        buttons = [self.run_button, self.media_button, self.colorpicker]
+        buttons = [self.run_button, self.media_button, self.colorpicker, self.chat_expand_button]
         if button in buttons:
             button.get_children()[0].set_name(button.get_name() + "-image-hover")
         return self.change_cursor("pointer")
 
     def on_button_unhover(self, button: Button, event):
-        buttons = [self.run_button, self.media_button, self.colorpicker]
+        buttons = [self.run_button, self.media_button, self.colorpicker, self.chat_expand_button]
         if button in buttons:
             button.get_children()[0].set_name(button.get_name() + "-image")
         return self.change_cursor("default")

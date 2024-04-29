@@ -114,7 +114,7 @@
 	border-radius: 999px;
 }
 
-#run-button, #media-button, #colorpicker {
+#run-button, #media-button, #colorpicker, #chat-expand {
 	transition: all 0.25s ease;
 	/* padding: 9px 8px; */
 	background-color: #000;
@@ -122,18 +122,18 @@
 	border: 1px solid #1b1d1d;
 }
 
-#run-button:hover, #media-button:hover, #colorpicker:hover {
+#run-button:hover, #media-button:hover, #colorpicker:hover, #chat-expand:hover {
   background: linear-gradient(#000000, #1b1d1d);
   /* background: radial-gradient(alpha(#db4740, 0.75), transparent 90%); */
 }
 
-#run-button-image, #media-button-image, #colorpicker-image {
+#run-button-image, #media-button-image, #colorpicker-image, #chat-expand-image {
   transition: all 0.25s ease;
   /* background: radial-gradient(alpha(#db4740, 0.75), transparent 90%); */
   padding: 9px 8px;
 }
 
-#run-button-image-hover, #media-button-image-hover, #colorpicker-image-hover {
+#run-button-image-hover, #media-button-image-hover, #colorpicker-image-hover, #chat-expand-image-hover {
   transition: all 0.25s ease;
   background: radial-gradient(alpha(#db4740, 0.75), transparent 90%);
   padding: 9px 8px;
@@ -248,7 +248,7 @@ menuitem:hover label {
   background-color: #000;
   border: 1px solid #1b1d1d;
   border-radius: 8px;
-  padding: 10px;
+  /* padding: 10px; */
 }
 
 #chat-expand-label {
