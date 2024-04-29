@@ -377,10 +377,10 @@ menuitem:hover label {
 }
 
 #ai-chat {
-  border-radius: 8px;
-  border: 1px solid #1b1d1d;
+  /* border-radius: 8px; */
+  /* border: 0px solid #1b1d1d; */
   /* padding: 4px; */
-  padding: 0 4px;
+  /* padding: 0 4px; */
 }
 
 #user {
@@ -419,10 +419,6 @@ menuitem:hover label {
   border: 1px solid #1b1d1d;
   border-radius: 8px;
   /* padding: 8px; */
-}
-
-#webapp {
-  border-radius: 8px;
 }
 
 #apps {

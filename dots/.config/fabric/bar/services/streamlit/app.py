@@ -172,5 +172,17 @@ st.markdown("""
 		display: none;
 	}
 
+    [data-testid="stAppViewContainer"] {
+        border: 1px solid #1b1d1d;
+        border-radius: 8px;
+    }
+
+    [data-testid="stHeader"] {
+        border-top: 1px solid #1b1d1d;
+        border-left: 1px solid #1b1d1d;
+        border-right: 1px solid #1b1d1d;
+        border-radius: 8px 8px 0px 0px;
+    }
+
 </style>""",
 unsafe_allow_html=True)
