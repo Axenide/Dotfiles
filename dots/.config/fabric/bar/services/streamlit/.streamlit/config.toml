@@ -6,3 +6,4 @@ textColor="#e0cda5"
 
 [server]
 headless = true
+runOnSave = false

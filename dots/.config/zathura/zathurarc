@@ -5,3 +5,5 @@ set recolor-darkcolor "#928374"
 set adjust-open "width"
 set guioptions ""
 set first-page-column 1:2
+map j feedkeys "<C-Down>"
+map k feedkeys "<C-Up>"

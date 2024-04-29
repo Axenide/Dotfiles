@@ -1,9 +1,10 @@
+import os
 import streamlit as st
 from typing import Generator
 from groq import Groq
 
-st.set_page_config(page_icon="💬", layout="wide",
-                   page_title="Groq Goes Brrrrrrrr...")
+st.set_page_config(page_icon="🔥", layout="wide",
+                   page_title="Ax-Pilot")
 # st.set_page_config(hide_menu=True)
 # def icon(emoji: str):
 #     """Shows an emoji as a Notion-style page icon."""
@@ -15,7 +16,14 @@ st.set_page_config(page_icon="💬", layout="wide",
 
 # icon("🏎️")
 
-# st.subheader("Groq Chat Streamlit App", divider="rainbow", anchor=False)
+username = os.getenv('USER').capitalize()
+
+# st.title(f'🔥 Hello, {username}!')
+# st.title(f'🔥 Ax-Alpha')
+# st.title(f'😸 Ax-Alpha')
+# st.title(f'🔥 Ax-Alpha 😸')
+st.write("<h1 style='text-align: center;'>🔥 Ax-Alpha 😸</h1>", unsafe_allow_html=True)
+"---"
 
 client = Groq(
     api_key=st.secrets["GROQ_API_KEY"],
@@ -30,17 +38,14 @@ if "selected_model" not in st.session_state:
 
 # Define model details
 models = {
-    "gemma-7b-it": {"name": "Gemma-7b-it", "tokens": 8192, "developer": "Google"},
-    "llama2-70b-4096": {"name": "LLaMA2-70b-chat", "tokens": 4096, "developer": "Meta"},
-    "llama3-70b-8192": {"name": "LLaMA3-70b-8192", "tokens": 8192, "developer": "Meta"},
-    "llama3-8b-8192": {"name": "LLaMA3-8b-8192", "tokens": 8192, "developer": "Meta"},
-    "mixtral-8x7b-32768": {"name": "Mixtral-8x7b-Instruct-v0.1", "tokens": 32768, "developer": "Mistral"},
+    "gemma-7b-it": {"name": "Gemma-7b-it", "tokens": 8192, "developer": "Google", "nickname": "Gemma-7b"},
+    "llama2-70b-4096": {"name": "LLaMA2-70b-chat", "tokens": 4096, "developer": "Meta", "nickname": "LLaMA2"},
+    "llama3-70b-8192": {"name": "LLaMA3-70b-8192", "tokens": 8192, "developer": "Meta", "nickname": "LLaMA3-70b"},
+    "llama3-8b-8192": {"name": "LLaMA3-8b-8192", "tokens": 8192, "developer": "Meta", "nickname": "LLaMA3-8b"},
+    "mixtral-8x7b-32768": {"name": "Mixtral-8x7b-Instruct-v0.1", "tokens": 32768, "developer": "Mistral", "nickname": "Mixtral-8x7b"},
 }
 
-# Layout for model selection and max_tokens slider
-col1, col2 = st.columns(2)
-
-with col1:
+with st.sidebar:
     model_option = st.selectbox(
         "Choose a model:",
         options=list(models.keys()),
@@ -55,7 +60,7 @@ if st.session_state.selected_model != model_option:
 
 max_tokens_range = models[model_option]["tokens"]
 
-with col2:
+with st.sidebar:
     # Adjust max_tokens slider dynamically based on the selected model
     max_tokens = st.slider(
         "Max Tokens:",
@@ -66,6 +71,11 @@ with col2:
         step=512,
         help=f"Adjust the maximum number of tokens (words) for the model's response. Max for selected model: {max_tokens_range}"
     )
+
+st.sidebar.write("---")
+
+if st.sidebar.button("Clear Chat"):
+    st.session_state.messages = []
 
 # Display chat messages from history on app rerun
 for message in st.session_state.messages:
@@ -80,7 +90,7 @@ def generate_chat_responses(chat_completion) -> Generator[str, None, None]:
             yield chunk.choices[0].delta.content
 
 
-if prompt := st.chat_input("Enter your prompt here..."):
+if prompt := st.chat_input(f'Talk to {models[model_option]["nickname"]}...'):
     st.session_state.messages.append({"role": "user", "content": prompt})
 
     with st.chat_message("user"):
@@ -118,15 +128,23 @@ if prompt := st.chat_input("Enter your prompt here..."):
         st.session_state.messages.append(
             {"role": "assistant", "content": combined_response})
 
-st.markdown(
-    """
-    <style>
-    *, :root {
-        font-family: 'Iosevka Nerd Font';
-        font-size: 11pt;
-    }
-    header {display: none;}
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+# st.markdown(
+#     """
+#     <style>
+#     *, :root {
+#         font-family: 'Iosevka Nerd Font';
+#     }
+#     header {display: none;}
+#     </style>
+#     """,
+#     unsafe_allow_html=True
+# )
+
+st.markdown("""
+<style>
+	[data-testid="stDecoration"] {
+		display: none;
+	}
+
+</style>""",
+unsafe_allow_html=True)
