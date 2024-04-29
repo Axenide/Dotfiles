@@ -254,11 +254,11 @@ menuitem:hover label {
 #chat-expand-label {
   transition: all 0.25s ease;
   color: #e0cda5;
-  text-shadow: 0px 0px 5px alpha(#db4740, 0.75);
 }
 
 #chat-expand:hover #chat-expand-label {
   color: #db4740;
+  text-shadow: 0px 0px 5px alpha(#db4740, 0.75);
 }
 
 #chat-expand:hover {
@@ -376,7 +376,7 @@ menuitem:hover label {
   color: #db4740;
 }
 
-#webapp {
+#ai-chat {
   border-radius: 8px;
   border: 1px solid #1b1d1d;
   /* padding: 4px; */

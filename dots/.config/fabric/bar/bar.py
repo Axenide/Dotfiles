@@ -166,10 +166,10 @@ class Circles(Box):
                 else 100
             )
 
-class WebApp(Box):
+class AIchat(Box):
     def __init__(self):
         super().__init__(
-            name="webapp",
+            name="ai-chat",
             visible=False,
             all_visible=False,
             h_expand=True,
@@ -628,6 +628,7 @@ class VerticalBar(Window):
         )
         self.wifi_off = False
         self.bluetooth_off = False
+        self.ai_off = True
         self.night_off = True
         self.dnd_off = True
         self.system_tray = SystemTray(name="system-tray", orientation="v", spacing=8, icon_size=18)
@@ -890,7 +891,7 @@ class VerticalBar(Window):
                     # self.wifi_revealer,
                     # self.bluetooth_revealer,
                     self.ext,
-                    # WebApp(),
+                    # AIchat(),
                     # self.calendar,
                     # self.circles,
                     # self.bottom_box,
@@ -905,7 +906,7 @@ class VerticalBar(Window):
             orientation="v",
             children=[
                 self.chat_expand_button,
-                WebApp(),
+                AIchat(),
             ]
         )
         
@@ -938,7 +939,7 @@ class VerticalBar(Window):
                     # self.wifi_revealer,
                     # self.bluetooth_revealer,
                     # self.ext,
-                    # WebApp(),
+                    # AIchat(),
                     # self.calendar,
                     # self.circles,
                     # self.bottom_box,

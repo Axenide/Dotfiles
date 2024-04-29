@@ -3,27 +3,53 @@ import streamlit as st
 from typing import Generator
 from groq import Groq
 
-st.set_page_config(page_icon="🔥", layout="wide",
-                   page_title="Ax-Pilot")
-# st.set_page_config(hide_menu=True)
-# def icon(emoji: str):
-#     """Shows an emoji as a Notion-style page icon."""
-#     st.write(
-#         f'<span style="font-size: 78px; line-height: 1">{emoji}</span>',
-#         unsafe_allow_html=True,
-#     )
-#
-
-# icon("🏎️")
+st.set_page_config(page_icon="🔥",
+                   layout="wide",
+                   page_title="Ax-Alpha")
 
 username = os.getenv('USER').capitalize()
 
-# st.title(f'🔥 Hello, {username}!')
-# st.title(f'🔥 Ax-Alpha')
-# st.title(f'😸 Ax-Alpha')
-# st.title(f'🔥 Ax-Alpha 😸')
-st.write("<h1 style='text-align: center;'>🔥 Ax-Alpha 😸</h1>", unsafe_allow_html=True)
-"---"
+st.write("<h1 style='text-align: center;'><span style='font-size: 72pt; opacity: 0.5;'>🔥</span></h1>", unsafe_allow_html=True)
+
+st.write(
+    """
+    <p style='text-align: center;'>
+    <span style='
+    font-family: Empires;
+    font-size: 48pt;
+    font-weight: 600;
+    position: relative;
+    bottom: 110px;
+    text-shadow:
+    0px -2px 0px #000,
+    0px -1px 0px #000,
+    0px 0px 0px #000,
+    0px 1px 0px #000,
+    0px 2px 0px #000,
+    0px 3px 0px #000,
+    0px 4px 0px #000,
+    0px 5px 0px #000,
+    -2px -2px 0px #000,
+    -2px -1px 0px #000,
+    -2px 0px 0px #000,
+    -2px 1px 0px #000,
+    -2px 2px 0px #000,
+    -2px 3px 0px #000,
+    -2px 4px 0px #000,
+    -2px 5px 0px #000,
+    2px -2px 0px #000,
+    2px -1px 0px #000,
+    2px 0px 0px #000,
+    2px 1px 0px #000,
+    2px 2px 0px #000,
+    2px 3px 0px #000,
+    2px 4px 0px #000,
+    2px 5px 0px #000;
+    '>
+    <span style='color: #db4740; font-style: italic;'>Ax</span><span style='color: #47423e;'>-</span>Alpha</span>
+    </p>
+    """,
+    unsafe_allow_html=True)
 
 client = Groq(
     api_key=st.secrets["GROQ_API_KEY"],
