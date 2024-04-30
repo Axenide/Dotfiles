@@ -114,29 +114,40 @@
 	border-radius: 999px;
 }
 
-#run-button, #media-button, #colorpicker, #chat-expand {
+#run-button,
+#media-button,
+#colorpicker,
+#chat-expand,
+#chat-reload {
 	transition: all 0.25s ease;
-	/* padding: 9px 8px; */
 	background-color: #000;
 	border-radius: 8px;
 	border: 1px solid #1b1d1d;
 }
 
-#run-button:hover, #media-button:hover, #colorpicker:hover, #chat-expand:hover {
+#run-button:hover,
+#media-button:hover,
+#colorpicker:hover,
+#chat-expand:hover,
+#chat-reload:hover {
   background: linear-gradient(#000000, #1b1d1d);
-  /* background: radial-gradient(alpha(#db4740, 0.75), transparent 90%); */
 }
 
-#run-button-image, #media-button-image, #colorpicker-image, #chat-expand-image {
+#run-button-image,
+#media-button-image,
+#colorpicker-image,
+#chat-expand-image,
+#chat-reload-image {
   transition: all 0.25s ease;
-  /* background: radial-gradient(alpha(#db4740, 0.75), transparent 90%); */
   padding: 9px 8px;
 }
 
-#run-button-image-hover, #media-button-image-hover, #colorpicker-image-hover, #chat-expand-image-hover {
-  transition: all 0.25s ease;
+#run-button:hover #run-button-image,
+#media-button:hover #media-button-image,
+#colorpicker:hover #colorpicker-image,
+#chat-expand:hover #chat-expand-image,
+#chat-reload:hover #chat-reload-image {
   background: radial-gradient(alpha(#db4740, 0.75), transparent 90%);
-  padding: 9px 8px;
 }
 
 #shutdown, #reboot, #logout, #suspend, #lock {
@@ -147,7 +158,11 @@
   /* border: 1px solid #1b1d1d; */
 }
 
-#shutdown:hover, #reboot:hover, #logout:hover, #suspend:hover, #lock:hover {
+#shutdown:hover,
+#reboot:hover,
+#logout:hover,
+#suspend:hover,
+#lock:hover {
   background: radial-gradient(alpha(#db4740, 0.75), transparent 90%);
 }
 
@@ -167,31 +182,6 @@
 	border: 1px solid #1b1d1d;
   background: linear-gradient(#000000, #1b1d1d);
 }
-
-
-/* #colorpicker { */
-/* 	transition: all 0.25s ease; */
-/* 	padding: 9px 8px; */
-/* 	background-color: #000; */
-/* 	border-radius: 8px; */
-/* 	border: 1px solid #1b1d1d; */
-/* } */
-/**/
-/* #colorpicker:hover { */
-/*   background: radial-gradient(alpha(#db4740, 0.75), transparent 90%); */
-/* } */
-/**/
-/* #media-button { */
-/* 	transition: all 0.25s ease; */
-/* 	padding: 9px 8px; */
-/* 	background-color: #000; */
-/* 	border-radius: 8px; */
-/* 	border: 1px solid #1b1d1d; */
-/* } */
-/**/
-/* #media-button:hover { */
-/*   background: radial-gradient(alpha(#db4740, 0.75), transparent 90%); */
-/* } */
 
 #system-tray {
   background-color: #000;
@@ -241,28 +231,6 @@ menuitem:hover label {
   /* border: 1px solid #1b1d1d; */
 	/* padding: 0 0 4px 4px; */
 	min-width: 300px;
-}
-
-#chat-expand {
-  transition: all 0.25s ease;
-  background-color: #000;
-  border: 1px solid #1b1d1d;
-  border-radius: 8px;
-  /* padding: 10px; */
-}
-
-#chat-expand-label {
-  transition: all 0.25s ease;
-  color: #e0cda5;
-}
-
-#chat-expand:hover #chat-expand-label {
-  color: #db4740;
-  text-shadow: 0px 0px 5px alpha(#db4740, 0.75);
-}
-
-#chat-expand:hover {
-  background: linear-gradient(#000000, #1b1d1d);
 }
 
 #content-box {
@@ -377,10 +345,8 @@ menuitem:hover label {
 }
 
 #ai-chat {
-  /* border-radius: 8px; */
-  /* border: 0px solid #1b1d1d; */
-  /* padding: 4px; */
-  /* padding: 0 4px; */
+  border-radius: 8px;
+  border: 1px solid #1b1d1d;
 }
 
 #user {

@@ -47,7 +47,8 @@
   > .browserContainer
   > .browserStack
   > browser {
-  border-radius: 5px !important;
+  border-radius: 8px !important;
+  border: 1px solid #1b1d1d !important;
   margin-top: 0px !important;
   margin-bottom: 5px !important;
   margin-left: 0px !important;

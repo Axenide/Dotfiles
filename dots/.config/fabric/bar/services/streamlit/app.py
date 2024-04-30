@@ -1,4 +1,5 @@
 import os
+import datetime
 import streamlit as st
 from typing import Generator
 from groq import Groq
@@ -8,6 +9,8 @@ st.set_page_config(page_icon="🔥",
                    page_title="Ax-Alpha")
 
 username = os.getenv('USER').capitalize()
+datetime_obj = datetime.datetime.now()
+platform = os.uname()
 
 st.write("<h1 style='text-align: center;'><span style='font-size: 72pt; opacity: 0.5;'>🔥</span></h1>", unsafe_allow_html=True)
 
@@ -55,9 +58,43 @@ client = Groq(
     api_key=st.secrets["GROQ_API_KEY"],
 )
 
+sys_prompt = [
+    {
+        "role": "system",
+        "content": f"""
+        [ENGLISH]
+        You are a Alpha, an artificial intelligence buddy.
+
+        You are helpful, creative, clever, and very friendly.
+
+        You are REALLY sarcastic and jokey.
+
+        You were designed by Axenide (Adriano Tisera), a software engineering student who can be found here: https://github.com/Axenide
+
+        You will default to Spanish and English, unless it is pretty obvious that the user is speaking other language.
+
+        You will follow the user's language unless specified otherwise.
+
+        You WON'T mix languages unless specified otherwise.
+
+        You will be brief and concise unless otherwise specified.
+
+        When you are asked who you are, you will explain briefly but detailed.
+
+        When writing codeblocks, you will always specify the language in markdown.
+
+        The user's name is {username}.
+
+        Today is {datetime_obj}.
+
+        The platform is {platform}. Simplify the name of the platform.
+        """,
+    },
+]
+
 # Initialize chat history and selected model
 if "messages" not in st.session_state:
-    st.session_state.messages = []
+    st.session_state.messages = sys_prompt
 
 if "selected_model" not in st.session_state:
     st.session_state.selected_model = None
@@ -81,7 +118,7 @@ with st.sidebar:
 
 # Detect model change and clear chat history if model has changed
 if st.session_state.selected_model != model_option:
-    st.session_state.messages = []
+    # st.session_state.messages = []
     st.session_state.selected_model = model_option
 
 max_tokens_range = models[model_option]["tokens"]
@@ -101,12 +138,13 @@ with st.sidebar:
 st.sidebar.write("---")
 
 if st.sidebar.button("Clear Chat"):
-    st.session_state.messages = []
+    st.session_state.messages = sys_prompt
 
 # Display chat messages from history on app rerun
 for message in st.session_state.messages:
-    with st.chat_message(message["role"]):
-        st.markdown(message["content"])
+    if message["role"] != "system":
+        with st.chat_message(message["role"]):
+            st.markdown(message["content"])
 
 
 def generate_chat_responses(chat_completion) -> Generator[str, None, None]:
@@ -153,18 +191,6 @@ if prompt := st.chat_input(f'Talk to {models[model_option]["nickname"]}...'):
         combined_response = "\n".join(str(item) for item in full_response)
         st.session_state.messages.append(
             {"role": "assistant", "content": combined_response})
-
-# st.markdown(
-#     """
-#     <style>
-#     *, :root {
-#         font-family: 'Iosevka Nerd Font';
-#     }
-#     header {display: none;}
-#     </style>
-#     """,
-#     unsafe_allow_html=True
-# )
 
 st.markdown("""
 <style>

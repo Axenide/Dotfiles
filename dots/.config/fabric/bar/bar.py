@@ -166,7 +166,7 @@ class Circles(Box):
                 else 100
             )
 
-class AIchat(Box):
+class AIchat(WebView):
     def __init__(self):
         super().__init__(
             name="ai-chat",
@@ -174,24 +174,8 @@ class AIchat(Box):
             all_visible=False,
             h_expand=True,
             v_expand=True,
-        )
-        self.webview = WebView(
-            name="calendar-webview",
-            h_expand=True,
-            v_expand=True,
-            # url="file://" + str(get_relative_path("calendar/index.html")),
-            # url="https://www.google.com/",
-            # url="https://niek.github.io/chatgpt-web/",
             url="http://localhost:8501/",
         )
-        self.bg()
-        self.add(self.webview)
-
-    def bg(self):
-        self.webview.set_app_paintable(True)
-        self.webview.set_background_color(Gdk.RGBA(0, 0, 0, 0))
-        return True
-
 
 class User(Box):
     def __init__(self):
@@ -670,6 +654,15 @@ class VerticalBar(Window):
             )
         )
 
+        self.chat_reload = Button(
+            name="chat-reload",
+            h_expand=False,
+            child=Image(
+                name="chat-reload-image",
+                image_file=get_relative_path("assets/refresh.svg")
+            )
+        )
+
         self.center_box = CenterBox(name="main-window", orientation="v")
 
         self.run_button = Button(
@@ -773,7 +766,7 @@ class VerticalBar(Window):
             h_expand=True,
             child=self.dnd_icon,
         )
-        for btn in [self.run_button, self.colorpicker, self.media_button, self.time_button, self.wifi_button, self.bluetooth_button, self.night_button, self.dnd_button, self.chat_expand_button]:
+        for btn in [self.run_button, self.colorpicker, self.media_button, self.time_button, self.wifi_button, self.bluetooth_button, self.night_button, self.dnd_button, self.chat_expand_button, self.chat_reload]:
             bulk_connect(
                 btn,
                 {
@@ -910,6 +903,7 @@ class VerticalBar(Window):
             spacing=4,
             children=[
                 self.chat_expand_button,
+                self.chat_reload,
             ]
         )
 
@@ -997,15 +991,6 @@ class VerticalBar(Window):
                     self.chat_box.set_reveal_child(False)
                     self.set_keyboard_mode("none")
         
-        # elif button == self.power_button:
-        #     commands = {
-        #         1: f'{home_dir}/.config/rofi/powermenu/powermenu.sh',
-        #         3: 'notify-send "Placeholder" "xDDDDD"'
-        #     }
-        #     command = commands.get(event.button)
-        #     if command:
-        #         return exec_shell_command(command)
-        
         elif button == self.colorpicker:
             commands = {
                 1: get_relative_path('scripts/hyprpicker-hex.sh'),
@@ -1032,15 +1017,6 @@ class VerticalBar(Window):
             command = commands.get(event.button)
             if command:
                 return exec_shell_command(command)
-
-        # elif button == self.shutdown:
-        #     commands = {
-        #         # 1: 'systemctl poweroff',
-        #         1: 'notify-send "Shutting Down"',
-        #     }
-        #     command = commands.get(event.button)
-        #     if command:
-        #         return exec_shell_command(command)
         
         elif button == self.wifi_button:
             commands = {
@@ -1124,17 +1100,14 @@ class VerticalBar(Window):
                 self.chat_box_content.set_style('min-width: 300px;')
                 self.chat_expand_button.get_children()[0].set_from_file(get_relative_path('assets/maximize.svg'))
 
+        elif button == self.chat_reload:
+            self.chat.reload()
+
     def on_button_hover(self, button: Button, event):
         self.media_button.set_tooltip_text(str(exec_shell_command('playerctl metadata artist -f "{{ artist }} - {{ title }}"')).rstrip())
-        buttons = [self.run_button, self.media_button, self.colorpicker, self.chat_expand_button]
-        if button in buttons:
-            button.get_children()[0].set_name(button.get_name() + "-image-hover")
         return self.change_cursor("pointer")
 
     def on_button_unhover(self, button: Button, event):
-        buttons = [self.run_button, self.media_button, self.colorpicker, self.chat_expand_button]
-        if button in buttons:
-            button.get_children()[0].set_name(button.get_name() + "-image")
         return self.change_cursor("default")
     
     def signals(self, sig, frame):
