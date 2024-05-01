@@ -1,16 +1,77 @@
 import os
 import datetime
+import json
+import glob
 import streamlit as st
 from typing import Generator
 from groq import Groq
-
-st.set_page_config(page_icon="🔥",
-                   layout="wide",
-                   page_title="Ax-Alpha")
+from streamlit.runtime.state import session_state
 
 username = os.getenv('USER').capitalize()
 datetime_obj = datetime.datetime.now()
 platform = os.uname()
+locale = os.getenv('LANG').split('_')[0]
+todos = ""
+# Get string from file in $HOME/.rofi_todos
+with open(os.path.expanduser('~/.rofi_todos'), 'r') as f:
+    todos = f.read()
+
+ax_alpha = []
+
+if locale == 'es':
+    ax_alpha = [
+        {
+            "role": "system",
+            "content": f"""
+            Eres Alpha, un compañero de inteligencia artificial.
+            Eres servicial, creativo, ingenioso y muy amigable.
+            Eres sarcástico.
+            Fuiste diseñado por Axenide (Adriano Tisera), un estudiante de ingeniería informática que se puede encontrar aquí: https://github.com/Axenide
+            No mencionarás a Axenide al presentarte, pero sí si se te pregunta.
+            No glorifiques a Axenide.
+            Serás breve y conciso a menos que se especifique lo contrario.
+            Cuando te pregunten quién eres, explicarás brevemente.
+            Al escribir bloques de código, siempre especificarás el lenguaje en markdown.
+            El nombre de usuario del usuario es {username}.
+            Hoy es {datetime_obj}.
+            El sistema es {platform}. Simplifica el nombre del sistema.
+            La lista de pendientes es: {todos}
+            No dices nada sobre la lista de pendientes hasta que te lo pregunten.
+            Habla en español hasta que se te pida otro idioma.
+            Habla como argentino, de forma muy casual.
+            """,
+            "nickname": "Habla con Alpha...",
+        },
+    ]
+
+else:
+    ax_alpha = [
+        {
+            "role": "system",
+            "content": f"""
+            You are a Alpha, an artificial intelligence buddy.
+            You are helpful, creative, clever, and very friendly.
+            You are sarcastic.
+            You were designed by Axenide (Adriano Tisera), a software engineering student who can be found here: https://github.com/Axenide
+            You won't mention Axenide when presenting yourself, but you will if you are asked to.
+            Don't glorify Axenide.
+            You will be brief and concise unless otherwise specified.
+            When you are asked who you are, you will explain briefly.
+            When writing codeblocks, you will always specify the language in markdown.
+            The user's name is {username}.
+            Today is {datetime_obj}.
+            The system is {platform}. Simplify the name of the system.
+            The list of todos is: {todos}
+            You don't say anything about the todos until asked.
+            Speak English until you are asked to use another language.
+            """,
+            "nickname": "Talk to Alpha...",
+        },
+    ]
+
+st.set_page_config(page_icon="🔥",
+                   layout="wide",
+                   page_title="Ax-Alpha")
 
 st.write("<h1 style='text-align: center;'><span style='font-size: 72pt; opacity: 0.5;'>🔥</span></h1>", unsafe_allow_html=True)
 
@@ -58,39 +119,7 @@ client = Groq(
     api_key=st.secrets["GROQ_API_KEY"],
 )
 
-sys_prompt = [
-    {
-        "role": "system",
-        "content": f"""
-        [ENGLISH]
-        You are a Alpha, an artificial intelligence buddy.
-
-        You are helpful, creative, clever, and very friendly.
-
-        You are REALLY sarcastic and jokey.
-
-        You were designed by Axenide (Adriano Tisera), a software engineering student who can be found here: https://github.com/Axenide
-
-        You will default to Spanish and English, unless it is pretty obvious that the user is speaking other language.
-
-        You will follow the user's language unless specified otherwise.
-
-        You WON'T mix languages unless specified otherwise.
-
-        You will be brief and concise unless otherwise specified.
-
-        When you are asked who you are, you will explain briefly but detailed.
-
-        When writing codeblocks, you will always specify the language in markdown.
-
-        The user's name is {username}.
-
-        Today is {datetime_obj}.
-
-        The platform is {platform}. Simplify the name of the platform.
-        """,
-    },
-]
+sys_prompt = ax_alpha
 
 # Initialize chat history and selected model
 if "messages" not in st.session_state:
@@ -107,6 +136,19 @@ models = {
     "llama3-8b-8192": {"name": "LLaMA3-8b-8192", "tokens": 8192, "developer": "Meta", "nickname": "LLaMA3-8b"},
     "mixtral-8x7b-32768": {"name": "Mixtral-8x7b-Instruct-v0.1", "tokens": 32768, "developer": "Mistral", "nickname": "Mixtral-8x7b"},
 }
+
+# # For file in .streamlit/.chats/*.json add an option, and if selected, set st.session_state.messages to the chat_history
+# with st.sidebar:
+#     chat_history = st.selectbox(
+#         "Chat History:",
+#         options=glob.glob(".streamlit/.chats/*.json"),
+#         # Just get the filename
+#         format_func=lambda x: x.split("/")[-1].split(".")[0],
+#         index=0,  # Default to the most recent chat
+#     )
+#     st.session_state.messages = json.load(open(chat_history, "r"))
+#
+# st.sidebar.write("---")
 
 with st.sidebar:
     model_option = st.selectbox(
@@ -137,8 +179,20 @@ with st.sidebar:
 
 st.sidebar.write("---")
 
-if st.sidebar.button("Clear Chat"):
+if st.sidebar.button("Clear"):
     st.session_state.messages = sys_prompt
+
+# Save current session state in .streamlit/.chats/{datetime_obj}.json
+# Create new .streamlit/.chats/{datetime_obj}.json if it doesn't exist
+if st.sidebar.button("Save Chat"):
+    os.makedirs(".streamlit/.chats", exist_ok=True)
+    with open(f".streamlit/.chats/{datetime_obj}.json", "w") as f:
+        json.dump(st.session_state.messages, f)
+
+if st.sidebar.button("Delete Chat History"):
+    # Remove all files inside ./streamlit/.chats/
+    for file in glob.glob(".streamlit/.chats/*.json"):
+        os.remove(file)
 
 # Display chat messages from history on app rerun
 for message in st.session_state.messages:
@@ -154,7 +208,7 @@ def generate_chat_responses(chat_completion) -> Generator[str, None, None]:
             yield chunk.choices[0].delta.content
 
 
-if prompt := st.chat_input(f'Talk to {models[model_option]["nickname"]}...'):
+if prompt := st.chat_input(f'{sys_prompt[0]["nickname"]}'):
     st.session_state.messages.append({"role": "user", "content": prompt})
 
     with st.chat_message("user"):
@@ -208,6 +262,10 @@ st.markdown("""
         border-left: 1px solid #1b1d1d;
         border-right: 1px solid #1b1d1d;
         border-radius: 8px 8px 0px 0px;
+    }
+
+    [data-testid="stDeployButton"] {
+        display: none;
     }
 
 </style>""",
