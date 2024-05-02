@@ -161,7 +161,7 @@ Also it will install `yay`, but you can skip the installation and use any AUR he
 | <kbd>SUPER + ALT + B</kbd>                            | Restart Waybar                  |
 | <kbd>SUPER + Space</kbd>                              | Toggle tiled/floating           |
 | <kbd>SUPER + P</kbd>                                  | Toggle pseudo-tiling            |
-| <kbd>SUPER + D</kbd>                                  | Toggle split                    |
+| <kbd>SUPER + SHIFT + D</kbd>                                  | Toggle split                    |
 | <kbd>SUPER + F</kbd>                                  | Fullscreen                      |
 | <kbd>SUPER + SHIFT + F</kbd>                          | Fake Fullscreen                 |
 | <kbd>SUPER + CTRL + F</kbd>                            | Maximize                        |
@@ -194,7 +194,8 @@ Also it will install `yay`, but you can skip the installation and use any AUR he
 | <kbd>Print</kbd>                                      | Save and copy screenshot        |
 | <kbd>SHIFT + Print</kbd>                              | Copy screenshot                 |
 | <kbd>SUPER + SHIFT + S</kbd>                          | Copy area screenshot            |
-| <kbd>SUPER + A</kbd>                                  | Toggle notification center      |
+| <kbd>SUPER + D</kbd>                                  | Toggle Dashboard                    |
+| <kbd>SUPER + A</kbd>                                  | Talk with Alpha              |
 
 ### Tmux
 
