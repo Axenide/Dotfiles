@@ -627,20 +627,22 @@ class VerticalBar(Window):
             transition_type="slide-right",
         )
 
-        self.default_box = Revealer(
+        self.dashboard_box = Revealer(
+            # name="content-box",
+            transition_duration=500,
+            transition_type="slide-left",
+            # reveal_child=True,
+            # h_expand=True,
+            # v_expand=True,
+        )
+
+        self.chat_box = Revealer(
             # name="content-box",
             transition_duration=500,
             transition_type="slide-right",
             # reveal_child=True,
             h_expand=True,
             v_expand=True,
-        )
-
-        self.chat_box = Revealer(
-            # name="chat-box",
-            transition_duration=500,
-            transition_type="slide-left",
-            reveal_child=False,
         )
 
         self.chat_expand = False
@@ -660,6 +662,15 @@ class VerticalBar(Window):
             child=Image(
                 name="chat-reload-image",
                 image_file=get_relative_path("assets/refresh.svg")
+            )
+        )
+
+        self.chat_detach = Button(
+            name="chat-detach",
+            h_expand=False,
+            child=Image(
+                name="chat-detach-image",
+                image_file=get_relative_path("assets/external.svg")
             )
         )
 
@@ -766,7 +777,22 @@ class VerticalBar(Window):
             h_expand=True,
             child=self.dnd_icon,
         )
-        for btn in [self.run_button, self.colorpicker, self.media_button, self.time_button, self.wifi_button, self.bluetooth_button, self.night_button, self.dnd_button, self.chat_expand_button, self.chat_reload]:
+
+        self.buttons = [
+            self.run_button,
+            self.colorpicker,
+            self.media_button,
+            self.time_button,
+            self.wifi_button,
+            self.bluetooth_button,
+            self.night_button,
+            self.dnd_button,
+            self.chat_expand_button,
+            self.chat_reload,
+            self.chat_detach
+        ]
+
+        for btn in self.buttons:
             bulk_connect(
                 btn,
                 {
@@ -871,9 +897,9 @@ class VerticalBar(Window):
 
         self.calendar = Gtk.Calendar(name="calendar", hexpand=True)
 
-        self.default_box.add(
+        self.dashboard_box.add(
             Box(
-                name="default-box",
+                name="dashboard-box",
                 spacing=4,
                 orientation="v",
                 h_expand=True,
@@ -904,6 +930,7 @@ class VerticalBar(Window):
             children=[
                 self.chat_expand_button,
                 self.chat_reload,
+                self.chat_detach,
             ]
         )
 
@@ -927,8 +954,8 @@ class VerticalBar(Window):
             h_expand=True,
             v_expand=True,
             children=[
-                self.default_box,
                 self.chat_box,
+                self.dashboard_box,
             ]
         )
         
@@ -984,10 +1011,10 @@ class VerticalBar(Window):
                 return exec_shell_command(command)
             else:
                 self.content_box.set_reveal_child(not self.content_box.get_reveal_child())
-                self.default_box.set_reveal_child(not self.default_box.get_reveal_child())
+                self.dashboard_box.set_reveal_child(not self.dashboard_box.get_reveal_child())
 
                 if self.content_box.get_reveal_child() == False:
-                    self.default_box.set_reveal_child(False)
+                    self.dashboard_box.set_reveal_child(False)
                     self.chat_box.set_reveal_child(False)
                     self.set_keyboard_mode("none")
         
@@ -1103,6 +1130,11 @@ class VerticalBar(Window):
         elif button == self.chat_reload:
             self.chat.reload()
 
+        elif button == self.chat_detach:
+            self.content_box.set_reveal_child(False)
+            self.chat_box.set_reveal_child(False)
+            return exec_shell_command_async(get_relative_path(f'scripts/webview.py http://localhost:8501/'), lambda *args: None)
+
     def on_button_hover(self, button: Button, event):
         self.media_button.set_tooltip_text(str(exec_shell_command('playerctl metadata artist -f "{{ artist }} - {{ title }}"')).rstrip())
         return self.change_cursor("pointer")
@@ -1112,19 +1144,19 @@ class VerticalBar(Window):
     
     def signals(self, sig, frame):
         if sig == signal.SIGUSR1:
-            self.default_box.set_reveal_child(not self.default_box.get_reveal_child())
+            self.dashboard_box.set_reveal_child(not self.dashboard_box.get_reveal_child())
             self.chat_box.set_reveal_child(False)
 
         if sig == signal.SIGUSR2:
             self.chat_box.set_reveal_child(not self.chat_box.get_reveal_child())
-            self.default_box.set_reveal_child(False)
+            self.dashboard_box.set_reveal_child(False)
 
         if self.chat_box.get_reveal_child() == True:
             self.set_keyboard_mode("on-demand")
         else:
             self.set_keyboard_mode("none")
 
-        if self.default_box.get_reveal_child() == False and self.chat_box.get_reveal_child() == False:
+        if self.dashboard_box.get_reveal_child() == False and self.chat_box.get_reveal_child() == False:
             self.content_box.set_reveal_child(False)
         else:
             self.content_box.set_reveal_child(True)

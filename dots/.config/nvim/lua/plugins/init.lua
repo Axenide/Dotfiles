@@ -35,6 +35,11 @@ return {
     ft = "markdown",
     cmd = {"MarkdownPreview", "MarkdownPreviewStop"},
     build = "cd app && yarn install && git reset --hard",
+    config = function()
+      local plugin_dir = vim.fn.stdpath("config") .. "/lua/plugins/"
+      vim.g.mkdp_browser = plugin_dir .. "webview.py"
+      vim.g.mkdp_auto_close = 0
+    end,
   },
   {
     "nvim-treesitter/nvim-treesitter",
