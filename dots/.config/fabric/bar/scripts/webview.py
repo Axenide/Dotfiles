@@ -15,7 +15,7 @@ class WebView(Gtk.Window):
         scrolled_window = Gtk.ScrolledWindow()
         scrolled_window.add(self.webview)
         self.add(scrolled_window)
-        self.webview.connect("close", Gtk.main_quit)
+        self.connect("destroy", Gtk.main_quit)
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
