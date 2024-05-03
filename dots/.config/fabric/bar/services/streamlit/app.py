@@ -17,6 +17,7 @@ with open(os.path.expanduser('~/.rofi_todos'), 'r') as f:
     todos = f.read()
 
 ax_alpha = []
+dynamic_prompt = []
 
 if locale == 'es':
     ax_alpha = [
@@ -38,11 +39,14 @@ if locale == 'es':
             La lista de pendientes es: {todos}
             No dices nada sobre la lista de pendientes hasta que te lo pregunten.
             Habla en español hasta que se te pida otro idioma.
-            Habla como argentino, de forma muy casual.
+            Habla como argentino, de forma casual.
             """,
             "nickname": "Habla con Alpha...",
         },
     ]
+    dynamic_prompt = f"""
+    Fecha y hora actual: {datetime_obj}.
+    """
 
 else:
     ax_alpha = [
@@ -68,6 +72,9 @@ else:
             "nickname": "Talk to Alpha...",
         },
     ]
+    dynamic_prompt = f"""
+    Current date and time: {datetime_obj}.
+    """
 
 st.set_page_config(page_icon="🔥",
                    layout="wide",
@@ -123,7 +130,7 @@ sys_prompt = ax_alpha
 
 # Initialize chat history and selected model
 if "messages" not in st.session_state:
-    st.session_state.messages = sys_prompt
+    st.session_state.messages = []
 
 if "selected_model" not in st.session_state:
     st.session_state.selected_model = None
@@ -131,7 +138,6 @@ if "selected_model" not in st.session_state:
 # Define model details
 models = {
     "gemma-7b-it": {"name": "Gemma-7b-it", "tokens": 8192, "developer": "Google", "nickname": "Gemma-7b"},
-    "llama2-70b-4096": {"name": "LLaMA2-70b-chat", "tokens": 4096, "developer": "Meta", "nickname": "LLaMA2"},
     "llama3-70b-8192": {"name": "LLaMA3-70b-8192", "tokens": 8192, "developer": "Meta", "nickname": "LLaMA3-70b"},
     "llama3-8b-8192": {"name": "LLaMA3-8b-8192", "tokens": 8192, "developer": "Meta", "nickname": "LLaMA3-8b"},
     "mixtral-8x7b-32768": {"name": "Mixtral-8x7b-Instruct-v0.1", "tokens": 32768, "developer": "Mistral", "nickname": "Mixtral-8x7b"},
@@ -155,7 +161,7 @@ with st.sidebar:
         "Choose a model:",
         options=list(models.keys()),
         format_func=lambda x: models[x]["name"],
-        index=2  # Default to LLaMA3-70b-8192
+        index=1  # Default to LLaMA3-70b-8192
     )
 
 # Detect model change and clear chat history if model has changed
@@ -180,7 +186,7 @@ with st.sidebar:
 st.sidebar.write("---")
 
 if st.sidebar.button("Clear"):
-    st.session_state.messages = sys_prompt
+    st.session_state.messages = []
 
 # Save current session state in .streamlit/.chats/{datetime_obj}.json
 # Create new .streamlit/.chats/{datetime_obj}.json if it doesn't exist
@@ -209,6 +215,9 @@ def generate_chat_responses(chat_completion) -> Generator[str, None, None]:
 
 
 if prompt := st.chat_input(f'{sys_prompt[0]["nickname"]}'):
+    if st.session_state.messages == []:
+        st.session_state.messages = sys_prompt
+    st.session_state.messages.append({"role": "system", "content": f"{dynamic_prompt}"})
     st.session_state.messages.append({"role": "user", "content": prompt})
 
     with st.chat_message("user"):

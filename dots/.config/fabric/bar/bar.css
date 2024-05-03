@@ -114,6 +114,17 @@
 	border-radius: 999px;
 }
 
+#chat-url {
+  background-color: #000;
+  border-radius: 8px;
+  border: 1px solid #1b1d1d;
+  padding: 9px;
+}
+
+#chat-url label {
+  color: #928374;
+}
+
 #run-button,
 #media-button,
 #colorpicker,

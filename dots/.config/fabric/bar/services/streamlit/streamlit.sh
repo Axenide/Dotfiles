@@ -12,4 +12,4 @@ source venv/bin/activate
 pip install -r requirements.txt
 
 # Run the Streamlit app
-streamlit run app.py --server.port 8501
+streamlit run app.py --server.port 3141

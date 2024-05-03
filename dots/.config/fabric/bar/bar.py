@@ -174,7 +174,7 @@ class AIchat(WebView):
             all_visible=False,
             h_expand=True,
             v_expand=True,
-            url="http://localhost:8501/",
+            url="http://localhost:3141/",
         )
 
 class User(Box):
@@ -665,6 +665,14 @@ class VerticalBar(Window):
             )
         )
 
+        self.chat_url = Button(
+            name="chat-url",
+            label="localhost:3141",
+            h_expand=True,
+            v_expand=True,
+            v_align="center",
+        )
+
         self.chat_detach = Button(
             name="chat-detach",
             h_expand=False,
@@ -789,6 +797,7 @@ class VerticalBar(Window):
             self.dnd_button,
             self.chat_expand_button,
             self.chat_reload,
+            self.chat_url,
             self.chat_detach
         ]
 
@@ -930,6 +939,7 @@ class VerticalBar(Window):
             children=[
                 self.chat_expand_button,
                 self.chat_reload,
+                self.chat_url,
                 self.chat_detach,
             ]
         )
@@ -1133,7 +1143,11 @@ class VerticalBar(Window):
         elif button == self.chat_detach:
             self.content_box.set_reveal_child(False)
             self.chat_box.set_reveal_child(False)
-            return exec_shell_command_async(get_relative_path(f'scripts/webview.py http://localhost:8501/'), lambda *args: None)
+            return exec_shell_command_async(get_relative_path(f'scripts/webview.py http://localhost:3141/'), lambda *args: None)
+
+        elif button == self.chat_url:
+            # Open url in default browser
+            return exec_shell_command_async('xdg-open http://localhost:3141/', lambda *args: None)
 
     def on_button_hover(self, button: Button, event):
         self.media_button.set_tooltip_text(str(exec_shell_command('playerctl metadata artist -f "{{ artist }} - {{ title }}"')).rstrip())
