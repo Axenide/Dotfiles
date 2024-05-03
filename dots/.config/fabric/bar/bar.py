@@ -1146,7 +1146,8 @@ class VerticalBar(Window):
             return exec_shell_command_async(get_relative_path(f'scripts/webview.py http://localhost:3141/'), lambda *args: None)
 
         elif button == self.chat_url:
-            # Open url in default browser
+            self.content_box.set_reveal_child(False)
+            self.chat_box.set_reveal_child(False)
             return exec_shell_command_async('xdg-open http://localhost:3141/', lambda *args: None)
 
     def on_button_hover(self, button: Button, event):
