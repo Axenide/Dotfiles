@@ -276,6 +276,7 @@ menuitem:hover label {
 #bluetooth-button,
 #night-button,
 #dnd-button {
+  transition: all 0.25s ease;
   background: linear-gradient(to bottom, #000000 0%, #000000 95%, #b1b946 95%, #b1b946 100%);
 	border: 1px solid #1b1d1d;
 	border-radius: 8px;
@@ -301,6 +302,7 @@ menuitem:hover label {
 #bluetooth-button-off:hover,
 #night-button-off:hover,
 #dnd-button-off:hover {
+  transition: all 0.25s ease;
   background: linear-gradient(to bottom, #000000 0%, #1b1d1d 95%, #928374 95%, #928374 100%);
 }
 
@@ -466,4 +468,11 @@ menuitem:hover label {
   font-size: 20pt;
   font-weight: bold;
   font-style: italic;
+}
+
+#wall-scroll {
+  background-color: #000;
+  border: 1px solid #1b1d1d;
+  border-radius: 8px;
+  padding: 4px;
 }

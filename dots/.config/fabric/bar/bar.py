@@ -11,9 +11,12 @@ from fabric.widgets.image import Image
 from fabric.widgets.label import Label
 from fabric.widgets.button import Button
 from fabric.widgets.wayland import Window
+from fabric.widgets.scrolled_window import ScrolledWindow
 from fabric.widgets.date_time import DateTime
 from fabric.widgets.centerbox import CenterBox
 from fabric.widgets.revealer import Revealer
+from fabric.widgets.stack import Stack
+from fabric.widgets.scale import Scale
 from fabric.widgets.webview import WebView
 # from fabric.utils.applications import Application
 from fabric.system_tray.widgets import SystemTray
@@ -273,7 +276,7 @@ class Player(Box):
             )
         )
 
-        self.cover_file = "file:///home/adriano/Imágenes/Wallpapers/current.wall"
+        self.cover_file = f"{os.getenv('XDG_PICTURES_DIR')}/Wallpapers/current.wall"
 
         self.title = Label(
             name="title",
@@ -599,6 +602,35 @@ class Power(EventBox):
             exec_shell_command("notify-send 'Shutting down system'")
         return True
 
+class Wallpapers(Revealer):
+    def __init__(self):
+        super().__init__(
+            name="wallpapers",
+            h_expand=True,
+            v_expand=True,
+            transition_type="slide-left",
+            transition_duration=500,
+            reveal_child=True,
+        )
+
+        self.wall_box = Box(
+            name="wall-box",
+            orientation="v",
+            spacing=4,
+            h_expand=True,
+            children=[
+            ]
+        )
+
+        self.wall_scroll = ScrolledWindow(
+            name="wall-scroll",
+            h_expand=True,
+            v_expand=True,
+            child=self.wall_box
+        )
+
+        self.add(self.wall_scroll)
+
 class VerticalBar(Window):
     def __init__(self):
         super().__init__(
@@ -898,6 +930,8 @@ class VerticalBar(Window):
             ]
         )
 
+        self.wallpapers = Wallpapers()
+
         self.user = User()
 
         self.circles = Circles()
@@ -966,6 +1000,7 @@ class VerticalBar(Window):
             children=[
                 self.chat_box,
                 self.dashboard_box,
+                # self.wallpapers,
             ]
         )
         
