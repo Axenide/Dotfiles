@@ -16,7 +16,7 @@
 }
 
 .tabbrowser-tab[selected] .tab-content {
-    border: 1px solid #db4740;
+    border: 1px solid #db474080;
 }
 
 .tabbrowser-tab:not([selected]) .tab-content {
@@ -49,7 +49,7 @@
   > browser {
   border-radius: 8px !important;
   border: 1px solid #1b1d1d !important;
-  margin-top: 0px !important;
+  margin-top: 2px !important;
   margin-bottom: 5px !important;
   margin-left: 0px !important;
   margin-right: 0px !important;
@@ -79,8 +79,8 @@
 }
 
 .browser-toolbar {
-  margin-top: 0px;
-  margin-bottom: 2px;
+  margin-top: 1px;
+  margin-bottom: 0px;
 }
 
 #urlbar:hover #identity-box,

@@ -119,7 +119,7 @@
   background-color: #000;
   border-radius: 8px;
   border: 1px solid #1b1d1d;
-  padding: 9px;
+  padding: 9px 0;
 }
 
 #chat-url label {
@@ -465,7 +465,14 @@ menuitem:hover label {
 
 #ext-label {
   color: #47423e;
-  font-size: 20pt;
+  font-size: 16pt;
+  font-weight: bold;
+  font-style: italic;
+}
+
+#ext-label-2 {
+  color: #47423e;
+  font-size: 11pt;
   font-weight: bold;
   font-style: italic;
 }

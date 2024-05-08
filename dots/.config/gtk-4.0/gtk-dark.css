@@ -6174,6 +6174,7 @@ popover.entry-completion > contents {
 
 .nautilus-window .nautilus-grid-view.view {
   margin: 0 6px 6px;
+  padding: 0;
 }
 
 .nautilus-window .nautilus-grid-view.view,

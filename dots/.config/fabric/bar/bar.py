@@ -177,7 +177,7 @@ class AIchat(WebView):
             all_visible=False,
             h_expand=True,
             v_expand=True,
-            url="http://localhost:3141/",
+            url="http://localhost:3141/Alpha",
         )
 
 class User(Box):
@@ -699,7 +699,7 @@ class VerticalBar(Window):
 
         self.chat_url = Button(
             name="chat-url",
-            label="localhost:3141",
+            label="localhost:3141/Alpha",
             h_expand=True,
             v_expand=True,
             v_align="center",
@@ -923,8 +923,9 @@ class VerticalBar(Window):
                     v_align="center",
                     spacing=8,
                     children=[
-                        Label(name="ext-label", label="Work In Progress"),
-                        Image(image_file=get_relative_path("assets/tool.svg")),
+                        Label(name="ext-label", label="No Notifications!"),
+                        Image(image_file=get_relative_path("assets/bell-check.svg")),
+                        Label(name="ext-label-2", label="(Because I haven't coded that yet)"),
                     ]
                 )
             ]
@@ -1178,12 +1179,12 @@ class VerticalBar(Window):
         elif button == self.chat_detach:
             self.content_box.set_reveal_child(False)
             self.chat_box.set_reveal_child(False)
-            return exec_shell_command_async(get_relative_path(f'scripts/webview.py http://localhost:3141/'), lambda *args: None)
+            return exec_shell_command_async(get_relative_path(f'scripts/webview.py http://localhost:3141/Alpha'), lambda *args: None)
 
         elif button == self.chat_url:
             self.content_box.set_reveal_child(False)
             self.chat_box.set_reveal_child(False)
-            return exec_shell_command_async('xdg-open http://localhost:3141/', lambda *args: None)
+            return exec_shell_command_async('xdg-open http://localhost:3141/Alpha', lambda *args: None)
 
     def on_button_hover(self, button: Button, event):
         self.media_button.set_tooltip_text(str(exec_shell_command('playerctl metadata artist -f "{{ artist }} - {{ title }}"')).rstrip())
