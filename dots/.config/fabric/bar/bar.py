@@ -1216,6 +1216,6 @@ if __name__ == "__main__":
     bar = VerticalBar()  # entery point
     signal.signal(signal.SIGUSR1, bar.signals)
     signal.signal(signal.SIGUSR2, bar.signals)
-    setproctitle.setproctitle("axbar")
+    setproctitle.setproctitle("ax_bar")
     set_stylesheet_from_file(get_relative_path("bar.css"))
     fabric.start()
