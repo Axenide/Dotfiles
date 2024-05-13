@@ -7,12 +7,12 @@
 }
 
 #main-window {
-	border-right: solid 1px #1b1d1d;
-	background-color: #000;
-	border-radius: 0px;
-	margin-right: 10px;
+	/* border-right: solid 1px #1b1d1d; */
+	/* background-color: #000; */
+	/* border-radius: 10px; */
+	/* margin-right: 10px; */
   padding: 4px;
-	box-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
+	/* box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); */
 }
 
 #workspaces {
@@ -23,7 +23,6 @@
 }
 
 #workspaces>button {
-	/* background-color: #e0cda5; */
   border: 2px solid #e0cda5;
 	border-radius: 999px;
 	min-width: 6px;
@@ -36,51 +35,16 @@
 }
 
 #workspaces>button.active {
-	/* background-color: #db4740; */
   border: 2px solid #db4740;
 	min-height: 48px;
 }
 
 #workspaces>button.empty {
-	/* background-color: #47423e; */
   border: 2px solid #47423e;
 }
 
 #workspaces>button:hover {
-	/* background-color: #db4740; */
   border: 2px solid #db4740;
-}
-
-#power-window {
-	border: solid 1px;
-	background-color: rgba(0, 0, 0, 0.24);
-	border-radius: 5px;
-	padding: 8px;
-}
-
-#shut-down-button,
-#reboot-button,
-#logout-button {
-	border-radius: 2px;
-	padding: 7px 12px;
-	background-color: #32de8a;
-	border-radius: 2px;
-}
-
-#shut-down-button {
-	background-color: #de6e32;
-}
-
-#shut-down-button>label,
-#reboot-button>label,
-#logout-button>label {
-	color: #233c2a;
-	font-weight: 900;
-	margin-right: 4px;
-}
-
-#shut-down-button>label {
-	color: #d6f5f0;
 }
 
 #time-button {
@@ -179,9 +143,7 @@
 #shutdown, #reboot, #logout, #suspend, #lock {
   transition: all 0.25s ease;
   padding: 10px 8px;
-  /* background-color: #000; */
   border-radius: 8px;
-  /* border: 1px solid #1b1d1d; */
 }
 
 #shutdown:hover,
@@ -194,7 +156,6 @@
 
 #power-event {
 	transition: all 0.25s ease;
-	/* padding: 9px 8px; */
 	background-color: #000;
 	border-radius: 8px;
 	border: 1px solid #1b1d1d;
@@ -202,7 +163,6 @@
 
 #power-event-hover {
 	transition: all 0.25s ease;
-	/* padding: 9px 8px; */
 	background-color: #000;
 	border-radius: 8px;
 	border: 1px solid #1b1d1d;
@@ -244,23 +204,20 @@ menuitem:hover label {
   color: #db4740;
 }
 
-#dashboard-box {
-	background-color: #000;
-	/* padding: 0 0 4px 4px; */
+#dashboard {
+	/* background-color: #000; */
 	min-width: 300px;
 }
 
 #chat-box {
   transition: all 0.5s ease;
-	background-color: #000;
-  /* border-radius: 8px; */
-  /* border: 1px solid #1b1d1d; */
-	/* padding: 0 0 4px 4px; */
+	/* background-color: #000; */
 	min-width: 300px;
 }
 
 #content-box {
-	background-color: #000;
+	/* background-color: #000; */
+  /* border-radius: 10px; */
 	padding: 4px;
 	padding-right: 0px;
 	min-width: 300px;
@@ -306,13 +263,6 @@ menuitem:hover label {
   background: linear-gradient(to bottom, #000000 0%, #1b1d1d 95%, #928374 95%, #928374 100%);
 }
 
-/* #wifi-box, #bluetooth-box { */
-/*   border: 1px solid #1b1d1d; */
-/*   border-radius: 8px; */
-/*   padding: 8px; */
-/*   min-height: 256px; */
-/* } */
-
 #wifi-box {
   border: 1px solid #1b1d1d;
   border-radius: 8px;
@@ -329,29 +279,6 @@ menuitem:hover label {
   background-color: #00f;
 }
 
-#cpu_circular-progress-bar {
-	color: #0a0b0c;
-	border: solid 5px #db4740;
-}
-
-#memory_circular-progress-bar {
-	color: #0a0b0c;
-	border: solid 5px #80aa9e;
-}
-
-#battery_circular-progress-bar {
-	color: #0a0b0c;
-	border: solid 5px #b1b946;
-}
-
-#circular-progress-bar-container {
-	background-color: #000;
-	border: 1px solid #1b1d1d;
-	border-radius: 8px;
-	margin-right: 0px;
-	margin-top: 0px;
-	padding: 8px;
-}
 
 #calendar.view {
   background-color: #000;
@@ -366,15 +293,8 @@ menuitem:hover label {
 }
 
 #calendar:selected {
-  /* background-color: #db4740; */
   border-radius: 4px;
-  /* color: #000; */
   color: #db4740;
-}
-
-#ai-chat {
-  border-radius: 8px;
-  border: 1px solid #1b1d1d;
 }
 
 #user {
@@ -412,56 +332,12 @@ menuitem:hover label {
   background-color: #000;
   border: 1px solid #1b1d1d;
   border-radius: 8px;
-  /* padding: 8px; */
 }
 
 #apps {
   min-height: 512px;
 }
 
-#full-player {
-  background-color: #000;
-  border: 1px solid #1b1d1d;
-  border-radius: 8px;
-  padding: 8px;
-}
-
-#cover {
-  background-size: cover;
-  background-position: center;
-  border-radius: 8px;
-  border: 1px solid #1b1d1d;
-  /* margin-bottom: 5px; */
-  margin-right: 5px;
-  padding: 8px;
-  min-height: 100px;
-}
-
-#play-button, #skip-back-button, #skip-forward-button, #prev-button, #next-button {
-  transition: all 0.25s ease;
-  padding: 8px;
-  /* background-color: #000; */
-  /* border-radius: 8px; */
-  /* border: 1px solid #1b1d1d; */
-}
-
-#play-button:hover, #skip-back-button:hover, #skip-forward-button:hover, #prev-button:hover, #next-button:hover {
-  background: radial-gradient(alpha(#e0cda5, 0.75), transparent 90%);
-}
-
-#title {
-  font-size: 14pt;
-}
-
-#artist {
-  font-size: 11pt;
-  font-style: italic;
-  color: #928374;
-}
-
-#title, #artist {
-  text-shadow: 0px 0px 5px #000000;
-}
 
 #ext-label {
   color: #47423e;
@@ -477,9 +353,28 @@ menuitem:hover label {
   font-style: italic;
 }
 
-#wall-scroll {
+#wall-box {
   background-color: #000;
   border: 1px solid #1b1d1d;
   border-radius: 8px;
   padding: 4px;
+}
+
+#main-stack {
+  /* background-color: #000; */
+}
+
+#full-box {
+  transition: all 0.5s ease;
+  margin: 10px 10px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
+  border-radius: 10px;
+  border: 1px solid #1b1d1d;
+  background-color: alpha(#000, 1.0);
+}
+
+#wall {
+  border-radius: 8px;
+  min-width: 256px;
+  min-height: 128px;
 }
