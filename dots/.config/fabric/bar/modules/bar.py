@@ -29,7 +29,7 @@ class Bar(Window):
             transition_type="slide-left",
         )
 
-        self.center_box = CenterBox(name="main-window", orientation="v")
+        self.center_box = CenterBox(name="bar", orientation="v")
 
         self.run_button = Button(
             name="run-button",
@@ -111,18 +111,6 @@ class Bar(Window):
         )
         
         self.user = User()
-
-        self.revealers_box = Box(
-            name="revealers-box",
-            orientation="h",
-            h_expand=True,
-            v_expand=True,
-            children=[
-                # self.chat_box,
-                # self.dashboard,
-            ]
-        )
-
         self.stack = MainStack()
         
         self.content_box.add(
@@ -134,7 +122,6 @@ class Bar(Window):
                 v_expand=True,
                 children=[
                     self.user,
-                    # self.revealers_box,
                     self.stack,
                 ]
             )
@@ -166,7 +153,7 @@ class Bar(Window):
                     self.set_keyboard_mode("none")
                     self.content_box.set_reveal_child(False)
 
-            if command == "dashboard":
+            elif command == "dashboard":
                 if self.stack.get_visible_child() != self.stack.dashboard or self.content_box.get_reveal_child() == False:
                     self.set_keyboard_mode("none")
                     self.stack.set_visible_child(self.stack.dashboard)
@@ -174,24 +161,13 @@ class Bar(Window):
                 else:
                     self.content_box.set_reveal_child(False)
 
-            if command == "wallpapers":
+            elif command == "wallpapers":
                 if self.stack.get_visible_child() != self.stack.wallpapers or self.content_box.get_reveal_child() == False:
                     self.set_keyboard_mode("none")
                     self.stack.set_visible_child(self.stack.wallpapers)
                     self.content_box.set_reveal_child(True)
                 else:
                     self.content_box.set_reveal_child(False)
-            # self.full_expand()
-
-    def full_expand(self):
-        if self.content_box.get_reveal_child() == True:
-            self.full_box.set_style("""
-                margin: 10px 10px;
-            """)
-        else:
-            self.full_box.set_style("""
-                margin: 50px 10px;
-            """)
 
     def on_button_press(self, button: Button, event):
         home_dir = os.getenv('HOME')

@@ -3,10 +3,10 @@
 	font-family: "Iosevka Nerd Font";
 	font-weight: bold;
 	font-size: 11pt;
-	color: #e0cda5;
+	/* color: #e0cda5; */
 }
 
-#main-window {
+#bar {
 	/* border-right: solid 1px #1b1d1d; */
 	/* background-color: #000; */
 	/* border-radius: 10px; */
@@ -49,6 +49,7 @@
 
 #time-button {
   transition: all 0.25s ease;
+  color: #e0cda5;
 	background-color: #000000;
 	border: 1px solid #1b1d1d;
 	border-radius: 8px;
@@ -279,6 +280,9 @@ menuitem:hover label {
   background-color: #00f;
 }
 
+#calendar {
+  color: #928374;
+}
 
 #calendar.view {
   background-color: #000;
@@ -287,6 +291,7 @@ menuitem:hover label {
 }
 
 #calendar.header {
+  color: #e0cda5;
   background-color: #0a0b0c;
   border: 1px solid #1b1d1d;
   border-radius: 8px 8px 0 0;
@@ -353,15 +358,16 @@ menuitem:hover label {
   font-style: italic;
 }
 
-#wall-box {
-  background-color: #000;
-  border: 1px solid #1b1d1d;
+#wall > * {
+  transition: all 0.25s ease;
   border-radius: 8px;
-  padding: 4px;
+  border: 1px solid #1b1d1d;
+  /* min-width: 256px; */
+  min-height: 128px;
 }
 
-#main-stack {
-  /* background-color: #000; */
+#wall:hover > * {
+  border: 1px solid #db4740;
 }
 
 #full-box {
@@ -371,10 +377,4 @@ menuitem:hover label {
   border-radius: 10px;
   border: 1px solid #1b1d1d;
   background-color: alpha(#000, 1.0);
-}
-
-#wall {
-  border-radius: 8px;
-  min-width: 256px;
-  min-height: 128px;
 }
