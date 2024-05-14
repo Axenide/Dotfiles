@@ -139,35 +139,40 @@ class Bar(Window):
         self.add(self.full_box)
         self.show_all()
 
-        GLib.Thread.new(None, self.binds)
+        GLib.Thread.new(None, self.commands)
 
-    def binds(self):
+    def commands(self):
         while True:
             command = listen()
-            if command == "chat":
-                if self.stack.get_visible_child() != self.stack.chat or self.content_box.get_reveal_child() == False:
-                    self.set_keyboard_mode("on-demand")
-                    self.stack.set_visible_child(self.stack.chat)
-                    self.content_box.set_reveal_child(True)
-                else:
-                    self.set_keyboard_mode("none")
-                    self.content_box.set_reveal_child(False)
+            GLib.idle_add(self.binds, command)
 
-            elif command == "dashboard":
-                if self.stack.get_visible_child() != self.stack.dashboard or self.content_box.get_reveal_child() == False:
-                    self.set_keyboard_mode("none")
-                    self.stack.set_visible_child(self.stack.dashboard)
-                    self.content_box.set_reveal_child(True)
-                else:
-                    self.content_box.set_reveal_child(False)
+    def binds(self, command):
+        if command == "chat":
+            if self.stack.get_visible_child() != self.stack.chat or self.content_box.get_reveal_child() == False:
+                self.set_keyboard_mode("on-demand")
+                self.stack.set_visible_child(self.stack.chat)
+                self.content_box.set_reveal_child(True)
+            else:
+                self.set_keyboard_mode("none")
+                self.content_box.set_reveal_child(False)
 
-            elif command == "wallpapers":
-                if self.stack.get_visible_child() != self.stack.wallpapers or self.content_box.get_reveal_child() == False:
-                    self.set_keyboard_mode("none")
-                    self.stack.set_visible_child(self.stack.wallpapers)
-                    self.content_box.set_reveal_child(True)
-                else:
-                    self.content_box.set_reveal_child(False)
+        elif command == "dashboard":
+            if self.stack.get_visible_child() != self.stack.dashboard or self.content_box.get_reveal_child() == False:
+                self.set_keyboard_mode("none")
+                self.stack.set_visible_child(self.stack.dashboard)
+                self.content_box.set_reveal_child(True)
+            else:
+                self.content_box.set_reveal_child(False)
+
+        elif command == "wallpapers":
+            if self.stack.get_visible_child() != self.stack.wallpapers or self.content_box.get_reveal_child() == False:
+                self.set_keyboard_mode("none")
+                self.stack.set_visible_child(self.stack.wallpapers)
+                self.content_box.set_reveal_child(True)
+            else:
+                self.content_box.set_reveal_child(False)
+
+        return False
 
     def on_button_press(self, button: Button, event):
         home_dir = os.getenv('HOME')
