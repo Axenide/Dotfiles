@@ -424,12 +424,12 @@
 .app_launcher .header .input_container .input {
   border: solid #1b1d1d 1px;
   border-radius: 8px;
-  font-size: 11pt;
+  font-size: 10.5pt;
   padding: 8px;
 }
 .app_launcher .header .input_container .placeholder {
   font-weight: normal;
-  font-size: 11pt;
+  font-size: 10.5pt;
   color: #47423e;
   padding-left: 8px;
   font-style: italic;

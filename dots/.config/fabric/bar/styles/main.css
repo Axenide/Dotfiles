@@ -2,7 +2,7 @@
 	all: unset;
 	font-family: "Iosevka Nerd Font";
 	font-weight: bold;
-	font-size: 11pt;
+	font-size: 10.5pt;
 	/* color: #e0cda5; */
 }
 
@@ -330,7 +330,7 @@ menuitem:hover label {
   margin-left: 8px;
   font-weight: bold;
   font-style: italic;
-  font-size: 11pt;
+  font-size: 10.5pt;
 }
 
 #ext {
@@ -353,7 +353,7 @@ menuitem:hover label {
 
 #ext-label-2 {
   color: #47423e;
-  font-size: 11pt;
+  font-size: 10.5pt;
   font-weight: bold;
   font-style: italic;
 }

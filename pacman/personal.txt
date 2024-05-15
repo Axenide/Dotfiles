@@ -87,7 +87,6 @@ ripdrag-git
 ripgrep
 scrcpy
 socat
-solaar
 speedtest-cli
 spotify
 steam

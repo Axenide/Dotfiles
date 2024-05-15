@@ -72,6 +72,7 @@ ttf-nerd-fonts-symbols-common
 ttf-nerd-fonts-symbols-mono
 unarchiver
 waybar
+webp-pixbuf-loader
 wf-recorder
 wl-clip-persist-git
 wl-clipboard
