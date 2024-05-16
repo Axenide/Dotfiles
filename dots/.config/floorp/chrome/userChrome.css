@@ -51,8 +51,8 @@
   border: 1px solid #1b1d1d !important;
   margin-top: 2px !important;
   margin-bottom: 5px !important;
-  margin-left: 0px !important;
-  margin-right: 0px !important;
+  margin-left: 5px !important;
+  margin-right: -2px !important;
  }
 
 .browserStack>browser{
@@ -61,9 +61,10 @@
 
 .browser-sidebar2 browser {
   margin-left: 2px;
-  margin-right: -3px;
+  margin-right: -1px;
   margin-bottom: -5px;
   margin-top: -2px;
+  border-radius: 0px !important;
 }
 
 #sidebar2-header {
@@ -100,5 +101,15 @@
 }
 
 #appcontent {
+  margin-left: 0px !important;
+}
+
+#sidebar-header {
+  visibility: collapse !important;
+}
+
+#sidebar {
+  padding: 1px !important;
+  margin-right: -10px !important;
   margin-left: 0px !important;
 }
