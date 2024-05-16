@@ -53,7 +53,7 @@ class Player(Box):
             )
         )
 
-        self.cover_file = f"{os.getenv('XDG_PICTURES_DIR')}/Wallpapers/current.wall"
+        self.cover_file = f"{home_dir}/.current.wall"
 
         self.title = Label(
             name="title",

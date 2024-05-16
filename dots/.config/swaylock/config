@@ -5,7 +5,7 @@ fade-in=0.25
 indicator
 clock
 datestr=%d/%m/%Y
-image=$XDG_PICTURES_DIR/Wallpapers/current.wall
+image=$HOME/.current.wall
 show-keyboard-layout
 indicator-caps-lock
 bs-hl-color=DB4740CC

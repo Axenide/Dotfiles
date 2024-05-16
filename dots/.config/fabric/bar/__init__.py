@@ -74,6 +74,8 @@ def scroll_handler(self, widget, event: Gdk.EventScroll):
 
 Workspaces.scroll_handler = scroll_handler
 
+home_dir = os.getenv('HOME')
+
 from modules.aichat import AIchat
 from modules.circles import Circles
 from modules.player import Player

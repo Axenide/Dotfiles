@@ -77,6 +77,6 @@ class Wallpapers(ScrolledWindow):
         exec_shell_command(f"""
         ln -sf
         {WALLPAPERS_PATH}/{button.get_child().get_name()}
-        {WALLPAPERS_PATH}/current.wall
+        {home_dir}/.current.wall
         """)
         return True

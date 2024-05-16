@@ -175,8 +175,6 @@ class Bar(Window):
         return False
 
     def on_button_press(self, button: Button, event):
-        home_dir = os.getenv('HOME')
-
         if button == self.run_button:
             commands = {
                 1: f'{home_dir}/.config/rofi/launcher/launcher.sh',
