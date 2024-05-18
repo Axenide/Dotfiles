@@ -49,21 +49,17 @@
   > browser {
   border-radius: 8px !important;
   border: 1px solid #1b1d1d !important;
-  margin-top: 2px !important;
-  margin-bottom: 5px !important;
-  margin-left: 5px !important;
-  margin-right: -2px !important;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+  margin-left: 0px !important;
+  margin-right: -5px !important;
  }
 
-.browserStack>browser{
-    outline: 5px solid var(--lwt-accent-color) !important;
-}
-
 .browser-sidebar2 browser {
-  margin-left: 2px;
-  margin-right: -1px;
+  margin-left: -2px;
+  margin-right: 0px;
   margin-bottom: -5px;
-  margin-top: -2px;
+  margin-top: -1px;
   border-radius: 0px !important;
 }
 
@@ -77,11 +73,6 @@
   transition: opacity 0.3s ease;
   opacity: 0;
   width: 0;
-}
-
-.browser-toolbar {
-  margin-top: 1px;
-  margin-bottom: 0px;
 }
 
 #urlbar:hover #identity-box,
@@ -104,12 +95,12 @@
   margin-left: 0px !important;
 }
 
-#sidebar-header {
-  visibility: collapse !important;
-}
-
 #sidebar {
   padding: 1px !important;
   margin-right: -10px !important;
   margin-left: 0px !important;
+}
+
+#sidebar-box {
+  transition: all 0.5s ease !important;
 }

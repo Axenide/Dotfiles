@@ -1,5 +1,5 @@
 configuration {
-    font:                           "Iosevka Nerd Font Bold 11";
+    font:                           "Iosevka Nerd Font Bold 10.5";
     show-icons:                     false;
 	icon-theme: 					"Papirus";
     display-drun: 					":";
@@ -41,7 +41,7 @@ textbox-prompt-colon {
     background-color:               @background;
     text-color:                     @urgent;
     padding:                        5px 0px 0px 4px;
-	font:							"Iosevka Nerd Font Bold 11";
+	font:							"Iosevka Nerd Font Bold 10.5";
 }
 
 inputbar {
@@ -109,7 +109,7 @@ element-icon {
 }
 
 element-text {
-    font:							"Iosevka Nerd Font Bold 11";
+    font:							"Iosevka Nerd Font Bold 10.5";
     expand:                         true;
     horizontal-align:               0;
     vertical-align:                 0;
