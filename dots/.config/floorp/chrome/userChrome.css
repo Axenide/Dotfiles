@@ -101,6 +101,10 @@
   margin-left: -4px !important;
 }
 
+#sidebar-box {
+  transition: all 0.5s ease !important;
+}
+
 #sidebar-select-box {
   position: relative !important;
   right: 2px !important;
