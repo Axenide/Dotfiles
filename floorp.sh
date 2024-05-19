@@ -15,8 +15,14 @@ if [ -n "$default_release_dir" ]; then
 
     # Crea symlink a la carpeta "chrome"
     ln -sf "$original_folder/chrome" "$default_release_dir/chrome"
+    
+    # Borra el archivo "user.js" si existe
+    rm -f "$default_release_dir/user.js"
+
+    # Crea symlink al archivo "user.js"
+    ln -sf "$original_folder/user.js" "$default_release_dir/user.js"
 
     echo "Symlinks created in $default_release_dir."
 else
-    echo "No se encontró el directorio default-release de Floorp."
+    echo "No se encontró el directorio default-release de floorp."
 fi
