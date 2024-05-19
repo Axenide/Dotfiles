@@ -98,7 +98,7 @@ fi
 
 # Instalar Floorp userChrome.css
 title
-read -p "Install Floorp custom CSS? (y/n) " answer
+read -p "Install Floorp custom CSS and user.js? (y/n) " answer
 if [[ "$answer" == "y" ]]; then
   bash floorp.sh
 else
