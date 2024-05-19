@@ -112,6 +112,7 @@ class Bar(Window):
         
         self.user = User()
         self.stack = MainStack()
+        self.stack.chat.buttons.parent = self
         
         self.content_box.add(
             Box(

@@ -47,16 +47,16 @@
   > .browserContainer
   > .browserStack
   > browser {
-  border-radius: 8px !important;
+  border-radius: 6px !important;
   border: 1px solid #1b1d1d !important;
   margin-top: 0px !important;
-  margin-bottom: 0px !important;
-  margin-left: 0px !important;
-  margin-right: -5px !important;
+  margin-bottom: -1px !important;
+  margin-left: 5px !important;
+  margin-right: -3px !important;
  }
 
 .browser-sidebar2 browser {
-  margin-left: -2px;
+  margin-left: -1px;
   margin-right: 0px;
   margin-bottom: -5px;
   margin-top: -1px;
@@ -97,10 +97,11 @@
 
 #sidebar {
   padding: 1px !important;
-  margin-right: -12px !important;
-  margin-left: 0px !important;
+  margin-right: -15px !important;
+  margin-left: 2px !important;
 }
 
-#sidebar-box {
-  transition: all 0.5s ease !important;
+#sidebar-select-box {
+  position: relative !important;
+  right: 2px !important;
 }

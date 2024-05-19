@@ -94,7 +94,7 @@ class Player(Box):
             album: str = data[2]
             title: str = data[3]
             # print(playback, position, length, artist, album, title)
-            print(playback, artist, album, title)
+            # print(playback, artist, album, title)
             self.status.label = playback
             self.artist.set_label(artist)
             self.title.set_label(title)

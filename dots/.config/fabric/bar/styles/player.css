@@ -1,17 +1,17 @@
 #full-player {
   background-color: #000;
   border: 1px solid #1b1d1d;
-  border-radius: 8px;
-  padding: 8px;
+  border-radius: 6px;
+  padding: 4px;
 }
 
 #cover {
   background-size: cover;
   background-position: center;
-  border-radius: 8px;
+  border-radius: 2px;
   border: 1px solid #1b1d1d;
   margin-right: 5px;
-  padding: 8px;
+  padding: 4px;
   min-height: 100px;
 }
 

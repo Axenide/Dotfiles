@@ -16,7 +16,7 @@
 }
 
 #workspaces {
-	border-radius: 8px;
+	border-radius: 6px;
 	padding: 13px;
 	border: 1px solid #1b1d1d;
 	background-color: #000;
@@ -52,7 +52,7 @@
   color: #e0cda5;
 	background-color: #000000;
 	border: 1px solid #1b1d1d;
-	border-radius: 8px;
+	border-radius: 6px;
 	padding: 11px;
 }
 
@@ -82,7 +82,7 @@
 #chat-url {
   transition: all 0.25s ease;
   background-color: #000;
-  border-radius: 8px;
+  border-radius: 6px;
   border: 1px solid #1b1d1d;
   padding: 9px 0;
 }
@@ -109,7 +109,7 @@
 #chat-detach {
 	transition: all 0.25s ease;
 	background-color: #000;
-	border-radius: 8px;
+	border-radius: 6px;
 	border: 1px solid #1b1d1d;
 }
 
@@ -144,7 +144,7 @@
 #shutdown, #reboot, #logout, #suspend, #lock {
   transition: all 0.25s ease;
   padding: 10px 8px;
-  border-radius: 8px;
+  border-radius: 6px;
 }
 
 #shutdown:hover,
@@ -158,14 +158,14 @@
 #power-event {
 	transition: all 0.25s ease;
 	background-color: #000;
-	border-radius: 8px;
+	border-radius: 6px;
 	border: 1px solid #1b1d1d;
 }
 
 #power-event-hover {
 	transition: all 0.25s ease;
 	background-color: #000;
-	border-radius: 8px;
+	border-radius: 6px;
 	border: 1px solid #1b1d1d;
   background: linear-gradient(#000000, #1b1d1d);
 }
@@ -173,21 +173,21 @@
 #system-tray {
   background-color: #000;
 	border: 1px solid #1b1d1d;
-	border-radius: 8px;
+	border-radius: 6px;
 	padding: 10px 0;
 }
 
 tooltip {
 	background-color: #000;
 	border: 1px solid #1b1d1d;
-	border-radius: 8px;
+	border-radius: 6px;
 	padding: 10px;
 }
 
 menu {
 	background-color: #000;
 	border: 1px solid #1b1d1d;
-	border-radius: 8px;
+	border-radius: 6px;
 	padding: 10px;
 }
 
@@ -225,7 +225,7 @@ menuitem:hover label {
 }
 
 #applets {
-	border-radius: 8px;
+	border-radius: 6px;
 	margin-right: 0px;
 	min-height: 52px;
 }
@@ -237,7 +237,7 @@ menuitem:hover label {
   transition: all 0.25s ease;
   background: linear-gradient(to bottom, #000000 0%, #000000 95%, #b1b946 95%, #b1b946 100%);
 	border: 1px solid #1b1d1d;
-	border-radius: 8px;
+	border-radius: 6px;
 }
 
 #wifi-button-off,
@@ -246,7 +246,7 @@ menuitem:hover label {
 #dnd-button-off {
   background: linear-gradient(to bottom, #000000 0%, #000000 95%, #928374 95%, #928374 100%);
   border: 1px solid #1b1d1d;
-  border-radius: 8px;
+  border-radius: 6px;
 }
 
 #wifi-button:hover,
@@ -266,7 +266,7 @@ menuitem:hover label {
 
 #wifi-box {
   border: 1px solid #1b1d1d;
-  border-radius: 8px;
+  border-radius: 6px;
   padding: 8px;
   min-height: 256px;
   background-color: #f00;
@@ -274,7 +274,7 @@ menuitem:hover label {
 
 #bluetooth-box {
   border: 1px solid #1b1d1d;
-  border-radius: 8px;
+  border-radius: 6px;
   padding: 8px;
   min-height: 256px;
   background-color: #00f;
@@ -287,14 +287,14 @@ menuitem:hover label {
 #calendar.view {
   background-color: #000;
   border: 1px solid #1b1d1d;
-  border-radius: 8px;
+  border-radius: 6px;
 }
 
 #calendar.header {
   color: #e0cda5;
   background-color: #0a0b0c;
   border: 1px solid #1b1d1d;
-  border-radius: 8px 8px 0 0;
+  border-radius: 6px 8px 0 0;
 }
 
 #calendar:selected {
@@ -305,14 +305,14 @@ menuitem:hover label {
 #user {
   background-color: #000;
   border: 1px solid #1b1d1d;
-  border-radius: 8px;
+  border-radius: 6px;
   padding: 8px;
 }
 
 #user-image {
   background-size: cover;
   background-position: center;
-  border-radius: 8px;
+  border-radius: 6px;
   border: 1px solid #1b1d1d;
   min-width: 48px;
   min-height: 48px;
@@ -336,7 +336,7 @@ menuitem:hover label {
 #ext {
   background-color: #000;
   border: 1px solid #1b1d1d;
-  border-radius: 8px;
+  border-radius: 6px;
 }
 
 #apps {
@@ -360,7 +360,7 @@ menuitem:hover label {
 
 #wall > * {
   transition: all 0.25s ease;
-  border-radius: 8px;
+  border-radius: 6px;
   border: 1px solid #1b1d1d;
   /* min-width: 256px; */
   min-height: 128px;
