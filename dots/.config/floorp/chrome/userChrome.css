@@ -51,7 +51,7 @@
   border: 1px solid #1b1d1d !important;
   margin-top: 0px !important;
   margin-bottom: -1px !important;
-  margin-left: 5px !important;
+  margin-left: -1px !important;
   margin-right: -3px !important;
  }
 
@@ -98,7 +98,7 @@
 #sidebar {
   padding: 1px !important;
   margin-right: -15px !important;
-  margin-left: 2px !important;
+  margin-left: -4px !important;
 }
 
 #sidebar-select-box {
