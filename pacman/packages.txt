@@ -18,7 +18,7 @@ gnome-bluetooth-3.0
 gnome-calculator
 grim
 grimblast-git
-hyprland-git
+hyprland
 hyprpicker-git
 hyprshade
 imv
