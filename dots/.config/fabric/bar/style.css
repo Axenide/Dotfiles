@@ -1,3 +1,19 @@
-@import "styles/main.css";
+@import "styles/aichat.css";
+@import "styles/applets.css";
+@import "styles/bar.css";
+@import "styles/buttons.css";
+@import "styles/calendar.css";
 @import "styles/circles.css";
+@import "styles/main.css";
+@import "styles/menu.css";
 @import "styles/player.css";
+@import "styles/user.css";
+@import "styles/wallpapers.css";
+@import "styles/workspaces.css";
+
+* {
+	all: unset;
+	font-family: "Iosevka Nerd Font";
+	font-weight: bold;
+	font-size: 10.5pt;
+}

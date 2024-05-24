@@ -49,14 +49,14 @@
   > browser {
   border-radius: 6px !important;
   border: 1px solid #1b1d1d !important;
-  margin-top: 0px !important;
+  margin-top: 2px !important;
   margin-bottom: -1px !important;
   margin-left: -1px !important;
   margin-right: -3px !important;
  }
 
 .browser-sidebar2 browser {
-  margin-left: -1px;
+  margin-left: -3px;
   margin-right: 0px;
   margin-bottom: -5px;
   margin-top: -1px;
@@ -73,6 +73,12 @@
   transition: opacity 0.3s ease;
   opacity: 0;
   width: 0;
+}
+
+#urlbar-background {
+  margin-top: 1px !important;
+  border-radius: 6px !important;
+  background: linear-gradient(#000000, #1b1d1d) !important;
 }
 
 #urlbar:hover #identity-box,
@@ -108,4 +114,5 @@
 #sidebar-select-box {
   position: relative !important;
   right: 2px !important;
+  margin: 0 -2px !important;
 }

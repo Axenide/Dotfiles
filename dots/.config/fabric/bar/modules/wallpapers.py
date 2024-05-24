@@ -68,8 +68,7 @@ class Wallpapers(ScrolledWindow):
     def on_button_press(self, button: Button, event):
         exec_shell_command(f"""
         swww img
-        -t any
-        --transition-bezier 0.0,0.0,1.0,1.0
+        -t outer
         --transition-duration 1
         --transition-step 255
         --transition-fps 60

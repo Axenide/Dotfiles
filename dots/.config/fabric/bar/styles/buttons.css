@@ -1,0 +1,85 @@
+#time-button {
+  transition: all 0.25s ease;
+  color: #e0cda5;
+	background-color: #000000;
+	border: 1px solid #1b1d1d;
+	border-radius: 6px;
+	padding: 11px;
+}
+
+#time-button:hover {
+  background: linear-gradient(#000000, #1b1d1d);
+}
+
+#run-button,
+#media-button,
+#colorpicker,
+#chat-expand,
+#chat-reload,
+#chat-detach {
+	transition: all 0.25s ease;
+	background-color: #000;
+	border-radius: 6px;
+	border: 1px solid #1b1d1d;
+}
+
+#run-button:hover,
+#media-button:hover,
+#colorpicker:hover,
+#chat-expand:hover,
+#chat-reload:hover,
+#chat-detach:hover {
+  background: linear-gradient(#000000, #1b1d1d);
+}
+
+#run-button-image,
+#media-button-image,
+#colorpicker-image,
+#chat-expand-image,
+#chat-reload-image,
+#chat-detach-image {
+  transition: all 0.25s ease;
+  padding: 9px 8px;
+}
+
+#run-button:hover #run-button-image,
+#media-button:hover #media-button-image,
+#colorpicker:hover #colorpicker-image,
+#chat-expand:hover #chat-expand-image,
+#chat-reload:hover #chat-reload-image,
+#chat-detach:hover #chat-detach-image {
+  background: radial-gradient(alpha(#db4740, 0.75), transparent 90%);
+}
+
+#shutdown,
+#reboot,
+#logout,
+#suspend,
+#lock {
+  transition: all 0.25s ease;
+  padding: 10px 8px;
+  border-radius: 6px;
+}
+
+#shutdown:hover,
+#reboot:hover,
+#logout:hover,
+#suspend:hover,
+#lock:hover {
+  background: radial-gradient(alpha(#db4740, 0.75), transparent 90%);
+}
+
+#power-event {
+	transition: all 0.25s ease;
+	background-color: #000;
+	border-radius: 6px;
+	border: 1px solid #1b1d1d;
+}
+
+#power-event-hover {
+	transition: all 0.25s ease;
+	background-color: #000;
+	border-radius: 6px;
+	border: 1px solid #1b1d1d;
+  background: linear-gradient(#000000, #1b1d1d);
+}

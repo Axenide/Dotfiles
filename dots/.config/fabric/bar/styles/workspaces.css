@@ -1,0 +1,31 @@
+#workspaces {
+	border-radius: 6px;
+	padding: 13px;
+	border: 1px solid #1b1d1d;
+	background-color: #000;
+}
+
+#workspaces>button {
+  border: 2px solid #e0cda5;
+	border-radius: 999px;
+	min-width: 6px;
+	min-height: 6px;
+	transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+}
+
+#workspaces>button>label {
+	font-size: 0pt;
+}
+
+#workspaces>button.active {
+  border: 2px solid #db4740;
+	min-height: 48px;
+}
+
+#workspaces>button.empty {
+  border: 2px solid #47423e;
+}
+
+#workspaces>button:hover {
+  border: 2px solid #db4740;
+}
