@@ -45,7 +45,7 @@ import setproctitle
 
 gi.require_version("Gtk", "3.0")
 
-from hyprland import Hyprland
+from fabric.hyprland.service import Hyprland
 connection = Hyprland()
 
 # Overrides
