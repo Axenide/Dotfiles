@@ -24,7 +24,7 @@ class AIbuttons(Box):
 
         self.chat_url = Button(
             name="chat-url",
-            label="localhost:3141/Alpha",
+            label="localhost:3141",
             h_expand=True,
             v_expand=True,
             v_align="center",
@@ -63,11 +63,11 @@ class AIbuttons(Box):
 
         elif button == self.chat_detach:
             self.parent.content_box.set_reveal_child(False)
-            return exec_shell_command_async(get_relative_path(f'../scripts/webview.py http://localhost:3141/Alpha'), lambda *args: None)
+            return exec_shell_command_async(get_relative_path(f'../scripts/webview.py http://localhost:3141/'), lambda *args: None)
 
         elif button == self.chat_url:
             self.parent.content_box.set_reveal_child(False)
-            return exec_shell_command_async('xdg-open http://localhost:3141/Alpha', lambda *args: None)
+            return exec_shell_command_async('xdg-open http://localhost:3141/', lambda *args: None)
 
     def on_button_hover(self, button: Button, event):
         return self.change_cursor("pointer")
@@ -81,7 +81,7 @@ class AIweb(WebView):
             name="ai-chat",
             h_expand=True,
             v_expand=True,
-            url="http://localhost:3141/Alpha",
+            url="http://localhost:3141/",
         )
 
 class AIchat(Box):
