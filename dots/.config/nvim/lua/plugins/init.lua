@@ -1,5 +1,9 @@
 return {
   {
+    "danymat/neogen",
+    config = true,
+  },
+  {
     "stevearc/conform.nvim",
     config = function()
       require "configs.conform"

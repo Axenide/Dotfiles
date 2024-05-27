@@ -58,3 +58,8 @@ end, { desc = "" })
 map("n", "<leader>dd", function ()
   require("telescope.builtin").lsp_type_definitions()
 end, { desc = "Telescope LSP Type Definition" })
+
+-- CTRL + N runs `require('neogen').generate()`
+map("n", "<A-n>", function ()
+  require("neogen").generate()
+end, { desc = "Generate docstrings with Neogen" })
