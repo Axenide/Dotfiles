@@ -1,6 +1,6 @@
 #full-player {
-  background-color: #000;
-  border: 1px solid #1b1d1d;
+  background-color: @background;
+  border: 1px solid @darkgray;
   border-radius: 6px;
   padding: 4px;
 }
@@ -9,7 +9,7 @@
   background-size: cover;
   background-position: center;
   border-radius: 2px;
-  border: 1px solid #1b1d1d;
+  border: 1px solid @darkgray;
   margin-right: 5px;
   padding: 4px;
   min-height: 100px;
@@ -31,9 +31,9 @@
 #artist {
   font-size: 10.5pt;
   font-style: italic;
-  color: #928374;
+  color: @warmgray;
 }
 
 #title, #artist {
-  text-shadow: 0px 0px 5px #000000;
+  text-shadow: 0px 0px 5px @background;
 }

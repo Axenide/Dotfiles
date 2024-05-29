@@ -70,6 +70,7 @@ ttf-font-awesome
 ttf-iosevka-nerd
 ttf-nerd-fonts-symbols-common
 ttf-nerd-fonts-symbols-mono
+ttf-tabler-icons
 unarchiver
 waybar
 webp-pixbuf-loader

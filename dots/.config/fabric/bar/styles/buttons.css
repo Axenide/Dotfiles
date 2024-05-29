@@ -1,14 +1,14 @@
 #time-button {
   transition: all 0.25s ease;
-  color: #e0cda5;
-	background-color: #000000;
-	border: 1px solid #1b1d1d;
+  color: @white;
+	background-color: @background;
+	border: 1px solid @darkgray;
 	border-radius: 6px;
 	padding: 11px;
 }
 
 #time-button:hover {
-  background: linear-gradient(#000000, #1b1d1d);
+  background: linear-gradient(@background, @darkgray);
 }
 
 #run-button,
@@ -18,9 +18,9 @@
 #chat-reload,
 #chat-detach {
 	transition: all 0.25s ease;
-	background-color: #000;
+	background-color: @background;
 	border-radius: 6px;
-	border: 1px solid #1b1d1d;
+	border: 1px solid @darkgray;
 }
 
 #run-button:hover,
@@ -29,57 +29,70 @@
 #chat-expand:hover,
 #chat-reload:hover,
 #chat-detach:hover {
-  background: linear-gradient(#000000, #1b1d1d);
+  background: linear-gradient(@background, @darkgray);
 }
 
-#run-button-image,
-#media-button-image,
-#colorpicker-image,
+#run-label,
+#media-label,
+#colorpicker-label,
 #chat-expand-image,
 #chat-reload-image,
 #chat-detach-image {
+  color: @red;
+  font-family: "tabler-icons";
+  font-size: 20px;
+  font-weight: normal;
   transition: all 0.25s ease;
   padding: 9px 8px;
 }
 
-#run-button:hover #run-button-image,
-#media-button:hover #media-button-image,
-#colorpicker:hover #colorpicker-image,
+#run-button:hover #run-label,
+#media-button:hover #media-label,
+#colorpicker:hover #colorpicker-label,
 #chat-expand:hover #chat-expand-image,
 #chat-reload:hover #chat-reload-image,
 #chat-detach:hover #chat-detach-image {
-  background: radial-gradient(alpha(#db4740, 0.75), transparent 90%);
+  text-shadow:
+  0 0 5px @red,
+  0 0 5px @red,
+  0 0 5px @red;
 }
 
-#shutdown,
-#reboot,
-#logout,
-#suspend,
-#lock {
+#shutdown > *,
+#reboot > *,
+#logout > *,
+#suspend > *,
+#lock > * {
+  color: @red;
+  font-family: "tabler-icons";
+  font-size: 20px;
+  font-weight: normal;
   transition: all 0.25s ease;
-  padding: 10px 8px;
-  border-radius: 6px;
+  padding: 9px 8px;
 }
 
-#shutdown:hover,
-#reboot:hover,
-#logout:hover,
-#suspend:hover,
-#lock:hover {
-  background: radial-gradient(alpha(#db4740, 0.75), transparent 90%);
+#shutdown:hover > *,
+#reboot:hover > *,
+#logout:hover > *,
+#suspend:hover > *,
+#lock:hover > * {
+  text-shadow:
+  0 0 5px @red,
+  0 0 5px @red,
+  0 0 5px @red;
 }
 
 #power-event {
 	transition: all 0.25s ease;
-	background-color: #000;
+	background-color: @background;
 	border-radius: 6px;
-	border: 1px solid #1b1d1d;
+	border: 1px solid @darkgray;
 }
 
 #power-event-hover {
 	transition: all 0.25s ease;
-	background-color: #000;
+	background-color: @background;
 	border-radius: 6px;
-	border: 1px solid #1b1d1d;
-  background: linear-gradient(#000000, #1b1d1d);
+	border: 1px solid @darkgray;
+  background: linear-gradient(@background, @darkgray);
 }

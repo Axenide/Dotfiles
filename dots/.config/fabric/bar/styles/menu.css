@@ -1,28 +1,29 @@
 tooltip {
-	background-color: #000;
-	border: 1px solid #1b1d1d;
+  color: @white;
+	background-color: @background;
+	border: 1px solid @darkgray;
 	border-radius: 6px;
 	padding: 10px;
 }
 
 menu {
-  color: #e0cda5;
-	background-color: #000;
-	border: 1px solid #1b1d1d;
+  color: @white;
+	background-color: @background;
+	border: 1px solid @darkgray;
 	border-radius: 6px;
 	padding: 10px;
 }
 
 menuitem {
-	background-color: #000;
+	background-color: @background;
 	border-radius: 4px;
 	padding: 5px;
 }
 
 menuitem:hover {
-  background-color: #0a0b0c;
+  background-color: @black;
 }
 
 menuitem:hover label {
-  color: #db4740;
+  color: @red;
 }

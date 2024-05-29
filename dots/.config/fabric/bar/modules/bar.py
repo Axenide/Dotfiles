@@ -33,10 +33,10 @@ class Bar(Window):
 
         self.run_button = Button(
             name="run-button",
-            tooltip_text="Show Applications Menu",
-            child=Image(
-                name="run-button-image",
-                image_file=get_relative_path("../assets/applications.svg"),
+            child=Label(
+                name="run-label",
+                label="<span>&#xec2c;</span>",
+                markup=True,
             ),
         )
 
@@ -45,18 +45,20 @@ class Bar(Window):
         self.colorpicker = Button(
             name="colorpicker",
             tooltip_text="Color Picker",
-            child=Image(
-                name="colorpicker-image",
-                image_file=get_relative_path("../assets/colorpicker.svg")
+            child=Label(
+                name="colorpicker-label",
+                label="<span>&#xebe6;</span>",
+                markup=True,
             ),
         )
         self.media_button = Button(
             name="media-button",
             tooltip_text=str(exec_shell_command('playerctl metadata artist -f "{{ artist }} - {{ title }}"')).rstrip(),
-            child=Image(
-                name="media-button-image",
-                image_file=get_relative_path("../assets/media.svg")
-            )
+            child=Label(
+                name="media-label",
+                label="<span>&#xf00d;</span>",
+                markup=True,
+            ),
         )
         self.time_button = Button(
             name="time-button",
@@ -172,6 +174,9 @@ class Bar(Window):
                 self.content_box.set_reveal_child(True)
             else:
                 self.content_box.set_reveal_child(False)
+
+        elif command == "update-style":
+            set_stylesheet_from_file(get_relative_path("../style.css"))
 
         return False
 

@@ -4,22 +4,22 @@
 
 #chat-url {
   transition: all 0.25s ease;
-  background-color: #000;
+  background-color: @background;
   border-radius: 6px;
-  border: 1px solid #1b1d1d;
+  border: 1px solid @darkgray;
   padding: 9px 0;
 }
 
 #chat-url label {
   transition: all 0.25s ease;
-  color: #928374;
+  color: @warmgray;
 }
 
 #chat-url:hover {
-  background: linear-gradient(#000000, #1b1d1d);
+  background: linear-gradient(@background, @darkgray);
 }
 
 #chat-url:hover label {
-  color: #e0cda5;
-  text-shadow: 0px 0px 5px alpha(#e0cda5, 0.5);
+  color: @white;
+  text-shadow: 0px 0px 5px alpha(@white, 0.5);
 }

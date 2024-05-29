@@ -8,27 +8,27 @@ class Power(EventBox):
         )
         self.lock = Button(
             name="lock",
-            icon_image=Image(image_file=get_relative_path("../assets/lock.svg"))
+            child=Label(label="<span>&#xeae2;</span>", markup=True),
         )
 
         self.suspend = Button(
             name="suspend",
-            icon_image=Image(image_file=get_relative_path("../assets/suspend.svg"))
+            child=Label(label="<span>&#xece7;</span>", markup=True),
         )
 
         self.logout = Button(
             name="logout",
-            icon_image=Image(image_file=get_relative_path("../assets/logout.svg"))
+            child=Label(label="<span>&#xeba8;</span>", markup=True),
         )
 
         self.reboot = Button(
             name="reboot",
-            icon_image=Image(image_file=get_relative_path("../assets/reboot.svg"))
+            child=Label(label="<span>&#xf3ae;</span>", markup=True),
         )
 
         self.shutdown = Button(
             name="shutdown",
-            icon_image=Image(image_file=get_relative_path("../assets/shutdown.svg"))
+            child=Label(label="<span>&#xeb0d;</span>", markup=True),
         )
 
         self.power_box = Box(
@@ -76,16 +76,12 @@ class Power(EventBox):
         if button == self:
             self.revealer.set_reveal_child(True)
             self.set_name("power-event-hover")
-            print("hovering")
-            print(self.name)
         return self.change_cursor("pointer")
 
     def on_button_unhover(self, button: Button, event):
         if button == self:
             self.revealer.set_reveal_child(False)
             self.set_name("power-event")
-            print("unhovering")
-            print(self.name)
         return self.change_cursor("default")
 
     def on_button_press(self, button: Button, event):

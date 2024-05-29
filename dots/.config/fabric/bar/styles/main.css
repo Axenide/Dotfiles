@@ -1,13 +1,13 @@
 #module-separator {
 	margin: 0px 10px;
 	padding: 1px;
-	background-color: #1b1d1d;
+	background-color: @darkgray;
 	border-radius: 999px;
 }
 
 #system-tray {
-  background-color: #000;
-	border: 1px solid #1b1d1d;
+  background-color: @background;
+	border: 1px solid @darkgray;
 	border-radius: 6px;
 	padding: 10px 0;
 }
@@ -19,20 +19,20 @@
 }
 
 #ext {
-  background-color: #000;
-  border: 1px solid #1b1d1d;
+  background-color: @background;
+  border: 1px solid @darkgray;
   border-radius: 6px;
 }
 
 #ext-label {
-  color: #47423e;
+  color: @gray;
   font-size: 16pt;
   font-weight: bold;
   font-style: italic;
 }
 
 #ext-label-2 {
-  color: #47423e;
+  color: @gray;
   font-size: 10.5pt;
   font-weight: bold;
   font-style: italic;

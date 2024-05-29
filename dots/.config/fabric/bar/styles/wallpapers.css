@@ -1,10 +1,10 @@
 #wall > * {
   transition: all 0.25s ease;
   border-radius: 6px;
-  border: 1px solid #1b1d1d;
+  border: 1px solid @darkgray;
   min-height: 128px;
 }
 
 #wall:hover > * {
-  border: 1px solid #928374;
+  border: 1px solid @warmgray;
 }

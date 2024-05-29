@@ -1,3 +1,4 @@
 /dots/.config/tmux/plugins/
 **/*.uuid
 **/__pycache__
+**/venv

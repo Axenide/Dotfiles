@@ -1,21 +1,21 @@
 #cpu_circular-progress-bar {
-	color: #0a0b0c;
-	border: solid 5px #db4740;
+	color: @black;
+	border: solid 5px @red;
 }
 
 #memory_circular-progress-bar {
-	color: #0a0b0c;
-	border: solid 5px #80aa9e;
+	color: @black;
+	border: solid 5px @blue;
 }
 
 #battery_circular-progress-bar {
-	color: #0a0b0c;
-	border: solid 5px #b1b946;
+	color: @black;
+	border: solid 5px @green;
 }
 
 #circular-progress-bar-container {
-	background-color: #000;
-	border: 1px solid #1b1d1d;
+	background-color: @background;
+	border: 1px solid @darkgray;
 	border-radius: 6px;
 	margin-right: 0px;
 	margin-top: 0px;
