@@ -13,24 +13,28 @@ class Applets(Box):
         self.night = False
         self.dnd = False
 
-        self.wifi_icon = Image(
+        self.wifi_icon = Label(
             name="wifi-icon",
-            image_file=get_relative_path("../assets/wifi.svg"),
+            label="<span>&#xeb52;</span>",
+            markup=True,
         )
 
-        self.bluetooth_icon = Image(
+        self.bluetooth_icon = Label(
             name="bluetooth-icon",
-            image_file=get_relative_path("../assets/bluetooth.svg"),
+            label="<span>&#xea37;</span>",
+            markup=True,
         )
 
-        self.night_icon = Image(
+        self.night_icon = Label(
             name="night-icon",
-            image_file=get_relative_path("../assets/night-off.svg"),
+            label="<span>&#xf162;</span>",
+            markup=True,
         )
 
-        self.dnd_icon = Image(
+        self.dnd_icon = Label(
             name="dnd-icon",
-            image_file=get_relative_path("../assets/bell.svg"),
+            label="<span>&#xea35;</span>",
+            markup=True,
         )
 
         self.wifi_button = Button(
@@ -93,10 +97,10 @@ class Applets(Box):
             if command == 'toggle':
                 self.wifi = not self.wifi
                 if self.wifi == False:
-                    self.wifi_icon.set_from_file(get_relative_path('../assets/wifi-off.svg'))
+                    self.wifi_icon.set_markup("<span>&#xecfa;</span>")
                     self.wifi_button.set_name('wifi-button-off')
                 else:
-                    self.wifi_icon.set_from_file(get_relative_path('../assets/wifi.svg'))
+                    self.wifi_icon.set_markup("<span>&#xeb52;</span>")
                     self.wifi_button.set_name('wifi-button')
             elif command == 'reveal':
                 self.wifi_revealer.set_reveal_child(not self.wifi_revealer.get_reveal_child())
@@ -112,10 +116,10 @@ class Applets(Box):
             if command == 'toggle':
                 self.bluetooth = not self.bluetooth
                 if self.bluetooth == False:
-                    self.bluetooth_icon.set_from_file(get_relative_path('../assets/bluetooth-off.svg'))
+                    self.bluetooth_icon.set_markup("<span>&#xeceb;</span>")
                     self.bluetooth_button.set_name('bluetooth-button-off')
                 else:
-                    self.bluetooth_icon.set_from_file(get_relative_path('../assets/bluetooth.svg'))
+                    self.bluetooth_icon.set_markup("<span>&#xea37;</span>")
                     self.bluetooth_button.set_name('bluetooth-button')
             elif command == 'reveal':
                 self.bluetooth_revealer.set_reveal_child(not self.bluetooth_revealer.get_reveal_child())
@@ -130,11 +134,11 @@ class Applets(Box):
             if command == 'toggle':
                 self.night = not self.night
                 if self.night == False:
-                    self.night_icon.set_from_file(get_relative_path('../assets/night-off.svg'))
+                    self.night_icon.set_markup("<span>&#xf162;</span>")
                     self.night_button.set_name('night-button-off')
                     exec_shell_command('hyprshade off')
                 else:
-                    self.night_icon.set_from_file(get_relative_path('../assets/night.svg'))
+                    self.night_icon.set_markup("<span>&#xeaf8;</span>")
                     self.night_button.set_name('night-button')
                     exec_shell_command('hyprshade on redshift')
 
@@ -147,11 +151,11 @@ class Applets(Box):
             if command == 'toggle':
                 self.dnd = not self.dnd
                 if self.dnd == False:
-                    self.dnd_icon.set_from_file(get_relative_path('../assets/bell.svg'))
+                    self.dnd_icon.set_markup("<span>&#xea35;</span>")
                     self.dnd_button.set_name('dnd-button')
                     exec_shell_command('swaync-client -df')
                 else:
-                    self.dnd_icon.set_from_file(get_relative_path('../assets/bell-off.svg'))
+                    self.dnd_icon.set_markup("<span>&#xece9;</span>")
                     self.dnd_button.set_name('dnd-button-off')
                     exec_shell_command('swaync-client -dn')
             if command == 'open':

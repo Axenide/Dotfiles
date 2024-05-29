@@ -31,6 +31,13 @@
   font-style: italic;
 }
 
+#bell-label {
+  color: @gray;
+  font-family: "tabler-icons";
+  font-size: 40pt;
+  font-weight: normal;
+}
+
 #ext-label-2 {
   color: @gray;
   font-size: 10.5pt;

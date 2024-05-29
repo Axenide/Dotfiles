@@ -23,7 +23,7 @@ class Power(EventBox):
 
         self.reboot = Button(
             name="reboot",
-            child=Label(label="<span>&#xf3ae;</span>", markup=True),
+            child=Label(label="<span>&#xeb13;</span>", markup=True),
         )
 
         self.shutdown = Button(

@@ -32,32 +32,12 @@
   background: linear-gradient(@background, @darkgray);
 }
 
-#run-label,
-#media-label,
-#colorpicker-label,
-#chat-expand-image,
-#chat-reload-image,
-#chat-detach-image {
-  color: @red;
-  font-family: "tabler-icons";
-  font-size: 20px;
-  font-weight: normal;
-  transition: all 0.25s ease;
-  padding: 9px 8px;
-}
-
-#run-button:hover #run-label,
-#media-button:hover #media-label,
-#colorpicker:hover #colorpicker-label,
-#chat-expand:hover #chat-expand-image,
-#chat-reload:hover #chat-reload-image,
-#chat-detach:hover #chat-detach-image {
-  text-shadow:
-  0 0 5px @red,
-  0 0 5px @red,
-  0 0 5px @red;
-}
-
+#run-button > *,
+#media-button > *,
+#colorpicker > *,
+#chat-expand > *,
+#chat-reload > *,
+#chat-detach > *,
 #shutdown > *,
 #reboot > *,
 #logout > *,
@@ -71,6 +51,12 @@
   padding: 9px 8px;
 }
 
+#run-button:hover > *,
+#media-button:hover > *,
+#colorpicker:hover > *,
+#chat-expand:hover > *,
+#chat-reload:hover > *,
+#chat-detach:hover > *,
 #shutdown:hover > *,
 #reboot:hover > *,
 #logout:hover > *,

@@ -30,7 +30,7 @@ class Dashboard(Box):
                     spacing=8,
                     children=[
                         Label(name="ext-label", label="No Notifications!"),
-                        Image(image_file=get_relative_path("../assets/bell-check.svg")),
+                        Label(name="bell-label", label="<span>&#xf814;</span>", markup=True),
                         Label(name="ext-label-2", label="(Because I haven't coded that yet)"),
                     ]
                 )

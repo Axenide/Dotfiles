@@ -52,7 +52,7 @@ python-setproctitle
 ranger
 ripgrep
 rofi-calc
-rofi-lbonn-wayland
+rofi-wayland
 rofimoji
 slurp
 starship

@@ -16,10 +16,7 @@ class AIbuttons(Box):
         self.chat_reload = Button(
             name="chat-reload",
             h_expand=False,
-            child=Image(
-                name="chat-reload-image",
-                image_file=get_relative_path("../assets/refresh.svg")
-            )
+            child=Label(label="<span>&#xf3ae;</span>", markup=True),
         )
 
         self.chat_url = Button(
@@ -33,10 +30,7 @@ class AIbuttons(Box):
         self.chat_detach = Button(
             name="chat-detach",
             h_expand=False,
-            child=Image(
-                name="chat-detach-image",
-                image_file=get_relative_path("../assets/external.svg")
-            )
+            child=Label(label="<span>&#xea99;</span>", markup=True),
         )
 
         self.buttons = [

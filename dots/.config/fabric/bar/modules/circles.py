@@ -25,6 +25,11 @@ class Circles(Box):
             name="battery_circular-progress-bar",
         )
         GLib.Thread.new(None, self.update_status)
+
+        self.cpu_icon = Label(name="cpu-icon", label="<span>&#xef8e;</span>", markup=True)
+        self.memory_icon = Label(name="memory-icon", label="<span>&#xfa97;</span>", markup=True)
+        self.battery_icon = Label(name="battery-icon", label="<span>&#xea38;</span>", markup=True)
+
         self.add(
             Box(
                 spacing=24,
@@ -43,11 +48,7 @@ class Circles(Box):
                                 children=[
                                     Overlay(
                                         children=self.cpu_circular_progress_bar,
-                                        overlays=[
-                                            Image(
-                                                image_file=get_relative_path("../assets/cpu.svg"),
-                                            ),
-                                        ],
+                                        overlays=[self.cpu_icon],
                                     )
                                 ],
                             ),
@@ -55,11 +56,7 @@ class Circles(Box):
                                 children=[
                                     Overlay(
                                         children=self.memory_circular_progress_bar,
-                                        overlays=[
-                                            Image(
-                                                image_file=get_relative_path("../assets/ram.svg"),
-                                            ),
-                                        ],
+                                        overlays=[self.memory_icon],
                                     )
                                 ]
                             ),
@@ -67,11 +64,7 @@ class Circles(Box):
                                 children=[
                                     Overlay(
                                         children=self.battery_circular_progress_bar,
-                                        overlays=[
-                                            Image(
-                                                image_file=get_relative_path("../assets/bolt.svg"),
-                                            ),
-                                        ],
+                                        overlays=[self.battery_icon],
                                     ),
                                 ]
                             ),

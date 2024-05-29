@@ -21,3 +21,21 @@
 	margin-top: 0px;
 	padding: 8px;
 }
+
+#cpu-icon, #memory-icon, #battery-icon {
+  font-size: 20px;
+  font-family: "tabler-icons";
+  font-weight: normal;
+}
+
+#cpu-icon {
+  color: @red;
+}
+
+#memory-icon {
+  color: @blue;
+}
+
+#battery-icon {
+  color: @green;
+}

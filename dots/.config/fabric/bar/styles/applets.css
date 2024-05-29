@@ -37,3 +37,23 @@
   transition: all 0.25s ease;
   background: linear-gradient(to bottom, @background 0%, @darkgray 95%, @warmgray 95%, @warmgray 100%);
 }
+
+#wifi-button > *,
+#bluetooth-button > *,
+#night-button > *,
+#dnd-button > * {
+  color: @white;
+  font-family: "tabler-icons";
+  font-size: 20px;
+  font-weight: normal;
+}
+
+#wifi-button-off > *,
+#bluetooth-button-off > *,
+#night-button-off > *,
+#dnd-button-off > * {
+  color: @warmgray;
+  font-family: "tabler-icons";
+  font-size: 20px;
+  font-weight: normal;
+}

@@ -33,32 +33,19 @@ class Bar(Window):
 
         self.run_button = Button(
             name="run-button",
-            child=Label(
-                name="run-label",
-                label="<span>&#xec2c;</span>",
-                markup=True,
-            ),
+            child=Label(label="<span>&#xec2c;</span>", markup=True),
         )
 
         self.power = Power()
 
         self.colorpicker = Button(
             name="colorpicker",
-            tooltip_text="Color Picker",
-            child=Label(
-                name="colorpicker-label",
-                label="<span>&#xebe6;</span>",
-                markup=True,
-            ),
+            child=Label(label="<span>&#xebe6;</span>", markup=True),
         )
         self.media_button = Button(
             name="media-button",
             tooltip_text=str(exec_shell_command('playerctl metadata artist -f "{{ artist }} - {{ title }}"')).rstrip(),
-            child=Label(
-                name="media-label",
-                label="<span>&#xf00d;</span>",
-                markup=True,
-            ),
+            child=Label(label="<span>&#xf00d;</span>", markup=True),
         )
         self.time_button = Button(
             name="time-button",
