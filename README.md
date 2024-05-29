@@ -196,6 +196,9 @@ Also it will install `yay`, but you can skip the installation and use any AUR he
 | <kbd>SUPER + SHIFT + S</kbd>                          | Copy area screenshot            |
 | <kbd>SUPER + D</kbd>                                  | Toggle Dashboard                    |
 | <kbd>SUPER + A</kbd>                                  | Talk with Alpha              |
+| <kbd>SUPER + ,</kbd>                                  | Select wallpaper              |
+| <kbd>SUPER + SHIFT + B</kbd>                          | Reload bar CSS              |
+| <kbd>SUPER + ALT + B</kbd>                            | Restart bar              |
 
 ### Tmux
 
