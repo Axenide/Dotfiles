@@ -1,6 +1,8 @@
 #sidebar-splitter2 {
   appearance: none !important;
-  width: 0px !important;
+  position: absolute !important;
+  width: 5px !important;
+  margin: -2px !important;
 }
 
 .tabbrowser-tab .tab-content {
@@ -50,17 +52,18 @@
   border-radius: 6px !important;
   border: 1px solid #1b1d1d !important;
   margin-top: 2px !important;
-  margin-bottom: -1px !important;
-  margin-left: -1px !important;
-  margin-right: -3px !important;
+  margin-bottom: 4px !important;
+  margin-left: 4px !important;
+  margin-right: 2px !important;
  }
 
 .browser-sidebar2 browser {
   margin-left: -3px;
-  margin-right: 0px;
+  margin-right: 1px;
   margin-bottom: -5px;
-  margin-top: -1px;
-  border-radius: 0px !important;
+  margin-top: -2px;
+  border-radius: 6px !important;
+  border: 0px solid #1b1d1d !important;
 }
 
 #sidebar2-header {
@@ -76,7 +79,7 @@
 }
 
 #urlbar-background {
-  margin-top: 1px !important;
+  margin-top: 2px !important;
   border-radius: 6px !important;
   background: linear-gradient(#000000, #1b1d1d) !important;
 }
@@ -103,8 +106,8 @@
 
 #sidebar {
   padding: 1px !important;
-  margin-right: -15px !important;
-  margin-left: -4px !important;
+  margin-right: -5px !important;
+  margin-left: 3px !important;
 }
 
 #sidebar-box {
@@ -115,4 +118,9 @@
   position: relative !important;
   right: 2px !important;
   margin: 0 -2px !important;
+}
+
+#splitview-splitter {
+  margin: -3px !important;
+  width: 4px !important;
 }
