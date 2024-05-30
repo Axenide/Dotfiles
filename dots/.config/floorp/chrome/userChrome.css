@@ -51,7 +51,7 @@
   > browser {
   border-radius: 6px !important;
   border: 1px solid #1b1d1d !important;
-  margin-top: 2px !important;
+  margin-top: -1px !important;
   margin-bottom: 4px !important;
   margin-left: 4px !important;
   margin-right: 2px !important;
@@ -61,7 +61,7 @@
   margin-left: -3px;
   margin-right: 1px;
   margin-bottom: -5px;
-  margin-top: -2px;
+  margin-top: -3px;
   border-radius: 6px !important;
   border: 0px solid #1b1d1d !important;
 }
@@ -79,7 +79,7 @@
 }
 
 #urlbar-background {
-  margin-top: 2px !important;
+  margin-top: 0px !important;
   border-radius: 6px !important;
   background: linear-gradient(#000000, #1b1d1d) !important;
 }
