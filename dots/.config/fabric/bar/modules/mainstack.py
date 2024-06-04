@@ -1,4 +1,5 @@
 from __init__ import *
+from .apps import *
 
 class MainStack(Stack):
     def __init__(self):
@@ -13,11 +14,13 @@ class MainStack(Stack):
         self.chat = AIchat()
         self.dashboard = Dashboard()
         self.wallpapers = Wallpapers()
+        self.apps = Apps()
 
         self.set_children(
             [
                 self.chat,
                 self.dashboard,
                 self.wallpapers,
+                self.apps,
             ]
         )

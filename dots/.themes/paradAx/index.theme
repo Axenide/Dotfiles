@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=paradise
+Comment=the paradise theme, Axenide Remix.
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=paraAx
+MetacityTheme=paradAx
+IconTheme=gnome
+CursorTheme=DMZ-Black
+ButtonLayout=menu:minimize,maximize,close

@@ -1,11 +1,15 @@
 import os
 import signal
 import time
+import subprocess
+
+from thefuzz import fuzz, process
 
 import dbus
 import fabric
 from fabric.utils.fabricator import Fabricator
 from fabric.utils import (
+    Application,
     FormattedString,
     invoke_repeater,
     bulk_connect,
@@ -13,6 +17,7 @@ from fabric.utils import (
     exec_shell_command_async,
     get_relative_path,
     set_stylesheet_from_file,
+    get_desktop_applications,
 )
 
 from fabric.widgets import (
@@ -22,6 +27,7 @@ from fabric.widgets import (
     CircularProgressBar,
     DateTime,
     EventBox,
+    Entry,
     Image,
     Label,
     Overlay,

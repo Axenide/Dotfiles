@@ -102,6 +102,8 @@ class Bar(Window):
         self.user = User()
         self.stack = MainStack()
         self.stack.chat.buttons.parent = self
+
+        self.stack.apps.parent = self
         
         self.content_box.add(
             Box(
@@ -162,8 +164,20 @@ class Bar(Window):
             else:
                 self.content_box.set_reveal_child(False)
 
+        elif command == "apps":
+            if self.stack.get_visible_child() != self.stack.apps or self.content_box.get_reveal_child() == False:
+                self.set_keyboard_mode("on-demand")
+                self.stack.set_visible_child(self.stack.apps)
+                self.stack.apps.app_entry.grab_focus()
+                self.content_box.set_reveal_child(True)
+            else:
+                self.content_box.set_reveal_child(False)
+
         elif command == "update-style":
             set_stylesheet_from_file(get_relative_path("../style.css"))
+
+        if self.content_box.get_reveal_child() == False:
+            self.set_keyboard_mode("none")
 
         return False
 

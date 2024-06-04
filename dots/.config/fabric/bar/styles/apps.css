@@ -1,0 +1,43 @@
+#app-entry {
+  color: @white;
+  background-color: @background;
+  border: 1px solid @darkgray;
+  border-radius: 6px;
+  padding: 10px;
+}
+
+#app-entry selection {
+  color: @background;
+  background-color: @red;
+}
+
+/* Change placeholder text color */
+#app-entry placeholder {
+  color: @darkgray;
+}
+
+#app-entry:focused {
+  color: @white;
+  /* background: linear-gradient(@background, @darkgray); */
+  border: 1px solid @red;
+  border-radius: 6px;
+  padding: 10px;
+}
+
+#app-scroll {
+  color: @white;
+  background-color: @background;
+  border: 1px solid @darkgray;
+  border-radius: 6px;
+  padding: 4px;
+}
+
+#app-button {
+  color: @white;
+  background-color: @background;
+  padding: 10px;
+}
+
+#app-button:focused {
+  color: @red;
+}
