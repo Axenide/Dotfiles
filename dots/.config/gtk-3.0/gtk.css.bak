@@ -27,7 +27,7 @@
 @define-color card_shade_color rgba(0, 0, 0, 0.36);
 @define-color dialog_bg_color #111111;
 @define-color dialog_fg_color #E9E4E4;
-@define-color popover_bg_color #111111;
+@define-color popover_bg_color #000000;
 @define-color popover_fg_color #E9E4E4;
 @define-color shade_color rgba(0, 0, 0, 0.36);
 @define-color scrollbar_outline_color rgba(0, 0, 0, 0.5);
