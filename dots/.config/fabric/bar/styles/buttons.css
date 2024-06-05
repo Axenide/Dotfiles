@@ -2,7 +2,7 @@
   transition: all 0.25s ease;
   color: @white;
 	background-color: @background;
-	border: 1px solid @darkgray;
+	border: 2px solid @darkgray;
 	border-radius: 6px;
 	padding: 11px;
 }
@@ -20,7 +20,7 @@
 	transition: all 0.25s ease;
 	background-color: @background;
 	border-radius: 6px;
-	border: 1px solid @darkgray;
+	border: 2px solid @darkgray;
 }
 
 #run-button:hover,
@@ -37,12 +37,7 @@
 #colorpicker > *,
 #chat-expand > *,
 #chat-reload > *,
-#chat-detach > *,
-#shutdown > *,
-#reboot > *,
-#logout > *,
-#suspend > *,
-#lock > * {
+#chat-detach > * {
   color: @red;
   font-family: "tabler-icons";
   font-size: 20px;
@@ -56,12 +51,7 @@
 #colorpicker:hover > *,
 #chat-expand:hover > *,
 #chat-reload:hover > *,
-#chat-detach:hover > *,
-#shutdown:hover > *,
-#reboot:hover > *,
-#logout:hover > *,
-#suspend:hover > *,
-#lock:hover > * {
+#chat-detach:hover > * {
   text-shadow:
   0 0 5px @red,
   0 0 5px @red,
@@ -72,13 +62,80 @@
 	transition: all 0.25s ease;
 	background-color: @background;
 	border-radius: 6px;
-	border: 1px solid @darkgray;
+	border: 2px solid @darkgray;
 }
 
 #power-event-hover {
 	transition: all 0.25s ease;
 	background-color: @background;
 	border-radius: 6px;
-	border: 1px solid @darkgray;
+	border: 2px solid @darkgray;
   background: linear-gradient(@background, @darkgray);
+}
+
+#shutdown > *,
+#reboot > *,
+#logout > *,
+#suspend > *,
+#lock > * {
+  font-family: "tabler-icons";
+  font-size: 20px;
+  font-weight: normal;
+  transition: all 0.25s ease;
+  padding: 9px 8px;
+}
+
+#shutdown > * {
+  color: @red;
+}
+
+#reboot > * {
+  color: @yellow;
+}
+
+#logout > * {
+  color: @green;
+}
+
+#suspend > * {
+  color: @blue;
+}
+
+#lock > * {
+  color: @magenta;
+}
+
+#shutdown:hover > * {
+  text-shadow:
+  0 0 5px @red,
+  0 0 5px @red,
+  0 0 5px @red;
+}
+
+#reboot:hover > * {
+  text-shadow:
+  0 0 5px @yellow,
+  0 0 5px @yellow,
+  0 0 5px @yellow;
+}
+
+#logout:hover > * {
+  text-shadow:
+  0 0 5px @green,
+  0 0 5px @green,
+  0 0 5px @green;
+}
+
+#suspend:hover > * {
+  text-shadow:
+  0 0 5px @blue,
+  0 0 5px @blue,
+  0 0 5px @blue;
+}
+
+#lock:hover > * {
+  text-shadow:
+  0 0 5px @magenta,
+  0 0 5px @magenta,
+  0 0 5px @magenta;
 }

@@ -7,7 +7,7 @@
 
 #system-tray {
   background-color: @background;
-	border: 1px solid @darkgray;
+	border: 2px solid @darkgray;
 	border-radius: 6px;
 	padding: 10px 0;
 }
@@ -20,26 +20,26 @@
 
 #ext {
   background-color: @background;
-  border: 1px solid @darkgray;
+  border: 2px solid @darkgray;
   border-radius: 6px;
 }
 
 #ext-label {
-  color: @gray;
+  color: @lightgray;
   font-size: 16pt;
   font-weight: bold;
   font-style: italic;
 }
 
 #bell-label {
-  color: @gray;
+  color: @lightgray;
   font-family: "tabler-icons";
   font-size: 40pt;
   font-weight: normal;
 }
 
 #ext-label-2 {
-  color: @gray;
+  color: @lightgray;
   font-size: 10.5pt;
   font-weight: bold;
   font-style: italic;

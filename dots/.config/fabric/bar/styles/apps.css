@@ -1,7 +1,7 @@
 #app-entry {
   color: @white;
   background-color: @background;
-  border: 1px solid @darkgray;
+  border: 2px solid @darkgray;
   border-radius: 6px;
   padding: 10px;
 }
@@ -19,7 +19,7 @@
 #app-entry:focused {
   color: @white;
   /* background: linear-gradient(@background, @darkgray); */
-  border: 1px solid @red;
+  border: 2px solid @red;
   border-radius: 6px;
   padding: 10px;
 }
@@ -27,7 +27,7 @@
 #app-scroll {
   color: @white;
   background-color: @background;
-  border: 1px solid @darkgray;
+  border: 2px solid @darkgray;
   border-radius: 6px;
   padding: 4px;
 }

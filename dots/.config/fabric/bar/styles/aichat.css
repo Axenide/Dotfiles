@@ -6,13 +6,13 @@
   transition: all 0.25s ease;
   background-color: @background;
   border-radius: 6px;
-  border: 1px solid @darkgray;
+  border: 2px solid @darkgray;
   padding: 9px 0;
 }
 
 #chat-url label {
   transition: all 0.25s ease;
-  color: @warmgray;
+  color: @lightgray;
 }
 
 #chat-url:hover {

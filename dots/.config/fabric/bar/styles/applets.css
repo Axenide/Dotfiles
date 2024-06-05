@@ -10,7 +10,7 @@
 #dnd-button {
   transition: all 0.25s ease;
   background: linear-gradient(to bottom, @background 0%, @background 95%, @green 95%, @green 100%);
-	border: 1px solid @darkgray;
+	border: 2px solid @darkgray;
 	border-radius: 6px;
 }
 
@@ -18,8 +18,8 @@
 #bluetooth-button-off,
 #night-button-off,
 #dnd-button-off {
-  background: linear-gradient(to bottom, @background 0%, @background 95%, @warmgray 95%, @warmgray 100%);
-  border: 1px solid @darkgray;
+  background: linear-gradient(to bottom, @background 0%, @background 95%, @lightgray 95%, @lightgray 100%);
+  border: 2px solid @darkgray;
   border-radius: 6px;
 }
 
@@ -35,7 +35,7 @@
 #night-button-off:hover,
 #dnd-button-off:hover {
   transition: all 0.25s ease;
-  background: linear-gradient(to bottom, @background 0%, @darkgray 95%, @warmgray 95%, @warmgray 100%);
+  background: linear-gradient(to bottom, @background 0%, @darkgray 95%, @lightgray 95%, @lightgray 100%);
 }
 
 #wifi-button > *,
@@ -52,7 +52,7 @@
 #bluetooth-button-off > *,
 #night-button-off > *,
 #dnd-button-off > * {
-  color: @warmgray;
+  color: @lightgray;
   font-family: "tabler-icons";
   font-size: 20px;
   font-weight: normal;

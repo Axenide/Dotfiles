@@ -1,0 +1,83 @@
+-- paradAx made by Axenide >>> https://github.com/Axenide
+
+-- Main background, empty for terminal default, need to be empty if you want transparent background
+theme[main_bg] = "#151515"
+
+-- Main text color
+theme[main_fg] = "#E8E3E3"
+
+-- Title color for boxes
+theme[title] = "#E8E3E3"
+
+-- Highlight color for keyboard shortcuts
+theme[hi_fg] = "#B66467"
+
+-- Background color of selected items
+theme[selected_bg] = "#D9BC8C"
+
+-- Foreground color of selected items
+theme[selected_fg] = "#151515"
+
+-- Color of inactive/disabled text
+theme[inactive_fg] = "#151515"
+
+-- Color of text appearing on top of graphs, i.e uptime and current network graph scaling
+theme[graph_text] = "#BBB6B6"
+
+-- Misc colors for processes box including mini cpu graphs, details memory graph and details status text
+theme[proc_misc] = "#8C977D"
+
+-- Cpu box outline color
+theme[cpu_box] = "#424242"
+
+-- Memory/disks box outline color
+theme[mem_box] = "#424242"
+
+-- Net up/down box outline color
+theme[net_box] = "#424242"
+
+-- Processes box outline color
+theme[proc_box] = "#424242"
+
+-- Box divider line and small boxes line color
+theme[div_line] = "#424242"
+
+-- Temperature graph colors
+theme[temp_start] = "#8AA6A2"
+theme[temp_mid] = "#D9BC8C"
+theme[temp_end] = "#B66467"
+
+-- CPU graph colors
+theme[cpu_start] = "#8C977D"
+theme[cpu_mid] = "#D9BC8C"
+theme[cpu_end] = "#B66467"
+
+-- Mem/Disk free meter
+theme[free_start] = "#8C977D"
+theme[free_mid] = ""
+theme[free_end] = ""
+
+-- Mem/Disk cached meter
+theme[cached_start] = "#8AA6A2"
+theme[cached_mid] = ""
+theme[cached_end] = ""
+
+-- Mem/Disk available meter
+theme[available_start] = "#D9BC8C"
+theme[available_mid] = ""
+theme[available_end] = ""
+
+-- Mem/Disk used meter
+theme[used_start] = "#B66467"
+theme[used_mid] = ""
+theme[used_end] = ""
+
+-- Download graph colors
+theme[download_start] = "#D9BC8C"
+theme[download_mid] = ""
+theme[download_end] = ""
+
+-- Upload graph colors
+theme[upload_start] = "#A988B0"
+theme[upload_mid] = ""
+theme[upload_end] = ""

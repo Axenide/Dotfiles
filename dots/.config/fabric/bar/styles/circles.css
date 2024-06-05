@@ -13,9 +13,9 @@
 	border: solid 5px @green;
 }
 
-#circular-progress-bar-container {
+#circles-container {
 	background-color: @background;
-	border: 1px solid @darkgray;
+	border: 2px solid @darkgray;
 	border-radius: 6px;
 	margin-right: 0px;
 	margin-top: 0px;

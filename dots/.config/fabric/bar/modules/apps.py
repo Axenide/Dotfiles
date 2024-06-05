@@ -1,3 +1,4 @@
+from os import walk
 from __init__ import *
 
 class AppButton(Button):
@@ -32,16 +33,17 @@ class AppButton(Button):
         self.connect("clicked", lambda _: self.launch_app())
         self.add(self.button_box)
 
+    def rm_percent(self, command):
+        pattern = r'\s?%\w'
+        cleaned_command = re.sub(pattern, '', command)
+        return cleaned_command
+
     # TODO look into how ags does this
     def launch_app(self):
-        cmd = [x for x in self.app.command_line.split(" ") if x[0] != "%"]
-        print(cmd)
-        subprocess.Popen(
-            cmd,
-            stdout=subprocess.DEVNULL,
-            stderr=subprocess.STDOUT,
-            start_new_session=True,
-        )
+        exec_shell_command_async(
+            f"hyprctl dispatch exec '{self.rm_percent(self.app.command_line)}'",
+            lambda *_: logger.info(f"Launched {self.app.name}"),
+        ) if self.app.command_line else None
 
 class Apps(Box):
     def __init__(self, **kwargs):
@@ -90,6 +92,8 @@ class Apps(Box):
 
     def toggle_popup(self):
         self.app_entry.set_text("")
+        self.app_entry.grab_remove()
+        self.parent.set_keyboard_mode("none")
         self.reset_app_menu()
         self.parent.content_box.set_reveal_child(False)
 

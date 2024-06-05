@@ -1,7 +1,7 @@
 set recolor "true"
 set default-bg rgba(0,0,0,0.9)
 set recolor-lightcolor rgba(0,0,0,0)
-set recolor-darkcolor "#928374"
+set recolor-darkcolor "#E9E4E4"
 set adjust-open "width"
 set guioptions ""
 set first-page-column 1:2

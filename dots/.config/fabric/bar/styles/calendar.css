@@ -1,21 +1,22 @@
 #calendar {
-  color: @warmgray;
+  color: @lightgray;
+  font-size: 12pt;
 }
 
 #calendar.view {
   background-color: @background;
-  border: 1px solid @darkgray;
+  border: 2px solid @darkgray;
   border-radius: 6px;
 }
 
 #calendar.header {
-  color: @white;
+  color: @magenta;
   background-color: @black;
-  border: 1px solid @darkgray;
+  border: 2px solid @darkgray;
   border-radius: 6px 8px 0 0;
 }
 
 #calendar:selected {
   border-radius: 4px;
-  color: @red;
+  color: @magenta;
 }

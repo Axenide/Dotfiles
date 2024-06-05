@@ -18,7 +18,7 @@
 }
 
 .tabbrowser-tab[selected] .tab-content {
-    border: 1px solid #db474080;
+    border: 1px solid #B8646780;
 }
 
 .tabbrowser-tab:not([selected]) .tab-content {
@@ -26,7 +26,7 @@
 }
 
 .tabbrowser-tab[pinned] .tab-content {
-    background-color: #db474050;
+    background-color: #B8646750;
 }
 
 .tabbrowser-tab[pinned] .tab-icon-image {
@@ -50,7 +50,7 @@
   > .browserStack
   > browser {
   border-radius: 6px !important;
-  border: 1px solid #1b1d1d !important;
+  border: 1px solid #111111 !important;
   margin-top: -1px !important;
   margin-bottom: 4px !important;
   margin-left: 4px !important;
@@ -63,7 +63,7 @@
   margin-bottom: -5px;
   margin-top: -3px;
   border-radius: 6px !important;
-  border: 0px solid #1b1d1d !important;
+  border: 0px solid #111111 !important;
 }
 
 #sidebar2-header {
@@ -81,7 +81,7 @@
 #urlbar-background {
   margin-top: 0px !important;
   border-radius: 6px !important;
-  background: linear-gradient(#000000, #1b1d1d) !important;
+  background: linear-gradient(#000000, #111111) !important;
 }
 
 #urlbar:hover #identity-box,
@@ -118,6 +118,11 @@
   position: relative !important;
   right: 2px !important;
   margin: 0 -2px !important;
+}
+
+#sidebar-splitter {
+  appearance: none !important;
+  width: 0px !important;
 }
 
 #splitview-splitter {

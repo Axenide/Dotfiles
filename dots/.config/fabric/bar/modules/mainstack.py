@@ -20,7 +20,7 @@ class MainStack(Stack):
             [
                 self.chat,
                 self.dashboard,
-                self.wallpapers,
                 self.apps,
+                self.wallpapers,
             ]
         )

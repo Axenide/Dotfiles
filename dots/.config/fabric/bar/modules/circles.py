@@ -40,7 +40,7 @@ class Circles(Box):
                     Box(
                         name="circular-progress-bar-container",
                         v_expand=True,
-                        v_align="fill",
+                        v_align="center",
                         spacing=4,
                         orientation="v",
                         children=[

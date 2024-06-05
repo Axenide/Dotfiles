@@ -1,6 +1,6 @@
 #full-player {
   background-color: @background;
-  border: 1px solid @darkgray;
+  border: 2px solid @darkgray;
   border-radius: 6px;
   padding: 4px;
 }
@@ -9,7 +9,7 @@
   background-size: cover;
   background-position: center;
   border-radius: 2px;
-  border: 1px solid @darkgray;
+  border: 2px solid @darkgray;
   margin-right: 5px;
   padding: 4px;
   min-height: 100px;
@@ -30,7 +30,7 @@
 #prev-button > *,
 #next-button > * {
   transition: all 0.25s ease;
-  color: @warmgray;
+  color: @lightgray;
   font-size: 20px;
   font-family: "tabler-icons";
   font-weight: normal;
@@ -51,7 +51,7 @@
 #artist {
   font-size: 10.5pt;
   font-style: italic;
-  color: @warmgray;
+  color: @lightgray;
 }
 
 #title, #artist {

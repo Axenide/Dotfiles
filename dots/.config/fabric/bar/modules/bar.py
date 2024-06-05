@@ -140,7 +140,7 @@ class Bar(Window):
 
     def binds(self, command):
         if command == "chat":
-            if self.stack.get_visible_child() != self.stack.chat or self.content_box.get_reveal_child() == False:
+            if self.content_box.get_reveal_child() == False or self.stack.get_visible_child() != self.stack.chat:
                 self.set_keyboard_mode("on-demand")
                 self.stack.set_visible_child(self.stack.chat)
                 self.content_box.set_reveal_child(True)
@@ -149,7 +149,7 @@ class Bar(Window):
                 self.content_box.set_reveal_child(False)
 
         elif command == "dashboard":
-            if self.stack.get_visible_child() != self.stack.dashboard or self.content_box.get_reveal_child() == False:
+            if self.content_box.get_reveal_child() == False or self.stack.get_visible_child() != self.stack.dashboard:
                 self.set_keyboard_mode("none")
                 self.stack.set_visible_child(self.stack.dashboard)
                 self.content_box.set_reveal_child(True)
@@ -157,7 +157,7 @@ class Bar(Window):
                 self.content_box.set_reveal_child(False)
 
         elif command == "wallpapers":
-            if self.stack.get_visible_child() != self.stack.wallpapers or self.content_box.get_reveal_child() == False:
+            if self.content_box.get_reveal_child() == False or self.stack.get_visible_child() != self.stack.wallpapers:
                 self.set_keyboard_mode("none")
                 self.stack.set_visible_child(self.stack.wallpapers)
                 self.content_box.set_reveal_child(True)
@@ -165,10 +165,10 @@ class Bar(Window):
                 self.content_box.set_reveal_child(False)
 
         elif command == "apps":
-            if self.stack.get_visible_child() != self.stack.apps or self.content_box.get_reveal_child() == False:
+            if self.content_box.get_reveal_child() == False or self.stack.get_visible_child() != self.stack.apps:
                 self.set_keyboard_mode("on-demand")
-                self.stack.set_visible_child(self.stack.apps)
                 self.stack.apps.app_entry.grab_focus()
+                self.stack.set_visible_child(self.stack.apps)
                 self.content_box.set_reveal_child(True)
             else:
                 self.content_box.set_reveal_child(False)

@@ -1,7 +1,7 @@
 
 #user {
   background-color: @background;
-  border: 1px solid @darkgray;
+  border: 2px solid @darkgray;
   border-radius: 6px;
   padding: 8px;
 }
@@ -10,7 +10,7 @@
   background-size: cover;
   background-position: center;
   border-radius: 6px;
-  border: 1px solid @darkgray;
+  border: 2px solid @darkgray;
   min-width: 48px;
   min-height: 48px;
 }
@@ -23,7 +23,7 @@
 }
 
 #host-label {
-  color: @warmgray;
+  color: @lightgray;
   margin-left: 8px;
   font-weight: bold;
   font-style: italic;
