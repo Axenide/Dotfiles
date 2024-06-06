@@ -57,7 +57,8 @@ class AIbuttons(Box):
 
         elif button == self.chat_detach:
             self.parent.content_box.set_reveal_child(False)
-            return exec_shell_command_async(get_relative_path(f'../scripts/webview.py http://localhost:3141/'), lambda *args: None)
+            # return exec_shell_command_async(get_relative_path(f'../scripts/webview.py http://localhost:3141/'), lambda *args: None)
+            return exec_shell_command_async(f"hyprctl dispatch exec {get_relative_path(f'../scripts/webview.py http://localhost:3141/')}", lambda *args: None)
 
         elif button == self.chat_url:
             self.parent.content_box.set_reveal_child(False)
