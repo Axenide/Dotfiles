@@ -4,12 +4,14 @@ WALLPAPERS_PATH = f"{os.getenv('XDG_PICTURES_DIR')}/Wallpapers"
 
 
 class Wallpapers(ScrolledWindow):
-    def __init__(self):
+    def __init__(self, parent):
         super().__init__(
             name="wallpapers",
             h_expand=True,
             v_expand=True,
         )
+
+        self.parent = parent
 
         self.wallpapers = self.get_wallpapers()
 
@@ -66,16 +68,20 @@ class Wallpapers(ScrolledWindow):
         return self.change_cursor("default")
 
     def on_button_press(self, button: Button, event):
-        exec_shell_command(f"""
+        exec_shell_command_async(f"""
         swww img
         -t outer
         --transition-duration 1
         --transition-step 255
         --transition-fps 60
-        {WALLPAPERS_PATH}/{button.get_child().get_name()}""")
-        exec_shell_command(f"""
+        {WALLPAPERS_PATH}/{button.get_child().get_name()}
+        """,
+        lambda *args: None)
+        exec_shell_command_async(f"""
         ln -sf
         {WALLPAPERS_PATH}/{button.get_child().get_name()}
         {home_dir}/.current.wall
-        """)
+        """,
+        lambda *args: None)
+        self.parent.dashboard.player.cover.set_style(f"background-image: url(\"{home_dir}/.current.wall\");")
         return True

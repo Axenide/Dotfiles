@@ -13,7 +13,7 @@ class MainStack(Stack):
 
         self.chat = AIchat()
         self.dashboard = Dashboard()
-        self.wallpapers = Wallpapers()
+        self.wallpapers = Wallpapers(self)
         self.apps = Apps()
 
         self.set_children(
