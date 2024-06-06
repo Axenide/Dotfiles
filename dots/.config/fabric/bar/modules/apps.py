@@ -38,7 +38,6 @@ class AppButton(Button):
         cleaned_command = re.sub(pattern, '', command)
         return cleaned_command
 
-    # TODO look into how ags does this
     def launch_app(self):
         exec_shell_command_async(
             f"hyprctl dispatch exec '{self.rm_percent(self.app.command_line)}'",
