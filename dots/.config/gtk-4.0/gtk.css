@@ -17,7 +17,7 @@
 @define-color window_fg_color #E9E4E4;
 @define-color view_bg_color #000000;
 @define-color view_fg_color #E9E4E4;
-@define-color headerbar_bg_color #111111;
+@define-color headerbar_bg_color #000000;
 @define-color headerbar_fg_color #E9E4E4;
 @define-color headerbar_border_color #E9E4E4;
 @define-color headerbar_backdrop_color @window_bg_color;
