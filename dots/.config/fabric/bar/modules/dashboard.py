@@ -30,8 +30,8 @@ class Dashboard(Box):
                     spacing=8,
                     children=[
                         Label(name="ext-label", label="No Notifications!"),
-                        Label(name="bell-label", label="<span>&#xf814;</span>", markup=True),
-                        Label(name="ext-label-2", label="(Because I haven't coded that yet)"),
+                        # Label(name="bell-label", label="<span>&#xf814;</span>", markup=True),
+                        # Label(name="ext-label-2", label="(Because I haven't coded that yet)"),
                     ]
                 )
             ]
@@ -43,7 +43,7 @@ class Dashboard(Box):
                 # self.player,
                 self.ext,
                 self.circles,
-                # Box(name="bottom-box", orientation="h", h_expand=True, spacing=4, children=[self.calendar, self.circles]),
-                self.calendar,
+                Box(name="calendar-box", h_expand=True, children=[self.calendar]),
+                # self.calendar,
             ]
         )

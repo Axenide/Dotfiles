@@ -26,9 +26,9 @@
 
 #ext-label {
   color: @lightgray;
-  font-size: 16pt;
+  font-size: 10.5pt;
   font-weight: bold;
-  font-style: italic;
+  /* font-style: italic; */
 }
 
 #bell-label {

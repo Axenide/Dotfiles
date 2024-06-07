@@ -1,4 +1,3 @@
-
 #user {
   background-color: @background;
   border: 2px solid @darkgray;
@@ -19,13 +18,13 @@
   color: @white;
   margin-left: 8px;
   font-weight: bold;
-  font-size: 14pt;
+  font-size: 10.5pt;
 }
 
 #host-label {
   color: @lightgray;
   margin-left: 8px;
   font-weight: bold;
-  font-style: italic;
+  /* font-style: italic; */
   font-size: 10.5pt;
 }

@@ -4,17 +4,17 @@
 }
 
 #calendar.view {
-  background-color: @background;
-  border: 2px solid @darkgray;
-  border-radius: 6px;
+  /* background-color: @background; */
+  /* border: 2px solid @darkgray; */
+  /* border-radius: 6px; */
 }
 
 #calendar.header {
   color: @white;
-  background-color: @background;
-  border: 2px solid @darkgray;
-  border-bottom: 0px solid;
-  border-radius: 6px 8px 0 0;
+  /* background-color: @background; */
+  /* border: 2px solid @darkgray; */
+  /* border-bottom: 0px solid; */
+  /* border-radius: 6px 8px 0 0; */
 }
 
 #calendar:selected {
@@ -23,6 +23,9 @@
   background-color: @white;
 }
 
-#bottom-box {
-  min-height: 300px;
+#calendar-box {
+  background-color: @background;
+  border-radius: 6px;
+  border: 2px solid @darkgray;
+  padding: 8px;
 }

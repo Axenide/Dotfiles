@@ -37,6 +37,7 @@ class User(Box):
             Box(
                 name="user-container",
                 h_expand=True,
+                v_align="center",
                 orientation="h",
                 children=[
                     self.user_image,
