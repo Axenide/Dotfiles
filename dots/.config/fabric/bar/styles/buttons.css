@@ -59,14 +59,14 @@
 }
 
 #colorpicker > * {
-  color: @yellow;
+  color: @blue;
 }
 
 #colorpicker:hover > * {
   text-shadow:
-  0 0 5px @yellow,
-  0 0 5px @yellow,
-  0 0 5px @yellow;
+  0 0 5px @blue,
+  0 0 5px @blue,
+  0 0 5px @blue;
 }
 
 #media-button > * {
