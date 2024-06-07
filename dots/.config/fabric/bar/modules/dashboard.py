@@ -40,8 +40,10 @@ class Dashboard(Box):
         self.set_children(
             [
                 self.applets,
-                self.player,
+                # self.player,
                 self.ext,
-                Box(name="bottom-box", orientation="h", h_expand=True, spacing=4, children=[self.calendar, self.circles]),
+                self.circles,
+                # Box(name="bottom-box", orientation="h", h_expand=True, spacing=4, children=[self.calendar, self.circles]),
+                self.calendar,
             ]
         )

@@ -1,6 +1,6 @@
 #calendar {
   color: @lightgray;
-  font-size: 12pt;
+  font-size: 10.5pt;
 }
 
 #calendar.view {
@@ -10,13 +10,19 @@
 }
 
 #calendar.header {
-  color: @magenta;
-  background-color: @black;
+  color: @white;
+  background-color: @background;
   border: 2px solid @darkgray;
+  border-bottom: 0px solid;
   border-radius: 6px 8px 0 0;
 }
 
 #calendar:selected {
-  border-radius: 4px;
-  color: @magenta;
+  border-radius: 999px;
+  color: @background;
+  background-color: @white;
+}
+
+#bottom-box {
+  min-height: 300px;
 }

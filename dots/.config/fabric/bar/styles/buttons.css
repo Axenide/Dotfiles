@@ -47,7 +47,7 @@
 }
 
 #run-button:hover > *,
-#media-button:hover > *,
+/* #media-button:hover > *, */
 #colorpicker:hover > *,
 #chat-expand:hover > *,
 #chat-reload:hover > *,
@@ -56,6 +56,28 @@
   0 0 5px @red,
   0 0 5px @red,
   0 0 5px @red;
+}
+
+#colorpicker > * {
+  color: @yellow;
+}
+
+#colorpicker:hover > * {
+  text-shadow:
+  0 0 5px @yellow,
+  0 0 5px @yellow,
+  0 0 5px @yellow;
+}
+
+#media-button > * {
+  color: @magenta;
+}
+
+#media-button:hover > * {
+  text-shadow:
+  0 0 5px @magenta,
+  0 0 5px @magenta,
+  0 0 5px @magenta;
 }
 
 #power-event {

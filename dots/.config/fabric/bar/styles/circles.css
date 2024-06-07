@@ -1,16 +1,26 @@
-#cpu_circular-progress-bar {
+#cpu-circular-progress-bar {
 	color: @black;
-	border: solid 5px @red;
+	border: solid 3px @magenta;
 }
 
-#memory_circular-progress-bar {
+#memory-circular-progress-bar {
 	color: @black;
-	border: solid 5px @blue;
+	border: solid 3px @blue;
 }
 
-#battery_circular-progress-bar {
+#battery-circular-progress-bar {
 	color: @black;
-	border: solid 5px @green;
+	border: solid 3px @green;
+}
+
+#disk-circular-progress-bar {
+  color: @black;
+  border: solid 3px @yellow;
+}
+
+#temp-circular-progress-bar {
+  color: @black;
+  border: solid 3px @red;
 }
 
 #circles-container {
@@ -22,14 +32,18 @@
 	padding: 8px;
 }
 
-#cpu-icon, #memory-icon, #battery-icon {
-  font-size: 20px;
+#temp-icon,
+#disk-icon,
+#battery-icon,
+#memory-icon,
+#cpu-icon {
+  font-size: 16px;
   font-family: "tabler-icons";
   font-weight: normal;
 }
 
 #cpu-icon {
-  color: @red;
+  color: @magenta;
 }
 
 #memory-icon {
@@ -38,4 +52,12 @@
 
 #battery-icon {
   color: @green;
+}
+
+#disk-icon {
+  color: @yellow;
+}
+
+#temp-icon {
+  color: @red;
 }

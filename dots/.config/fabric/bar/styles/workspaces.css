@@ -1,6 +1,6 @@
 #workspaces {
 	border-radius: 6px;
-	padding: 13px;
+	padding: 14px;
 	border: 2px solid @darkgray;
 	background-color: @background;
 }
@@ -8,8 +8,8 @@
 #workspaces>button {
   border: 2px solid @white;
 	border-radius: 999px;
-	min-width: 6px;
-	min-height: 6px;
+	min-width: 4px;
+	min-height: 4px;
 	transition: all 0.5s cubic-bezier(0, 1, 0, 1);
 }
 
