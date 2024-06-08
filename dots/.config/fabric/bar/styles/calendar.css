@@ -1,5 +1,5 @@
 #calendar {
-  color: @lightgray;
+  color: @white;
   font-size: 10.5pt;
 }
 
@@ -19,8 +19,13 @@
 
 #calendar:selected {
   border-radius: 999px;
-  color: @background;
+  /* color: @background; */
+  color: black;
   background-color: @white;
+}
+
+#calendar.view {
+  /* padding: 8px; */
 }
 
 #calendar-box {

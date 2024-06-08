@@ -43,7 +43,7 @@
   font-size: 20px;
   font-weight: normal;
   transition: all 0.25s ease;
-  padding: 9px 8px;
+  padding: 8px 8px;
 }
 
 #run-button:hover > *,
@@ -104,7 +104,7 @@
   font-size: 20px;
   font-weight: normal;
   transition: all 0.25s ease;
-  padding: 9px 8px;
+  padding: 10px 8px;
 }
 
 #shutdown > * {
