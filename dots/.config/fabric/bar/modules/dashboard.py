@@ -40,7 +40,7 @@ class Dashboard(Box):
         self.set_children(
             [
                 self.applets,
-                # self.player,
+                self.player,
                 self.ext,
                 self.circles,
                 Box(name="calendar-box", h_expand=True, children=[self.calendar]),

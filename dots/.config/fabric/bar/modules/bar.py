@@ -12,7 +12,8 @@ class Bar(Window):
             keyboard_mode="none",
         )
 
-        self.system_tray = SystemTray(name="system-tray", orientation="v", spacing=8, icon_size=18)
+        # self.system_tray = SystemTray(name="system-tray", orientation="v", spacing=8, icon_size=18)
+        self.system_tray = SystemTray()
 
         self.time_sep = Label(
             label="",

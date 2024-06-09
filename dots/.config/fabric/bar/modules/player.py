@@ -119,7 +119,8 @@ class Player(Box):
 
         self.player_box = Box(
             name="player-box",
-            orientation="v",
+            orientation="h",
+            h_expand=True,
             v_align="center",
             h_align="center",
             # spacing=8,

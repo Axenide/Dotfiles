@@ -36,7 +36,7 @@ from fabric.widgets import (
     Scale,
     ScrolledWindow,
     Stack,
-    SystemTray,
+    # SystemTray,
     WaylandWindow as Window,
     WebView,
     HyprlandWorkspaceButton as WorkspaceButton,
@@ -44,7 +44,7 @@ from fabric.widgets import (
 )
 
 import gi
-from gi.repository import GLib, Gdk, GdkPixbuf, Gtk
+from gi.repository import GLib, Gdk, GdkPixbuf, Gtk, Gray
 from loguru import logger
 import psutil
 import psutil
@@ -78,6 +78,7 @@ Workspaces.scroll_handler = scroll_handler
 
 home_dir = os.getenv('HOME')
 
+from modules.systray import SystemTray
 from modules.aichat import AIchat
 from modules.circles import Circles
 from modules.player import Player
