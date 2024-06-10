@@ -26,7 +26,7 @@
 #circles-container {
 	background-color: @background;
 	border: 2px solid @darkgray;
-	border-radius: 6px;
+	border-radius: 12px;
 	margin-right: 0px;
 	margin-top: 0px;
 	padding: 8px;
@@ -44,35 +44,20 @@
 
 #cpu-icon {
   color: @magenta;
-  text-shadow:
-  0 0 5px @magenta,
-  0 0 5px @magenta;
 }
 
 #memory-icon {
   color: @blue;
-  text-shadow:
-  0 0 5px @blue,
-  0 0 5px @blue;
 }
 
 #battery-icon {
   color: @green;
-  text-shadow:
-  0 0 5px @green,
-  0 0 5px @green;
 }
 
 #disk-icon {
   color: @yellow;
-  text-shadow:
-  0 0 5px @yellow,
-  0 0 5px @yellow;
 }
 
 #temp-icon {
   color: @red;
-  text-shadow:
-  0 0 5px @red,
-  0 0 5px @red;
 }

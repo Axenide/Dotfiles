@@ -2,7 +2,7 @@
   color: @white;
   background-color: @background;
   border: 2px solid @darkgray;
-  border-radius: 6px;
+  border-radius: 12px;
   padding: 10px;
 }
 
@@ -20,7 +20,7 @@
   color: @white;
   /* background: linear-gradient(@background, @darkgray); */
   border: 2px solid @red;
-  border-radius: 6px;
+  border-radius: 12px;
   padding: 10px;
 }
 
@@ -28,7 +28,7 @@
   color: @white;
   background-color: @background;
   border: 2px solid @darkgray;
-  border-radius: 6px;
+  border-radius: 12px;
   padding: 4px;
 }
 

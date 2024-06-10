@@ -73,7 +73,8 @@ class Player(Box):
             name="cover",
             style="background-image: url(\"" + self.cover_file + "\");",
             h_expand=True,
-            v_align="end",
+            v_expand=True,
+            # v_align="end",
             orientation="v",
             children=[
                 # self.title,
@@ -120,7 +121,7 @@ class Player(Box):
         self.player_box = Box(
             name="player-box",
             orientation="h",
-            h_expand=True,
+            # h_expand=True,
             v_align="center",
             h_align="center",
             # spacing=8,

@@ -13,7 +13,7 @@ class Dashboard(Box):
         self.applets = Applets()
         self.circles = Circles()
         self.player = Player()
-        self.calendar = Gtk.Calendar(name="calendar", hexpand=True)
+        self.calendar = Calendar()
         
         self.ext = Box(
             name="ext",
@@ -43,7 +43,6 @@ class Dashboard(Box):
                 self.player,
                 self.ext,
                 self.circles,
-                Box(name="calendar-box", h_expand=True, children=[self.calendar]),
-                # self.calendar,
+                self.calendar,
             ]
         )

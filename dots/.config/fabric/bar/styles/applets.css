@@ -1,5 +1,5 @@
 #applets {
-	border-radius: 6px;
+	border-radius: 12px;
 	margin-right: 0px;
 	min-height: 50px;
 }
@@ -11,7 +11,7 @@
   transition: all 0.25s ease;
   background: linear-gradient(to bottom, @background 0%, @background 95%, @green 95%, @green 100%);
 	border: 2px solid @darkgray;
-	border-radius: 6px;
+	border-radius: 12px;
 }
 
 #wifi-button-off,
@@ -20,7 +20,7 @@
 #dnd-button-off {
   background: linear-gradient(to bottom, @background 0%, @background 95%, @lightgray 95%, @lightgray 100%);
   border: 2px solid @darkgray;
-  border-radius: 6px;
+  border-radius: 12px;
 }
 
 #wifi-button:hover,

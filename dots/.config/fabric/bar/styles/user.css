@@ -1,14 +1,14 @@
 #user {
   background-color: @background;
   border: 2px solid @darkgray;
-  border-radius: 6px;
+  border-radius: 12px;
   padding: 8px;
 }
 
 #user-image {
   background-size: cover;
   background-position: center;
-  border-radius: 6px;
+  border-radius: 12px;
   border: 2px solid @darkgray;
   min-width: 48px;
   min-height: 48px;

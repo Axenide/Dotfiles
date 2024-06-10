@@ -3,6 +3,8 @@ import re
 import signal
 import time
 import subprocess
+import calendar
+from datetime import datetime
 
 from thefuzz import fuzz, process
 
@@ -78,6 +80,7 @@ Workspaces.scroll_handler = scroll_handler
 
 home_dir = os.getenv('HOME')
 
+from modules.calendar import Calendar
 from modules.systray import SystemTray
 from modules.aichat import AIchat
 from modules.circles import Circles
