@@ -13,3 +13,7 @@
   /* border-right: 2px solid @gray; */
   background-color: alpha(@background, 1.0);
 }
+
+#corner {
+  background-color: @background;
+}

@@ -43,7 +43,3 @@
   font-weight: bold;
   font-style: italic;
 }
-
-#corner {
-  background-color: @background;
-}
