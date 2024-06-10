@@ -18,6 +18,7 @@
 #bluetooth-button-off,
 #night-button-off,
 #dnd-button-off {
+  transition: all 0.25s ease;
   background: linear-gradient(to bottom, @background 0%, @background 95%, @lightgray 95%, @lightgray 100%);
   border: 2px solid @darkgray;
   border-radius: 12px;
@@ -34,7 +35,6 @@
 #bluetooth-button-off:hover,
 #night-button-off:hover,
 #dnd-button-off:hover {
-  transition: all 0.25s ease;
   background: linear-gradient(to bottom, @background 0%, @darkgray 95%, @lightgray 95%, @lightgray 100%);
 }
 
