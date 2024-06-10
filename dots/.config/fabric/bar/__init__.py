@@ -6,8 +6,6 @@ import subprocess
 import calendar
 from datetime import datetime
 
-from thefuzz import fuzz, process
-
 import dbus
 import fabric
 from fabric.utils.fabricator import Fabricator
