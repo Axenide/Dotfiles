@@ -1,4 +1,3 @@
-from os import walk
 from __init__ import *
 
 class AppButton(Button):
@@ -99,21 +98,16 @@ class Apps(Box):
     def keypress(self, entry: Entry, event_key):
         if event_key.get_keycode()[1] == 9:
             self.toggle_popup()
-        if entry.get_text() == " " or entry.get_text() == "":
+        search_text = entry.get_text().lower()
+        if search_text.strip() == "":
             self.reset_app_menu()
             return
-        lister = process.extract(
-            entry.get_text(),
-            self.app_names,
-            scorer=fuzz.partial_ratio,
-            limit=10,
-        )
-        for elem_i in range(len(lister)):
-            name = lister[elem_i][0]
-            self.buttons_box.reorder_child(self.application_buttons[name], elem_i)
+        for name, app_button in self.application_buttons.items():
+            if search_text in name.lower():
+                app_button.show()
+            else:
+                app_button.hide()
 
     def reset_app_menu(self):
-        i = 0
         for app_button in self.application_buttons.values():
-            self.buttons_box.reorder_child(app_button, i)
-            i += 1
+            app_button.show()
