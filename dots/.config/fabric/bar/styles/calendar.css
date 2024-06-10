@@ -12,9 +12,10 @@
 }
 
 #day, #current-day, #dimmed {
+  transition: all 0.25s ease;
   font-size: 10pt;
   margin: 0px;
-  padding: 5px 5px;
+  padding: 4px 5px;
   margin: 4px 7px;
   border-radius: 999px;
 }
