@@ -2,7 +2,7 @@ tooltip {
   color: @white;
 	background-color: @background;
 	border: 2px solid @darkgray;
-	border-radius: 12px;
+	border-radius: 10px;
 	padding: 10px;
 }
 
@@ -10,7 +10,7 @@ menu {
   color: @white;
 	background-color: @background;
 	border: 2px solid @darkgray;
-	border-radius: 12px;
+	border-radius: 10px;
 	padding: 10px;
 }
 

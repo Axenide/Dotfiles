@@ -5,7 +5,7 @@ class Bar(Window):
         super().__init__(
             layer="top",
             anchor="left top bottom",
-            margin="0px -10px 0px 0px",
+            margin="0px -20px 0px 0px",
             visible=False,
             all_visible=False,
             exclusive=True,
@@ -45,7 +45,6 @@ class Bar(Window):
         )
         self.media_button = Button(
             name="media-button",
-            tooltip_text=str(exec_shell_command('playerctl metadata artist -f "{{ artist }} - {{ title }}"')).rstrip(),
             child=Label(label="<span>&#xf00d;</span>", markup=True),
         )
         self.time_button = Button(
@@ -120,12 +119,27 @@ class Bar(Window):
             )
         )
 
+        self.corners = CenterBox(
+            name="corners",
+            orientation="v",
+            # h_expand=True,
+            v_expand=True,
+        )
+
+        self.corner_top = Corner(name="corner", orientation="top-left", size=20)
+        
+        self.corner_bottom = Corner(name="corner", orientation="bottom-left", size=20)
+
+        self.corners.add_start(self.corner_top)
+        self.corners.add_end(self.corner_bottom)
+
         self.full_box = Box(
             name="full-box",
             orientation="h",
             children=[
                 self.content_box,
                 self.center_box,
+                self.corners,
             ],
         )
 

@@ -1,39 +1,8 @@
 #calendar {
-  color: @white;
-  font-size: 10.5pt;
-}
-
-#calendar.view {
-  /* background-color: @background; */
-  /* border: 2px solid @darkgray; */
-  /* border-radius: 12px; */
-}
-
-#calendar.header {
-  color: @white;
-  /* background-color: @background; */
-  /* border: 2px solid @darkgray; */
-  /* border-bottom: 0px solid; */
-  /* border-radius: 12px 8px 0 0; */
-}
-
-#calendar:selected {
-  border-radius: 999px;
-  /* color: @background; */
-  color: black;
-  background-color: @white;
-}
-
-#calendar.view {
-  /* padding: 8px; */
-}
-
-#calendar-box {
   background-color: @background;
-  border-radius: 12px;
+  border-radius: 10px;
   border: 2px solid @darkgray;
   padding: 10px;
-  /* min-height: 200px; */
 }
 
 #week-days {
@@ -78,5 +47,4 @@
 
 #dimmed {
   color: @lightgray;
-  /* font-family: "tabler-icons"; */
 }

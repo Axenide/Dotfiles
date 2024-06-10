@@ -1,6 +1,6 @@
 #wall > * {
   transition: all 0.25s ease;
-  border-radius: 12px;
+  border-radius: 10px;
   border: 2px solid @darkgray;
   min-height: 128px;
 }

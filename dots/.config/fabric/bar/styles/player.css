@@ -1,7 +1,7 @@
 #full-player {
   background-color: @background;
   border: 2px solid @darkgray;
-  border-radius: 12px;
+  border-radius: 10px;
   padding: 4px;
   min-height: 50px;
 }

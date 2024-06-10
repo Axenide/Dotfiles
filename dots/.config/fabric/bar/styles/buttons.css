@@ -3,7 +3,7 @@
   color: @white;
 	background-color: @background;
 	border: 2px solid @darkgray;
-	border-radius: 12px;
+	border-radius: 10px;
 	padding: 11px;
 }
 
@@ -19,7 +19,7 @@
 #chat-detach {
 	transition: all 0.25s ease;
 	background-color: @background;
-	border-radius: 12px;
+	border-radius: 10px;
 	border: 2px solid @darkgray;
 }
 
@@ -83,14 +83,14 @@
 #power-event {
 	transition: all 0.25s ease;
 	background-color: @background;
-	border-radius: 12px;
+	border-radius: 10px;
 	border: 2px solid @darkgray;
 }
 
 #power-event-hover {
 	transition: all 0.25s ease;
 	background-color: @background;
-	border-radius: 12px;
+	border-radius: 10px;
 	border: 2px solid @darkgray;
   background: linear-gradient(@background, @darkgray);
 }

@@ -3,7 +3,7 @@ from __init__ import *
 class Calendar(Box):
     def __init__(self):
         super().__init__(
-            name="calendar-box",
+            name="calendar",
             h_expand=True,
             h_align="fill",
             v_align="fill",

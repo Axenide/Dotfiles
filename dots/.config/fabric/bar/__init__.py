@@ -45,6 +45,8 @@ from fabric.widgets import (
     HyprlandWorkspaces as Workspaces,
 )
 
+from fabric.widgets.shapes import Corner, CornerOrientation
+
 import gi
 from gi.repository import GLib, Gdk, GdkPixbuf, Gtk, Gray
 from loguru import logger

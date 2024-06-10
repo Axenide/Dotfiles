@@ -5,7 +5,7 @@
 #chat-url {
   transition: all 0.25s ease;
   background-color: @background;
-  border-radius: 12px;
+  border-radius: 10px;
   border: 2px solid @darkgray;
   padding: 9px 0;
 }
