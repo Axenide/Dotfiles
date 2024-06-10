@@ -205,7 +205,7 @@ class Bar(Window):
             }
             command = commands.get(event.button)
             if command != 'toggle':
-                return exec_shell_command(command)
+                return exec_shell_command_async(command, lambda *args: None)
             else:
                 self.content_box.set_reveal_child(not self.content_box.get_reveal_child())
                 self.dashboard_box.set_reveal_child(not self.dashboard_box.get_reveal_child())
