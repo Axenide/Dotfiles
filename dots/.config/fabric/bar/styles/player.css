@@ -32,7 +32,6 @@
   transition: all 0.25s ease;
   color: @lightgray;
   font-size: 20px;
-  font-family: "tabler-icons";
   font-weight: normal;
 }
 
@@ -68,6 +67,5 @@
 #shuffle-icon,
 #repeat-icon {
   font-size: 20px;
-  font-family: "tabler-icons";
   font-weight: normal;
 }

@@ -44,11 +44,11 @@ class Circles(Box):
 
         GLib.Thread.new(None, self.update_status)
 
-        self.temp_icon = Label(name="temp-icon", label="<span>&#xeb38;</span>", markup=True)
-        self.disk_icon = Label(name="disk-icon", label="<span>&#xea88;</span>", markup=True)
-        self.battery_icon = Label(name="battery-icon", label="<span>&#xea38;</span>", markup=True)
-        self.memory_icon = Label(name="memory-icon", label="<span>&#xfa97;</span>", markup=True)
-        self.cpu_icon = Label(name="cpu-icon", label="<span>&#xef8e;</span>", markup=True)
+        self.temp_icon = Label(name="temp-icon", label="<span font-family='tabler-icons'>&#xeb38;</span>", markup=True)
+        self.disk_icon = Label(name="disk-icon", label="<span font-family='tabler-icons'>&#xea88;</span>", markup=True)
+        self.battery_icon = Label(name="battery-icon", label="<span font-family='tabler-icons'>&#xea38;</span>", markup=True)
+        self.memory_icon = Label(name="memory-icon", label="<span font-family='tabler-icons'>&#xfa97;</span>", markup=True)
+        self.cpu_icon = Label(name="cpu-icon", label="<span font-family='tabler-icons'>&#xef8e;</span>", markup=True)
 
         self.add(
             Box(

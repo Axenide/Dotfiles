@@ -13,20 +13,20 @@ class Calendar(EventBox):
         self.current_year = datetime.now().year
         self.current_month = datetime.now().month
 
-        self.prev_month_button = Button(name="chevron", child=Label(label="<span>&#xea60;</span>", markup=True))
+        self.prev_month_button = Button(name="chevron", child=Label(label="<span font-family='tabler-icons'>&#xea60;</span>", markup=True))
         self.prev_month_button.connect("clicked", self.on_prev_month_clicked)
 
         self.month_label = Label(name="month")
 
-        self.next_month_button = Button(name="chevron", child=Label(label="<span>&#xea61;</span>", markup=True))
+        self.next_month_button = Button(name="chevron", child=Label(label="<span font-family='tabler-icons'>&#xea61;</span>", markup=True))
         self.next_month_button.connect("clicked", self.on_next_month_clicked)
 
-        self.prev_year_button = Button(name="chevron", child=Label(label="<span>&#xea60;</span>", markup=True))
+        self.prev_year_button = Button(name="chevron", child=Label(label="<span font-family='tabler-icons'>&#xea60;</span>", markup=True))
         self.prev_year_button.connect("clicked", self.on_prev_year_clicked)
 
         self.year_label = Label(name="year")
 
-        self.next_year_button = Button(name="chevron", child=Label(label="<span>&#xea61;</span>", markup=True))
+        self.next_year_button = Button(name="chevron", child=Label(label="<span font-family='tabler-icons'>&#xea61;</span>", markup=True))
         self.next_year_button.connect("clicked", self.on_next_year_clicked)
 
         self.prev_month_rev = Revealer(

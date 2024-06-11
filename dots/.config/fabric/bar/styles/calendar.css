@@ -26,7 +26,6 @@
 }
 
 #chevron > * {
-  font-family: "tabler-icons";
   color: @lightgray;
 }
 

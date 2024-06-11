@@ -8,27 +8,27 @@ class Power(EventBox):
         )
         self.lock = Button(
             name="lock",
-            child=Label(label="<span>&#xeae2;</span>", markup=True),
+            child=Label(label="<span font-family='tabler-icons'>&#xeae2;</span>", markup=True),
         )
 
         self.suspend = Button(
             name="suspend",
-            child=Label(label="<span>&#xece7;</span>", markup=True),
+            child=Label(label="<span font-family='tabler-icons'>&#xece7;</span>", markup=True),
         )
 
         self.logout = Button(
             name="logout",
-            child=Label(label="<span>&#xeba8;</span>", markup=True),
+            child=Label(label="<span font-family='tabler-icons'>&#xeba8;</span>", markup=True),
         )
 
         self.reboot = Button(
             name="reboot",
-            child=Label(label="<span>&#xeb13;</span>", markup=True),
+            child=Label(label="<span font-family='tabler-icons'>&#xeb13;</span>", markup=True),
         )
 
         self.shutdown = Button(
             name="shutdown",
-            child=Label(label="<span>&#xeb0d;</span>", markup=True),
+            child=Label(label="<span font-family='tabler-icons'>&#xeb0d;</span>", markup=True),
         )
 
         self.power_box = Box(

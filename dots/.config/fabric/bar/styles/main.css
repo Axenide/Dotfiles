@@ -29,17 +29,3 @@
   font-size: 10.5pt;
   font-weight: bold;
 }
-
-#bell-label {
-  color: @lightgray;
-  font-family: "tabler-icons";
-  font-size: 40pt;
-  font-weight: normal;
-}
-
-#ext-label-2 {
-  color: @lightgray;
-  font-size: 10.5pt;
-  font-weight: bold;
-  font-style: italic;
-}

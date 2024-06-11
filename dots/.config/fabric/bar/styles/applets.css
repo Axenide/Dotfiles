@@ -43,7 +43,6 @@
 #night-button > *,
 #dnd-button > * {
   color: @white;
-  font-family: "tabler-icons";
   font-size: 20px;
   font-weight: normal;
 }
@@ -53,7 +52,6 @@
 #night-button-off > *,
 #dnd-button-off > * {
   color: @lightgray;
-  font-family: "tabler-icons";
   font-size: 20px;
   font-weight: normal;
 }

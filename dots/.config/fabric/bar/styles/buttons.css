@@ -39,7 +39,6 @@
 #chat-reload > *,
 #chat-detach > * {
   color: @red;
-  font-family: "tabler-icons";
   font-size: 20px;
   font-weight: normal;
   transition: all 0.25s ease;
@@ -100,7 +99,6 @@
 #logout > *,
 #suspend > *,
 #lock > * {
-  font-family: "tabler-icons";
   font-size: 20px;
   font-weight: normal;
   transition: all 0.25s ease;

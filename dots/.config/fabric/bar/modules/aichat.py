@@ -16,7 +16,7 @@ class AIbuttons(Box):
         self.chat_reload = Button(
             name="chat-reload",
             h_expand=False,
-            child=Label(label="<span>&#xf3ae;</span>", markup=True),
+            child=Label(label="<span font-family='tabler-icons'>&#xf3ae;</span>", markup=True),
         )
 
         self.chat_url = Button(
@@ -30,7 +30,7 @@ class AIbuttons(Box):
         self.chat_detach = Button(
             name="chat-detach",
             h_expand=False,
-            child=Label(label="<span>&#xea99;</span>", markup=True),
+            child=Label(label="<span font-family='tabler-icons'>&#xea99;</span>", markup=True),
         )
 
         self.buttons = [

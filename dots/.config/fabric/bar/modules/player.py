@@ -10,20 +10,20 @@ class Player(Box):
             orientation="h",
         )
 
-        self.icon = Label(label="<span>&#xed46;</span>", markup=True)
+        self.icon = Label(label="<span font-family='tabler-icons'>&#xed46;</span>", markup=True)
 
-        self.play_icon = Label(label="<span>&#xed46;</span>", markup=True)
-        self.pause_icon = Label(label="<span>&#xed45;</span>", markup=True)
-        self.stop_icon = Label(label="<span>&#xed4a;</span>", markup=True)
+        self.play_icon = Label(label="<span font-family='tabler-icons'>&#xed46;</span>", markup=True)
+        self.pause_icon = Label(label="<span font-family='tabler-icons'>&#xed45;</span>", markup=True)
+        self.stop_icon = Label(label="<span font-family='tabler-icons'>&#xed4a;</span>", markup=True)
 
-        self.skip_back_icon = Label(label="<span>&#xed48;</span>", markup=True)
-        self.skip_forward_icon = Label(label="<span>&#xed49;</span>", markup=True)
+        self.skip_back_icon = Label(label="<span font-family='tabler-icons'>&#xed48;</span>", markup=True)
+        self.skip_forward_icon = Label(label="<span font-family='tabler-icons'>&#xed49;</span>", markup=True)
 
-        self.prev_icon = Label(label="<span>&#xed4c;</span>", markup=True)
-        self.next_icon = Label(label="<span>&#xed4b;</span>", markup=True)
+        self.prev_icon = Label(label="<span font-family='tabler-icons'>&#xed4c;</span>", markup=True)
+        self.next_icon = Label(label="<span font-family='tabler-icons'>&#xed4b;</span>", markup=True)
 
-        self.shuffle_icon = Label(label="<span>&#xf000;</span>", markup=True)
-        self.repeat_icon = Label(label="<span>&#xeb72;</span>", markup=True)
+        self.shuffle_icon = Label(label="<span font-family='tabler-icons'>&#xf000;</span>", markup=True)
+        self.repeat_icon = Label(label="<span font-family='tabler-icons'>&#xeb72;</span>", markup=True)
 
         self.shuffle = False
         self.repeat = False
@@ -109,11 +109,11 @@ class Player(Box):
                 self.cover.set_style("background-image: url(\"" + album + "\");")
 
             if playback == "Playing":
-                self.icon.set_markup("<span>&#xed46;</span>")
+                self.icon.set_markup("<span font-family='tabler-icons'>&#xed46;</span>")
             elif playback == "Paused":
-                self.icon.set_markup("<span>&#xed45;</span>")
+                self.icon.set_markup("<span font-family='tabler-icons'>&#xed45;</span>")
             else:
-                self.icon.set_markup("<span>&#xed4a;</span>")
+                self.icon.set_markup("<span font-family='tabler-icons'>&#xed4a;</span>")
             # self.cover.style = "background-image: url(\"" + self.cover_file + "\");"
 
         self.player_fabricator.connect("changed", decode_player_data)

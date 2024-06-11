@@ -29,9 +29,7 @@ class Dashboard(Box):
                     v_align="center",
                     spacing=8,
                     children=[
-                        Label(name="ext-label", label="No Notifications!"),
-                        # Label(name="bell-label", label="<span>&#xf814;</span>", markup=True),
-                        # Label(name="ext-label-2", label="(Because I haven't coded that yet)"),
+                        Label(name="ext-label", label="<span font-family='tabler-icons'>&#xf814;</span> No Notifications!", markup=True),
                     ]
                 )
             ]
@@ -40,7 +38,7 @@ class Dashboard(Box):
         self.set_children(
             [
                 self.applets,
-                # self.player,
+                self.player,
                 self.ext,
                 self.circles,
                 self.calendar,
