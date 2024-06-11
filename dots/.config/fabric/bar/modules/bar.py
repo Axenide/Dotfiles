@@ -212,7 +212,6 @@ class Bar(Window):
 
                 if self.content_box.get_reveal_child() == False:
                     self.dashboard_box.set_reveal_child(False)
-                    self.chat_box.set_reveal_child(False)
                     self.set_keyboard_mode("none")
         
         elif button == self.colorpicker:

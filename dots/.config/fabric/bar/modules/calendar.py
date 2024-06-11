@@ -1,14 +1,16 @@
 from __init__ import *
 
-class Calendar(Box):
+class Calendar(EventBox):
     def __init__(self):
         super().__init__(
-            name="calendar",
+            # name="calendar",
             h_expand=True,
             h_align="fill",
             v_align="fill",
-            orientation="v",
+            # orientation="v",
         )
+
+        self.set_above_child(False)
 
         self.current_year = datetime.now().year
         self.current_month = datetime.now().month
@@ -29,21 +31,45 @@ class Calendar(Box):
         self.next_year_button = Button(name="chevron", child=Label(label="<span>&#xea61;</span>", markup=True))
         self.next_year_button.connect("clicked", self.on_next_year_clicked)
 
+        self.prev_month_rev = Revealer(
+            transition_type="slide-left",
+            transition_duration=300,
+            child=self.prev_month_button,
+        )
+
+        self.next_month_rev = Revealer(
+            transition_type="slide-right",
+            transition_duration=300,
+            child=self.next_month_button,
+        )
+
+        self.prev_year_rev = Revealer(
+            transition_type="slide-left",
+            transition_duration=300,
+            child=self.prev_year_button,
+        )
+
+        self.next_year_rev = Revealer(
+            transition_type="slide-right",
+            transition_duration=300,
+            child=self.next_year_button,
+        )
+
         self.month_header = Box(
             orientation="h",
             children=[
-                self.prev_month_button,
+                self.prev_month_rev,
                 self.month_label,
-                self.next_month_button,
+                self.next_month_rev,
             ],
         )
 
         self.year_header = Box(
             orientation="h",
             children=[
-                self.prev_year_button,
+                self.prev_year_rev,
                 self.year_label,
-                self.next_year_button,
+                self.next_year_rev,
             ],
         )
 
@@ -57,10 +83,52 @@ class Calendar(Box):
             ],
         )
 
+        self.overlay = Overlay()
         self.grid = Gtk.Grid()
+        self.overlay.add(self.grid)
+        self.hover_area = EventBox()
+        self.hover_area.set_size_request(-1, -1)
+        self.overlay.add_overlay(self.hover_area)
 
-        self.add(self.header)
-        self.add(self.grid)
+        self.calendar = Box(
+            name="calendar",
+            orientation="v",
+            h_expand=True,
+            h_align="fill",
+            v_align="fill",
+            children=[
+                self.header,
+                self.overlay,
+            ],
+        )
+
+        self.revealers = [self.prev_month_rev, self.next_month_rev, self.prev_year_rev, self.next_year_rev]
+
+        for revealer in self.revealers:
+            revealer.set_reveal_child(False)
+
+        # self.overlay = Overlay()
+        # self.overlay.add(self.calendar)
+        # self.overlay.add(self.grid)
+        # self.hover_area = EventBox()
+        # self.hover_area.set_size_request(-1, -1)
+        # self.overlay.add_overlay(self.hover_area)
+
+        self.add(self.calendar)
+        # self.add(self.overlay)
+
+        self.connect("enter-notify-event", self.on_hover)
+        self.connect("leave-notify-event", self.on_unhover)
+        self.prev_month_button.connect("enter-notify-event", self.on_hover)
+        self.prev_month_button.connect("leave-notify-event", self.on_unhover)
+        self.next_month_button.connect("enter-notify-event", self.on_hover)
+        self.next_month_button.connect("leave-notify-event", self.on_unhover)
+        self.prev_year_button.connect("enter-notify-event", self.on_hover)
+        self.prev_year_button.connect("leave-notify-event", self.on_unhover)
+        self.next_year_button.connect("enter-notify-event", self.on_hover)
+        self.next_year_button.connect("leave-notify-event", self.on_unhover)
+        self.hover_area.connect("enter-notify-event", self.on_hover)
+        self.hover_area.connect("leave-notify-event", self.on_unhover)
 
         self.update_calendar()
 
@@ -89,6 +157,12 @@ class Calendar(Box):
             month_days.append([0] * 7)
         
         for i, week in enumerate(month_days):
+            revealer = Revealer(transition_type="slide-down", transition_duration=300)
+            revealer.set_reveal_child(False)
+            week_box = Box(orientation="h", h_expand=True, v_expand=True)
+
+            self.revealers.append(revealer)
+
             for j, day in enumerate(week):
                 if day == 0:
                     label = Label(name="dimmed", label="×", h_expand=True, h_align="fill", v_expand=True, v_align="fill")
@@ -98,15 +172,25 @@ class Calendar(Box):
                         month == datetime.now().month and
                         year == datetime.now().year):
                         label.set_name("current-day")
+                        revealer.set_reveal_child(True)
                     if i == 0 and day > 7:
                         label.set_name("dimmed")
                     if i == 5 and day < 15:
                         label.set_name("dimmed")
-                self.grid.attach(label, j, i + 1, 1, 1)
+
+                week_box.add(label)
+            
+            revealer.add(week_box)
+            self.grid.attach(revealer, 0, i + 1, 7, 1)
 
     def get_weekday_initials(self):
         # Return the initials of the days starting from Sunday
         return [datetime(2021, 1, i).strftime('%a')[0].upper() for i in range(3, 10)]  # Jan 3, 2021 is a Sunday
+
+    def reset_calendar(self):
+        self.current_year = datetime.now().year
+        self.current_month = datetime.now().month
+        self.update_calendar()
 
     def on_prev_month_clicked(self, widget):
         if self.current_month == 1:
@@ -131,3 +215,16 @@ class Calendar(Box):
     def on_next_year_clicked(self, widget):
         self.current_year += 1
         self.update_calendar()
+
+    def on_hover(self, widget, event):
+        for revealer in self.revealers:
+            revealer.set_reveal_child(True)
+
+    def on_unhover(self, widget, event):
+        # self.reset_calendar()
+        for revealer in self.revealers:
+            week_box = revealer.get_child()
+            if any(label.get_name() == "current-day" for label in week_box.get_children()):
+                revealer.set_reveal_child(True)
+            else:
+                revealer.set_reveal_child(False)

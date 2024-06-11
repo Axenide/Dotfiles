@@ -14,7 +14,7 @@ class Dashboard(Box):
         self.circles = Circles()
         self.player = Player()
         self.calendar = Calendar()
-        
+
         self.ext = Box(
             name="ext",
             v_expand=True,
@@ -40,7 +40,7 @@ class Dashboard(Box):
         self.set_children(
             [
                 self.applets,
-                self.player,
+                # self.player,
                 self.ext,
                 self.circles,
                 self.calendar,

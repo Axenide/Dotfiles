@@ -47,7 +47,6 @@ class SystemTray(Box):
             )
 
         button.set_image(Gtk.Image.new_from_pixbuf(pixbuf))
-        print(item.get_icon_name())
         return button
 
     def on_button_click(self, button, item: Gray.Item, event):

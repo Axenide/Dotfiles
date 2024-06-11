@@ -47,7 +47,7 @@ class Power(EventBox):
         self.revealer = Revealer(
             name="power-revealer",
             transition_type="slide-up",
-            transition_duration=500,
+            transition_duration=300,
             child=self.power_box
         )
 

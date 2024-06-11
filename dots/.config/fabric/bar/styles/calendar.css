@@ -2,7 +2,7 @@
   background-color: @background;
   border-radius: 10px;
   border: 2px solid @darkgray;
-  padding: 10px;
+  padding: 8px;
 }
 
 #week-days {
