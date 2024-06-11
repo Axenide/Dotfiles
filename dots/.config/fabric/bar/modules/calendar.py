@@ -131,6 +131,7 @@ class Calendar(EventBox):
         self.hover_area.connect("leave-notify-event", self.on_unhover)
 
         self.update_calendar()
+        self.reset_calendar()
 
     def update_calendar(self):
         self.create_calendar(self.current_year, self.current_month)
@@ -158,7 +159,7 @@ class Calendar(EventBox):
         
         for i, week in enumerate(month_days):
             revealer = Revealer(transition_type="slide-down", transition_duration=300)
-            revealer.set_reveal_child(False)
+            revealer.set_reveal_child(True)
             week_box = Box(orientation="h", h_expand=True, v_expand=True)
 
             self.revealers.append(revealer)
@@ -188,9 +189,12 @@ class Calendar(EventBox):
         return [datetime(2021, 1, i).strftime('%a')[0].upper() for i in range(3, 10)]  # Jan 3, 2021 is a Sunday
 
     def reset_calendar(self):
-        self.current_year = datetime.now().year
-        self.current_month = datetime.now().month
-        self.update_calendar()
+        for revealer in self.revealers:
+            week_box = revealer.get_child()
+            if any(label.get_name() == "current-day" for label in week_box.get_children()):
+                revealer.set_reveal_child(True)
+            else:
+                revealer.set_reveal_child(False)
 
     def on_prev_month_clicked(self, widget):
         if self.current_month == 1:
@@ -221,10 +225,10 @@ class Calendar(EventBox):
             revealer.set_reveal_child(True)
 
     def on_unhover(self, widget, event):
-        # self.reset_calendar()
         for revealer in self.revealers:
-            week_box = revealer.get_child()
-            if any(label.get_name() == "current-day" for label in week_box.get_children()):
-                revealer.set_reveal_child(True)
-            else:
-                revealer.set_reveal_child(False)
+            if self.current_month == datetime.now().month and self.current_year == datetime.now().year:
+                week_box = revealer.get_child()
+                if any(label.get_name() == "current-day" for label in week_box.get_children()):
+                    revealer.set_reveal_child(True)
+                else:
+                    revealer.set_reveal_child(False)

@@ -40,10 +40,12 @@
 
 #year {
   margin: 0px 8px;
+  min-width: 70px;
 }
 
 #month {
   margin: 0px 8px;
+  min-width: 70px;
 }
 
 #dimmed {
