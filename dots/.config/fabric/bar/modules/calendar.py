@@ -3,11 +3,9 @@ from __init__ import *
 class Calendar(EventBox):
     def __init__(self):
         super().__init__(
-            # name="calendar",
             h_expand=True,
             h_align="fill",
             v_align="fill",
-            # orientation="v",
         )
 
         self.set_above_child(False)
@@ -107,28 +105,31 @@ class Calendar(EventBox):
         for revealer in self.revealers:
             revealer.set_reveal_child(False)
 
-        # self.overlay = Overlay()
-        # self.overlay.add(self.calendar)
-        # self.overlay.add(self.grid)
-        # self.hover_area = EventBox()
-        # self.hover_area.set_size_request(-1, -1)
-        # self.overlay.add_overlay(self.hover_area)
-
         self.add(self.calendar)
-        # self.add(self.overlay)
 
-        self.connect("enter-notify-event", self.on_hover)
-        self.connect("leave-notify-event", self.on_unhover)
-        self.prev_month_button.connect("enter-notify-event", self.on_hover)
-        self.prev_month_button.connect("leave-notify-event", self.on_unhover)
-        self.next_month_button.connect("enter-notify-event", self.on_hover)
-        self.next_month_button.connect("leave-notify-event", self.on_unhover)
-        self.prev_year_button.connect("enter-notify-event", self.on_hover)
-        self.prev_year_button.connect("leave-notify-event", self.on_unhover)
-        self.next_year_button.connect("enter-notify-event", self.on_hover)
-        self.next_year_button.connect("leave-notify-event", self.on_unhover)
-        self.hover_area.connect("enter-notify-event", self.on_hover)
-        self.hover_area.connect("leave-notify-event", self.on_unhover)
+        self.buttons = [
+            self.prev_month_button,
+            self.next_month_button,
+            self.prev_year_button,
+            self.next_year_button,
+        ]
+
+        self.triggers = [
+            self,
+            self.hover_area,
+        ]
+
+        for btn in self.buttons:
+            self.triggers.append(btn)
+
+        for t in self.triggers:
+            bulk_connect(
+                t,
+                {
+                    "enter-notify-event": self.on_hover,
+                    "leave-notify-event": self.on_unhover,
+                },
+            )
 
         self.update_calendar()
         self.reset_calendar()
@@ -224,6 +225,9 @@ class Calendar(EventBox):
         for revealer in self.revealers:
             revealer.set_reveal_child(True)
 
+        if widget in self.buttons:
+            return self.change_cursor("pointer")
+
     def on_unhover(self, widget, event):
         for revealer in self.revealers:
             if self.current_month == datetime.now().month and self.current_year == datetime.now().year:
@@ -232,3 +236,6 @@ class Calendar(EventBox):
                     revealer.set_reveal_child(True)
                 else:
                     revealer.set_reveal_child(False)
+
+        if widget in self.buttons:
+            return self.change_cursor("default")
