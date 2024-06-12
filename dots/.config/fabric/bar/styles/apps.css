@@ -12,14 +12,8 @@
   background-color: @red;
 }
 
-/* Change placeholder text color */
-#app-entry placeholder {
-  color: @darkgray;
-}
-
-#app-entry:focused {
+#app-entry:focus {
   color: @white;
-  /* background: linear-gradient(@background, @darkgray); */
   border: 2px solid @red;
   border-radius: 10px;
   padding: 10px;
@@ -33,14 +27,18 @@
   padding: 4px;
 }
 
-#app-button {
+#app-button, #app-button-focus {
   transition: margin 0.25s ease;
   color: @white;
-  background-color: @background;
   padding: 10px;
 }
 
-#app-button:focused {
+#app-button:focus {
+  color: @red;
+  margin-left: 10px;
+}
+
+#app-button-focus {
   color: @red;
   margin-left: 10px;
 }

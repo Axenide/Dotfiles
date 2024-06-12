@@ -13,7 +13,7 @@ class AppButton(Button):
             children=[
                 Label(
                     label=self.app.display_name,
-                    justfication="left",
+                    justification="left",
                     ellipsization="end",
                 ),
             ],
@@ -62,6 +62,7 @@ class Apps(Box):
             editable=True,
         )
         self.app_entry.connect("key-release-event", self.keypress)
+        self.app_entry.connect("activate", self.on_enter_press)  # Aquí conectamos el evento de Enter
         for app in self.applications:
             appL = AppButton(app)
             self.application_buttons[app.name] = appL
@@ -111,3 +112,9 @@ class Apps(Box):
     def reset_app_menu(self):
         for app_button in self.application_buttons.values():
             app_button.show()
+
+    def on_enter_press(self, entry: Entry):
+        for app_button in self.application_buttons.values():
+            if app_button.get_visible() and self.app_entry.get_text() != "":
+                app_button.emit("clicked")
+                break

@@ -12,8 +12,8 @@ class Player(Box):
 
         self.icon = Label(label="<span font-family='tabler-icons'>&#xed46;</span>", markup=True)
 
-        self.play_icon = Label(label="<span font-family='tabler-icons'>&#xed46;</span>", markup=True)
         self.pause_icon = Label(label="<span font-family='tabler-icons'>&#xed45;</span>", markup=True)
+        self.play_icon = Label(label="<span font-family='tabler-icons'>&#xed46;</span>", markup=True)
         self.stop_icon = Label(label="<span font-family='tabler-icons'>&#xed4a;</span>", markup=True)
 
         self.skip_back_icon = Label(label="<span font-family='tabler-icons'>&#xed48;</span>", markup=True)
@@ -109,9 +109,9 @@ class Player(Box):
                 self.cover.set_style("background-image: url(\"" + album + "\");")
 
             if playback == "Playing":
-                self.icon.set_markup("<span font-family='tabler-icons'>&#xed46;</span>")
-            elif playback == "Paused":
                 self.icon.set_markup("<span font-family='tabler-icons'>&#xed45;</span>")
+            elif playback == "Paused":
+                self.icon.set_markup("<span font-family='tabler-icons'>&#xed46;</span>")
             else:
                 self.icon.set_markup("<span font-family='tabler-icons'>&#xed4a;</span>")
             # self.cover.style = "background-image: url(\"" + self.cover_file + "\");"
@@ -120,7 +120,7 @@ class Player(Box):
 
         self.player_box = Box(
             name="player-box",
-            orientation="h",
+            orientation="v",
             # h_expand=True,
             v_align="center",
             h_align="center",
