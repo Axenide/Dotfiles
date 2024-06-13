@@ -7,6 +7,9 @@ import calendar
 from datetime import datetime
 
 import dbus
+import psutil
+import setproctitle
+
 import fabric
 from fabric.utils.fabricator import Fabricator
 from fabric.utils import (
@@ -46,11 +49,16 @@ from fabric.widgets import (
 from fabric.widgets.shapes import Corner, CornerOrientation
 
 import gi
-from gi.repository import GLib, Gdk, GdkPixbuf, Gtk, Gray
+from gi.repository import (
+        GLib,
+        Gdk,
+        GdkPixbuf,
+        Gtk,
+        Playerctl,
+        Gray,
+)
+
 from loguru import logger
-import psutil
-import psutil
-import setproctitle
 
 gi.require_version("Gtk", "3.0")
 
@@ -80,6 +88,7 @@ Workspaces.scroll_handler = scroll_handler
 
 home_dir = os.getenv('HOME')
 
+import modules.icons as icons
 from modules.calendar import Calendar
 from modules.systray import SystemTray
 from modules.aichat import AIchat

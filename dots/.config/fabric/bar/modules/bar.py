@@ -34,18 +34,18 @@ class Bar(Window):
 
         self.run_button = Button(
             name="run-button",
-            child=Label(label="<span font-family='tabler-icons'>&#xec2c;</span>", markup=True),
+            child=Label(label=f"{icons.run}", markup=True),
         )
 
         self.power = Power()
 
         self.colorpicker = Button(
             name="colorpicker",
-            child=Label(label="<span font-family='tabler-icons'>&#xebe6;</span>", markup=True),
+            child=Label(label=f"{icons.colorpicker}", markup=True),
         )
         self.media_button = Button(
             name="media-button",
-            child=Label(label="<span font-family='tabler-icons'>&#xf00d;</span>", markup=True),
+            child=Label(label=f"{icons.media}", markup=True),
         )
         self.time_button = Button(
             name="time-button",

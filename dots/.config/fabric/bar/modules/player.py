@@ -10,20 +10,9 @@ class Player(Box):
             orientation="h",
         )
 
-        self.icon = Label(label="<span font-family='tabler-icons'>&#xed46;</span>", markup=True)
+        self.player = Playerctl.Player()
 
-        self.pause_icon = Label(label="<span font-family='tabler-icons'>&#xed45;</span>", markup=True)
-        self.play_icon = Label(label="<span font-family='tabler-icons'>&#xed46;</span>", markup=True)
-        self.stop_icon = Label(label="<span font-family='tabler-icons'>&#xed4a;</span>", markup=True)
-
-        self.skip_back_icon = Label(label="<span font-family='tabler-icons'>&#xed48;</span>", markup=True)
-        self.skip_forward_icon = Label(label="<span font-family='tabler-icons'>&#xed49;</span>", markup=True)
-
-        self.prev_icon = Label(label="<span font-family='tabler-icons'>&#xed4c;</span>", markup=True)
-        self.next_icon = Label(label="<span font-family='tabler-icons'>&#xed4b;</span>", markup=True)
-
-        self.shuffle_icon = Label(label="<span font-family='tabler-icons'>&#xf000;</span>", markup=True)
-        self.repeat_icon = Label(label="<span font-family='tabler-icons'>&#xeb72;</span>", markup=True)
+        self.icon = Label(label=f"{icons.stop}", markup=True)
 
         self.shuffle = False
         self.repeat = False
@@ -34,51 +23,78 @@ class Player(Box):
         )
         self.skip_back_button = Button(
             name="skip-back-button",
-            child=self.skip_back_icon,
+            child=Label(label=f"{icons.skip_back}", markup=True),
         )
         self.skip_forward_button = Button(
             name="skip-forward-button",
-            child=self.skip_forward_icon,
+            child=Label(label=f"{icons.skip_forward}", markup=True),
         )
         self.prev_button = Button(
             name="prev-button",
-            child=self.prev_icon,
+            child=Label(label=f"{icons.prev}", markup=True),
         )
         self.next_button = Button(
             name="next-button",
-            child=self.next_icon,
+            child=Label(label=f"{icons.next}", markup=True),
         )
         self.shuffle_button = Button(
             name="shuffle-button",
-            child=self.shuffle_icon,
+            child=Label(label=f"{icons.shuffle}", markup=True),
         )
         self.repeat_button = Button(
             name="repeat-button",
-            child=self.repeat_icon,
+            child=Label(label=f"{icons.repeat}", markup=True),
         )
 
         self.cover_file = f"{home_dir}/.current.wall"
 
         self.title = Label(
             name="title",
-            # label=str(exec_shell_command('playerctl metadata title')).rstrip(),
-            label="Title",
+            label="Nothing playing.",
+            markup=True,
+            justification="left",
+            ellipsization="end",
+            character_max_width=30,
+            v_align="end",
+            h_align="start",
+            h_expand=True,
         )
+
         self.artist = Label(
             name="artist",
-            # label=str(exec_shell_command('playerctl metadata artist')).rstrip(),
-            label="Artist",
+            label=r"¯\_(ツ)_/¯",
+            markup=True,
+            justification="left",
+            ellipsization="end",
+            character_max_width=30,
+            v_align="end",
+            v_expand=True,
+            h_align="start",
+            h_expand=True,
         )
+
+        self.cover_text = Box(
+            name="cover-text",
+            h_expand=True,
+            v_expand=True,
+            v_align="fill",
+            orientation="v",
+            children=[
+                self.artist,
+                self.title,
+            ],
+        )
+
         self.cover = Box(
             name="cover",
             style="background-image: url(\"" + self.cover_file + "\");",
             h_expand=True,
+            h_align="fill",
             v_expand=True,
-            # v_align="end",
+            v_align="fill",
             orientation="v",
             children=[
-                # self.title,
-                # self.artist,
+                self.cover_text,
             ]
         )
 
@@ -87,34 +103,47 @@ class Player(Box):
             label="",
         )
         
-        # self.player_fabricator = Fabricator(stream=True, poll_from=r"""playerctl --follow metadata --format '{{status}}\n{{position}}\n{{mpris:length}}\n{{artist}}\n{{album}}\n{{title}}'""")
-        self.player_fabricator = Fabricator(stream=True, poll_from=r"""playerctl --follow metadata --format '{{status}}\n{{artist}}\n{{mpris:artUrl}}\n{{title}}'""")
+        # self.player_fabricator = Fabricator(stream=True, poll_from=r"""playerctl --follow metadata --format '{{status}}\n{{artist}}\n{{mpris:artUrl}}\n{{title}}'""")
+        # self.player_fabricator = Fabricator(stream=True, poll_from=r"""playerctl --follow metadata --format '{{status}}\n{{artist}}\n{{title}}\n{{mpris:artUrl}}\n{{album}}\n{{position}}\n{{mpris:length}}'""")
+        self.player_fabricator = Fabricator(stream=True, poll_from=r"""
+        playerctl --follow metadata --format
+        '{{status}}\n{{artist}}\n{{title}}\n{{mpris:artUrl}}\n{{album}}\n{{position}}\n{{mpris:length}}'""")
 
         def decode_player_data(_, data: str):
-            data = data.split("\\n")
-            playback: str = data[0] # "Playing" | "Paused"
-            # position: str = data[1] # can be casted to a int if it's not empty
-            # length: str = data[2] # can be casted to a int if it's not empty
-            artist: str = data[1]
-            album: str = data[2]
-            title: str = data[3]
-            # print(playback, position, length, artist, album, title)
-            # print(playback, artist, album, title)
+            datalist = data.split('\\n')
+            playback = datalist[0]
+            artist = datalist[1]
+            title = datalist[2]
+            cover = datalist[3]
+            album = datalist[4]
+            position = datalist[5]
+            length = datalist[6]
+
+            print(f"""
+            playback: {playback}
+            artist: {artist}
+            title: {title}
+            cover: {cover}
+            album: {album}
+            position: {position}
+            length: {length}
+            """)
+
             self.status.label = playback
-            self.artist.set_label(artist)
-            self.title.set_label(title)
-            if album == "":
-                self.cover.set_style("background-image: url(\"" + self.cover_file + "\");")
+            self.artist.set_label(artist) if artist != "" else self.artist.set_label(r"¯\_(ツ)_/¯")
+            self.title.set_label(f"{icons.music} {title}") if title != "" else self.title.set_label("Nothing playing.")
+
+            if cover == "":
+                self.cover.set_style(f"background-image: url('{self.cover_file}');")
             else:
-                self.cover.set_style("background-image: url(\"" + album + "\");")
+                self.cover.set_style(f"background-image: url('{cover}');")
 
             if playback == "Playing":
-                self.icon.set_markup("<span font-family='tabler-icons'>&#xed45;</span>")
+                self.icon.set_markup(f"{icons.pause}")
             elif playback == "Paused":
-                self.icon.set_markup("<span font-family='tabler-icons'>&#xed46;</span>")
+                self.icon.set_markup(f"{icons.play}")
             else:
-                self.icon.set_markup("<span font-family='tabler-icons'>&#xed4a;</span>")
-            # self.cover.style = "background-image: url(\"" + self.cover_file + "\");"
+                self.icon.set_markup(f"{icons.stop}")
 
         self.player_fabricator.connect("changed", decode_player_data)
 
@@ -151,8 +180,6 @@ class Player(Box):
             children=[
                 self.cover,
                 self.player_box,
-                # self.title,
-                # self.artist,
             ]
         )
 

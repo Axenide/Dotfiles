@@ -86,18 +86,18 @@ class Power(EventBox):
 
     def on_button_press(self, button: Button, event):
         if button == self.lock:
-            exec_shell_command("swaylock")
+            exec_shell_command_async("swaylock", lambda *_: None)
             # exec_shell_command("notify-send 'Locking screen'")
         elif button == self.suspend:
             # exec_shell_command("systemctl suspend")
-            exec_shell_command("notify-send 'Suspending system'")
+            exec_shell_command_async("notify-send 'Suspending system'", lambda *_: None)
         elif button == self.logout:
             # exec_shell_command("hyprctl dispatch exit")
-            exec_shell_command("notify-send 'Logging out'")
+            exec_shell_command_async("notify-send 'Logging out'", lambda *_: None)
         elif button == self.reboot:
             # exec_shell_command("systemctl reboot")
-            exec_shell_command("notify-send 'Rebooting system'")
+            exec_shell_command_async("notify-send 'Rebooting system'", lambda *_: None)
         elif button == self.shutdown:
             # exec_shell_command("systemctl poweroff")
-            exec_shell_command("notify-send 'Shutting down system'")
+            exec_shell_command_async("notify-send 'Shutting down system'", lambda *_: None)
         return True

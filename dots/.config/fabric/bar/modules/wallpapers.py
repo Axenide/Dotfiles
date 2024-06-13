@@ -83,5 +83,5 @@ class Wallpapers(ScrolledWindow):
         {home_dir}/.current.wall
         """,
         lambda *args: None)
-        self.parent.dashboard.player.cover.set_style(f"background-image: url(\"{home_dir}/.current.wall\");")
+        self.parent.dashboard.player.cover.set_style(f"background-image: url(\"{WALLPAPERS_PATH}/{button.get_child().get_name()}\");")
         return True

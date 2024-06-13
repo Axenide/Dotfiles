@@ -6,21 +6,12 @@
   min-height: 100px;
 }
 
-#cover {
-  background-size: cover;
-  background-position: center;
-  border-radius: 8px;
-  border: 2px solid @darkgray;
-  padding: 4px;
-}
-
 #play-button,
 #skip-back-button,
 #skip-forward-button,
 #prev-button,
 #next-button {
   transition: all 0.25s ease;
-  padding: 8px;
 }
 
 #play-button > *,
@@ -28,10 +19,13 @@
 #skip-forward-button > *,
 #prev-button > *,
 #next-button > * {
-  transition: all 0.25s ease;
+  transition: all 0.1s ease;
   color: @lightgray;
   font-size: 20px;
   font-weight: normal;
+  padding: 4px;
+  margin: 2px;
+  border-radius: 999px;
 }
 
 #play-button:hover > *,
@@ -39,21 +33,41 @@
 #skip-forward-button:hover > *,
 #prev-button:hover > *,
 #next-button:hover > * {
-  color: @white;
+  color: @red;
+  background-color: @white;
+}
+
+#player-box {
+  padding: 0 8px;
 }
 
 #title {
-  font-size: 14pt;
+  font-size: 10.5pt;
+  color: @white;
 }
 
 #artist {
-  font-size: 10.5pt;
+  font-size: 9pt;
   font-style: italic;
-  color: @lightgray;
+  color: @white;
 }
 
 #title, #artist {
-  text-shadow: 0px 0px 5px @background;
+  text-shadow: 0px 0px 3px @background;
+}
+
+#cover {
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  border: 2px solid @darkgray;
+  /* padding: 4px; */
+}
+
+#cover-text {
+  background: linear-gradient(135deg, alpha(#404040, 0.75), alpha(black, 0.75));
+  border-radius: 10px;
+  padding: 8px;
 }
 
 #play-icon,
