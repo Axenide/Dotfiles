@@ -1,4 +1,5 @@
 add_newline = false
+command_timeout = 1000
 
 [character]
 error_symbol = "[  ✗](bold red)"

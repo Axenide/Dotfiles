@@ -72,13 +72,14 @@ ttf-nerd-fonts-symbols-common
 ttf-nerd-fonts-symbols-mono
 ttf-tabler-icons
 unarchiver
+vala
 waybar
 webp-pixbuf-loader
 wf-recorder
 wl-clip-persist-git
 wl-clipboard
 wtype
-xdg-desktop-portal-hyprland
+xdg-desktop-portal-gtk
 xdg-user-dirs-gtk
 xdg-utils
 yazi

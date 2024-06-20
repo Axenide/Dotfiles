@@ -7,9 +7,11 @@ class WorkspacesBox(Box):
         )
 
         self.workspaces = Workspaces(
-            spacing=8,
-            orientation="v",
             name="workspaces",
+            orientation="v",
+            spacing=8,
+            invert_scroll = True,
+            empty_scroll = True,
             buttons_list=[
                 WorkspaceButton(label=FormattedString("")),
                 WorkspaceButton(label=FormattedString("")),

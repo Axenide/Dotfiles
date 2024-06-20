@@ -10,12 +10,12 @@ class Player(Box):
             orientation="h",
         )
 
-        self.player = Playerctl.Player()
-        self.player.connect("metadata", self.on_metadata)
-        self.player.connect("playback-status", self.on_playback)
+        # self.player = Playerctl.Player()
+        # self.player.connect("metadata", self.on_metadata)
+        # self.player.connect("playback-status", self.on_playback)
 
-        self.manager = Playerctl.PlayerManager()
-        self.manager.connect("name-appeared", self.on_appeared)
+        # self.manager = Playerctl.PlayerManager()
+        # self.manager.connect("name-appeared", self.on_appeared)
 
         self.icon = Label(label=f"{icons.stop}", markup=True)
 
@@ -118,6 +118,40 @@ class Player(Box):
             label="",
         )
         
+        # self.player_fabricator = Fabricator(stream=True, poll_from=r"""playerctl --follow metadata --format '{{status}}\n{{artist}}\n{{mpris:artUrl}}\n{{title}}'""")
+        # self.player_fabricator = Fabricator(stream=True, poll_from=r"""playerctl --follow metadata --format '{{status}}\n{{artist}}\n{{title}}\n{{mpris:artUrl}}\n{{album}}\n{{position}}\n{{mpris:length}}'""")
+        self.player_fabricator = Fabricator(stream=True, poll_from=r"""
+        playerctl --follow metadata --format
+        '{{status}}\n{{artist}}\n{{title}}\n{{mpris:artUrl}}\n{{album}}\n{{position}}\n{{mpris:length}}'""")
+
+        def decode_player_data(_, data: str):
+            datalist = data.split('\\n')
+            playback = datalist[0]
+            artist = datalist[1]
+            title = datalist[2]
+            cover = datalist[3]
+            album = datalist[4]
+            position = datalist[5]
+            length = datalist[6]
+
+            self.status.label = playback
+            self.artist.set_label(artist) if artist != "" else self.artist.set_label(r"¯\_(ツ)_/¯")
+            self.title.set_label(f"{icons.music} {title}") if title != "" else self.title.set_label("Nothing playing.")
+
+            if cover == "":
+                self.cover.set_style(f"background-image: url('{self.cover_file}');")
+            else:
+                self.cover.set_style(f"background-image: url('{cover}');")
+
+            if playback == "Playing":
+                self.icon.set_markup(f"{icons.pause}")
+            elif playback == "Paused":
+                self.icon.set_markup(f"{icons.play}")
+            else:
+                self.icon.set_markup(f"{icons.stop}")
+
+        self.player_fabricator.connect("changed", decode_player_data)
+
         self.player_box = Box(
             name="player-box",
             orientation="v",
@@ -158,8 +192,8 @@ class Player(Box):
             self.full_player,
         )
 
-        self.on_playback(self.player, self.player.props.playback_status)
-        self.on_metadata(self.player, self.player.props.metadata)
+        # self.on_playback(self.player, self.player.props.playback_status)
+        # self.on_metadata(self.player, self.player.props.metadata)
 
     def on_metadata(self, player, metadata):
         # Valores predeterminados
@@ -173,7 +207,7 @@ class Player(Box):
         cover = default_cover
 
         # Comprobación de los metadatos y actualización de valores
-        if player is not None:
+        if metadata is not None:
             try:
                 artist = metadata["xesam:artist"]
                 if isinstance(artist, list):
@@ -202,15 +236,13 @@ class Player(Box):
 
         # Impresión de los metadatos procesados
         print(f"""
-
-RAW METADATA:
-------------------------------------------------------------
-{metadata}
-------------------------------------------------------------
-artist: {artist}
-title: {title}
-cover: {cover}
-
+        RAW METADATA:
+        ------------------------------------------------------------
+        metadata: {metadata}
+        ------------------------------------------------------------
+        artist: {artist}
+        title: {title}
+        cover: {cover}
         """)
 
         # Actualización de las etiquetas y estilo de la carátula

@@ -62,30 +62,6 @@ from loguru import logger
 
 gi.require_version("Gtk", "3.0")
 
-from fabric.hyprland.service import Hyprland
-connection = Hyprland()
-
-# Overrides
-def scroll_handler(self, widget, event: Gdk.EventScroll):
-        match event.direction:
-            case Gdk.ScrollDirection.UP:
-                connection.send_command(
-                    "batch/dispatch workspace -1",
-                )
-                logger.info("[Workspaces] Moved to the next workspace")
-            case Gdk.ScrollDirection.DOWN:
-                connection.send_command(
-                    "batch/dispatch workspace +1",
-                )
-                logger.info("[Workspaces] Moved to the previous workspace")
-            case _:
-                logger.info(
-                    f"[Workspaces] Unknown scroll direction ({event.direction})"
-                )
-        return
-
-Workspaces.scroll_handler = scroll_handler
-
 home_dir = os.getenv('HOME')
 
 import modules.icons as icons
@@ -93,7 +69,7 @@ from modules.calendar import Calendar
 from modules.systray import SystemTray
 from modules.aichat import AIchat
 from modules.circles import Circles
-from modules.player import Player
+from modules.player_old import Player
 from modules.power import Power
 from modules.user import User
 from modules.workspaces import WorkspacesBox

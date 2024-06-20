@@ -12,7 +12,6 @@ class Bar(Window):
             keyboard_mode="none",
         )
 
-        # self.system_tray = SystemTray(name="system-tray", orientation="v", spacing=8, icon_size=18)
         self.system_tray = SystemTray()
 
         self.time_sep = Label(
@@ -122,7 +121,6 @@ class Bar(Window):
         self.corners = CenterBox(
             name="corners",
             orientation="v",
-            # h_expand=True,
             v_expand=True,
         )
 
@@ -231,7 +229,7 @@ class Bar(Window):
             }
             command = commands.get(event.button)
             if command:
-                return exec_shell_command(command)
+                return exec_shell_command_async(command, lambda *args: None)
 
         elif button == self.time_button:
             commands = {
@@ -239,7 +237,7 @@ class Bar(Window):
             }
             command = commands.get(event.button)
             if command:
-                return exec_shell_command(command)
+                return exec_shell_command_async(command, lambda *args: None)
 
     def on_button_hover(self, button: Button, event):
         return self.change_cursor("pointer")

@@ -167,7 +167,7 @@ class Calendar(EventBox):
 
             for j, day in enumerate(week):
                 if day == 0:
-                    label = Label(name="dimmed", label="×", h_expand=True, h_align="fill", v_expand=True, v_align="fill")
+                    label = Label(name="dimmed", label="× ", h_expand=True, h_align="fill", v_expand=True, v_align="fill")
                 else:
                     label = Label(name="day", label=str(day).zfill(2), h_expand=True, h_align="fill", v_expand=True, v_align="fill")
                     if (day == datetime.now().day and
