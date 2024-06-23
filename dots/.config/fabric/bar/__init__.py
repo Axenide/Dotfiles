@@ -3,6 +3,7 @@ import re
 import signal
 import time
 import subprocess
+import pam
 import calendar
 from datetime import datetime
 
@@ -54,8 +55,8 @@ from gi.repository import (
         Gdk,
         GdkPixbuf,
         Gtk,
-        Playerctl,
         Gray,
+        GtkSessionLock,
 )
 
 from loguru import logger
@@ -63,13 +64,15 @@ from loguru import logger
 gi.require_version("Gtk", "3.0")
 
 home_dir = os.getenv('HOME')
+user = f"{os.getenv('USER')}".rstrip()
+host = f"{exec_shell_command('hostname')}".rstrip()
 
 import modules.icons as icons
 from modules.calendar import Calendar
 from modules.systray import SystemTray
 from modules.aichat import AIchat
 from modules.circles import Circles
-from modules.player_old import Player
+from modules.player import Player
 from modules.power import Power
 from modules.user import User
 from modules.workspaces import WorkspacesBox

@@ -86,7 +86,8 @@ class Power(EventBox):
 
     def on_button_press(self, button: Button, event):
         if button == self.lock:
-            exec_shell_command_async("swaylock", lambda *_: None)
+            exec_shell_command_async("python lock.py", lambda *_: None)
+            # exec_shell_command_async("swaylock", lambda *_: None)
             # exec_shell_command("notify-send 'Locking screen'")
         elif button == self.suspend:
             # exec_shell_command("systemctl suspend")

@@ -13,6 +13,7 @@
 @import "styles/user.css";
 @import "styles/wallpapers.css";
 @import "styles/workspaces.css";
+@import "styles/lock.css";
 
 * {
 	all: unset;

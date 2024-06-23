@@ -1,9 +1,77 @@
-#full-player {
+#full-player-dashboard {
   background-color: @background;
   border: 2px solid @darkgray;
   border-radius: 10px;
   padding: 4px;
   min-height: 100px;
+}
+
+#cover-dashboard {
+  background-size: cover;
+  background-position: center;
+  border-radius: 6px;
+}
+
+#cover-text-dashboard {
+  background: linear-gradient(135deg, alpha(#404040, 0.75), alpha(black, 0.75));
+  border-radius: 6px;
+  padding: 8px;
+}
+
+#full-player-lock {
+  background-color: @background;
+  border: 2px solid @darkgray;
+  border-radius: 20px;
+  padding: 4px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+  min-height: 100px;
+  margin: 0 300px;
+  min-width: 300px;
+}
+
+#cover-lock {
+  background-size: cover;
+  background-position: center;
+  border-radius: 16px;
+}
+
+#cover-text-lock {
+  background: linear-gradient(135deg, alpha(#404040, 0.75), alpha(black, 0.75));
+  border-radius: 16px;
+  padding: 8px;
+}
+
+#player-box {
+  padding: 0 4px;
+  margin-left: 4px;
+}
+
+#title {
+  font-size: 10.5pt;
+  color: @white;
+}
+
+#artist {
+  font-size: 9pt;
+  font-style: italic;
+  color: @white;
+}
+
+#title, #artist {
+  text-shadow: 0px 0px 3px @background;
+}
+
+#play-icon,
+#pause-icon,
+#stop-icon,
+#skip-back-icon,
+#skip-forward-icon,
+#prev-icon,
+#next-icon,
+#shuffle-icon,
+#repeat-icon {
+  font-size: 20px;
+  font-weight: normal;
 }
 
 #play-button,
@@ -35,65 +103,4 @@
 #next-button:hover > * {
   color: @red;
   background-color: @white;
-}
-
-#player-box {
-  padding: 0 4px;
-  margin-left: 4px;
-}
-
-#title {
-  font-size: 10.5pt;
-  color: @white;
-}
-
-#artist {
-  font-size: 9pt;
-  font-style: italic;
-  color: @white;
-}
-
-#title, #artist {
-  text-shadow: 0px 0px 3px @background;
-}
-
-#position > trough {
-  background-color: @background;
-  border-radius: 2px;
-  margin-top: 4px;
-  box-shadow: 0 0 3px alpha(@background, 0.5);
-  min-height: 2px;
-}
-
-#position > trough > progress {
-  background-color: @white;
-  border-radius: 2px;
-  min-height: 2px;
-}
-
-#cover {
-  background-size: cover;
-  background-position: center;
-  border-radius: 6px;
-  /* border: 2px solid @darkgray; */
-  /* padding: 4px; */
-}
-
-#cover-text {
-  background: linear-gradient(135deg, alpha(#404040, 0.75), alpha(black, 0.75));
-  border-radius: 6px;
-  padding: 8px;
-}
-
-#play-icon,
-#pause-icon,
-#stop-icon,
-#skip-back-icon,
-#skip-forward-icon,
-#prev-icon,
-#next-icon,
-#shuffle-icon,
-#repeat-icon {
-  font-size: 20px;
-  font-weight: normal;
 }

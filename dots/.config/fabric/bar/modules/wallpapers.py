@@ -84,4 +84,14 @@ class Wallpapers(ScrolledWindow):
         """,
         lambda *args: None)
         self.parent.dashboard.player.cover.set_style(f"background-image: url(\"{WALLPAPERS_PATH}/{button.get_child().get_name()}\");")
+        # Create resized to screen copy of wallpaper and save it to ~/.current.lock
+        exec_shell_command_async(f"""
+        magick
+        {WALLPAPERS_PATH}/{button.get_child().get_name()}
+        -blur 0x10
+        -fill black
+        -colorize 50%
+        {home_dir}/.current.lock
+        """,
+        lambda *args: None)
         return True

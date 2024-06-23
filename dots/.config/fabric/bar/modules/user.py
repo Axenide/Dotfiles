@@ -13,12 +13,12 @@ class User(Box):
         self.user_label = Label(
             name="user-label",
             h_align="left",
-            label=str(exec_shell_command('whoami')).rstrip().capitalize(),
+            label=f"{user.capitalize()}",
         )
         self.host_label = Label(
             name="host-label",
             h_align="left",
-            label=str(exec_shell_command('hostname')).rstrip().capitalize(),
+            label=f"{host.capitalize()}",
         )
         self.user_box = Box(
             name="user-box",

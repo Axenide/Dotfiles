@@ -43,6 +43,12 @@ shuffle = "&#xf000;"
 repeat = "&#xeb72;"
 music = "&#xeafc;"
 
+# Volume
+vol_off = "&#xf1c3;"
+vol_mute = "&#xeb50;"
+vol_medium = "&#xeb4f;"
+vol_high = "&#xeb51;"
+
 exceptions = ['font_family', 'font_weight', 'span']
 
 def apply_span():

@@ -43,3 +43,6 @@ user_pref("userChrome.hidden.urlbar_iconbox", true);
 // General
 user_pref("general.autoScroll", true);
 user_pref("dom.webgpu.enabled", true);
+
+// Rounded page corners
+user_pref("floorp.delete.browser.border", true);

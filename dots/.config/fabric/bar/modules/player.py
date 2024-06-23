@@ -1,7 +1,7 @@
 from __init__ import *
 
 class Player(Box):
-    def __init__(self):
+    def __init__(self, location):
         super().__init__(
             name="player",
             visible=False,
@@ -9,13 +9,6 @@ class Player(Box):
             h_expand=True,
             orientation="h",
         )
-
-        self.player = Playerctl.Player()
-        self.player.connect("metadata", self.on_metadata)
-        self.player.connect("playback-status", self.on_playback)
-
-        self.manager = Playerctl.PlayerManager()
-        self.manager.connect("name-appeared", self.on_appeared)
 
         self.icon = Label(label=f"{icons.stop}", markup=True)
 
@@ -87,7 +80,7 @@ class Player(Box):
         self.position.set_no_show_all(True)
 
         self.cover_text = Box(
-            name="cover-text",
+            name=f"cover-text-{location}",
             h_expand=True,
             v_expand=True,
             v_align="fill",
@@ -101,8 +94,8 @@ class Player(Box):
 
 
         self.cover = Box(
-            name="cover",
-            style="background-image: url(\"" + self.cover_file + "\");",
+            name=f"cover-{location}",
+            style=f"background-image: url('{self.cover_file}');",
             h_expand=True,
             h_align="fill",
             v_expand=True,
@@ -118,18 +111,52 @@ class Player(Box):
             label="",
         )
         
+        # self.player_fabricator = Fabricator(stream=True, poll_from=r"""
+        # playerctl --follow metadata --format
+        # '{{status}}\n{{artist}}\n{{title}}\n{{mpris:artUrl}}\n{{album}}\n{{position}}\n{{mpris:length}}'
+        # """)
+        
+        self.player_fabricator = Fabricator(stream=True, poll_from=r"""
+        playerctl --follow metadata --format
+        '{{status}}\n{{artist}}\n{{title}}\n{{mpris:artUrl}}'
+        """)
+
+        def decode_player_data(_, data: str):
+            datalist = data.split('\\n')
+            playback = datalist[0]
+            artist = datalist[1]
+            title = datalist[2]
+            cover = datalist[3]
+            # album = datalist[4]
+            # position = datalist[5]
+            # length = datalist[6]
+
+            self.status.label = playback
+            self.artist.set_label(artist) if artist != "" else self.artist.set_label(r"¯\_(ツ)_/¯")
+            self.title.set_label(f"{icons.music} {title}") if title != "" else self.title.set_label("Nothing playing.")
+
+            if cover == "":
+                self.cover.set_style(f"background-image: url('{self.cover_file}');")
+            else:
+                self.cover.set_style(f"background-image: url('{cover}');")
+
+            if playback == "Playing":
+                self.icon.set_markup(f"{icons.pause}")
+            elif playback == "Paused":
+                self.icon.set_markup(f"{icons.play}")
+            else:
+                self.icon.set_markup(f"{icons.stop}")
+
+        self.player_fabricator.connect("changed", decode_player_data)
+
         self.player_box = Box(
             name="player-box",
             orientation="v",
-            # h_expand=True,
             v_align="center",
             h_align="center",
-            # spacing=8,
             children=[
                 self.prev_button,
-                # self.skip_back_button,
                 self.play_button,
-                # self.skip_forward_button,
                 self.next_button,
             ]
         )
@@ -145,7 +172,7 @@ class Player(Box):
             )
 
         self.full_player = Box(
-            name="full-player",
+            name=f"full-player-{location}",
             orientation="h",
             h_expand=True,
             children=[
@@ -158,80 +185,6 @@ class Player(Box):
             self.full_player,
         )
 
-        self.on_playback(self.player, self.player.props.playback_status)
-        self.on_metadata(self.player, self.player.props.metadata)
-
-    def on_metadata(self, player, metadata):
-        # Valores predeterminados
-        default_artist = r"¯\_(ツ)_/¯"
-        default_title = "Nothing playing."
-        default_cover = f"{home_dir}/.current.wall"
-
-        # Inicialización de las variables con valores predeterminados
-        artist = default_artist
-        title = default_title
-        cover = default_cover
-
-        # Comprobación de los metadatos y actualización de valores
-        if player is not None:
-            try:
-                artist = metadata["xesam:artist"]
-                if isinstance(artist, list):
-                    artist = ", ".join(artist)
-                if not artist:
-                    artist = default_artist
-            except KeyError:
-                artist = default_artist
-
-            try:
-                title = metadata["xesam:title"]
-                if not title:
-                    title = default_title
-            except KeyError:
-                title = default_title
-
-            try:
-                cover = metadata["mpris:artUrl"]
-                if not cover:
-                    cover = default_cover
-            except KeyError:
-                cover = default_cover
-
-        else:
-            self.icon.set_label(f"{icons.stop}")
-
-        # Impresión de los metadatos procesados
-        print(f"""
-
-RAW METADATA:
-------------------------------------------------------------
-{metadata}
-------------------------------------------------------------
-artist: {artist}
-title: {title}
-cover: {cover}
-
-        """)
-
-        # Actualización de las etiquetas y estilo de la carátula
-        self.artist.set_label(artist)
-        self.title.set_label(f"{icons.music} {title.replace('&', '&amp;')}")
-        self.cover.set_style(f"background-image: url('{cover}');")
-
-    def on_playback(self, player, playback_status):
-        playback = playback_status.value_nick
-        print(f"Playback: {playback}")
-
-        if playback == "Playing":
-            self.icon.set_label(f"{icons.pause}")
-        elif playback == "Paused":
-            self.icon.set_label(f"{icons.play}")
-        else:
-            self.icon.set_label(f"{icons.stop}")
-
-    def on_appeared(self, manager, name):
-        print(f"Player appeared: {name}")
-    
     def on_button_hover(self, button: Button, event):
         return self.change_cursor("pointer")
 

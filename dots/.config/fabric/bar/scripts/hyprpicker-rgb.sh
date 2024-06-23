@@ -6,8 +6,8 @@ hyprpicker -a -n -f rgb && sleep 0.1
 # Split the output into three variables
 IFS=',' read -r r g b <<< "$(wl-paste)"
 
-# Create a temporal 64x64 PNG file with the color in /tmp using convert
-convert -size 64x64 xc:"rgb($r,$g,$b)" /tmp/color.png
+# Create a temporal 64x64 PNG file with the color in /tmp using magick
+magick -size 64x64 xc:"rgb($r,$g,$b)" /tmp/color.png
 
 # Send a notification using the file as an icon
 notify-send "Color picked" "$(wl-paste)" -i /tmp/color.png

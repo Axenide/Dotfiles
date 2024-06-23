@@ -1,4 +1,8 @@
 from __init__ import *
+import gi
+gi.require_version('Gtk', '3.0')
+from gi.repository import Gtk, GLib
+from datetime import datetime, timedelta
 
 class Calendar(EventBox):
     def __init__(self):
@@ -12,6 +16,7 @@ class Calendar(EventBox):
 
         self.current_year = datetime.now().year
         self.current_month = datetime.now().month
+        self.current_day = datetime.now().day
 
         self.prev_month_button = Button(name="chevron", child=Label(label="<span font-family='tabler-icons'>&#xea60;</span>", markup=True))
         self.prev_month_button.connect("clicked", self.on_prev_month_clicked)
@@ -133,6 +138,7 @@ class Calendar(EventBox):
 
         self.update_calendar()
         self.reset_calendar()
+        GLib.timeout_add_seconds(1, self.check_date_change)
 
     def update_calendar(self):
         self.create_calendar(self.current_year, self.current_month)
@@ -148,7 +154,7 @@ class Calendar(EventBox):
         
         # Create headers for days of the week
         for i, day in enumerate(days):
-            label = Label(name="week-days", label=day, h_expand=True, h_align="fill", v_expand=True, v_align="fill")
+            label = Label(name="week-days", label=day, h_expand=True, h_align="fill", v_expand=True, v_align=True)
             self.grid.attach(label, i, 0, 1, 1)
 
         cal = calendar.Calendar(firstweekday=6)  # Start the week with Sunday
@@ -167,9 +173,9 @@ class Calendar(EventBox):
 
             for j, day in enumerate(week):
                 if day == 0:
-                    label = Label(name="dimmed", label="× ", h_expand=True, h_align="fill", v_expand=True, v_align="fill")
+                    label = Label(name="dimmed", label="×", h_expand=True, h_align="fill", v_expand=True, v_align=True)
                 else:
-                    label = Label(name="day", label=str(day).zfill(2), h_expand=True, h_align="fill", v_expand=True, v_align="fill")
+                    label = Label(name="day", label=str(day).zfill(2), h_expand=True, h_align="fill", v_expand=True, v_align=True)
                     if (day == datetime.now().day and
                         month == datetime.now().month and
                         year == datetime.now().year):
@@ -239,3 +245,12 @@ class Calendar(EventBox):
 
         if widget in self.buttons:
             return self.change_cursor("default")
+
+    def check_date_change(self):
+        now = datetime.now()
+        if now.day != self.current_day:
+            self.current_day = now.day
+            self.current_year = now.year
+            self.current_month = now.month
+            self.update_calendar()
+        return True  # Ensure the function continues to be called every second
