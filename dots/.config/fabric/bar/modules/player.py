@@ -19,14 +19,6 @@ class Player(Box):
             name="play-button",
             child=self.icon,
         )
-        self.skip_back_button = Button(
-            name="skip-back-button",
-            child=Label(label=f"{icons.skip_back}", markup=True),
-        )
-        self.skip_forward_button = Button(
-            name="skip-forward-button",
-            child=Label(label=f"{icons.skip_forward}", markup=True),
-        )
         self.prev_button = Button(
             name="prev-button",
             child=Label(label=f"{icons.prev}", markup=True),
@@ -34,14 +26,6 @@ class Player(Box):
         self.next_button = Button(
             name="next-button",
             child=Label(label=f"{icons.next}", markup=True),
-        )
-        self.shuffle_button = Button(
-            name="shuffle-button",
-            child=Label(label=f"{icons.shuffle}", markup=True),
-        )
-        self.repeat_button = Button(
-            name="repeat-button",
-            child=Label(label=f"{icons.repeat}", markup=True),
         )
 
         self.cover_file = f"{home_dir}/.current.wall"
@@ -52,7 +36,7 @@ class Player(Box):
             markup=True,
             justification="left",
             ellipsization="end",
-            character_max_width=30,
+            character_max_width=32,
             v_align="end",
             h_align="start",
             h_expand=True,
@@ -64,20 +48,24 @@ class Player(Box):
             markup=True,
             justification="left",
             ellipsization="end",
-            character_max_width=30,
+            character_max_width=32,
             v_align="end",
             v_expand=True,
             h_align="start",
             h_expand=True,
         )
 
-        self.position = Gtk.ProgressBar(
-            name="position",
-            fraction=True,
+        self.player_box = Box(
+            name="player-box",
+            orientation="v",
+            v_align="center",
+            h_align="center",
+            children=[
+                self.prev_button,
+                self.play_button,
+                self.next_button,
+            ]
         )
-
-        self.position.set_fraction(0.5)
-        self.position.set_no_show_all(True)
 
         self.cover_text = Box(
             name=f"cover-text-{location}",
@@ -88,10 +76,8 @@ class Player(Box):
             children=[
                 self.artist,
                 self.title,
-                self.position,
             ],
         )
-
 
         self.cover = Box(
             name=f"cover-{location}",
@@ -111,57 +97,23 @@ class Player(Box):
             label="",
         )
         
-        # self.player_fabricator = Fabricator(stream=True, poll_from=r"""
-        # playerctl --follow metadata --format
-        # '{{status}}\n{{artist}}\n{{title}}\n{{mpris:artUrl}}\n{{album}}\n{{position}}\n{{mpris:length}}'
-        # """)
-        
         self.player_fabricator = Fabricator(stream=True, poll_from=r"""
         playerctl --follow metadata --format
         '{{status}}\n{{artist}}\n{{title}}\n{{mpris:artUrl}}'
         """)
 
         def decode_player_data(_, data: str):
-            datalist = data.split('\\n')
-            playback = datalist[0]
-            artist = datalist[1]
-            title = datalist[2]
-            cover = datalist[3]
-            # album = datalist[4]
-            # position = datalist[5]
-            # length = datalist[6]
-
+            playback, artist, title, cover, *_ = data.split('\\n')
+            
             self.status.label = playback
-            self.artist.set_label(artist) if artist != "" else self.artist.set_label(r"¯\_(ツ)_/¯")
-            self.title.set_label(f"{icons.music} {title}") if title != "" else self.title.set_label("Nothing playing.")
-
-            if cover == "":
-                self.cover.set_style(f"background-image: url('{self.cover_file}');")
-            else:
-                self.cover.set_style(f"background-image: url('{cover}');")
-
-            if playback == "Playing":
-                self.icon.set_markup(f"{icons.pause}")
-            elif playback == "Paused":
-                self.icon.set_markup(f"{icons.play}")
-            else:
-                self.icon.set_markup(f"{icons.stop}")
+            self.artist.set_label(artist or r"¯\_(ツ)_/¯")
+            self.title.set_label(f"{icons.music} {title}" if title else "Nothing playing.")
+            self.cover.set_style(f"background-image: url('{cover or self.cover_file}');")
+            self.icon.set_markup(f"{icons.pause if playback == 'Playing' else icons.play if playback == 'Paused' else icons.stop}")
 
         self.player_fabricator.connect("changed", decode_player_data)
 
-        self.player_box = Box(
-            name="player-box",
-            orientation="v",
-            v_align="center",
-            h_align="center",
-            children=[
-                self.prev_button,
-                self.play_button,
-                self.next_button,
-            ]
-        )
-
-        for btn in [self.play_button, self.skip_back_button, self.skip_forward_button, self.prev_button, self.next_button, self.shuffle_button, self.repeat_button]:
+        for btn in [self.play_button, self.prev_button, self.next_button]:
             bulk_connect(
                 btn,
                 {
@@ -194,16 +146,8 @@ class Player(Box):
     def on_button_press(self, button: Button, event):
         if button == self.play_button:
             exec_shell_command('playerctl play-pause')
-        elif button == self.skip_back_button:
-            exec_shell_command("playerctl position 10-")
-        elif button == self.skip_forward_button:
-            exec_shell_command("playerctl position 10+")
         elif button == self.prev_button:
             exec_shell_command("playerctl previous")
         elif button == self.next_button:
             exec_shell_command("playerctl next")
-        elif button == self.shuffle_button:
-            exec_shell_command("playerctl shuffle")
-        elif button == self.repeat_button:
-            exec_shell_command("playerctl repeat")
         return True

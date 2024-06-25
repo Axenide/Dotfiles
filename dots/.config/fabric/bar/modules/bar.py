@@ -14,11 +14,6 @@ class Bar(Window):
 
         self.system_tray = SystemTray()
 
-        self.time_sep = Label(
-            label="",
-            name="time-separator",
-        )
-
         self.content_box = Revealer(
             transition_duration=500,
             transition_type="slide-right",
@@ -152,92 +147,76 @@ class Bar(Window):
             GLib.idle_add(self.binds, command)
 
     def binds(self, command):
-        if command == "chat":
-            if self.content_box.get_reveal_child() == False or self.stack.get_visible_child() != self.stack.chat:
-                self.set_keyboard_mode("on-demand")
-                self.stack.set_visible_child(self.stack.chat)
-                self.content_box.set_reveal_child(True)
-            else:
-                self.set_keyboard_mode("none")
-                self.content_box.set_reveal_child(False)
+        child_mapping = {
+            "chat": (self.stack.chat, "on-demand"),
+            "dashboard": (self.stack.dashboard, "none"),
+            "wallpapers": (self.stack.wallpapers, "none"),
+            "apps": (self.stack.apps, "on-demand")
+        }
 
-        elif command == "dashboard":
-            if self.content_box.get_reveal_child() == False or self.stack.get_visible_child() != self.stack.dashboard:
-                self.set_keyboard_mode("none")
-                self.stack.set_visible_child(self.stack.dashboard)
-                self.content_box.set_reveal_child(True)
-            else:
-                self.content_box.set_reveal_child(False)
-
-        elif command == "wallpapers":
-            if self.content_box.get_reveal_child() == False or self.stack.get_visible_child() != self.stack.wallpapers:
-                self.set_keyboard_mode("none")
-                self.stack.set_visible_child(self.stack.wallpapers)
+        if command in child_mapping:
+            new_child, kb_mode = child_mapping[command]
+            if not self.content_box.get_reveal_child() or self.stack.get_visible_child() != new_child:
+                self.set_keyboard_mode(kb_mode)
+                self.stack.set_visible_child(new_child)
                 self.content_box.set_reveal_child(True)
             else:
                 self.content_box.set_reveal_child(False)
-
-        elif command == "apps":
-            if self.content_box.get_reveal_child() == False or self.stack.get_visible_child() != self.stack.apps:
-                self.set_keyboard_mode("on-demand")
+            if command == "apps":
                 self.stack.apps.app_entry.grab_focus()
-                self.stack.set_visible_child(self.stack.apps)
-                self.content_box.set_reveal_child(True)
-            else:
-                self.content_box.set_reveal_child(False)
-
         elif command == "update-style":
             set_stylesheet_from_file(get_relative_path("../style.css"))
 
-        if self.content_box.get_reveal_child() == False:
+        if not self.content_box.get_reveal_child():
             self.set_keyboard_mode("none")
 
         return False
 
     def on_button_press(self, button: Button, event):
-        if button == self.run_button:
-            commands = {
-                1: f'{home_dir}/.config/rofi/launcher/launcher.sh',
-                2: 'swaync-client -t -sw',
-                3: 'toggle'
-            }
-            command = commands.get(event.button)
-            if command != 'toggle':
-                return exec_shell_command_async(command, lambda *args: None)
-            else:
-                self.content_box.set_reveal_child(not self.content_box.get_reveal_child())
-                self.dashboard_box.set_reveal_child(not self.dashboard_box.get_reveal_child())
+        match button:
+            case self.run_button:
+                commands = {
+                    1: f'{home_dir}/.config/rofi/launcher/launcher.sh',
+                    2: 'swaync-client -t -sw',
+                    3: 'toggle'
+                }
+                command = commands.get(event.button)
+                if command != 'toggle':
+                    return exec_shell_command_async(command, lambda *args: None)
+                else:
+                    self.content_box.set_reveal_child(not self.content_box.get_reveal_child())
+                    self.dashboard_box.set_reveal_child(not self.dashboard_box.get_reveal_child())
 
-                if self.content_box.get_reveal_child() == False:
-                    self.dashboard_box.set_reveal_child(False)
-                    self.set_keyboard_mode("none")
-        
-        elif button == self.colorpicker:
-            commands = {
-                1: get_relative_path('../scripts/hyprpicker-hex.sh'),
-                3: get_relative_path('../scripts/hyprpicker-rgb.sh'),
-            }
-            command = commands.get(event.button)
-            if command:
-                return exec_shell_command_async(command, lambda *args: None)
-        
-        elif button == self.media_button:
-            commands = {
-                1: 'playerctl previous',
-                2: 'playerctl play-pause',
-                3: 'playerctl next',
-            }
-            command = commands.get(event.button)
-            if command:
-                return exec_shell_command_async(command, lambda *args: None)
+                    if self.content_box.get_reveal_child() == False:
+                        self.dashboard_box.set_reveal_child(False)
+                        self.set_keyboard_mode("none")
+            
+            case self.colorpicker:
+                commands = {
+                    1: get_relative_path('../scripts/hyprpicker-hex.sh'),
+                    3: get_relative_path('../scripts/hyprpicker-rgb.sh'),
+                }
+                command = commands.get(event.button)
+                if command:
+                    return exec_shell_command_async(command, lambda *args: None)
+            
+            case self.media_button:
+                commands = {
+                    1: 'playerctl previous',
+                    2: 'playerctl play-pause',
+                    3: 'playerctl next',
+                }
+                command = commands.get(event.button)
+                if command:
+                    return exec_shell_command_async(command, lambda *args: None)
 
-        elif button == self.time_button:
-            commands = {
-                1: f'{home_dir}/.config/rofi/calendar/calendar.sh',
-            }
-            command = commands.get(event.button)
-            if command:
-                return exec_shell_command_async(command, lambda *args: None)
+            case self.time_button:
+                commands = {
+                    1: f'{home_dir}/.config/rofi/calendar/calendar.sh',
+                }
+                command = commands.get(event.button)
+                if command:
+                    return exec_shell_command_async(command, lambda *args: None)
 
     def on_button_hover(self, button: Button, event):
         return self.change_cursor("pointer")

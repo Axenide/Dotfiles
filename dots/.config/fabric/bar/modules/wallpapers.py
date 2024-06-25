@@ -68,26 +68,27 @@ class Wallpapers(ScrolledWindow):
         return self.change_cursor("default")
 
     def on_button_press(self, button: Button, event):
+        img = f"{WALLPAPERS_PATH}/{button.get_child().get_name()}"
         exec_shell_command_async(f"""
         swww img
         -t outer
         --transition-duration 1
         --transition-step 255
         --transition-fps 60
-        {WALLPAPERS_PATH}/{button.get_child().get_name()}
+        {img}
         """,
         lambda *args: None)
         exec_shell_command_async(f"""
         ln -sf
-        {WALLPAPERS_PATH}/{button.get_child().get_name()}
+        {img}
         {home_dir}/.current.wall
         """,
         lambda *args: None)
-        self.parent.dashboard.player.cover.set_style(f"background-image: url(\"{WALLPAPERS_PATH}/{button.get_child().get_name()}\");")
+        self.parent.dashboard.player.cover.set_style(f"background-image: url('{img}');")
         # Create resized to screen copy of wallpaper and save it to ~/.current.lock
         exec_shell_command_async(f"""
         magick
-        {WALLPAPERS_PATH}/{button.get_child().get_name()}
+        {img} 
         -blur 0x10
         -fill black
         -colorize 50%

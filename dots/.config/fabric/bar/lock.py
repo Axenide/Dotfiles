@@ -31,7 +31,14 @@ class LockScreen(Window):
             spacing=20,
         )
 
-        self.player = Player("lock")
+        self.player = Box(
+            name="lock-player",
+            orientation="v",
+            h_align="center",
+            children=[
+                Player("lock"),
+            ],
+        )
 
         self.box.add_center(self.clock)
         self.box.add_center(self.entry)

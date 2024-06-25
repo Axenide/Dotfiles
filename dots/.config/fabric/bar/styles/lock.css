@@ -6,7 +6,7 @@
   border: 2px solid @darkgray;
   caret-color: transparent;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
-  margin: 0 300px;
+  /* margin: 0 400px; */
   /* min-width: 300px; */
 }
 
@@ -17,7 +17,7 @@
 
 #lock-time > * {
   font-family: "Malum Illegitimi";
-  font-size: 96pt;
+  font-size: 64pt;
   font-weight: normal;
   text-shadow:
     0px 5px 0px @background,
@@ -25,8 +25,12 @@
 }
 
 #lock-box {
-  padding: 100px;
-  min-width: 700px;
+  padding: 50px;
+  /* min-width: 700px; */
+}
+
+#lock-player {
+  min-width: 300px;
 }
 
 /* #lock { */

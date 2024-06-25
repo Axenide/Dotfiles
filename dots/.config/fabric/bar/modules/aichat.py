@@ -52,17 +52,17 @@ class AIbuttons(Box):
         self.set_children(self.buttons)
 
     def on_button_press(self, button: Button, event):
-        if button == self.chat_reload:
-            self.web.reload()
-
-        elif button == self.chat_detach:
-            self.parent.content_box.set_reveal_child(False)
-            # return exec_shell_command_async(get_relative_path(f'../scripts/webview.py http://localhost:3141/'), lambda *args: None)
-            return exec_shell_command_async(f"hyprctl dispatch exec {get_relative_path(f'../scripts/webview.py http://localhost:3141/')}", lambda *args: None)
-
-        elif button == self.chat_url:
-            self.parent.content_box.set_reveal_child(False)
-            return exec_shell_command_async('xdg-open http://localhost:3141/', lambda *args: None)
+        match button:
+            case self.chat_reload:
+                self.web.reload()
+            case self.chat_detach:
+                self.parent.content_box.set_reveal_child(False)
+                return exec_shell_command_async(f"""
+                hyprctl dispatch exec {get_relative_path(f'../scripts/webview.py http://localhost:3141/')}
+                """, lambda *args: None)
+            case self.chat_url:
+                self.parent.content_box.set_reveal_child(False)
+                return exec_shell_command_async('xdg-open http://localhost:3141/', lambda *args: None)
 
     def on_button_hover(self, button: Button, event):
         return self.change_cursor("pointer")
