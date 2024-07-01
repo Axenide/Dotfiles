@@ -23,13 +23,13 @@ shutdown = "&#xeb0d;"
 # Applets
 wifi = "&#xeb52;"
 bluetooth = "&#xea37;"
-night = "&#xf162;"
+night = "&#xeaf8;"
 dnd = "&#xea35;"
 
 wifi_off = "&#xecfa;"
 bluetooth_off = "&#xeceb;"
 night_off = "&#xf162;"
-dnd_off = "&#xea35;"
+dnd_off = "&#xece9;"
 
 # Player
 pause = "&#xed45;"

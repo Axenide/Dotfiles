@@ -8,27 +8,27 @@ class Power(EventBox):
         )
         self.lock = Button(
             name="lock",
-            child=Label(label="<span font-family='tabler-icons'>&#xeae2;</span>", markup=True),
+            child=Label(label=f"{icons.lock}", markup=True),
         )
 
         self.suspend = Button(
             name="suspend",
-            child=Label(label="<span font-family='tabler-icons'>&#xece7;</span>", markup=True),
+            child=Label(label=f"{icons.suspend}", markup=True),
         )
 
         self.logout = Button(
             name="logout",
-            child=Label(label="<span font-family='tabler-icons'>&#xeba8;</span>", markup=True),
+            child=Label(label=f"{icons.logout}", markup=True),
         )
 
         self.reboot = Button(
             name="reboot",
-            child=Label(label="<span font-family='tabler-icons'>&#xeb13;</span>", markup=True),
+            child=Label(label=f"{icons.reboot}", markup=True),
         )
 
         self.shutdown = Button(
             name="shutdown",
-            child=Label(label="<span font-family='tabler-icons'>&#xeb0d;</span>", markup=True),
+            child=Label(label=f"{icons.shutdown}", markup=True),
         )
 
         self.power_box = Box(
@@ -85,20 +85,21 @@ class Power(EventBox):
         return self.change_cursor("default")
 
     def on_button_press(self, button: Button, event):
-        if button == self.lock:
-            exec_shell_command_async("python lock.py", lambda *_: None)
-            # exec_shell_command_async("swaylock", lambda *_: None)
-            # exec_shell_command("notify-send 'Locking screen'")
-        elif button == self.suspend:
-            # exec_shell_command("systemctl suspend")
-            exec_shell_command_async("notify-send 'Suspending system'", lambda *_: None)
-        elif button == self.logout:
-            # exec_shell_command("hyprctl dispatch exit")
-            exec_shell_command_async("notify-send 'Logging out'", lambda *_: None)
-        elif button == self.reboot:
-            # exec_shell_command("systemctl reboot")
-            exec_shell_command_async("notify-send 'Rebooting system'", lambda *_: None)
-        elif button == self.shutdown:
-            # exec_shell_command("systemctl poweroff")
-            exec_shell_command_async("notify-send 'Shutting down system'", lambda *_: None)
+        match button:
+            case self.lock:
+                # exec_shell_command_async("python lock.py", lambda *_: None)
+                exec_shell_command_async("swaylock", lambda *_: None)
+                # exec_shell_command("notify-send 'Locking screen'")
+            case self.suspend:
+                # exec_shell_command("systemctl suspend")
+                exec_shell_command_async("notify-send 'Suspending system'", lambda *_: None)
+            case self.logout:
+                # exec_shell_command("hyprctl dispatch exit")
+                exec_shell_command_async("notify-send 'Logging out'", lambda *_: None)
+            case self.reboot:
+                # exec_shell_command("systemctl reboot")
+                exec_shell_command_async("notify-send 'Rebooting system'", lambda *_: None)
+            case self.shutdown:
+                # exec_shell_command("systemctl poweroff")
+                exec_shell_command_async("notify-send 'Shutting down system'", lambda *_: None)
         return True

@@ -12,9 +12,6 @@ class Player(Box):
 
         self.icon = Label(label=f"{icons.stop}", markup=True)
 
-        self.shuffle = False
-        self.repeat = False
-
         self.play_button = Button(
             name="play-button",
             child=self.icon,
@@ -92,11 +89,6 @@ class Player(Box):
             ]
         )
 
-        self.status = Label(
-            name="status",
-            label="",
-        )
-        
         self.player_fabricator = Fabricator(stream=True, poll_from=r"""
         playerctl --follow metadata --format
         '{{status}}\n{{artist}}\n{{title}}\n{{mpris:artUrl}}'
@@ -105,7 +97,6 @@ class Player(Box):
         def decode_player_data(_, data: str):
             playback, artist, title, cover, *_ = data.split('\\n')
             
-            self.status.label = playback
             self.artist.set_label(artist or r"¯\_(ツ)_/¯")
             self.title.set_label(f"{icons.music} {title}" if title else "Nothing playing.")
             self.cover.set_style(f"background-image: url('{cover or self.cover_file}');")
@@ -144,10 +135,11 @@ class Player(Box):
         return self.change_cursor("default")
 
     def on_button_press(self, button: Button, event):
-        if button == self.play_button:
-            exec_shell_command('playerctl play-pause')
-        elif button == self.prev_button:
-            exec_shell_command("playerctl previous")
-        elif button == self.next_button:
-            exec_shell_command("playerctl next")
+        match button:
+            case self.play_button:
+                exec_shell_command('playerctl play-pause')
+            case self.prev_button:
+                exec_shell_command("playerctl previous")
+            case self.next_button:
+                exec_shell_command("playerctl next")
         return True

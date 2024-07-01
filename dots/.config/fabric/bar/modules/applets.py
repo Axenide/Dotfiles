@@ -15,25 +15,25 @@ class Applets(Box):
 
         self.wifi_icon = Label(
             name="wifi-icon",
-            label="<span font-family='tabler-icons'>&#xeb52;</span>",
+            label=f"{icons.wifi}",
             markup=True,
         )
 
         self.bluetooth_icon = Label(
             name="bluetooth-icon",
-            label="<span font-family='tabler-icons'>&#xea37;</span>",
+            label=f"{icons.bluetooth}",
             markup=True,
         )
 
         self.night_icon = Label(
             name="night-icon",
-            label="<span font-family='tabler-icons'>&#xf162;</span>",
+            label=f"{icons.night_off}",
             markup=True,
         )
 
         self.dnd_icon = Label(
             name="dnd-icon",
-            label="<span font-family='tabler-icons'>&#xea35;</span>",
+            label=f"{icons.dnd}",
             markup=True,
         )
 
@@ -97,10 +97,10 @@ class Applets(Box):
             if command == 'toggle':
                 self.wifi = not self.wifi
                 if self.wifi == False:
-                    self.wifi_icon.set_markup("<span font-family='tabler-icons'>&#xecfa;</span>")
+                    self.wifi_icon.set_markup(f"{icons.wifi_off}")
                     self.wifi_button.set_name('wifi-button-off')
                 else:
-                    self.wifi_icon.set_markup("<span font-family='tabler-icons'>&#xeb52;</span>")
+                    self.wifi_icon.set_markup(f"{icons.wifi}")
                     self.wifi_button.set_name('wifi-button')
             elif command == 'reveal':
                 self.wifi_revealer.set_reveal_child(not self.wifi_revealer.get_reveal_child())
@@ -116,10 +116,10 @@ class Applets(Box):
             if command == 'toggle':
                 self.bluetooth = not self.bluetooth
                 if self.bluetooth == False:
-                    self.bluetooth_icon.set_markup("<span font-family='tabler-icons'>&#xeceb;</span>")
+                    self.bluetooth_icon.set_markup(f"{icons.bluetooth_off}")
                     self.bluetooth_button.set_name('bluetooth-button-off')
                 else:
-                    self.bluetooth_icon.set_markup("<span font-family='tabler-icons'>&#xea37;</span>")
+                    self.bluetooth_icon.set_markup(f"{icons.bluetooth}")
                     self.bluetooth_button.set_name('bluetooth-button')
             elif command == 'reveal':
                 self.bluetooth_revealer.set_reveal_child(not self.bluetooth_revealer.get_reveal_child())
@@ -134,11 +134,11 @@ class Applets(Box):
             if command == 'toggle':
                 self.night = not self.night
                 if self.night == False:
-                    self.night_icon.set_markup("<span font-family='tabler-icons'>&#xf162;</span>")
+                    self.night_icon.set_markup(f"{icons.night_off}")
                     self.night_button.set_name('night-button-off')
                     exec_shell_command('hyprshade off')
                 else:
-                    self.night_icon.set_markup("<span font-family='tabler-icons'>&#xeaf8;</span>")
+                    self.night_icon.set_markup(f"{icons.night}")
                     self.night_button.set_name('night-button')
                     exec_shell_command('hyprshade on redshift')
 
@@ -151,11 +151,11 @@ class Applets(Box):
             if command == 'toggle':
                 self.dnd = not self.dnd
                 if self.dnd == False:
-                    self.dnd_icon.set_markup("<span font-family='tabler-icons'>&#xea35;</span>")
+                    self.dnd_icon.set_markup(f"{icons.dnd}")
                     self.dnd_button.set_name('dnd-button')
                     exec_shell_command('swaync-client -df')
                 else:
-                    self.dnd_icon.set_markup("<span font-family='tabler-icons'>&#xece9;</span>")
+                    self.dnd_icon.set_markup(f"{icons.dnd_off}")
                     self.dnd_button.set_name('dnd-button-off')
                     exec_shell_command('swaync-client -dn')
             if command == 'open':

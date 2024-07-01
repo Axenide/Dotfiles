@@ -15,9 +15,13 @@
   transition: all 0.25s ease;
   font-size: 10pt;
   margin: 0px;
-  padding: 4px 5px;
+  padding: 5px 4px;
   margin: 4px 7px;
   border-radius: 999px;
+}
+
+#day, #month, #year {
+  color: @white;
 }
 
 #current-day {
@@ -37,12 +41,7 @@
   margin: 8px;
 }
 
-#year {
-  margin: 0px 8px;
-  min-width: 70px;
-}
-
-#month {
+#month, #year {
   margin: 0px 8px;
   min-width: 70px;
 }

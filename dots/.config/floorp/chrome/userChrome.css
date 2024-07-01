@@ -49,11 +49,8 @@
   > .browserContainer
   > .browserStack
   > browser {
-  border-radius: 10px !important;
+  border-radius: 16px !important;
   border: 2px solid #181818 !important;
-  margin-top: -0px !important;
-  margin-left: 0px !important;
-  margin-right: -0px !important;
  }
 
 .browser-sidebar2 browser {
@@ -75,7 +72,7 @@
 }
 
 #urlbar {
-  margin-top: 1px;
+  margin-top: 0px;
 }
 
 #urlbar-background {
