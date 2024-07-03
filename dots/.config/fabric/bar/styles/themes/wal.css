@@ -1,13 +1,1 @@
-
-@define-color background #000000;
-@define-color white #bfbfbf;
-@define-color red #F4254A;
-@define-color yellow #AB7F7F;
-@define-color green #9B6C6D;
-@define-color blue #8C847B;
-@define-color magenta #A69E94;
-@define-color aqua #D5BEB2;
-@define-color black #010000;
-@define-color darkgray #111111;
-@define-color gray #010000;
-@define-color lightgray #403f3f;
+@import url("/home/adriano/.cache/wal/colors-waybar.css");

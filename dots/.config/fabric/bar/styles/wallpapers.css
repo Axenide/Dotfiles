@@ -1,10 +1,10 @@
 #wall > * {
   transition: all 0.1s ease;
   border-radius: 10px;
-  border: 2px solid @darkgray;
+  border: 2px solid alpha(@foreground, 0.1);
   min-height: 128px;
 }
 
 #wall:hover > * {
-  border: 2px solid @magenta;
+  border: 2px solid @color5;
 }

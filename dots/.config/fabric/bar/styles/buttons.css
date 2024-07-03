@@ -1,14 +1,14 @@
 #time-button {
-  transition: all 0.25s ease;
-  color: @white;
+  transition: all 0.1s ease;
+  color: @foreground;
 	background-color: @background;
-	border: 2px solid @darkgray;
+	border: 2px solid alpha(@foreground, 0.1);
 	border-radius: 10px;
 	padding: 11px;
 }
 
 #time-button:hover {
-  background: linear-gradient(@background, @darkgray);
+  background-color: alpha(@foreground, 0.1);
 }
 
 #run-button,
@@ -17,10 +17,10 @@
 #chat-expand,
 #chat-reload,
 #chat-detach {
-	transition: all 0.25s ease;
+	transition: all 0.1s ease;
 	background-color: @background;
 	border-radius: 10px;
-	border: 2px solid @darkgray;
+	border: 2px solid alpha(@foreground, 0.1);
 }
 
 #run-button:hover,
@@ -29,7 +29,7 @@
 #chat-expand:hover,
 #chat-reload:hover,
 #chat-detach:hover {
-  background: linear-gradient(@background, @darkgray);
+  background-color: alpha(@foreground, 0.1);
 }
 
 #run-button > *,
@@ -38,10 +38,10 @@
 #chat-expand > *,
 #chat-reload > *,
 #chat-detach > * {
-  color: @red;
+  color: @color1;
   font-size: 20px;
   font-weight: normal;
-  transition: all 0.25s ease;
+  transition: all 0.1s ease;
   padding: 8px 8px;
 }
 
@@ -52,46 +52,46 @@
 #chat-reload:hover > *,
 #chat-detach:hover > * {
   text-shadow:
-  0 0 5px @red,
-  0 0 5px @red,
-  0 0 5px @red;
+  0 0 5px @color1,
+  0 0 5px @color1,
+  0 0 5px @color1;
 }
 
 #colorpicker > * {
-  color: @blue;
+  color: @color4;
 }
 
 #colorpicker:hover > * {
   text-shadow:
-  0 0 5px @blue,
-  0 0 5px @blue,
-  0 0 5px @blue;
+  0 0 5px @color4,
+  0 0 5px @color4,
+  0 0 5px @color4;
 }
 
 #media-button > * {
-  color: @magenta;
+  color: @color5;
 }
 
 #media-button:hover > * {
   text-shadow:
-  0 0 5px @magenta,
-  0 0 5px @magenta,
-  0 0 5px @magenta;
+  0 0 5px @color5,
+  0 0 5px @color5,
+  0 0 5px @color5;
 }
 
 #power-event {
-	transition: all 0.25s ease;
+	transition: all 0.1s ease;
 	background-color: @background;
 	border-radius: 10px;
-	border: 2px solid @darkgray;
+	border: 2px solid alpha(@foreground, 0.1);
 }
 
 #power-event-hover {
-	transition: all 0.25s ease;
+	transition: all 0.1s ease;
 	background-color: @background;
 	border-radius: 10px;
-	border: 2px solid @darkgray;
-  background: linear-gradient(@background, @darkgray);
+	border: 2px solid alpha(@foreground, 0.1);
+  background-color: alpha(@foreground, 0.1);
 }
 
 #shutdown > *,
@@ -101,61 +101,61 @@
 #lock > * {
   font-size: 20px;
   font-weight: normal;
-  transition: all 0.25s ease;
+  transition: all 0.1s ease;
   padding: 10px 8px;
 }
 
 #shutdown > * {
-  color: @red;
+  color: @color1;
 }
 
 #reboot > * {
-  color: @yellow;
+  color: @color3;
 }
 
 #logout > * {
-  color: @green;
+  color: @color2;
 }
 
 #suspend > * {
-  color: @blue;
+  color: @color4;
 }
 
 #lock > * {
-  color: @magenta;
+  color: @color5;
 }
 
 #shutdown:hover > * {
   text-shadow:
-  0 0 5px @red,
-  0 0 5px @red,
-  0 0 5px @red;
+  0 0 5px @color1,
+  0 0 5px @color1,
+  0 0 5px @color1;
 }
 
 #reboot:hover > * {
   text-shadow:
-  0 0 5px @yellow,
-  0 0 5px @yellow,
-  0 0 5px @yellow;
+  0 0 5px @color3,
+  0 0 5px @color3,
+  0 0 5px @color3;
 }
 
 #logout:hover > * {
   text-shadow:
-  0 0 5px @green,
-  0 0 5px @green,
-  0 0 5px @green;
+  0 0 5px @color2,
+  0 0 5px @color2,
+  0 0 5px @color2;
 }
 
 #suspend:hover > * {
   text-shadow:
-  0 0 5px @blue,
-  0 0 5px @blue,
-  0 0 5px @blue;
+  0 0 5px @color4,
+  0 0 5px @color4,
+  0 0 5px @color4;
 }
 
 #lock:hover > * {
   text-shadow:
-  0 0 5px @magenta,
-  0 0 5px @magenta,
-  0 0 5px @magenta;
+  0 0 5px @color5,
+  0 0 5px @color5,
+  0 0 5px @color5;
 }

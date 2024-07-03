@@ -2,8 +2,8 @@
   border-radius: 999px;
   padding: 10px;
   background-color: @background;
-  color: @white;
-  border: 2px solid @darkgray;
+  color: @foreground;
+  border: 2px solid alpha(@foreground, 0.1);
   caret-color: transparent;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
   /* margin: 0 400px; */
@@ -11,7 +11,7 @@
 }
 
 #lock-time {
-  color: @white;
+  color: @foreground;
   /* margin: -20px; */
 }
 

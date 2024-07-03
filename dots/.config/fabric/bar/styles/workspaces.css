@@ -1,12 +1,12 @@
 #workspaces {
 	border-radius: 10px;
 	padding: 14px;
-	border: 2px solid @darkgray;
+	border: 2px solid alpha(@foreground, 0.1);
 	background-color: @background;
 }
 
 #workspaces>button {
-  border: 2px solid @white;
+  border: 2px solid @foreground;
 	border-radius: 999px;
 	min-width: 4px;
 	min-height: 4px;
@@ -18,14 +18,14 @@
 }
 
 #workspaces>button.active {
-  border: 2px solid @red;
+  border: 2px solid @color1;
 	min-height: 48px;
 }
 
 #workspaces>button.empty {
-  border: 2px solid @lightgray;
+  border: 2px solid @color8;
 }
 
 #workspaces>button:hover {
-  border: 2px solid @red;
+  border: 2px solid @color1;
 }

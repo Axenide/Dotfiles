@@ -17,10 +17,6 @@
     right: 2px !important;
 }
 
-.tabbrowser-tab[selected] .tab-content {
-    border: 1px solid #B8646780;
-}
-
 .tabbrowser-tab:not([selected]) .tab-content {
     opacity: 0.5 !important;
 }
@@ -50,7 +46,7 @@
   > .browserStack
   > browser {
   border-radius: 16px !important;
-  border: 2px solid #181818 !important;
+  border: 2px solid #FFF1 !important;
  }
 
 .browser-sidebar2 browser {
@@ -71,14 +67,9 @@
   width: 0;
 }
 
-#urlbar {
-  margin-top: 0px;
-}
-
 #urlbar-background {
-  margin-top: 0px !important;
   border-radius: 6px !important;
-  background: linear-gradient(#000000, #111111) !important;
+  border: 2px solid #FFF1 !important;
 }
 
 #urlbar:hover #identity-box,
@@ -115,11 +106,6 @@
   position: relative !important;
   right: 3px !important;
   margin: 0 -2px !important;
-}
-
-#sidebar-splitter {
-  appearance: none !important;
-  width: 0px !important;
 }
 
 #splitview-splitter {

@@ -1,44 +1,44 @@
 #app-entry {
-  transition: all 0.25s ease;
-  color: @white;
+  transition: all 0.1s ease;
+  color: @foreground;
   background-color: @background;
-  border: 2px solid @darkgray;
+  border: 2px solid alpha(@foreground, 0.1);
   border-radius: 10px;
   padding: 10px;
 }
 
 #app-entry selection {
   color: @background;
-  background-color: @red;
+  background-color: @color1;
 }
 
 #app-entry:focus {
-  color: @white;
-  border: 2px solid @red;
+  color: @foreground;
+  border: 2px solid @color1;
   border-radius: 10px;
   padding: 10px;
 }
 
 #app-scroll {
-  color: @white;
+  color: @foreground;
   background-color: @background;
-  border: 2px solid @darkgray;
+  border: 2px solid alpha(@foreground, 0.1);
   border-radius: 10px;
   padding: 4px;
 }
 
 #app-button, #app-button-focus {
-  transition: margin 0.25s ease;
-  color: @white;
+  transition: margin 0.1s ease;
+  color: @foreground;
   padding: 10px;
 }
 
 #app-button:focus {
-  color: @red;
+  color: @color1;
   margin-left: 10px;
 }
 
 #app-button-focus {
-  color: @red;
+  color: @color1;
   margin-left: 10px;
 }

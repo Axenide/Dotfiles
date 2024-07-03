@@ -1,18 +1,18 @@
 #calendar {
   background-color: @background;
   border-radius: 10px;
-  border: 2px solid @darkgray;
+  border: 2px solid alpha(@foreground, 0.1);
   padding: 8px;
 }
 
 #week-days {
   font-size: 10pt;
-  color: @white;
+  color: @foreground;
   font-weight: normal;
 }
 
 #day, #current-day, #dimmed {
-  transition: all 0.25s ease;
+  transition: all 0.1s ease;
   font-size: 10pt;
   margin: 0px;
   padding: 5px 4px;
@@ -21,20 +21,20 @@
 }
 
 #day, #month, #year {
-  color: @white;
+  color: @foreground;
 }
 
 #current-day {
   color: @background;
-  background-color: @white;
+  background-color: @foreground;
 }
 
 #chevron > * {
-  color: @lightgray;
+  color: @color8;
 }
 
 #chevron:hover > * {
-  color: @white;
+  color: @foreground;
 }
 
 #header {
@@ -47,5 +47,5 @@
 }
 
 #dimmed {
-  color: @lightgray;
+  color: @color8;
 }

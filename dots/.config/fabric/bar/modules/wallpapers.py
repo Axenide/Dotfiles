@@ -69,6 +69,11 @@ class Wallpapers(ScrolledWindow):
 
     def on_button_press(self, button: Button, event):
         img = f"{WALLPAPERS_PATH}/{button.get_child().get_name()}"
+        commands = {
+            1: f"wal -i {img}",
+            3: f"wal -i {img} --backend colorthief",
+        }
+        exec_shell_command(commands.get(event.button))
         exec_shell_command_async(f"""
         swww img
         -t outer
@@ -85,6 +90,8 @@ class Wallpapers(ScrolledWindow):
         """,
         lambda *args: None)
         self.parent.dashboard.player.cover.set_style(f"background-image: url('{img}');")
+        exec_shell_command(f"pywalfox update")
+        set_stylesheet_from_file(get_relative_path("../style.css"))
         # exec_shell_command_async(f"""
         # magick
         # {img} 

@@ -1,6 +1,6 @@
 #user {
   background-color: @background;
-  border: 2px solid @darkgray;
+  border: 2px solid alpha(@foreground, 0.1);
   border-radius: 10px;
   padding: 8px;
 }
@@ -9,20 +9,20 @@
   background-size: cover;
   background-position: center;
   border-radius: 10px;
-  border: 2px solid @darkgray;
+  border: 2px solid alpha(@foreground, 0.1);
   min-width: 48px;
   min-height: 48px;
 }
 
 #user-label {
-  color: @white;
+  color: @foreground;
   margin-left: 8px;
   font-weight: bold;
   font-size: 10.5pt;
 }
 
 #host-label {
-  color: @lightgray;
+  color: @color8;
   margin-left: 8px;
   font-weight: bold;
   /* font-style: italic; */

@@ -1,15 +1,15 @@
 tooltip {
-  color: @white;
+  color: @foreground;
 	background-color: @background;
-	border: 2px solid @darkgray;
+	border: 2px solid alpha(@foreground, 0.1);
 	border-radius: 10px;
 	padding: 10px;
 }
 
 menu {
-  color: @white;
+  color: @foreground;
 	background-color: @background;
-	border: 2px solid @darkgray;
+	border: 2px solid alpha(@foreground, 0.1);
 	border-radius: 10px;
 	padding: 10px;
 }
@@ -21,9 +21,9 @@ menuitem {
 }
 
 menuitem:hover {
-  background-color: @black;
+  background-color: @color0;
 }
 
 menuitem:hover label {
-  color: @red;
+  color: @color1;
 }
