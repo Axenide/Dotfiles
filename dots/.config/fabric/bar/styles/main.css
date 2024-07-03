@@ -8,8 +8,10 @@
 #system-tray {
   background-color: @background;
 	border: 2px solid alpha(@foreground, 0.1);
+  border-right: none;
 	border-radius: 20px 0 0 20px;
 	padding: 10px 0;
+  padding-right: 2px;
 }
 
 #ext {

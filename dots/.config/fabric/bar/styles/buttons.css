@@ -80,11 +80,14 @@
   font-size: 20px;
   font-weight: normal;
   transition: all 0.1s ease;
-  padding: 8px 8px;
+  padding: 6px;
+  margin: 2px;
+  border-radius: 999px;
 }
 
 #run-button:hover > * {
   color: @foreground;
+  background-color: alpha(@foreground, 0.2);
 }
 
 #colorpicker > * {
@@ -132,7 +135,9 @@
   font-size: 20px;
   font-weight: normal;
   transition: all 0.1s ease;
-  padding: 10px 8px;
+  padding: 6px;
+  margin: 4px;
+  border-radius: 999px;
 }
 
 #shutdown:hover > *,
@@ -141,4 +146,5 @@
 #suspend:hover > *,
 #lock:hover > * {
   color: @foreground;
+  background-color: alpha(@foreground, 0.2);
 }

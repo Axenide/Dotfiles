@@ -46,7 +46,7 @@
   > .browserStack
   > browser {
   border-radius: 16px !important;
-  border: 2px solid #FFF1 !important;
+  border: 2px solid #FFFFFF1A !important;
  }
 
 .browser-sidebar2 browser {
@@ -69,7 +69,7 @@
 
 #urlbar-background {
   border-radius: 6px !important;
-  border: 2px solid #FFF1 !important;
+  border: 2px solid #FFFFFF1A !important;
 }
 
 #urlbar:hover #identity-box,
