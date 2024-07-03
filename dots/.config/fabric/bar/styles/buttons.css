@@ -79,7 +79,7 @@
   color: @background;
   font-size: 20px;
   font-weight: normal;
-  transition: all 0.1s ease;
+  /* transition: all 0.1s ease; */
   padding: 6px;
   margin: 2px;
   border-radius: 999px;
@@ -119,13 +119,6 @@
 	border: 2px solid alpha(@color1, 1);
 }
 
-#power-event-hover {
-	transition: all 0.1s ease;
-	background-color: @color1;
-	border-radius: 20px 0 0 0;
-	border: 2px solid alpha(@color1, 1);
-}
-
 #shutdown > *,
 #reboot > *,
 #logout > *,
@@ -134,7 +127,7 @@
   color: @background;
   font-size: 20px;
   font-weight: normal;
-  transition: all 0.1s ease;
+  /* transition: all 0.1s ease; */
   padding: 6px;
   margin: 4px;
   border-radius: 999px;

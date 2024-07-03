@@ -75,13 +75,13 @@ class Power(EventBox):
     def on_button_hover(self, button: Button, event):
         if button == self:
             self.revealer.set_reveal_child(True)
-            self.set_name("power-event-hover")
+            # self.set_name("power-event-hover")
         return self.change_cursor("pointer")
 
     def on_button_unhover(self, button: Button, event):
         if button == self:
             self.revealer.set_reveal_child(False)
-            self.set_name("power-event")
+            # self.set_name("power-event")
         return self.change_cursor("default")
 
     def on_button_press(self, button: Button, event):
