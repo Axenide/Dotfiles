@@ -3,7 +3,8 @@
   color: @foreground;
 	background-color: @background;
 	border: 2px solid alpha(@foreground, 0.1);
-	border-radius: 10px;
+  border-right: none;
+	border-radius: 20px 0 0 20px;
 	padding: 11px;
 }
 
@@ -11,9 +12,16 @@
   background-color: alpha(@foreground, 0.1);
 }
 
-#run-button,
+/* #run-button, */
 #media-button,
-#colorpicker,
+#colorpicker {
+	transition: all 0.1s ease;
+	background-color: @background;
+	border-radius: 16px 0 0 16px;
+	border: 2px solid alpha(@foreground, 0.1);
+  border-right: none;
+}
+
 #chat-expand,
 #chat-reload,
 #chat-detach {
@@ -23,7 +31,7 @@
 	border: 2px solid alpha(@foreground, 0.1);
 }
 
-#run-button:hover,
+/* #run-button:hover, */
 #media-button:hover,
 #colorpicker:hover,
 #chat-expand:hover,
@@ -32,7 +40,7 @@
   background-color: alpha(@foreground, 0.1);
 }
 
-#run-button > *,
+/* #run-button > *, */
 #media-button > *,
 #colorpicker > *,
 #chat-expand > *,
@@ -45,8 +53,7 @@
   padding: 8px 8px;
 }
 
-#run-button:hover > *,
-/* #media-button:hover > *, */
+/* #run-button:hover > *, */
 #colorpicker:hover > *,
 #chat-expand:hover > *,
 #chat-reload:hover > *,
@@ -55,6 +62,29 @@
   0 0 5px @color1,
   0 0 5px @color1,
   0 0 5px @color1;
+}
+
+#run-button {
+	transition: all 0.1s ease;
+	background-color: @color1;
+	border-radius: 0px 0px 0px 20px;
+	border: 2px solid alpha(@color1, 1);
+}
+
+#run-button:hover {
+  /* background-color: alpha(@foreground, 0.1); */
+}
+
+#run-button > * {
+  color: @background;
+  font-size: 20px;
+  font-weight: normal;
+  transition: all 0.1s ease;
+  padding: 8px 8px;
+}
+
+#run-button:hover > * {
+  color: @foreground;
 }
 
 #colorpicker > * {
@@ -81,17 +111,16 @@
 
 #power-event {
 	transition: all 0.1s ease;
-	background-color: @background;
-	border-radius: 10px;
-	border: 2px solid alpha(@foreground, 0.1);
+	background-color: @color1;
+	border-radius: 20px 0 0 0;
+	border: 2px solid alpha(@color1, 1);
 }
 
 #power-event-hover {
 	transition: all 0.1s ease;
-	background-color: @background;
-	border-radius: 10px;
-	border: 2px solid alpha(@foreground, 0.1);
-  background-color: alpha(@foreground, 0.1);
+	background-color: @color1;
+	border-radius: 20px 0 0 0;
+	border: 2px solid alpha(@color1, 1);
 }
 
 #shutdown > *,
@@ -99,63 +128,17 @@
 #logout > *,
 #suspend > *,
 #lock > * {
+  color: @background;
   font-size: 20px;
   font-weight: normal;
   transition: all 0.1s ease;
   padding: 10px 8px;
 }
 
-#shutdown > * {
-  color: @color1;
-}
-
-#reboot > * {
-  color: @color3;
-}
-
-#logout > * {
-  color: @color2;
-}
-
-#suspend > * {
-  color: @color4;
-}
-
-#lock > * {
-  color: @color5;
-}
-
-#shutdown:hover > * {
-  text-shadow:
-  0 0 5px @color1,
-  0 0 5px @color1,
-  0 0 5px @color1;
-}
-
-#reboot:hover > * {
-  text-shadow:
-  0 0 5px @color3,
-  0 0 5px @color3,
-  0 0 5px @color3;
-}
-
-#logout:hover > * {
-  text-shadow:
-  0 0 5px @color2,
-  0 0 5px @color2,
-  0 0 5px @color2;
-}
-
-#suspend:hover > * {
-  text-shadow:
-  0 0 5px @color4,
-  0 0 5px @color4,
-  0 0 5px @color4;
-}
-
+#shutdown:hover > *,
+#reboot:hover > *,
+#logout:hover > *,
+#suspend:hover > *,
 #lock:hover > * {
-  text-shadow:
-  0 0 5px @color5,
-  0 0 5px @color5,
-  0 0 5px @color5;
+  color: @foreground;
 }
