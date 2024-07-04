@@ -20,7 +20,7 @@
   border-radius: 999px;
 }
 
-#day, #month, #year {
+#day, #month {
   color: @foreground;
 }
 
@@ -41,9 +41,9 @@
   margin: 8px;
 }
 
-#month, #year {
+#month {
   margin: 0px 8px;
-  min-width: 70px;
+  min-width: 110px;
 }
 
 #dimmed {

@@ -26,14 +26,6 @@ class Calendar(EventBox):
         self.next_month_button = Button(name="chevron", child=Label(label="<span font-family='tabler-icons'>&#xea61;</span>", markup=True))
         self.next_month_button.connect("clicked", self.on_next_month_clicked)
 
-        self.prev_year_button = Button(name="chevron", child=Label(label="<span font-family='tabler-icons'>&#xea60;</span>", markup=True))
-        self.prev_year_button.connect("clicked", self.on_prev_year_clicked)
-
-        self.year_label = Label(name="year")
-
-        self.next_year_button = Button(name="chevron", child=Label(label="<span font-family='tabler-icons'>&#xea61;</span>", markup=True))
-        self.next_year_button.connect("clicked", self.on_next_year_clicked)
-
         self.prev_month_rev = Revealer(
             transition_type="slide-left",
             transition_duration=300,
@@ -46,18 +38,6 @@ class Calendar(EventBox):
             child=self.next_month_button,
         )
 
-        self.prev_year_rev = Revealer(
-            transition_type="slide-left",
-            transition_duration=300,
-            child=self.prev_year_button,
-        )
-
-        self.next_year_rev = Revealer(
-            transition_type="slide-right",
-            transition_duration=300,
-            child=self.next_year_button,
-        )
-
         self.month_header = Box(
             orientation="h",
             children=[
@@ -67,22 +47,13 @@ class Calendar(EventBox):
             ],
         )
 
-        self.year_header = Box(
-            orientation="h",
-            children=[
-                self.prev_year_rev,
-                self.year_label,
-                self.next_year_rev,
-            ],
-        )
-
         self.header = Box(
             name="header",
             orientation="h",
+            h_align="center",
             children=[
                 self.month_header,
                 Box(h_expand=True),
-                self.year_header,
             ],
         )
 
@@ -105,7 +76,7 @@ class Calendar(EventBox):
             ],
         )
 
-        self.revealers = [self.prev_month_rev, self.next_month_rev, self.prev_year_rev, self.next_year_rev]
+        self.revealers = [self.prev_month_rev, self.next_month_rev]
 
         for revealer in self.revealers:
             revealer.set_reveal_child(False)
@@ -115,8 +86,6 @@ class Calendar(EventBox):
         self.buttons = [
             self.prev_month_button,
             self.next_month_button,
-            self.prev_year_button,
-            self.next_year_button,
         ]
 
         self.triggers = [
@@ -142,8 +111,7 @@ class Calendar(EventBox):
 
     def update_calendar(self):
         self.create_calendar(self.current_year, self.current_month)
-        self.month_label.set_text(datetime(self.current_year, self.current_month, 1).strftime("%B").capitalize())
-        self.year_label.set_text(str(self.current_year))
+        self.month_label.set_text(datetime(self.current_year, self.current_month, 1).strftime("%B %Y").capitalize())
 
     def create_calendar(self, year, month):
         # Clear the grid first
@@ -217,14 +185,6 @@ class Calendar(EventBox):
             self.current_year += 1
         else:
             self.current_month += 1
-        self.update_calendar()
-
-    def on_prev_year_clicked(self, widget):
-        self.current_year -= 1
-        self.update_calendar()
-
-    def on_next_year_clicked(self, widget):
-        self.current_year += 1
         self.update_calendar()
 
     def on_hover(self, widget, event):
