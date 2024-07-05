@@ -3,7 +3,7 @@ from __init__ import *
 class Bar(Window):
     def __init__(self):
         super().__init__(
-            layer="top",
+            layer="bottom",
             anchor="left top bottom",
             margin="0px -20px 0px 0px",
             visible=False,
@@ -151,7 +151,7 @@ class Bar(Window):
             "chat": (self.stack.chat, "on-demand"),
             "dashboard": (self.stack.dashboard, "none"),
             "wallpapers": (self.stack.wallpapers, "none"),
-            "apps": (self.stack.apps, "on-demand")
+            "apps": (self.stack.apps, "exclusive")
         }
 
         if command in child_mapping:

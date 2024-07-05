@@ -25,7 +25,7 @@
 }
 
 #workspaces>button.empty {
-  border: 2px solid @color8;
+  border: 2px solid alpha(@foreground, 0.25);
 }
 
 #workspaces>button:hover {
