@@ -176,9 +176,9 @@ class Bar(Window):
         match button:
             case self.run_button:
                 commands = {
-                    1: f'{home_dir}/.config/rofi/launcher/launcher.sh',
+                    1: f'{fabricSend} apps',
                     2: 'swaync-client -t -sw',
-                    3: 'toggle'
+                    3: f'{fabricSend} dashboard',
                 }
                 command = commands.get(event.button)
                 if command != 'toggle':

@@ -67,6 +67,8 @@ home_dir = os.getenv('HOME')
 user = f"{os.getenv('USER')}".rstrip()
 host = f"{exec_shell_command('hostname')}".rstrip()
 
+fabricSend = f'python {home_dir}/.config/fabric/bar/scripts/send.py'
+
 import modules.icons as icons
 from modules.calendar import Calendar
 from modules.systray import SystemTray
