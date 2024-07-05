@@ -11,7 +11,7 @@
   background-color: @background;
   transition: all 0.1s ease;
 	border: 2px solid alpha(@foreground, 0.1);
-	border-bottom: 2px solid @color2;
+	/* border-bottom: 3px solid @color2; */
 	border-radius: 10px;
 }
 
@@ -22,7 +22,7 @@
   background-color: @background;
   transition: all 0.1s ease;
 	border: 2px solid alpha(@foreground, 0.1);
-	border-bottom: 2px solid @color8;
+	/* border-bottom: 3px solid alpha(@foreground, 0.25); */
   border-radius: 10px;
 }
 
@@ -53,7 +53,7 @@
 #bluetooth-button-off > *,
 #night-button-off > *,
 #dnd-button-off > * {
-  color: @color8;
+  color: alpha(@foreground, 0.25);
   font-size: 20px;
   font-weight: normal;
 }

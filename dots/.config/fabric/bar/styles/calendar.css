@@ -30,7 +30,7 @@
 }
 
 #chevron > * {
-  color: @color8;
+  color: alpha(@foreground, 0.5);
 }
 
 #chevron:hover > * {
@@ -47,5 +47,5 @@
 }
 
 #dimmed {
-  color: @color8;
+  color: alpha(@foreground, 0.25);
 }
