@@ -48,7 +48,9 @@ python-gobject-docs
 python-pip
 python-pipx
 python-pygobject-stubs
+python-pynvim
 python-setproctitle
+python-toml
 ranger
 ripgrep
 rofi-calc
