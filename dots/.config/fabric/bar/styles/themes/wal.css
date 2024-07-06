@@ -1,1 +1,20 @@
-@import url("/home/adriano/.cache/wal/colors-waybar.css");
+@define-color foreground #f3e4da;
+@define-color background #0b0c10;
+@define-color cursor #f3e4da;
+
+@define-color color0 #0b0c10;
+@define-color color1 #6D5759;
+@define-color color2 #926D69;
+@define-color color3 #CA6A50;
+@define-color color4 #CF8F73;
+@define-color color5 #CDA194;
+@define-color color6 #F1CFB6;
+@define-color color7 #f3e4da;
+@define-color color8 #aa9f98;
+@define-color color9 #6D5759;
+@define-color color10 #926D69;
+@define-color color11 #CA6A50;
+@define-color color12 #CF8F73;
+@define-color color13 #CDA194;
+@define-color color14 #F1CFB6;
+@define-color color15 #f3e4da;
