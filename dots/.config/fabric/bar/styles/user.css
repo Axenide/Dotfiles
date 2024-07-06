@@ -8,7 +8,7 @@
 #user-image {
   background-size: cover;
   background-position: center;
-  border-radius: 10px;
+  border-radius: 999px;
   border: 2px solid alpha(@foreground, 0.1);
   min-width: 48px;
   min-height: 48px;

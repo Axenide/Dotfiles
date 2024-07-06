@@ -91,6 +91,7 @@ class Wallpapers(ScrolledWindow):
         lambda *args: None)
         self.parent.dashboard.player.cover.set_style(f"background-image: url('{img}');")
         exec_shell_command(f"pywalfox update")
+        exec_shell_command(f"python {get_relative_path('../scripts/wal-set.py')}")
         set_stylesheet_from_file(get_relative_path("../style.css"))
         # exec_shell_command_async(f"""
         # magick

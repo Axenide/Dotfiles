@@ -5,7 +5,7 @@ class MainStack(Stack):
     def __init__(self):
         super().__init__(
             name="main-stack",
-            transition_type="slide-left-right",
+            transition_type="slide-left",
             transition_duration=500,
             h_expand=True,
             v_expand=True,

@@ -1,0 +1,40 @@
+/**
+ * @name Axgruv
+ * @description Allows you to customize Discord's native Color Scheme.
+ * @author DevilBro
+ * @version 1.0.0
+ * @authorId 278543574059057154
+ * @invite Jx3TjNS
+ * @donate https://www.paypal.me/MircoWittrien
+ * @patreon https://www.patreon.com/MircoWittrien
+ * @website https://mwittrien.github.io/
+ * @source https://github.com/mwittrien/BetterDiscordAddons/tree/master/Themes/DiscordRecolor/
+ * @BDEditor DiscordRecolor
+*/
+
+@import url('https://mwittrien.github.io/BetterDiscordAddons/Themes/DiscordRecolor/DiscordRecolor.css');
+
+:root {
+  --accentcolor: 219,71,64;
+  --accentcolor2: 255,115,250;
+  --linkcolor: 0,176,244;
+  --mentioncolor: 250,166,26;
+  --textbrightest: 224,205,165;
+  --textbrighter: 195,178,144;
+  --textbright: 163,149,120;
+  --textdark: 123,113,91;
+  --textdarker: 101,92,74;
+  --textdarkest: 70,64,52;
+  --font: gg sans;
+  --backgroundaccent: 27,29,29;
+  --backgroundprimary: 2,2,2;
+  --backgroundsecondary: 6,6,6;
+  --backgroundsecondaryalt: 14,14,14;
+  --backgroundtertiary: 0,0,0;
+  --backgroundfloating: 0,0,0;
+  --settingsicons: 1;
+}
+
+/* Any custom CSS below here */
+
+
