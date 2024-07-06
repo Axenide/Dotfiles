@@ -1,5 +1,6 @@
 import os
 import shutil
+import pynvim
 
 home_dir = os.path.expanduser("~")
 
@@ -29,11 +30,17 @@ def copy_files(file_list):
         except Exception as e:
             print(f"An error occurred while copying from {src} to {dst}: {e}")
 
+def reload_nvim():
+    nvim = pynvim.attach('socket', path='/tmp/nvim')
+    nvim.command('lua require("nvchad.utils").reload("themes.wal")')
+
 # List of files to copy
 file_list = [
     (f"{home_dir}/.cache/wal/colors-nvchad.lua", f"{home_dir}/.config/nvim/lua/themes/wal.lua"),
     (f"{home_dir}/.cache/wal/colors-discord.css", f"{home_dir}/.config/vesktop/themes/axwal.theme.css"),
+    (f"{home_dir}/.cache/wal/colors-hyprland.conf", f"{home_dir}/.config/hypr/source/colors.conf"),
 ]
 
 # Call the function
 copy_files(file_list)
+reload_nvim()

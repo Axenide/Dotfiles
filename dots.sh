@@ -49,18 +49,15 @@ title
 echo "Stowing dotfiles..."
 echo ""
 
-# Si la opción de gráficos es NVIDIA
+# Si la opción de gráficos es NVIDIA, hacer cat, sino nada.
 if [[ "$graphics_option" == "1" ]]; then
-  stow nvidia
-else
-  stow open-graphics
-fi
+  cat ./options/nvidia.conf > ./dots/.config/hypr/source/nvidia.conf
 
 # Si la opción de diseño de teclado es US
 if [[ "$keyboard_option" == "1" ]]; then
-  stow us
+  cat ./options/us.conf > ./dots/.config/hypr/source/keyboard.conf
 else
-  stow latam
+  cat ./options/latam.conf > ./dots/.config/hypr/source/keyboard.conf
 fi
 
 # Siempre ejecutar 'stow dots'

@@ -1,4 +1,6 @@
 /dots/.config/tmux/plugins/
+/dots/.config/hypr/nvidia.conf
+/dots/.config/hypr/keyboard.conf
 **/*.uuid
 **/__pycache__
 **/venv

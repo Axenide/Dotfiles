@@ -63,7 +63,7 @@ from loguru import logger
 
 gi.require_version("Gtk", "3.0")
 
-home_dir = os.getenv('HOME')
+home_dir = os.path.expanduser("~")
 user = f"{os.getenv('USER')}".rstrip()
 host = f"{exec_shell_command('hostname')}".rstrip()
 
