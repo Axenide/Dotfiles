@@ -145,11 +145,11 @@
 	border: 2px solid alpha(@color1, 1);
 }
 
-#shutdown > *,
-#reboot > *,
-#logout > *,
-#suspend > *,
-#lock > * {
+#power-shutdown > *,
+#power-reboot > *,
+#power-logout > *,
+#power-suspend > *,
+#power-lock > * {
   color: @background;
   font-size: 20px;
   font-weight: normal;
@@ -158,11 +158,11 @@
   border-radius: 999px;
 }
 
-#shutdown:hover > *,
-#reboot:hover > *,
-#logout:hover > *,
-#suspend:hover > *,
-#lock:hover > * {
+#power-shutdown:hover > *,
+#power-reboot:hover > *,
+#power-logout:hover > *,
+#power-suspend:hover > *,
+#power-lock:hover > * {
   color: @foreground;
   background-color: alpha(@foreground, 0.2);
 }
