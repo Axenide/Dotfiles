@@ -12,7 +12,7 @@ class Dashboard(Box):
 
         self.applets = Applets()
         self.circles = Circles()
-        self.player = Player("dashboard")
+        self.player = Player()
         self.calendar = Calendar()
 
         self.ext = Box(

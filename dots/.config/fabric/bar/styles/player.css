@@ -1,4 +1,4 @@
-#full-player-dashboard {
+#full-player {
   background-color: @background;
   border: 2px solid alpha(@foreground, 0.1);
   border-radius: 10px;
@@ -6,36 +6,15 @@
   min-height: 100px;
 }
 
-#cover-dashboard {
+#cover {
   background-size: cover;
   background-position: center;
   border-radius: 6px;
 }
 
-#cover-text-dashboard {
-  background: linear-gradient(to bottom, alpha(@color8, 0.75), alpha(@color0, 0.75));
+#cover-text {
+  background-color: alpha(@color0, 0.75);
   border-radius: 6px;
-  padding: 8px;
-}
-
-#full-player-lock {
-  background-color: @background;
-  border: 2px solid alpha(@foreground, 0.1);
-  border-radius: 20px;
-  padding: 4px;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
-  min-height: 100px;
-}
-
-#cover-lock {
-  background-size: cover;
-  background-position: center;
-  border-radius: 16px;
-}
-
-#cover-text-lock {
-  background: linear-gradient(135deg, alpha(#404040, 0.75), alpha(black, 0.75));
-  border-radius: 16px;
   padding: 8px;
 }
 

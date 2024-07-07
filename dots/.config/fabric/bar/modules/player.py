@@ -1,7 +1,7 @@
 from __init__ import *
 
 class Player(Box):
-    def __init__(self, location):
+    def __init__(self):
         super().__init__(
             name="player",
             visible=False,
@@ -65,7 +65,7 @@ class Player(Box):
         )
 
         self.cover_text = Box(
-            name=f"cover-text-{location}",
+            name=f"cover-text",
             h_expand=True,
             v_expand=True,
             v_align="fill",
@@ -77,7 +77,7 @@ class Player(Box):
         )
 
         self.cover = Box(
-            name=f"cover-{location}",
+            name=f"cover",
             style=f"background-image: url('{self.cover_file}');",
             h_expand=True,
             h_align="fill",
@@ -115,7 +115,7 @@ class Player(Box):
             )
 
         self.full_player = Box(
-            name=f"full-player-{location}",
+            name=f"full-player",
             orientation="h",
             h_expand=True,
             children=[

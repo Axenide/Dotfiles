@@ -11,35 +11,7 @@
 └────────────────────────────────────────────┘
 */
 
-@define-color cc-bg #000000;
-@define-color noti-border-color #424242;
-@define-color noti-bg #000000;
-@define-color noti-bg-darker #0A0A0A;
-@define-color noti-bg-hover #0A0A0A;
-@define-color noti-bg-focus #0A0A0A;
-@define-color noti-close-bg #1F1F1F;
-@define-color noti-close-bg-hover #1F1F1F;
-@define-color text-color #E8E3E3;
-@define-color text-color-disabled #BBB6B6;
-@define-color bg-selected #1F1F1F;
-
-@define-color black     #424242;
-@define-color red       #B66467;
-@define-color green     #8C977D;
-@define-color yellow    #D9BC8C;
-@define-color blue      #8DA3B9;
-@define-color purple    #A988B0;
-@define-color aqua      #8AA6A2;
-@define-color gray      #BBB6B6;
-@define-color brgray    #BBB6B6;
-@define-color brred     #B66467;
-@define-color brgreen   #8C977D;
-@define-color bryellow  #D9BC8C;
-@define-color brblue    #8DA3B9;
-@define-color brpurple  #A988B0;
-@define-color braqua    #8AA6A2;
-@define-color white     #E8E3E3;
-@define-color bg2       #1F1F1F;
+@import "./colors.css";
 
 * {
     font-family: Iosevka Nerd Font;
@@ -57,7 +29,7 @@
 .notification {
     border-radius: 10px;
     padding: 0;
-    border: 1px solid @noti-close-bg;
+    border: 2px solid @noti-close-bg;
     background: @noti-bg-darker;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.75);
 }
