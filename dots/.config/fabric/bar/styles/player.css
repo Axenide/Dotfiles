@@ -56,7 +56,7 @@
 #skip-forward-button,
 #prev-button,
 #next-button {
-  transition: all 0.1s ease;
+  /*transition: all 0.1s ease;*/
 }
 
 #play-button > *,
@@ -64,12 +64,12 @@
 #skip-forward-button > *,
 #prev-button > *,
 #next-button > * {
-  transition: all 0.1s ease;
+  /*transition: all 0.1s ease;*/
   color: @color8;
   font-size: 20px;
   font-weight: normal;
-  padding: 4px;
-  margin: 2px;
+  padding: 3px;
+  margin: 3px;
   border-radius: 999px;
 }
 

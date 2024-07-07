@@ -70,6 +70,7 @@ host = f"{exec_shell_command('hostname')}".rstrip()
 fabricSend = f'python {home_dir}/.config/fabric/bar/scripts/send.py'
 
 import modules.icons as icons
+from modules.panels import Panels
 from modules.calendar import Calendar
 from modules.systray import SystemTray
 from modules.aichat import AIchat

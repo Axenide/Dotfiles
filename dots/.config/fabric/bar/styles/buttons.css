@@ -31,7 +31,6 @@
 	border: 2px solid alpha(@foreground, 0.1);
 }
 
-/* #run-button:hover, */
 #media-button:hover,
 #colorpicker:hover,
 #chat-expand:hover,
@@ -40,7 +39,6 @@
   background-color: alpha(@foreground, 0.1);
 }
 
-/* #run-button > *, */
 #media-button > *,
 #colorpicker > *,
 #chat-expand > *,
@@ -53,7 +51,6 @@
   padding: 8px 8px;
 }
 
-/* #run-button:hover > *, */
 #colorpicker:hover > *,
 #chat-expand:hover > *,
 #chat-reload:hover > *,
@@ -112,6 +109,35 @@
   0 0 5px @color5;
 }
 
+#panels-event {
+	transition: all 0.1s ease;
+	background-color: @color1;
+	border-radius: 0 0 0 20px;
+	border: 2px solid alpha(@color1, 1);
+}
+
+#panels-apps > *,
+#panels-dashboard > *,
+#panels-chat > *,
+#panels-wallpapers > *,
+#panels-windows > * {
+  color: @background;
+  font-size: 20px;
+  font-weight: normal;
+  padding: 6px;
+  margin: 4px;
+  border-radius: 999px;
+}
+
+#panels-apps:hover > *,
+#panels-dashboard:hover > *,
+#panels-chat:hover > *,
+#panels-wallpapers:hover > *,
+#panels-windows:hover > * {
+  color: @foreground;
+  background-color: alpha(@foreground, 0.2);
+}
+
 #power-event {
 	transition: all 0.1s ease;
 	background-color: @color1;
@@ -127,7 +153,6 @@
   color: @background;
   font-size: 20px;
   font-weight: normal;
-  /* transition: all 0.1s ease; */
   padding: 6px;
   margin: 4px;
   border-radius: 999px;

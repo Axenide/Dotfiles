@@ -1,0 +1,89 @@
+[manager]
+cwd = {{ fg = "{color1}" }}
+
+hovered         = {{ fg = "{color1}", bg = "{background}", bold = true, underline = true }}
+preview_hovered = {{ underline = true }}
+
+find_keyword  = {{ fg = "{color2}", italic = true }}
+find_position = {{ fg = "{color3}", bg = "reset", italic = true }}
+
+marker_selected = {{ fg = "{color2}", bg = "{color2}" }}
+marker_copied   = {{ fg = "{color2}", bg = "{color2}" }}
+marker_cut      = {{ fg = "{color1}", bg = "{color1}" }}
+
+tab_active   = {{ fg = "{background}", bg = "{color8}" }}
+tab_inactive = {{ fg = "{color8}", bg = "{background}" }}
+tab_width    = 1
+
+border_symbol = "│"
+border_style  = {{ fg = "{background}" }}
+
+[status]
+separator_open  = ""
+separator_close = ""
+separator_style = {{ fg = "{background}", bg = "{background}" }}
+
+mode_normal = {{ fg = "{background}", bg = "{color1}", bold = true }}
+mode_select = {{ fg = "{background}", bg = "{color2}", bold = true }}
+mode_unset  = {{ fg = "{background}", bg = "{color5}", bold = true }}
+
+progress_label  = {{ fg = "{foreground}", bold = true }}
+progress_normal = {{ fg = "{color8}", bg = "{background}" }}
+progress_error  = {{ fg = "{color1}", bg = "{background}" }}
+
+permissions_t = {{ fg = "{color8}" }}
+permissions_r = {{ fg = "{color2}" }}
+permissions_w = {{ fg = "{color1}" }}
+permissions_x = {{ fg = "{color2}" }}
+permissions_s = {{ fg = "{color8}" }}
+
+[input]
+border   = {{ fg = "{color2}" }}
+title    = {{}}
+value    = {{}}
+selected = {{ reversed = true }}
+
+[select]
+border   = {{ fg = "{color8}" }}
+active   = {{ fg = "{color3}" }}
+inactive = {{}}
+
+[tasks]
+border  = {{ fg = "{color8}" }}
+title   = {{}}
+hovered = {{ underline = true }}
+
+[which]
+mask            = {{ bg = "{background}" }}
+cand            = {{ fg = "{foreground}" }}
+rest            = {{ fg = "{color8}" }}
+desc            = {{ fg = "{color3}" }}
+separator       = "  "
+separator_style = {{ fg = "{color8}" }}
+
+[help]
+on      = {{ fg = "{color3}" }}
+exec    = {{ fg = "{foreground}" }}
+desc    = {{ fg = "{color8}" }}
+hovered = {{ bg = "{color8}", bold = true }}
+footer  = {{ fg = "{background}", bg = "{color8}" }}
+
+[filetype]
+
+rules = [
+    {{ mime = "image/*", fg = "{color5}" }},
+
+    {{ mime = "video/*", fg = "{color4}" }},
+    {{ mime = "audio/*", fg = "{color2}" }},
+
+    {{ mime = "application/zip",             fg = "{color3}" }},
+    {{ mime = "application/gzip",            fg = "{color3}" }},
+    {{ mime = "application/x-tar",           fg = "{color3}" }},
+    {{ mime = "application/x-bzip",          fg = "{color3}" }},
+    {{ mime = "application/x-bzip2",         fg = "{color3}" }},
+    {{ mime = "application/x-7z-compressed", fg = "{color3}" }},
+    {{ mime = "application/x-rar",           fg = "{color3}" }},
+
+    {{ name = "*", fg = "{color4}" }},
+    {{ name = "*/", fg = "{foreground}" }}
+]

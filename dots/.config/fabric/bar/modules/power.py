@@ -40,7 +40,6 @@ class Power(EventBox):
                 self.suspend,
                 self.logout,
                 self.reboot,
-                # self.shutdown,
             ]
         )
 
@@ -62,7 +61,16 @@ class Power(EventBox):
 
         self.add(self.full_power)
 
-        for btn in [self.lock, self.suspend, self.logout, self.reboot, self.shutdown, self]:
+        self.buttons = [
+            self.lock,
+            self.suspend,
+            self.logout,
+            self.reboot,
+            self.shutdown,
+            self,
+        ]
+
+        for btn in self.buttons:
             bulk_connect(
                 btn,
                 {
@@ -75,31 +83,24 @@ class Power(EventBox):
     def on_button_hover(self, button: Button, event):
         if button == self:
             self.revealer.set_reveal_child(True)
-            # self.set_name("power-event-hover")
         return self.change_cursor("pointer")
 
     def on_button_unhover(self, button: Button, event):
         if button == self:
             self.revealer.set_reveal_child(False)
-            # self.set_name("power-event")
         return self.change_cursor("default")
 
     def on_button_press(self, button: Button, event):
-        match button:
-            case self.lock:
-                # exec_shell_command_async("python lock.py", lambda *_: None)
-                exec_shell_command_async("swaylock", lambda *_: None)
-                # exec_shell_command("notify-send 'Locking screen'")
-            case self.suspend:
-                # exec_shell_command("systemctl suspend")
-                exec_shell_command_async("notify-send 'Suspending system'", lambda *_: None)
-            case self.logout:
-                # exec_shell_command("hyprctl dispatch exit")
-                exec_shell_command_async("notify-send 'Logging out'", lambda *_: None)
-            case self.reboot:
-                # exec_shell_command("systemctl reboot")
-                exec_shell_command_async("notify-send 'Rebooting system'", lambda *_: None)
-            case self.shutdown:
-                # exec_shell_command("systemctl poweroff")
-                exec_shell_command_async("notify-send 'Shutting down system'", lambda *_: None)
+        commands = {
+            self.lock: "swaylock",
+            self.suspend: "notify-send 'Suspending system'",
+            self.logout: "notify-send 'Logging out'",
+            self.reboot: "notify-send 'Rebooting system'",
+            self.shutdown: "notify-send 'Shutting down system'"
+        }
+
+        command = commands.get(button)
+        if command:
+            exec_shell_command_async(command, lambda *_: None)
+
         return True

@@ -11,6 +11,15 @@ command = "python ~/.config/fabric/bar/scripts/send.py update-style"
 source = "colors-kitty.conf"
 target = "~/.config/kitty/wal.conf"
 
+[slurp]
+source = "colors-slurp.sh"
+target = "~/.config/kitty/slurp.sh"
+
+[swaync]
+source = "colors-swaync.css"
+target = "~/.config/swaync/colors.css"
+command = "swaync-client -rs"
+
 [nvchad]
 source = "colors-nvchad.lua"
 target = "~/.config/nvim/lua/themes/wal.lua"
@@ -19,6 +28,10 @@ command = "python ~/.config/wal/reload_nvim.py"
 [discord]
 source = "colors-discord.css"
 target = "~/.config/vesktop/themes/axwal.theme.css"
+
+[yazi]
+source = "colors-yazi.toml"
+target = "~/.config/yazi/theme.toml"
 
 [swaylock]
 source = "colors-swaylock"

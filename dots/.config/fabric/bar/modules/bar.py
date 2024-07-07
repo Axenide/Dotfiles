@@ -12,6 +12,8 @@ class Bar(Window):
             keyboard_mode="none",
         )
 
+        self.panels = Panels()
+
         self.system_tray = SystemTray()
 
         self.content_box = Revealer(
@@ -68,7 +70,8 @@ class Bar(Window):
                 orientation="v",
                 spacing=4,
                 children=[
-                    self.run_button,
+                    self.panels,
+                    # self.run_button,
                     Box(name="module-separator"),
                     self.system_tray,
                     Box(name="module-separator"),

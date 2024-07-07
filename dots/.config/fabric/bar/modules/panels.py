@@ -3,66 +3,74 @@ from __init__ import *
 class Panels(EventBox):
     def __init__(self):
         super().__init__(
-            name="power-event",
+            name="panels-event",
             # orientation="v",
         )
         self.apps = Button(
-            name="apps",
-            child=Label(label=f"{icons.lock}", markup=True),
+            name="panels-apps",
+            child=Label(label=f"{icons.apps}", markup=True),
         )
 
         self.dashboard = Button(
-            name="dashboard",
-            child=Label(label=f"{icons.suspend}", markup=True),
+            name="panels-dashboard",
+            child=Label(label=f"{icons.dashboard}", markup=True),
         )
 
         self.chat = Button(
-            name="chat",
-            child=Label(label=f"{icons.logout}", markup=True),
+            name="panels-chat",
+            child=Label(label=f"{icons.chat}", markup=True),
         )
 
         self.wallpapers = Button(
-            name="wallpapers",
-            child=Label(label=f"{icons.reboot}", markup=True),
+            name="panels-wallpapers",
+            child=Label(label=f"{icons.wallpapers}", markup=True),
         )
 
-        self.shutdown = Button(
-            name="shutdown",
-            child=Label(label=f"{icons.shutdown}", markup=True),
+        self.windows = Button(
+            name="panels-windows",
+            child=Label(label=f"{icons.windows}", markup=True),
         )
 
-        self.power_box = Box(
-            name="power-box",
+        self.panels_box = Box(
+            name="panels-box",
             orientation="v",
             # spacing=16,
             children=[
-                self.lock,
-                self.suspend,
-                self.logout,
-                self.reboot,
-                # self.shutdown,
+                self.dashboard,
+                self.chat,
+                self.wallpapers,
+                self.windows,
             ]
         )
 
         self.revealer = Revealer(
-            name="power-revealer",
-            transition_type="slide-up",
+            name="panels-revealer",
+            transition_type="slide-down",
             transition_duration=300,
-            child=self.power_box
+            child=self.panels_box
         )
 
-        self.full_power = Box(
-            name="full-power",
+        self.full_panels = Box(
+            name="full-panels",
             orientation="v",
             children=[
+                self.apps,
                 self.revealer,
-                self.shutdown,
             ]
         )
 
-        self.add(self.full_power)
+        self.add(self.full_panels)
 
-        for btn in [self.lock, self.suspend, self.logout, self.reboot, self.shutdown, self]:
+        self.buttons = [
+            self.apps,
+            self.dashboard,
+            self.chat,
+            self.wallpapers,
+            self.windows,
+            self,
+        ]
+
+        for btn in self.buttons:
             bulk_connect(
                 btn,
                 {
@@ -75,31 +83,24 @@ class Panels(EventBox):
     def on_button_hover(self, button: Button, event):
         if button == self:
             self.revealer.set_reveal_child(True)
-            # self.set_name("power-event-hover")
         return self.change_cursor("pointer")
 
     def on_button_unhover(self, button: Button, event):
         if button == self:
             self.revealer.set_reveal_child(False)
-            # self.set_name("power-event")
         return self.change_cursor("default")
 
     def on_button_press(self, button: Button, event):
-        match button:
-            case self.lock:
-                # exec_shell_command_async("python lock.py", lambda *_: None)
-                exec_shell_command_async("swaylock", lambda *_: None)
-                # exec_shell_command("notify-send 'Locking screen'")
-            case self.suspend:
-                # exec_shell_command("systemctl suspend")
-                exec_shell_command_async("notify-send 'Suspending system'", lambda *_: None)
-            case self.logout:
-                # exec_shell_command("hyprctl dispatch exit")
-                exec_shell_command_async("notify-send 'Logging out'", lambda *_: None)
-            case self.reboot:
-                # exec_shell_command("systemctl reboot")
-                exec_shell_command_async("notify-send 'Rebooting system'", lambda *_: None)
-            case self.shutdown:
-                # exec_shell_command("systemctl poweroff")
-                exec_shell_command_async("notify-send 'Shutting down system'", lambda *_: None)
+        commands = {
+            self.apps: f"{fabricSend} apps",
+            self.dashboard: f"{fabricSend} dashboard",
+            self.chat: f"{fabricSend} chat",
+            self.wallpapers: f"{fabricSend} wallpapers",
+            self.windows: f"{fabricSend} windows",
+        }
+
+        command = commands.get(button)
+        if command:
+            exec_shell_command_async(command, lambda *_: None)
+
         return True

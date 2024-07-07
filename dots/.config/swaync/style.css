@@ -1,14 +1,11 @@
 /*
-┌────────────────────────────────────────────┐
-│                                            │
-│     ░█▀█░█░█░█▀▀░█▀█░▀█▀░█▀▄░█▀▀░▀░█▀▀     │
-│     ░█▀█░▄▀▄░█▀▀░█░█░░█░░█░█░█▀▀░░░▀▀█     │
-│     ░▀░▀░▀░▀░▀▀▀░▀░▀░▀▀▀░▀▀░░▀▀▀░░░▀▀▀     │
-│     ░█▀▀░█░█░█▀█░█░█░█▀█░█▀▀               │
-│     ░▀▀█░█▄█░█▀█░░█░░█░█░█░░               │
-│     ░▀▀▀░▀░▀░▀░▀░░▀░░▀░▀░▀▀▀               │
-│                                            │
-└────────────────────────────────────────────┘
+┌──────────────────────────────────┐
+│                                  │
+│     ░█▀▀░█░█░█▀█░█░█░█▀█░█▀▀     │
+│     ░▀▀█░█▄█░█▀█░░█░░█░█░█░░     │
+│     ░▀▀▀░▀░▀░▀░▀░░▀░░▀░▀░▀▀▀     │
+│                                  │
+└──────────────────────────────────┘
 */
 
 @import "./colors.css";
@@ -21,7 +18,7 @@
 .control-center .notification-row:focus,
 .control-center .notification-row:hover {
     opacity: 1;
-    background: alpha(@red, 0.25);
+    background: alpha(@color1, 0.25);
     border-radius: 0px;
     margin: 0px;
 }
@@ -29,8 +26,8 @@
 .notification {
     border-radius: 10px;
     padding: 0;
-    border: 2px solid @noti-close-bg;
-    background: @noti-bg-darker;
+    border: 2px solid alpha(@color1, 0.5);
+    background: @color0;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.75);
 }
 
@@ -40,8 +37,8 @@
 }
 
 .close-button {
-    background: @noti-close-bg;
-    color: @red;
+    background: alpha(@foreground, 0.1);
+    color: @color1;
     text-shadow: none;
     padding: 0;
     border-radius: 100%;
@@ -55,7 +52,8 @@
 
 .close-button:hover {
     box-shadow: none;
-    background: @noti-close-bg-hover;
+    background: @color1;
+    color: @background;
     transition: all .15s ease-in-out;
     border: none
 }
@@ -65,9 +63,9 @@
     padding: 4px;
     margin: 0;
     box-shadow: none;
-    background: @noti-bg;
+    background: @background;
     border: none;
-    color: @text-color;
+    color: @foreground;
     transition: all .15s ease-in-out;
     font-size: 10.5pt;
 }
@@ -75,8 +73,8 @@
 .notification-default-action:hover,
 .notification-action:hover {
     -gtk-icon-effect: none;
-    background: @noti-bg-hover;
-    /* text-shadow: 0 0 3px @text-color; */
+    background: @color0;
+    /* text-shadow: 0 0 3px @foreground; */
 }
 
 .notification-default-action {
@@ -96,22 +94,22 @@
 
 .notification-action:first-child {
     border-bottom-left-radius: 10px;
-    background: @bgblack
+    background: @background
 }
 
 .notification-action:last-child {
     border-bottom-right-radius: 10px;
-    background: @bgblack
+    background: @background
 }
 
 .notification-group-headers {
   font-weight: bold;
   font-size: 10.5pt;
-  color: @white;
+  color: @foreground;
 }
 
 .notification-group-icon {
-  color: @red;
+  color: @color1;
   margin-right: 8px;
 }
 
@@ -124,7 +122,7 @@
 
 .notification-group-collapse-button:hover {
   background: @noti-close-bg-hover;
-  color: @red;
+  color: @color1;
 }
 
 .notification-group-close-all-button {
@@ -136,7 +134,7 @@
 
 .notification-group-close-all-button:hover {
   background: @noti-close-bg-hover;
-  color: @red
+  color: @color1
 }
 
 .inline-reply {
@@ -144,29 +142,29 @@
 }
 
 .inline-reply-entry {
-    background: @noti-bg-darker;
-    color: @text-color;
-    caret-color: @text-color;
+    background: @color0;
+    color: @foreground;
+    caret-color: @foreground;
     border: 1px solid @noti-border-color;
     border-radius: 10px
 }
 
 .inline-reply-button {
     margin-left: 4px;
-    background: @noti-bg;
+    background: @background;
     border: 1px solid @noti-border-color;
     border-radius: 10px;
-    color: @text-color
+    color: @foreground
 }
 
 .inline-reply-button:disabled {
     background: initial;
-    color: @text-color-disabled;
+    color: @foreground-disabled;
     border: 1px solid transparent
 }
 
 .inline-reply-button:hover {
-    background: @noti-bg-hover;
+    background: @color0;
 }
 
 .body-image {
@@ -180,9 +178,9 @@
     font-weight: bold;
     font-style: italic;
     background: transparent;
-    color: @red;
+    color: @color1;
     margin-left: 10px;
-    /* text-shadow: 0 0 3px @red; */
+    /* text-shadow: 0 0 3px @color1; */
 }
 
 .time {
@@ -199,7 +197,7 @@
     font-size: 10.5pt;
     font-weight: normal;
     background: transparent;
-    color: @text-color;
+    color: @foreground;
     text-shadow: none;
     font-weight: bold;
     margin-left: 10px;
@@ -211,7 +209,7 @@
 }
 
 .control-center {
-    background: alpha(@cc-bg, 1);
+    background: alpha(@background, 1);
     border-left: 1px solid @noti-close-bg;
     border-radius: 0px;
     margin-left: 10px;
@@ -236,12 +234,12 @@
 }
 
 .widget-title {
-    color: @red;
+    color: @color1;
     margin: 20px 20px 5px 20px;
     font-size: 10.5pt;
     font-weight: bold;
     font-style: italic;
-    /* text-shadow: 0 0 3px @red; */
+    /* text-shadow: 0 0 3px @color1; */
 }
 
 .widget-title>button {
@@ -250,19 +248,19 @@
     font-family: 'Symbols Nerd Font';
     color: @brgreen;
     text-shadow: none;
-    background: @noti-bg;
+    background: @background;
     border: 1px solid @noti-border-color;
     box-shadow: none;
     border-radius: 10px;
 }
 
 .widget-title>button:hover {
-    background: @noti-bg-hover;
+    background: @color0;
     /* text-shadow: 0 0 3px @brgreen; */
 }
 
 .widget-dnd {
-    color: @text-color;
+    color: @foreground;
     margin: 5px 20px 5px 20px;
     font-size: 10.5pt;
     font-weight: bold;
@@ -271,19 +269,19 @@
 .widget-dnd>switch {
     font-size: initial;
     border-radius: 999px;
-    background: @black;
-    /* border: 1px solid @bgblack; */
+    background: @background;
+    /* border: 1px solid @background; */
     box-shadow: none;
     padding: 1px;
     transition: all .1s ease-in-out;
 }
 
 .widget-dnd>switch:checked {
-    background: @white
+    background: @foreground
 }
 
 .widget-dnd>switch slider {
-    background: @noti-bg-hover;
+    background: @color0;
     border-radius: 999px
 }
 
@@ -293,12 +291,12 @@
 
 .widget-label>label {
     font-size: 1.5rem;
-    color: @text-color;
+    color: @foreground;
 }
 
 .widget-mpris {
-    color: @text-color;
-    background: @noti-bg;
+    color: @foreground;
+    background: @background;
     padding: 10px;
     margin: 10px;
     border: 1px solid @noti-close-bg;
@@ -326,7 +324,7 @@
     margin: 20px 10px 10px;
     border: 1px solid @noti-close-bg;
     border-radius: 10px;
-    background: @noti-bg;
+    background: @background;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 1);
 }
 
@@ -334,13 +332,13 @@
     margin: 3px;
     background: transparent;
     border-radius: 10px;
-    color: @text-color
+    color: @foreground
 }
 
 .widget-buttons-grid>flowbox>flowboxchild>button:hover {
-    /* background: @noti-bg-hover; */
+    /* background: @color0; */
     color: @brgreen;
-    /* text-shadow: 0 0 3px @white; */
+    /* text-shadow: 0 0 3px @foreground; */
 }
 
 .widget-menubar>box>.menu-button-bar>button {
@@ -354,37 +352,37 @@
 }
 
 .widget-volume {
-    background: @noti-bg;
+    background: @background;
     padding: 8px;
     padding-left: 16px;
     margin: 10px;
-    border: 1px solid @noti-close-bg;
+    border: 2px solid alpha(@foreground, 0.1);
     border-radius: 8px;
     font-size: x-large;
-    color: @red;
+    color: @color1;
 }
 
 .widget-volume>box>button {
-    background: @red;
+    background: @color1;
     border: 1px solid @noti-close-bg;
 }
 
 .per-app-volume {
-    background-color: @noti-bg;
+    background-color: @background;
     padding: 4px 8px 8px;
     margin: 0 8px 8px;
     border-radius: 10px
 }
 
 .widget-backlight {
-    background: @noti-bg;
+    background: @background;
     padding: 8px;
     padding-left: 16px;
     margin: 10px;
     border: 1px solid @noti-close-bg;
     border-radius: 8px;
     font-size: x-large;
-    color: @red;
+    color: @color1;
 }
 
 .widget-inhibitors {
@@ -394,14 +392,14 @@
 
 .widget-inhibitors>button {
     font-size: initial;
-    color: @text-color;
+    color: @foreground;
     text-shadow: none;
-    background: @noti-bg;
+    background: @background;
     border: 1px solid @noti-border-color;
     box-shadow: none;
     border-radius: 10px
 }
 
 .widget-inhibitors>button:hover {
-    background: @noti-bg-hover
+    background: @color0
 }

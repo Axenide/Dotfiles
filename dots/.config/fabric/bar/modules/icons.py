@@ -4,6 +4,13 @@ font_weight = 'normal'
 
 span = f"<span font-family='{font_family}' font-weight='{font_weight}'>"
 
+#Panels
+apps = "&#xec2c;"
+dashboard = "&#xea87;"
+chat = "&#xf59f;"
+wallpapers = "&#xeb01;"
+windows = "&#xefe6;"
+
 # Bar
 run = "&#xec2c;"
 colorpicker = "&#xebe6;"
