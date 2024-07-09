@@ -1,32 +1,32 @@
 set recolor "true"
 
-set completion-bg rgba(13,13,17,0.0)
-set completion-fg "#b6b6c7"
-set completion-group-bg rgba(13,13,17,0.0)
+set completion-bg rgba(15,16,19,0.0)
+set completion-fg "#eac094"
+set completion-group-bg rgba(15,16,19,0.0)
 set completion-group-fg "$color2"
-set completion-highlight-bg "#b6b6c7"
-set completion-highlight-fg rgba(13,13,17,0.0)
+set completion-highlight-bg "#eac094"
+set completion-highlight-fg rgba(15,16,19,0.0)
 
-set recolor-lightcolor rgba(13,13,17,0.0)
-set recolor-darkcolor "#b6b6c7"
-set default-bg rgba(13,13,17,0.9)
+set recolor-lightcolor rgba(15,16,19,0.0)
+set recolor-darkcolor "#eac094"
+set default-bg rgba(15,16,19,0.9)
 
-set inputbar-bg rgba(13,13,17,0.0)
-set inputbar-fg "#b6b6c7"
-set notification-bg rgba(13,13,17,0.0)
-set notification-fg "#b6b6c7"
+set inputbar-bg rgba(15,16,19,0.0)
+set inputbar-fg "#eac094"
+set notification-bg rgba(15,16,19,0.0)
+set notification-fg "#eac094"
 set notification-error-bg "$color1"
-set notification-error-fg "#b6b6c7"
+set notification-error-fg "#eac094"
 set notification-warning-bg "$color1"
-set notification-warning-fg "#b6b6c7"
-set statusbar-bg rgba(13,13,17,0.0)
-set statusbar-fg "#b6b6c7"
-set index-bg rgba(13,13,17,0.0)
-set index-fg "#b6b6c7"
-set index-active-bg "#b6b6c7"
-set index-active-fg rgba(13,13,17,0.0)
-set render-loading-bg rgba(13,13,17,0.0)
-set render-loading-fg "#b6b6c7"
+set notification-warning-fg "#eac094"
+set statusbar-bg rgba(15,16,19,0.0)
+set statusbar-fg "#eac094"
+set index-bg rgba(15,16,19,0.0)
+set index-fg "#eac094"
+set index-active-bg "#eac094"
+set index-active-fg rgba(15,16,19,0.0)
+set render-loading-bg rgba(15,16,19,0.0)
+set render-loading-fg "#eac094"
 
 set window-title-home-tilde true
 set statusbar-basename true

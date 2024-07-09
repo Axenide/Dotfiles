@@ -1,17 +1,18 @@
 from __init__ import *
 
-class MasterWithRevealer(EventBox):
-    def __init__(self, master_name, master_icon, master_button_name, children, position="top", open_on_hover=True):
+class MasterWithButton(EventBox):
+    def __init__(self, master_name, master_icon, master_button_name, children, position="top", on_reveal=None, unhover_close=False):
         super().__init__(name=f"{master_name}-event")
-        
-        self.open_on_hover = open_on_hover
+
         self.revealer_open = False
+        self.on_reveal = on_reveal
+        self.unhover_close = unhover_close
 
         self.master_button = Button(
             name=f"{master_name}-{master_button_name}",
             child=Label(label=f"{master_icon}", markup=True),
         )
-        
+
         self.children_box = Box(
             name=f"{master_name}-box",
             orientation="v",
@@ -33,19 +34,97 @@ class MasterWithRevealer(EventBox):
 
         self.add(self.full_container)
 
-        if self.open_on_hover:
-            bulk_connect(
-                self,
-                {
-                    "enter-notify-event": self.on_eventbox_hover,
-                    "leave-notify-event": self.on_eventbox_unhover,
-                },
-            )
-
         bulk_connect(
             self.master_button,
             {
                 "button-press-event": self.on_button_press,
+            },
+        )
+
+        for child in children:
+            bulk_connect(
+                child,
+                {
+                    "button-press-event": self.on_button_press,
+                },
+            )
+
+        bulk_connect(
+            self,
+            {
+                "leave-notify-event": self.on_eventbox_unhover,
+            },
+        )
+
+    def on_button_press(self, button: Button, event):
+        if button == self.master_button:
+            self.revealer_open = not self.revealer_open
+            self.revealer.set_reveal_child(self.revealer_open)
+            if self.revealer_open and self.on_reveal:
+                self.on_reveal()
+        else:
+            commands = self.get_commands()
+            command = commands.get(button)
+            if command:
+                exec_shell_command_async(command, lambda *_: None)
+            if button.get_name().endswith("cancel"):  # Check if the button is a "cancel" button
+                self.revealer_open = False
+                self.revealer.set_reveal_child(self.revealer_open)
+        return True
+
+    def get_commands(self):
+        return {
+            self.master_button: "master_command",
+            # Agregar comandos específicos para cada hijo
+        }
+
+    def on_eventbox_unhover(self, widget, event):
+        if self.revealer_open and self.unhover_close:
+            self.revealer_open = False
+            self.revealer.set_reveal_child(self.revealer_open)
+
+
+class MasterWithHover(EventBox):
+    def __init__(self, master_name, master, children, position="top"):
+        super().__init__(name=f"{master_name}-event")
+
+        self.revealer_open = False
+
+        self.master = master
+
+        self.children_box = Box(
+            name=f"{master_name}-box",
+            orientation="v",
+            children=children,
+        )
+
+        self.revealer = Revealer(
+            name=f"{master_name}-revealer",
+            transition_type="slide-down" if position == "top" else "slide-up",
+            transition_duration=300,
+            child=self.children_box,
+        )
+
+        self.full_container = Box(
+            name=f"{master_name}-container",
+            orientation="v",
+            children=[self.master, self.revealer] if position == "top" else [self.revealer, self.master],
+        )
+
+        self.add(self.full_container)
+
+        bulk_connect(
+            self,
+            {
+                "enter-notify-event": self.on_eventbox_hover,
+                "leave-notify-event": self.on_eventbox_unhover,
+            },
+        )
+
+        bulk_connect(
+            self.master,
+            {
+                "button-press-event": self.on_master_button_press,
             },
         )
 
@@ -65,60 +144,132 @@ class MasterWithRevealer(EventBox):
         self.revealer.set_reveal_child(False)
         return self.change_cursor("default")
 
+    def on_master_button_press(self, button: Button, event):
+        commands = self.get_commands()
+        command = commands.get(button)
+        if command:
+            exec_shell_command_async(command, lambda *_: None)
+        return True
+
     def on_button_press(self, button: Button, event):
-        if button == self.master_button and not self.open_on_hover:
-            self.revealer_open = not self.revealer_open
-            self.revealer.set_reveal_child(self.revealer_open)
-        else:
-            commands = self.get_commands()
-            command = commands.get(button)
-            if command:
-                exec_shell_command_async(command, lambda *_: None)
+        commands = self.get_commands()
+        command = commands.get(button)
+        if command:
+            exec_shell_command_async(command, lambda *_: None)
         return True
 
     def get_commands(self):
         return {
-            self.master_button: "master_command",
             # Agregar comandos específicos para cada hijo
         }
 
-class Power(MasterWithRevealer):
-    def __init__(self):
-        children = [
-            Button(name="power-lock", child=Label(label=icons.lock, markup=True)),
-            Button(name="power-suspend", child=Label(label=icons.suspend, markup=True)),
-            Button(name="power-logout", child=Label(label=icons.logout, markup=True)),
-            Button(name="power-reboot", child=Label(label=icons.reboot, markup=True)),
-        ]
-        super().__init__("power", icons.shutdown, "shutdown", children, position="bottom", open_on_hover=False)
 
-    def get_commands(self):
-        children = self.children_box.get_children()
-        return {
-            self.master_button: "notify-send 'Shutting down system'",
-            children[0]: "swaylock",
-            children[1]: "notify-send 'Suspending system'",
-            children[2]: "notify-send 'Logging out'",
-            children[3]: "notify-send 'Rebooting system'",
-        }
-
-class Panels(MasterWithRevealer):
+class Panels(MasterWithHover):
     def __init__(self):
+        master = Button(name="panels-apps", child=Label(label=icons.apps, markup=True))
         children = [
             Button(name="panels-dashboard", child=Label(label=icons.dashboard, markup=True)),
             Button(name="panels-chat", child=Label(label=icons.chat, markup=True)),
             Button(name="panels-wallpapers", child=Label(label=icons.wallpapers, markup=True)),
             Button(name="panels-windows", child=Label(label=icons.windows, markup=True)),
         ]
-        super().__init__("panels", icons.apps, "apps", children, position="top", open_on_hover=True)
+        super().__init__("panels", master, children, position="top")
 
     def get_commands(self):
         children = self.children_box.get_children()
         return {
-            self.master_button: f"{fabricSend} apps",
+            self.master: f"{fabricSend} apps",
             children[0]: f"{fabricSend} dashboard",
             children[1]: f"{fabricSend} chat",
             children[2]: f"{fabricSend} wallpapers",
-            # children[3]: f"{fabricSend} windows",
             children[3]: f"swaync-client -t",
+        }
+
+
+class Shutdown(MasterWithButton):
+    def __init__(self):
+        children = [
+            Button(name="accept", child=Label(label=icons.accept, markup=True)),
+            Button(name="cancel", child=Label(label=icons.cancel, markup=True)),
+        ]
+        super().__init__("shutdown", icons.shutdown, "confirm", children, position="top", unhover_close=True)
+
+    def get_commands(self):
+        children = self.children_box.get_children()
+        return {
+            children[0]: "systemctl poweroff",
+            children[1]: "",
+        }
+
+
+class Reboot(MasterWithButton):
+    def __init__(self):
+        children = [
+            Button(name="accept", child=Label(label=icons.accept, markup=True)),
+            Button(name="cancel", child=Label(label=icons.cancel, markup=True)),
+        ]
+        super().__init__("reboot", icons.reboot, "confirm", children, position="top", unhover_close=True)
+
+    def get_commands(self):
+        children = self.children_box.get_children()
+        return {
+            children[0]: "systemctl reboot",
+            children[1]: "",
+        }
+
+
+class Logout(MasterWithButton):
+    def __init__(self):
+        children = [
+            Button(name="accept", child=Label(label=icons.accept, markup=True)),
+            Button(name="cancel", child=Label(label=icons.cancel, markup=True)),
+        ]
+        super().__init__("logout", icons.logout, "confirm", children, position="top", unhover_close=True)
+
+    def get_commands(self):
+        children = self.children_box.get_children()
+        return {
+            children[0]: "hyprctl dispatch exit",
+            children[1]: "",
+        }
+
+
+class Suspend(MasterWithButton):
+    def __init__(self):
+        children = [
+            Button(name="accept", child=Label(label=icons.accept, markup=True)),
+            Button(name="cancel", child=Label(label=icons.cancel, markup=True)),
+        ]
+        super().__init__("suspend", icons.suspend, "confirm", children, position="top", unhover_close=True)
+
+    def get_commands(self):
+        children = self.children_box.get_children()
+        return {
+            children[0]: "systemctl suspend",
+            children[1]: "",
+        }
+
+
+class Power(MasterWithHover):
+    def __init__(self):
+        master_shutdown = Shutdown()
+        children = [
+            Button(name="power-lock", child=Label(label=icons.lock, markup=True)),
+            Suspend(),
+            Logout(),
+            Reboot(),
+        ]
+        super().__init__("power", master_shutdown, children, position="bottom")
+
+    def close_self(self):
+        self.revealer.set_reveal_child(False)
+
+    def get_commands(self):
+        children = self.children_box.get_children()
+        return {
+            self.master: "notify-send 'Shutting down system'",
+            children[0]: "swaylock",
+            children[1]: "notify-send 'Suspending system'",
+            children[2]: "notify-send 'Logging out'",
+            children[3]: "notify-send 'Rebooting system'",
         }

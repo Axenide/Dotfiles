@@ -28,11 +28,6 @@ class Bar(Window):
 
         self.center_box = CenterBox(name="bar", orientation="v")
 
-        self.run_button = Button(
-            name="run-button",
-            child=Label(label=f"{icons.run}", markup=True),
-        )
-
         self.power = Power()
 
         self.colorpicker = Button(
@@ -49,7 +44,6 @@ class Bar(Window):
         )
 
         self.buttons = [
-            self.run_button,
             self.colorpicker,
             self.media_button,
             self.time_button,
@@ -71,7 +65,6 @@ class Bar(Window):
                 spacing=4,
                 children=[
                     self.panels,
-                    # self.run_button,
                     Box(name="module-separator"),
                     self.system_tray,
                     Box(name="module-separator"),
@@ -177,23 +170,6 @@ class Bar(Window):
 
     def on_button_press(self, button: Button, event):
         match button:
-            case self.run_button:
-                commands = {
-                    1: f'{fabricSend} apps',
-                    2: 'swaync-client -t -sw',
-                    3: f'{fabricSend} dashboard',
-                }
-                command = commands.get(event.button)
-                if command != 'toggle':
-                    return exec_shell_command_async(command, lambda *args: None)
-                else:
-                    self.content_box.set_reveal_child(not self.content_box.get_reveal_child())
-                    self.dashboard_box.set_reveal_child(not self.dashboard_box.get_reveal_child())
-
-                    if self.content_box.get_reveal_child() == False:
-                        self.dashboard_box.set_reveal_child(False)
-                        self.set_keyboard_mode("none")
-            
             case self.colorpicker:
                 commands = {
                     1: get_relative_path('../scripts/hyprpicker-hex.sh'),

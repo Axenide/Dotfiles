@@ -56,6 +56,10 @@ vol_mute = "&#xeb50;"
 vol_medium = "&#xeb4f;"
 vol_high = "&#xeb51;"
 
+#Confirm
+accept = "&#xea5e;"
+cancel = "&#xeb55;"
+
 exceptions = ['font_family', 'font_weight', 'span']
 
 def apply_span():

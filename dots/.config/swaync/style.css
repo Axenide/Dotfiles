@@ -26,7 +26,7 @@
 .notification {
     border-radius: 10px;
     padding: 0;
-    border: 2px solid alpha(@color1, 0.5);
+    border: 2px solid alpha(@color1, 1);
     background: @color0;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.75);
 }

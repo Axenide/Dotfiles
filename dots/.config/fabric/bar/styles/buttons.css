@@ -12,7 +12,6 @@
   background-color: alpha(@foreground, 0.1);
 }
 
-/* #run-button, */
 #media-button,
 #colorpicker {
 	transition: all 0.1s ease;
@@ -61,32 +60,6 @@
   0 0 5px @color1;
 }
 
-#run-button {
-	transition: all 0.1s ease;
-	background-color: @color1;
-	border-radius: 0px 0px 0px 20px;
-	border: 2px solid alpha(@color1, 1);
-}
-
-#run-button:hover {
-  /* background-color: alpha(@foreground, 0.1); */
-}
-
-#run-button > * {
-  color: @background;
-  font-size: 20px;
-  font-weight: normal;
-  /* transition: all 0.1s ease; */
-  padding: 6px;
-  margin: 2px;
-  border-radius: 999px;
-}
-
-#run-button:hover > * {
-  color: @foreground;
-  background-color: alpha(@foreground, 0.2);
-}
-
 #colorpicker > * {
   color: @color4;
 }
@@ -125,7 +98,7 @@
   font-size: 20px;
   font-weight: normal;
   padding: 6px;
-  margin: 4px;
+  margin: 4px 3px 4px 5px;
   border-radius: 999px;
 }
 
@@ -154,7 +127,7 @@
   font-size: 20px;
   font-weight: normal;
   padding: 6px;
-  margin: 4px;
+  margin: 4px 3px 4px 5px;
   border-radius: 999px;
 }
 
@@ -165,4 +138,42 @@
 #power-lock:hover > * {
   color: @foreground;
   background-color: alpha(@foreground, 0.2);
+}
+
+#shutdown-confirm > *, #reboot-confirm > *, #logout-confirm > *, #suspend-confirm > * {
+  color: @background;
+  font-size: 20px;
+  font-weight: normal;
+  padding: 6px;
+  margin: 4px;
+  border-radius: 999px;
+  padding: 6px;
+  margin: 4px 3px 4px 5px;
+  border-radius: 999px;
+}
+
+#shutdown-confirm:hover > *, #reboot-confirm:hover > *, #logout-confirm:hover > *, #suspend-confirm:hover > * {
+  color: @foreground;
+  background-color: alpha(@foreground, 0.2);
+}
+
+#shutdown-box, #reboot-box, #logout-box, #suspend-box {
+  background-color: @background;
+  margin: 0px 2px 4px 4px;
+  border-radius: 999px;
+}
+
+#accept, #cancel {
+  color: alpha(@foreground, 0.5);
+  padding: 6px;
+  margin: 4px;
+  border-radius: 999px;
+}
+
+#accept:hover, #cancel:hover {
+  color: @foreground;
+  text-shadow:
+  0 0 5px @foreground,
+  0 0 5px @foreground,
+  0 0 5px @foreground;
 }
