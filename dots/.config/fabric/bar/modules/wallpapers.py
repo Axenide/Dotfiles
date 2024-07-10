@@ -2,7 +2,6 @@ from __init__ import *
 
 WALLPAPERS_PATH = f"{os.getenv('XDG_PICTURES_DIR')}/Wallpapers"
 
-
 class Wallpapers(ScrolledWindow):
     def __init__(self, parent):
         super().__init__(
@@ -69,26 +68,26 @@ class Wallpapers(ScrolledWindow):
 
     def on_button_press(self, button: Button, event):
         img = f"{WALLPAPERS_PATH}/{button.get_child().get_name()}"
+        
         commands = {
             1: f"wal -i {img}",
             3: f"wal -i {img} --backend colorthief",
         }
-        exec_shell_command(commands.get(event.button))
-        exec_shell_command_async(f"""
-        swww img
-        -t outer
-        --transition-duration 1
-        --transition-step 255
-        --transition-fps 60
-        {img}
-        """,
-        lambda *args: None)
-        exec_shell_command_async(f"""
-        ln -sf
-        {img}
-        {home_dir}/.current.wall
-        """,
-        lambda *args: None)
+        
+        if event.button in commands:
+            exec_shell_command(commands[event.button])
+        
+        swww_command = f"""
+        swww img -t outer --transition-duration 1 --transition-step 255 --transition-fps 60 {img}
+        """
+        
+        ln_command = f"ln -sf {img} {home_dir}/.current.wall"
+        
         self.parent.dashboard.player.cover.set_style(f"background-image: url('{img}');")
-        exec_shell_command_async(f"python {home_dir}/.config/wal/set.py", lambda *args: None)
+        
+        wal_script_command = f"python {home_dir}/.config/wal/set.py"
+        
+        for command in [swww_command, ln_command, wal_script_command]:
+            exec_shell_command_async(command, lambda *args: None)
+        
         return True

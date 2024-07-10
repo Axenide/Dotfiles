@@ -1,6 +1,6 @@
 from __init__ import *
 
-PROFILE_PICTURE = os.path.expanduser("~/.face.icon")
+PROFILE_PICTURE = f"{home_dir}/.face.icon"
 
 class User(Box):
     def __init__(self):

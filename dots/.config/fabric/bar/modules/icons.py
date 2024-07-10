@@ -12,7 +12,6 @@ wallpapers = "&#xeb01;"
 windows = "&#xefe6;"
 
 # Bar
-run = "&#xec2c;"
 colorpicker = "&#xebe6;"
 media = "&#xf00d;"
 
