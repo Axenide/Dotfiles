@@ -103,7 +103,7 @@ class Power(EventBox):
     def on_button_press(self, button, event):
         commands = {
             self.buttons["power-lock"]: "swaylock",
-            self.buttons["power-suspend"]: "systemctl suspend",
+            self.buttons["power-suspend"]: "swaylock & systemctl suspend",
             self.buttons["power-logout"]: "hyprctl dispatch exit",
             self.buttons["power-reboot"]: "systemctl reboot",
             self.buttons["power-shutdown"]: "systemctl poweroff"
