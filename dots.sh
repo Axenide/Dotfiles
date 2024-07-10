@@ -49,11 +49,12 @@ title
 echo "Stowing dotfiles..."
 echo ""
 
-# Si la opción de gráficos es NVIDIA, hacer cat, sino nada.
+# Si la opción de gráficos es NVIDIA, copiar nvidia.conf
 if [[ "$graphics_option" == "1" ]]; then
   cat ./options/nvidia.conf > ./dots/.config/hypr/source/nvidia.conf
+fi
 
-# Si la opción de diseño de teclado es US
+# Si la opción de diseño de teclado es US o LATAM, copiar el archivo correspondiente
 if [[ "$keyboard_option" == "1" ]]; then
   cat ./options/us.conf > ./dots/.config/hypr/source/keyboard.conf
 else
@@ -72,13 +73,14 @@ else
   echo "Skipping package installation."
 fi
 
-title
 # Instalar plugins TPM de Tmux
+title
 read -p "Install TPM plugins? (y/n) " answer
 if [[ "$answer" == "y" ]]; then
   rm -rf ~/.tmux &&
   mkdir -p ~/.tmux/plugins &&
-  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && ~/.tmux/plugins/tpm/scripts/install_plugins.sh
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm &&
+  ~/.tmux/plugins/tpm/scripts/install_plugins.sh
 else
   echo "Skipping TPM plugins installation."
 fi
