@@ -189,8 +189,8 @@ Also it will install `yay`, but you can skip the installation and use any AUR he
 | <kbd>SUPER + ALT + RETURN</kbd>                       | Open Kitty with slurp           |
 | <kbd>SUPER + E</kbd>                                  | File explorer                   |
 | <kbd>SUPER + SHIFT + E</kbd>                          | Floating file explorer          |
-| <kbd>SUPER + W</kbd>                                  | Floorp                          |
-| <kbd>SUPER + SHIFT + W</kbd>                          | Private Floorp                  |
+| <kbd>SUPER + W</kbd>                                  | Firefox                         |
+| <kbd>SUPER + SHIFT + W</kbd>                          | Private Firefox                 |
 | <kbd>Print</kbd>                                      | Save and copy screenshot        |
 | <kbd>SHIFT + Print</kbd>                              | Copy screenshot                 |
 | <kbd>SUPER + SHIFT + S</kbd>                          | Copy area screenshot            |

@@ -117,6 +117,7 @@ class Player(Box):
         self.full_player = Box(
             name=f"full-player",
             orientation="h",
+            spacing=4,
             h_expand=True,
             children=[
                 self.cover,
