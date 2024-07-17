@@ -1,23 +1,24 @@
 /*
-*  Hi~
-*
-*  The theme Another Oneline uses code from
-*  👉 https://github.com/JarnotMaciej/Essence 👈 Thank you~~ 🤗
+┌─────────────────────────────────────────────────────────────────┐
+│                                                                 │
+│     ░█░█░█▀▀░█▀▀░█▀▄░█▀▀░█░█░█▀▄░█▀█░█▄█░█▀▀░░░░█▀▀░█▀▀░█▀▀     │
+│     ░█░█░▀▀█░█▀▀░█▀▄░█░░░█▀█░█▀▄░█░█░█░█░█▀▀░░░░█░░░▀▀█░▀▀█     │
+│     ░▀▀▀░▀▀▀░▀▀▀░▀░▀░▀▀▀░▀░▀░▀░▀░▀▀▀░▀░▀░▀▀▀░▀░░▀▀▀░▀▀▀░▀▀▀     │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
 */
-
-/* Just comment the lines or block for the elements you WANT to see */
 
 /* Menu button */
 #PanelUI-button {
   -moz-box-ordinal-group: 0 !important;
   order: -2 !important;
-  margin: 2px !important;
+  margin: 0px !important;
   /* display: none !important; */
 }
 
 /* Window control buttons (min, resize and close) */
 .titlebar-buttonbox-container {
-  display: none !important;
+  /* display: none !important; */
   margin-right: 12px !important;
 }
 
@@ -60,13 +61,17 @@
   display: none !important
 }
 
+#urlbar {
+  text-align: center !important;
+}
+
 /* --- ~END~ element visibility section --- */
 
 /* Navbar size calc */
 :root{
 --tab-border-radius: 10px !important; /*  Tab border radius -- Changes the tabs rounding  *//*  Default: 6px  */
 --NavbarWidth: 43; /*  Default values: 36 - 43  */
---TabsHeight: 30; /*  Minimum: 30  *//*  Default: 36  */
+--TabsHeight: 36; /*  Minimum: 30  *//*  Default: 36  */
 --TabsBorder: 8; /*  Doesnt do anything on small layout  *//*  Default: 8  */
 --NavbarHeightSmall: calc(var(--TabsHeight) + var(--TabsBorder))  /*  Only on small layout  *//*  Default: calc(var(--TabsHeight) + var(--TabsBorder))  *//*  Default as a number: 44  */}
 
@@ -82,7 +87,8 @@
 
 /*  Removes urlbar border/background  */
 #urlbar-background {
-  border: none !important;
+  border: 2px solid color-mix(in srgb, var(--lwt-text-color), transparent 90%) !important;
+  border-radius: 16px !important;
   outline: none !important;
   transition: .15s !important;
 }
@@ -90,7 +96,7 @@
 /*  Removes the background from the urlbar while not in use  */
 #urlbar:not(:hover):not([breakout][breakout-extend]) > #urlbar-background {
     box-shadow: none !important;
-    background: #0000 !important;
+    background: color-mix(in srgb, var(--lwt-text-color), transparent 100%) !important;
 }
 
 /*  Removes annoying border  */
@@ -142,29 +148,49 @@
     display: -moz-box !important;
 }
 
-#tabbrowser-tabbox {
-  position: relative;
-  overflow: hidden;
-	margin-top: -5px;
+@media not all and (display-mode: fullscreen) {
+  #tabbrowser-tabbox {
+    position: relative;
+    overflow: hidden;
+    margin-top: -4px;
+  }
+
+  /* inner rounded corners */
+  #tabbrowser-tabbox::after {
+    content: "";
+    inset: -4px;
+    position: absolute;
+    border: 10px solid var(--toolbar-bgcolor);
+    border-radius: 30px 30px 15px 15px;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  /* outer border */
+  #tabbrowser-tabbox::before {
+    content: "";
+    inset: -2px;
+    position: absolute;
+    border: 8px solid var(--toolbar-bgcolor);
+    z-index: 1;
+    pointer-events: none;
+  }
 }
 
-/* inner rounded corners */
-#tabbrowser-tabbox::after {
-  content: "";
-  inset: -4px;
-  position: absolute;
-  border: 10px solid var(--toolbar-bgcolor);
-  border-radius: 30px 30px 20px 20px;
-  z-index:1;
- pointer-events:none;
+/*
+ #navigator-toolbox:hover #PersonalToolbar{
+max-height: 50px !important;
 }
 
-/* outer border */
-#tabbrowser-tabbox::before {
-  content: "";
-  inset: -2px;
-  position: absolute;
-  border: 8px solid var(--toolbar-bgcolor);
-  z-index:1;
-  pointer-events:none;
+#navigator-toolbox #PersonalToolbar{
+min-height: 0 !important;
+max-height: 0 !important;
+overflow: hidden !important;
+transition: all .2s ease-in-out;
+} 
+*/
+
+#PlacesToolbarItems {
+  display: flex;
+  justify-content: center;
 }

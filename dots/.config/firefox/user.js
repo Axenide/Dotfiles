@@ -1,12 +1,27 @@
-// This will make Firefox use the userChrome.css and userContent.css files located in the chrome folder of your profile folder.
-// With the adition of Fastfox.js, Peskyfox.js and Smoothfox.js, you can use the following user.js file to make Firefox faster and smoother.
-// Hope you enjoy it!
-// - Axenide
-// ===================================================================================================
+/*
+┌─────────────────────────────────────┐
+│                                     │
+│     ░█░█░█▀▀░█▀▀░█▀▄░░░░▀▀█░█▀▀     │
+│     ░█░█░▀▀█░█▀▀░█▀▄░░░░░░█░▀▀█     │
+│     ░▀▀▀░▀▀▀░▀▀▀░▀░▀░▀░░▀▀░░▀▀▀     │
+│                                     │
+└─────────────────────────────────────┘
+
+This will make Firefox use the userChrome.css and userContent.css files located in the chrome folder of your profile folder.
+With the adition of Fastfox.js, Peskyfox.js and Smoothfox.js, you can use the following user.js file to make Firefox faster and smoother.
+Hope you enjoy it!
+- Axenide
+*/
+
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
-// ===================================================================================================
-// Fastfox.js
-// ===================================================================================================
+
+/*
+┌───────────────────────────────────────┐
+│░█▀▀░█▀█░█▀▀░▀█▀░█▀▀░█▀█░█░█░░░░▀▀█░█▀▀│
+│░█▀▀░█▀█░▀▀█░░█░░█▀▀░█░█░▄▀▄░░░░░░█░▀▀█│
+│░▀░░░▀░▀░▀▀▀░░▀░░▀░░░▀▀▀░▀░▀░▀░░▀▀░░▀▀▀│
+└───────────────────────────────────────┘
+*/
 user_pref("nglayout.initialpaint.delay", 0); 
 user_pref("nglayout.initialpaint.delay_in_oopif", 0); 
 user_pref("content.notify.interval", 100000); 
@@ -35,9 +50,14 @@ user_pref("network.buffer.cache.count", 128);
 user_pref("network.http.max-connections", 1800); 
 user_pref("network.http.max-persistent-connections-per-server", 10); 
 user_pref("network.ssl_tokens_cache_capacity", 32768); 
-// ===================================================================================================
-// Peskyfox.js
-// ===================================================================================================
+
+/*
+┌───────────────────────────────────────────┐
+│░█▀█░█▀▀░█▀▀░█░█░█░█░█▀▀░█▀█░█░█░░░░▀▀█░█▀▀│
+│░█▀▀░█▀▀░▀▀█░█▀▄░░█░░█▀▀░█░█░▄▀▄░░░░░░█░▀▀█│
+│░▀░░░▀▀▀░▀▀▀░▀░▀░░▀░░▀░░░▀▀▀░▀░▀░▀░░▀▀░░▀▀▀│
+└───────────────────────────────────────────┘
+*/
 user_pref("layout.css.prefers-color-scheme.content-override", 2);
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 user_pref("app.update.suppressPrompts", true);
@@ -75,9 +95,14 @@ user_pref("browser.bookmarks.openInTabClosesMenu", false);
 user_pref("cookiebanners.service.mode", 2);
 user_pref("cookiebanners.service.mode.privateBrowsing", 2);
 user_pref("layout.css.has-selector.enabled", true);
-// ===================================================================================================
-// Smoothfox.js
-// ===================================================================================================
+
+/*
+┌───────────────────────────────────────────────┐
+│░█▀▀░█▄█░█▀█░█▀█░▀█▀░█░█░█▀▀░█▀█░█░█░░░░▀▀█░█▀▀│
+│░▀▀█░█░█░█░█░█░█░░█░░█▀█░█▀▀░█░█░▄▀▄░░░░░░█░▀▀█│
+│░▀▀▀░▀░▀░▀▀▀░▀▀▀░░▀░░▀░▀░▀░░░▀▀▀░▀░▀░▀░░▀▀░░▀▀▀│
+└───────────────────────────────────────────────┘
+*/
 user_pref("general.smoothScroll",                       true); 
 user_pref("mousewheel.default.delta_multiplier_y",      275);  
 user_pref("general.smoothScroll",                       true); 
@@ -94,3 +119,12 @@ user_pref("general.smoothScroll.msdPhysics.slowdownSpringConstant",     250);
 user_pref("general.smoothScroll.currentVelocityWeighting",              1.0);
 user_pref("general.smoothScroll.stopDecelerationWeighting",             1.0);
 user_pref("mousewheel.default.delta_multiplier_y",                      300); 
+
+/*
+┌────────┐
+│░█░█░▀█▀│
+│░█░█░░█░│
+│░▀▀▀░▀▀▀│
+└────────┘
+*/
+user_pref("browser.uiCustomization.state", "{\"placements\":{\"widget-overflow-fixed-list\":[],\"unified-extensions-area\":[\"78272b6fa58f4a1abaac99321d503a20_proton_me-browser-action\",\"newtaboverride_agenedia_com-browser-action\",\"userchrome-toggle_joolee_nl-browser-action\",\"ublock0_raymondhill_net-browser-action\",\"_3c078156-979c-498b-8990-85f7987dd929_-browser-action\",\"jid1-zadieub7xozojw_jetpack-browser-action\",\"vimium-c_gdh1995_cn-browser-action\",\"_762f9885-5a13-4abd-9c77-433dcd38b8fd_-browser-action\",\"pywalfox_frewacom_org-browser-action\",\"user-agent-switcher_ninetailed_ninja-browser-action\",\"_testpilot-containers-browser-action\",\"jid1-kkzogwgsw3ao4q_jetpack-browser-action\",\"_46551ec9-40f0-4e47-8e18-8e5cf550cfb8_-browser-action\",\"tabcenter-reborn_ariasuni-browser-action\",\"firefoxcolor_mozilla_com-browser-action\",\"_4c421bb7-c1de-4dc6-80c7-ce8625e34d24_-browser-action\",\"side-view_mozilla_org-browser-action\",\"_12cf650b-1822-40aa-bff0-996df6948878_-browser-action\"],\"nav-bar\":[\"back-button\",\"forward-button\",\"home-button\",\"urlbar-container\",\"save-to-pocket-button\",\"downloads-button\",\"unified-extensions-button\"],\"toolbar-menubar\":[\"menubar-items\"],\"TabsToolbar\":[\"tabbrowser-tabs\",\"alltabs-button\"],\"PersonalToolbar\":[\"personal-bookmarks\"]},\"seen\":[\"save-to-pocket-button\",\"developer-button\",\"userchrome-toggle_joolee_nl-browser-action\",\"_3c078156-979c-498b-8990-85f7987dd929_-browser-action\",\"jid1-zadieub7xozojw_jetpack-browser-action\",\"_762f9885-5a13-4abd-9c77-433dcd38b8fd_-browser-action\",\"user-agent-switcher_ninetailed_ninja-browser-action\",\"vimium-c_gdh1995_cn-browser-action\",\"_testpilot-containers-browser-action\",\"ublock0_raymondhill_net-browser-action\",\"jid1-kkzogwgsw3ao4q_jetpack-browser-action\",\"_46551ec9-40f0-4e47-8e18-8e5cf550cfb8_-browser-action\",\"tabcenter-reborn_ariasuni-browser-action\",\"firefoxcolor_mozilla_com-browser-action\",\"newtaboverride_agenedia_com-browser-action\",\"_4c421bb7-c1de-4dc6-80c7-ce8625e34d24_-browser-action\",\"side-view_mozilla_org-browser-action\",\"pywalfox_frewacom_org-browser-action\",\"78272b6fa58f4a1abaac99321d503a20_proton_me-browser-action\",\"_12cf650b-1822-40aa-bff0-996df6948878_-browser-action\"],\"dirtyAreaCache\":[\"nav-bar\",\"PersonalToolbar\",\"toolbar-menubar\",\"TabsToolbar\",\"unified-extensions-area\"],\"currentVersion\":20,\"newElementCount\":30}");

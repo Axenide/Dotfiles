@@ -77,17 +77,13 @@ class Wallpapers(ScrolledWindow):
         if event.button in commands:
             exec_shell_command(commands[event.button])
         
-        swww_command = f"""
-        swww img -t outer --transition-duration 1 --transition-step 255 --transition-fps 60 {img}
-        """
-        
         ln_command = f"ln -sf {img} {home_dir}/.current.wall"
         
         self.parent.dashboard.player.cover.set_style(f"background-image: url('{img}');")
         
         wal_script_command = f"python {home_dir}/.config/wal/set.py"
         
-        for command in [swww_command, ln_command, wal_script_command]:
+        for command in [ln_command, wal_script_command]:
             exec_shell_command_async(command, lambda *args: None)
         
         return True
