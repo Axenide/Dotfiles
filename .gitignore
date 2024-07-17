@@ -1,6 +1,16 @@
 /dots/.config/tmux/plugins/
 /dots/.config/hypr/nvidia.conf
 /dots/.config/hypr/keyboard.conf
+/dots/.config/hypr/source/colors.conf
+/dots/.config/fabric/bar/styles/themes/wal.css
+/dots/.config/kitty/wal.conf
+/dots/.config/kitty/slurp.sh
+/dots/.config/swaync/colors.css
+/dots/.config/nvim/lua/themes/wal.lua
+/dots/.config/vesktop/themes/axwal.theme.css
+/dots/.config/yazi/theme.toml
+/dots/.config/swaylock/config
+/dots/.config/zathura/zathurarc
 **/*.uuid
 **/__pycache__
 **/venv
