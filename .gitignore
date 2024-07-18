@@ -1,6 +1,6 @@
 /dots/.config/tmux/plugins/
 /dots/.config/hypr/nvidia.conf
-/dots/.config/hypr/keyboard.conf
+/dots/.config/hypr/source/keyboard.conf
 /dots/.config/hypr/source/colors.conf
 /dots/.config/fabric/bar/styles/themes/wal.css
 /dots/.config/kitty/wal.conf
