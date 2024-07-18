@@ -76,6 +76,7 @@ ttf-nerd-fonts-symbols-mono
 ttf-tabler-icons
 unarchiver
 vala
+walogram-git
 waybar
 webp-pixbuf-loader
 wf-recorder
