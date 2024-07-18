@@ -42,6 +42,7 @@ pamixer
 pavucontrol
 polkit-gnome
 poppler
+python-colorthief
 python-fabric-git
 python-fuzzywuzzy
 python-gobject-docs
