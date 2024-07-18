@@ -20,11 +20,11 @@ def copy_files_from_config(config_file):
                     if os.path.islink(dst):
                         real_path = os.path.realpath(dst)
                         os.makedirs(os.path.dirname(real_path), exist_ok=True)
-                        shutil.copyfile(src, real_path)
+                        shutil.copy(src, real_path)  # Cambiado de copyfile a copy
                         print(f"File successfully copied from {src} to {real_path} (symlink).")
                     else:
                         os.makedirs(os.path.dirname(dst), exist_ok=True)
-                        shutil.copyfile(src, dst)
+                        shutil.copy(src, dst)  # Cambiado de copyfile a copy
                         print(f"File successfully copied from {src} to {dst}.")
 
                 except FileNotFoundError:
