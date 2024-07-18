@@ -145,22 +145,16 @@ class MasterWithHover(EventBox):
         return self.change_cursor("default")
 
     def on_master_button_press(self, button: Button, event):
-        commands = self.get_commands()
-        command = commands.get(button)
-        if command:
-            exec_shell_command_async(command, lambda *_: None)
-        return True
+        return self.on_button_press(button, event)
 
     def on_button_press(self, button: Button, event):
-        commands = self.get_commands()
+        commands = self.get_commands(event.button)
         command = commands.get(button)
         if command:
             exec_shell_command_async(command, lambda *_: None)
         return True
 
-    def get_commands(self):
+    def get_commands(self, event_button):
         return {
             # Agregar comandos específicos para cada hijo
         }
-
-

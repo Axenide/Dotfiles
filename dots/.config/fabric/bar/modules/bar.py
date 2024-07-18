@@ -146,7 +146,7 @@ class Bar(Window):
         child_mapping = {
             "chat": (self.stack.chat, "on-demand"),
             "dashboard": (self.stack.dashboard, "none"),
-            "wallpapers": (self.stack.wallpapers, "none"),
+            "wallpapers": (self.stack.wallpapers, "exclusive"),
             "apps": (self.stack.apps, "exclusive")
         }
 
@@ -160,6 +160,8 @@ class Bar(Window):
                 self.content_box.set_reveal_child(False)
             if command == "apps":
                 self.stack.apps.app_entry.grab_focus()
+            if command == "wallpapers":
+                self.stack.wallpapers.wallpaper_entry.grab_focus()
         elif command == "update-style":
             set_stylesheet_from_file(get_relative_path("../style.css"))
 

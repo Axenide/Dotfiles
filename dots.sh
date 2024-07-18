@@ -104,6 +104,12 @@ else
   echo "Skipping Floorp config."
 fi
 
+ln -sf ./example_wallpaper.png ~/.current.wall
+
+wal --theme base16-gruvbox-hard
+
+python ./dots/.config/wal/set.py
+
 clear
 echo -e "\e[32m   ___                __"
 echo "  / _ \___  ___  ___ / /"

@@ -1,4 +1,4 @@
-#app-entry {
+#search-entry {
   transition: all 0.1s ease;
   color: @foreground;
   background-color: @background;
@@ -7,12 +7,12 @@
   padding: 10px;
 }
 
-#app-entry selection {
+#search-entry selection {
   color: @background;
   background-color: @color1;
 }
 
-#app-entry:focus {
+#search-entry:focus {
   color: @foreground;
   border: 2px solid @color1;
   border-radius: 10px;
@@ -33,12 +33,7 @@
   padding: 10px;
 }
 
-#app-button:focus {
-  color: @color1;
-  margin-left: 10px;
-}
-
-#app-button-focus {
+#app-button:focus, #app-button:hover {
   color: @color1;
   margin-left: 10px;
 }

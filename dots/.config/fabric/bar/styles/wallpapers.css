@@ -1,10 +1,10 @@
-#wall > * {
-  transition: all 0.1s ease;
+#wallpaper-button > * {
+  transition: all 0.25s ease;
   border-radius: 10px;
-  border: 2px solid alpha(@foreground, 0.1);
   min-height: 128px;
+  /*margin-bottom: 4px;*/
 }
 
-#wall:hover > * {
-  border: 2px solid @color5;
+#wallpaper-button:hover > *, #wallpaper-button:focus > * {
+  min-height: 200px;
 }

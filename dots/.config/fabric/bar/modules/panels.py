@@ -11,12 +11,29 @@ class Panels(MasterWithHover):
         ]
         super().__init__("panels", master, children, position="top")
 
-    def get_commands(self):
+    def get_commands(self, event_button):
         children = self.children_box.get_children()
-        return {
-            self.master: f"{fabricSend} apps",
-            children[0]: f"{fabricSend} dashboard",
-            children[1]: f"{fabricSend} chat",
-            children[2]: f"{fabricSend} wallpapers",
-            children[3]: f"swaync-client -t",
+        commands = {
+            1: {
+                self.master: f"{fabricSend} apps",
+                children[0]: f"{fabricSend} dashboard",
+                children[1]: f"{fabricSend} chat",
+                children[2]: f"{fabricSend} wallpapers",
+                children[3]: f"swaync-client -t",
+            },
+            2: {
+                self.master: f"{fabricSend} apps",
+                children[0]: f"{fabricSend} dashboard",
+                children[1]: f"{fabricSend} chat",
+                children[2]: f"{fabricSend} wallpapers",
+                children[3]: f"swaync-client -t",
+            },
+            3: {
+                self.master: f"{fabricSend} apps",
+                children[0]: f"{fabricSend} dashboard",
+                children[1]: f"{fabricSend} chat",
+                children[2]: f"{fabricSend} wallpapers",
+                children[3]: f"swaync-client -t",
+            }
         }
+        return commands.get(event_button, {})

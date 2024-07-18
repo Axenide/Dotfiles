@@ -57,7 +57,7 @@ class Apps(Box):
         self.application_buttons = {}
         self.buttons_box = Box(orientation="v", spacing=4)
         self.app_entry = Entry(
-            name="app-entry",
+            name="search-entry",
             placeholder_text="Search...",
             editable=True,
         )
