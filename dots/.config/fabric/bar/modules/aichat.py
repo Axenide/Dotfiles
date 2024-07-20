@@ -14,9 +14,9 @@ class AIbuttons(Box):
         self.parent = self
 
         self.chat_reload = Button(
-            name="chat-reload",
+            name="common-button",
             h_expand=False,
-            child=Label(label="<span font-family='tabler-icons'>&#xf3ae;</span>", markup=True),
+            child=Label(label=icons.reload, markup=True),
         )
 
         self.chat_url = Button(
@@ -28,9 +28,9 @@ class AIbuttons(Box):
         )
 
         self.chat_detach = Button(
-            name="chat-detach",
+            name="common-button",
             h_expand=False,
-            child=Label(label="<span font-family='tabler-icons'>&#xea99;</span>", markup=True),
+            child=Label(label=icons.detach, markup=True),
         )
 
         self.buttons = [

@@ -3,6 +3,7 @@ import re
 import signal
 import time
 import subprocess
+import shutil
 import pam
 import calendar
 from datetime import datetime
@@ -68,6 +69,8 @@ user = f"{os.getenv('USER')}".rstrip()
 host = f"{exec_shell_command('hostname')}".rstrip()
 
 fabricSend = f'python {home_dir}/.config/fabric/bar/scripts/send.py'
+
+import scripts.thumbs as thumbs
 
 import modules.icons as icons
 from modules.master import MasterWithHover, MasterWithButton

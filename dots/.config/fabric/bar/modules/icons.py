@@ -19,6 +19,9 @@ media = "&#xf00d;"
 reload = "&#xf3ae;"
 detach = "&#xea99;"
 
+# Wallpapers
+add = "&#xeb0b;"
+
 # Power
 lock = "&#xeae2;"
 suspend = "&#xece7;"

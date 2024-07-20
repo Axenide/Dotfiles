@@ -175,7 +175,12 @@
     z-index: 1;
     pointer-events: none;
   }
+  
+  #browser hbox browser {
+    margin: 6px !important;
+  }
 }
+
 
 /*
  #navigator-toolbox:hover #PersonalToolbar{
@@ -193,4 +198,34 @@ transition: all .2s ease-in-out;
 #PlacesToolbarItems {
   display: flex;
   justify-content: center;
+}
+
+#unified-extensions-view {
+  --uei-icon-size: 16px;
+
+  > .panel-header {
+    display: none !important;
+
+    + toolbarseparator {
+      border-top: none !important;
+      margin-bottom: var(--arrowpanel-menuitem-margin-inline) !important;
+    }
+  }
+
+  .unified-extensions-item {
+    margin-block: 0 !important;
+
+    .unified-extensions-item-message-deck {
+      display: none;
+    }
+
+    > .unified-extensions-item-menu-button {
+      list-style-image: url("chrome://global/skin/icons/more.svg") !important;
+      padding: 0 0 0 var(--arrowpanel-menuitem-margin-inline) !important;
+
+      > .toolbarbutton-icon {
+        border: none !important;
+      }
+    }
+  }
 }

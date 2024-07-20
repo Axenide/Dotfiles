@@ -2,6 +2,45 @@ from __init__ import *
 
 WALLPAPERS_PATH = f"{os.getenv('XDG_PICTURES_DIR')}/Wallpapers"
 
+class ReloadWallpapers(Button):
+    def __init__(self, parent, **kwargs):
+        super().__init__(
+            name="common-button",
+            child=Label(label=icons.reload, markup=True),
+            **kwargs,
+        )
+
+        self.parent = parent
+
+        self.connect("button-press-event", self.on_button_press)
+
+    def on_button_press(self, button, event):
+        thumbs.create(WALLPAPERS_PATH, 300, 200)
+        self.parent.reload_wallpapers_list()
+
+class AddWallpapers(Button):
+    def __init__(self, parent, **kwargs):
+        super().__init__(
+            name="common-button",
+            child=Label(label=icons.add, markup=True),
+            **kwargs,
+        )
+
+        self.parent = parent
+
+        self.connect("button-press-event", self.on_button_press)
+
+    def on_button_press(self, button, event):
+        file_dialog_command = "zenity --file-selection --multiple --separator=' ' --file-filter='Images | *.png *.jpg *.jpeg *.webp *.gif'"
+        selected_files = exec_shell_command(file_dialog_command).strip().split()
+
+        for file_path in selected_files:
+            if os.path.isfile(file_path):
+                shutil.copy(file_path, WALLPAPERS_PATH)
+        
+        thumbs.create(WALLPAPERS_PATH, 300, 200)
+        self.parent.reload_wallpapers_list()
+
 class WallpaperButton(Button):
     def __init__(self, wallpaper: str, **kwargs):
         self.wallpaper = wallpaper
@@ -17,7 +56,7 @@ class WallpaperButton(Button):
         super().__init__(name="wallpaper-button", **kwargs)
         self.add(self.wallpaper_box)
         self.connect("button-press-event", self.on_button_press)
-        self.connect("key-press-event", self.on_key_press)  # Conectar evento de tecla
+        self.connect("key-press-event", self.on_key_press)
 
     def on_button_press(self, button, event):
         img = f"{WALLPAPERS_PATH}/{self.wallpaper}"
@@ -33,7 +72,6 @@ class WallpaperButton(Button):
 
         ln_command = f"ln -sf {img} {home_dir}/.current.wall"
 
-        # Asegúrate de que `self.parent` esté correctamente configurado
         if hasattr(self, 'parent') and hasattr(self.parent, 'dashboard') and hasattr(self.parent.dashboard, 'player') and hasattr(self.parent.dashboard.player, 'cover'):
             self.parent.dashboard.player.cover.set_style(f"background-image: url('{img}');")
 
@@ -45,11 +83,11 @@ class WallpaperButton(Button):
         return True
 
     def on_key_press(self, widget, event):
-        if event.keyval == Gdk.KEY_Return and not (event.state & Gdk.ModifierType.SHIFT_MASK):  # Enter key
+        if event.keyval == Gdk.KEY_Return and not (event.state & Gdk.ModifierType.SHIFT_MASK):
             self.trigger_command(1)
-        elif event.keyval == Gdk.KEY_space:  # Space key
+        elif event.keyval == Gdk.KEY_space:
             self.trigger_command(2)
-        elif event.keyval == Gdk.KEY_Return and (event.state & Gdk.ModifierType.SHIFT_MASK):  # Shift + Enter
+        elif event.keyval == Gdk.KEY_Return and (event.state & Gdk.ModifierType.SHIFT_MASK):
             self.trigger_command(3)
 
     def trigger_command(self, command_type):
@@ -66,7 +104,6 @@ class WallpaperButton(Button):
 
         ln_command = f"ln -sf {img} {home_dir}/.current.wall"
 
-        # Asegúrate de que `self.parent` esté correctamente configurado
         if hasattr(self, 'parent') and hasattr(self.parent, 'dashboard') and hasattr(self.parent.dashboard, 'player') and hasattr(self.parent.dashboard.player, 'cover'):
             self.parent.dashboard.player.cover.set_style(f"background-image: url('{img}');")
 
@@ -84,24 +121,20 @@ class Wallpapers(Box):
             v_expand=True,
         )
 
-        self.wallpapers = sorted(
-            [wall for wall in os.listdir(WALLPAPERS_PATH) if wall.endswith((".png", ".jpg", ".jpeg", ".webp", ".gif"))]
-        )
+        self.wallpapers = []
         self.wallpaper_buttons = {}
         self.buttons_box = Box(orientation="v", spacing=4)
         self.wallpaper_entry = Entry(
             name="search-entry",
+            h_expand=True,
             placeholder_text="Search wallpapers...",
             editable=True,
         )
+        self.wallpaper_entry.props.xalign = 0.5
         self.wallpaper_entry.connect("key-release-event", self.keypress)
-        self.wallpaper_entry.connect("activate", self.on_enter_press)  # Conectamos el evento de Enter
+        self.wallpaper_entry.connect("activate", self.on_enter_press)
 
-        for wallpaper in self.wallpapers:
-            wall_btn = WallpaperButton(wallpaper)
-            self.wallpaper_buttons[wallpaper] = wall_btn
-            wall_btn.connect("button-press-event", self.on_button_press)
-            self.buttons_box.add(wall_btn)
+        self.reload_wallpapers_list()
 
         self.wallpaper_names = self.wallpaper_buttons.keys()
         self.searched_buttons_box = Box(orientation="v", visible=False)
@@ -115,42 +148,50 @@ class Wallpapers(Box):
             ),
         )
 
+        self.entry = Box(
+            orientation="h",
+            spacing=4,
+            children=[ReloadWallpapers(self), self.wallpaper_entry, AddWallpapers(self)],
+        )
+
         super().__init__(
             child=Box(
                 name="wallpapers",
                 orientation="v",
                 h_expand=True,
                 spacing=4,
-                children=[self.wallpaper_entry, self.scrolled_window],
+                children=[self.entry, self.scrolled_window],
             ),
         )
 
-        self.selected_index = -1  # Índice seleccionado para la navegación del teclado
+        self.selected_index = -1
 
     def keypress(self, entry: Entry, event_key):
         key_code = event_key.get_keycode()[1]
-        if key_code == 9:  # Escape key
+        if key_code == 9:
             self.toggle_popup()
-        elif key_code == 38:  # Up arrow key
+        elif key_code == 38:
             self.navigate_up()
-        elif key_code == 40:  # Down arrow key
+        elif key_code == 40:
             self.navigate_down()
-        elif key_code == 36 and not (event_key.state & Gdk.ModifierType.SHIFT_MASK):  # Enter key
+        elif key_code == 36 and not (event_key.state & Gdk.ModifierType.SHIFT_MASK):
             self.execute_command(1)
-        elif key_code == 65:  # Space key
+        elif key_code == 65:
             self.execute_command(2)
-        elif key_code == 36 and (event_key.state & Gdk.ModifierType.SHIFT_MASK):  # Shift + Enter
+        elif key_code == 36 and (event_key.state & Gdk.ModifierType.SHIFT_MASK):
             self.execute_command(3)
         else:
-            search_text = entry.get_text().lower()
-            if search_text.strip() == "":
-                self.reset_wallpaper_menu()
-                return
-            for name, wall_button in self.wallpaper_buttons.items():
-                if search_text in name.lower():
-                    wall_button.show()
-                else:
-                    wall_button.hide()
+            self.filter_wallpapers(entry.get_text().lower())
+
+    def filter_wallpapers(self, search_text):
+        if search_text.strip() == "":
+            self.reset_wallpaper_menu()
+            return
+        for name, wall_button in self.wallpaper_buttons.items():
+            if search_text in name.lower():
+                wall_button.show()
+            else:
+                wall_button.hide()
 
     def toggle_popup(self):
         self.wallpaper_entry.set_text("")
@@ -177,7 +218,7 @@ class Wallpapers(Box):
         for index, button in enumerate(self.wallpaper_buttons.values()):
             if index == self.selected_index:
                 button.set_style("border: 2px solid blue;")
-                button.grab_focus()  # Asignar el foco al botón seleccionado
+                button.grab_focus()
             else:
                 button.set_style("border: none;")
 
@@ -213,3 +254,22 @@ class Wallpapers(Box):
             exec_shell_command_async(command, lambda *args: None)
 
         return True
+
+    def reload_wallpapers_list(self):
+        self.wallpapers = sorted(
+            [wall for wall in os.listdir(WALLPAPERS_PATH) if wall.endswith((".png", ".jpg", ".jpeg", ".webp", ".gif"))]
+        )
+        self.wallpaper_buttons.clear()
+
+        # Eliminar todos los hijos del buttons_box
+        for child in self.buttons_box.get_children():
+            self.buttons_box.remove(child)
+
+        for wallpaper in self.wallpapers:
+            wall_btn = WallpaperButton(wallpaper)
+            self.wallpaper_buttons[wallpaper] = wall_btn
+            wall_btn.connect("button-press-event", self.on_button_press)
+            self.buttons_box.add(wall_btn)
+
+        self.buttons_box.show_all()
+        self.filter_wallpapers(self.wallpaper_entry.get_text().lower())

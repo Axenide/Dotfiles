@@ -58,9 +58,10 @@ class Apps(Box):
         self.buttons_box = Box(orientation="v", spacing=4)
         self.app_entry = Entry(
             name="search-entry",
-            placeholder_text="Search...",
+            placeholder_text="Search applications...",
             editable=True,
         )
+        self.app_entry.props.xalign = 0.5
         self.app_entry.connect("key-release-event", self.keypress)
         self.app_entry.connect("activate", self.on_enter_press)  # Aquí conectamos el evento de Enter
         for app in self.applications:

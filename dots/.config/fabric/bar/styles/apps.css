@@ -4,7 +4,7 @@
   background-color: @background;
   border: 2px solid alpha(@foreground, 0.1);
   border-radius: 10px;
-  padding: 10px;
+  padding: 9px;
 }
 
 #search-entry selection {
@@ -15,8 +15,6 @@
 #search-entry:focus {
   color: @foreground;
   border: 2px solid @color1;
-  border-radius: 10px;
-  padding: 10px;
 }
 
 #app-scroll {

@@ -47,6 +47,7 @@
   color: @foreground;
   font-size: 20px;
   font-weight: normal;
+  text-shadow: 0px 0px 5px alpha(@foreground, 1);
 }
 
 #wifi-button-off > *,

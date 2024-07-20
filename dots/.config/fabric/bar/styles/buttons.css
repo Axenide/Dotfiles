@@ -21,9 +21,7 @@
   border-right: none;
 }
 
-#chat-expand,
-#chat-reload,
-#chat-detach {
+#common-button {
 	transition: all 0.1s ease;
 	background-color: @background;
 	border-radius: 10px;
@@ -32,17 +30,13 @@
 
 #media-button:hover,
 #colorpicker:hover,
-#chat-expand:hover,
-#chat-reload:hover,
-#chat-detach:hover {
+#common-button:hover {
   background-color: alpha(@foreground, 0.1);
 }
 
 #media-button > *,
 #colorpicker > *,
-#chat-expand > *,
-#chat-reload > *,
-#chat-detach > * {
+#common-button > * {
   color: @color1;
   font-size: 20px;
   font-weight: normal;
@@ -51,9 +45,7 @@
 }
 
 #colorpicker:hover > *,
-#chat-expand:hover > *,
-#chat-reload:hover > *,
-#chat-detach:hover > * {
+#common-button:hover > * {
   text-shadow:
   0 0 5px @color1,
   0 0 5px @color1,
