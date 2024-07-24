@@ -21,6 +21,7 @@ detach = "&#xea99;"
 
 # Wallpapers
 add = "&#xeb0b;"
+sort = "&#xeb5a;"
 
 # Power
 lock = "&#xeae2;"

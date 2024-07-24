@@ -13,33 +13,42 @@ class ReloadWallpapers(Button):
         self.parent = parent
 
         self.connect("button-press-event", self.on_button_press)
+        self.connect("key-press-event", self.on_key_press)
 
     def on_button_press(self, button, event):
-        thumbs.create(WALLPAPERS_PATH, 300, 200)
+        utils.format(WALLPAPERS_PATH)
+        utils.thumbs(WALLPAPERS_PATH, 300, 200)
         self.parent.reload_wallpapers_list()
 
-class AddWallpapers(Button):
+    def on_key_press(self, widget, event):
+        key = event.keyval
+        if key == Gdk.KEY_Return or key == Gdk.KEY_KP_Enter:
+            self.on_button_press(widget, event)
+            return True
+
+class ReorderWallpapers(Button):
     def __init__(self, parent, **kwargs):
         super().__init__(
             name="common-button",
-            child=Label(label=icons.add, markup=True),
+            child=Label(label=icons.sort, markup=True),
             **kwargs,
         )
 
         self.parent = parent
+        self.is_alphabetical = True
 
         self.connect("button-press-event", self.on_button_press)
+        self.connect("key-press-event", self.on_key_press)
 
     def on_button_press(self, button, event):
-        file_dialog_command = "zenity --file-selection --multiple --separator=' ' --file-filter='Images | *.png *.jpg *.jpeg *.webp *.gif'"
-        selected_files = exec_shell_command(file_dialog_command).strip().split()
+        self.is_alphabetical = not self.is_alphabetical
+        self.parent.reload_wallpapers_list(order="alphabetical" if self.is_alphabetical else "recent")
 
-        for file_path in selected_files:
-            if os.path.isfile(file_path):
-                shutil.copy(file_path, WALLPAPERS_PATH)
-        
-        thumbs.create(WALLPAPERS_PATH, 300, 200)
-        self.parent.reload_wallpapers_list()
+    def on_key_press(self, widget, event):
+        key = event.keyval
+        if key == Gdk.KEY_Return or key == Gdk.KEY_KP_Enter:
+            self.on_button_press(widget, event)
+            return True
 
 class WallpaperButton(Button):
     def __init__(self, wallpaper: str, **kwargs):
@@ -151,7 +160,7 @@ class Wallpapers(Box):
         self.entry = Box(
             orientation="h",
             spacing=4,
-            children=[ReloadWallpapers(self), self.wallpaper_entry, AddWallpapers(self)],
+            children=[ReloadWallpapers(self), self.wallpaper_entry, ReorderWallpapers(self)],
         )
 
         super().__init__(
@@ -255,10 +264,14 @@ class Wallpapers(Box):
 
         return True
 
-    def reload_wallpapers_list(self):
-        self.wallpapers = sorted(
-            [wall for wall in os.listdir(WALLPAPERS_PATH) if wall.endswith((".png", ".jpg", ".jpeg", ".webp", ".gif"))]
-        )
+    def reload_wallpapers_list(self, order="alphabetical"):
+        self.wallpapers = [wall for wall in os.listdir(WALLPAPERS_PATH) if wall.endswith((".png", ".jpg", ".jpeg", ".webp", ".gif"))]
+        
+        if order == "alphabetical":
+            self.wallpapers.sort()
+        else:  # order == "recent"
+            self.wallpapers.sort(key=lambda x: os.path.getmtime(os.path.join(WALLPAPERS_PATH, x)), reverse=True)
+        
         self.wallpaper_buttons.clear()
 
         # Eliminar todos los hijos del buttons_box

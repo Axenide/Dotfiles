@@ -30,7 +30,7 @@
 
 #media-button:hover,
 #colorpicker:hover,
-#common-button:hover {
+#common-button:hover, #common-button:focus {
   background-color: alpha(@foreground, 0.1);
 }
 
@@ -45,7 +45,7 @@
 }
 
 #colorpicker:hover > *,
-#common-button:hover > * {
+#common-button:hover > *, #common-button:focus > * {
   text-shadow:
   0 0 5px @color1,
   0 0 5px @color1,
@@ -74,47 +74,26 @@
   0 0 5px @color5;
 }
 
-#panels-event {
+#panels-event, #power-event {
 	transition: all 0.1s ease;
 	background-color: @color1;
-	border-radius: 0 0 0 20px;
 	border: 2px solid alpha(@color1, 1);
 }
 
-#panels-apps > *,
-#panels-dashboard > *,
-#panels-chat > *,
-#panels-wallpapers > *,
-#panels-windows > * {
-  color: @background;
-  font-size: 20px;
-  font-weight: normal;
-  padding: 6px;
-  margin: 4px 3px 4px 5px;
-  border-radius: 999px;
-}
-
-#panels-apps:hover > *,
-#panels-dashboard:hover > *,
-#panels-chat:hover > *,
-#panels-wallpapers:hover > *,
-#panels-windows:hover > * {
-  color: @foreground;
-  background-color: alpha(@foreground, 0.2);
+#panels-event {
+	border-radius: 0 0 0 20px;
 }
 
 #power-event {
-	transition: all 0.1s ease;
-	background-color: @color1;
 	border-radius: 20px 0 0 0;
-	border: 2px solid alpha(@color1, 1);
 }
 
 #power-shutdown > *,
 #power-reboot > *,
 #power-logout > *,
 #power-suspend > *,
-#power-lock > * {
+#power-lock > *,
+#common-button-1 > * {
   color: @background;
   font-size: 20px;
   font-weight: normal;
@@ -123,11 +102,12 @@
   border-radius: 999px;
 }
 
-#power-shutdown:hover > *,
-#power-reboot:hover > *,
-#power-logout:hover > *,
-#power-suspend:hover > *,
-#power-lock:hover > * {
+#power-shutdown:hover > *, #power-shutdown:focus > *,
+#power-reboot:hover > *, #power-reboot:focus > *,
+#power-logout:hover > *, #power-logout:focus > *,
+#power-suspend:hover > *, #power-suspend:focus > *,
+#power-lock:hover > *, #power-lock:focus > *,
+#common-button-1:hover > *, #common-button-1:focus > * {
   color: @foreground;
   background-color: alpha(@foreground, 0.2);
 }

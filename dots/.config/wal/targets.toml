@@ -21,7 +21,7 @@ target = "~/.config/swaync/colors.css"
 command = "swaync-client -rs"
 
 [nvchad]
-source = "colors-nvchad.lua"
+source = "base-46.lua"
 target = "~/.config/nvim/lua/themes/wal.lua"
 command = "python ~/.config/wal/reload_nvim.py"
 

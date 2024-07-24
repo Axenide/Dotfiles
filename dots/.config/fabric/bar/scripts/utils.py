@@ -1,7 +1,7 @@
 import os
 from PIL import Image
 
-def create(folder_path, target_width, target_height):
+def thumbs(folder_path, target_width, target_height):
     thumbnails_folder = os.path.join(folder_path, ".thumbnails")
     if not os.path.exists(thumbnails_folder):
         os.makedirs(thumbnails_folder)
@@ -50,3 +50,10 @@ def create(folder_path, target_width, target_height):
                 print(f"La thumbnail {filename} ha sido eliminada porque la imagen original no existe.")
             except Exception as e:
                 print(f"Error al eliminar la thumbnail {filename}: {e}")
+
+def format(directory):
+    for filename in os.listdir(directory):
+        if any(char.isupper() for char in filename) or ' ' in filename or '_' in filename:
+            new_name = filename.lower().replace(' ', '-').replace('_', '-')
+            os.rename(os.path.join(directory, filename), os.path.join(directory, new_name))
+            print(f'Renamed: {filename} -> {new_name}')

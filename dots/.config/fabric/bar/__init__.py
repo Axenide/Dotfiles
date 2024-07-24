@@ -70,7 +70,8 @@ host = f"{exec_shell_command('hostname')}".rstrip()
 
 fabricSend = f'python {home_dir}/.config/fabric/bar/scripts/send.py'
 
-import scripts.thumbs as thumbs
+from scripts.listen import listen
+import scripts.utils as utils
 
 import modules.icons as icons
 from modules.master import MasterWithHover, MasterWithButton
@@ -87,5 +88,4 @@ from modules.applets import Applets
 from modules.dashboard import Dashboard
 from modules.wallpapers import Wallpapers
 from modules.mainstack import MainStack
-from scripts.listen import listen
 from modules.bar import Bar # Should always be the last module
