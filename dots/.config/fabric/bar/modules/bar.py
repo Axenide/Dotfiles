@@ -146,7 +146,7 @@ class Bar(Window):
         child_mapping = {
             "chat": (self.stack.chat, "on-demand"),
             "dashboard": (self.stack.dashboard, "none"),
-            "wallpapers": (self.stack.wallpapers, "exclusive"),
+            "wallpapers": (self.stack.wallpapers, "on-demand"),
             "apps": (self.stack.apps, "exclusive")
         }
 

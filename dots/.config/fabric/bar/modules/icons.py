@@ -22,6 +22,9 @@ detach = "&#xea99;"
 # Wallpapers
 add = "&#xeb0b;"
 sort = "&#xeb5a;"
+circle = "&#xf671;"
+chevrons_up = "&#xea66;"
+chevrons_down = "&#xea63;"
 
 # Power
 lock = "&#xeae2;"

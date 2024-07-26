@@ -8,3 +8,16 @@
 #wallpaper-button:hover > *, #wallpaper-button:focus > * {
   min-height: 200px;
 }
+
+#themes-event > * > * {
+  border: 2px solid alpha(@foreground, 0.1);
+  border-radius: 10px;
+  background-color: @background;
+  padding: 10px;
+}
+
+#theme-box {
+  border-radius: 10px;
+  padding: 10px;
+  margin: 2px -10px;
+}

@@ -95,15 +95,6 @@ else
   echo "Skipping Firefox config."
 fi
 
-# Instalar Floorp userChrome.css
-title
-read -p "Install Floorp custom CSS and user.js? (y/n) " answer
-if [[ "$answer" == "y" ]]; then
-  bash floorp.sh
-else
-  echo "Skipping Floorp config."
-fi
-
 ln -sf ./example_wallpaper.png ~/.current.wall
 
 wal --theme base16-gruvbox-hard

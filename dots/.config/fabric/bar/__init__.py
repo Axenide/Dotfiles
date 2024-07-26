@@ -4,6 +4,7 @@ import signal
 import time
 import subprocess
 import shutil
+import json
 import pam
 import calendar
 from datetime import datetime
@@ -86,6 +87,7 @@ from modules.user import User
 from modules.workspaces import WorkspacesBox
 from modules.applets import Applets
 from modules.dashboard import Dashboard
+from modules.themes import Themes
 from modules.wallpapers import Wallpapers
 from modules.mainstack import MainStack
 from modules.bar import Bar # Should always be the last module

@@ -163,6 +163,8 @@ class Wallpapers(Box):
             children=[ReloadWallpapers(self), self.wallpaper_entry, ReorderWallpapers(self)],
         )
 
+        # self.themes = Themes()
+
         super().__init__(
             child=Box(
                 name="wallpapers",
