@@ -12,7 +12,6 @@ ffmpeg-obs
 ffmpegthumbnailer
 firefox
 fish
-floorp-bin
 fzf
 gnome-bluetooth-3.0
 gnome-calculator
