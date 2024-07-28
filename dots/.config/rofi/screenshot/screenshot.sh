@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source "$HOME/.cache/wal/slurp-args.sh"
+
 theme="$HOME/.config/rofi/screenshot/style.rasi"
 
 # If wf-recorder is not running, make the variable "option4" be "  Start Recording 󰹑", else "  Stop Recording 󰹑".

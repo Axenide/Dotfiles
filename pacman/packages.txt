@@ -19,7 +19,7 @@ gnome-calculator
 grim
 grimblast-git
 hyprland
-hyprpicker-git
+hyprpicker
 hyprshade
 imv
 inetutils

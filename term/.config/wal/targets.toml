@@ -1,0 +1,56 @@
+[hyprland]
+source = "colors-hyprland.conf"
+target = "~/.config/hypr/source/colors.conf"
+
+[fabric]
+source = "colors-fabric.css"
+target = "~/.config/fabric/bar/styles/themes/wal.css"
+command = "python ~/.config/fabric/bar/scripts/send.py update-style"
+
+[kitty]
+source = "colors-kitty.conf"
+target = "~/.config/kitty/wal.conf"
+
+[gtk4]
+source = "colors-fabric.css"
+target = "~/.config/gtk-4.0/colors.css"
+
+[gtk3]
+source = "colors-fabric.css"
+target = "~/.config/gtk-3.0/colors.css"
+
+[slurp]
+source = "colors-slurp.sh"
+target = "~/.config/kitty/slurp.sh"
+
+[swaync]
+source = "colors-swaync.css"
+target = "~/.config/swaync/colors.css"
+command = "swaync-client -rs"
+
+[nvchad]
+source = "base-46.lua"
+target = "~/.config/nvim/lua/themes/wal.lua"
+command = "python ~/.config/wal/reload_nvim.py"
+
+[discord]
+source = "colors-discord.css"
+target = "~/.config/vesktop/themes/axwal.theme.css"
+
+[yazi]
+source = "colors-yazi.toml"
+target = "~/.config/yazi/theme.toml"
+
+[swaylock]
+source = "colors-swaylock"
+target = "~/.config/swaylock/config"
+
+[zathura]
+source = "colors-zathura"
+target = "~/.config/zathura/zathurarc"
+
+[pywalfox]
+command = "pywalfox update"
+
+[telegram]
+command = "walogram -B"
