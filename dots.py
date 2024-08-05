@@ -90,7 +90,7 @@ def main():
     answer = inquirer.prompt([inquirer.Confirm('install_packages', message="Install needed packages?", default=True)])
 
     if answer['install_packages']:
-        pacman_script = 'term.txt' if term_mode else 'pacman.txt'
+        pacman_script = 'term.sh' if term_mode else 'pacman.sh'
         if test_mode:
             print(f"Would run 'bash {pacman_script}'")
         else:

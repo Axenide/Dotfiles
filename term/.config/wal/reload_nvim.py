@@ -18,7 +18,7 @@ def reload_nvim():
     for socket in sockets:
         try:
             nvim = pynvim.attach('socket', path=socket)
-            nvim.command('lua require("nvchad.utils").reload("themes.wal")')
+            nvim.command('lua require("nvchad.utils").reload("themes")')
             nvim.close()
             print(f"Neovim instance at {socket} reloaded successfully.")
         except Exception as e:

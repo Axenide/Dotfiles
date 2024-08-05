@@ -146,7 +146,7 @@ class Bar(Window):
         child_mapping = {
             "chat": (self.stack.chat, "on-demand"),
             "dashboard": (self.stack.dashboard, "none"),
-            "wallpapers": (self.stack.wallpapers, "on-demand"),
+            "wallpapers": (self.stack.wallpapers, "exclusive"),
             "apps": (self.stack.apps, "exclusive")
         }
 
@@ -174,8 +174,8 @@ class Bar(Window):
         match button:
             case self.colorpicker:
                 commands = {
-                    1: get_relative_path('../scripts/hyprpicker-hex.sh'),
-                    3: get_relative_path('../scripts/hyprpicker-rgb.sh'),
+                    1: get_relative_path('./scripts/hyprpicker-hex.sh'),
+                    3: get_relative_path('./scripts/hyprpicker-rgb.sh'),
                 }
                 command = commands.get(event.button)
                 if command:

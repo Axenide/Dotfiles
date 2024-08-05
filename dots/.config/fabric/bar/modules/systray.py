@@ -7,8 +7,6 @@ class SystemTray(Box):
         self.watcher = Gray.Watcher()
         self.watcher.connect("item-added", self.on_item_added)
 
-    # 6901 markwood place misissauga
-
     def on_item_added(self, _, identifier: str):
         item = self.watcher.get_item_for_identifier(identifier)
         item_button = self.do_bake_item_button(item)
@@ -19,16 +17,13 @@ class SystemTray(Box):
     def do_bake_item_button(self, item: Gray.Item) -> Button:
         button = Button()
 
-        # context menu handler
         button.connect(
             "button-press-event",
             lambda button, event: self.on_button_click(button, item, event),
         )
 
-        # get pixel map of item's icon
         pixmap = Gray.get_pixmap_for_pixmaps(item.get_icon_pixmaps(), self.pixel_size)
 
-        # convert the pixmap to a pixbuf
         try:
             if pixmap is not None:
                 pixbuf = pixmap.as_pixbuf(self.pixel_size, GdkPixbuf.InterpType.HYPER)

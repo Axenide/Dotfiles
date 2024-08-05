@@ -81,8 +81,7 @@ class WallpaperButton(Button):
 
         ln_command = f"ln -sf {img} {home_dir}/.current.wall"
 
-        if hasattr(self, 'parent') and hasattr(self.parent, 'dashboard') and hasattr(self.parent.dashboard, 'player') and hasattr(self.parent.dashboard.player, 'cover'):
-            self.parent.dashboard.player.cover.set_style(f"background-image: url('{img}');")
+        self.parent.dashboard.player.cover.set_style(f"background-image: url('{img}');")
 
         wal_script_command = f"python {home_dir}/.config/wal/set.py"
 
@@ -122,7 +121,7 @@ class WallpaperButton(Button):
             exec_shell_command_async(command, lambda *args: None)
 
 class Wallpapers(Box):
-    def __init__(self, parent, **kwargs):
+    def __init__(self, parent):
         self.parent = parent
         self.scrolled_window = ScrolledWindow(
             name="wallpaper-scroll",
@@ -228,10 +227,7 @@ class Wallpapers(Box):
     def highlight_selected(self):
         for index, button in enumerate(self.wallpaper_buttons.values()):
             if index == self.selected_index:
-                button.set_style("border: 2px solid blue;")
                 button.grab_focus()
-            else:
-                button.set_style("border: none;")
 
     def execute_command(self, command_type):
         if self.selected_index >= 0 and self.selected_index < len(self.wallpaper_buttons):

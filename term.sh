@@ -16,7 +16,7 @@ echo "Do you want to install the packages for this dotfiles? (y/n)"
 read install_packages
 
 if [ $install_packages = "y" ]; then
-  yay -S --needed - < ./pacman/packages.txt
+  yay -S --needed - < ./pacman/term.txt
   title
   echo "Packages installed."
 else

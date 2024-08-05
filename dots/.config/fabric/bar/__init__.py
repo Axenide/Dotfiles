@@ -69,10 +69,10 @@ home_dir = os.path.expanduser("~")
 user = f"{os.getenv('USER')}".rstrip()
 host = f"{exec_shell_command('hostname')}".rstrip()
 
-fabricSend = f'python {home_dir}/.config/fabric/bar/scripts/send.py'
+fabricSend = f'python {home_dir}/.config/fabric/bar/modules/scripts/send.py'
 
-from scripts.listen import listen
-import scripts.utils as utils
+from modules.scripts.listen import listen
+import modules.scripts.utils as utils
 
 import modules.icons as icons
 from modules.master import MasterWithHover, MasterWithButton
@@ -80,6 +80,7 @@ from modules.power import Power
 from modules.panels import Panels
 from modules.calendar import Calendar
 from modules.systray import SystemTray
+from modules.apps import Apps
 from modules.aichat import AIchat
 from modules.circles import Circles
 from modules.player import Player

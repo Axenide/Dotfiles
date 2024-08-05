@@ -1,5 +1,8 @@
 from __init__ import *
 
+ai_url = "http://localhost:3141/"
+# ai_url = "http://localhost:8080/"
+
 class AIbuttons(Box):
     def __init__(self):
         super().__init__(
@@ -21,7 +24,7 @@ class AIbuttons(Box):
 
         self.chat_url = Button(
             name="chat-url",
-            label="localhost:3141",
+            label=f"{ai_url}",
             h_expand=True,
             v_expand=True,
             v_align="center",
@@ -58,11 +61,11 @@ class AIbuttons(Box):
             case self.chat_detach:
                 self.parent.content_box.set_reveal_child(False)
                 return exec_shell_command_async(f"""
-                hyprctl dispatch exec {get_relative_path(f'../scripts/webview.py http://localhost:3141/')}
+                hyprctl dispatch exec {get_relative_path(f'./scripts/webview.py {ai_url}')}
                 """, lambda *args: None)
             case self.chat_url:
                 self.parent.content_box.set_reveal_child(False)
-                return exec_shell_command_async('xdg-open http://localhost:3141/', lambda *args: None)
+                return exec_shell_command_async('xdg-open {ai_url}', lambda *args: None)
 
     def on_button_hover(self, button: Button, event):
         return self.change_cursor("pointer")
@@ -76,7 +79,7 @@ class AIweb(WebView):
             name="ai-chat",
             h_expand=True,
             v_expand=True,
-            url="http://localhost:3141/",
+            url=f"{ai_url}",
         )
 
 class AIchat(Box):
