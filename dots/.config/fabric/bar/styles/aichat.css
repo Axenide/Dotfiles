@@ -6,7 +6,7 @@
   transition: all 0.1s ease;
   background-color: @background;
   border-radius: 10px;
-  border: 2px solid alpha(@foreground, 0.1);
+  border: 2px solid mix(@foreground, @background, 0.9);
   padding: 9px 0;
 }
 
@@ -16,7 +16,7 @@
 }
 
 #chat-url:hover {
-  background-color: alpha(@foreground, 0.1);
+  background-color: mix(@foreground, @background, 0.9);
 }
 
 #chat-url:hover label {

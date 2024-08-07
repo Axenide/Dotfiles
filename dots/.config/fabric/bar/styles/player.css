@@ -1,6 +1,6 @@
 #full-player {
   /*background-color: @background;*/
-  /*border: 2px solid alpha(@foreground, 0.1);*/
+  /*border: 2px solid mix(@foreground, @background, 0.9);*/
   /*border-radius: 10px;*/
   /*padding: 4px;*/
   min-height: 100px;
@@ -16,14 +16,14 @@
   background-color: alpha(@color0, 0.75);
   border-radius: 10px;
   padding: 8px;
-  border: 2px solid alpha(@foreground, 0.1);
+  border: 2px solid mix(@foreground, @background, 0.9);
 }
 
 #player-box {
   padding: 0 4px;
   /*margin-left: 4px;*/
   background-color: @background;
-  border: 2px solid alpha(@foreground, 0.1);
+  border: 2px solid mix(@foreground, @background, 0.9);
   border-radius: 10px;
 }
 

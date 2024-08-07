@@ -10,7 +10,7 @@
 }
 
 #themes-event > * > * {
-  border: 2px solid alpha(@foreground, 0.1);
+  border: 2px solid mix(@foreground, @background, 0.9);
   border-radius: 10px;
   background-color: @background;
   padding: 10px;

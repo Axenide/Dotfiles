@@ -2,14 +2,14 @@
   transition: all 0.1s ease;
   color: @foreground;
 	background-color: @background;
-	border: 2px solid alpha(@foreground, 0.1);
+	border: 2px solid mix(@foreground, @background, 0.9);
   border-right: none;
 	border-radius: 20px 0 0 20px;
 	padding: 11px;
 }
 
 #time-button:hover {
-  background-color: alpha(@foreground, 0.1);
+  background-color: mix(@foreground, @background, 0.9);
 }
 
 #media-button,
@@ -17,7 +17,7 @@
 	transition: all 0.1s ease;
 	background-color: @background;
 	border-radius: 16px 0 0 16px;
-	border: 2px solid alpha(@foreground, 0.1);
+	border: 2px solid mix(@foreground, @background, 0.9);
   border-right: none;
 }
 
@@ -25,13 +25,13 @@
 	transition: all 0.1s ease;
 	background-color: @background;
 	border-radius: 10px;
-	border: 2px solid alpha(@foreground, 0.1);
+	border: 2px solid mix(@foreground, @background, 0.9);
 }
 
 #media-button:hover,
 #colorpicker:hover,
 #common-button:hover, #common-button:focus {
-  background-color: alpha(@foreground, 0.1);
+  background-color: mix(@foreground, @background, 0.9);
 }
 
 #media-button > *,

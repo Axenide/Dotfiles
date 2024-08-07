@@ -1,7 +1,7 @@
 #calendar {
   background-color: @background;
   border-radius: 10px;
-  border: 2px solid alpha(@foreground, 0.1);
+  border: 2px solid mix(@foreground, @background, 0.9);
   padding: 8px;
 }
 

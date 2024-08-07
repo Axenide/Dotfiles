@@ -1,13 +1,13 @@
 #module-separator {
 	margin: 0px 10px;
 	padding: 1px;
-	background-color: alpha(@foreground, 0.1);
+	background-color: mix(@foreground, @background, 0.9);
 	border-radius: 999px;
 }
 
 #system-tray {
   background-color: @background;
-	border: 2px solid alpha(@foreground, 0.1);
+	border: 2px solid mix(@foreground, @background, 0.9);
   border-right: none;
 	border-radius: 20px 0 0 20px;
 	padding: 10px 0;
@@ -16,7 +16,7 @@
 
 #ext {
   background-color: @background;
-  border: 2px solid alpha(@foreground, 0.1);
+  border: 2px solid mix(@foreground, @background, 0.9);
   border-radius: 10px;
 }
 

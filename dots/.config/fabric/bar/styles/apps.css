@@ -2,7 +2,7 @@
   transition: all 0.1s ease;
   color: @foreground;
   background-color: @background;
-  border: 2px solid alpha(@foreground, 0.1);
+  border: 2px solid mix(@foreground, @background, 0.9);
   border-radius: 10px;
   padding: 9px;
 }
@@ -20,7 +20,7 @@
 #app-scroll {
   color: @foreground;
   background-color: @background;
-  border: 2px solid alpha(@foreground, 0.1);
+  border: 2px solid mix(@foreground, @background, 0.9);
   border-radius: 10px;
   padding: 4px;
 }

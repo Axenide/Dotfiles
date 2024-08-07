@@ -10,7 +10,7 @@
 #dnd-button {
   background-color: @background;
   transition: all 0.1s ease;
-	border: 2px solid alpha(@foreground, 0.1);
+	border: 2px solid mix(@foreground, @background, 0.9);
 	/* border-bottom: 3px solid @color2; */
 	border-radius: 10px;
 }
@@ -21,7 +21,7 @@
 #dnd-button-off {
   background-color: @background;
   transition: all 0.1s ease;
-	border: 2px solid alpha(@foreground, 0.1);
+	border: 2px solid mix(@foreground, @background, 0.9);
 	/* border-bottom: 3px solid alpha(@foreground, 0.25); */
   border-radius: 10px;
 }
@@ -30,14 +30,14 @@
 #bluetooth-button:hover,
 #night-button:hover,
 #dnd-button:hover {
-  background-color: alpha(@foreground, 0.1);
+  background-color: mix(@foreground, @background, 0.9);
 }
 
 #wifi-button-off:hover,
 #bluetooth-button-off:hover,
 #night-button-off:hover,
 #dnd-button-off:hover {
-  background-color: alpha(@foreground, 0.1);
+  background-color: mix(@foreground, @background, 0.9);
 }
 
 #wifi-button > *,
