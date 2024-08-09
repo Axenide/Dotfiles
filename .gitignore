@@ -6,7 +6,7 @@
 /dots/.config/kitty/wal.conf
 /dots/.config/kitty/slurp.sh
 /dots/.config/swaync/colors.css
-/dots/.config/nvim/lua/themes/wal.lua
+/dots/.config/nvim/lua/themes/axwal.lua
 /dots/.config/vesktop/themes/axwal.theme.css
 /dots/.config/yazi/theme.toml
 /dots/.config/swaylock/config
