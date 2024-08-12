@@ -49,6 +49,9 @@ target = "~/.config/swaylock/config"
 source = "colors-zathura"
 target = "~/.config/zathura/zathurarc"
 
+[spicetify]
+command = "spicetify apply"
+
 [pywalfox]
 command = "pywalfox update"
 

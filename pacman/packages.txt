@@ -1,4 +1,7 @@
 adw-gtk3
+gnome-control-center
+gvfs-google
+gvfs-goa
 alsa-utils
 awesome-terminal-fonts
 aylurs-gtk-shell-git
