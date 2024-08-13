@@ -5,7 +5,7 @@
 	border: 2px solid mix(@foreground, @background, 0.9);
   border-right: none;
 	border-radius: 20px 0 0 20px;
-	padding: 11px;
+	padding: 10px 0;
 }
 
 #time-button:hover {
@@ -41,7 +41,7 @@
   font-size: 20px;
   font-weight: normal;
   transition: all 0.1s ease;
-  padding: 8px 8px;
+  padding: 6px 5px;
 }
 
 #colorpicker:hover > *,
@@ -97,8 +97,9 @@
   color: @background;
   font-size: 20px;
   font-weight: normal;
-  padding: 6px;
-  margin: 4px 3px 4px 5px;
+  padding: 5px 4px;
+  margin: 4px;
+  margin-right: 2px;
   border-radius: 999px;
 }
 
@@ -116,11 +117,11 @@
   color: @background;
   font-size: 20px;
   font-weight: normal;
-  padding: 6px;
+  padding: 4px;
   margin: 4px;
   border-radius: 999px;
-  padding: 6px;
-  margin: 4px 3px 4px 5px;
+  /*padding: 6px;*/
+  /*margin: 4px 3px 4px 5px;*/
   border-radius: 999px;
 }
 
@@ -137,7 +138,7 @@
 
 #accept, #cancel {
   color: alpha(@foreground, 0.5);
-  padding: 6px;
+  padding: 4px;
   margin: 4px;
   border-radius: 999px;
 }
