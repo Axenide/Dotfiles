@@ -9,7 +9,8 @@
   background-size: cover;
   background-position: center;
   border-radius: 999px;
-  border: 2px solid mix(@foreground, @background, 0.9);
+  /*border: 2px solid mix(@foreground, @background, 0.9);*/
+  box-shadow: 0 0 5px alpha(black, 0.8);
   min-width: 48px;
   min-height: 48px;
 }

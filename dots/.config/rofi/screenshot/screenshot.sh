@@ -44,6 +44,6 @@ $option3)
   fi
   ;;
 $option4)
-  nemo $XDG_PICTURES_DIR/Screenshots
+  nautilus $XDG_PICTURES_DIR/Screenshots
   ;;
 esac

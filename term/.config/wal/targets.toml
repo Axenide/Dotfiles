@@ -31,7 +31,7 @@ command = "swaync-client -rs"
 [base46]
 source = "base46-axwal.lua"
 target = "~/.config/nvim/lua/themes/axwal.lua"
-command = "python ~/.config/wal/reload_nvim.py"
+# command = "python ~/.config/wal/reload_nvim.py"
 
 [discord]
 source = "colors-discord.css"

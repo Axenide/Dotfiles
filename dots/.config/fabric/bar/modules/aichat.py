@@ -2,6 +2,7 @@ from __init__ import *
 
 ai_url = "http://localhost:3141/"
 # ai_url = "http://localhost:8080/"
+# ai_url = "http://axenide.github.io/"
 
 class AIbuttons(Box):
     def __init__(self):
@@ -12,7 +13,59 @@ class AIbuttons(Box):
             spacing=4,
         )
 
-        self.web = AIweb()
+        self.web_module = AIweb()
+
+        self.web = Box(h_expand=True, v_expand=True, children=[self.web_module])
+
+        self.corners_top = CenterBox(
+            name="corners",
+            orientation="h",
+            v_expand=True,
+            h_expand=True,
+        )
+
+        self.corners_bottom = CenterBox(
+            name="corners",
+            orientation="h",
+            # v_expand=True,
+            h_expand=True,
+        )
+
+        self.corner_top_left = Corner(name="corner-dark", orientation="top-left", size=20)
+        self.corner_top_right = Corner(name="corner-dark", orientation="top-right", size=20)
+        
+        self.corner_bottom_left = Corner(name="corner-dark", orientation="bottom-left", size=20)
+        self.corner_bottom_right = Corner(name="corner-dark", orientation="bottom-right", size=20)
+
+        self.corners_top.add_start(self.corner_top_left)
+        self.corners_top.add_end(self.corner_top_right)
+        self.corners_bottom.add_start(self.corner_bottom_left)
+        self.corners_bottom.add_end(self.corner_bottom_right)
+
+        self.corner_box = Box(
+            name="corner-box",
+            orientation="v",
+            h_expand=True,
+            v_expand=True,
+            h_align="fill",
+            v_align="fill",
+            children=[
+                self.corners_top,
+                self.corners_bottom,
+            ],
+        )
+
+        self.overlay = Overlay(
+            name="overlay",
+            v_expand=True,
+            h_expand=True,
+            overlays=[
+                self.web,
+                self.corner_box,
+            ]
+        )
+
+        self.overlay.set_overlay_pass_through(self.corner_box, True)
 
         self.parent = self
 
@@ -57,7 +110,7 @@ class AIbuttons(Box):
     def on_button_press(self, button: Button, event):
         match button:
             case self.chat_reload:
-                self.web.reload()
+                self.web_module.reload()
             case self.chat_detach:
                 self.parent.content_box.set_reveal_child(False)
                 return exec_shell_command_async(f"""
@@ -98,6 +151,6 @@ class AIchat(Box):
         self.set_children(
             [
                 self.buttons,
-                self.web,
+                self.buttons.overlay,
             ]
         )

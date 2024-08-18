@@ -2,7 +2,7 @@ from __init__ import *
 
 class SystemTray(Box):
     def __init__(self, pixel_size: int = 20, **kwargs) -> None:
-        super().__init__(name="system-tray", orientation="v", spacing=14)
+        super().__init__(name="system-tray", orientation="v", spacing=10)
         self.pixel_size = pixel_size
         self.watcher = Gray.Watcher()
         self.watcher.connect("item-added", self.on_item_added)

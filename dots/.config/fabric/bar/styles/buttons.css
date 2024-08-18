@@ -35,13 +35,20 @@
 }
 
 #media-button > *,
-#colorpicker > *,
-#common-button > * {
+#colorpicker > * {
   color: @color1;
   font-size: 20px;
   font-weight: normal;
   transition: all 0.1s ease;
   padding: 6px 5px;
+}
+
+#common-button > * {
+  color: @color1;
+  font-size: 20px;
+  font-weight: normal;
+  transition: all 0.1s ease;
+  padding: 6px 8px;
 }
 
 #colorpicker:hover > *,

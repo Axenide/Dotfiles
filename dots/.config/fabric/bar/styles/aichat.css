@@ -23,3 +23,7 @@
   color: @foreground;
   text-shadow: 0px 0px 5px alpha(@foreground, 0.5);
 }
+
+#corner-dark {
+  background-color: @background;
+}

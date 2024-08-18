@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo pacman -S --needed git
+sudo pacman -S --needed --noconfirm git
 git clone https://aur.archlinux.org/yay-bin.git
 cd yay-bin
 makepkg -si
@@ -16,7 +16,7 @@ echo "Do you want to install the packages for this dotfiles? (y/n)"
 read install_packages
 
 if [ $install_packages = "y" ]; then
-  yay -S --needed - < ./pacman/packages.txt
+  yay -S --needed --noconfirm - < ./pacman/packages.txt
   title
   echo "Packages installed."
 else
