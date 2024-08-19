@@ -83,7 +83,7 @@ class WallpaperButton(Button):
 
         self.parent.dashboard.player.cover.set_style(f"background-image: url('{img}');")
 
-        wal_script_command = f"python {home_dir}/.config/wal/set.py"
+        wal_script_command = f"hyprctl dispatch exec python {home_dir}/.config/wal/set.py"
 
         for command in [ln_command, wal_script_command]:
             exec_shell_command_async(command, lambda *args: None)
@@ -115,7 +115,7 @@ class WallpaperButton(Button):
         if hasattr(self, 'parent') and hasattr(self.parent, 'dashboard') and hasattr(self.parent.dashboard, 'player') and hasattr(self.parent.dashboard.player, 'cover'):
             self.parent.dashboard.player.cover.set_style(f"background-image: url('{img}');")
 
-        wal_script_command = f"python {home_dir}/.config/wal/set.py"
+        wal_script_command = f"hyprctl dispatch exec python {home_dir}/.config/wal/set.py"
 
         for command in [ln_command, wal_script_command]:
             exec_shell_command_async(command, lambda *args: None)
@@ -255,7 +255,7 @@ class Wallpapers(Box):
 
         self.parent.dashboard.player.cover.set_style(f"background-image: url('{img}');")
 
-        wal_script_command = f"python {home_dir}/.config/wal/set.py"
+        wal_script_command = f"hyprctl dispatch exec python {home_dir}/.config/wal/set.py"
 
         for command in [ln_command, wal_script_command]:
             exec_shell_command_async(command, lambda *args: None)
