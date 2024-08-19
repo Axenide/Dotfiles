@@ -1,10 +1,10 @@
 #workspaces {
 	border-radius: 20px 0 0 20px;
-	padding: 12px;
-	border: 2px solid mix(@foreground, @background, 0.9);
+	padding: 13px;
+	/*border: 2px solid mix(@foreground, @background, 0.9);*/
   border-right: none;
-  padding-right: 14px;
-	background-color: @background;
+  padding-right: 15px;
+	background-color: mix(black, @background, 0.30);
 }
 
 #workspaces>button {
@@ -12,7 +12,7 @@
 	border-radius: 999px;
 	min-width: 4px;
 	min-height: 4px;
-	transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+	transition: all 0.30s cubic-bezier(0, 1, 0, 1);
 }
 
 #workspaces>button>label {
@@ -25,7 +25,7 @@
 }
 
 #workspaces>button.empty {
-  border: 2px solid alpha(@foreground, 0.25);
+  border: 2px solid alpha(@foreground, 0.30);
 }
 
 #workspaces>button:hover {

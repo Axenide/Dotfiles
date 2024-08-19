@@ -1,8 +1,8 @@
 #time-button {
   transition: all 0.1s ease;
   color: @foreground;
-	background-color: @background;
-	border: 2px solid mix(@foreground, @background, 0.9);
+	background-color: mix(black, @background, 0.30);
+	/*border: 2px solid mix(@foreground, @background, 0.9);*/
   border-right: none;
 	border-radius: 20px 0 0 20px;
 	padding: 10px 0;
@@ -15,17 +15,17 @@
 #media-button,
 #colorpicker {
 	transition: all 0.1s ease;
-	background-color: @background;
+	background-color: mix(black, @background, 0.30);
 	border-radius: 16px 0 0 16px;
-	border: 2px solid mix(@foreground, @background, 0.9);
+	/*border: 2px solid mix(@foreground, @background, 0.9);*/
   border-right: none;
 }
 
 #common-button {
 	transition: all 0.1s ease;
-	background-color: @background;
-	border-radius: 10px;
-	border: 2px solid mix(@foreground, @background, 0.9);
+	background-color: mix(black, @background, 0.30);
+	border-radius: 20px;
+	/*border: 2px solid mix(@foreground, @background, 0.9);*/
 }
 
 #media-button:hover,
@@ -48,15 +48,15 @@
   font-size: 20px;
   font-weight: normal;
   transition: all 0.1s ease;
-  padding: 6px 8px;
+  padding: 6px 9px;
 }
 
 #colorpicker:hover > *,
 #common-button:hover > *, #common-button:focus > * {
   text-shadow:
-  0 0 5px @color1,
-  0 0 5px @color1,
-  0 0 5px @color1;
+  0 0.30px @color1,
+  0 0.30px @color1,
+  0 0.30px @color1;
 }
 
 #colorpicker > * {
@@ -65,9 +65,9 @@
 
 #colorpicker:hover > * {
   text-shadow:
-  0 0 5px @color4,
-  0 0 5px @color4,
-  0 0 5px @color4;
+  0 0.30px @color4,
+  0 0.30px @color4,
+  0 0.30px @color4;
 }
 
 #media-button > * {
@@ -76,9 +76,9 @@
 
 #media-button:hover > * {
   text-shadow:
-  0 0 5px @color5,
-  0 0 5px @color5,
-  0 0 5px @color5;
+  0 0.30px @color5,
+  0 0.30px @color5,
+  0 0.30px @color5;
 }
 
 #panels-event, #power-event {
@@ -144,7 +144,7 @@
 }
 
 #accept, #cancel {
-  color: alpha(@foreground, 0.5);
+  color: alpha(@foreground, 0.30);
   padding: 4px;
   margin: 4px;
   border-radius: 999px;
@@ -152,8 +152,8 @@
 
 #accept:hover, #cancel:hover {
   color: @foreground;
-  text-shadow:
-  0 0 5px @foreground,
-  0 0 5px @foreground,
-  0 0 5px @foreground;
+  /*text-shadow:*/
+  /*0 0 5px @foreground,*/
+  /*0 0 5px @foreground,*/
+  /*0 0 5px @foreground;*/
 }

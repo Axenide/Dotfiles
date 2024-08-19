@@ -1,7 +1,7 @@
 #calendar {
-  background-color: @background;
-  border-radius: 10px;
-  border: 2px solid mix(@foreground, @background, 0.9);
+  background-color: mix(black, @background, 0.30);
+  border-radius: 20px;
+  /*border: 2px solid mix(@foreground, @background, 0.9);*/
   padding: 8px;
 }
 
@@ -30,7 +30,7 @@
 }
 
 #chevron > * {
-  color: alpha(@foreground, 0.5);
+  color: alpha(@foreground, 0.30);
 }
 
 #chevron:hover > * {
@@ -47,5 +47,5 @@
 }
 
 #dimmed {
-  color: alpha(@foreground, 0.25);
+  color: alpha(@foreground, 0.30);
 }

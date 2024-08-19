@@ -1,9 +1,9 @@
 #search-entry {
   transition: all 0.1s ease;
   color: @foreground;
-  background-color: @background;
-  border: 2px solid mix(@foreground, @background, 0.9);
-  border-radius: 10px;
+  background-color: mix(black, @background, 0.30);
+  /*border: 2px solid mix(@foreground, @background, 0.9);*/
+  border-radius: 20px;
   padding: 9px;
 }
 
@@ -14,15 +14,15 @@
 
 #search-entry:focus {
   color: @foreground;
-  border: 2px solid @color1;
+  background-color: mix(@foreground, @background, 0.9);
 }
 
 #app-scroll {
   color: @foreground;
-  background-color: @background;
-  border: 2px solid mix(@foreground, @background, 0.9);
-  border-radius: 10px;
-  padding: 4px;
+  background-color: mix(black, @background, 0.30);
+  /*border: 2px solid mix(@foreground, @background, 0.9);*/
+  border-radius: 20px;
+  padding: 8px;
 }
 
 #app-button, #app-button-focus {

@@ -6,8 +6,8 @@
 }
 
 #system-tray {
-  background-color: @background;
-	border: 2px solid mix(@foreground, @background, 0.9);
+  background-color: mix(black, @background, 0.30);
+	/*border: 2px solid mix(@foreground, @background, 0.9);*/
   border-right: none;
 	border-radius: 20px 0 0 20px;
 	padding: 10px 0;
@@ -15,13 +15,13 @@
 }
 
 #ext {
-  background-color: @background;
-  border: 2px solid mix(@foreground, @background, 0.9);
-  border-radius: 10px;
+  background-color: mix(black, @background, 0.30);
+  /*border: 2px solid mix(@foreground, @background, 0.9);*/
+  border-radius: 20px;
 }
 
 #ext-label {
   color: @color8;
-  font-size: 10.5pt;
+  font-size: 10.30pt;
   font-weight: bold;
 }

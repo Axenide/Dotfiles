@@ -1,7 +1,7 @@
 #user {
-  background-color: @background;
-  border: 2px solid mix(@foreground, @background, 0.9);
-  border-radius: 10px;
+  background-color: mix(black, @background, 0.30);
+  /*border: 2px solid mix(@foreground, @background, 0.9);*/
+  border-radius: 20px;
   padding: 8px;
 }
 
@@ -10,7 +10,7 @@
   background-position: center;
   border-radius: 999px;
   /*border: 2px solid mix(@foreground, @background, 0.9);*/
-  box-shadow: 0 0 5px alpha(black, 0.8);
+  box-shadow: 0 0.30px alpha(black, 0.8);
   min-width: 48px;
   min-height: 48px;
 }
@@ -19,7 +19,7 @@
   color: @foreground;
   margin-left: 8px;
   font-weight: bold;
-  font-size: 10.5pt;
+  font-size: 10.30pt;
 }
 
 #host-label {
@@ -27,5 +27,5 @@
   margin-left: 8px;
   font-weight: bold;
   /* font-style: italic; */
-  font-size: 10.5pt;
+  font-size: 10.30pt;
 }

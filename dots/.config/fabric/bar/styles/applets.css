@@ -8,29 +8,29 @@
 #bluetooth-button,
 #night-button,
 #dnd-button {
-  background-color: @background;
+  background-color: @color1;
   transition: all 0.1s ease;
-	border: 2px solid mix(@foreground, @background, 0.9);
+	/*border: 2px solid mix(@foreground, @background, 0.9);*/
 	/* border-bottom: 3px solid @color2; */
-	border-radius: 10px;
+	border-radius: 20px;
 }
 
 #wifi-button-off,
 #bluetooth-button-off,
 #night-button-off,
 #dnd-button-off {
-  background-color: @background;
+  background-color: mix(black, @background, 0.30);
   transition: all 0.1s ease;
-	border: 2px solid mix(@foreground, @background, 0.9);
-	/* border-bottom: 3px solid alpha(@foreground, 0.25); */
-  border-radius: 10px;
+	/*border: 2px solid mix(@foreground, @background, 0.9);*/
+	/* border-bottom: 3px solid alpha(@foreground, 0.30); */
+  border-radius: 20px;
 }
 
 #wifi-button:hover,
 #bluetooth-button:hover,
 #night-button:hover,
 #dnd-button:hover {
-  background-color: mix(@foreground, @background, 0.9);
+  background-color: mix(@foreground, @color1, 0.9);
 }
 
 #wifi-button-off:hover,
@@ -47,14 +47,14 @@
   color: @foreground;
   font-size: 20px;
   font-weight: normal;
-  text-shadow: 0px 0px 5px alpha(@foreground, 1);
+  /*text-shadow: 0px 0px 5px alpha(@foreground, 1);*/
 }
 
 #wifi-button-off > *,
 #bluetooth-button-off > *,
 #night-button-off > *,
 #dnd-button-off > * {
-  color: alpha(@foreground, 0.25);
+  color: alpha(@foreground, 0.30);
   font-size: 20px;
   font-weight: normal;
 }

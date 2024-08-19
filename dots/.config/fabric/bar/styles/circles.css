@@ -1,32 +1,32 @@
 #cpu-circular-progress-bar {
-	color: mix(@foreground, @background, 0.9);
+	color: mix(@color5, @background, 0.9);
 	border: solid 4px @color5;
 }
 
 #memory-circular-progress-bar {
-	color: mix(@foreground, @background, 0.9);
+	color: mix(@color4, @background, 0.9);
 	border: solid 4px @color4;
 }
 
 #battery-circular-progress-bar {
-	color: mix(@foreground, @background, 0.9);
+	color: mix(@color2, @background, 0.9);
 	border: solid 4px @color2;
 }
 
 #disk-circular-progress-bar {
-  color: mix(@foreground, @background, 0.9);
+  color: mix(@color3, @background, 0.9);
   border: solid 4px @color3;
 }
 
 #temp-circular-progress-bar {
-  color: mix(@foreground, @background, 0.9);
+  color: mix(@color1, @background, 0.9);
   border: solid 4px @color1;
 }
 
 #circles-container {
-	background-color: @background;
-	border: 2px solid mix(@foreground, @background, 0.9);
-	border-radius: 10px;
+	background-color: mix(black, @background, 0.30);
+	/*border: 2px solid mix(@foreground, @background, 0.9);*/
+	border-radius: 20px;
 	margin-right: 0px;
 	margin-top: 0px;
 	padding: 8px;

@@ -1,6 +1,6 @@
 #wallpaper-button > * {
   transition: all 0.25s ease;
-  border-radius: 10px;
+  border-radius: 20px;
   min-height: 128px;
   /*margin-bottom: 4px;*/
 }
