@@ -227,7 +227,8 @@ class Wallpapers(Box):
     def highlight_selected(self):
         for index, button in enumerate(self.wallpaper_buttons.values()):
             if index == self.selected_index:
-                button.grab_focus()
+                # button.grab_focus()
+                pass
 
     def execute_command(self, command_type):
         if self.selected_index >= 0 and self.selected_index < len(self.wallpaper_buttons):
