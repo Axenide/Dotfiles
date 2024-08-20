@@ -45,6 +45,7 @@
 #night-button > *,
 #dnd-button > * {
   color: mix(black, @background, 0.30);
+  /*color: @foreground;*/
   font-size: 20px;
   font-weight: normal;
   /*text-shadow: 0px 0px 5px alpha(@foreground, 1);*/
