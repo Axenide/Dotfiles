@@ -9,12 +9,13 @@ source_device="$(pactl list sources | grep 'Name:' | grep "$(pactl info | grep '
 pactl unload-module module-null-sink
 pactl unload-module module-loopback
 pactl load-module module-null-sink sink_name=Combined
+pactl load-module module-null-sink sink_name=EmptySink
 pactl load-module module-loopback sink=Combined source=$source_device
 pactl load-module module-loopback sink=Combined source=$sink_device
 
 # options to be displayed
-fullscreen=""
-region="󰆞"
+record=""
+gtk="󱕷"
 goback="󱞴"
 
 # Set parameters, --mic and --desktop.
@@ -64,13 +65,13 @@ elif [ "$mic" = "true" ] && [ "$desktop" = "true" ]; then
     micon="󰍬"
     deskon="󰕾"
 else
-    device=none
+    device=EmptySink.monitor
     micon="󰍭"
     deskon="󰖁"
 fi
 
-# options to be displyed
-options="$fullscreen\n$region\n$micon\n$deskon\n$goback"
+# options to be displayed
+options="$record\n$gtk\n$micon\n$deskon\n$goback"
 
 # Función para mostrar la notificación con la cuenta regresiva
 show_notification() {
@@ -93,14 +94,11 @@ countdown() {
 
 selected="$(echo -e "$options" | rofi -dmenu -mesg "  Recording" -theme ${theme} -selected-row $row )"
 case $selected in
-$fullscreen)
-  countdown 3 "Fullscreen Recording"
-  wf-recorder -c libx264rgb --audio=$device -f "$XDG_PICTURES_DIR/Screenshots/$(date +%Y-%m-%d-%H-%M-%S).mp4"
+$record)
+  gpu-screen-recorder -w portal -f 60 -q ultra -ac opus -cr full -a "$device" -o "$XDG_PICTURES_DIR/Screenshots/$(date +%Y-%m-%d-%H-%M-%S).mp4"
 	;;
-$region)
-  area=$(slurp)
-  countdown 3 "Area Recording"
-  wf-recorder -g "$area" -c libx264rgb --audio=$device -f "$XDG_PICTURES_DIR/Screenshots/$(date +%Y-%m-%d-%H-%M-%S).mp4"
+$gtk)
+  gpu-screen-recorder-gtk
   ;;
 $micon)
   if [ "$mic" = "true" ]; then

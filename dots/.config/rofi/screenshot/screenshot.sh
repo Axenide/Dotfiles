@@ -4,8 +4,8 @@ source "$HOME/.cache/wal/slurp-args.sh"
 
 theme="$HOME/.config/rofi/screenshot/style.rasi"
 
-# If wf-recorder is not running, make the variable "option4" be "  Start Recording 󰹑", else "  Stop Recording 󰹑".
-if ! pgrep -x "wf-recorder" > /dev/null
+# If gpu-screen-recorder is not running, make the variable "option4" be "  Start Recording 󰹑", else "  Stop Recording 󰹑".
+if ! pgrep -x "gpu-screen-reco" > /dev/null
 then
   option3=""
 else
@@ -34,12 +34,12 @@ $option2)
 	grim -g "$(slurp)" - | tesseract -l spa - - | wl-copy
 	;;
 $option3)
-  # If wf-recorder is not running, start recording, else stop recording.
-  if ! pgrep -x "wf-recorder" > /dev/null
+  # If gpu-screen-recorder is not running, start recording, else stop recording.
+  if ! pgrep -x "gpu-screen-reco" > /dev/null
   then
     ~/.config/rofi/screenshot/record.sh
   else
-    pkill -x wf-recorder
+    killall -SIGINT gpu-screen-recorder
     notify-send "Recording stopped" "Video saved!" -e -i ~/.config/rofi/screenshot/disk.svg
   fi
   ;;

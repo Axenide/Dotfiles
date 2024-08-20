@@ -1,7 +1,4 @@
 adw-gtk3
-gnome-control-center
-gvfs-google
-gvfs-goa
 alsa-utils
 awesome-terminal-fonts
 aylurs-gtk-shell-git
@@ -18,8 +15,13 @@ fish
 fzf
 gnome-bluetooth-3.0
 gnome-calculator
+gnome-control-center
+gpu-screen-recorder-gtk-git
 grim
 grimblast-git
+gtk-engine-murrine
+gvfs-goa
+gvfs-google
 hyprland
 hyprpicker
 hyprshade
