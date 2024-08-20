@@ -18,3 +18,4 @@ dots/.config/yazi/theme.toml
 term/.config/yazi/theme.toml
 dots/.config/gtk-4.0/colors.css
 dots/.config/gtk-3.0/colors.css
+term/.config/nvim/pywal
