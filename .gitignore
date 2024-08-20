@@ -11,6 +11,7 @@ dots/.config/vesktop/themes/axwal.theme.css
 dots/.config/yazi/theme.toml
 dots/.config/swaylock/config
 dots/.config/zathura/zathurarc
+dots/.config/yazi/theme.toml
 **/*.uuid
 **/__pycache__
 **/venv
