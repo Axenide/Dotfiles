@@ -11,7 +11,10 @@ dots/.config/vesktop/themes/axwal.theme.css
 dots/.config/yazi/theme.toml
 dots/.config/swaylock/config
 dots/.config/zathura/zathurarc
-dots/.config/yazi/theme.toml
 **/*.uuid
 **/__pycache__
 **/venv
+dots/.config/yazi/theme.toml
+term/.config/yazi/theme.toml
+dots/.config/gtk-4.0/colors.css
+dots/.config/gtk-3.0/colors.css
