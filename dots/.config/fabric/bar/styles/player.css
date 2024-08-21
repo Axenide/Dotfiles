@@ -14,7 +14,8 @@
 }
 
 #player-box {
-  padding: 0 4px;
+  /*padding: 0 4px;*/
+  margin: 0 4px;
   /*margin-left: 4px;*/
   /*background-color: @background;*/
   /*border: 2px solid mix(@foreground, @background, 0.9);*/
