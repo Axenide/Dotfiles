@@ -64,8 +64,9 @@ class Player(Box):
             ]
         )
 
-        self.cover_text = Box(
-            name=f"cover-text",
+        self.cover = Box(
+            name=f"cover",
+            style=f"background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('{self.cover_file}');",
             h_expand=True,
             v_expand=True,
             v_align="fill",
@@ -74,19 +75,6 @@ class Player(Box):
                 self.artist,
                 self.title,
             ],
-        )
-
-        self.cover = Box(
-            name=f"cover",
-            style=f"background-image: url('{self.cover_file}');",
-            h_expand=True,
-            h_align="fill",
-            v_expand=True,
-            v_align="fill",
-            orientation="v",
-            children=[
-                self.cover_text,
-            ]
         )
 
         self.player_fabricator = Fabricator(stream=True, poll_from=r"""
@@ -99,7 +87,7 @@ class Player(Box):
             
             self.artist.set_label(artist or r"¯\_(ツ)_/¯")
             self.title.set_label(f"{icons.music} {title}" if title else "Nothing playing.")
-            self.cover.set_style(f"background-image: url('{cover or self.cover_file}');")
+            self.cover.set_style(f"background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('{self.cover_file}');")
             self.icon.set_markup(f"{icons.pause if playback == 'Playing' else icons.play if playback == 'Paused' else icons.stop}")
 
         self.player_fabricator.connect("changed", decode_player_data)

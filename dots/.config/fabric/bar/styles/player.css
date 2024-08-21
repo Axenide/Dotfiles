@@ -10,13 +10,7 @@
   background-size: cover;
   background-position: center;
   border-radius: 14px;
-}
-
-#cover-text {
-  background-color: alpha(@color0, 0.75);
-  border-radius: 14px;
   padding: 8px;
-  /*border: 2px solid mix(@foreground, @background, 0.9);*/
 }
 
 #player-box {
