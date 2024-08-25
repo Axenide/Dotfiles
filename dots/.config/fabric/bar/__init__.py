@@ -91,4 +91,5 @@ from modules.dashboard import Dashboard
 from modules.themes import Themes
 from modules.wallpapers import Wallpapers
 from modules.mainstack import MainStack
+# from modules.osd import OSD
 from modules.bar import Bar # Should always be the last module

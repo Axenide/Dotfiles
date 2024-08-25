@@ -15,6 +15,13 @@ windows = "&#xefe6;"
 colorpicker = "&#xebe6;"
 media = "&#xf00d;"
 
+# Circles
+temp = "&#xeb38;"
+disk = "&#xea88;"
+battery = "&#xea38;"
+memory = "&#xfa97;"
+cpu = "&#xef8e;"
+
 # AIchat
 reload = "&#xf3ae;"
 detach = "&#xea99;"

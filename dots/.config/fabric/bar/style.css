@@ -12,6 +12,7 @@
 @import "./styles/user.css";
 @import "./styles/wallpapers.css";
 @import "./styles/workspaces.css";
+@import "./styles/osd.css";
 @import "./styles/lock.css";
 
 * {
