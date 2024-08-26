@@ -8,87 +8,140 @@
 └─────────────────────────────────────────────────────────────────┘
 */
 
-/* Menu button */
-#PanelUI-button {
-  -moz-box-ordinal-group: 0 !important;
-  order: -2 !important;
-  margin: 0px !important;
-  /* display: none !important; */
-}
-
-/* Window control buttons (min, resize and close) */
-.titlebar-buttonbox-container {
-  /* display: none !important; */
-  margin-right: 12px !important;
-}
-
-/* Page back and foward buttons */
-#back-button,
-#forward-button
-{
-  display: none !important
-}
-
-/* Extensions button */
-#unified-extensions-button {
-  display: visible !important
-}
-
-/* Extension name inside URL bar */
-#identity-box.extensionPage #identity-icon-label {
-  visibility: collapse !important
-}
-
-/* All tabs (v-like) button */
-#alltabs-button {
-  display: none !important
-}
-
-/* URL bar icons */
-#identity-permission-box,
-#star-button-box,
-#identity-icon-box,
-#picture-in-picture-button,
+#alltabs-button,
+.titlebar-buttonbox-container,
+#page-action-buttons,
 #tracking-protection-icon-container,
-#reader-mode-button,
-#translations-button
-{
-  display: none !important
+#identity-box {
+	display: none;
 }
 
-/* "This time search with:..." */
-#urlbar .search-one-offs {
-  display: none !important
+#titlebar {
+	z-index: 2;
 }
 
-#urlbar {
-  text-align: center !important;
+@media (-moz-bool-pref: "animatedFox.squareCorners") {
+	:root * {
+		border-radius: 0px !important;
+	}
 }
 
-/* --- ~END~ element visibility section --- */
+@media (-moz-bool-pref: "animatedFox.hideSingleTab") {
+	.tabbrowser-tab:only-of-type {
+		height: 0px !important;
 
-/* Navbar size calc */
-:root{
---tab-border-radius: 10px !important; /*  Tab border radius -- Changes the tabs rounding  *//*  Default: 6px  */
---NavbarWidth: 43; /*  Default values: 36 - 43  */
---TabsHeight: 36; /*  Minimum: 30  *//*  Default: 36  */
---TabsBorder: 8; /*  Doesnt do anything on small layout  *//*  Default: 8  */
---NavbarHeightSmall: calc(var(--TabsHeight) + var(--TabsBorder))  /*  Only on small layout  *//*  Default: calc(var(--TabsHeight) + var(--TabsBorder))  *//*  Default as a number: 44  */}
+		#titlebar:has(&):after {
+			content: '';
+			position: fixed !important;
+			right: 0;
+			left: 0;
+			top: 0;
+			height: 1rem;
+		}
 
-@media screen and (min-width:1325px)    /*  Only the tabs space will grow from here  */
-{:root #nav-bar{margin-top: calc(var(--TabsHeight) * -1px - var(--TabsBorder) * 1px)!important; height: calc(var(--TabsHeight) * 1px + var(--TabsBorder) * 1px)} #TabsToolbar{margin-left: calc(1325px / 100 * var(--NavbarWidth)) !important} #nav-bar{margin-right: calc(100vw - calc(1325px / 100 * var(--NavbarWidth))) !important; vertical-align: center !important} #urlbar-container{min-width: 0px !important;  flex: auto !important} toolbarspring{display: none !important}}
+		:has(&) #navigator-toolbox:is(:hover, :focus-within, :has([open])) #nav-bar {
+			top: 1rem !important;
+		}
+	}
 
-@media screen and (min-width:950px) and (max-width:1324px)    /*  Both the tabs space and the navbar will grow  */
-{:root #nav-bar{margin-top: calc(var(--TabsHeight) * -1px - var(--TabsBorder) * 1px) !important; height: calc(var(--TabsHeight) * 1px + var(--TabsBorder) * 1px)} #TabsToolbar{margin-left: calc(var(--NavbarWidth) * 1vw) !important} #nav-bar{margin-right: calc(100vw - calc(var(--NavbarWidth) * 1vw)) !important; vertical-align: center !important} #urlbar-container{min-width: 0px !important;  flex: auto !important} toolbarspring{display: none !important} #TabsToolbar, #nav-bar{transition: margin-top .25s !important}}
+	:has(.tabbrowser-tab:only-of-type) #nav-bar {
+		top: -3rem !important;
+	}
+}
 
-@media screen and (max-width:949px)    /*  The window is not enough wide for a one line layout  */
-{:root #nav-bar{padding: 0 5px 0 5px!important; height: calc(var(--NavbarHeightSmall) * 1px) !important} toolbarspring{display: none !important;} #TabsToolbar, #nav-bar{transition: margin-top .25s !important}}
-#nav-bar, #PersonalToolbar{background-color: #0000 !important;background-image: none !important; box-shadow: none !important} #nav-bar{margin-left: 3px;} .tab-background, .tab-stack { min-height: calc(var(--TabsHeight) * 1px) !important}
+@media (-moz-bool-pref: "animatedFox.showTabCloseButton") {
+	#tabbrowser-tabs .tabbrowser-tab:not([pinned], [selected]):hover .tab-close-button {
+		display: flex !important;
+	}
+}
 
-/*  Removes urlbar border/background  */
-#urlbar-background {
+#nav-bar {
+	position: fixed !important;
+	top: 0;
+	left: 25%;
+	right: 25%;
+
+	@media (max-width: 1100px) {
+		left: 15%;
+		right: 15%;
+	}
+
+	@media (max-width: 800px) {
+		left: 30px;
+		right: 30px;
+	}
+
+	z-index: 1;
+	transition: top 0.3s cubic-bezier(0.270, 0.910, 0.435, 1),
+	opacity 0.1s ease !important;
+	border-top: none !important;
+	border-radius: 20px;
+	border: 2px solid var(--tab-selected-bgcolor) !important;
+	background: var(--lwt-accent-color) !important;
+	opacity: 0;
+	overflow: visible !important;
+	
+	&::after {
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 1rem;
+		top: -1rem;
+	}
+}
+
+#navigator-toolbox {
+	border-bottom: none !important;
+}
+
+#tabs-newtab-button {
+	opacity: 0;
+	transition: 0.2s opacity ease;
+}
+
+#navigator-toolbox:not(:hover, :focus-within) #nav-bar {
+	transition-delay: 0.2s !important;
+		box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5) !important;
+}
+
+#navigator-toolbox:is(:hover, :focus-within) {
+	#nav-bar {
+		top: 3.5rem;
+		opacity: 1;
+		box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5) !important;
+	}
+
+	#tabs-newtab-button {
+		opacity: 1;
+	}
+}
+
+:where(.tab-background) {
+	box-shadow: none !important;
+	border-radius: 10px !important;
+}
+
+.tab-close-button {
+	display: none;
+}
+
+.tabbrowser-tab {
+	transition: min-width 0.3s cubic-bezier(0.270, 0.910, 0.435, 1), max-width 0.3s cubic-bezier(0.270, 0.910, 0.435, 1), height 0.1s ease !important;
+	height: 100%;
+
+	&[fadein]:not([pinned]) {
+		max-width: 175px !important;
+	}
+
+	&[selected]:not([pinned]) {
+		min-width: 250px !important;
+		max-width: 250px !important;
+	}
+}
+
+:where(#urlbar-background) {
+	border-radius: 20px !important;
   border: 2px solid color-mix(in srgb, var(--lwt-text-color), transparent 90%) !important;
-  border-radius: 16px !important;
   outline: none !important;
   transition: .15s !important;
 }
@@ -99,101 +152,153 @@
     background: color-mix(in srgb, var(--lwt-text-color), transparent 100%) !important;
 }
 
-/*  Removes annoying border  */
-#navigator-toolbox {
-    border: none !important
+.urlbarView-url {
+	color: var(--toolbar-color) !important;
 }
 
-/* Fades window while not in focus */
-#navigator-toolbox-background:-moz-window-inactive {
-  filter: contrast(90%)
-}
-
-/* Remove fullscreen warning border */
-#fullscreen-warning {
-  border: none !important;
-  background: -moz-Dialog !important;
-}
-
-/*  Tabs close button  */
-.tabbrowser-tab:not(:hover) .tab-close-button {
-    opacity: 0% !important;
-    transition: 0.3s !important;
-    display: -moz-box !important;
-}
-.tab-close-button[selected]:not(:hover) {
-    opacity: 45% !important;
-    transition: 0.3s !important;
-    display: -moz-box !important;
-}
-.tabbrowser-tab:hover .tab-close-button {
-    opacity: 50%;
-    transition: 0.3s !important;
-    background: none !important;
-    cursor: pointer;
-    display: -moz-box !important;
-}
-.tab-close-button:hover {
-    opacity: 100% !important;
-    transition: 0.3s !important;
-    background: none !important;
-    cursor: pointer;
-    display: -moz-box !important;
-}
-.tab-close-button[selected]:hover {
-    opacity: 100% !important;
-    transition: 0.3s !important;
-    background: none !important;
-    cursor: pointer;
-    display: -moz-box !important;
-}
-
-@media not all and (display-mode: fullscreen) {
-  #tabbrowser-tabbox {
-    position: relative;
-    overflow: hidden;
-    margin-top: -4px;
-  }
-
-  /* inner rounded corners */
-  #tabbrowser-tabbox::after {
-    content: "";
-    inset: -4px;
-    position: absolute;
-    border: 10px solid var(--toolbar-bgcolor);
-    border-radius: 30px 30px 15px 15px;
-    z-index: 1;
-    pointer-events: none;
-  }
-
-  /* outer border */
-  #tabbrowser-tabbox::before {
-    content: "";
-    inset: -2px;
-    position: absolute;
-    border: 8px solid var(--toolbar-bgcolor);
-    z-index: 1;
-    pointer-events: none;
-  }
-  
-  #browser hbox browser {
-    margin: 6px !important;
-  }
+#tabbrowser-arrowscrollbox {
+	min-width: 100vw !important;
 }
 
 
-/*
- #navigator-toolbox:hover #PersonalToolbar{
-max-height: 50px !important;
+@media (-moz-bool-pref: "animatedFox.centeredTabs") {
+	#tabbrowser-arrowscrollbox:not([overflowing]) {
+		--uc-flex-justify: center;
+	}
+
+	scrollbox[orient="horizontal"] {
+		justify-content: var(--uc-flex-justify, initial);
+	}
 }
 
-#navigator-toolbox #PersonalToolbar{
-min-height: 0 !important;
-max-height: 0 !important;
-overflow: hidden !important;
-transition: all .2s ease-in-out;
-} 
-*/
+@media (-moz-bool-pref: "animatedFox.centeredUrl") {
+	#nav-bar {
+		text-align: center;
+		padding: 0px !important;
+	}
+}
+
+@media (-moz-bool-pref: "animatedFox.roundedCorners") {
+
+	:root[sizemode="fullscreen"] #navigator-toolbox[style*="margin-top"]+#browser,
+	:root[sizemode="fullscreen"] #browser {
+		--uc-rc-padding: 0;
+		--uc-rc-radius: 0;
+	}
+
+	#main-window[BookmarksToolbarOverlapsBrowser] .newTabBrowserPanel,
+	#main-window[BookmarksToolbarOverlapsBrowser] #sidebar-box {
+		padding-top: 0 !important;
+	}
+
+	#main-window[BookmarksToolbarOverlapsBrowser] #browser {
+		margin-top: var(--bookmarks-toolbar-overlapping-browser-height);
+	}
+
+	#navigator-toolbox {
+		border-bottom: none !important;
+	}
+
+	#main-window:not([chromehidden~="toolbar"]) {
+		--uc-rc-padding: 5px;
+		--uc-rc-radius: 20px 20px 6px 6px;
+
+		--uc-browser-frame-bgcolor: var(--lwt-accent-color);
+
+		#appcontent .browserStack {
+			margin-inline: var(--uc-rc-padding) !important;
+			margin-bottom: var(--uc-rc-padding) !important;
+			border-radius: var(--uc-rc-radius) !important;
+			background-color: var(--lwt-accent-color) !important;
+			position: relative !important;
+
+			&::after {
+				content: "";
+				position: absolute;
+				inset: 0;
+				border-radius: inherit;
+				box-shadow: 0 0 0 16px var(--lwt-accent-color) !important;
+				border: 0px solid var(--tab-selected-bgcolor) !important;
+				clip-path: inset(0);
+				pointer-events: none;
+			}
+		}
+
+		#statuspanel {
+			overflow: hidden;
+		}
+
+		.devtools-toolbox-side-iframe {
+			margin-block-end: var(--uc-rc-padding) !important;
+			border-radius: var(--uc-rc-radius) !important;
+			overflow: hidden !important;
+			box-shadow: var(--lwt-accent-color) !important;
+
+			&:first-child {
+				margin-inline-start: var(--uc-rc-padding) !important;
+			}
+
+			&:last-child {
+				margin-inline-end: var(--uc-rc-padding) !important;
+			}
+		}
+
+		.devtools-toolbox-bottom-iframe {
+			margin-inline: var(--uc-rc-padding) !important;
+			margin-block-start: 0 !important;
+			border-radius: var(--uc-rc-radius) !important;
+			overflow: hidden !important;
+			box-shadow: var(--lwt-accent-color) !important;
+		}
+
+		.devtools-side-splitter,
+		.devtools-horizontal-splitter {
+			background-color: var(--lwt-accent-color) !important;
+		}
+
+		.browserContainer.responsive-mode {
+			background-color: var(--lwt-accent-color) !important;
+
+			& .rdm-toolbar {
+				margin-inline: var(--uc-rc-padding) !important;
+				border-top-left-radius: var(--uc-rc-radius) !important;
+				border-top-right-radius: var(--uc-rc-radius) !important;
+				width: calc(100% - var(--uc-rc-padding) * 2) !important;
+			}
+		}
+
+		:not(:root[inFullscreen] #navigator-toolbox[style*="margin-top"])+#browser #sidebar-splitter {
+			border-inline-width: 0 !important;
+		}
+
+		#browser {
+			background-color: var(--lwt-accent-color);
+		}
+
+		#tabbrowser-tabpanels {
+			background-color: var(--lwt-accent-color) !important;
+		}
+	}
+
+	#sidebar-box {
+		margin-inline: var(--uc-rc-padding) !important;
+		margin-bottom: var(--uc-rc-padding) !important;
+		border-radius: var(--uc-rc-radius) !important;
+		background-color: var(--lwt-accent-color) !important;
+		position: relative !important;
+
+		&::after {
+			content: "";
+			position: absolute;
+			inset: 0;
+			border-radius: inherit;
+			box-shadow: 0 0 0 16px var(--lwt-accent-color) !important;
+			border: 1px solid var(--tab-selected-bgcolor) !important;
+			clip-path: inset(0);
+			pointer-events: none;
+		}
+	}
+}
 
 #PlacesToolbarItems {
   display: flex;
@@ -228,4 +333,8 @@ transition: all .2s ease-in-out;
       }
     }
   }
+}
+
+#urlbar .search-one-offs {
+  display: none !important
 }
