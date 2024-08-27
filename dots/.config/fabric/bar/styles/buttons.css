@@ -4,7 +4,7 @@
 	background-color: mix(black, @background, 0.30);
 	/*border: 2px solid mix(@foreground, @background, 0.9);*/
   border-right: none;
-	border-radius: 20px 0 0 20px;
+	border-radius: 20px;
 	padding: 10px 0;
 }
 
@@ -16,7 +16,8 @@
 #colorpicker {
 	transition: all 0.1s ease;
 	background-color: mix(black, @background, 0.30);
-	border-radius: 16px 0 0 16px;
+	border-radius: 20px;
+  padding: 2px 0;
 	/*border: 2px solid mix(@foreground, @background, 0.9);*/
   border-right: none;
 }
@@ -51,48 +52,26 @@
   padding: 6px 9px;
 }
 
-#colorpicker:hover > *,
-#common-button:hover > *, #common-button:focus > * {
-  text-shadow:
-  0 0.30px @color1,
-  0 0.30px @color1,
-  0 0.30px @color1;
-}
-
 #colorpicker > * {
   color: @color4;
-}
-
-#colorpicker:hover > * {
-  text-shadow:
-  0 0.30px @color4,
-  0 0.30px @color4,
-  0 0.30px @color4;
 }
 
 #media-button > * {
   color: @color5;
 }
 
-#media-button:hover > * {
-  text-shadow:
-  0 0.30px @color5,
-  0 0.30px @color5,
-  0 0.30px @color5;
-}
-
 #panels-event, #power-event {
 	transition: all 0.1s ease;
-	background-color: @color1;
-	border: 2px solid alpha(@color1, 1);
+	background-color: mix(black, @background, 0.30);
+	border: 0px solid alpha(@color1, 1);
 }
 
 #panels-event {
-	border-radius: 0 0 0 20px;
+	border-radius: 0 0 20px 20px;
 }
 
 #power-event {
-	border-radius: 20px 0 0 0;
+	border-radius: 20px 20px 0 0;
 }
 
 #power-shutdown > *,
@@ -101,12 +80,11 @@
 #power-suspend > *,
 #power-lock > *,
 #common-button-1 > * {
-  color: @background;
+  color: @color1;
   font-size: 20px;
   font-weight: normal;
-  padding: 5px 4px;
+  padding: 4px;
   margin: 4px;
-  margin-right: 2px;
   border-radius: 999px;
 }
 
@@ -139,13 +117,13 @@
 
 #confirm-box {
   background-color: @background;
-  margin: 4px 2px 4px 4px;
+  margin: 4px;
   border-radius: 999px;
 }
 
 #accept, #cancel {
   color: alpha(@foreground, 0.30);
-  padding: 4px;
+  padding: 2px;
   margin: 4px;
   border-radius: 999px;
 }

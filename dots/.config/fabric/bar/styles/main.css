@@ -9,7 +9,7 @@
   background-color: mix(black, @background, 0.30);
 	/*border: 2px solid mix(@foreground, @background, 0.9);*/
   border-right: none;
-	border-radius: 20px 0 0 20px;
+	border-radius: 20px;
 	padding: 10px 0;
   padding-right: 2px;
 }

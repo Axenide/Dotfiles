@@ -28,8 +28,8 @@
 
 @media (-moz-bool-pref: "animatedFox.hideSingleTab") {
 	.tabbrowser-tab:only-of-type {
-		height: 0px !important;
-
+		height: 5px !important;
+		
 		#titlebar:has(&):after {
 			content: '';
 			position: fixed !important;
@@ -52,6 +52,7 @@
 @media (-moz-bool-pref: "animatedFox.showTabCloseButton") {
 	#tabbrowser-tabs .tabbrowser-tab:not([pinned], [selected]):hover .tab-close-button {
 		display: flex !important;
+		border-radius: 999px !important;
 	}
 }
 
@@ -77,7 +78,7 @@
 	border-top: none !important;
 	border-radius: 20px;
 	border: 2px solid var(--tab-selected-bgcolor) !important;
-	background: var(--lwt-accent-color) !important;
+	background: color-mix(in srgb, var(--toolbar-bgcolor), black 75%) !important;
 	opacity: 0;
 	overflow: visible !important;
 	
@@ -141,7 +142,8 @@
 
 :where(#urlbar-background) {
 	border-radius: 20px !important;
-  border: 2px solid color-mix(in srgb, var(--lwt-text-color), transparent 90%) !important;
+	border: none !important;
+	background: color-mix(in srgb, var(--toolbar-bgcolor), black 0%) !important;
   outline: none !important;
   transition: .15s !important;
 }
@@ -149,7 +151,7 @@
 /*  Removes the background from the urlbar while not in use  */
 #urlbar:not(:hover):not([breakout][breakout-extend]) > #urlbar-background {
     box-shadow: none !important;
-    background: color-mix(in srgb, var(--lwt-text-color), transparent 100%) !important;
+  	background: color-mix(in srgb, var(--toolbar-bgcolor), black 0%) !important;
 }
 
 .urlbarView-url {
@@ -202,14 +204,18 @@
 	#main-window:not([chromehidden~="toolbar"]) {
 		--uc-rc-padding: 5px;
 		--uc-rc-radius: 20px 20px 6px 6px;
+		
+		:has(.tabbrowser-tab:only-of-type) {
+			--uc-rc-radius: 6px;
+		}
 
-		--uc-browser-frame-bgcolor: var(--lwt-accent-color);
+		--uc-browser-frame-bgcolor: color-mix(in srgb, var(--toolbar-bgcolor), black 75%) !important;
 
 		#appcontent .browserStack {
 			margin-inline: var(--uc-rc-padding) !important;
 			margin-bottom: var(--uc-rc-padding) !important;
 			border-radius: var(--uc-rc-radius) !important;
-			background-color: var(--lwt-accent-color) !important;
+			background-color: color-mix(in srgb, var(--toolbar-bgcolor), black 75%) !important;
 			position: relative !important;
 
 			&::after {
@@ -217,7 +223,7 @@
 				position: absolute;
 				inset: 0;
 				border-radius: inherit;
-				box-shadow: 0 0 0 16px var(--lwt-accent-color) !important;
+				box-shadow: 0 0 0 16px color-mix(in srgb, var(--toolbar-bgcolor), black 75%) !important; !important;
 				border: 0px solid var(--tab-selected-bgcolor) !important;
 				clip-path: inset(0);
 				pointer-events: none;
@@ -232,7 +238,7 @@
 			margin-block-end: var(--uc-rc-padding) !important;
 			border-radius: var(--uc-rc-radius) !important;
 			overflow: hidden !important;
-			box-shadow: var(--lwt-accent-color) !important;
+			box-shadow: color-mix(in srgb, var(--toolbar-bgcolor), black 75%) !important;
 
 			&:first-child {
 				margin-inline-start: var(--uc-rc-padding) !important;
@@ -248,16 +254,16 @@
 			margin-block-start: 0 !important;
 			border-radius: var(--uc-rc-radius) !important;
 			overflow: hidden !important;
-			box-shadow: var(--lwt-accent-color) !important;
+			box-shadow: color-mix(in srgb, var(--toolbar-bgcolor), black 75%) !important;
 		}
 
 		.devtools-side-splitter,
 		.devtools-horizontal-splitter {
-			background-color: var(--lwt-accent-color) !important;
+			background-color: color-mix(in srgb, var(--toolbar-bgcolor), black 75%) !important;
 		}
 
 		.browserContainer.responsive-mode {
-			background-color: var(--lwt-accent-color) !important;
+			background-color: color-mix(in srgb, var(--toolbar-bgcolor), black 75%) !important;
 
 			& .rdm-toolbar {
 				margin-inline: var(--uc-rc-padding) !important;
@@ -272,11 +278,11 @@
 		}
 
 		#browser {
-			background-color: var(--lwt-accent-color);
+			background-color: color-mix(in srgb, var(--toolbar-bgcolor), black 75%) !important;
 		}
 
 		#tabbrowser-tabpanels {
-			background-color: var(--lwt-accent-color) !important;
+			background-color: color-mix(in srgb, var(--toolbar-bgcolor), black 75%) !important;
 		}
 	}
 
@@ -284,7 +290,7 @@
 		margin-inline: var(--uc-rc-padding) !important;
 		margin-bottom: var(--uc-rc-padding) !important;
 		border-radius: var(--uc-rc-radius) !important;
-		background-color: var(--lwt-accent-color) !important;
+		background-color: color-mix(in srgb, var(--toolbar-bgcolor), black 75%) !important;
 		position: relative !important;
 
 		&::after {
@@ -292,7 +298,7 @@
 			position: absolute;
 			inset: 0;
 			border-radius: inherit;
-			box-shadow: 0 0 0 16px var(--lwt-accent-color) !important;
+			box-shadow: 0 0 0 16px color-mix(in srgb, var(--toolbar-bgcolor), black 75%) !important;
 			border: 1px solid var(--tab-selected-bgcolor) !important;
 			clip-path: inset(0);
 			pointer-events: none;
@@ -337,4 +343,54 @@
 
 #urlbar .search-one-offs {
   display: none !important
+}
+
+scrollbox {
+	background: color-mix(in srgb, var(--toolbar-bgcolor), black 75%) !important;
+}
+
+.bookmark-item[container="true"] [label="Media"] {
+	list-style-image: url("data:image/svg+xml;base64,PHN2ZyAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiAgd2lkdGg9IjI0IiAgaGVpZ2h0PSIyNCIgIHZpZXdCb3g9IjAgMCAyNCAyNCIgIGZpbGw9Im5vbmUiICBzdHJva2U9IiNmZmZmZmYiICBzdHJva2Utd2lkdGg9IjIiICBzdHJva2UtbGluZWNhcD0icm91bmQiICBzdHJva2UtbGluZWpvaW49InJvdW5kIiAgY2xhc3M9Imljb24gaWNvbi10YWJsZXIgaWNvbnMtdGFibGVyLW91dGxpbmUgaWNvbi10YWJsZXItbW92aWUiPjxwYXRoIHN0cm9rZT0ibm9uZSIgZD0iTTAgMGgyNHYyNEgweiIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik00IDRtMCAyYTIgMiAwIDAgMSAyIC0yaDEyYTIgMiAwIDAgMSAyIDJ2MTJhMiAyIDAgMCAxIC0yIDJoLTEyYTIgMiAwIDAgMSAtMiAtMnoiIC8+PHBhdGggZD0iTTggNGwwIDE2IiAvPjxwYXRoIGQ9Ik0xNiA0bDAgMTYiIC8+PHBhdGggZD0iTTQgOGw0IDAiIC8+PHBhdGggZD0iTTQgMTZsNCAwIiAvPjxwYXRoIGQ9Ik00IDEybDE2IDAiIC8+PHBhdGggZD0iTTE2IDhsNCAwIiAvPjxwYXRoIGQ9Ik0xNiAxNmw0IDAiIC8+PC9zdmc+") !important;
+}
+
+.bookmark-item[container="true"] [label="Design"] {
+	list-style-image: url("data:image/svg+xml;base64,PHN2ZyAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiAgd2lkdGg9IjI0IiAgaGVpZ2h0PSIyNCIgIHZpZXdCb3g9IjAgMCAyNCAyNCIgIGZpbGw9Im5vbmUiICBzdHJva2U9IiNmZmZmZmYiICBzdHJva2Utd2lkdGg9IjIiICBzdHJva2UtbGluZWNhcD0icm91bmQiICBzdHJva2UtbGluZWpvaW49InJvdW5kIiAgY2xhc3M9Imljb24gaWNvbi10YWJsZXIgaWNvbnMtdGFibGVyLW91dGxpbmUgaWNvbi10YWJsZXItcGFsZXR0ZSI+PHBhdGggc3Ryb2tlPSJub25lIiBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTEyIDIxYTkgOSAwIDAgMSAwIC0xOGM0Ljk3IDAgOSAzLjU4MiA5IDhjMCAxLjA2IC0uNDc0IDIuMDc4IC0xLjMxOCAyLjgyOGMtLjg0NCAuNzUgLTEuOTg5IDEuMTcyIC0zLjE4MiAxLjE3MmgtMi41YTIgMiAwIDAgMCAtMSAzLjc1YTEuMyAxLjMgMCAwIDEgLTEgMi4yNSIgLz48cGF0aCBkPSJNOC41IDEwLjVtLTEgMGExIDEgMCAxIDAgMiAwYTEgMSAwIDEgMCAtMiAwIiAvPjxwYXRoIGQ9Ik0xMi41IDcuNW0tMSAwYTEgMSAwIDEgMCAyIDBhMSAxIDAgMSAwIC0yIDAiIC8+PHBhdGggZD0iTTE2LjUgMTAuNW0tMSAwYTEgMSAwIDEgMCAyIDBhMSAxIDAgMSAwIC0yIDAiIC8+PC9zdmc+") !important;
+}
+
+.bookmark-item[container="true"] [label="Dev"] {
+	list-style-image: url("data:image/svg+xml;base64,PHN2ZyAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiAgd2lkdGg9IjI0IiAgaGVpZ2h0PSIyNCIgIHZpZXdCb3g9IjAgMCAyNCAyNCIgIGZpbGw9Im5vbmUiICBzdHJva2U9IiNmZmZmZmYiICBzdHJva2Utd2lkdGg9IjIiICBzdHJva2UtbGluZWNhcD0icm91bmQiICBzdHJva2UtbGluZWpvaW49InJvdW5kIiAgY2xhc3M9Imljb24gaWNvbi10YWJsZXIgaWNvbnMtdGFibGVyLW91dGxpbmUgaWNvbi10YWJsZXItY29kZSI+PHBhdGggc3Ryb2tlPSJub25lIiBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTcgOGwtNCA0bDQgNCIgLz48cGF0aCBkPSJNMTcgOGw0IDRsLTQgNCIgLz48cGF0aCBkPSJNMTQgNGwtNCAxNiIgLz48L3N2Zz4=") !important;
+}
+
+.bookmark-item[container="true"] [label="Study"] {
+	list-style-image: url("data:image/svg+xml;base64,PHN2ZyAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiAgd2lkdGg9IjI0IiAgaGVpZ2h0PSIyNCIgIHZpZXdCb3g9IjAgMCAyNCAyNCIgIGZpbGw9Im5vbmUiICBzdHJva2U9IiNmZmZmZmYiICBzdHJva2Utd2lkdGg9IjIiICBzdHJva2UtbGluZWNhcD0icm91bmQiICBzdHJva2UtbGluZWpvaW49InJvdW5kIiAgY2xhc3M9Imljb24gaWNvbi10YWJsZXIgaWNvbnMtdGFibGVyLW91dGxpbmUgaWNvbi10YWJsZXItc2Nob29sIj48cGF0aCBzdHJva2U9Im5vbmUiIGQ9Ik0wIDBoMjR2MjRIMHoiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNMjIgOWwtMTAgLTRsLTEwIDRsMTAgNGwxMCAtNHY2IiAvPjxwYXRoIGQ9Ik02IDEwLjZ2NS40YTYgMyAwIDAgMCAxMiAwdi01LjQiIC8+PC9zdmc+") !important;
+}
+
+.bookmark-item[container="true"] [label="Myself"] {
+	list-style-image: url("data:image/svg+xml;base64,PHN2ZyAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiAgd2lkdGg9IjI0IiAgaGVpZ2h0PSIyNCIgIHZpZXdCb3g9IjAgMCAyNCAyNCIgIGZpbGw9Im5vbmUiICBzdHJva2U9IiNmZmZmZmYiICBzdHJva2Utd2lkdGg9IjIiICBzdHJva2UtbGluZWNhcD0icm91bmQiICBzdHJva2UtbGluZWpvaW49InJvdW5kIiAgY2xhc3M9Imljb24gaWNvbi10YWJsZXIgaWNvbnMtdGFibGVyLW91dGxpbmUgaWNvbi10YWJsZXItbWV0ZW9yIj48cGF0aCBzdHJva2U9Im5vbmUiIGQ9Ik0wIDBoMjR2MjRIMHoiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNMjEgM2wtNSA5aDVsLTYuODkxIDcuMDg2YTYuNSA2LjUgMCAxIDEgLTguODU1IC05LjUwNmw3Ljc0NiAtNi41OGwtMSA1bDkgLTV6IiAvPjxwYXRoIGQ9Ik05LjUgMTQuNW0tMi41IDBhMi41IDIuNSAwIDEgMCA1IDBhMi41IDIuNSAwIDEgMCAtNSAwIiAvPjwvc3ZnPg==") !important;
+}
+
+#PersonalToolbar {
+    visibility: visible !important;
+    opacity: 0.01;
+    -moz-transition: visibility 0.5s, opacity 0.5s ease !important;
+    position: fixed !important;
+    bottom: 1rem;
+    display: flex;
+    border-radius: 20px;
+    padding: 0px !important;
+    width: 25rem;
+    z-index: 1;
+	  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5) !important;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+#navigator-toolbox #PersonalToolbar {
+    visibility: visible !important;
+    opacity: 1;   
+}
+
+.bookmark-item label {
+	visibility: visible !important;
 }

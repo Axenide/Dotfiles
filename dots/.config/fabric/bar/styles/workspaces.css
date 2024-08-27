@@ -1,9 +1,9 @@
 #workspaces {
-	border-radius: 20px 0 0 20px;
-	padding: 13px;
+	border-radius: 20px;
+	padding: 14px;
 	/*border: 2px solid mix(@foreground, @background, 0.9);*/
   border-right: none;
-  padding-right: 15px;
+  /*padding-right: 14px;*/
 	background-color: mix(black, @background, 0.30);
 }
 
