@@ -62,8 +62,8 @@ class Applets(Box):
         self.states["night"] = enabled
 
     def update_dnd_state(self, enabled):
-        self.icons["dnd"].set_markup(f"{icons.dnd if enabled else icons.dnd_off}")
-        self.buttons["dnd"].set_name('dnd-button' if enabled else 'dnd-button-off')
+        self.icons["dnd"].set_markup(f"{icons.dnd_off if enabled else icons.dnd}")
+        self.buttons["dnd"].set_name('dnd-button-off' if enabled else 'dnd-button')
         self.states["dnd"] = enabled
 
     def on_button_press(self, button: Button, event):

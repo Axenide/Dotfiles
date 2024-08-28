@@ -29,6 +29,7 @@
 @media (-moz-bool-pref: "animatedFox.hideSingleTab") {
 	.tabbrowser-tab:only-of-type {
 		height: 5px !important;
+		opacity: 0 !important;
 		
 		#titlebar:has(&):after {
 			content: '';
