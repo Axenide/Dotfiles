@@ -23,3 +23,5 @@ set -xg XDG_DOCUMENTS_DIR (xdg-user-dir DOCUMENTS)
 set -xg XDG_MUSIC_DIR (xdg-user-dir MUSIC)
 set -xg XDG_PICTURES_DIR (xdg-user-dir PICTURES)
 set -xg XDG_VIDEOS_DIR (xdg-user-dir VIDEOS)
+
+source ~/.config/fish/api.fish

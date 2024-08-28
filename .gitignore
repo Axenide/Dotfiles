@@ -21,3 +21,4 @@ dots/.config/gtk-3.0/colors.css
 term/.config/nvim/pywal
 dots/.config/kitty/mat.conf
 dots/.config/fabric/bar_test
+term/.config/fish/api.fish
