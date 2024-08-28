@@ -25,13 +25,13 @@
   padding: 8px;
 }
 
-#app-button, #app-button-focus {
+#app-button, #app-button-focus, #calc-button, #calc-button-focus {
   transition: margin 0.1s ease;
   color: @foreground;
   padding: 10px;
 }
 
-#app-button:focus, #app-button:hover {
+#app-button:focus, #app-button:hover, #calc-button:focus, #calc-button:hover {
   color: @color1;
   margin-left: 10px;
 }

@@ -10,8 +10,7 @@
 	/*border: 2px solid mix(@foreground, @background, 0.9);*/
   border-right: none;
 	border-radius: 20px;
-	padding: 10px 0;
-  padding-right: 2px;
+	padding: 8px 0;
 }
 
 #ext {
