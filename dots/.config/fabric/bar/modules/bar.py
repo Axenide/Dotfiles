@@ -94,19 +94,21 @@ class Bar(Window):
         self.stack.chat.buttons.parent = self
 
         self.stack.apps.parent = self
+
+        self.content_box_child = Box(
+            name="content-box",
+            spacing=4,
+            orientation="v",
+            h_expand=True,
+            v_expand=True,
+            children=[
+                self.user,
+                self.stack,
+            ]
+        )
         
         self.content_box.add(
-            Box(
-                name="content-box",
-                spacing=4,
-                orientation="v",
-                h_expand=True,
-                v_expand=True,
-                children=[
-                    self.user,
-                    self.stack,
-                ]
-            )
+            self.content_box_child
         )
 
         self.corners = CenterBox(
@@ -162,11 +164,16 @@ class Bar(Window):
                 self.stack.apps.app_entry.grab_focus()
             if command == "wallpapers":
                 self.stack.wallpapers.wallpaper_entry.grab_focus()
+            if command == "chat":
+                self.content_box_child.set_style("min-width: 450px;")
+            else:
+                self.content_box_child.set_style("min-width: 300px;")
         elif command == "update-style":
             set_stylesheet_from_file(get_relative_path("../style.css"))
 
         if not self.content_box.get_reveal_child():
             self.set_keyboard_mode("none")
+            self.content_box_child.set_style("min-width: 300px;")
 
         return False
 

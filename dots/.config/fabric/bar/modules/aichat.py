@@ -3,6 +3,7 @@ from __init__ import *
 ai_url = "http://localhost:3141/"
 # ai_url = "http://localhost:8080/"
 # ai_url = "http://axenide.github.io/"
+# ai_url = "http://perplexity.ai/"
 
 class AIbuttons(Box):
     def __init__(self):
@@ -118,7 +119,7 @@ class AIbuttons(Box):
                 """, lambda *args: None)
             case self.chat_url:
                 self.parent.content_box.set_reveal_child(False)
-                return exec_shell_command_async('xdg-open {ai_url}', lambda *args: None)
+                return exec_shell_command_async(f'xdg-open {ai_url}', lambda *args: None)
 
     def on_button_hover(self, button: Button, event):
         return self.change_cursor("pointer")
