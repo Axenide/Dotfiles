@@ -204,7 +204,7 @@
 
 	#main-window:not([chromehidden~="toolbar"]) {
 		--uc-rc-padding: 5px;
-		--uc-rc-radius: 20px 20px 6px 6px;
+		--uc-rc-radius: 10px 10px 6px 6px;
 		
 		:has(.tabbrowser-tab:only-of-type) {
 			--uc-rc-radius: 6px;

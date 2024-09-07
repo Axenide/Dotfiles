@@ -4,6 +4,7 @@ ai_url = "http://localhost:3141/"
 # ai_url = "http://localhost:8080/"
 # ai_url = "http://axenide.github.io/"
 # ai_url = "http://perplexity.ai/"
+# ai_url = "http://morphic.sh/"
 
 class AIbuttons(Box):
     def __init__(self):

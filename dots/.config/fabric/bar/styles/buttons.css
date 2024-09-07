@@ -63,7 +63,8 @@
 #panels-event, #power-event {
 	transition: all 0.1s ease;
 	background-color: mix(black, @background, 0.30);
-	border: 0px solid alpha(@color1, 1);
+	/*background-color: @color1;*/
+	/*border: 0px solid alpha(@color1, 1);*/
 }
 
 #panels-event {
@@ -81,6 +82,7 @@
 #power-lock > *,
 #common-button-1 > * {
   color: @color1;
+  /*color: @background;*/
   font-size: 20px;
   font-weight: normal;
   padding: 4px;
@@ -116,7 +118,8 @@
 }
 
 #confirm-box {
-  background-color: @background;
+  /*background-color: @background;*/
+  background-color: mix(black, @background, 0.30);
   margin: 4px;
   border-radius: 999px;
 }
