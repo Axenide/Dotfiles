@@ -15,6 +15,7 @@ class Bar(Window):
         self.panels = Panels()
 
         self.system_tray = SystemTray()
+        # self.system_tray = SystemTray(name="system-tray", icon_size=20, orientation="v", spacing=10)
 
         self.content_box = Revealer(
             transition_duration=500,
@@ -164,10 +165,6 @@ class Bar(Window):
                 self.stack.apps.app_entry.grab_focus()
             if command == "wallpapers":
                 self.stack.wallpapers.wallpaper_entry.grab_focus()
-            if command == "chat":
-                self.content_box_child.set_style("min-width: 450px;")
-            else:
-                self.content_box_child.set_style("min-width: 300px;")
         elif command == "update-style":
             set_stylesheet_from_file(get_relative_path("../style.css"))
 
