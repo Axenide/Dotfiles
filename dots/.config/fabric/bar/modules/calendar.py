@@ -1,8 +1,4 @@
 from __init__ import *
-import gi
-gi.require_version('Gtk', '3.0')
-from gi.repository import Gtk, GLib
-from datetime import datetime, timedelta
 
 class Calendar(EventBox):
     def __init__(self):

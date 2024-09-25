@@ -1,81 +1,81 @@
 # Parameters
-font_family = 'tabler-icons'
-font_weight = 'normal'
+font_family: str = 'tabler-icons'
+font_weight: str = 'normal'
 
-span = f"<span font-family='{font_family}' font-weight='{font_weight}'>"
+span: str = f"<span font-family='{font_family}' font-weight='{font_weight}'>"
 
 #Panels
-apps = "&#xf1fd;"
-dashboard = "&#xea87;"
-chat = "&#xf59f;"
-wallpapers = "&#xeb01;"
-windows = "&#xefe6;"
+apps: str = "&#xf1fd;"
+dashboard: str = "&#xea87;"
+chat: str = "&#xf59f;"
+wallpapers: str = "&#xeb01;"
+windows: str = "&#xefe6;"
 
 # Bar
-colorpicker = "&#xebe6;"
-media = "&#xf00d;"
+colorpicker: str = "&#xebe6;"
+media: str = "&#xf00d;"
 
 # Circles
-temp = "&#xeb38;"
-disk = "&#xea88;"
-battery = "&#xea38;"
-memory = "&#xfa97;"
-cpu = "&#xef8e;"
+temp: str = "&#xeb38;"
+disk: str = "&#xea88;"
+battery: str = "&#xea38;"
+memory: str = "&#xfa97;"
+cpu: str = "&#xef8e;"
 
 # AIchat
-reload = "&#xf3ae;"
-detach = "&#xea99;"
+reload: str = "&#xf3ae;"
+detach: str = "&#xea99;"
 
 # Wallpapers
-add = "&#xeb0b;"
-sort = "&#xeb5a;"
-circle = "&#xf671;"
-chevrons_up = "&#xea66;"
-chevrons_down = "&#xea63;"
+add: str = "&#xeb0b;"
+sort: str = "&#xeb5a;"
+circle: str = "&#xf671;"
+chevrons_up: str = "&#xea66;"
+chevrons_down: str = "&#xea63;"
 
 # Power
-lock = "&#xeae2;"
-suspend = "&#xece7;"
-logout = "&#xeba8;"
-reboot = "&#xeb13;"
-shutdown = "&#xeb0d;"
+lock: str = "&#xeae2;"
+suspend: str = "&#xece7;"
+logout: str = "&#xeba8;"
+reboot: str = "&#xeb13;"
+shutdown: str = "&#xeb0d;"
 
 # Applets
-wifi = "&#xeb52;"
-bluetooth = "&#xea37;"
-night = "&#xeaf8;"
-dnd = "&#xea35;"
+wifi: str = "&#xeb52;"
+bluetooth: str = "&#xea37;"
+night: str = "&#xeaf8;"
+dnd: str = "&#xea35;"
 
-wifi_off = "&#xecfa;"
-bluetooth_off = "&#xeceb;"
-night_off = "&#xf162;"
-dnd_off = "&#xece9;"
+wifi_off: str = "&#xecfa;"
+bluetooth_off: str = "&#xeceb;"
+night_off: str = "&#xf162;"
+dnd_off: str = "&#xece9;"
 
 # Player
-pause = "&#xed45;"
-play = "&#xed46;"
-stop = "&#xed4a;"
-skip_back = "&#xed48;"
-skip_forward = "&#xed49;"
-prev = "&#xed4c;"
-next = "&#xed4b;"
-shuffle = "&#xf000;"
-repeat = "&#xeb72;"
-music = "&#xeafc;"
+pause: str = "&#xed45;"
+play: str = "&#xed46;"
+stop: str = "&#xed4a;"
+skip_back: str = "&#xed48;"
+skip_forward: str = "&#xed49;"
+prev: str = "&#xed4c;"
+next: str = "&#xed4b;"
+shuffle: str = "&#xf000;"
+repeat: str = "&#xeb72;"
+music: str = "&#xeafc;"
 
 # Volume
-vol_off = "&#xf1c3;"
-vol_mute = "&#xeb50;"
-vol_medium = "&#xeb4f;"
-vol_high = "&#xeb51;"
+vol_off: str = "&#xf1c3;"
+vol_mute: str = "&#xeb50;"
+vol_medium: str = "&#xeb4f;"
+vol_high: str = "&#xeb51;"
 
 #Confirm
-accept = "&#xea5e;"
-cancel = "&#xeb55;"
+accept: str = "&#xea5e;"
+cancel: str = "&#xeb55;"
 
-exceptions = ['font_family', 'font_weight', 'span']
+exceptions: list[str] = ['font_family', 'font_weight', 'span']
 
-def apply_span():
+def apply_span() -> None:
     global_dict = globals()
     for key in global_dict:
         if key not in exceptions and not key.startswith('__'):

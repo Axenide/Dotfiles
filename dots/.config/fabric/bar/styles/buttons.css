@@ -96,8 +96,8 @@
 #power-suspend:hover > *, #power-suspend:focus > *,
 #power-lock:hover > *, #power-lock:focus > *,
 #common-button-1:hover > *, #common-button-1:focus > * {
-  color: @foreground;
-  background-color: alpha(@foreground, 0.2);
+  color: @background;
+  background-color: @color1;
 }
 
 #shutdown-confirm > *, #reboot-confirm > *, #logout-confirm > *, #suspend-confirm > * {

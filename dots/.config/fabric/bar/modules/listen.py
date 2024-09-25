@@ -1,9 +1,9 @@
 import socket
 
-def listen():
-    host = 'localhost'
-    port = 3142
-    bufferSize = 1024
+def listen() -> str:
+    host: str = 'localhost'
+    port: int = 3142
+    bufferSize: int = 1024
 
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
@@ -12,7 +12,7 @@ def listen():
         while True:
             conn, addr = s.accept()
             with conn:
-                data = conn.recv(bufferSize)
+                data: bytes = conn.recv(bufferSize)
                 if not data:
                     break
                 conn.sendall(data)
