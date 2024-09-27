@@ -9,7 +9,7 @@
 > This setup is specific for [Hyprland](https://github.com/hyprwm/Hyprland). Dont install it if you don't know what you're doing.
 
 ## 📹 Check it out!
-
+https://github.com/user-attachments/assets/7d5a1d34-cf7a-4ef8-a3c7-b3562bbf5e42
 
 > [!WARNING]
 > The main branch is experimental, as I'm always making changes.
