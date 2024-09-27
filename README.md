@@ -8,12 +8,8 @@
 > [!CAUTION]
 > This setup is specific for [Hyprland](https://github.com/hyprwm/Hyprland). Dont install it if you don't know what you're doing.
 
-<details>
-<summary>📸 Screenshots</summary>
-    <img src="screenshots/0.png">
-    <img src="screenshots/1.png">
-    <img src="screenshots/2.png">
-</details>
+## 📹 Check it out!
+
 
 > [!WARNING]
 > The main branch is experimental, as I'm always making changes.
@@ -32,122 +28,6 @@ This will execute the installation wizard.
 > [This packages](https://github.com/Axenide/Dotfiles/blob/main/pacman/packages.txt) are needed to fully use the config and will be installed if you choose the option in script:
 
 Also it will install `yay`, but you can skip the installation and use any AUR helper you want and install them manually. 
-
-## 💥 Rofi
-
-<b>
-<table>
-    <tr>
-        <td colspan="2" align="center" valign="middle">
-            App Launcher <kbd>SUPER + R</kbd>
-        </td>
-    </tr>
-    <tr>
-        <td colspan="2" align="center" valign="middle">
-            <img src="screenshots/rofi/launcher.png">
-        </td>
-    </tr>
-    <tr>
-    <td align="center" valign="middle">
-        Power Menu <kbd>SUPER + Esc</kbd>
-    </td>
-    <td align="center" valign="middle">
-        Emoji <kbd>SUPER + .</kbd>
-    </td>
-    </tr>
-    <tr>
-    <td align="center" valign="middle">
-        <img src="screenshots/rofi/powermenu.png"><br>
-        <img src="screenshots/rofi/confirm.png">
-    </td>
-    <td align="center" valign="middle">
-        <img src="screenshots/rofi/emoji.png">
-    </td>
-    </tr>
-    <tr>
-    <td align="center" valign="middle">
-        Wallpaper Changer <kbd>SUPER + ,</kbd>
-    </td>
-    <td align="center" valign="middle">
-        Tmux Session Manager <kbd>SUPER + T</kbd>
-    </td>
-    </tr>
-    <tr>
-    <td align="center" valign="middle">
-        <img src="screenshots/rofi/wallpaper.png">
-    </td>
-    <td align="center" valign="middle">
-        <img src="screenshots/rofi/tmux.png">
-    </td>
-    </tr>
-    <tr>
-    <td align="center" valign="middle">
-        Sound Manager <kbd>SUPER + V</kbd>
-    </td>
-    <td align="center" valign="middle">
-        Notes <kbd>SUPER + N</kbd>
-    </td>
-    </tr>
-    <tr>
-    <td align="center" valign="middle">
-        <img src="screenshots/rofi/sound.png">
-    </td>
-    <td align="center" valign="middle">
-        <img src="screenshots/rofi/notes.png">
-    </td>
-    </tr>
-    <tr>
-    <td align="center" valign="middle">
-        To-Do <kbd>SUPER + Q</kbd>
-    </td>
-    <td align="center" valign="middle">
-        Bluetooth <kbd>SUPER + B</kbd>
-    </td>
-    </tr>
-    <tr>
-    <td align="center" valign="middle">
-        <img src="screenshots/rofi/todo.png">
-    </td>
-    <td align="center" valign="middle">
-        <img src="screenshots/rofi/bluetooth.png">
-    </td>
-    </tr>
-    <tr>
-    <td align="center" valign="middle">
-        Networks <kbd>SUPER + D</kbd>
-    </td>
-    <td align="center" valign="middle">
-        Keepmenu <kbd>SUPER + U</kbd>
-    </td>
-    </tr>
-    <tr>
-    <td align="center" valign="middle">
-        <img src="screenshots/rofi/networks.png">
-    </td>
-    <td align="center" valign="middle">
-        <img src="screenshots/rofi/pass.png"><br>
-        <img src="screenshots/rofi/keepmenu.png">
-    </td>
-    </tr>
-    <tr>
-    <td align="center" valign="middle">
-        Calendar <kbd>SUPER + I</kbd>
-    </td>
-    <td align="center" valign="middle">
-        Screenshot & Recording <kbd>SUPER + S</kbd>
-    </td>
-    </tr>
-    <tr>
-    <td align="center" valign="middle">
-        <img src="screenshots/rofi/calendar.png">
-    </td>
-    <td align="center" valign="middle">
-        <img src="screenshots/rofi/screenshot.png"><br>
-        <img src="screenshots/rofi/recording.png">
-    </td>
-    </tr>
-</table>
-</b>
 
 ## ⌨️ Keybindings
 
@@ -189,8 +69,8 @@ Also it will install `yay`, but you can skip the installation and use any AUR he
 | <kbd>SUPER + ALT + RETURN</kbd>                       | Open Kitty with slurp           |
 | <kbd>SUPER + E</kbd>                                  | File explorer                   |
 | <kbd>SUPER + SHIFT + E</kbd>                          | Floating file explorer          |
-| <kbd>SUPER + W</kbd>                                  | Firefox                         |
-| <kbd>SUPER + SHIFT + W</kbd>                          | Private Firefox                 |
+| <kbd>SUPER + W</kbd>                                  | Zen Browser                         |
+| <kbd>SUPER + SHIFT + W</kbd>                          | Private Zen Browser                 |
 | <kbd>Print</kbd>                                      | Save and copy screenshot        |
 | <kbd>SHIFT + Print</kbd>                              | Copy screenshot                 |
 | <kbd>SUPER + SHIFT + S</kbd>                          | Copy area screenshot            |
@@ -225,14 +105,8 @@ Also it will install `yay`, but you can skip the installation and use any AUR he
 | <kbd>y</kbd>                 | Yank selection                  |
 
 ## 🌐 Browser Theme
-### Floorp
-I'm currently using [Floorp](https://github.com/Floorp-Projects/Floorp/), a Firefox ESR fork with a sidebar and a lot of customization options.
-
-I tweaked some details with CSS and used [Firefox Color](https://addons.mozilla.org/es/firefox/addon/firefox-color/) to recolor it.
-
-[Click here to get my theme!](https://color.firefox.com/?theme=XQAAAAKaAQAAAAAAAABBqYhm849SCia73laEGccwS-xMDPrv2Sw6Caq-qy5QgqeHG4K15QdLe1d6ZIlHA10-N450w14D6IXiJ8jwxFnYgkTc5bQFJCcRJjxSJrrqwb4Ke6nom7Qp6PaY-vK91ZC9fT0q9M99RrfDxbPpZEc30aNhDkNnZDuGmcFmEdN8kHLsEMrbsQ6bdGyc2by7K98QyLafh0tsoozyCmNmlCq1VFiDtyIUgTB_mNyH9p3o7VpKPopZ6wq0ADkXbzCaPrGSvjlgXbCBzTHkme-F7NwSWrTl5v__yadfAA)
-
-[Click here to get my old theme.](https://color.firefox.com/?theme=XQAAAAKcAQAAAAAAAABBqYhm849SCia73laEGccwS-xMDPrv2Sw6Caq-qy5QgqeHG4K15QdnKP13g2bqt8iOj4e4VN6fpUJ5Y-FzVYxdRh4Jahskc87JAlD7QBtVsQPah1lEVOrnQjk3fT6hspa42dQuogENOnAprj5_ike7fU8X50TCyvscVMl171BNW9KlAwx9YXTNFIe88acOqVJdFP3RkU0w-83gHO2TCPgp6u3Rj6XNlZo5kGZp5XVxUhBxMUeEyKqrvWVVCE6HxKDOaQmyU6HCP6gxuQcEMxGY0p-irKqZzYgd_-6pswA)
+### Zen Browser
+I'm currently using [Zen Browser](https://zen-browser.app/) with some custom tweaks.
 
 ### Firefox
 If you want, you can use my custom CSS. An automated script for this is included in the root folder of this repository as `firefox.sh`. You will also be asked if you want to use my config when running `dots.sh`.

@@ -1,11 +1,6 @@
 from __init__ import *
 
 ai_url: str = "http://localhost:3141/"
-# ai_url = "http://localhost:8080/"
-# ai_url = "http://axenide.github.io/"
-# ai_url = "http://perplexity.ai/"
-# ai_url = "http://morphic.sh/"
-# ai_url = "http://chatgpt com/"
 
 class AIbuttons(Box):
     def __init__(self):
