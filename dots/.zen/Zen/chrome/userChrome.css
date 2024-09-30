@@ -59,7 +59,7 @@
 
   #nav-bar,
   #PersonalToolbar {
-    top: -11px !important;
+    top: -12px !important;
     width: 75vw !important;
     margin-left: calc( 12.5vw - var(--zen-element-separation) * 2) !important;
     border-radius: 0 0 16px 16px !important;
