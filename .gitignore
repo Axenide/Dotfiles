@@ -25,6 +25,8 @@ term/.config/fish/api.fish
 dots/.config/fabric/bar/styles/themes/mat.css
 dots/.zen/*
 dots/.zen/Zen/*
-!dots/.zen/Zen/user.js
-!dots/.zen/Zen/zen-themes.json
+!dots/.zen/Zen/
 !dots/.zen/Zen/chrome/
+!dots/.zen/Zen/user.js
+!dots/.zen/Zen/zen-keyboard-shortcuts.json
+!dots/.zen/Zen/zen-themes.json
