@@ -26,6 +26,7 @@
  @media (-moz-bool-pref: "zen.view.compact") {
      #navigator-toolbox {
          height: 75vh !important;
+         margin-top: calc( 12.5vh - var(--zen-element-separation) * 2) !important;
          border-radius: 0 16px 16px 0 !important;
          box-shadow: 0 0 10px rgba(0, 0, 0, 0.5) !important;
          padding: 5px !important;

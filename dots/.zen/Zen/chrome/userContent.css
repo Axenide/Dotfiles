@@ -285,7 +285,7 @@ body.theme-body.devtools-monospace div#content div.mainFrame span div.split-box.
 
 
 @-moz-document url("about:newtab"), url("about:home"){
-  .search-handoff-button{ border-radius: 999px !important; background: #FFFFFF0A !important; box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5) !important;}
+  .search-handoff-button{ border-radius: 20px !important; background: rgba(0, 0, 0, 0.75) !important; box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5) !important;}
 }
 
 

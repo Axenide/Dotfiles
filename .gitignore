@@ -23,3 +23,7 @@ dots/.config/kitty/mat.conf
 dots/.config/fabric/bar_test
 term/.config/fish/api.fish
 dots/.config/fabric/bar/styles/themes/mat.css
+dots/.zen/Zen/*
+!dots/.zen/Zen/user.js
+!dots/.zen/Zen/zen-themes.json
+!dots/.zen/Zen/chrome/
