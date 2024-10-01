@@ -104,15 +104,19 @@ Also it will install `yay`, but you can skip the installation and use any AUR he
 | <kbd>CTRL + v</kbd>          | Toggle rectangle/line selection |
 | <kbd>y</kbd>                 | Yank selection                  |
 
-## 🌐 Browser Theme
-### Zen Browser
-I'm currently using [Zen Browser](https://zen-browser.app/) with some custom tweaks.
+## 🌐 Browser
+I'm currently using [Zen Browser](https://zen-browser.app/) with some custom tweaks. To use my config you need to create a new profile and click on "Select folder". The folder will be located at `~/.zen/Zen/`.
 
-### Firefox
-If you want, you can use my custom CSS. An automated script for this is included in the root folder of this repository as `firefox.sh`. You will also be asked if you want to use my config when running `dots.sh`.
+If you just want good [Pywalfox](https://github.com/Frewacom/pywalfox/) support, install the [PywalZen](https://zen-browser.app/themes/d2953516-d239-4ef8-aac5-b238e3dc0360) theme I made!
 
-### Chromium
-I made a custom theme that you can use on any Chromium based browser. You have to add it via developer mode on your extensions settings. I really like Brave, but you can use it on every Chromium browser (except Opera for some reason).
+> [!NOTE]
+> I also modified some shortcuts to make them analog to the ones I use in Hyprland.
+
+| Keys                | Action                  |
+|--------------------:|:------------------------|
+| <kbd>ALT + Z</kbd>  | Previous workspace      |
+| <kbd>ALT + X</kbd>  | Next workspace          |
+| <kbd>ALT + S</kbd>  | Toggle web panel        |
 
 <p align="center">
 <samp>
