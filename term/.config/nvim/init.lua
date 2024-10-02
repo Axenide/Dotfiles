@@ -49,3 +49,12 @@ end)
 local nvim_config_path = vim.fn.stdpath('config')
 local python_script = nvim_config_path .. "/pywal/chadwal.py"
 os.execute("python3 " .. python_script .. " &> /dev/null &")
+
+local autocmd = vim.api.nvim_create_autocmd
+
+autocmd("Signal", {
+  pattern = "SIGUSR1",
+  callback = function()
+    require('nvchad.utils').reload()
+  end
+})
