@@ -12,7 +12,7 @@
   --zen-primary-color: var(--tab-loading-fill) !important;
   --zen-colors-primary: var(--tab-loading-fill) !important;
   --zen-colors-secondary: var(--tab-loading-fill) !important;
-  --zen-colors-tertiary: color-mix(in srgb, var(--lwt-accent-color), black 75%) !important; !important;
+  --zen-colors-tertiary: color-mix(in srgb, var(--lwt-accent-color), black 75%) !important;
 }
 
 /* Reduce width */

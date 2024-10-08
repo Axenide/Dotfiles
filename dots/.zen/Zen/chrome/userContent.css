@@ -1206,7 +1206,7 @@ url-prefix(chrome:) {
 url("about:home") {
 	.search-handoff-button {
 		border-radius: 20px !important;
-		background: color-mix(in srgb, -moz-Dialog, black 75%) !important;
+		background: color-mix(in srgb, var(--newtab-background-color), black 75%) !important;
 		box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5) !important;
 	}
 }
