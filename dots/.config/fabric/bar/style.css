@@ -1,7 +1,6 @@
-@import "./styles/themes/wal.css";
-@import "./styles/apps.css";
 @import "./styles/aichat.css";
 @import "./styles/applets.css";
+@import "./styles/apps.css";
 @import "./styles/bar.css";
 @import "./styles/buttons.css";
 @import "./styles/calendar.css";
@@ -9,11 +8,10 @@
 @import "./styles/main.css";
 @import "./styles/menu.css";
 @import "./styles/player.css";
+@import "./styles/themes/wal.css";
 @import "./styles/user.css";
 @import "./styles/wallpapers.css";
 @import "./styles/workspaces.css";
-@import "./styles/osd.css";
-@import "./styles/lock.css";
 
 * {
 	all: unset;

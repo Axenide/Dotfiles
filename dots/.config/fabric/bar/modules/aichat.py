@@ -1,6 +1,6 @@
 from __init__ import *
 
-ai_url: str = "http://localhost:3141/"
+ai_url: str = "https://morphic.sh/"
 
 class AIbuttons(Box):
     def __init__(self):

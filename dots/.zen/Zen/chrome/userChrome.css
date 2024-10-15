@@ -9,105 +9,23 @@
 */
 
 :root {
-  --zen-primary-color: var(--tab-loading-fill) !important;
+  --zen-primary-color: #999 !important;
   --zen-colors-primary: var(--tab-loading-fill) !important;
   --zen-colors-secondary: var(--tab-loading-fill) !important;
   --zen-colors-tertiary: color-mix(in srgb, var(--lwt-accent-color), black 75%) !important;
 }
 
-/* Reduce width */
-@media (-moz-bool-pref: "zen.view.sidebar-expanded") {  
-    #navigator-toolbox {
-      --zen-navigation-toolbar-min-width: 100px !important;
-   }
- }
- 
- /* Reduced height */
- @media (-moz-bool-pref: "zen.view.compact") {
-     #navigator-toolbox {
-         height: 75vh !important;
-         margin-top: calc( 12.5vh - var(--zen-element-separation) * 2) !important;
-         border-radius: 0 16px 16px 0 !important;
-         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5) !important;
-         padding: 5px !important;
-     }
-}
-
-@media (-moz-bool-pref: "zen.view.compact") {
-#zen-appcontent-navbar-container {
-  padding: calc(var(--zen-element-separation) * 2) !important;
-  border: none !important;
-  background: none !important;
-  box-sizing: border-box;
-  box-shadow: none !important;
-}
-
-#nav-bar,
-#PersonalToolbar {
-  background: var(--zen-colors-tertiary) !important;
-  border-radius: var(--zen-border-radius);
-  border: 1px solid var(--zen-colors-border) !important;
-}
-
-#PersonalToolbar {
-  margin-top: var(--zen-element-separation);
-}
-
-#PersonalToolbar,
-.bookmark-item {
-  padding: var(--zen-element-separation) !important;
-}
-
-  #nav-bar,
-  #PersonalToolbar {
-    top: -12px !important;
-    width: 75vw !important;
-    margin-left: calc( 12.5vw - var(--zen-element-separation) * 2) !important;
-    border-radius: 0 0 16px 16px !important;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5) !important;
-    padding: 0px !important;
-  }
-  #PersonalToolbar {
-    border-radius: 10px !important;
-    margin-top: -5px !important;
-    width: 50vw !important;
-    margin-left: calc( 25vw - var(--zen-element-separation) * 2) !important;
-  }
-}
-
-@media (-moz-bool-pref: "zen.view.compact") {
-    #navigator-toolbox, #nav-bar {
-        background: color-mix(in srgb, var(--lwt-accent-color), black 75%) !important;
-    }
+#commonDialogWindow {
+  background-color: black !important;
 }
 
 #browser {
-    background: color-mix(in srgb, var(--lwt-accent-color), black 75%) !important;
+    background-color: color-mix(in srgb, var(--lwt-accent-color), black 75%) !important;
 }
 
-/* Blurs the background when url bar is focused when toggled */
-
-  #urlbar:is([breakout][breakout-extend], [breakout][usertyping][focused]):after {
-    content: "";
-    position: fixed;
-    pointer-events: none;
-  
-    width: 100vw;
-    height: 100vh;
-  
-    top: 0px;
-    left: 0px;
-  
-    background-color: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(5px);
-  
-    z-index: -1;
-  }
-  
-  /* Scuffed af solution to make blur work (need to find better solution) */
-  :root:not([inDOMFullscreen='true']):not([chromehidden~='location']):not([chromehidden~='toolbar']) {
-    clip-path: inset(0 round var(--zen-webview-border-radius, var(--zen-border-radius)));
-  }
+#nav-bar {
+  border-top: none !important;
+}
 
 #urlbar {
   text-align: center !important;
@@ -132,3 +50,4 @@
 .bookmark-item[container="true"] [label="Myself"] {
 	list-style-image: url("data:image/svg+xml;base64,PHN2ZyAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiAgd2lkdGg9IjI0IiAgaGVpZ2h0PSIyNCIgIHZpZXdCb3g9IjAgMCAyNCAyNCIgIGZpbGw9Im5vbmUiICBzdHJva2U9IiNmZmZmZmYiICBzdHJva2Utd2lkdGg9IjIiICBzdHJva2UtbGluZWNhcD0icm91bmQiICBzdHJva2UtbGluZWpvaW49InJvdW5kIiAgY2xhc3M9Imljb24gaWNvbi10YWJsZXIgaWNvbnMtdGFibGVyLW91dGxpbmUgaWNvbi10YWJsZXItbWV0ZW9yIj48cGF0aCBzdHJva2U9Im5vbmUiIGQ9Ik0wIDBoMjR2MjRIMHoiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNMjEgM2wtNSA5aDVsLTYuODkxIDcuMDg2YTYuNSA2LjUgMCAxIDEgLTguODU1IC05LjUwNmw3Ljc0NiAtNi41OGwtMSA1bDkgLTV6IiAvPjxwYXRoIGQ9Ik05LjUgMTQuNW0tMi41IDBhMi41IDIuNSAwIDEgMCA1IDBhMi41IDIuNSAwIDEgMCAtNSAwIiAvPjwvc3ZnPg==") !important;
 }
+

@@ -1,9 +1,0 @@
-#osd-box {
-  background-color: mix(black, @background, 0.30);
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
-  border-radius: 20px;
-  padding: 10px;
-  margin: 20px;
-  min-width: 96px;
-  min-height: 96px;
-}

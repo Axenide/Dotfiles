@@ -1,0 +1,10 @@
+
+      @-moz-document url-prefix("chrome:") {
+        
+.tabbrowser-tab[pending="true"] {
+    filter: grayscale(1);
+    opacity: 0.5;
+}
+
+      }
+    

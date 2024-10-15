@@ -170,7 +170,6 @@ class Bar(Window):
 
         if not self.content_box.get_reveal_child():
             self.set_keyboard_mode("none")
-            self.content_box_child.set_style("min-width: 300px;")
 
         return False
 

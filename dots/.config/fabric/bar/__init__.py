@@ -5,7 +5,6 @@ import time
 import subprocess
 import shutil
 import json
-import pam
 import calendar
 from datetime import datetime, timedelta
 
@@ -58,7 +57,6 @@ from gi.repository import (
         GdkPixbuf,
         Gtk,
         Gray,
-        GtkSessionLock,
 )
 
 from loguru import logger
