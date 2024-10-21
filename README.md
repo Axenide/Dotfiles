@@ -238,13 +238,6 @@ I made a custom theme that you can use on any Chromium based browser. You have t
     <a href="https://cafecito.app/axenide">☕ Cafecito</a> |
     <a href="https://ko-fi.com/axenide">❤️ Ko-Fi</a> |
     <a href="https://paypal.me/Axenide">💸 PayPal</a>
-    </b>
-    <br>
-    <b>💵 USDT:</b> <i>TDub4eGEbXMqv4CFo65oNTaBYMJpbJyrtQ</i> (TRC20)
-    <br>
-    <b>💶 USDC:</b> <i>0x1959681e522dbaedd93f90b0ece0d627f96432ee</i> (ERC20)
-    <br>
-    <b>🪙 BTC:</b> <i>16BTDDEmE2D98YPePt6VAvsC4s9xrVLpk4</i>
   </sup>
 </samp>
 </p>
