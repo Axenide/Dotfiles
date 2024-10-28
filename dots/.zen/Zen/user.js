@@ -13,3 +13,4 @@ user_pref("uc.bookmarks.center-toolbar", true);
 // Misc
 user_pref("zen.welcomeScreen.seen", true);
 user_pref("zen.view.split-view.change-on-hover", true);
+user_pref("middlemouse.paste", false);

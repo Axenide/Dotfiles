@@ -9,18 +9,15 @@
 */
 
 :root {
-  --zen-primary-color: #999 !important;
+  --uc-pywalzen-darkness: 75;
   --zen-colors-primary: var(--tab-loading-fill) !important;
   --zen-colors-secondary: var(--tab-loading-fill) !important;
-  --zen-colors-tertiary: color-mix(in srgb, var(--lwt-accent-color), black 75%) !important;
+  --zen-colors-tertiary: color-mix(in srgb, var(--lwt-accent-color), black calc(var(--uc-pywalzen-darkness) * 1%)) !important;
+  --toolbarbutton-icon-fill: var(--tab-loading-fill) !important;
 }
 
 #commonDialogWindow {
   background-color: black !important;
-}
-
-#browser {
-    background-color: color-mix(in srgb, var(--lwt-accent-color), black 75%) !important;
 }
 
 #nav-bar {
@@ -29,6 +26,24 @@
 
 #urlbar {
   text-align: center !important;
+}
+
+#contentAreaContextMenu,
+menupopup, .menupopup-arrowscrollbox {
+    border-radius: 16px !important;
+    --panel-background: var(--zen-colors-tertiary) !important;
+}
+
+#contentAreaContextMenu menuitem,
+#contentAreaContextMenu menuseparator,
+menupopup menuitem {
+    border-radius: 10px !important;
+}
+
+#contentAreaContextMenu menuitem:hover,
+menupopup menuitem:hover {
+    background-color: var(--tab-loading-fill) !important;
+    color: var(--zen-colors-tertiary) !important;
 }
 
 .bookmark-item[container="true"] [label="Media"] {
@@ -51,3 +66,18 @@
 	list-style-image: url("data:image/svg+xml;base64,PHN2ZyAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiAgd2lkdGg9IjI0IiAgaGVpZ2h0PSIyNCIgIHZpZXdCb3g9IjAgMCAyNCAyNCIgIGZpbGw9Im5vbmUiICBzdHJva2U9IiNmZmZmZmYiICBzdHJva2Utd2lkdGg9IjIiICBzdHJva2UtbGluZWNhcD0icm91bmQiICBzdHJva2UtbGluZWpvaW49InJvdW5kIiAgY2xhc3M9Imljb24gaWNvbi10YWJsZXIgaWNvbnMtdGFibGVyLW91dGxpbmUgaWNvbi10YWJsZXItbWV0ZW9yIj48cGF0aCBzdHJva2U9Im5vbmUiIGQ9Ik0wIDBoMjR2MjRIMHoiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNMjEgM2wtNSA5aDVsLTYuODkxIDcuMDg2YTYuNSA2LjUgMCAxIDEgLTguODU1IC05LjUwNmw3Ljc0NiAtNi41OGwtMSA1bDkgLTV6IiAvPjxwYXRoIGQ9Ik05LjUgMTQuNW0tMi41IDBhMi41IDIuNSAwIDEgMCA1IDBhMi41IDIuNSAwIDEgMCAtNSAwIiAvPjwvc3ZnPg==") !important;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root[privatebrowsingmode] {
+    --zen-colors-primary: #6B3A8E !important;
+    --zen-colors-secondary: #804DA1 !important;
+    --zen-colors-tertiary: #2E163A !important;
+    --zen-colors-border: #5C2C7B !important;
+    --zen-primary-color: #804DA1 !important;
+    --zen-dialog-background: #1A0D25 !important;
+    --toolbarbutton-icon-fill: color-mix(in srgb, var(--zen-primary-color) 70%, white 30%) !important;
+    --toolbar-field-color: color-mix(in srgb, var(--zen-primary-color) 40%, white 60%) !important;
+    .tabbrowser-tab { color: #D1B2E0 !important; }
+    .tabbrowser-tab:is([visuallyselected], [multiselected]) { color: #F3E6FF !important; }
+    #browser { background: linear-gradient(to bottom, #2E163A, black, black, black, black, black, black, black) !important; }
+  }
+}

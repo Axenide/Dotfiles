@@ -12,7 +12,8 @@
 	border-radius: 999px;
 	min-width: 4px;
 	min-height: 4px;
-	transition: all 0.30s cubic-bezier(0, 1, 0, 1);
+	transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+	/*transition: all 0.5s cubic-bezier(.5, .25, .25, 1);*/
 }
 
 #workspaces>button>label {

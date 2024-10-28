@@ -1255,3 +1255,7 @@ url("about:newtab") {
 	}
 
 }
+
+html.private {
+    --in-content-page-background: #0A050D !important;}
+}

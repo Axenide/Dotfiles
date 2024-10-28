@@ -95,7 +95,7 @@ countdown() {
 selected="$(echo -e "$options" | rofi -dmenu -mesg "  Recording" -theme ${theme} -selected-row $row )"
 case $selected in
 $record)
-  gpu-screen-recorder -w portal -f 60 -q ultra -ac opus -cr full -a "$device" -o "$XDG_PICTURES_DIR/Screenshots/$(date +%Y-%m-%d-%H-%M-%S).mp4"
+  gpu-screen-recorder -w portal -f 60 -q very_high -ac opus -cr full -a "$device" -o "$XDG_PICTURES_DIR/Screenshots/$(date +%Y-%m-%d-%H-%M-%S).mp4"
 	;;
 $gtk)
   gpu-screen-recorder-gtk
