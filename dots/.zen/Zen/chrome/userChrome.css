@@ -8,22 +8,6 @@
 └─────────────────────────────────────────────────────────────────┘
 */
 
-:root {
-  --uc-pywalzen-darkness: 75;
-  --zen-colors-primary: var(--tab-loading-fill) !important;
-  --zen-colors-secondary: var(--tab-loading-fill) !important;
-  --zen-colors-tertiary: color-mix(in srgb, var(--lwt-accent-color), black calc(var(--uc-pywalzen-darkness) * 1%)) !important;
-  --toolbarbutton-icon-fill: var(--tab-loading-fill) !important;
-}
-
-#commonDialogWindow {
-  background-color: black !important;
-}
-
-#nav-bar {
-  border-top: none !important;
-}
-
 #urlbar {
   text-align: center !important;
 }

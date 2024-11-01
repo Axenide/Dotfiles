@@ -1,1 +1,44 @@
-{"uc.bookmarks.center-toolbar": "Center the bookmarks toolbar", "uc.bookmarks.hide-folder-icons": "Hide folder icons", "uc.bookmarks.hide-favicons": "Hide website icons", "uc.bookmarks.hide-name": "Hide bookmarks name", "uc.bookmarks.expand-on-hover": "Expand the bookmarks toolbar by hovering", "uc.bookmarks.expand-on-search": "Expand the bookmarks toolbar when you search", "uc.bookmarks.transparent": "Make the bookmarks toolbar transparent (only works with expand features)"}
+[
+    {
+        "property": "uc.bookmarks.center-toolbar",
+        "label": "Center the bookmarks toolbar",
+        "type": "checkbox",
+        "disabledOn": []
+    },
+    {
+        "property": "uc.bookmarks.hide-folder-icons",
+        "label": "Hide folder icons",
+        "type": "checkbox",
+        "disabledOn": []
+    },
+    {
+        "property": "uc.bookmarks.hide-favicons",
+        "label": "Hide website icons",
+        "type": "checkbox",
+        "disabledOn": []
+    },
+    {
+        "property": "uc.bookmarks.hide-name",
+        "label": "Hide bookmarks name",
+        "type": "checkbox",
+        "disabledOn": []
+    },
+    {
+        "property": "uc.bookmarks.expand-on-hover",
+        "label": "Expand the bookmarks toolbar by hovering",
+        "type": "checkbox",
+        "disabledOn": []
+    },
+    {
+        "property": "uc.bookmarks.expand-on-search",
+        "label": "Expand the bookmarks toolbar when you search",
+        "type": "checkbox",
+        "disabledOn": []
+    },
+    {
+        "property": "uc.bookmarks.transparent",
+        "label": "Make the bookmarks toolbar transparent (only works with expand features)",
+        "type": "checkbox",
+        "disabledOn": []
+    }
+]
