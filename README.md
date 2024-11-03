@@ -12,9 +12,7 @@
 https://github.com/user-attachments/assets/d58ccfea-8101-4476-a6da-1c1d05d67796
 
 > [!WARNING]
-> The main branch is experimental, as I'm always making changes.
->
-> Please refer to the [stable branch](https://github.com/Axenide/Dotfiles/tree/stable) if you want to use it.
+> This branch is made to work with [Fabric](https://github.com/Fabric-Development/fabric/) 0.0.1 and is uncomplete.
 
 ## Installation
 ```bash
