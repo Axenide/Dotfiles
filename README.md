@@ -6,6 +6,8 @@
 </p>
 
 > [!CAUTION]
+> Unmantained!
+> 
 > This setup is specific for [Hyprland](https://github.com/hyprwm/Hyprland). Dont install it if you don't know what you're doing.
 
 <details>
