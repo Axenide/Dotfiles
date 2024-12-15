@@ -31,3 +31,6 @@ dots/.zen/Zen/*
 !dots/.zen/Zen/zen-keyboard-shortcuts.json
 !dots/.zen/Zen/zen-themes.json
 term/.config/nvim/lazy-lock.json
+dots/.config/fabric/styles/colors.css
+dots/.config/kitty/colors.conf
+dots/.config/vesktop/themes/axnight.theme.css
