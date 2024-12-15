@@ -18,7 +18,7 @@
 .control-center .notification-row:focus,
 .control-center .notification-row:hover {
     opacity: 1;
-    background: alpha(@color1, 0.25);
+    background: alpha(@primary, 0.25);
     border-radius: 0px;
     margin: 0px;
 }
@@ -26,7 +26,7 @@
 .notification {
     border-radius: 10px;
     padding: 0;
-    border: 2px solid alpha(@color1, 1);
+    border: 2px solid alpha(@primary, 1);
     background: @color0;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.75);
 }
@@ -38,7 +38,7 @@
 
 .close-button {
     background: alpha(@foreground, 0.1);
-    color: @color1;
+    color: @primary;
     text-shadow: none;
     padding: 0;
     border-radius: 100%;
@@ -52,7 +52,7 @@
 
 .close-button:hover {
     box-shadow: none;
-    background: @color1;
+    background: @primary;
     color: @background;
     transition: all .15s ease-in-out;
     border: none
@@ -109,7 +109,7 @@
 }
 
 .notification-group-icon {
-  color: @color1;
+  color: @primary;
   margin-right: 8px;
 }
 
@@ -122,7 +122,7 @@
 
 .notification-group-collapse-button:hover {
   background: @noti-close-bg-hover;
-  color: @color1;
+  color: @primary;
 }
 
 .notification-group-close-all-button {
@@ -134,7 +134,7 @@
 
 .notification-group-close-all-button:hover {
   background: @noti-close-bg-hover;
-  color: @color1
+  color: @primary
 }
 
 .inline-reply {
@@ -178,9 +178,9 @@
     font-weight: bold;
     font-style: italic;
     background: transparent;
-    color: @color1;
+    color: @primary;
     margin-left: 10px;
-    /* text-shadow: 0 0 3px @color1; */
+    /* text-shadow: 0 0 3px @primary; */
 }
 
 .time {
@@ -234,12 +234,12 @@
 }
 
 .widget-title {
-    color: @color1;
+    color: @primary;
     margin: 20px 20px 5px 20px;
     font-size: 10.5pt;
     font-weight: bold;
     font-style: italic;
-    /* text-shadow: 0 0 3px @color1; */
+    /* text-shadow: 0 0 3px @primary; */
 }
 
 .widget-title>button {
@@ -359,11 +359,11 @@
     border: 2px solid alpha(@foreground, 0.1);
     border-radius: 8px;
     font-size: x-large;
-    color: @color1;
+    color: @primary;
 }
 
 .widget-volume>box>button {
-    background: @color1;
+    background: @primary;
     border: 1px solid @noti-close-bg;
 }
 
@@ -382,7 +382,7 @@
     border: 1px solid @noti-close-bg;
     border-radius: 8px;
     font-size: x-large;
-    color: @color1;
+    color: @primary;
 }
 
 .widget-inhibitors {

@@ -1,0 +1,99 @@
+/* Button Styles */
+
+#network-button, #bluetooth-button, #night-mode-button, #caffeine-button {
+  background-color: @primary;
+  border-radius: 20px;
+  min-width: 180px;
+  min-height: 52px;
+  padding: 0 10px;
+}
+
+#night-mode-button, #caffeine-button {
+  min-width: 160px;
+}
+
+#network-button, #bluetooth-button {
+  background-color: unset;
+  padding: unset;
+}
+
+/* Button Hover Styles */
+
+#network-status-button:hover, #network-menu-button:hover, #bluetooth-status-button:hover, #bluetooth-menu-button:hover {
+  background-color: @foreground;
+}
+
+#network-status-button:hover, #bluetooth-button:hover, #night-mode-button:hover, #caffeine-button:hover {
+  background-color: @foreground;
+}
+
+/* Icon Styles */
+
+#network-icon, #bluetooth-icon, #night-mode-icon, #caffeine-icon {
+  color: @shadow;
+  font-size: 24px;
+}
+
+/* Label Styles */
+
+#network-menu-label, #bluetooth-menu-label {
+  color: @shadow;
+  font-size: 16px;
+}
+
+#network-label, #bluetooth-label, #night-mode-label, #caffeine-label {
+  color: @shadow;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: -4px;
+}
+
+/* Status Styles */
+
+#network-ssid, #bluetooth-status, #night-mode-status, #caffeine-status {
+  color: @surface_bright;
+  font-size: 12px;
+}
+
+#network-status-button, #network-menu-button, #bluetooth-status-button, #bluetooth-menu-button {
+  background-color: @primary;
+  padding: 0 10px;
+}
+
+#network-status-button:hover, #network-menu-button:hover, #bluetooth-status-button:hover, #bluetooth-menu-button:hover {
+  background-color: @foreground;
+}
+
+#network-status-button, #bluetooth-status-button {
+  border-radius: 20px 0 0 20px;
+}
+
+#network-menu-button, #bluetooth-menu-button {
+  border-radius: 0 20px 20px 0;
+}
+
+#network-status-button:hover, #bluetooth-button:hover, #night-mode-button:hover, #caffeine-button:hover {
+  background-color: @foreground;
+}
+
+#network-icon, #bluetooth-icon, #night-mode-icon, #caffeine-icon {
+  color: @shadow;
+  font-size: 24px;
+}
+
+#network-menu-label, #bluetooth-menu-label {
+  color: @shadow;
+  font-size: 16px;
+}
+
+#network-label, #bluetooth-label, #night-mode-label, #caffeine-label {
+  color: @shadow;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: -4px;
+}
+
+#network-ssid, #bluetooth-status {
+  color: @surface_bright;
+  font-size: 12px;
+}

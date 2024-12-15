@@ -1,0 +1,3 @@
+#button-bar, #workspaces-container, #notch-content, #date-time, #systray {
+  box-shadow: 0 0 4px alpha(black, 0.5);
+}

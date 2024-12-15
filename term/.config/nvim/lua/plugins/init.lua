@@ -9,7 +9,7 @@ return {
         ---@type AvanteProvider
         groq = {
           endpoint = "https://api.groq.com/openai/v1/chat/completions",
-          model = "llama-3.2-90b-text-preview",
+          model = "llama-3.2-90b-vision-preview",
           api_key_name = "GROQ_API_KEY",
           --- this function below will be used to parse in cURL arguments.
           parse_curl_args = function(opts, code_opts)

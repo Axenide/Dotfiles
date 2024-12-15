@@ -1,0 +1,27 @@
+#wallpaper-icons {
+  opacity: 1;
+  animation: fade-in 0.25s ease-in-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#wallpaper-icons:selected {
+  background-color: @surface_bright;
+  border-radius: 8px;
+}
+
+#dropdown-box {
+  background-color: @surface;
+  padding: 8px;
+}
+
+#scheme-dropdown {
+  font-weight: bold;
+}

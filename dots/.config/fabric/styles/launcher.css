@@ -1,0 +1,94 @@
+#search-entry {
+    font-weight: bold;
+    background-color: @surface;
+    color: @foreground;
+    border-radius: 16px;
+    padding: 10px;
+}
+
+#search-entry selection {
+  color: @background;
+  background-color: @primary;
+}
+
+#close-button {
+    background-color: @surface;
+    border-radius: 16px;
+    padding: 10px;
+}
+
+#close-button:hover, #close-button:focus {
+    background-color: @surface_bright;
+}
+
+#close-button:active {
+    background-color: @primary;
+}
+
+#close-label {
+  color: @shadow;
+  background-color: @error_dim;
+  font-size: 16px;
+  padding: 4px;
+  border-radius: 999px;
+}
+
+#scrolled-window {
+    border-radius: 16px;
+}
+
+#scrolled-window scrollbar {
+  border-radius: 10px;
+  background-color: @surface;
+  padding: 4px;
+  margin-left: 6px;
+}
+
+#scrolled-window slider {
+  border-radius: 8px;
+  min-width: 16px;
+  min-height: 48px;
+  background-color: @primary;
+}
+
+#app-slot-button {
+    border-radius: 16px;
+    padding: 16px;
+    transition: padding 0.25s cubic-bezier(0.5, 0.25, 0, 1);
+    animation: loadSlot 0.5s ease;
+}
+
+@keyframes loadSlot {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#app-slot-button:hover, #app-slot-button:focus {
+    background-color: @surface_bright;
+    padding-left: 24px;
+}
+
+#app-slot-button:active {
+    background-color: @primary;
+}
+
+#app-icon {
+    margin-right: 8px;
+}
+
+#app-label {
+    color: @foreground;
+    font-weight: bold;
+}
+
+#app-slot-button:hover #app-label, #app-slot-button:focus #app-label {
+    color: @primary;
+}
+
+#app-slot-button:active #app-label {
+    color: @shadow;
+}

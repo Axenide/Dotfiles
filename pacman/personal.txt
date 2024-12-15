@@ -64,7 +64,7 @@ obs-shaderfilter-git
 obs-source-clone
 obs-source-copy
 obs-streamfx-unstable
-obs-studio-browser
+obs-studio-stable
 ollama
 pacback
 pdfmerger

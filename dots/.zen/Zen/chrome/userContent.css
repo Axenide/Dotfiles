@@ -88,9 +88,12 @@ url("about:home") {
 		}
 
 		.search-wrapper .logo-and-wordmark .logo {
-			background-size: 60px !important;
-			height: 60px !important;
-			width: 60px !important
+			background-size: 96px !important;
+			height: 96px !important;
+			width: 96px !important;
+			position: relative !important;
+			left: 10px !important;
+			top: 10px !important;
 		}
 
 		.search-wrapper .search-inner-wrapper {

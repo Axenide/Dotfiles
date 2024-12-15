@@ -1,0 +1,41 @@
+#notification-action-buttons button.start-action {
+  border-radius: 20px;
+}
+
+#notification-action-buttons button {
+  background-color: @surface;
+  padding: 8px;
+}
+
+#notification-action-buttons button:hover {
+  background-color: @surface_bright;
+}
+
+#notification-action-buttons button:active {
+  background-color: @primary;
+}
+
+#notification-action-buttons button:active #button-label {
+  color: @shadow;
+}
+
+#notification-image image {
+  border-radius: 16px;
+}
+
+#notification-summary, #button-label {
+  font-weight: bold;
+}
+
+#notification-summary {
+  font-weight: bold;
+  color: @primary;
+}
+
+#notification-app-name {
+  color: @outline;
+}
+
+#action-button {
+  margin-top: 8px;
+}

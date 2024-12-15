@@ -10,3 +10,6 @@ source ~/.config/fish/ffmpeg.fish
 source ~/.config/fish/env.fish
 zoxide init fish | source
 [ -f ~/.inshellisense/key-bindings.fish ] && source ~/.inshellisense/key-bindings.fish
+
+# Added by LM Studio CLI (lms)
+set -gx PATH $PATH /home/adriano/.cache/lm-studio/bin

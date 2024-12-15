@@ -1,0 +1,12 @@
+Type=X-GNOME-Metatheme
+[Desktop Entry]
+Name=AxMat
+Comment=A Matugen implementation of @korpsvart's GTK themes made by Axenide
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=AxMat
+MetacityTheme=AxMat
+IconTheme=Tela-circle-Dark
+CursorTheme=Gruvbox-cursors
+ButtonLayout=close,minimize,maximize:menu

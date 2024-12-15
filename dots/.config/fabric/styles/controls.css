@@ -1,0 +1,29 @@
+#controls {
+  background-color: @shadow;
+  border-radius: 16px;
+  margin-top: 4px;
+  padding: 4px;
+  box-shadow: 0 0 4px alpha(black, 0.5);
+}
+
+#controls-button {
+    background-color: @shadow;
+    transition: all 0.1s ease;
+}
+
+#controls-button-label {
+    color: @primary;
+    font-size: 20px;
+    padding: 4px;
+    border-radius: 12px;
+    transition: all 0.1s ease;
+}
+
+#controls-button:hover #controls-button-label {
+    background-color: @surface_bright;
+}
+
+#controls-button:active #controls-button-label {
+    color: @shadow;
+    background-color: @primary;
+}

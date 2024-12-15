@@ -17,6 +17,7 @@ gnome-bluetooth-3.0
 gnome-calculator
 gnome-control-center
 gpu-screen-recorder-gtk-git
+gray-git
 grim
 grimblast-git
 gtk-engine-murrine
@@ -38,8 +39,8 @@ nemo-fileroller
 nemo-image-converter
 nemo-pastebin
 nemo-share
-neofetch
 neovim
+nitch
 noto-fonts-emoji
 otf-font-awesome
 pamixer

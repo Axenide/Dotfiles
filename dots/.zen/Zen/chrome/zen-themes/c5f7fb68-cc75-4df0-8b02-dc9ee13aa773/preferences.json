@@ -1,0 +1,8 @@
+[
+    {
+        "property": "uc.audio-tabicon.left-side",
+        "label": "Move the audio/mute icon to the left side",
+        "type": "checkbox",
+        "disabledOn": []
+    }
+]

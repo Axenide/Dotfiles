@@ -1,0 +1,87 @@
+[
+    {
+        "property": "uc.private-browsing-top-bar.highlighting-style",
+        "label": "Highlighting Style:",
+        "type": "dropdown",
+        "defaultValue": "gradient",
+        "options": [
+            {
+                "label": "Gradient",
+                "value": "gradient"
+            },
+            {
+                "label": "Solid",
+                "value": "solid"
+            }
+        ]
+    },
+    {
+        "property": "uc.private-browsing-top-bar.border-style",
+        "label": "Border Thickness:",
+        "type": "dropdown",
+        "defaultValue": "default",
+        "options": [
+            {
+                "label": "Default",
+                "value": "default"
+            },
+            {
+                "label": "Thin",
+                "value": "thin"
+            }
+        ]
+    },
+    {
+        "property": "uc.private-browsing-top-bar.color",
+        "label": "Highlighting Base Color:",
+        "type": "dropdown",
+        "defaultValue": "default",
+        "options": [
+            {
+                "label": "Default Purple",
+                "value": "default"
+            },
+            {
+                "label": "Match Zen Theme Color",
+                "value": "match-zen"
+            },
+            {
+                "label": "Blue",
+                "value": "blue"
+            },
+            {
+                "label": "Teal",
+                "value": "teal"
+            },
+            {
+                "label": "Green",
+                "value": "green"
+            },
+            {
+                "label": "Yellow",
+                "value": "yellow"
+            },
+            {
+                "label": "Orange",
+                "value": "orange"
+            },
+            {
+                "label": "Brown",
+                "value": "brown"
+            },
+            {
+                "label": "Red",
+                "value": "red"
+            },
+            {
+                "label": "Pink",
+                "value": "pink"
+            }
+        ]
+    },
+    {
+        "property": "uc.private-browsing-top-bar.hide-icon",
+        "label": "Hide the private browsing icon.",
+        "type": "checkbox"
+    }
+]

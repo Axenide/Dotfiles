@@ -1,0 +1,35 @@
+@define-color foreground #dfe3e7;
+@define-color background #101417;
+@define-color cursor #dfe3e7;
+
+@define-color color0 #101417;
+@define-color color1 #92cef5;
+@define-color color2 #92cef5;
+@define-color color3 #92cef5;
+@define-color color4 #92cef5;
+@define-color color5 #92cef5;
+@define-color color6 #92cef5;
+@define-color color7 #92cef5;
+@define-color color8 #92cef5;
+@define-color color9 #92cef5;
+@define-color color10 #92cef5;
+@define-color color11 #92cef5;
+@define-color color12 #92cef5;
+@define-color color13 #92cef5;
+@define-color color14 #92cef5;
+@define-color color15 #92cef5;
+
+@define-color primary #92cef5;
+@define-color on_primary #00344b;
+@define-color secondary #b6c9d8;
+@define-color on_secondary #21323e;
+@define-color tertiary #ccc1e9;
+@define-color on_tertiary #332b4b;
+@define-color surface #101417;
+@define-color surface_bright #353a3d;
+@define-color error #ffb4ab;
+@define-color error_dim #ff8678;
+@define-color on_error #690005;
+@define-color error_container #93000a;
+@define-color outline #8b9198;
+@define-color shadow #000000;

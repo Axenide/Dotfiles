@@ -1,0 +1,1 @@
+@-moz-document url-prefix("chrome:") {    #tabbrowser-tabs {    & .tabbrowser-tab {      &[pinned]:not([zen-essential]):hover .tab-reset-button,      &[pinned][visuallyselected]:not([zen-essential]) .tab-reset-button {        display: none !important;      }    }  }  }
