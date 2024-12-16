@@ -1,12 +1,12 @@
 dots/.config/tmux/plugins/
-dots/.config/hypr/nvidia.conf
+dots/.config/hypr/nbash (curl -L https://zellij.dev/launch | psub)vidia.conf
 dots/.config/hypr/source/keyboard.conf
 dots/.config/hypr/source/colors.conf
 dots/.config/fabric/bar/styles/themes/wal.css
 dots/.config/kitty/wal.conf
 dots/.config/kitty/slurp.sh
 dots/.config/swaync/colors.css
-term/.config/nvim/lua/themes/axwal.lua
+dots/.config/nvim/lua/themes/axwal.lua
 dots/.config/vesktop/themes/axwal.theme.css
 dots/.config/yazi/theme.toml
 dots/.config/swaylock/config
@@ -15,13 +15,13 @@ dots/.config/zathura/zathurarc
 **/__pycache__
 **/venv
 dots/.config/yazi/theme.toml
-term/.config/yazi/theme.toml
+dots/.config/yazi/theme.toml
 dots/.config/gtk-4.0/colors.css
 dots/.config/gtk-3.0/colors.css
-term/.config/nvim/pywal
+dots/.config/nvim/pywal
 dots/.config/kitty/mat.conf
 dots/.config/fabric/bar_test
-term/.config/fish/api.fish
+dots/.config/fish/api.fish
 dots/.config/fabric/bar/styles/themes/mat.css
 dots/.zen/*
 dots/.zen/Zen/*
@@ -30,7 +30,8 @@ dots/.zen/Zen/*
 !dots/.zen/Zen/user.js
 !dots/.zen/Zen/zen-keyboard-shortcuts.json
 !dots/.zen/Zen/zen-themes.json
-term/.config/nvim/lazy-lock.json
+dots/.config/nvim/lazy-lock.json
 dots/.config/fabric/styles/colors.css
 dots/.config/kitty/colors.conf
 dots/.config/vesktop/themes/axnight.theme.css
+dots/.config/hypr/source/nvidia.conf

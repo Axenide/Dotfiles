@@ -20,7 +20,7 @@ https://github.com/user-attachments/assets/d58ccfea-8101-4476-a6da-1c1d05d67796
 ```bash
 git clone https://github.com/Axenide/Dotfiles
 cd Dotfiles
-./dots.sh
+bash install.sh
 ```
 This will execute the installation wizard.
 
@@ -37,8 +37,6 @@ Also it will install `yay`, but you can skip the installation and use any AUR he
 |---------------------------------------------:|:--------------------------------|
 | <kbd>SUPER + C</kbd>                                  | Close window                    |
 | <kbd>SUPER + SHIFT + Esc</kbd>                     | Exit Hyprland                   |
-| <kbd>SUPER + SHIFT + B</kbd>                                  | Toggle Waybar                     |
-| <kbd>SUPER + ALT + B</kbd>                            | Restart Waybar                  |
 | <kbd>SUPER + Space</kbd>                              | Toggle tiled/floating           |
 | <kbd>SUPER + P</kbd>                                  | Toggle pseudo-tiling            |
 | <kbd>SUPER + SHIFT + D</kbd>                                  | Toggle split                    |
@@ -71,14 +69,16 @@ Also it will install `yay`, but you can skip the installation and use any AUR he
 | <kbd>SUPER + SHIFT + E</kbd>                          | Floating file explorer          |
 | <kbd>SUPER + W</kbd>                                  | Zen Browser                         |
 | <kbd>SUPER + SHIFT + W</kbd>                          | Private Zen Browser                 |
+| <kbd>SUPER + M</kbd>                                  | Calculator                   |
 | <kbd>Print</kbd>                                      | Save and copy screenshot        |
 | <kbd>SHIFT + Print</kbd>                              | Copy screenshot                 |
 | <kbd>SUPER + SHIFT + S</kbd>                          | Copy area screenshot            |
 | <kbd>SUPER + D</kbd>                                  | Toggle Dashboard                    |
-| <kbd>SUPER + A</kbd>                                  | Talk with Alpha              |
+| <kbd>SUPER + A</kbd>                                  | WIP              |
 | <kbd>SUPER + ,</kbd>                                  | Select wallpaper              |
 | <kbd>SUPER + SHIFT + B</kbd>                          | Reload bar CSS              |
 | <kbd>SUPER + ALT + B</kbd>                            | Restart bar              |
+| <kbd>SUPER + CTRL + B</kbd>                            | Toggle bar              |
 
 ### Tmux
 
@@ -110,7 +110,7 @@ I'm currently using [Zen Browser](https://zen-browser.app/) with some custom twe
 If you just want good [Pywalfox](https://github.com/Frewacom/pywalfox/) support, install the [PywalZen](https://zen-browser.app/themes/d2953516-d239-4ef8-aac5-b238e3dc0360) theme I made!
 
 > [!NOTE]
-> I also modified some shortcuts to make them analog to the ones I use in Hyprland.
+> I also modified some shortcuts to make them similar to the ones I use in Hyprland.
 
 | Keys                | Action                  |
 |--------------------:|:------------------------|

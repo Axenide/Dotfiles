@@ -1,0 +1,35 @@
+@define-color foreground {{colors.on_background.default.hex}};
+@define-color background {{colors.background.default.hex}};
+@define-color cursor {{colors.on_background.default.hex}};
+
+@define-color color0 {{colors.background.default.hex}};
+@define-color color1 {{colors.primary.default.hex}};
+@define-color color2 {{colors.primary.default.hex}};
+@define-color color3 {{colors.primary.default.hex}};
+@define-color color4 {{colors.primary.default.hex}};
+@define-color color5 {{colors.primary.default.hex}};
+@define-color color6 {{colors.primary.default.hex}};
+@define-color color7 {{colors.primary.default.hex}};
+@define-color color8 {{colors.primary.default.hex}};
+@define-color color9 {{colors.primary.default.hex}};
+@define-color color10 {{colors.primary.default.hex}};
+@define-color color11 {{colors.primary.default.hex}};
+@define-color color12 {{colors.primary.default.hex}};
+@define-color color13 {{colors.primary.default.hex}};
+@define-color color14 {{colors.primary.default.hex}};
+@define-color color15 {{colors.primary.default.hex}};
+
+@define-color primary {{colors.primary.default.hex}};
+@define-color on_primary {{colors.on_primary.default.hex}};
+@define-color secondary {{colors.secondary.default.hex}};
+@define-color on_secondary {{colors.on_secondary.default.hex}};
+@define-color tertiary {{colors.tertiary.default.hex}};
+@define-color on_tertiary {{colors.on_tertiary.default.hex}};
+@define-color surface {{colors.surface.default.hex}};
+@define-color surface_bright {{colors.surface_bright.default.hex}};
+@define-color error {{colors.error.default.hex}};
+@define-color error_dim {{colors.error.default.hex | set_lightness: -10.0}};
+@define-color on_error {{colors.on_error.default.hex}};
+@define-color error_container {{colors.error_container.default.hex}};
+@define-color outline {{colors.outline.default.hex}};
+@define-color shadow {{colors.shadow.default.hex}};

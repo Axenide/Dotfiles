@@ -1,0 +1,93 @@
+/**
+ * @name AxNight
+ * @description A dark, rounded discord theme. Axenide's Pywal take.
+ * @author refact0r, esme, anubis, Axenide
+ * @version 0.0.1
+ * @website https://github.com/Dotfiles/Axenide
+ * @authorLink https://zaap.bio/Axenide
+*/
+
+/* IMPORTANT: make sure to enable dark mode in discord settings for the theme to apply properly!!! */
+
+@import url('https://refact0r.github.io/midnight-discord/midnight.css');
+
+@import url('https://fonts.googleapis.com/css?family=Inter');
+
+/* customize things here */
+
+:root {
+	/* font, change to 'gg sans' for default discord font*/
+	--font: 'gg sans';
+
+	/* top left corner text */
+	--corner-text: 'Axenide';
+
+	/* color of status indicators and window controls */
+	--online-indicator: #23a55a; /* change to #23a55a for default green */
+	--dnd-indicator: #f13f43; /* change to #f13f43 for default red */
+	--idle-indicator: #f0b232; /* change to #f0b232 for default yellow */
+
+	/* accent colors */
+	--accent-1: {{colors.primary.default.hex}}; /* links */
+	--accent-2: {{colors.primary.default.hex}}; /* general unread/mention elements */
+	--accent-3: {{colors.primary.default.hex}}; /* accent buttons */
+	--accent-4: {{colors.primary.default.hex}}; /* accent buttons when hovered */
+	--accent-5: {{colors.primary.default.hex}}; /* accent buttons when clicked */
+	--mention: color-mix(in srgb, {{colors.primary.default.hex}} 30%, black); 
+	--mention-hover: color-mix(in srgb, {{colors.primary.default.hex}} 20%, black);
+
+	/* text colors */
+	--text-0: var(--bg-4); /* text on colored elements */
+	--text-1: var(--text-2); /* other normally white text */
+	--text-2: {{colors.on_background.default.hex}}; /* headings and important text */
+	--text-3: color-mix(in srgb, var(--text-2) 90%, black); /* normal text */
+	--text-4: color-mix(in srgb, var(--text-2) 80%, black); /* icon buttons and channels */
+	--text-5: color-mix(in srgb, var(--text-2) 50%, black); /* muted channels/chats and timestamps */
+
+	/* background and dark colors */
+	--bg-1: hsl(0, 0%, 25%); /* dark buttons when clicked */
+	--bg-2: hsl(20, 5%, 22%); /* dark buttons */
+	--bg-3: {{colors.background.default.hex}}; /* spacing, secondary elements */
+	--bg-4: color-mix(in srgb, var(--bg-3) 30%, black); /* main background color */
+	--hover: color-mix(in srgb, {{colors.primary.default.hex}} 10%, black); 
+	--active: color-mix(in srgb, {{colors.primary.default.hex}} 20%, black); 
+	--message-hover: color-mix(in srgb, {{colors.primary.default.hex}} 10%, black);
+
+	/* amount of spacing and padding */
+	--spacing: 8px;
+
+	/* animations */
+	/* ALL ANIMATIONS CAN BE DISABLED WITH REDUCED MOTION IN DISCORD SETTINGS */
+	--list-item-transition: 0.2s ease; /* channels/members/settings hover transition */
+	--unread-bar-transition: 0.2s ease; /* unread bar moving into view transition */
+	--moon-spin-transition: 0.4s ease; /* moon icon spin */
+	--icon-spin-transition: 1s ease; /* round icon button spin (settings, emoji, etc.) */
+
+	/* corner roundness (border-radius) */
+	--roundness-xl: 20px; /* roundness of big panel outer corners */
+	--roundness-l: 20px; /* popout panels */
+	--roundness-m: 20px; /* smaller panels, images, embeds */
+	--roundness-s: 20px; /* members, settings inputs */
+	--roundness-xs: 20px; /* channels, buttons */
+	--roundness-xxs: 20px; /* searchbar, small elements */
+
+	/* direct messages moon icon */
+	/* change to block to show, none to hide */
+	--discord-icon: none; /* discord icon */
+	--moon-icon: block; /* moon icon */
+	--moon-icon-url: url("data:image/svg+xml,%3Csvg%20%20xmlns=%22http://www.w3.org/2000/svg%22%20%20width=%2224%22%20%20height=%2224%22%20%20viewBox=%220%200%2024%2024%22%20%20fill=%22currentColor%22%20%20class=%22icon%20icon-tabler%20icons-tabler-filled%20icon-tabler-brand-discord%22%3E%3Cpath%20stroke=%22none%22%20d=%22M0%200h24v24H0z%22%20fill=%22none%22/%3E%3Cpath%20d=%22M14.983%203l.123%20.006c2.014%20.214%203.527%20.672%204.966%201.673a1%201%200%200%201%20.371%20.488c1.876%205.315%202.373%209.987%201.451%2012.28c-1.003%202.005%20-2.606%203.553%20-4.394%203.553c-.732%200%20-1.693%20-.968%20-2.328%20-2.045a21.512%2021.512%200%200%200%202.103%20-.493a1%201%200%201%200%20-.55%20-1.924c-3.32%20.95%20-6.13%20.95%20-9.45%200a1%201%200%200%200%20-.55%201.924c.717%20.204%201.416%20.37%202.103%20.494c-.635%201.075%20-1.596%202.044%20-2.328%202.044c-1.788%200%20-3.391%20-1.548%20-4.428%20-3.629c-.888%20-2.217%20-.39%20-6.89%201.485%20-12.204a1%201%200%200%201%20.371%20-.488c1.439%20-1.001%202.952%20-1.459%204.966%20-1.673a1%201%200%200%201%20.935%20.435l.063%20.107l.651%201.285l.137%20-.016a12.97%2012.97%200%200%201%202.643%200l.134%20.016l.65%20-1.284a1%201%200%200%201%20.754%20-.54l.122%20-.009zm-5.983%207a2%202%200%200%200%20-1.977%201.697l-.018%20.154l-.005%20.149l.005%20.15a2%202%200%201%200%201.995%20-2.15zm6%200a2%202%200%200%200%20-1.977%201.697l-.018%20.154l-.005%20.149l.005%20.15a2%202%200%201%200%201.995%20-2.15z%22%20/%3E%3C/svg%3E");
+	--moon-icon-size: cover;
+
+	/* filter uncolorable elements to fit theme */
+	/* (just set to none, they're too much work to configure) */
+	--login-bg-filter: none; /* login background artwork */
+	--green-to-accent-3-filter: none; /* add friend page explore icon */
+	--blurple-to-accent-3-filter: none; /* add friend page school icon */
+}
+
+/* disable DM spin */
+.wrapper__8436d:hover > .childWrapper_a6ce15::before,
+.wrapper__8436d.selected_ae80f7 > .childWrapper_a6ce15::before {
+	background: var(--text-0);
+	transform: rotate(-0deg) scale(0.8);
+}

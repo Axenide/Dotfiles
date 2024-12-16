@@ -1,0 +1,57 @@
+# ┌──────────────────────────────────────┐
+# │                                      │
+# │     ░▀▀█░█▀█░▀█▀░█░█░█░█░█▀▄░█▀█     │
+# │     ░▄▀░░█▀█░░█░░█▀█░█░█░█▀▄░█▀█     │
+# │     ░▀▀▀░▀░▀░░▀░░▀░▀░▀▀▀░▀░▀░▀░▀     │
+# │                                      │
+# └──────────────────────────────────────┘
+
+set notification-error-bg       "{{colors.error.default.hex}}"
+set notification-error-fg       "{{colors.on_error.default.hex}}"
+set notification-warning-bg     "#ffb86c"
+set notification-warning-fg     "#44475a"
+set notification-bg             "{{colors.surface_container_low.default.hex}}"
+set notification-fg             "{{colors.on_surface_variant.default.hex}}"
+
+set completion-bg               "{{colors.surface_container_low.default.hex}}"
+set completion-fg               "{{colors.on_surface_variant.default.hex}}"
+set completion-group-bg         "{{colors.primary.default.hex}}"
+set completion-group-fg         "{{colors.on_primary.default.hex}}"
+set completion-highlight-bg     "{{colors.secondary.default.hex}}"
+set completion-highlight-fg     "{{colors.on_secondary.default.hex}}"
+
+set index-bg                    "{{colors.background.default.hex}}"
+set index-fg                    "{{colors.on_surface_variant.default.hex}}"
+set index-active-bg             "{{colors.primary.default.hex}}"
+set index-active-fg             "{{colors.on_primary.default.hex}}"
+
+set inputbar-bg                 "{{colors.surface_container_low.default.hex}}"
+set inputbar-fg                 "{{colors.on_surface_variant.default.hex}}"
+set statusbar-bg                "{{colors.surface_container_low.default.hex}}"
+set statusbar-fg                "{{colors.on_surface_variant.default.hex}}"
+
+set highlight-fg                rgba({{colors.on_surface.default.red}},{{colors.on_surface.default.green}},{{colors.on_surface.default.blue}},1.0)
+set highlight-active-color      rgba({{colors.error.default.red}},{{colors.tertiary.default.green}},{{colors.tertiary.default.blue}},0.5)
+set highlight-color             rgba({{colors.tertiary.default.red}},{{colors.error.default.green}},{{colors.error.default.blue}},0.5)
+
+set default-bg                  "{{colors.background.default.hex}}"
+set default-fg                  "{{colors.on_surface_variant.default.hex}}"
+
+set render-loading              true
+set render-loading-fg           "{{colors.background.default.hex}}"
+set render-loading-bg           "{{colors.on_surface_variant.default.hex}}"
+
+# Recolor mode settings
+set recolor                     true
+set recolor-lightcolor          "{{colors.background.default.hex}}"
+set recolor-darkcolor           "{{colors.on_surface_variant.default.hex}}"
+
+# Custom settings
+set window-title-home-tilde true
+set statusbar-basename true
+set selection-clipboard clipboard
+set adjust-open "width"
+set guioptions ""
+set first-page-column 1:2
+map j feedkeys "<C-Down>"
+map k feedkeys "<C-Up>"

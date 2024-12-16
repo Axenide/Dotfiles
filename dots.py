@@ -1,9 +1,17 @@
 import os
-import inquirer
 import subprocess
-import sys
+import questionary
+from rich.console import Console
+from rich.text import Text
 
-title_text:str = """
+console = Console()
+
+def clear():
+    os.system("clear")
+
+def title():
+    clear()
+    console.print(Text("""
 ┌────────────────────────────────────────────┐
 │                                            │
 │     ░█▀█░█░█░█▀▀░█▀█░▀█▀░█▀▄░█▀▀░▀░█▀▀     │
@@ -14,9 +22,80 @@ title_text:str = """
 │     ░▀▀░░▀▀▀░░▀░░▀░░░▀▀▀░▀▀▀░▀▀▀░▀▀▀       │
 │                                            │
 └────────────────────────────────────────────┘
-"""
+""", style="bold red"))
 
-done_text:str = """
+def show_menu():
+    title()
+    graphics_option = questionary.select(
+        "Graphics?",
+        choices=["NVIDIA", "Open Source (AMD/Intel/Nouveau)"]
+    ).ask()
+
+    keyboard_option = questionary.select(
+        "Keyboard layout?",
+        choices=["US", "LATAM"]
+    ).ask()
+
+    return graphics_option, keyboard_option
+
+def copy_config(src, dest):
+    with open(src, "r") as source:
+        with open(dest, "w") as destination:
+            destination.write(source.read())
+
+def stow_files():
+    title()
+    console.print("Stowing dotfiles...", style="bold green")
+    subprocess.run(["stow", "dots"], check=True)
+
+def install_packages():
+    title()
+    package_choice = questionary.select(
+        "Install needed packages?",
+        choices=["Yes", "No"]
+    ).ask()
+
+    if package_choice == "Yes":
+        subprocess.run(["bash", "pacman.sh"], check=True)
+    else:
+        console.print("Skipping package installation.", style="bold yellow")
+
+def install_tpm_plugins():
+    title()
+    tpm_choice = questionary.select(
+        "Install TPM plugins?",
+        choices=["Yes", "No"]
+    ).ask()
+
+    if tpm_choice == "Yes":
+        tpm_dir = os.path.expanduser("~/.tmux/plugins")
+        subprocess.run(["rm", "-rf", tpm_dir], check=True)
+        os.makedirs(tpm_dir, exist_ok=True)
+        subprocess.run(["git", "clone", "https://github.com/tmux-plugins/tpm", tpm_dir], check=True)
+        subprocess.run([os.path.join(tpm_dir, "tpm/scripts/install_plugins.sh")], check=True)
+    else:
+        console.print("Skipping TPM plugins installation.", style="bold yellow")
+
+def main():
+    title()
+    graphics_option, keyboard_option = show_menu()
+
+    # Copy configuration files
+    if graphics_option == "NVIDIA":
+        copy_config("./options/nvidia.conf", "./dots/.config/hypr/source/nvidia.conf")
+
+    keyboard_file = "us.conf" if keyboard_option == "US" else "latam.conf"
+    copy_config(f"./options/{keyboard_file}", "./dots/.config/hypr/source/keyboard.conf")
+
+    stow_files()
+    install_packages()
+    install_tpm_plugins()
+
+    # Set wallpaper and theme
+    subprocess.run(["matugen", "image", "./example_wallpaper.jpg"], check=True, stdout=subprocess.DEVNULL)
+
+    clear()
+    console.print("""
 ┌────────────────────────────┐
 │                            │
 │     ░█▀▄░█▀█░█▀█░█▀▀░█     │
@@ -25,119 +104,7 @@ done_text:str = """
 │                            │
 └────────────────────────────┘
 > https://github.com/Axenide <
-"""
-
-def clear():
-    os.system('clear')
-
-def title():
-    clear()
-    print(f"\033[91m{title_text}\033[0m") 
-
-def main():
-    test_mode = '--test' in sys.argv
-    term_mode = '--term' in sys.argv
-    title()
-
-    questions = [
-        inquirer.List(
-            'graphics',
-            message="Graphics?",
-            choices=['NVIDIA', 'Open Source (AMD/Intel/Nouveau)'],
-        ),
-        inquirer.List(
-            'keyboard',
-            message="Keyboard layout?",
-            choices=['US', 'LATAM'],
-        )
-    ]
-
-    answers = inquirer.prompt(questions)
-
-    graphics_option = answers['graphics']
-    keyboard_option = answers['keyboard']
-
-    title()
-    print("Stowing dotfiles...\n")
-
-    if graphics_option == 'NVIDIA':
-        if test_mode:
-            print("Would copy ./options/nvidia.conf to ./dots/.config/hypr/source/nvidia.conf")
-        else:
-            with open('./options/nvidia.conf', 'r') as src, open('./dots/.config/hypr/source/nvidia.conf', 'w') as dst:
-                dst.write(src.read())
-
-    if keyboard_option == 'US':
-        if test_mode:
-            print("Would copy ./options/us.conf to ./dots/.config/hypr/source/keyboard.conf")
-        else:
-            with open('./options/us.conf', 'r') as src, open('./dots/.config/hypr/source/keyboard.conf', 'w') as dst:
-                dst.write(src.read())
-    else:
-        if test_mode:
-            print("Would copy ./options/latam.conf to ./dots/.config/hypr/source/keyboard.conf")
-        else:
-            with open('./options/latam.conf', 'r') as src, open('./dots/.config/hypr/source/keyboard.conf', 'w') as dst:
-                dst.write(src.read())
-
-    stow_target = 'term' if term_mode else 'dots'
-    if test_mode:
-        print(f"Would run 'stow {stow_target}'")
-    else:
-        os.system(f'stow {stow_target}')
-
-    title()
-    answer = inquirer.prompt([inquirer.Confirm('install_packages', message="Install needed packages?", default=True)])
-
-    if answer['install_packages']:
-        pacman_script = 'term.sh' if term_mode else 'pacman.sh'
-        if test_mode:
-            print(f"Would run 'bash {pacman_script}'")
-        else:
-            subprocess.run(['bash', pacman_script])
-    else:
-        print("Skipping package installation.")
-
-    title()
-    answer = inquirer.prompt([inquirer.Confirm('install_tpm', message="Install TPM plugins?", default=True)])
-
-    if answer['install_tpm']:
-        if test_mode:
-            print("Would remove ~/.tmux, create ~/.tmux/plugins, and clone TPM")
-            print("Would run ~/.tmux/plugins/tpm/scripts/install_plugins.sh")
-        else:
-            os.system('rm -rf ~/.tmux')
-            os.makedirs('~/.tmux/plugins', exist_ok=True)
-            subprocess.run(['git', 'clone', 'https://github.com/tmux-plugins/tpm', '~/.tmux/plugins/tpm'])
-            subprocess.run(['~/.tmux/plugins/tpm/scripts/install_plugins.sh'])
-    else:
-        print("Skipping TPM plugins installation.")
-
-    title()
-    answer = inquirer.prompt([inquirer.Confirm('install_firefox', message="Install Firefox custom CSS and user.js?", default=True)])
-
-    if answer['install_firefox']:
-        if test_mode:
-            print("Would run 'bash firefox.sh'")
-        else:
-            subprocess.run(['bash', 'firefox.sh'])
-    else:
-        print("Skipping Firefox config.")
-
-    if test_mode:
-        print("Would symlink ./example_wallpaper.png to ~/.current.wall")
-    else:
-        os.symlink('./example_wallpaper.png', os.path.expanduser('~/.current.wall'))
-
-    if test_mode:
-        print("Would run 'wal --theme base16-gruvbox-hard'")
-        print("Would run 'python ./dots/.config/wal/set.py'")
-    else:
-        subprocess.run(['wal', '--theme', 'base16-gruvbox-hard'])
-        subprocess.run(['python', './dots/.config/wal/set.py'])
-
-    clear()
-    print(f"\033[32m{done_text}\033[0m")
+""", style="bold green")
 
 if __name__ == "__main__":
     main()

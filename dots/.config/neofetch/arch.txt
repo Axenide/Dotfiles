@@ -1,0 +1,11 @@
+\e[3m\e[91m
+           .
+          .c.
+         .ccc.
+        .lllll.
+       ..;'olll.
+      .dolllcccl.
+     .lcc'   'ccc.
+    .ccc'     'cc:.
+   .cccc'     'c:;..
+  ."'             '".

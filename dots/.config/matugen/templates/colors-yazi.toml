@@ -1,0 +1,46 @@
+[manager]
+cwd = { fg = "{{colors.secondary.default.hex}}", bold=true}
+
+hovered         = { fg = "{{colors.on_primary_container.default.hex}}", bg = "{{colors.primary_container.default.hex}}" }
+preview_hovered = { underline = true, bold=true }
+
+
+[status]
+separator_open  = ""
+separator_close = ""
+separator_style = { fg = "{{colors.on_primary_container.default.hex}}", bg = "{{colors.primary_container.default.hex}}" }
+
+# Mode
+mode_normal = { fg = "{{colors.on_primary.default.hex}}",   bg = "{{colors.primary.default.hex}}", bold = true }
+mode_select = { fg = "{{colors.on_secondary.default.hex}}", bg = "{{colors.secondary.default.hex}}", bold = true }
+mode_unset  = { fg = "{{colors.on_tertiary.default.hex}}",  bg = "{{colors.tertiary.default.hex}}", bold = true }
+
+[which]
+mask            = { bg = "{{colors.surface_container.default.hex}}" }
+cand            = { fg = "{{colors.primary.default.hex}}" }
+desc            = { fg = "{{colors.secondary.default.hex}}" }
+separator       = "  "
+separator_style = { fg = "{{colors.tertiary.default.hex}}" }
+
+[filetype]
+rules = [
+	# Images
+	{ mime = "image/*", fg = "{{colors.secondary.default.hex}}" },
+
+	# Videos
+	{ mime = "video/*", fg = "{{colors.tertiary.default.hex}}" },
+	{ mime = "audio/*", fg = "{{colors.tertiary.default.hex}}" },
+
+	# Archives
+	{ mime = "application/zip",             fg = "{{colors.error.default.hex}}" },
+	{ mime = "application/gzip",            fg = "{{colors.error.default.hex}}" },
+	{ mime = "application/x-tar",           fg = "{{colors.error.default.hex}}" },
+	{ mime = "application/x-bzip",          fg = "{{colors.error.default.hex}}" },
+	{ mime = "application/x-bzip2",         fg = "{{colors.error.default.hex}}" },
+	{ mime = "application/x-7z-compressed", fg = "{{colors.error.default.hex}}" },
+	{ mime = "application/x-rar",           fg = "{{colors.error.default.hex}}" },
+
+	# Fallback
+	{ name = "*", fg = "{{colors.primary.default.hex}}", bold=true },
+	{ name = "*/", fg = "{{colors.secondary.default.hex}}", bold=true }
+]
