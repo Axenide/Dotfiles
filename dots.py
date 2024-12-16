@@ -83,6 +83,8 @@ def main():
     # Copy configuration files
     if graphics_option == "NVIDIA":
         copy_config("./options/nvidia.conf", "./dots/.config/hypr/source/nvidia.conf")
+    else:
+        copy_config("./options/nvidia-dummy.conf", "./dots/.config/hypr/source/nvidia.conf")
 
     keyboard_file = "us.conf" if keyboard_option == "US" else "latam.conf"
     copy_config(f"./options/{keyboard_file}", "./dots/.config/hypr/source/keyboard.conf")
