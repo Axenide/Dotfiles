@@ -1,8 +1,15 @@
 return {
   {
+    "stevearc/conform.nvim",
+    -- event = 'BufWritePre', -- uncomment for format on save
+    opts = require "configs.conform",
+  },
+
+  -- Estos son los plugins nuevos añadidos:
+  {
     "yetone/avante.nvim",
     event = "VeryLazy",
-    build = "make", -- This is Optional, only if you want to use tiktoken_core to calculate tokens count
+    build = "make",
     opts = {
       provider = "groq",
       vendors = {
@@ -11,7 +18,6 @@ return {
           endpoint = "https://api.groq.com/openai/v1/chat/completions",
           model = "llama-3.2-90b-vision-preview",
           api_key_name = "GROQ_API_KEY",
-          --- this function below will be used to parse in cURL arguments.
           parse_curl_args = function(opts, code_opts)
             return {
               url = opts.endpoint,
@@ -22,14 +28,13 @@ return {
               },
               body = {
                 model = opts.model,
-                messages = require("avante.providers").openai.parse_message(code_opts), -- you can make your own message, but this is very advanced
+                messages = require("avante.providers").openai.parse_message(code_opts),
                 temperature = 0,
                 max_tokens = 8000,
-                stream = true, -- this will be set by default.
+                stream = true,
               },
             }
           end,
-          -- The below function is used if the vendors has specific SSE spec that is not claude or openai.
           parse_response_data = function(data_stream, event_state, opts)
             require("avante.providers").openai.parse_response(data_stream, event_state, opts)
           end,
@@ -37,13 +42,12 @@ return {
       },
     },
     dependencies = {
-      "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
+      "nvim-tree/nvim-web-devicons",
       "stevearc/dressing.nvim",
       "nvim-lua/plenary.nvim",
       "MunifTanjim/nui.nvim",
-      --- The below is optional, make sure to setup it properly if you have lazy=true
       {
-        'MeanderingProgrammer/render-markdown.nvim',
+        "MeanderingProgrammer/render-markdown.nvim",
         opts = {
           file_types = { "markdown", "Avante" },
         },
@@ -51,15 +55,10 @@ return {
       },
     },
   },
+
   {
     "danymat/neogen",
     config = true,
-  },
-  {
-    "stevearc/conform.nvim",
-    config = function()
-      require "configs.conform"
-    end,
   },
 
   {
@@ -68,45 +67,50 @@ return {
       git = { enable = true },
     },
   },
+
   {
-    'Exafunction/codeium.vim',
+    "Exafunction/codeium.vim",
     event = "BufEnter",
   },
+
   {
     "TobinPalmer/pastify.nvim",
-    cmd = { 'Pastify' },
+    cmd = { "Pastify" },
     config = function()
-      require("pastify").setup({
+      require("pastify").setup {
         opts = {
           local_path = "/assets/img/",
         },
-      })
+      }
     end,
   },
 
-  {"ellisonleao/glow.nvim", config = true, cmd = "Glow"},
+  { "ellisonleao/glow.nvim", config = true, cmd = "Glow" },
 
   {
     "iamcco/markdown-preview.nvim",
     ft = "markdown",
-    cmd = {"MarkdownPreview", "MarkdownPreviewStop"},
+    cmd = { "MarkdownPreview", "MarkdownPreviewStop" },
     build = "cd app && yarn install && git reset --hard",
     config = function()
-      local plugin_dir = vim.fn.stdpath("config") .. "/lua/plugins/"
+      local plugin_dir = vim.fn.stdpath "config" .. "/lua/plugins/"
       vim.g.mkdp_browser = plugin_dir .. "webview.py"
       vim.g.mkdp_auto_close = 0
     end,
   },
+
   {
     "nvim-treesitter/nvim-treesitter",
     opts = {
       auto_install = true,
     },
   },
+
   {
     "christoomey/vim-tmux-navigator",
     lazy = false,
   },
+
   {
     "tpope/vim-fugitive",
     lazy = false,
@@ -123,21 +127,13 @@ return {
   },
 
   {
-    "neovim/nvim-lspconfig",
-    config = function()
-      require "configs.lspconfig"
-      require "configs.lspconfig"
-    end,
+    "mfussenegger/nvim-dap",
+    config = function(_, opts) end,
   },
 
   {
-    "mfussenegger/nvim-dap",
-    config = function(_, opts)
-    end
-  },
-  {
     "mfussenegger/nvim-dap-python",
-    ft = {"python"},
+    ft = { "python" },
     dependencies = {
       "nvim-neotest/nvim-nio",
       "mfussenegger/nvim-dap",
@@ -153,8 +149,8 @@ return {
     "rcarriga/nvim-dap-ui",
     dependencies = "mfussenegger/nvim-dap",
     config = function()
-      local dap = require("dap")
-      local dapui = require("dapui")
+      local dap = require "dap"
+      local dapui = require "dapui"
       dapui.setup()
       dap.listeners.after.event_initialized["dapui_config"] = function()
         dapui.open()
@@ -165,6 +161,14 @@ return {
       dap.listeners.before.event_exited["dapui_config"] = function()
         dapui.close()
       end
+    end,
+  },
+
+  -- Plugin ya existente
+  {
+    "neovim/nvim-lspconfig",
+    config = function()
+      require "configs.lspconfig"
     end,
   },
 }
