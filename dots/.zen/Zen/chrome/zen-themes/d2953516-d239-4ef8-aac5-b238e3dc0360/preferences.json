@@ -5,11 +5,26 @@
         "type": "dropdown",
         "defaultValue": "default",
         "options": [
-            {"value": "default", "label": "Default"},
-            {"value": "dark", "label": "Dark"},
-            {"value": "darker", "label": "Darker"},
-            {"value": "yet-darker", "label": "Yet darker"},
-            {"value": "pitch-black", "label": "Pitch black"}
+            {
+                "value": "default",
+                "label": "Default"
+            },
+            {
+                "value": "dark",
+                "label": "Dark"
+            },
+            {
+                "value": "darker",
+                "label": "Darker"
+            },
+            {
+                "value": "yet-darker",
+                "label": "Yet darker"
+            },
+            {
+                "value": "pitch-black",
+                "label": "Pitch black"
+            }
         ],
         "disabledOn": []
     }

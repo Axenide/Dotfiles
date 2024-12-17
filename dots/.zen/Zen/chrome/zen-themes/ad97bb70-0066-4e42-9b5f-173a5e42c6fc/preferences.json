@@ -22,18 +22,6 @@
         ]
     },
     {
-        "property": "uc.pins.legacy-layout",
-        "label": "Makes pinned tabs look similar to Essentials (icon only in a grid)",
-        "type": "checkbox",
-        "disabledOn": []
-    },
-    {
-        "property": "uc.pins.bg",
-        "label": "Adds a background to the pinned tabs",
-        "type": "checkbox",
-        "disabledOn": []
-    },
-    {
         "property": "uc.essentials.gap",
         "label": "Select the gap between Essentials",
         "type": "dropdown",
@@ -52,6 +40,25 @@
             {
                 "label": "Big",
                 "value": "Big"
+            }
+        ]
+    },
+    {
+        "property": "uc.pins.essentials-layout",
+        "label": "Adds selected width and gap styles from Essentials to pinned tabs as well",
+        "type": "checkbox",
+        "disabledOn": []
+    },
+    {
+        "property": "uc.essentials.color-scheme",
+        "label": "Background/Color types of Essentials",
+        "type": "dropdown",
+        "placeholder": "Zen Default",
+        "disabledOn": [],
+        "options": [
+            {
+                "label": "Transparent Background",
+                "value": "transparent"
             }
         ]
     },
@@ -83,6 +90,24 @@
         ]
     },
     {
+        "property": "uc.pins.legacy-layout",
+        "label": "Makes pinned tabs look similar to Essentials (icon only in a grid)",
+        "type": "checkbox",
+        "disabledOn": []
+    },
+    {
+        "property": "uc.pins.bg",
+        "label": "Adds a background to the pinned tabs",
+        "type": "checkbox",
+        "disabledOn": []
+    },
+    {
+        "property": "uc.pins.hide-reset-button",
+        "label": "Hide the reset button on pinned tabs",
+        "type": "checkbox",
+        "disabledOn": []
+    },
+    {
         "property": "uc.pins.only-show-active",
         "label": "Only shows loaded pinned tabs (when the tab bar is collapsed)",
         "type": "dropdown",
@@ -100,17 +125,10 @@
         ]
     },
     {
-        "property": "uc.essentials.color-scheme",
-        "label": "Background/Color types of Essentials",
-        "type": "dropdown",
-        "placeholder": "Zen Default",
-        "disabledOn": [],
-        "options": [
-            {
-                "label": "Transparent Background",
-                "value": "transparent"
-            }
-        ]
+        "property": "zen.workspaces.show-workspace-indicator",
+        "label": "Shows the workspace-indicator between Essentials and Pins",
+        "type": "checkbox",
+        "disabledOn": []
     },
     {
         "property": "browser.sessionstore.restore_pinned_tabs_on_demand",
