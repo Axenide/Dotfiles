@@ -15,7 +15,7 @@ user_pref("uc.bookmarks.center-toolbar", true);
 // Workspaces
 juser_pref("zen.workspaces.container-specific-essentials-enabled", true);
 user_pref("zen.workspaces.force-container-workspace", true);
-user_pref("zen.workspaces.hide-deactivated-workspaces", true);
+user_pref("zen.workspaces.hide-deactivated-workspaces", false);
 // Misc
 user_pref("zen.welcomeScreen.seen", true);
 user_pref("zen.view.split-view.change-on-hover", true);

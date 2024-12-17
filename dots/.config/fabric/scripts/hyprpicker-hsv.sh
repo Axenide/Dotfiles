@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Execute hyprpicker with HSV format and save the output to a variable
-hyprpicker -a -n -f hsv && sleep 0.1
+# Copy the color to the clipboard
+echo -n "$(hyprpicker -n -f hsv)" | wl-copy -n
 
 # Create a temporal 64x64 PNG file with the color in /tmp using convert
 magick -size 64x64 xc:"hsv($(wl-paste))" /tmp/color.png
