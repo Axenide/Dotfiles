@@ -103,5 +103,5 @@ zathura-cb
 zathura-djvu
 zathura-pdf-mupdf
 zathura-ps
-zen-browser-avx2-bin
+zen-browser-bin
 zoxide
