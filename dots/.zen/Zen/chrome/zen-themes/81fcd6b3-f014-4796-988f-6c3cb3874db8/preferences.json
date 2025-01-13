@@ -1,0 +1,131 @@
+[
+    {
+        "property": "uc.hidecontext.separators",
+        "label": "Hide all separators",
+        "type": "checkbox"
+    },
+    {
+        "property": "uc.hidecontext.optionicons",
+        "label": "Hide all icons (won't work for extension and checkbox context menu options)",
+        "type": "checkbox"
+    },
+    {
+        "property": "uc.fixcontext.extensionmargins",
+        "label": "Fix margin for 'Tabs on the right' checkbox and extensions-related context menu",
+        "type": "checkbox",
+        "disabledOn": [
+            "macos",
+            "linux"
+        ]
+    },
+    {
+        "property": "uc.hidecontext.copylink",
+        "label": "Only use 'Copy Link Without Site Tracking'",
+        "type": "checkbox"
+    },
+    {
+        "property": "uc.hidecontext.menubar",
+        "label": "Hide 'Menu Bar' toggle",
+        "type": "checkbox"
+    },
+    {
+        "property": "uc.hidecontext.bookmark",
+        "label": "Hide 'Bookmark Tab/Link'",
+        "type": "checkbox"
+    },
+    {
+        "property": "uc.hidecontext.mutetab",
+        "label": "Hide 'Mute Tab' option",
+        "type": "checkbox"
+    },
+    {
+        "property": "uc.hidecontext.newtab",
+        "label": "Hide 'New Tab' option",
+        "type": "checkbox"
+    },
+    {
+        "property": "uc.hidecontext.movetaboptions",
+        "label": "Hide 'Move Tab' options",
+        "type": "checkbox"
+    },
+    {
+        "property": "uc.hidecontext.newcontainer",
+        "label": "Hide 'Open Tab/Link in New Container Tab'",
+        "type": "checkbox"
+    },
+    {
+        "property": "uc.hidecontext.sendtodevice",
+        "label": "Hide 'Send Tab/Link to Device'",
+        "type": "checkbox"
+    },
+    {
+        "property": "uc.hidecontext.closetab",
+        "label": "Hide close tab options (Close Tab, Close Duplicate Tabs, Close Multiple Tabs)",
+        "type": "checkbox"
+    },
+    {
+        "property": "uc.hidecontext.search",
+        "label": "Hide 'Search Keywords' with your preferred search engine",
+        "type": "checkbox"
+    },
+    {
+        "property": "uc.hidecontext.searchinpriv",
+        "label": "Hide 'Search Keywords in a Private Window'",
+        "type": "checkbox"
+    },
+    {
+        "property": "uc.hidecontext.translate",
+        "label": "Hide Firefox's 'Translate Selection/Link' options",
+        "type": "checkbox"
+    },
+    {
+        "property": "uc.hidecontext.printselection",
+        "label": "Hide 'Print Selection'",
+        "type": "checkbox"
+    },
+    {
+        "property": "uc.hidecontext.image",
+        "label": "Hide 'Email Image', 'Set Image as Desktop Background', and 'View Image Info' options",
+        "type": "checkbox"
+    },
+    {
+        "property": "uc.hidecontext.selectalltext",
+        "label": "Hide 'Select All Text' option",
+        "type": "checkbox"
+    },
+    {
+        "property": "uc.hidecontext.selectalltabs",
+        "label": "Hide 'Select All Tabs' option",
+        "type": "checkbox"
+    },
+    {
+        "property": "uc.hidecontext.reloadtab",
+        "label": "Hide 'Reload Tab' option",
+        "type": "checkbox"
+    },
+    {
+        "property": "uc.hidecontext.duplicatetab",
+        "label": "Hide 'Duplicate Tab' option",
+        "type": "checkbox"
+    },
+    {
+        "property": "uc.hidecontext.unloadactions",
+        "label": "Hide 'Tab Unloader Actions'",
+        "type": "checkbox"
+    },
+    {
+        "property": "uc.hidecontext.inspect",
+        "label": "Hide 'View Page Source' and 'Inspect' options",
+        "type": "checkbox"
+    },
+    {
+        "property": "uc.hidecontext.savelink",
+        "label": "Hide 'Save Link As'",
+        "type": "checkbox"
+    },
+    {
+        "property": "uc.hidecontext.screenshot",
+        "label": "Hide 'Take Screenshot' option",
+        "type": "checkbox"
+    }
+]

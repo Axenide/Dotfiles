@@ -6,6 +6,22 @@
         "disabledOn": []
     },
     {
+        "property": "uc.bookmarks.position-toolbar",
+        "label": "Bookmarks toolbar direction",
+        "type": "dropdown",
+        "disabledOn": [],
+        "options": [
+            {
+                "label": "Left to right",
+                "value": "left"
+            },
+            {
+                "label": "Right to left",
+                "value": "right"
+            }
+        ]
+    },
+    {
         "property": "uc.bookmarks.hide-folder-icons",
         "label": "Hide folder icons",
         "type": "checkbox",

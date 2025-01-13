@@ -199,7 +199,7 @@ class Buttons(Box):
         self.caffeine_button = Button(
             name="caffeine-button",
             child=Box(
-                h_align="start",
+ h_align="start",
                 v_align="center",
                 spacing=10,
                 children=[
@@ -260,6 +260,70 @@ class Dashboard(Box):
 
         self.buttons = Buttons()
 
-        self.add(self.buttons)
+        self.box_1 = Box(
+            name="box-1",
+        )
+
+        self.box_2 = Box(
+            name="box-2",
+            h_expand=True,
+        )
+
+        self.box_3 = Box(
+            name="box-3",
+        )
+
+        self.box_4 = Box(
+            name="box-4",
+            orientation="h",
+            spacing=4,
+            children=[
+                Box(
+                    name="box-x",
+                    h_expand=True,
+                ),
+                Box(
+                    name="box-x",
+                    h_expand=True,
+                ),
+                Box(
+                    name="box-x",
+                    h_expand=True,
+                ),
+            ]
+        )
+
+        self.container_1 = Box(
+            name="container-1",
+            orientation="h",
+            spacing=8,
+            children=[
+                self.box_2,
+                self.box_3,
+            ]
+        )
+
+        self.container_2 = Box(
+            name="container-2",
+            orientation="v",
+            spacing=8,
+            children=[
+                self.buttons,
+                self.box_4,
+                self.container_1,
+            ]
+        )
+
+        self.container_3 = Box(
+            name="container-3",
+            orientation="h",
+            spacing=8,
+            children=[
+                self.box_1,
+                self.container_2,
+            ]
+        )
+
+        self.add(self.container_3)
 
         self.show_all()

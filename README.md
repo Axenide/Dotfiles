@@ -8,8 +8,14 @@
 > [!CAUTION]
 > This setup is specific for [Hyprland](https://github.com/hyprwm/Hyprland). Dont install it if you don't know what you're doing.
 
-## 📹 Check it out!
-https://github.com/user-attachments/assets/d58ccfea-8101-4476-a6da-1c1d05d67796
+## 📸 Check it out!
+![](screenshots/1.png)
+![](screenshots/2.png)
+![](screenshots/3.png)
+![](screenshots/4.png)
+![](screenshots/5.png)
+
+[👉 Reddit Post](https://www.reddit.com/r/unixporn/comments/1hw6ur3/hyprland_are_we_fabricating_yet_wip/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button)
 
 > [!WARNING]
 > The main branch is experimental, as I'm always making changes.
@@ -29,7 +35,18 @@ This will execute the installation wizard.
 
 Also it will install `yay`, but you can skip the installation and use any AUR helper you want and install them manually. 
 
-## ⌨️ Keybindings
+## Keybindings
+
+### Ax-Shell
+
+| Keys                                         | Action                          |
+|---------------------------------------------:|:--------------------------------|
+| <kbd>SUPER + D</kbd>                                  | Toggle Dashboard (WIP)                    |
+| <kbd>SUPER + A</kbd>                                  | AI Assistant (WIP)              |
+| <kbd>SUPER + ,</kbd>                                  | Wallpaper Selector              |
+| <kbd>SUPER + SHIFT + B</kbd>                          | Reload bar CSS              |
+| <kbd>SUPER + ALT + B</kbd>                            | Restart bar              |
+| <kbd>SUPER + CTRL + B</kbd>                            | Toggle bar              |
 
 ### Hyprland
 
@@ -73,12 +90,6 @@ Also it will install `yay`, but you can skip the installation and use any AUR he
 | <kbd>Print</kbd>                                      | Save and copy screenshot        |
 | <kbd>SHIFT + Print</kbd>                              | Copy screenshot                 |
 | <kbd>SUPER + SHIFT + S</kbd>                          | Copy area screenshot            |
-| <kbd>SUPER + D</kbd>                                  | Toggle Dashboard                    |
-| <kbd>SUPER + A</kbd>                                  | WIP              |
-| <kbd>SUPER + ,</kbd>                                  | Select wallpaper              |
-| <kbd>SUPER + SHIFT + B</kbd>                          | Reload bar CSS              |
-| <kbd>SUPER + ALT + B</kbd>                            | Restart bar              |
-| <kbd>SUPER + CTRL + B</kbd>                            | Toggle bar              |
 
 ### Tmux
 

@@ -78,7 +78,7 @@ class NotificationBox(Box):
                     children=[
                         app_icon,
                         Label(
-                            notification.app_name.capitalize(),
+                            notification.app_name,
                             name="notification-app-name",
                             h_align="start"
                         )
@@ -121,7 +121,7 @@ class NotificationBox(Box):
                                 ),
                                 Label(
                                     name="notification-app-name",
-                                    markup= " | " + notification.app_name.capitalize(),
+                                    markup= " | " + notification.app_name,
                                     h_align="start",
                                     ellipsization="end",
                                 ),

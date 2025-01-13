@@ -1,0 +1,165 @@
+[
+    {
+        "property": "uc.urlbar.border-radius",
+        "label": "Adjusts the border radius of the url bar and its items",
+        "type": "checkbox",
+        "disabledOn": []
+    },
+    {
+        "property": "uc.urltext.center",
+        "label": "Centers the text inside the url bar",
+        "type": "dropdown",
+        "defaultValue": "normal",
+        "disabledOn": [],
+        "options": [
+            {
+                "label": "Centered unless focused",
+                "value": "normal"
+            },
+            {
+                "label": "Always Centered",
+                "value": "advanced"
+            }
+        ]
+    },
+    {
+        "property": "uc.urlbar.border",
+        "label": "Adds a border to the url bar",
+        "type": "checkbox",
+        "disabledOn": []
+    },
+    {
+        "property": "uc.urlbar.move-icon-into",
+        "label": "Move 1 button that's directly next to the url bar (you can do that by using 'Customize Toolbar') into the url bar",
+        "type": "checkbox",
+        "disabledOn": []
+    },
+    {
+        "property": "uc.urlbar.blur-intensity",
+        "label": "Enable a Background Blur when the Url Bar is focused & select its Intensity",
+        "type": "dropdown",
+        "disabledOn": [],
+        "options": [
+            {
+                "label": "Subtle",
+                "value": "Subtle"
+            },
+            {
+                "label": "Normal",
+                "value": "Normal"
+            },
+            {
+                "label": "Rather Strong",
+                "value": "RatherStrong"
+            },
+            {
+                "label": "Strong",
+                "value": "Strong"
+            },
+            {
+                "label": "Really Strong",
+                "value": "ReallyStrong"
+            }
+        ]
+    },
+    {
+        "property": "uc.urlbar.custom-bg-color.mode",
+        "label": "Enables Custom Colors for the Url Bar",
+        "placeholder": "Disabled",
+        "type": "dropdown",
+        "disabledOn": [],
+        "options": [
+            {
+                "label": "Coloring when url bar is in focus",
+                "value": "Focus"
+            },
+            {
+                "label": "Coloring when url bar is NOT in focus",
+                "value": "noFocus"
+            },
+            {
+                "label": "Always color url bar",
+                "value": "AlwaysColor"
+            }
+        ]
+    },
+    {
+        "property": "uc.urlbar.custom-bg-color",
+        "label": "Custom Color for the Url Bar (Dropdown above needs to be enabled)",
+        "placeholder": "Enter Color Code",
+        "type": "string"
+    },
+    {
+        "property": "browser.urlbar.openintab",
+        "label": "Always open websites in a new tab when using url bar",
+        "type": "checkbox"
+    },
+    {
+        "property": "uc.urlbar.hide.container-info",
+        "label": "Hides the container info",
+        "type": "dropdown",
+        "placeholder": "Disabled",
+        "disabledOn": [],
+        "options": [
+            {
+                "label": "Only hide the label",
+                "value": "hideLabel"
+            },
+            {
+                "label": "Only hide the icon",
+                "value": "hideIcon"
+            },
+            {
+                "label": "Hide both, icon and label",
+                "value": "hideIconLabel"
+            }
+        ]
+    },
+    {
+        "property": "uc.urlbar.icon.zoom.removed",
+        "label": "Hides the Zoom icon",
+        "type": "checkbox",
+        "disabledOn": []
+    },
+    {
+        "property": "uc.urlbar.icon.shield.removed",
+        "label": "Hides the Shield icon",
+        "type": "checkbox",
+        "disabledOn": []
+    },
+    {
+        "property": "uc.urlbar.icon.bookmark.removed",
+        "label": "Hides the Bookmark (Star) icon",
+        "type": "checkbox",
+        "disabledOn": []
+    },
+    {
+        "property": "uc.urlbar.icon.reader-mode.removed",
+        "label": "Hides the Reader-Mode icon",
+        "type": "checkbox",
+        "disabledOn": []
+    },
+    {
+        "property": "uc.urlbar.icon.pip.removed",
+        "label": "Hides the Picture-in-Picture icon",
+        "type": "checkbox",
+        "disabledOn": []
+    },
+    {
+        "property": "uc.urlbar.icon.split-view.removed",
+        "label": "Hides the Split View icon",
+        "type": "checkbox",
+        "disabledOn": []
+    },
+    {
+        "property": "uc.urlbar.icon.left-side.removed",
+        "label": "Hides all the icons/buttons on the left side",
+        "type": "checkbox",
+        "disabledOn": []
+    },
+    {
+        "property": "uc.urlbar.icon.show-on-hover",
+        "label": "Make all the hidden icons show when hovering the url bar",
+        "type": "checkbox"
+    }
+]

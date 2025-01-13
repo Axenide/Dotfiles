@@ -1,0 +1,1 @@
+@-moz-document url-prefix("chrome:") {    #tabbrowser-tabs .tabbrowser-tab:not([pinned]):is([visuallyselected]):not(:hover) .tab-close-button {      display: none !important;  }  }

@@ -1256,6 +1256,20 @@ url("about:newtab") {
 	#root .search-wrapper .logo-and-wordmark .wordmark {
 		display: none !important;
 	}
+	
+	#root .weatherCard, #root .personalizeButtonWrapper {
+		background: color-mix(in srgb, -moz-Dialog, black 75%) !important;
+		border-radius: 20px !important;
+		box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5) !important;
+	}
+	
+	#root .personalizeButtonWrapper {
+		padding: 10px !important;
+	}
+	
+	#root .icon-settings {
+		scale: 1.25 !important;
+	}
 
 }
 

@@ -239,11 +239,11 @@ class Notch(Window):
 
     def colorpicker(self, button, event):
         if event.button == 1:
-            GLib.spawn_command_line_async("bash /home/adriano/.config/fabric/scripts/hyprpicker-hex.sh")
+            GLib.spawn_command_line_async(f"bash {data.HOME_DIR}/.config/fabric/scripts/hyprpicker-hex.sh")
         elif event.button == 2:
-            GLib.spawn_command_line_async("bash /home/adriano/.config/fabric/scripts/hyprpicker-hsv.sh")
+            GLib.spawn_command_line_async(f"bash {data.HOME_DIR}/.config/fabric/scripts/hyprpicker-hsv.sh")
         elif event.button == 3:
-            GLib.spawn_command_line_async("bash /home/adriano/.config/fabric/scripts/hyprpicker-rgb.sh")
+            GLib.spawn_command_line_async(f"bash {data.HOME_DIR}/.config/fabric/scripts/hyprpicker-rgb.sh")
 
     def on_button_clicked(self, *args):
         # Ejecuta notify-send cuando se hace clic en el botón

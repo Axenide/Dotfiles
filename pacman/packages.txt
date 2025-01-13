@@ -1,7 +1,6 @@
 adw-gtk3
 alsa-utils
 awesome-terminal-fonts
-aylurs-gtk-shell-git
 brightnessctl
 btop
 cava
@@ -37,13 +36,6 @@ keepmenu
 kitty
 ly
 matugen-bin
-nemo
-nemo-audio-tab
-nemo-emblems
-nemo-fileroller
-nemo-image-converter
-nemo-pastebin
-nemo-share
 neofetch
 neovim
 nitch
@@ -84,7 +76,9 @@ ttf-iosevka-nerd
 ttf-nerd-fonts-symbols-common
 ttf-nerd-fonts-symbols-mono
 ttf-tabler-icons
+ttf-zed-mono-nerd
 unarchiver
+uwsm
 vala
 walogram-git
 waybar
