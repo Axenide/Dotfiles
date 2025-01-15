@@ -13,6 +13,6 @@ if __name__ == "__main__":
     notch = Notch()
     # overview = Overview()
     app = Application("ax-shell", bar, notch)
-    app.set_stylesheet_from_file(get_relative_path("main.sass"))
+    app.set_stylesheet_from_file(get_relative_path("main.css"))
 
     app.run()

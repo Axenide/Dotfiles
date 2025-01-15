@@ -236,6 +236,7 @@ class Notch(Window):
 
         else:
             self.stack.set_visible_child(self.dashboard)
+            self.dashboard.switcher.grab_focus()
 
     def colorpicker(self, button, event):
         if event.button == 1:

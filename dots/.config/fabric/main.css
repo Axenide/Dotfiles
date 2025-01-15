@@ -1,0 +1,181 @@
+@import "./styles/colors.css";
+@import "./styles/shadows.css";
+@import "./styles/notch.css";
+@import "./styles/dashboard.css";
+@import "./styles/controls.css";
+@import "./styles/launcher.css";
+@import "./styles/notifications.css";
+@import "./styles/wallpapers.css";
+@import "./styles/power.css";
+
+* {
+  all: unset;
+  color: @foreground;
+  font-size: 11pt;
+  font-family: "Zed Sans";
+  border-radius: 16px;
+}
+
+#bar-inner {
+  margin: 8px;
+  opacity: 1;
+  transition: all 0.5s cubic-bezier(0.5, 0.25, 0, 1);
+}
+
+#bar-inner.hidden {
+  margin: 8px;
+  margin-top: -40px;
+  opacity: 0;
+}
+
+#workspaces {
+  padding: 14px;
+}
+
+#workspaces-container {
+  background-color: @shadow;
+  margin-top: 4px;
+}
+
+#workspaces > button {
+  min-width: 8px;
+  min-height: 8px;
+  border-radius: 16px;
+  transition: all 0.25s cubic-bezier(0.5, 0.25, 0, 1);
+  background-color: @foreground;
+}
+
+#workspaces > button > label {
+  font-size: 0px;
+}
+
+#workspaces > button.empty:hover {
+  background-color: @foreground;
+}
+
+#workspaces > button.urgent {
+  background-color: @error_dim;
+}
+
+#workspaces > button.active {
+  min-width: 48px;
+  min-height: 8px;
+  background-color: @primary;
+}
+
+#workspaces > button.empty {
+  background-color: alpha(@foreground, 0.25);
+}
+
+#date-time {
+  background-color: @shadow;
+  padding: 8px;
+  border-radius: 16px;
+  margin-top: 4px;
+}
+
+menu > menuitem > label,
+#date-time > label {
+  font-weight: bold;
+}
+
+#systray {
+  background-color: @shadow;
+  padding: 8px;
+  border-radius: 16px;
+  margin-top: 4px;
+}
+
+menu {
+  border: solid 1px;
+  border-radius: 16px;
+  border-color: @surface;
+  background-color: @shadow;
+  padding: 6px;
+}
+
+menu > menuitem {
+  border-radius: 10px;
+  padding: 6px 10px;
+}
+
+menu > menuitem:hover {
+  background-color: @primary;
+}
+
+menu > menuitem:hover > label {
+  color: @shadow;
+}
+
+tooltip {
+  border: solid 1px;
+  border-color: @surface;
+  background-color: @shadow;
+  animation: tooltipShow 0.25s cubic-bezier(0.5, 0.25, 0, 1);
+}
+
+@keyframes tooltipShow {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+tooltip > * {
+  padding: 6px 10px;
+  border-radius: 10px;
+}
+
+#button-bar {
+  padding: 4px;
+  margin-top: 4px;
+  border-radius: 16px;
+  background-color: @shadow;
+  transition: all 0.1s ease;
+}
+
+#button-bar-label {
+  color: @primary;
+  font-size: 20px;
+  padding: 4px;
+  border-radius: 12px;
+  transition: all 0.1s ease;
+}
+
+#button-bar:hover #button-bar-label {
+  background-color: @surface_bright;
+}
+
+#button-bar:active #button-bar-label {
+  color: @shadow;
+  background-color: @primary;
+}
+
+#corner {
+  background-color: @shadow;
+  border-radius: 0;
+}
+
+#corner-container {
+  min-width: 20px;
+  min-height: 20px;
+}
+
+#user-box {
+  background-color: @shadow;
+  min-width: 360px;
+  min-height: 96px;
+}
+
+#button-corner {
+  border-radius: 0px;
+  min-width: 20px;
+  min-height: 20px;
+}
+
+#notch,
+#bar {
+  border-radius: 0px;
+}

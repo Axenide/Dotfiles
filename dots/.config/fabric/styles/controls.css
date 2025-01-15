@@ -7,23 +7,23 @@
 }
 
 #controls-button {
-    background-color: @shadow;
-    transition: all 0.1s ease;
+  background-color: @shadow;
+  transition: all 0.1s ease;
 }
 
 #controls-button-label {
-    color: @primary;
-    font-size: 20px;
-    padding: 4px;
-    border-radius: 12px;
-    transition: all 0.1s ease;
+  color: @primary;
+  font-size: 20px;
+  padding: 4px;
+  border-radius: 12px;
+  transition: all 0.1s ease;
 }
 
 #controls-button:hover #controls-button-label {
-    background-color: @surface_bright;
+  background-color: @surface_bright;
 }
 
 #controls-button:active #controls-button-label {
-    color: @shadow;
-    background-color: @primary;
+  color: @shadow;
+  background-color: @primary;
 }

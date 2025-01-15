@@ -23,7 +23,8 @@
   border-radius: 16px;
 }
 
-#notification-summary, #button-label {
+#notification-summary,
+#button-label {
   font-weight: bold;
 }
 

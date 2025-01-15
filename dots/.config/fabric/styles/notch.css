@@ -30,7 +30,7 @@
 
 #notch-content.dashboard {
   padding: 16px;
-  min-height: 410px;
+  min-height: 375px;
   min-width: 820px;
   border-radius: 0 0 36px 36px;
 }
@@ -55,13 +55,22 @@
   border-radius: 0 0 36px 36px;
 }
 
-#app-launcher, #dashboard, #wallpapers, #notification, #power-menu {
+#app-launcher,
+#dashboard,
+#wallpapers,
+#notification,
+#power-menu {
   opacity: 1;
   margin: -800px;
   transition: all 0.25s cubic-bezier(0.5, 0.25, 0, 1);
 }
 
-#app-launcher.open, #dashboard.open, #wallpapers.open, #wallpapers-viewport.open, #notification.open, #power-menu.open {
+#app-launcher.open,
+#dashboard.open,
+#wallpapers.open,
+#wallpapers-viewport.open,
+#notification.open,
+#power-menu.open {
   opacity: 1;
   margin: 0px;
 }

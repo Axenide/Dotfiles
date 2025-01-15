@@ -26,3 +26,11 @@
   font-weight: bold;
   color: @shadow;
 }
+
+#scheme-dropdown.box button.box.cellview {
+  background-color: @primary;
+}
+
+#scheme-dropdown.box button.box.cellview:selected {
+  background-color: @surface_bright;
+}
