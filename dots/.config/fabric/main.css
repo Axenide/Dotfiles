@@ -1,16 +1,16 @@
-@import "./styles/colors.css";
-@import "./styles/shadows.css";
-@import "./styles/notch.css";
-@import "./styles/dashboard.css";
-@import "./styles/controls.css";
-@import "./styles/launcher.css";
-@import "./styles/notifications.css";
-@import "./styles/wallpapers.css";
-@import "./styles/power.css";
+@import url("./styles/colors.css");
+@import url("./styles/shadows.css");
+@import url("./styles/notch.css");
+@import url("./styles/dashboard.css");
+@import url("./styles/controls.css");
+@import url("./styles/launcher.css");
+@import url("./styles/notifications.css");
+@import url("./styles/wallpapers.css");
+@import url("./styles/power.css");
 
 * {
   all: unset;
-  color: @foreground;
+  color: var(--foreground);
   font-size: 11pt;
   font-family: "Zed Sans";
   border-radius: 16px;
@@ -33,7 +33,7 @@
 }
 
 #workspaces-container {
-  background-color: @shadow;
+  background-color: var(--shadow);
   margin-top: 4px;
 }
 
@@ -42,7 +42,7 @@
   min-height: 8px;
   border-radius: 16px;
   transition: all 0.25s cubic-bezier(0.5, 0.25, 0, 1);
-  background-color: @foreground;
+  background-color: var(--foreground);
 }
 
 #workspaces > button > label {
@@ -50,25 +50,25 @@
 }
 
 #workspaces > button.empty:hover {
-  background-color: @foreground;
+  background-color: var(--foreground);
 }
 
 #workspaces > button.urgent {
-  background-color: @error_dim;
+  background-color: var(--error_dim);
 }
 
 #workspaces > button.active {
   min-width: 48px;
   min-height: 8px;
-  background-color: @primary;
+  background-color: var(--primary);
 }
 
 #workspaces > button.empty {
-  background-color: alpha(@foreground, 0.25);
+  background-color: alpha(var(--foreground), 0.25);
 }
 
 #date-time {
-  background-color: @shadow;
+  background-color: var(--shadow);
   padding: 8px;
   border-radius: 16px;
   margin-top: 4px;
@@ -80,7 +80,7 @@ menu > menuitem > label,
 }
 
 #systray {
-  background-color: @shadow;
+  background-color: var(--shadow);
   padding: 8px;
   border-radius: 16px;
   margin-top: 4px;
@@ -89,8 +89,8 @@ menu > menuitem > label,
 menu {
   border: solid 1px;
   border-radius: 16px;
-  border-color: @surface;
-  background-color: @shadow;
+  border-color: var(--surface);
+  background-color: var(--shadow);
   padding: 6px;
 }
 
@@ -100,17 +100,17 @@ menu > menuitem {
 }
 
 menu > menuitem:hover {
-  background-color: @primary;
+  background-color: var(--primary);
 }
 
 menu > menuitem:hover > label {
-  color: @shadow;
+  color: var(--shadow);
 }
 
 tooltip {
   border: solid 1px;
-  border-color: @surface;
-  background-color: @shadow;
+  border-color: var(--surface);
+  background-color: var(--shadow);
   animation: tooltipShow 0.25s cubic-bezier(0.5, 0.25, 0, 1);
 }
 
@@ -132,12 +132,12 @@ tooltip > * {
   padding: 4px;
   margin-top: 4px;
   border-radius: 16px;
-  background-color: @shadow;
+  background-color: var(--shadow);
   transition: all 0.1s ease;
 }
 
 #button-bar-label {
-  color: @primary;
+  color: var(--primary);
   font-size: 20px;
   padding: 4px;
   border-radius: 12px;
@@ -145,16 +145,16 @@ tooltip > * {
 }
 
 #button-bar:hover #button-bar-label {
-  background-color: @surface_bright;
+  background-color: var(--surface_bright);
 }
 
 #button-bar:active #button-bar-label {
-  color: @shadow;
-  background-color: @primary;
+  color: var(--shadow);
+  background-color: var(--primary);
 }
 
 #corner {
-  background-color: @shadow;
+  background-color: var(--shadow);
   border-radius: 0;
 }
 
@@ -164,7 +164,7 @@ tooltip > * {
 }
 
 #user-box {
-  background-color: @shadow;
+  background-color: var(--shadow);
   min-width: 360px;
   min-height: 96px;
 }

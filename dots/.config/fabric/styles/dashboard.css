@@ -4,7 +4,7 @@
 #bluetooth-button,
 #night-mode-button,
 #caffeine-button {
-  background-color: @primary;
+  background-color: var(--primary);
   border-radius: 20px;
   min-width: 150px;
   min-height: 52px;
@@ -28,14 +28,14 @@
 #network-menu-button:hover,
 #bluetooth-status-button:hover,
 #bluetooth-menu-button:hover {
-  background-color: @foreground;
+  background-color: var(--foreground);
 }
 
 #network-status-button:hover,
 #bluetooth-button:hover,
 #night-mode-button:hover,
 #caffeine-button:hover {
-  background-color: @foreground;
+  background-color: var(--foreground);
 }
 
 /* Icon Styles */
@@ -44,7 +44,7 @@
 #bluetooth-icon,
 #night-mode-icon,
 #caffeine-icon {
-  color: @shadow;
+  color: var(--shadow);
   font-size: 24px;
 }
 
@@ -52,7 +52,7 @@
 
 #network-menu-label,
 #bluetooth-menu-label {
-  color: @shadow;
+  color: var(--shadow);
   font-size: 16px;
 }
 
@@ -60,7 +60,7 @@
 #bluetooth-label,
 #night-mode-label,
 #caffeine-label {
-  color: @shadow;
+  color: var(--shadow);
   font-size: 16px;
   font-weight: bold;
   margin-bottom: -4px;
@@ -72,7 +72,7 @@
 #bluetooth-status,
 #night-mode-status,
 #caffeine-status {
-  color: @surface_bright;
+  color: var(--surface-bright);
   font-size: 12px;
 }
 
@@ -80,7 +80,7 @@
 #network-menu-button,
 #bluetooth-status-button,
 #bluetooth-menu-button {
-  background-color: @primary;
+  background-color: var(--primary);
   padding: 0 8px;
 }
 
@@ -88,7 +88,7 @@
 #network-menu-button:hover,
 #bluetooth-status-button:hover,
 #bluetooth-menu-button:hover {
-  background-color: @foreground;
+  background-color: var(--foreground);
 }
 
 #network-status-button,
@@ -105,20 +105,20 @@
 #bluetooth-button:hover,
 #night-mode-button:hover,
 #caffeine-button:hover {
-  background-color: @foreground;
+  background-color: var(--foreground);
 }
 
 #network-icon,
 #bluetooth-icon,
 #night-mode-icon,
 #caffeine-icon {
-  color: @shadow;
+  color: var(--shadow);
   font-size: 24px;
 }
 
 #network-menu-label,
 #bluetooth-menu-label {
-  color: @shadow;
+  color: var(--shadow);
   font-size: 16px;
 }
 
@@ -126,7 +126,7 @@
 #bluetooth-label,
 #night-mode-label,
 #caffeine-label {
-  color: @shadow;
+  color: var(--shadow);
   font-size: 14px;
   font-weight: bold;
   margin-bottom: -4px;
@@ -134,7 +134,7 @@
 
 #network-ssid,
 #bluetooth-status {
-  color: @surface_bright;
+  color: var(--surface-bright);
   font-size: 12px;
 }
 
@@ -143,7 +143,7 @@
 #box-3,
 #box-x {
   border-radius: 20px;
-  background-color: @surface;
+  background-color: var(--surface);
 }
 
 #container-1,
@@ -172,25 +172,29 @@
 }
 
 #switcher.stack-switcher > * {
-  background-color: @shadow;
+  background-color: var(--shadow);
   padding: 4px;
   border-radius: 20px;
   transition: all 0.1s ease;
 }
 
 #switcher.stack-switcher > *:checked {
-  background-color: @surface;
+  background-color: var(--surface);
 }
 
 #switcher.stack-switcher > *:active,
 #switcher.stack-switcher > *:hover {
-  background-color: @surface_bright;
+  background-color: var(--surface-bright);
 }
 
 #switcher.stack-switcher > *:focus {
-  background-color: @surface_bright;
+  background-color: var(--surface-bright);
 }
 
 #switcher.stack-switcher button label {
   font-weight: bold;
+}
+
+#switcher.stack-switcher > *:checked label {
+  color: var(--primary);
 }

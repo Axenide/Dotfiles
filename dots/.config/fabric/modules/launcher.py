@@ -70,7 +70,6 @@ class AppLauncher(Box):
         self.resize_viewport()
 
         self.add(self.launcher_box)
-        self.connect("key-press-event", self.on_key_press_event)
         self.show_all()
 
     def close_launcher(self):
@@ -82,10 +81,6 @@ class AppLauncher(Box):
         # Vuelve a cargar la lista de aplicaciones
         self._all_apps = get_desktop_applications()
         self.arrange_viewport()
-
-    def on_key_press_event(self, widget, event):
-        if event.keyval == 65307:  # Escape key
-            self.close_launcher()
 
     def arrange_viewport(self, query: str = ""):
         remove_handler(self._arranger_handler) if self._arranger_handler else None

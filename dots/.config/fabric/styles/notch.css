@@ -14,7 +14,7 @@
 }
 
 #notch-content {
-  background-color: @shadow;
+  background-color: var(--shadow);
   min-height: 40px;
   min-width: 256px;
   border-radius: 0 0 20px 20px;
@@ -75,8 +75,19 @@
   margin: 0px;
 }
 
-#compact-label {
+#notch-compact {
   font-weight: bold;
+  border-radius: 0 0 20px 20px;
+  transition: all 0.1s ease;
+}
+
+#notch-compact:hover {
+  background: linear-gradient(
+    to bottom,
+    var(--shadow) 50%,
+    var(--surface) 95%,
+    var(--primary) 95%
+  );
 }
 
 #notch-corner-left {

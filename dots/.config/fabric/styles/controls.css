@@ -1,5 +1,5 @@
 #controls {
-  background-color: @shadow;
+  background-color: var(--shadow);
   border-radius: 16px;
   margin-top: 4px;
   padding: 4px;
@@ -7,12 +7,12 @@
 }
 
 #controls-button {
-  background-color: @shadow;
+  background-color: var(--shadow);
   transition: all 0.1s ease;
 }
 
 #controls-button-label {
-  color: @primary;
+  color: var(--primary);
   font-size: 20px;
   padding: 4px;
   border-radius: 12px;
@@ -20,10 +20,10 @@
 }
 
 #controls-button:hover #controls-button-label {
-  background-color: @surface_bright;
+  background-color: var(--surface-bright);
 }
 
 #controls-button:active #controls-button-label {
-  color: @shadow;
-  background-color: @primary;
+  color: var(--shadow);
+  background-color: var(--primary);
 }

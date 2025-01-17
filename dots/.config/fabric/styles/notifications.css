@@ -3,20 +3,20 @@
 }
 
 #notification-action-buttons button {
-  background-color: @surface;
+  background-color: var(--surface);
   padding: 8px;
 }
 
 #notification-action-buttons button:hover {
-  background-color: @surface_bright;
+  background-color: var(--surface-bright);
 }
 
 #notification-action-buttons button:active {
-  background-color: @primary;
+  background-color: var(--primary);
 }
 
 #notification-action-buttons button:active #button-label {
-  color: @shadow;
+  color: var(--shadow);
 }
 
 #notification-image image {
@@ -30,11 +30,11 @@
 
 #notification-summary {
   font-weight: bold;
-  color: @primary;
+  color: var(--primary);
 }
 
 #notification-app-name {
-  color: @outline;
+  color: var(--outline);
 }
 
 #action-button {

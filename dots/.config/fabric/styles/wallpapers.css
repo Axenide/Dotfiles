@@ -13,24 +13,24 @@
 }
 
 #wallpaper-icons:selected {
-  background-color: @surface_bright;
+  background-color: var(--surface-bright);
   border-radius: 8px;
 }
 
 #dropdown-box {
-  background-color: @surface;
+  background-color: var(--surface);
   padding: 8px;
 }
 
 #scheme-dropdown > * > * {
   font-weight: bold;
-  color: @shadow;
+  color: var(--shadow);
 }
 
 #scheme-dropdown.box button.box.cellview {
-  background-color: @primary;
+  background-color: var(--primary);
 }
 
 #scheme-dropdown.box button.box.cellview:selected {
-  background-color: @surface_bright;
+  background-color: var(--surface-bright);
 }

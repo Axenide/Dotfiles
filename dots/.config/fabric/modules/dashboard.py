@@ -1,3 +1,4 @@
+import os
 from fabric import Application
 from fabric.widgets.box import Box
 from fabric.widgets.label import Label
@@ -8,7 +9,10 @@ from fabric.widgets.stack import Stack
 from fabric.widgets.wayland import WaylandWindow as Window
 from fabric.hyprland.widgets import Workspaces, WorkspaceButton
 from fabric.utils import get_relative_path
-from gi.repository import GLib, Gtk, Gdk
+import gi
+gi.require_version('Gtk', '3.0')
+gi.require_version('Vte', '2.91')
+from gi.repository import GLib, Gtk, Gdk, Vte, Pango
 import modules.icons as icons
 
 class Buttons(Box):
@@ -353,7 +357,7 @@ class Dashboard(Box):
 
         self.switcher = Gtk.StackSwitcher(
             name="switcher",
-            spacing=24,
+            spacing=8,
         )
 
         self.label_1 = Label(
@@ -376,16 +380,27 @@ class Dashboard(Box):
             label="Calendar",
         )
 
-        self.label_5 = Label(
-            name="label-5",
-            label="User",
+        # Terminal integrada
+        self.terminal = Vte.Terminal()
+        self.terminal.spawn_async(
+            Vte.PtyFlags.DEFAULT,        # Flags
+            os.path.expanduser("~"),     # Working directory
+            ["/bin/fish"],               # Comando
+            None,                        # Variables de entorno
+            GLib.SpawnFlags.DO_NOT_REAP_CHILD,  # Spawn flags
+            None,                        # Función de configuración (opcional)
+            None,                        # Datos adicionales para la función (opcional)
+            -1,                          # Timeout
+            None,                        # GLib.Cancellable
+            None                         # Callback de finalización
         )
+        self.terminal.set_font(Pango.FontDescription("ZedMono Nerd Font"))
 
         self.stack.add_titled(self.widgets, "widgets", "Widgets")
         self.stack.add_titled(self.label_2, "clipboard", "Clipboard")
         self.stack.add_titled(self.label_3, "to-do", "To-Do")
         self.stack.add_titled(self.label_4, "calendar", "Calendar")
-        self.stack.add_titled(self.label_5, "user", "User")
+        self.stack.add_titled(self.terminal, "terminal", "Terminal")
 
         self.switcher.set_stack(self.stack)
         self.switcher.set_hexpand(True)
@@ -395,18 +410,7 @@ class Dashboard(Box):
         self.add(self.switcher)
         self.add(self.stack)
 
-        self.connect("key-press-event", self.on_key_press_event)
-
         self.show_all()
-
-    def on_key_press_event(self, widget, event):
-        if event.keyval == 65289 and event.state & Gdk.ModifierType.CONTROL_MASK:  # Ctrl + Tab
-            self.go_to_next_child()
-            return True  # Previene que otros manejadores procesen el evento
-        elif event.keyval == 65056 and event.state & Gdk.ModifierType.CONTROL_MASK:  # Ctrl + Shift + Tab
-            self.go_to_previous_child()
-            return True  # Previene que otros manejadores procesen el evento
-        return False
 
     def go_to_next_child(self):
         children = self.stack.get_children()

@@ -28,7 +28,7 @@ input_path = '~/.config/matugen/templates/colors-slurp.sh'
 output_path = '~/.config/kitty/slurp.sh'
 
 [templates.fabric]
-input_path = '~/.config/matugen/templates/colors.css'
+input_path = '~/.config/matugen/templates/fabric.css'
 output_path = '~/.config/fabric/styles/colors.css'
 post_hook = "fabric-cli exec ax-shell 'app.set_stylesheet_from_file(get_relative_path(\"main.css\"))' &"
 

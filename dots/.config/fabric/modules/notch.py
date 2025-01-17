@@ -1,9 +1,13 @@
+from os import truncate
 from fabric.widgets.box import Box
 from fabric.widgets.label import Label
 from fabric.widgets.centerbox import CenterBox
 from fabric.widgets.button import Button
 from fabric.widgets.stack import Stack
 from fabric.widgets.wayland import WaylandWindow as Window
+from fabric.hyprland.widgets import ActiveWindow
+from fabric.utils.helpers import FormattedString, truncate, get_relative_path
+from fabric.core.fabricator import Fabricator
 from gi.repository import GLib, Gdk
 from modules.launcher import AppLauncher
 from modules.dashboard import Dashboard
@@ -33,17 +37,46 @@ class Notch(Window):
         self.notification = NotificationContainer()
         self.power = PowerMenu()
 
-        self.compact = CenterBox(
-            name="notch-compact",
-            v_expand=True,
+        self.active_window = ActiveWindow(
+            name="hyprland-window",
             h_expand=True,
-            center_children=[
-                Button(
-                    name="compact-label",
-                    label=f"{data.USERNAME}@{data.HOSTNAME}",
-                    on_clicked=lambda *_: self.open_notch("dashboard"),
-                ),
-            ]
+            formatter=FormattedString(
+                f"{{'{data.USERNAME}@{data.HOSTNAME}' if not win_title else truncate(win_title, 30)}}",
+                truncate=truncate,
+            ),
+        )
+
+        # self.cava = Box(
+        #     name="cava",
+        #     spacing=1,
+        #     children=[Box() for _ in range(28)]  # Usa "_" si no utilizas el índice
+        # ).build(
+        #     lambda box, _: Fabricator(
+        #         poll_from=f"cava -p {get_relative_path('cava.ini')}",  # Ruta al archivo de configuración
+        #         interval=0,  # Intervalo de actualización
+        #         stream=True,  # Habilita el stream para datos en tiempo real
+        #         on_changed=lambda f, line: [
+        #             child.set_style(
+        #                 f"* {{ margin-top: {26 - value}px; }}",  # Ajusta el margen superior dinámicamente
+        #                 compile=False,
+        #                 add_brackets=False,
+        #             )
+        #             for value, child in zip(
+        #                 [
+        #                     int(val)  # Convierte cada valor a entero
+        #                     for val in line.strip(";").split(";")  # Elimina ";" al inicio y final, luego separa
+        #                 ],
+        #                 box.children,  # Empareja cada valor con un hijo
+        #             )
+        #         ],
+        #     )
+        # )
+
+        self.compact = Button(
+            name="notch-compact",
+            h_expand=True,
+            on_clicked=lambda *_: self.open_notch("dashboard"),
+            child=self.active_window,
         )
 
         self.button_media = Button(
@@ -147,15 +180,9 @@ class Notch(Window):
         self.show_all()
         self.wallpapers.viewport.hide()
 
-        # Conectar evento de teclado
-        self.connect("key-press-event", self.on_key_press)
-
-    def on_key_press(self, widget, event):
-        # Verifica si la tecla presionada es Escape
-        if event.keyval == 65307:  # Código de la tecla Escape
-            self.close_notch()
-            return True  # Previene que otros manejadores procesen el evento
-        return False
+        self.add_keybinding("Escape", lambda *_: self.close_notch())
+        self.add_keybinding("Ctrl Tab", lambda *_: self.dashboard.go_to_next_child())
+        self.add_keybinding("Ctrl Shift ISO_Left_Tab", lambda *_: self.dashboard.go_to_previous_child())
 
     def on_button_enter(self, widget, event):
         window = widget.get_window()
@@ -236,7 +263,6 @@ class Notch(Window):
 
         else:
             self.stack.set_visible_child(self.dashboard)
-            self.dashboard.switcher.grab_focus()
 
     def colorpicker(self, button, event):
         if event.button == 1:

@@ -1,34 +1,34 @@
 #search-entry {
   font-weight: bold;
-  background-color: @surface;
-  color: @foreground;
+  background-color: var(--surface);
+  color: var(--foreground);
   border-radius: 16px;
   padding: 10px;
 }
 
 #search-entry selection {
-  color: @background;
-  background-color: @primary;
+  color: var(--background);
+  background-color: var(--primary);
 }
 
 #close-button {
-  background-color: @surface;
+  background-color: var(--surface);
   border-radius: 16px;
   padding: 10px;
 }
 
 #close-button:hover,
 #close-button:focus {
-  background-color: @surface_bright;
+  background-color: var(--surface-bright);
 }
 
 #close-button:active {
-  background-color: @primary;
+  background-color: var(--primary);
 }
 
 #close-label {
-  color: @shadow;
-  background-color: @error_dim;
+  color: var(--shadow);
+  background-color: var(--error-dim);
   font-size: 16px;
   padding: 4px;
   border-radius: 999px;
@@ -40,7 +40,7 @@
 
 #scrolled-window scrollbar {
   border-radius: 10px;
-  background-color: @surface;
+  background-color: var(--surface);
   padding: 4px;
   margin-left: 6px;
 }
@@ -49,7 +49,7 @@
   border-radius: 8px;
   min-width: 16px;
   min-height: 48px;
-  background-color: @primary;
+  background-color: var(--primary);
 }
 
 #app-slot-button {
@@ -70,12 +70,12 @@
 
 #app-slot-button:hover,
 #app-slot-button:focus {
-  background-color: @surface_bright;
+  background-color: var(--surface-bright);
   padding-left: 24px;
 }
 
 #app-slot-button:active {
-  background-color: @primary;
+  background-color: var(--primary);
 }
 
 #app-icon {
@@ -83,15 +83,15 @@
 }
 
 #app-label {
-  color: @foreground;
+  color: var(--foreground);
   font-weight: bold;
 }
 
 #app-slot-button:hover #app-label,
 #app-slot-button:focus #app-label {
-  color: @primary;
+  color: var(--primary);
 }
 
 #app-slot-button:active #app-label {
-  color: @shadow;
+  color: var(--shadow);
 }
