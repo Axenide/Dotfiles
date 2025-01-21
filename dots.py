@@ -73,8 +73,12 @@ def install_tpm_plugins():
         tpm_dir = os.path.expanduser("~/.tmux/plugins")
         subprocess.run(["rm", "-rf", tpm_dir], check=True)
         os.makedirs(tpm_dir, exist_ok=True)
-        subprocess.run(["git", "clone", "https://github.com/tmux-plugins/tpm", tpm_dir], check=True)
-        subprocess.run([os.path.join(tpm_dir, "tpm/scripts/install_plugins.sh")], check=True)
+        subprocess.run(["git", "clone", "https://github.com/tmux-plugins/tpm", os.path.join(tpm_dir, "tpm")], check=True)
+        script_path = os.path.join(tpm_dir, "tpm/scripts/install_plugins.sh")
+        if os.path.isfile(script_path):
+            subprocess.run([script_path], check=True)
+        else:
+            console.print(f"Error: El script no existe en la ruta {script_path}", style="bold red")
     else:
         console.print("Skipping TPM plugins installation.", style="bold yellow")
 

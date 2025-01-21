@@ -59,7 +59,7 @@ obs-face-tracker
 obs-move-transition
 obs-pipewire-audio-capture-bin
 obs-plugin-waveform-git
-obs-scale-to-sound-bin
+obs-scale-to-sound
 obs-shaderfilter-git
 obs-source-clone
 obs-source-copy

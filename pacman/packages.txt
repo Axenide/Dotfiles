@@ -16,7 +16,7 @@ fzf
 gnome-bluetooth-3.0
 gnome-calculator
 gnome-control-center
-gpu-screen-recorder-gtk-git
+gpu-screen-recorder-gtk
 gray-git
 grim
 grimblast-git
