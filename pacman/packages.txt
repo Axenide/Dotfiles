@@ -80,6 +80,7 @@ ttf-zed-mono-nerd
 unarchiver
 uwsm
 vala
+vte3
 walogram-git
 waybar
 webp-pixbuf-loader
