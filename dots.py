@@ -48,7 +48,7 @@ def copy_config(src, dest):
 def stow_files():
     title()
     console.print("Stowing dotfiles...", style="bold green")
-    subprocess.run(["stow", "dots"], check=True)
+    subprocess.run(["stow", "--adopt", "dots"], check=True)
 
 def install_packages():
     title()
