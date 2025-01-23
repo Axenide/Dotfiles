@@ -14,6 +14,7 @@ gi.require_version('Gtk', '3.0')
 gi.require_version('Vte', '2.91')
 from gi.repository import GLib, Gtk, Gdk, Vte, Pango
 import modules.icons as icons
+from modules.calendar import Calendar
 
 class Buttons(Box):
     def __init__(self, **kwargs):
@@ -349,6 +350,8 @@ class Dashboard(Box):
 
         self.widgets = Widgets()
 
+        self.calendar = Calendar()
+
         self.stack = Stack(
             name="stack",
             transition_type="slide-left-right",
@@ -399,7 +402,7 @@ class Dashboard(Box):
         self.stack.add_titled(self.widgets, "widgets", "Widgets")
         self.stack.add_titled(self.label_2, "clipboard", "Clipboard")
         self.stack.add_titled(self.label_3, "to-do", "To-Do")
-        self.stack.add_titled(self.label_4, "calendar", "Calendar")
+        self.stack.add_titled(self.calendar, "calendar", "Calendar")
         self.stack.add_titled(self.terminal, "terminal", "Terminal")
 
         self.switcher.set_stack(self.stack)
