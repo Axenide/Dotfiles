@@ -14,6 +14,7 @@ from modules.dashboard import Dashboard
 from modules.wallpapers import WallpaperSelector
 from modules.notification_popup import NotificationContainer
 from modules.power import PowerMenu
+from modules.media import Media
 from modules.corners import MyCorner
 import modules.icons as icons
 import modules.data as data
@@ -36,6 +37,7 @@ class Notch(Window):
         self.wallpapers = WallpaperSelector(data.WALLPAPERS_DIR)
         self.notification = NotificationContainer()
         self.power = PowerMenu()
+        self.media = Media()
 
         self.active_window = ActiveWindow(
             name="hyprland-window",
@@ -81,16 +83,18 @@ class Notch(Window):
 
         self.button_media = Button(
             name="button-bar",
+            tooltip_text="Right click to force spotify",
             v_expand=False,
-            on_clicked=self.on_button_clicked,
             child=Label(
                 name="button-bar-label",
                 markup=icons.media
             )
         )
+
         self.button_media.connect("enter-notify-event", self.on_button_enter)
         self.button_media.connect("leave-notify-event", self.on_button_leave)
-        
+        self.button_media.connect("button-press-event", self.mediacontroll)
+
         self.button_color = Button(
             name="button-bar",
             tooltip_text="Color Picker\nLeft Click: HEX\nMiddle Click: HSV\nRight Click: RGB",
@@ -117,6 +121,7 @@ class Notch(Window):
                 self.wallpapers,
                 self.notification,
                 self.power,
+                self.media,
             ]
         )
 
@@ -201,12 +206,12 @@ class Notch(Window):
             self.notch_box.remove_style_class("hideshow")
             self.notch_box.add_style_class("hidden")
 
-        for widget in [self.launcher, self.dashboard, self.wallpapers, self.notification, self.power]:
+        for widget in [self.launcher, self.dashboard, self.wallpapers, self.notification, self.power, self.media]:
             widget.remove_style_class("open")
             if widget == self.wallpapers:
                 self.wallpapers.viewport.hide()
                 self.wallpapers.viewport.set_property("name", None)
-        for style in ["launcher", "dashboard", "wallpapers", "notification", "power"]:
+        for style in ["launcher", "dashboard", "wallpapers", "notification", "power", "media"]:
             self.stack.remove_style_class(style)
         self.stack.set_visible_child(self.compact)
 
@@ -222,7 +227,8 @@ class Notch(Window):
             "dashboard": self.dashboard,
             "wallpapers": self.wallpapers,
             "notification": self.notification,
-            "power": self.power
+            "power": self.power,
+            "media": self.media
         }
 
         # Limpiar clases y estados previos
@@ -230,13 +236,13 @@ class Notch(Window):
             self.stack.remove_style_class(style)
         for w in widgets.values():
             w.remove_style_class("open")
-        
+
         # Configurar según el widget solicitado
         if widget in widgets:
             self.stack.add_style_class(widget)
             self.stack.set_visible_child(widgets[widget])
             widgets[widget].add_style_class("open")
-            
+
             # Acciones específicas para el launcher
             if widget == "launcher":
                 self.launcher.open_launcher()
@@ -250,9 +256,9 @@ class Notch(Window):
                 self.wallpapers.search_entry.set_text("")
                 self.wallpapers.search_entry.grab_focus()
                 GLib.timeout_add(
-                    500, 
+                    500,
                     lambda: (
-                        self.wallpapers.viewport.show(), 
+                        self.wallpapers.viewport.show(),
                         self.wallpapers.viewport.set_property("name", "wallpaper-icons")
                     )
                 )
@@ -272,9 +278,11 @@ class Notch(Window):
         elif event.button == 3:
             GLib.spawn_command_line_async(f"bash {get_relative_path('../scripts/hyprpicker-rgb.sh')}")
 
-    def on_button_clicked(self, *args):
-        # Ejecuta notify-send cuando se hace clic en el botón
-        GLib.spawn_command_line_async("notify-send 'Botón presionado' '¡Funciona!'")
+    def mediacontroll(self, button, event):
+        if event.button == 1:
+            GLib.spawn_command_line_async("fabric-cli exec ax-shell 'notch.open_notch(\"media\")'")
+        elif event.button == 3:
+            self.media.set_to_spotify()
 
     def toggle_hidden(self):
         self.hidden = not self.hidden

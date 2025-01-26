@@ -23,7 +23,7 @@ class Bar(Window):
             visible=True,
             all_visible=True,
         )
-        
+
         self.workspaces = Workspaces(
             name="workspaces",
             invert_scroll=True,
@@ -49,7 +49,7 @@ class Bar(Window):
         )
         self.button_apps.connect("enter_notify_event", self.on_button_enter)
         self.button_apps.connect("leave_notify_event", self.on_button_leave)
-        
+
         self.button_power = Button(
             name="button-bar",
             on_clicked=lambda *_: self.power_menu(),

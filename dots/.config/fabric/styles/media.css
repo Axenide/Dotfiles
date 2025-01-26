@@ -1,0 +1,37 @@
+#media-menu-button {
+    border-radius: 20px;
+    padding: 16px;
+}
+
+#media-bar {
+    min-height: 4px;
+    min-width: 200px;
+    color: var(--primary);
+}
+
+#media-menu-button label {
+    font-size: 24px;
+    color: var(--foreground);
+}
+
+#media-menu-button:hover,
+#media-menu-button:focus {
+    background-color: var(--surface-bright);
+}
+
+#media-menu-button:hover label,
+#media-menu-button:focus label {
+    color: var(--primary);
+}
+
+#media-menu-button:active {
+    background-color: var(--primary);
+}
+
+#media-menu-button:active label {
+    color: var(--shadow);
+}
+
+#media-image {
+    border-radius: 10px;
+}

@@ -108,7 +108,7 @@ class WallpaperSelector(Box):
             for thumb, name in self.thumbnails
             if query.casefold() in name.casefold()
         ]
-        
+
         # Ordenar los elementos alfabéticamente por el nombre de archivo
         filtered_thumbnails.sort(key=lambda x: x[1].lower())
 
