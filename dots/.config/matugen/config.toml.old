@@ -71,8 +71,8 @@ output_path = "~/.config/spicetify/Themes/Dribbblish/color.ini"
 post_hook = "bash ~/.config/matugen/scripts/spicetify.sh &"
 
 [templates.hyprland]
-input_path = "~/.config/Ax-Shell/config/matugen/templates/hyprland-colors.conf"
-output_path = "~/.config/Ax-Shell/config/hypr/colors.conf"
+input_path = "~/.config/matugen/templates/hyprland-colors.conf"
+output_path = "~/.config/hypr/source/colors.conf"
 
 [templates.ax-shell]
 input_path = "~/.config/Ax-Shell/config/matugen/templates/ax-shell.css"

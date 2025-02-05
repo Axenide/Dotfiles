@@ -1,57 +1,63 @@
 add_newline = false
-command_timeout = 1000
+palette = "default"
+
+format = """
+[╭](fg:separator)\
+$status\
+$directory\
+$git_branch\
+$git_status\
+$cmd_duration\
+$time\
+$line_break\
+[╰](fg:separator)\
+$character\
+"""
+
+###########################################
+
+[palettes.default]
+prompt_ok  = "green"
+prompt_err = "red"
+icon       = "black"
+separator  = "bright-black"
+background = "bright-black"
+
+directory  = "red"
+duration   = "yellow"
+status     = "red"
+git_branch = "cyan"
+git_status = "cyan"
+
+###########################################
 
 [character]
-error_symbol = "[  ✗](bold red)"
-success_symbol = "[  λ](bold red)"
-
-[package]
-disabled = false
-
-[cmd_duration]
-min_time = 5000
-show_milliseconds = false
-disabled = false
-format="[$duration]($style)"
-style="italic blue"
-
-[directory]
-truncation_length = 5
-format = "[$path]($style)[$lock_symbol]($lock_style) "
-style = "bold yellow"
-read_only = "🔒"
-read_only_style= "bold white"
-
-[hostname]
-ssh_only = false
-trim_at = ".companyname.com"
-disabled = false
-style = "bold italic green"
-
-[git_commit]
-commit_hash_length = 8
-style = "bold white"
-
-[memory_usage]
-format = "[${ram}( | ${swap})]($style) "
-threshold = 50
-style = "bold dimmed white"
-disabled = true
+success_symbol = "[❯](fg:prompt_ok)"
+error_symbol = "[❯](fg:prompt_err)"
 
 [status]
-style = "bg:transparent"
-symbol = "💥 "
-# format = '[\[$symbol$status\]]($style) '
-format = '($style)'
+format = "[─](fg:separator)[](fg:status)[ ](fg:icon bg:status)[](fg:status bg:background)[ $status](bg:background)[](fg:background)"
+pipestatus = true
+pipestatus_separator = "-"
+pipestatus_segment_format = "$status"
+pipestatus_format = "[─](fg:separator)[](fg:status)[ ](fg:icon bg:status)[](fg:status bg:background)[ $pipestatus](bg:background)[](fg:background)"
 disabled = false
 
-[php]
-format = "via [🐘 $version](147 bold) "
+[directory]
+format = "[─](fg:separator)[](fg:directory)[ ](fg:icon bg:directory)[](fg:directory bg:background)[ $path](bold bg:background)[](fg:background)"
+truncate_to_repo = false
+truncation_length = 0
 
-[docker_context]
-format = "via [🐋 $context](blue bold)"
+[git_branch]
+format = "[─](fg:separator)[](fg:git_branch)[](fg:icon bg:git_branch)[](fg:git_branch bg:background)[ $branch](bold bg:background)"
 
-[dotnet]
-symbol = "🥅 "
-style = "green"
-heuristic = false
+[git_status]
+format = "[](fg:background bg:git_status)[$all_status$ahead_behind](fg:icon bg:git_status)[](fg:git_status)"
+
+[cmd_duration]
+format = "[─](fg:separator)[](fg:duration)[󱐋](fg:icon bg:duration)[](fg:duration bg:background)[ $duration](bg:background)[](fg:background)"
+min_time = 1000
+
+[time]
+format = "[─](fg:separator)[](fg:duration)[󰥔 ](fg:icon bg:duration)[](fg:duration bg:background)[ $time](bold bg:background)[](fg:background)"
+disabled = true

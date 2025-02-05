@@ -5,6 +5,21 @@
     <img src="screenshots/cover.png">
 </p>
 
+<table align="center">
+  <tr>
+    <td align="center"><sup>⚠️  ɪꜰ ʏᴏᴜ ᴊᴜꜱᴛ ᴡᴀɴᴛ ᴛʜᴇ ʙᴀʀ, ᴄʜᴇᴄᴋ ᴛʜᴇ ᴘʀᴏᴊᴇᴄᴛ ☄️</sup></td>
+  </tr>
+  <tr>
+    <td align="center">
+      <a href='https://github.com/Axenide/Ax-Shell' target='_blank'>
+        <img style='border:0px;height:96px;' 
+             src='https://raw.githubusercontent.com/Axenide/Ax-Shell/main/assets/cover.png' 
+             border='0' alt='Ax-Shell: A hackable shell for Hyprland, powered by Fabric.' />
+      </a>
+    </td>
+  </tr>
+</table>
+
 > [!CAUTION]
 > This setup is specific for [Hyprland](https://github.com/hyprwm/Hyprland). Dont install it if you don't know what you're doing.
 

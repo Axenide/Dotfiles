@@ -28,18 +28,18 @@
 	--idle-indicator: #f0b232; /* change to #f0b232 for default yellow */
 
 	/* accent colors */
-	--accent-1: {{colors.primary.default.hex}}; /* links */
-	--accent-2: {{colors.primary.default.hex}}; /* general unread/mention elements */
-	--accent-3: {{colors.primary.default.hex}}; /* accent buttons */
-	--accent-4: {{colors.primary.default.hex}}; /* accent buttons when hovered */
-	--accent-5: {{colors.primary.default.hex}}; /* accent buttons when clicked */
-	--mention: color-mix(in srgb, {{colors.primary.default.hex}} 30%, black); 
-	--mention-hover: color-mix(in srgb, {{colors.primary.default.hex}} 20%, black);
+	--accent-1: #ffb3ad; /* links */
+	--accent-2: #ffb3ad; /* general unread/mention elements */
+	--accent-3: #ffb3ad; /* accent buttons */
+	--accent-4: #ffb3ad; /* accent buttons when hovered */
+	--accent-5: #ffb3ad; /* accent buttons when clicked */
+	--mention: color-mix(in srgb, #ffb3ad 30%, black); 
+	--mention-hover: color-mix(in srgb, #ffb3ad 20%, black);
 
 	/* text colors */
 	--text-0: var(--bg-4); /* text on colored elements */
 	--text-1: var(--text-2); /* other normally white text */
-	--text-2: {{colors.on_background.default.hex}}; /* headings and important text */
+	--text-2: #f1dedd; /* headings and important text */
 	--text-3: color-mix(in srgb, var(--text-2) 90%, black); /* normal text */
 	--text-4: color-mix(in srgb, var(--text-2) 80%, black); /* icon buttons and channels */
 	--text-5: color-mix(in srgb, var(--text-2) 50%, black); /* muted channels/chats and timestamps */
@@ -47,11 +47,11 @@
 	/* background and dark colors */
 	--bg-1: hsl(0, 0%, 25%); /* dark buttons when clicked */
 	--bg-2: hsl(20, 5%, 22%); /* dark buttons */
-	--bg-3: {{colors.background.default.hex}}; /* spacing, secondary elements */
+	--bg-3: #1a1110; /* spacing, secondary elements */
 	--bg-4: color-mix(in srgb, var(--bg-3) 30%, black); /* main background color */
-	--hover: color-mix(in srgb, {{colors.primary.default.hex}} 10%, black); 
-	--active: color-mix(in srgb, {{colors.primary.default.hex}} 20%, black); 
-	--message-hover: color-mix(in srgb, {{colors.primary.default.hex}} 10%, black);
+	--hover: color-mix(in srgb, #ffb3ad 10%, black); 
+	--active: color-mix(in srgb, #ffb3ad 20%, black); 
+	--message-hover: color-mix(in srgb, #ffb3ad 10%, black);
 
 	/* amount of spacing and padding */
 	--spacing: 8px;
