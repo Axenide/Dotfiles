@@ -21,7 +21,7 @@
 </table>
 
 > [!CAUTION]
-> This setup is specific for [Hyprland](https://github.com/hyprwm/Hyprland). Dont install it if you don't know what you're doing.
+> The install for this repository has been deprecated in favor of [Ax-Shell](https://github.com/Axenide/Ax-Shell).
 
 ## 📸 Check it out!
 ![](screenshots/1.png)
