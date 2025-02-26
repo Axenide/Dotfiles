@@ -1,5 +1,14 @@
 [
     {
+        "property": "widget.macos.native-context-menus",
+        "label": "Enable this mod on macOS (Let Zen override native macOS context menu)",
+        "type": "checkbox",
+        "disabledOn": [
+            "windows",
+            "linux"
+        ]
+    },
+    {
         "property": "uc.hidecontext.separators",
         "label": "Hide all separators",
         "type": "checkbox"
@@ -10,8 +19,13 @@
         "type": "checkbox"
     },
     {
+        "property": "uc.fixcontext.applyzencolors",
+        "label": "Apply Zen workspace colors to all context menu, panels, and confirmation pop-ups",
+        "type": "checkbox"
+    },
+    {
         "property": "uc.fixcontext.extensionmargins",
-        "label": "Fix margin for 'Tabs on the right' checkbox and extensions-related context menu",
+        "label": "[Toolbar] Fix margin for 'Tabs on the right' checkbox and extensions-related context menu",
         "type": "checkbox",
         "disabledOn": [
             "macos",
@@ -20,112 +34,132 @@
     },
     {
         "property": "uc.hidecontext.copylink",
-        "label": "Only use 'Copy Link Without Site Tracking'",
+        "label": "[Link] Hide regular 'Copy Link' button (Only shown when hovering above 'Copy Clean Link')",
         "type": "checkbox"
     },
     {
         "property": "uc.hidecontext.menubar",
-        "label": "Hide 'Menu Bar' toggle",
+        "label": "[Toolbar] Hide 'Menu Bar' toggle",
         "type": "checkbox"
     },
     {
         "property": "uc.hidecontext.bookmark",
-        "label": "Hide 'Bookmark Tab/Link'",
+        "label": "[Tab] [Link] Hide 'Bookmark Tab/Link'",
         "type": "checkbox"
     },
     {
         "property": "uc.hidecontext.mutetab",
-        "label": "Hide 'Mute Tab' option",
+        "label": "[Tab] Hide 'Mute Tab' option",
         "type": "checkbox"
     },
     {
         "property": "uc.hidecontext.newtab",
-        "label": "Hide 'New Tab' option",
+        "label": "[Tab] Hide 'New Tab' option",
+        "type": "checkbox"
+    },
+    {
+        "property": "uc.hidecontext.addtowebpanel",
+        "label": "[Link] Hide 'Add to Web Panel' option",
         "type": "checkbox"
     },
     {
         "property": "uc.hidecontext.movetaboptions",
-        "label": "Hide 'Move Tab' options",
+        "label": "[Tab] Hide 'Move Tab' options",
         "type": "checkbox"
     },
     {
         "property": "uc.hidecontext.newcontainer",
-        "label": "Hide 'Open Tab/Link in New Container Tab'",
+        "label": "[Tab] [Link] Hide 'Open Tab/Link in New Container Tab'",
         "type": "checkbox"
     },
     {
         "property": "uc.hidecontext.sendtodevice",
-        "label": "Hide 'Send Tab/Link to Device'",
+        "label": "[Tab] [Link] Hide 'Send Tab/Link to Device'",
         "type": "checkbox"
     },
     {
         "property": "uc.hidecontext.closetab",
-        "label": "Hide close tab options (Close Tab, Close Duplicate Tabs, Close Multiple Tabs)",
+        "label": "[Tab] Hide close tab options (Close Tab, Close Duplicate Tabs, Close Multiple Tabs)",
         "type": "checkbox"
     },
     {
         "property": "uc.hidecontext.search",
-        "label": "Hide 'Search Keywords' with your preferred search engine",
+        "label": "[Link] Hide 'Search Keywords' on your preferred search engine",
         "type": "checkbox"
     },
     {
         "property": "uc.hidecontext.searchinpriv",
-        "label": "Hide 'Search Keywords in a Private Window'",
+        "label": "[Text] [Link] Hide 'Search Keywords in a Private Window'",
         "type": "checkbox"
     },
     {
         "property": "uc.hidecontext.translate",
-        "label": "Hide Firefox's 'Translate Selection/Link' options",
+        "label": "[Text] [Link] Hide Firefox's 'Translate Selection/Link' options",
         "type": "checkbox"
     },
     {
         "property": "uc.hidecontext.printselection",
-        "label": "Hide 'Print Selection'",
+        "label": "[Text] Hide 'Print Selection'",
         "type": "checkbox"
     },
     {
         "property": "uc.hidecontext.image",
-        "label": "Hide 'Email Image', 'Set Image as Desktop Background', and 'View Image Info' options",
+        "label": "[Image] Hide 'Email Image', 'Set Image as Desktop Background', and 'View Image Info' options",
+        "type": "checkbox"
+    },
+    {
+        "property": "uc.hidecontext.checkspelling",
+        "label": "[Text] Hide 'Check Spelling' and 'Change Text/Page Direction' options while typing in text fields",
         "type": "checkbox"
     },
     {
         "property": "uc.hidecontext.selectalltext",
-        "label": "Hide 'Select All Text' option",
+        "label": "[Page] [Text] Hide 'Select All Text' option",
         "type": "checkbox"
     },
     {
         "property": "uc.hidecontext.selectalltabs",
-        "label": "Hide 'Select All Tabs' option",
+        "label": "[Tab] Hide 'Select All Tabs' option",
         "type": "checkbox"
     },
     {
         "property": "uc.hidecontext.reloadtab",
-        "label": "Hide 'Reload Tab' option",
+        "label": "[Tab] Hide 'Reload Tab' option",
         "type": "checkbox"
     },
     {
         "property": "uc.hidecontext.duplicatetab",
-        "label": "Hide 'Duplicate Tab' option",
+        "label": "[Tab] Hide 'Duplicate Tab' option",
         "type": "checkbox"
     },
     {
         "property": "uc.hidecontext.unloadactions",
-        "label": "Hide 'Tab Unloader Actions'",
+        "label": "[Tab] Hide 'Tab Unloader Actions'",
         "type": "checkbox"
     },
     {
         "property": "uc.hidecontext.inspect",
-        "label": "Hide 'View Page Source' and 'Inspect' options",
+        "label": "[Text] [Page] Hide 'View Page Source' and 'Inspect' options",
         "type": "checkbox"
     },
     {
         "property": "uc.hidecontext.savelink",
-        "label": "Hide 'Save Link As'",
+        "label": "[Page] [Link] Hide 'Save Page As' and 'Save Link As' option",
         "type": "checkbox"
     },
     {
         "property": "uc.hidecontext.screenshot",
-        "label": "Hide 'Take Screenshot' option",
+        "label": "[Page] Hide 'Take Screenshot' option",
+        "type": "checkbox"
+    },
+    {
+        "property": "uc.hidecontext.pin",
+        "label": "[Page] Hide 'Pin Tab' and 'Add to Essentials' option",
+        "type": "checkbox"
+    },
+    {
+        "property": "uc.hidecontext.frame",
+        "label": "[Image] Hide 'This Frame' options",
         "type": "checkbox"
     }
 ]

@@ -39,6 +39,10 @@ output_path = "~/.cache/wal/base46-dark.lua"
 input_path = "~/.config/matugen/templates/discord-colors.theme.css"
 output_path = "~/.config/vesktop/themes/axmat.theme.css"
 
+[templates.pywal]
+input_path = "~/.config/matugen/templates/pywal-colors"
+output_path = "~/.cache/wal/colors"
+
 [templates.pywaljson]
 input_path = "~/.config/matugen/templates/pywal-colors.json"
 output_path = "~/.cache/wal/colors.json"
@@ -78,3 +82,12 @@ output_path = "~/.config/Ax-Shell/config/hypr/colors.conf"
 input_path = "~/.config/Ax-Shell/config/matugen/templates/ax-shell.css"
 output_path = "~/.config/Ax-Shell/styles/colors.css"
 post_hook = "fabric-cli exec ax-shell 'app.set_css()' &"
+
+[config.custom_colors]
+red           = { color = "#FF0000", blend = true }
+green         = { color = "#00FF00", blend = true }
+yellow        = { color = "#FFFF00", blend = true }
+blue          = { color = "#0000FF", blend = true }
+magenta       = { color = "#FF00FF", blend = true }
+cyan          = { color = "#00FFFF", blend = true }
+white         = { color = "#FFFFFF", blend = true }

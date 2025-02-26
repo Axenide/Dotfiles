@@ -68,7 +68,7 @@ label {
     color = 0xff$foreground
     font_size = 14
     font_family = Iosevka Nerd Font Bold Italic
-    position = 0, -50
+    position = 0, -75
     halign = center
     valign = center
     shadow_passes = 1
@@ -79,8 +79,8 @@ label {
 # PICTURE
 image {
   path = .face.icon
-  size = 150
-  position = 0, 50
+  size = 200
+  position = 0, 75
   halign = center
   valign = center
   border_size = 3

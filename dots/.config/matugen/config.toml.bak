@@ -39,6 +39,10 @@ output_path = "~/.cache/wal/base46-dark.lua"
 input_path = "~/.config/matugen/templates/discord-colors.theme.css"
 output_path = "~/.config/vesktop/themes/axmat.theme.css"
 
+[templates.pywal]
+input_path = "~/.config/matugen/templates/pywal-colors"
+output_path = "~/.cache/wal/colors"
+
 [templates.pywaljson]
 input_path = "~/.config/matugen/templates/pywal-colors.json"
 output_path = "~/.cache/wal/colors.json"

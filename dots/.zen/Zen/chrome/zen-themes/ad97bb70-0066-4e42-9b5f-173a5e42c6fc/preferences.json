@@ -102,29 +102,6 @@
         "disabledOn": []
     },
     {
-        "property": "uc.pins.hide-reset-button",
-        "label": "Hide the reset button on pinned tabs",
-        "type": "checkbox",
-        "disabledOn": []
-    },
-    {
-        "property": "uc.pins.only-show-active",
-        "label": "Only shows loaded pinned tabs (when the tab bar is collapsed)",
-        "type": "dropdown",
-        "placeholder": "Disabled",
-        "disabledOn": [],
-        "options": [
-            {
-                "label": "Normal",
-                "value": "Normal"
-            },
-            {
-                "label": "Also show them on hover",
-                "value": "OnHover"
-            }
-        ]
-    },
-    {
         "property": "zen.workspaces.show-workspace-indicator",
         "label": "Shows the workspace-indicator between Essentials and Pins",
         "type": "checkbox",

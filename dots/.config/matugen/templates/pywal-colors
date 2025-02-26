@@ -1,0 +1,16 @@
+{{colors.surface.default.hex}}
+{{colors.surface_variant.default.hex}}
+{{colors.red.default.hex}}
+{{colors.red.default.hex | set_lightness: 5.0}}
+{{colors.green.default.hex}}
+{{colors.green.default.hex | set_lightness: 5.0}}
+{{colors.yellow.default.hex}}
+{{colors.yellow.default.hex | set_lightness: 5.0}}
+{{colors.primary.default.hex}}
+{{colors.blue.default.hex | set_lightness: 5.0}}
+{{colors.magenta.default.hex}}
+{{colors.magenta.default.hex | set_lightness: 5.0}}
+{{colors.cyan.default.hex}}
+{{colors.cyan.default.hex | set_lightness: 5.0}}
+{{colors.on_surface.default.hex}}
+{{colors.on_surface.default.hex}}
