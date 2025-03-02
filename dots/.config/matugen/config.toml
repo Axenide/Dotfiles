@@ -83,11 +83,30 @@ input_path = "~/.config/Ax-Shell/config/matugen/templates/ax-shell.css"
 output_path = "~/.config/Ax-Shell/styles/colors.css"
 post_hook = "fabric-cli exec ax-shell 'app.set_css()' &"
 
-[config.custom_colors]
-red           = { color = "#FF0000", blend = true }
-green         = { color = "#00FF00", blend = true }
-yellow        = { color = "#FFFF00", blend = true }
-blue          = { color = "#0000FF", blend = true }
-magenta       = { color = "#FF00FF", blend = true }
-cyan          = { color = "#00FFFF", blend = true }
-white         = { color = "#FFFFFF", blend = true }
+[config.custom_colors.red]
+color = "#FF0000"
+blend = true
+
+[config.custom_colors.green]
+color = "#00FF00"
+blend = true
+
+[config.custom_colors.yellow]
+color = "#FFFF00"
+blend = true
+
+[config.custom_colors.blue]
+color = "#0000FF"
+blend = true
+
+[config.custom_colors.magenta]
+color = "#FF00FF"
+blend = true
+
+[config.custom_colors.cyan]
+color = "#00FFFF"
+blend = true
+
+[config.custom_colors.white]
+color = "#FFFFFF"
+blend = true
