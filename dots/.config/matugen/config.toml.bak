@@ -76,7 +76,7 @@ post_hook = "bash ~/.config/matugen/scripts/spicetify.sh &"
 
 [templates.hyprland]
 input_path = "~/.config/Ax-Shell/config/matugen/templates/hyprland-colors.conf"
-output_path = "~/.config/Ax-Shell/config/matugen/templates/hyprland-colors.conf"
+output_path = "~/.config/Ax-Shell/config/hypr/colors.conf"
 
 [templates.ax-shell]
 input_path = "~/.config/Ax-Shell/config/matugen/templates/ax-shell.css"
