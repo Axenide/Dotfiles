@@ -84,14 +84,12 @@
               }
           }
   
-          #vertical-pinned-tabs-container>.zen-workspace-tabs-section {
-              gap: 3px !important;
-          }
-  
           /*The actual grid layout*/
           #vertical-pinned-tabs-container>.zen-workspace-tabs-section {
               grid-template-columns: repeat(auto-fit, minmax(var(--tab-pinned-min-width-expanded), auto)) !important;
               display: grid !important;
+              overflow: hidden !important;
+              gap: 3px !important;
           }
   
           #vertical-pinned-tabs-container>.zen-workspace-tabs-section>.tabbrowser-tab[pinned] {

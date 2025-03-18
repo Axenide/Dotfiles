@@ -48,8 +48,8 @@ keymap = [
 	{ on = [ "<Left>" ],  run = "leave",    desc = "Go back to the parent directory" },
 	{ on = [ "<Right>" ], run = "enter",    desc = "Enter the child directory" },
 
-	{ on = [ "g", "g" ], run = "arrow -99999999", desc = "Move cursor to the top" },
-	{ on = [ "G" ],      run = "arrow 99999999",  desc = "Move cursor to the bottom" },
+	{ on = [ "g", "g" ], run = "arrow top", desc = "Move cursor to the top" },
+	{ on = [ "G" ],      run = "arrow bot",  desc = "Move cursor to the bottom" },
 
 	# Selection
 	{ on = [ "<Space>" ], run = [ "select --state=none", "arrow 1" ], desc = "Toggle the current selection state" },

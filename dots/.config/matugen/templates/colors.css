@@ -1,5 +1,5 @@
 @define-color foreground {{colors.on_background.default.hex}};
-@define-color background {{colors.background.default.hex}};
+@define-color background {{colors.background.default.hex | set_lightness: -5.0}};
 @define-color cursor {{colors.on_background.default.hex}};
 
 @define-color color0 {{colors.surface.default.hex}};

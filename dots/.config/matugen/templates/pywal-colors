@@ -1,4 +1,4 @@
-{{colors.surface.default.hex}}
+{{colors.background.default.hex | set_lightness: -5.0}}
 {{colors.surface_variant.default.hex}}
 {{colors.red.default.hex}}
 {{colors.red.default.hex | set_lightness: 5.0}}
