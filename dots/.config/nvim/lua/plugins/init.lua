@@ -6,55 +6,18 @@ return {
     opts = require "configs.conform",
   },
 
-  -- Estos son los plugins nuevos añadidos:
   {
-    "yetone/avante.nvim",
-    event = "VeryLazy",
-    build = "make",
-    opts = {
-      provider = "groq",
-      vendors = {
-        ---@type AvanteProvider
-        groq = {
-          endpoint = "https://api.groq.com/openai/v1/chat/completions",
-          model = "llama-3.2-90b-vision-preview",
-          api_key_name = "GROQ_API_KEY",
-          parse_curl_args = function(opts, code_opts)
-            return {
-              url = opts.endpoint,
-              headers = {
-                ["Accept"] = "application/json",
-                ["Content-Type"] = "application/json",
-                ["Authorization"] = "Bearer " .. os.getenv(opts.api_key_name),
-              },
-              body = {
-                model = opts.model,
-                messages = require("avante.providers").openai.parse_message(code_opts),
-                temperature = 0,
-                max_tokens = 8000,
-                stream = true,
-              },
-            }
-          end,
-          parse_response_data = function(data_stream, event_state, opts)
-            require("avante.providers").openai.parse_response(data_stream, event_state, opts)
-          end,
-        },
-      },
-    },
+    "CopilotC-Nvim/CopilotChat.nvim",
+    lazy = false,
     dependencies = {
-      "nvim-tree/nvim-web-devicons",
-      "stevearc/dressing.nvim",
-      "nvim-lua/plenary.nvim",
-      "MunifTanjim/nui.nvim",
-      {
-        "MeanderingProgrammer/render-markdown.nvim",
-        opts = {
-          file_types = { "markdown", "Avante" },
-        },
-        ft = { "markdown", "Avante" },
-      },
+      { "github/copilot.vim" }, -- or zbirenbaum/copilot.lua
+      { "nvim-lua/plenary.nvim", branch = "master" }, -- for curl, log and async functions
     },
+    build = "make tiktoken", -- Only on MacOS or Linux
+    opts = {
+      -- See Configuration section for options
+    },
+    -- See Commands section for default commands if you want to lazy load on them
   },
 
   {
@@ -67,11 +30,6 @@ return {
     opts = {
       git = { enable = true },
     },
-  },
-
-  {
-    "Exafunction/codeium.vim",
-    event = "BufEnter",
   },
 
   {
@@ -160,7 +118,6 @@ return {
     end,
   },
 
-  -- Plugin ya existente
   {
     "neovim/nvim-lspconfig",
     config = function()
