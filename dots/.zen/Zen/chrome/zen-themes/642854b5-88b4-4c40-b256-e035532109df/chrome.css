@@ -1,0 +1,392 @@
+/* variables */
+:root {
+  @media -moz-pref( "mod.sameerasw.zen_bg_color_enabled") {
+    --zen-main-browser-background: var(
+      --mod-sameerasw-zen_transparency_color,
+      #00000000
+    ) !important;
+  }
+}
+
+/* animation smoothness */
+:root:has([mod-sameerasw_zen_animations="0"]) {
+  --mod-sameerasw-zen-animation-smoothness: all 0.15s
+      cubic-bezier(0.175, 0.885, 0.3, 1.3),
+    filter 0.15s ease-in-out, opacity 0.2s ease-in-out !important;
+}
+
+:root:has([mod-sameerasw_zen_animations="1"]) {
+  --mod-sameerasw-zen-animation-smoothness: all 0.25s
+      cubic-bezier(0.175, 0.885, 0.32, 1.35),
+    filter 0.3s ease-in-out, opacity 0.3s ease-in-out !important;
+}
+
+:root:has([mod-sameerasw_zen_animations="2"]) {
+  --mod-sameerasw-zen-animation-smoothness: all 0.4s
+      cubic-bezier(0.175, 0.885, 0.32, 1.55),
+    filter 0.4s ease-in-out, opacity 0.45s ease-in-out !important;
+}
+
+:root:has([mod-sameerasw_zen_animations="3"]) {
+  --mod-sameerasw-zen-animation-smoothness: all 0.25s
+      cubic-bezier(0.575, 0.685, 0.52, 1.55),
+    filter 0.3s ease-in-out, opacity 0.35s ease-in-out !important;
+}
+/* default */
+:root:not(:has([mod-sameerasw_zen_animations])) {
+  --mod-sameerasw-zen-animation-smoothness: all 0.25s
+      cubic-bezier(0.175, 0.885, 0.32, 1.35),
+    filter 0.3s ease-in-out, opacity 0.3s ease-in-out !important;
+}
+
+/* tab tint */
+:root:has([mod-sameerasw_zen_light_tint="1"]) {
+  .browserStack {
+    browser {
+      background-color: light-dark(
+        rgba(255, 255, 255, 0.1),
+        rgba(0, 0, 0, 0.1)
+      ) !important;
+    }
+  }
+}
+
+:root:has([mod-sameerasw_zen_light_tint="2"]) {
+  .browserStack {
+    browser {
+      background-color: transparent !important;
+    }
+  }
+}
+
+/* hide shadows */
+hbox.browserSidebarContainer,
+#zen-tabbox-wrapper {
+  @media -moz-pref( "mod.sameerasw.zen_no_shadow") {
+    box-shadow: none !important;
+  }
+}
+
+/* Animations */
+/* Tab switch animation */
+#tabbrowser-tabpanels
+  > hbox:not([zen-split="true"]):not(:has(.zen-glance-background)) {
+  @media -moz-pref( "mod.sameerasw.zen_tab_switch_anim") {
+    transition: var(--mod-sameerasw-zen-animation-smoothness) !important;
+    scale: 0.9 !important;
+    opacity: 0;
+  }
+}
+#tabbrowser-tabpanels > hbox.deck-selected:not([zen-split="true"]) {
+  @media -moz-pref( "mod.sameerasw.zen_tab_switch_anim") {
+    scale: 1 !important;
+    opacity: 1 !important;
+  }
+}
+
+/* website switch animations */
+#browser:not(:has(.zen-glance-background)) #tabbrowser-tabpanels {
+  @media -moz-pref( "mod.sameerasw.zen_urlbar_zoom_anim") {
+    transition: var(--mod-sameerasw-zen-animation-smoothness) !important;
+  }
+}
+
+/* URL bar zoom animation */
+#browser:has(#urlbar[open][zen-floating-urlbar="true"]) #tabbrowser-tabpanels {
+  @media -moz-pref( "mod.sameerasw.zen_urlbar_zoom_anim") {
+    pointer-events: none;
+    scale: 1.1 !important;
+    filter: blur(10px) brightness(70%) !important;
+  }
+}
+
+#urlbar[open][zen-floating-urlbar="true"] #urlbar-background {
+  @media -moz-pref( "mod.sameerasw.zen_urlbar_zoom_anim") {
+    border-radius: 1em !important;
+  }
+}
+
+/* trackpad gestures*/
+tabpanels .browserStack browser {
+  @media -moz-pref( "mod.sameerasw.zen_trackpad_anim") {
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.1) 0.1s !important;
+  }
+}
+
+/* Previous animation*/
+.browserStack:has(
+    #historySwipeAnimationPreviousArrow:not([style="translate: none;"])
+  )
+  browser {
+  @media -moz-pref( "mod.sameerasw.zen_trackpad_anim") {
+    scale: 0.95 !important;
+    transform: translateX(3%) !important;
+    border-radius: 2em !important;
+  }
+}
+
+/* Next animation*/
+.browserStack:has(
+    #historySwipeAnimationNextArrow:not([style="translate: none;"])
+  )
+  browser {
+  @media -moz-pref( "mod.sameerasw.zen_trackpad_anim") {
+    scale: 0.95 !important;
+    transform: translateX(-3%) !important;
+    border-radius: 2em !important;
+  }
+}
+
+/* no tab image */
+#browser:has([zen-empty-tab="true"][selected="true"]) .browserStack {
+  @media -moz-pref( "mod.sameerasw.zen_notab_img_enabled") {
+    background-image: var(
+      --mod-sameerasw-zen_notab_img,
+      url("https://raw.githubusercontent.com/zen-browser/branding/refs/heads/main/Official/Word%20Marks/SVG/zen_logo_icon_white.svg")
+    ) !important;
+
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+
+    background-size: var(--mod-sameerasw-zen_notab_img_size, 150px) !important;
+
+    opacity: var(--mod-sameerasw-zen_notab_img_opacity, 1) !important;
+
+    @media -moz-pref( "mod.sameerasw.zen_notab_img_saturate") {
+      filter: saturate(0) !important;
+
+      @media -moz-pref( "mod.sameerasw.zen_notab_img_invert") {
+        @media (prefers-color-scheme: light) {
+          filter: saturate(0) invert(1) !important;
+        }
+      }
+    }
+  }
+}
+/* ============= Transparent Sidebar: Mask or Push ============= */
+
+:root:has(
+    [mod-sameerasw_zen_compact_sidebar_type="1"],
+    [mod-sameerasw_zen_compact_sidebar_type="2"]
+  ) {
+  #zen-main-app-wrapper {
+    --zen-sidebar-custom-width: var(
+      --mod-sameerasw-zen_compact_sidebar_width,
+      165px
+    ) !important;
+  }
+
+  [zen-compact-mode="true"] #navigator-toolbox {
+    --zen-sidebar-width: var(--zen-sidebar-custom-width) !important;
+    --actual-zen-sidebar-width: var(--zen-sidebar-custom-width) !important;
+    width: var(--zen-sidebar-custom-width) !important;
+  }
+}
+
+/* Shared: Soft mask background and shadow */
+#main-window:has([mod-sameerasw_zen_compact_sidebar_type="2"])
+  #titlebar::before {
+  box-shadow: light-dark(#fff3, #0003) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px !important;
+  background-color: light-dark(#fff8, #0005) !important;
+}
+
+/* Shared: Content reveal trigger condition */
+#zen-main-app-wrapper[zen-compact-mode="true"]:has(
+    [zen-user-show=""],
+    #navigator-toolbox[zen-has-hover="true"],
+    [has-popup-menu=""]
+  ) {
+  /* Content styles when sidebar is revealed */
+}
+
+/* Mask type - left sidebar */
+#main-window:not([zen-right-side="true"]):has(
+    [mod-sameerasw_zen_compact_sidebar_type="2"]
+  )
+  #zen-main-app-wrapper[zen-compact-mode="true"]:has(
+    [zen-user-show=""],
+    #navigator-toolbox[zen-has-hover="true"],
+    [has-popup-menu=""]
+  )
+  #tabbrowser-tabpanels {
+  mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    transparent calc(var(--zen-sidebar-custom-width) + 4px),
+    black calc(var(--zen-sidebar-custom-width) + 8px),
+    black 100%
+  ) !important;
+}
+
+/* Mask type - right sidebar */
+#main-window[zen-right-side="true"]:has(
+    [mod-sameerasw_zen_compact_sidebar_type="2"]
+  )
+  #zen-main-app-wrapper[zen-compact-mode="true"]:has(
+    [zen-user-show=""],
+    #navigator-toolbox[zen-has-hover="true"],
+    [has-popup-menu=""]
+  )
+  #tabbrowser-tabpanels {
+  mask-image: linear-gradient(
+    to left,
+    transparent 0,
+    transparent calc(var(--zen-sidebar-custom-width) + 4px),
+    black calc(var(--zen-sidebar-custom-width) + 8px),
+    black 100%
+  ) !important;
+}
+
+/* Push type - left sidebar */
+#main-window:not([zen-right-side="true"]):has(
+    [mod-sameerasw_zen_compact_sidebar_type="1"]
+  )
+  #zen-main-app-wrapper[zen-compact-mode="true"]:has(
+    [zen-user-show=""],
+    #navigator-toolbox[zen-has-hover="true"],
+    [has-popup-menu=""]
+  )
+  #zen-appcontent-wrapper {
+  transform: translateX(var(--zen-sidebar-custom-width)) !important;
+}
+
+/* Push type - right sidebar */
+#main-window[zen-right-side="true"]:has(
+    [mod-sameerasw_zen_compact_sidebar_type="1"]
+  )
+  #zen-main-app-wrapper[zen-compact-mode="true"]:has(
+    [zen-user-show=""],
+    #navigator-toolbox[zen-has-hover="true"],
+    [has-popup-menu=""]
+  )
+  #zen-appcontent-wrapper {
+  transform: translateX(calc(0px - var(--zen-sidebar-custom-width))) !important;
+}
+
+/* Shared Push Transition (used in both left and right) */
+#main-window:has([mod-sameerasw_zen_compact_sidebar_type="1"])
+  #zen-appcontent-wrapper {
+  --zen-compact-mode-func: linear(
+    0 0%,
+    0.002748 1%,
+    0.010544 2%,
+    0.022757 3%,
+    0.038804 4%,
+    0.058151 5%,
+    0.080308 6%,
+    0.104828 7%,
+    0.131301 8%,
+    0.159358 9%,
+    0.188662 10%,
+    0.21891 11%,
+    0.249828 12%,
+    0.281172 13%,
+    0.312724 14%,
+    0.344288 15%,
+    0.375693 16%,
+    0.40679 17%,
+    0.437447 18%,
+    0.467549 19%,
+    0.497 20%,
+    0.525718 21%,
+    0.553633 22%,
+    0.580688 23%,
+    0.60684 24%,
+    0.632052 25%,
+    0.656298 26%,
+    0.679562 27%,
+    0.701831 28%,
+    0.723104 29%,
+    0.743381 30%,
+    0.76267 31%,
+    0.780983 32%,
+    0.798335 33%,
+    0.814744 34%,
+    0.830233 35%,
+    0.844826 36%,
+    0.858549 37%,
+    0.87143 38%,
+    0.883498 39%,
+    0.894782 40%,
+    0.905314 41%,
+    0.915125 42%,
+    0.924247 43%,
+    0.93271 44%,
+    0.940547 45%,
+    0.947787 46%,
+    0.954463 47%,
+    0.960603 48%,
+    0.966239 49%,
+    0.971397 50%,
+    0.976106 51%,
+    0.980394 52%,
+    0.984286 53%,
+    0.987808 54%,
+    0.990984 55%,
+    0.993837 56%,
+    0.99639 57%,
+    0.998664 58%,
+    1.000679 59%,
+    1.002456 60%,
+    1.004011 61%,
+    1.005363 62%,
+    1.006528 63%,
+    1.007522 64%,
+    1.008359 65%,
+    1.009054 66%,
+    1.009618 67%,
+    1.010065 68%,
+    1.010405 69%,
+    1.010649 70%,
+    1.010808 71%,
+    1.01089 72%,
+    1.010904 73%,
+    1.010857 74%,
+    1.010757 75%,
+    1.010611 76%,
+    1.010425 77%,
+    1.010205 78%,
+    1.009955 79%,
+    1.009681 80%,
+    1.009387 81%,
+    1.009077 82%,
+    1.008754 83%,
+    1.008422 84%,
+    1.008083 85%,
+    1.00774 86%,
+    1.007396 87%,
+    1.007052 88%,
+    1.00671 89%,
+    1.006372 90%,
+    1.00604 91%,
+    1.005713 92%,
+    1.005394 93%,
+    1.005083 94%,
+    1.004782 95%,
+    1.004489 96%,
+    1.004207 97%,
+    1.003935 98%,
+    1.003674 99%,
+    1.003423 100%
+  ) !important;
+  transition: transform 0.25s var(--zen-compact-mode-func) !important;
+}
+
+/* Push: transparent titlebar */
+#main-window:has([mod-sameerasw_zen_compact_sidebar_type="1"])
+  #titlebar::before {
+  background-color: transparent !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Sidebar background transparency */
+#sidebar-box {
+  @media -moz-pref( "mod.sameerasw.zen_transparent_sidebar_enabled") {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  }
+}

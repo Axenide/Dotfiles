@@ -3,21 +3,21 @@
 @define-color cursor {{colors.on_background.default.hex}};
 
 @define-color color0 {{colors.surface.default.hex}};
-@define-color color1 {{colors.surface_variant.default.hex}};
-@define-color color2 #B66467;
-@define-color color3 #C58385;
-@define-color color4 #8C977D;
-@define-color color5 #A3AC97;
-@define-color color6 #D9BC8C;
-@define-color color7 #E1C9A3;
+@define-color color1 {{colors.primary.default.hex}};
+@define-color color2 {{colors.red.default.hex}};
+@define-color color3 {{colors.red.default.hex | set_lightness: 5.0}};
+@define-color color4 {{colors.green.default.hex}};
+@define-color color5 {{colors.green.default.hex | set_lightness: 5.0}};
+@define-color color6 {{colors.yellow.default.hex}};
+@define-color color7 {{colors.yellow.default.hex | set_lightness: 5.0}};
 @define-color color8 {{colors.primary.default.hex}};
-@define-color color9 #A4B5C7;
-@define-color color10 #A988B0;
-@define-color color11 #BAA0C0;
-@define-color color12 #8AA6A2;
-@define-color color13 #A1B8B5;
-@define-color color14 #E8E3E3;
-@define-color color15 #EDE9E9;
+@define-color color9 {{colors.blue.default.hex | set_lightness: 5.0}};
+@define-color color10 {{colors.magenta.default.hex}};
+@define-color color11 {{colors.magenta.default.hex | set_lightness: 5.0}};
+@define-color color12 {{colors.cyan.default.hex}};
+@define-color color13 {{colors.cyan.default.hex | set_lightness: 5.0}};
+@define-color color14 {{colors.on_background.default.hex}};
+@define-color color15 {{colors.on_background.default.hex | set_lightness: 5.0}};
 
 @define-color primary {{colors.primary.default.hex}};
 @define-color on_primary {{colors.on_primary.default.hex}};

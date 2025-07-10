@@ -2,45 +2,63 @@ add_newline = false
 command_timeout = 1000
 
 format = """
+$character\
+[](fg:white bg:bright-black)\
+[█](fg:bright-black bg:black)\
 $directory\
-$fill\
-$git_branch\
+[█](fg:bright-black bg:black)\
+[$git_branch\
 $git_state\
-$git_status\
+$git_status](bold bg:black fg:white)\
+$fill\
 $cmd_duration\
+[](fg:red bg:black)\
+[ ](fg:black bg:red)\
+$username\
+[](fg:green bg:bright-black)\
+[󰌽 ](fg:green bg:black inverted)\
+$hostname\
 $line_break\
-$character"""
+[‎]()"""
 
 [character]
-error_symbol = "[✖](bold red)"
-success_symbol = "[»](bold red)"
+format = "$symbol"
+error_symbol = "[█](fg:red bg:black)[ ERROR](fg:red bg:black inverted bold)[](fg:red bg:white)"
+success_symbol = "[█](fg:bright-white bg:black)[ PROMPT](fg:bright-white bg:black inverted bold)[](fg:bright-white bg:white)"
 
 [fill]
-symbol = '─'
-style = 'fg:black'
+symbol = ' '
+style = 'bg:black'
 
 [package]
 disabled = false
 
 [cmd_duration]
-min_time = 5000
-show_milliseconds = false
+min_time = 1000
+show_milliseconds = true
 disabled = false
-format="[$duration]($style)"
-style="italic blue"
+format="[󰞌 $duration ]($style)"
+style="bold bg:black"
 
 [directory]
 truncation_length = 5
-format = "[$path]($style)[$lock_symbol]($lock_style) "
-style = "bold green"
+format = "[󰉋 $path]($style)[$lock_symbol]($lock_style)"
+style = "bold fg:bright-white bg:bright-black"
 read_only = "🔒"
 read_only_style= "bold white"
 
+[username]
+show_always = true
+style_user = "bg:bright-black"
+style_root = "bg:bright-black"
+format = '[ $user ]($style)'
+
 [hostname]
+format = "[ $hostname ]($style)"
 ssh_only = false
 trim_at = ".companyname.com"
 disabled = false
-style = "bold italic green"
+style = "fg:green bg:bright-black"
 
 [git_commit]
 commit_hash_length = 8
@@ -53,11 +71,11 @@ format = '($style)'
 disabled = false
 
 [git_branch]
-format = "[$branch]($style)"
-style = "bold purple"
+format = " 󰘬 $branch"
+style = "bold fg:bright-black bg:black"
 
 [git_status]
-format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)"
+format = " $conflicted$untracked$modified$staged$renamed$deleted$ahead_behind$stashed"
 style = "cyan"
 conflicted = ""
 untracked = ""

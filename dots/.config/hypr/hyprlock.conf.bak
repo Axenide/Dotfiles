@@ -3,7 +3,7 @@ source = ~/.config/Ax-Shell/config/hypr/colors.conf
 # BACKGROUND
 background {
     monitor =
-    path = $wallpaper #path to background image
+    path = ~/.current.wall #path to background image
     blur_passes = 3
     blur_size = 3
     contrast = 1.0
@@ -68,7 +68,7 @@ label {
     color = 0xff$foreground
     font_size = 14
     font_family = Iosevka Nerd Font Bold Italic
-    position = 0, -75
+    position = 0, -50
     halign = center
     valign = center
     shadow_passes = 1

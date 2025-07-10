@@ -1,165 +1,193 @@
 [
     {
         "property": "widget.macos.native-context-menus",
-        "label": "Enable this mod on macOS (Let Zen override native macOS context menu)",
+        "label": "‼️ Uncheck to enable this mod in macOS, overriding native context menu. (Check this again ✅ before disabling/removing this mod)",
         "type": "checkbox",
+        "defaultValue": "false",
         "disabledOn": [
             "windows",
             "linux"
         ]
     },
     {
+        "property": "uc.fixcontext.ergonomicsfortabs",
+        "label": "🔁 Reorder options for tab context menu to improve ergonomics (enabled by default)",
+        "defaultValue": "true",
+        "type": "checkbox"
+    },
+    {
         "property": "uc.hidecontext.separators",
-        "label": "Hide all separators",
+        "label": "〰️ Hide all separators",
         "type": "checkbox"
     },
     {
-        "property": "uc.hidecontext.optionicons",
-        "label": "Hide all icons (won't work for extension and checkbox context menu options)",
+        "property": "uc.fixcontext.restoreicons",
+        "label": "🔣 Restore back all icons (buggy, hit me up to suggest fixes on KiKaraage/ZenMods repo)",
         "type": "checkbox"
     },
     {
-        "property": "uc.fixcontext.applyzencolors",
-        "label": "Apply Zen workspace colors to all context menu, panels, and confirmation pop-ups",
+        "property": "uc.hidecontext.icons",
+        "label": "🔣 Hide all icons in context menu, except checkboxes and radio buttons, to fit current Zen styling",
         "type": "checkbox"
     },
     {
-        "property": "uc.fixcontext.extensionmargins",
-        "label": "[Toolbar] Fix margin for 'Tabs on the right' checkbox and extensions-related context menu",
-        "type": "checkbox",
-        "disabledOn": [
-            "macos",
-            "linux"
-        ]
+        "property": "uc.fixcontext.applyzengradient",
+        "label": "🎨 Apply Zen workspace gradient (works best if your OS/DE/WM supports blur)",
+        "type": "checkbox"
+    },
+    {
+        "property": "uc.fixcontext.applyzenaccent",
+        "label": "🎨 Apply Zen accent color (the main color on your workspace gradient)",
+        "type": "checkbox"
     },
     {
         "property": "uc.hidecontext.copylink",
-        "label": "[Link] Hide regular 'Copy Link' button (Only shown when hovering above 'Copy Clean Link')",
-        "type": "checkbox"
-    },
-    {
-        "property": "uc.hidecontext.menubar",
-        "label": "[Toolbar] Hide 'Menu Bar' toggle",
+        "label": "🔗 Prioritize 'Copy Clean Link' when possible (enabled by default)",
+        "defaultValue": "true",
         "type": "checkbox"
     },
     {
         "property": "uc.hidecontext.bookmark",
-        "label": "[Tab] [Link] Hide 'Bookmark Tab/Link'",
+        "label": "📑 🔗 Hide 'Bookmark Tab/Tabs/Link' options (enabled by default)",
+        "defaultValue": "true",
         "type": "checkbox"
     },
     {
         "property": "uc.hidecontext.mutetab",
-        "label": "[Tab] Hide 'Mute Tab' option",
+        "label": "📑 Hide 'Mute Tab' options",
         "type": "checkbox"
     },
     {
         "property": "uc.hidecontext.newtab",
-        "label": "[Tab] Hide 'New Tab' option",
-        "type": "checkbox"
-    },
-    {
-        "property": "uc.hidecontext.addtowebpanel",
-        "label": "[Link] Hide 'Add to Web Panel' option",
+        "label": "📑 Hide 'New Tab' & 'New Tab Below' (enabled by default)",
+        "defaultValue": "true",
         "type": "checkbox"
     },
     {
         "property": "uc.hidecontext.movetaboptions",
-        "label": "[Tab] Hide 'Move Tab' options",
+        "label": "📑 Hide 'Move Tab' options (enabled by default)",
+        "defaultValue": "true",
         "type": "checkbox"
     },
     {
         "property": "uc.hidecontext.newcontainer",
-        "label": "[Tab] [Link] Hide 'Open Tab/Link in New Container Tab'",
+        "label": "📑 🔗 Hide 'Open Tab/Link in New Container Tab' options",
         "type": "checkbox"
     },
     {
         "property": "uc.hidecontext.sendtodevice",
-        "label": "[Tab] [Link] Hide 'Send Tab/Link to Device'",
+        "label": "📑 🌐 🔗 Hide 'Send Tab/Page/Link to Device' options",
         "type": "checkbox"
     },
     {
         "property": "uc.hidecontext.closetab",
-        "label": "[Tab] Hide close tab options (Close Tab, Close Duplicate Tabs, Close Multiple Tabs)",
+        "label": "📑 Hide 'Close Tab' & 'Close Duplicate Tabs'",
+        "type": "checkbox"
+    },
+        {
+        "property": "uc.hidecontext.closemultiple",
+        "label": "📑 Hide 'Close Multiple Tabs' options (enabled by default)",
+        "defaultValue": "true",
+        "type": "checkbox"
+    },
+    {
+        "property": "uc.hidecontext.askchatbot",
+        "label": "📑 🌐 🔤 🔗 Hide 'Ask AI chatbot' options if you enabled the feature",
         "type": "checkbox"
     },
     {
         "property": "uc.hidecontext.search",
-        "label": "[Link] Hide 'Search Keywords' on your preferred search engine",
+        "label": "🔤 🔗 Hide 'Search Web for Selected Text/Link' options",
         "type": "checkbox"
     },
     {
         "property": "uc.hidecontext.searchinpriv",
-        "label": "[Text] [Link] Hide 'Search Keywords in a Private Window'",
+        "label": "🔤 🔗 Hide 'Search in a Private Window' (enabled by default)",
+        "defaultValue": "true",
         "type": "checkbox"
     },
     {
         "property": "uc.hidecontext.translate",
-        "label": "[Text] [Link] Hide Firefox's 'Translate Selection/Link' options",
+        "label": "🔤 🔗 Hide 'Translate Selection/Link Text' options",
         "type": "checkbox"
     },
     {
         "property": "uc.hidecontext.printselection",
-        "label": "[Text] Hide 'Print Selection'",
+        "label": "🔤 Hide 'Print Selection' (enabled by default)",
+        "defaultValue": "true",
         "type": "checkbox"
     },
     {
         "property": "uc.hidecontext.image",
-        "label": "[Image] Hide 'Email Image', 'Set Image as Desktop Background', and 'View Image Info' options",
+        "label": "🖼️ Hide 'Email Image', 'Set Image as Desktop Background', & 'View Image Info' options",
+        "type": "checkbox"
+    },
+    {
+        "property": "uc.hidecontext.audiovideo",
+        "label": "🎵 📺 Hide 'Copy Video Link', 'Copy Audio Link', 'Email Video' and 'Email Audio' options",
         "type": "checkbox"
     },
     {
         "property": "uc.hidecontext.checkspelling",
-        "label": "[Text] Hide 'Check Spelling' and 'Change Text/Page Direction' options while typing in text fields",
+        "label": "⌨️ Hide 'Check Spelling' and 'Change Text/Page Direction' options while typing in text fields",
         "type": "checkbox"
     },
     {
         "property": "uc.hidecontext.selectalltext",
-        "label": "[Page] [Text] Hide 'Select All Text' option",
+        "label": "🌐 🔤 Hide 'Select All Text' option (enabled by default)",
+        "defaultValue": "true",
         "type": "checkbox"
     },
     {
         "property": "uc.hidecontext.selectalltabs",
-        "label": "[Tab] Hide 'Select All Tabs' option",
+        "label": "📑 Hide 'Select All Tabs' (enabled by default)",
+        "defaultValue": "true",
         "type": "checkbox"
     },
     {
         "property": "uc.hidecontext.reloadtab",
-        "label": "[Tab] Hide 'Reload Tab' option",
+        "label": "📑 Hide 'Reload Tab' (enabled by default)",
+        "defaultValue": "true",
         "type": "checkbox"
     },
     {
         "property": "uc.hidecontext.duplicatetab",
-        "label": "[Tab] Hide 'Duplicate Tab' option",
+        "label": "📑 Hide 'Duplicate Tab'",
         "type": "checkbox"
     },
     {
         "property": "uc.hidecontext.unloadactions",
-        "label": "[Tab] Hide 'Tab Unloader Actions'",
+        "label": "📑 Hide 'Unload Tabs'",
         "type": "checkbox"
     },
     {
         "property": "uc.hidecontext.inspect",
-        "label": "[Text] [Page] Hide 'View Page Source' and 'Inspect' options",
+        "label": "🌐 🔤 Hide 'View Page Source' & 'Inspect' options",
         "type": "checkbox"
     },
     {
         "property": "uc.hidecontext.savelink",
-        "label": "[Page] [Link] Hide 'Save Page As' and 'Save Link As' option",
+        "label": "🌐 🔗 Hide 'Save Page/Link As' options",
         "type": "checkbox"
     },
     {
         "property": "uc.hidecontext.screenshot",
-        "label": "[Page] Hide 'Take Screenshot' option",
-        "type": "checkbox"
-    },
-    {
-        "property": "uc.hidecontext.pin",
-        "label": "[Page] Hide 'Pin Tab' and 'Add to Essentials' option",
+        "label": "🌐 Hide 'Take Screenshot'",
         "type": "checkbox"
     },
     {
         "property": "uc.hidecontext.frame",
-        "label": "[Image] Hide 'This Frame' options",
+        "label": "🖼️ 📺 Hide 'This Frame' option",
+        "type": "checkbox"
+    },
+    {
+        "property": "uc.hidecontext.pin",
+        "label": "📑 Hide 'Pin Tab' & 'Add to Essentials' options",
+        "type": "checkbox"
+    },
+    {
+        "property": "uc.hidecontext.navigation",
+        "label": "🌐 Hide 'Back', 'Forward', 'Reload' & 'Bookmark Page' options",
         "type": "checkbox"
     }
 ]

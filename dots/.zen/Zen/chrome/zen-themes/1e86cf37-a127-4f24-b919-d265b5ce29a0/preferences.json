@@ -1,0 +1,17 @@
+[
+    {
+        "property": "mod.extension.viewgrid",
+        "label": "Xtra Clean mode: Present the extensions as grid",
+        "type": "checkbox"
+    },
+    {
+        "property": "mod.extension.hide",
+        "label": "Hyper Clean mode: Hide the extension button unless hovered",
+        "type": "checkbox"
+    },
+    {
+        "property": "mod.extension.remove",
+        "label": "Way Too Clean mode: Remove the extension button",
+        "type": "checkbox"
+    }
+]

@@ -8,44 +8,11 @@
 └─────────────────────────────────────────────────────────────────┘
 */
 
-#urlbar {
-     text-align: center !important;
+#personal-bookmarks .bookmark-item[container="true"] .toolbarbutton-icon {
+ display:none!important;
 }
- #contentAreaContextMenu, menupopup, .menupopup-arrowscrollbox {
-     border-radius: 16px !important;
-     --panel-background: var(--zen-colors-tertiary) !important;
-}
- #contentAreaContextMenu menuitem, #contentAreaContextMenu menuseparator, menupopup menuitem {
-     border-radius: 10px !important;
-}
- #contentAreaContextMenu menuitem:hover, menupopup menuitem:hover {
-     background-color: var(--tab-loading-fill) !important;
-     color: var(--zen-colors-tertiary) !important;
-}
- #zen-workspaces-button {
-     background-color: rgba(255, 255, 255, 0.04) !important;
-     box-shadow: 0px 1px 10px rgba(0,0,0,0.1) !important;
-     border-radius: 8px !important;
-     border: 1px solid #ffffff0c !important;
-}
- #zen-workspaces-button {
-     .subviewbutton {
-         &[active="true"] {
-             background: rgba(255, 255, 255, 0.1) !important;
-             transition: 0.3s !important;
-             border: 1px solid #ffffff0a !important;
-             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.062) !important;
-        }
-         &:hover {
-             background: rgba(255, 255, 255, 0.2) !important;
-             transition: 0.3s !important;
-        }
-         &:after {
-             display: none !important;
-        }
-    }
-}
- #zen-current-workspace-indicator {
-     padding: 10px calc(4px + var(--tab-inline-padding)) !important;
-     font-weight: 500 !important;
+
+#PlacesToolbarItems {
+  display: flex !important;
+  justify-content: center !important;
 }

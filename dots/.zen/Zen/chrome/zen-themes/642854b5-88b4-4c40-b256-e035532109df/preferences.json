@@ -1,0 +1,174 @@
+[
+  {
+    "property": "browser.tabs.allow_transparent_browser",
+    "label": "👀 Allow transparency (TURN OFF BEFORE UNINSTALL)",
+    "type": "checkbox",
+    "defaultValue": false
+  },
+  {
+    "property": "zen.widget.linux.transparency",
+    "label": "👀 Allow transparency on linux (TURN OFF BEFORE UNINSTALL)",
+    "type": "checkbox",
+    "defaultValue": false,
+    "disabledOn": ["windows", "macos"]
+  },
+  {
+    "property": "zen.view.grey-out-inactive-windows",
+    "label": "👀 Keep transparency when not in focus on linux",
+    "type": "checkbox",
+    "defaultValue": false,
+    "disabledOn": ["windows", "macos"]
+  },
+  {
+    "property": "mod.sameerasw.zen_transparent_sidebar_enabled",
+    "label": "👀 Transparent sidebar (bookmarks, history and sync)",
+    "type": "checkbox",
+    "defaultValue": true
+  },
+  {
+    "property": "mod.sameerasw.zen_bg_color_enabled",
+    "label": "🎨 Enable custom background color for Zen",
+    "type": "checkbox",
+    "defaultValue": false
+  },
+  {
+    "property": "mod.sameerasw.zen_transparency_color",
+    "label": "🎨 Set custom background color (Overrides theme)",
+    "type": "string",
+    "defaultValue": "#00000000",
+    "placeholder": "light-dark(#fff, #222) or RGBA or hex"
+  },
+  {
+    "property": "mod.sameerasw_zen_light_tint",
+    "label": "🌙 Light website tint",
+    "type": "dropdown",
+    "placeholder": "Select an option",
+    "defaultValue": "2",
+    "options": [
+      {
+        "label": "Flip",
+        "value": "1"
+      },
+      {
+        "label": "Remove",
+        "value": "2"
+      }
+    ]
+  },
+  {
+    "property": "mod.sameerasw.zen_no_shadow",
+    "label": "🌑 Remove the shadow around the web page",
+    "type": "checkbox",
+    "defaultValue": false
+  },
+  {
+    "property": "mod.sameerasw.zen_notab_img_enabled",
+    "label": "🖼️ Add no tab screen background image",
+    "type": "checkbox",
+    "defaultValue": false
+  },
+  {
+    "property": "mod.sameerasw.zen_notab_img",
+    "label": "🖼️ Image URL, format:   url('example.com/1.png')",
+    "type": "string",
+    "defaultValue": "url('https://github.com/sameerasw/my-internet/blob/main/wave-light.png?raw=true')",
+    "placeholder": "url('example.com/1.png')"
+  },
+  {
+    "property": "mod.sameerasw.zen_notab_img_size",
+    "label": "🖼️ No tab screen image size with unit",
+    "type": "string",
+    "defaultValue": "150px",
+    "placeholder": "50px (px, em, % ...)"
+  },
+  {
+    "property": "mod.sameerasw.zen_notab_img_opacity",
+    "label": "🖼️ No tab screen image opacity (0-1)",
+    "type": "string",
+    "defaultValue": "1",
+    "placeholder": "0.75"
+  },
+  {
+    "property": "mod.sameerasw.zen_notab_img_saturate",
+    "label": "🖼️ Grayscale the no tab screen image",
+    "type": "checkbox",
+    "defaultValue": false
+  },
+  {
+    "property": "mod.sameerasw.zen_notab_img_invert",
+    "label": "🖼️ Invert above image in light theme (white → black)",
+    "type": "checkbox",
+    "defaultValue": false
+  },
+  {
+    "property": "mod.sameerasw_zen_compact_sidebar_type",
+    "label": "↔️ Compact transparent sidebar type",
+    "type": "dropdown",
+    "placeholder": "Select an option",
+    "defaultValue": "0",
+    "options": [
+      {
+        "label": "Default",
+        "value": "0"
+      },
+      {
+        "label": "Push",
+        "value": "1"
+      },
+      {
+        "label": "Mask",
+        "value": "2"
+      }
+    ]
+  },
+  {
+    "property": "mod.sameerasw.zen_compact_sidebar_width",
+    "label": "↔️ Custom compact sidebar width",
+    "type": "string",
+    "defaultValue": "165px",
+    "placeholder": "165px (use px)"
+  },
+  {
+    "property": "mod.sameerasw.zen_tab_switch_anim",
+    "label": "✨ Tab switch animation",
+    "type": "checkbox",
+    "defaultValue": true
+  },
+  {
+    "property": "mod.sameerasw.zen_urlbar_zoom_anim",
+    "label": "✨ URL bar zoom animation",
+    "type": "checkbox",
+    "defaultValue": false
+  },
+  {
+    "property": "mod.sameerasw.zen_trackpad_anim",
+    "label": "✨ Trackpad swipe animations",
+    "type": "checkbox",
+    "defaultValue": false
+  },
+  {
+    "property": "mod.sameerasw_zen_animations",
+    "label": "✨ Animation smoothness",
+    "type": "dropdown",
+    "placeholder": "Select an option",
+    "defaultValue": "1",
+    "options": [
+      {
+        "label": "Quick Snap",
+        "value": "0"
+      },
+      {
+        "label": "Smooth Flow",
+        "value": "1"
+      },
+      {
+        "label": "Diabolical",
+        "value": "2"
+      },
+      {
+        "label": "Springy",
+        "value": "3"
+      }
+    ]
+  }
+]
