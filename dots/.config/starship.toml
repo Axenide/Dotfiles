@@ -35,7 +35,7 @@ disabled = false
 
 [cmd_duration]
 min_time = 1000
-show_milliseconds = true
+show_milliseconds = false
 disabled = false
 format="[󰞌 $duration ]($style)"
 style="bold bg:black"
