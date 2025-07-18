@@ -66,6 +66,10 @@ input_path = "~/.config/Ax-Shell/config/matugen/templates/ax-shell.css"
 output_path = "~/.config/Ax-Shell/styles/colors.css"
 post_hook = "fabric-cli exec ax-shell 'app.set_css()' &"
 
+[templates.ambyst]
+input_path = "~/Repos/Axenide/Ambyst/assets/matugen/Colors.qml"
+output_path = "~/Repos/Axenide/Ambyst/modules/theme/Colors.qml"
+
 [config.custom_colors.red]
 color = "#FF0000"
 blend = true
