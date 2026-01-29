@@ -17,7 +17,7 @@
 /* customize things here */
 :root {
 	/* font, change to 'gg sans' for default discord font*/
-	--font: 'gg sans';
+	--font: 'figtree';
 
 	/* top left corner text */
 	--corner-text: 'Midnight';
@@ -46,7 +46,7 @@
 	--text-5: {{colors.outline.default.hex}};               /* muted channels/chats and timestamps */
 
 	/* background and dark colors */
-    --bg-1: {{colors.primary.default.hex}};                             /* dark buttons when clicked */
+    --bg-1: {{colors.surface_variant.default.hex}};                             /* dark buttons when clicked */
 	--bg-2: {{colors.surface_container_high.default.hex}};              /* dark buttons */
 	--bg-3: {{colors.surface_container_low.default.hex}};               /* spacing, secondary elements */
 	--bg-4: {{colors.surface.default.hex}};                             /* main background color */
@@ -76,7 +76,7 @@
 	/* change to block to show, none to hide */
 	--discord-icon: none; /* discord icon */
 	--moon-icon: block; /* moon icon */
-	--moon-icon-url: url('https://upload.wikimedia.org/wikipedia/commons/c/c4/Font_Awesome_5_solid_moon.svg'); /* custom icon url */
+	--moon-icon-url: url('https://raw.githubusercontent.com/Axenide/Ambxst/849b55c46335905de4c2516f45e2fa3344bfcbce/assets/ambxst/ambxst-logo.svg'); /* custom icon url */
 	--moon-icon-size: auto;
 
 	/* filter uncolorable elements to fit theme */

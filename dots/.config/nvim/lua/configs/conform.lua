@@ -7,6 +7,7 @@ local options = {
     sass = { "prettier" },
     html = { "prettier" },
     json = { "prettier" },
+    html = { "prettier" },
     nix = { "alejandra" },
     bash = { "shfmt" },
     zsh = { "shfmt" },

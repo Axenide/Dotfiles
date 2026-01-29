@@ -11,7 +11,7 @@
   --surface: {{colors.surface.default.hex}};
   --surface-bright: {{colors.surface_bright.default.hex}};
   --error: {{colors.error.default.hex}};
-  --error-dim: {{colors.error.default.hex | set_lightness: -10.0}};
+  --error-dim: {{colors.error.default.hex | lighten: -10.0}};
   --on-error: {{colors.on_error.default.hex}};
   --error-container: {{colors.error_container.default.hex}};
   --outline: {{colors.outline.default.hex}};

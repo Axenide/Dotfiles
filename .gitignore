@@ -37,3 +37,7 @@ dots/.config/hypr/source/nvidia.conf
 dots/.config/fabric/styles/colors.sass
 dots/.zen/Zen/chrome/zen-themes.css
 dots/.config/vesktop/themes/axmat.theme.css
+dots/.config/fish/conf.d
+dots/.config/fish/fish_variables
+dots/.config/btop/themes/matugen.theme
+dots/.config/btop/btop.conf
