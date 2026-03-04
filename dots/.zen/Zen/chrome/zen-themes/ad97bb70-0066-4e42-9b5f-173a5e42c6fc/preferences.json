@@ -81,6 +81,19 @@
         "disabledOn": []
     },
     {
+        "property": "uc.essentials.transition-bg",
+        "label": "Animate background for essentials on hover.",
+        "type": "checkbox",
+        "disabledOn": []
+    },
+    {
+        "property": "uc.essentials.transition-speed",
+        "label": "Speed of background transition for essentials (requires above checkbox to be enabled).",
+        "type": "string",
+        "defaultValue": "100ms",
+        "disabledOn": []
+    },
+    {
         "property": "uc.essentials.position",
         "label": "Select the position of Essentials (doesn't work on >1.21.1b with container-specific essentials)",
         "type": "dropdown",
@@ -133,6 +146,19 @@
         "disabledOn": []
     },
     {
+        "property": "uc.pins.transition-bg",
+        "label": "Animate background for pinned tabs on hover",
+        "type": "checkbox",
+        "disabledOn": []
+    },
+    {
+        "property": "uc.pins.transition-speed",
+        "label": "Speed of background transition for pins (requires above checkbox to be enabled).",
+        "type": "string",
+        "defaultValue": "100ms",
+        "disabledOn": []
+    },
+    {
         "property": "zen.workspaces.show-workspace-indicator",
         "label": "Shows the workspace-indicator between Essentials and Pins",
         "type": "checkbox",
@@ -142,12 +168,6 @@
     {
         "property": "zen.workspaces.indicator-name-center",
         "label": "Center the workspace indicator name",
-        "type": "checkbox",
-        "disabledOn": []
-    },
-    {
-        "property": "uc.superpins.essentials-below-indicator",
-        "label": "Essentials will be placed below workspace indicator when both are at the bottom",
         "type": "checkbox",
         "disabledOn": []
     },
@@ -205,12 +225,17 @@
         "disabledOn": []
     },
     {
+        "property": "uc.pins.separator-at-bottom",
+        "label": "Show separator at bottom when it would normally be hidden",
+        "type": "checkbox",
+        "disabledOn": []
+    },
+    {
         "property": "uc.tabs.show-separator",
         "label": "When to display separator",
         "type": "dropdown",
         "disabledOn": [],
         "placeholder": "Default",
-        "defaultValue": "pinned-shown",
         "options": [
             {
                 "label": "Never",
