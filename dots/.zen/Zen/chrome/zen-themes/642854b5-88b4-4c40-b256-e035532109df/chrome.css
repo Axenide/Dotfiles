@@ -1,5 +1,5 @@
 /* variables */
-:root {
+.zen-browser-generic-background {
   @media -moz-pref( "mod.sameerasw.zen_bg_color_enabled") {
     --zen-main-browser-background: var(
       --mod-sameerasw-zen_transparency_color,
