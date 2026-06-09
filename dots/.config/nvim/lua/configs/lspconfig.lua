@@ -1,7 +1,5 @@
 require("nvchad.configs.lspconfig").defaults()
 
-local lspconfig = require "lspconfig"
-
 local servers = { "html", "cssls", "pyright", "qmlls" }
 local nvlsp = require "nvchad.configs.lspconfig"
 
@@ -16,20 +14,19 @@ for _, lsp in ipairs(servers) do
     opts.cmd = { "qmlls6" }
   end
 
-  lspconfig[lsp].setup(opts)
+  if lsp == "pyright" then
+    opts.settings = {
+      python = {
+        analysis = {
+          autoSearchPaths = true,
+          useLibraryCodeForTypes = true,
+          diagnosticMode = "workspace",
+        },
+      },
+    }
+  end
+
+  vim.lsp.config(lsp, opts)
 end
 
-lspconfig.pyright.setup {
-  on_attach = nvlsp.on_attach,
-  on_init = nvlsp.on_init,
-  capabilities = nvlsp.capabilities,
-  settings = {
-    python = {
-      analysis = {
-        autoSearchPaths = true,
-        useLibraryCodeForTypes = true,
-        diagnosticMode = "workspace",
-      },
-    },
-  },
-}
+vim.lsp.enable(servers)

@@ -1,0 +1,6 @@
+hl.on("hyprland.start", function()
+  hl.exec_cmd("uwsm-app dropbox")
+  hl.exec_cmd("glance --config ~/.config/glance/config.yaml")
+  hl.exec_cmd("systemctl --user start hyprpolkitagent")
+  hl.exec_cmd("pgrep -x hypridle > /dev/null || hypridle")
+end)

@@ -171,9 +171,25 @@ return {
 
   {
     "nvim-treesitter/nvim-treesitter",
-    opts = {
-      auto_install = true,
-    },
+    branch = "main",
+    build = function()
+      if vim.fn.executable "tree-sitter" == 1 then
+        require("nvim-treesitter").install { "lua", "markdown", "markdown_inline", "python", "query", "vim", "vimdoc" }
+      end
+    end,
+    config = function()
+      if vim.fn.executable "tree-sitter" == 1 then
+        require("nvim-treesitter").install { "lua", "markdown", "markdown_inline", "python", "query", "vim", "vimdoc" }
+      end
+
+      vim.api.nvim_create_autocmd("FileType", {
+        group = vim.api.nvim_create_augroup("user_treesitter", { clear = true }),
+        pattern = { "lua", "markdown", "python", "vim", "vimdoc" },
+        callback = function(event)
+          pcall(vim.treesitter.start, event.buf)
+        end,
+      })
+    end,
   },
 
   {

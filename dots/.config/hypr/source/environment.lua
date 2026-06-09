@@ -1,0 +1,13 @@
+hl.env("LIBSEAT_BACKEND", "logind")
+hl.env("_JAVA_AWT_WM_NONREPARENTING", "1")
+hl.env("XDG_SESSION_TYPE", "wayland")
+hl.env("QT_SELECTION", "/usr/bin/qmake")
+hl.env("ELECTRON_ARGS", "--enable-features=UseOzonePlatform --ozone-platform=wayland")
+hl.env("MOZ_DBUS_REMOTE", "1")
+hl.env("QT_WAYLAND_DISABLE_WINDOWDECORATION", "1")
+hl.env("XCURSOR_SIZE", "24")
+hl.env("XDG_CURRENT_DESKTOP", "Hyprland")
+
+hl.on("hyprland.start", function()
+  hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
+end)

@@ -3,6 +3,8 @@ if status is-interactive
 end
 
 set -U fish_greeting
+# Bun
+fish_add_path -g $HOME/.cache/.bun/bin
 # Go
 fish_add_path -g $HOME/.local/share/go/bin
 thefuck --alias | source

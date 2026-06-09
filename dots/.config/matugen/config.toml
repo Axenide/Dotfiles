@@ -39,18 +39,18 @@ output_path = "~/.config/qt5ct/colors/matugen.conf"
 input_path = "~/.config/matugen/templates/qtct-colors.conf"
 output_path = "~/.config/qt6ct/colors/matugen.conf"
 
-# [templates.nvim]
-# input_path = "~/.config/matugen/templates/base46.lua"
-# output_path = "~/.cache/wal/base46-dark.lua"
-#
-# [templates.nvimlight]
-# input_path = "~/.config/matugen/templates/base46.lua"
-# output_path = "~/.cache/wal/base46-light.lua"
+[templates.nvim]
+input_path = '~/.local/share/nvim/lazy/WallSync/templates/matugen.lua'
+output_path = '~/.cache/wal/base46-dark.lua'
 
-# [templates.pywal]
-# input_path = "~/.config/matugen/templates/pywal-colors"
-# output_path = "~/.cache/wal/colors"
-#
+[templates.nvimlight]
+input_path = '~/.local/share/nvim/lazy/WallSync/templates/matugen.lua'
+output_path = '~/.cache/wal/base46-light.lua'
+
+[templates.pywal]
+input_path = '~/.local/share/nvim/lazy/WallSync/templates/waltemplate'
+output_path = '~/.cache/wal/colors'
+
 # [templates.pywaljson]
 # input_path = "~/.config/matugen/templates/pywal-colors.json"
 # output_path = "~/.cache/wal/colors.json"
