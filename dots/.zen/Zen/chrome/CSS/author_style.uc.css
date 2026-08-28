@@ -1,0 +1,33 @@
+/* ==UserScript==
+// @description    author style injected to browser.xhtml
+// @long-description
+/*
+Author style example.
+This creates a small dot to appear in the top left corner of devtools-button popup - but not in any other panel.
+
+Note: You don't have to have *any* header, if no @includes are declared then the style will affect browser.xhtml in author mode - like this style.
+Note: The header starts with /* instead of //
+Note: The header must end with a closing comment sequence.
+Note: You need to re-open comment if you use @long-description
+
+Like this: 
+*//*
+// @usefileuri
+// @name  example style
+// ==/UserScript==*/
+
+/* Default to xul namespace */
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+#customizationui-widget-panel[viewId="PanelUI-developer-tools"]::part(content)::before{
+ content: "";
+  display: flex;
+  position: relative;
+  z-index: 2;
+  width: 9px;
+  margin-inline-end: -9px;
+  background-image: radial-gradient(currentcolor,currentcolor,transparent 90%);
+  background-size: 5px 5px;
+  background-position: 4px 4px;
+  background-repeat: no-repeat;
+}

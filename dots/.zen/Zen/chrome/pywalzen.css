@@ -1,0 +1,24 @@
+:root {
+  --zen-primary-color: #87abf8 !important;
+  --zen-branding-dark: #191a25 !important;
+  --zen-branding-paper: #add580 !important;
+  --zen-main-browser-background: #191a25 !important;
+  --zen-main-browser-background-toolbar: #191a25 !important;
+  --zen-navigator-toolbox-background: #191a25 !important;
+  --toolbar-bgcolor: #191a25 !important;
+  --zen-themed-toolbar-bg-transparent: #191a25 !important;
+  --arrowpanel-background: #191a25 !important;
+  --arrowpanel-color: #add580 !important;
+  --arrowpanel-border-color: #4c5064 !important;
+}
+
+.zen-toolbar-background,
+#zen-main-app-wrapper {
+  background: #191a25 !important;
+}
+
+.zen-browser-generic-background::after,
+.zen-browser-generic-background::before {
+  background: #191a25 !important;
+}
+

@@ -1,0 +1,1 @@
+/nix/store/vsl6bcnwanfr0i27z6chjwjkmk49fcsk-home-manager-files/.config/fish/functions/shred-secrets.fish

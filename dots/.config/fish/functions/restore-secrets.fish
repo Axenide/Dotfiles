@@ -1,0 +1,1 @@
+/nix/store/lkkirz8rlc85y0q4w72lc826bbvhw6v7-axenide-fish-xdg/fish/functions/restore-secrets.fish

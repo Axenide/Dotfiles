@@ -1,0 +1,21 @@
+/* This example file is supposed to be loaded as author style sheet. Notice that we can use ::part() ::host() etc. selectors here while they are unavailable in user stylesheets. */
+
+/* Default to xul namespace */
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* Allow selecting html elements with named namespace selector */
+@namespace html url("http://www.w3.org/1999/xhtml");
+
+/* Example - this creates a small dot to appear in the top left corner of devtools-button popup - but not in any other panel */
+#customizationui-widget-panel[viewId="PanelUI-developer-tools"]::part(content)::before{
+  content: "";
+  display: flex;
+  position: relative;
+  z-index: 2;
+  width: 9px;
+  margin-inline-end: -9px;
+  background-image: radial-gradient(currentcolor,currentcolor,transparent 90%);
+  background-size: 5px 5px;
+  background-position: 4px 4px;
+  background-repeat: no-repeat;
+}
